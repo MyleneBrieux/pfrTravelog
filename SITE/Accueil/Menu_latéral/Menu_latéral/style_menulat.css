@@ -1,0 +1,30 @@
+.menulat {
+    background-color:#dcdadc;
+    font-family: 'Halant', serif;
+    margin-left:10px;
+    margin-top:5em;
+    padding-bottom:100%;
+}
+
+.continent {
+    padding-top:10%;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-top: 8px solid black;
+    margin-left:80%;
+    margin-top:-13%;
+    margin-bottom:10%;
+}
+
+.pays, .ville, .leplus {
+    padding-top:15%;
+}
+
+.Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+    color:#707070;
+}
