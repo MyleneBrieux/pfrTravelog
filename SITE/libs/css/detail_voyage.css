@@ -1,0 +1,36 @@
+/*POLICE ECRITURE*/
+
+.rancho{
+    font-family: Rancho, arial, calibri;
+}
+
+.halant{
+    font-family: Halant, Book Antiqua, Georgia;
+}
+
+/*MENU GAUCHE*/
+
+.bg-sable{
+    background-color:#dcdacd;
+}
+
+.menU{
+    padding-left: 20%;
+    text-align: center !important;
+}
+
+
+/*CORPS*/
+
+.titre_photo_detail_voyage{
+color: rgba(255, 255, 255, 0.8);
+}
+
+.taille_photos_detail_voyage{
+    width: 50em;
+    height: auto;
+}
+
+.taille_photo_profil_detail_voyage{
+    width: 20em;
+}
