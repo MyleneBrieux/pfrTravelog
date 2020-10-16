@@ -1,0 +1,75 @@
+/* body {
+    color: white !important;
+} */
+
+.navbar {
+    background-color: #52908B;
+    height: 3.7em;
+    }
+
+/*SECTION GAUCHE*/
+.logo{
+    margin-left: -10%;
+    }
+
+.travelog {
+    color: white !important;
+    font-weight: bolder;
+    font-size: 2em;
+    margin-top: 15%;
+    margin-left: 30%;
+    }
+
+
+/*SECTION MILLIEU*/
+.petite-barre-gauche {
+    height: 3em;
+    background-color: white;
+    width: 0.1em;
+    }
+
+.recherche {
+    position: relative;
+    left: 5.5em;
+    width: 30em !important;
+}
+
+.petite-barre-droite{
+    height: 3em;
+    background-color: white;
+    width: 0.1em;
+    margin-left: 20%;
+    z-index: 500;
+    }
+
+/*SECTION DROITE*/
+
+.menuDeroulant {
+    width: 10em;
+    height: 3em;
+    background-color: #52908B;
+    border: hidden;
+    font-size: 1.5em;
+    position: relative;
+    top: -0.3em;
+}
+
+
+
+
+
+
+
+
+
+.logo-bonhomme {
+    position: relative;
+    top: -7.8em;
+    right: 2em;
+}
+
+.logo-cloche {
+    position: relative;
+    top: -10.5em;
+    right: 7em;
+}
