@@ -1,0 +1,79 @@
+/* VOYAGE 1 */
+.photoprofil1 {
+    z-index:2;
+    border:solid #707070 0.1em;
+    background-color:white;
+    height:7em;
+    width:5.5em;
+    margin-top:6em;
+    margin-left:25.3em;
+}
+
+.encadrevoyage1 {
+    background-color: #dcdacd;
+    height:18em;
+    width:50em;
+    margin-top:-3.5em;
+    margin-left:28em;
+}
+
+
+/* VOYAGE 2 */
+.photoprofil2 {
+    z-index:2;
+    border:solid #707070 0.1em;
+    background-color:white;
+    height:7em;
+    width:5.5em;
+    margin-top:2em;
+    margin-left:75.25em;
+}
+
+.encadrevoyage2 {
+    background-color: #dcdacd;
+    height:18em;
+    width:50em;
+    margin-top:-3.75em;
+    margin-left:28em;
+}
+
+
+/* VOYAGE 3 */
+.photoprofil3 {
+    z-index:2;
+    border:solid #707070 0.1em;
+    background-color:white;
+    height:7em;
+    width:5.5em;
+    margin-top:2em;
+    margin-left:25.3em;
+}
+
+.encadrevoyage3 {
+    background-color: #dcdacd;
+    height:18em;
+    width:50em;
+    margin-top:-3.75em;
+    margin-left:28em;
+}
+
+
+/* VOYAGE 4 */
+.photoprofil4 {
+    z-index:2;
+    border:solid #707070 0.1em;
+    background-color:white;
+    height:7em;
+    width:5.5em;
+    margin-top:2em;
+    margin-left:75.25em;
+}
+
+.encadrevoyage4 {
+    background-color: #dcdacd;
+    height:18em;
+    width:50em;
+    margin-top:-3.75em;
+    margin-bottom:8em;
+    margin-left:28em;
+}
