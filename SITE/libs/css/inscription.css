@@ -1,0 +1,193 @@
+/* EN-TÊTE DE LA PAGE AVEC LOGO ET TITRE */
+.nomtravelog {
+    color: #52908b;
+    font-family: 'Rancho', cursive;
+    font-size:5em;
+    letter-spacing:0.15em;
+    margin-top:0.2em;
+}
+
+.logotravelog {
+    height: 18em;
+    width: 18em;
+    margin-top:-2em;
+    margin-left:12em;
+}
+
+
+/* DESIGN GENERAL DE L'ENCADRE */
+.encadreinscription {
+    background-color: #dcdacd;
+    height:28em;
+    width:28em;
+    margin-top:-8em;
+    margin-left:8em;
+    border: solid #52908b 0.2em;
+}
+
+
+/* INTRODUCTION DE L'ENCADRE */
+.introencadreinscription {
+    font-family: 'Halant', serif;
+    text-align:center;
+    font-size:1.6em;
+    padding-top:0.5em;
+}
+
+
+/* FORMULAIRE D'INSCRIPTION */
+.formulaireinscription {
+    font-family: 'Halant', serif;
+    color:#707070;
+    width:18em;
+    padding-top:0.8em;
+    margin-left:5em;
+}
+
+.pseudoinscription, .adressemailinscription, .motdepasseinscription, .confirmationmotdepasseinscription {
+    border : solid #707070 0.01em;
+    font-size:1.25em;
+}
+
+
+/* CONDITIONS GENERALES D'UTILISATION */
+.CGU {
+    color:#707070;
+    font-size:0.8em;
+}
+
+ /* CASE */
+.container {
+    /* display: block; */
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+    margin-left:0.6em;
+}
+  
+/* Cache la case par défaut */
+.container input {
+    opacity: 0;
+}
+
+/* Personnalisation de la case */
+.checkmark {
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    background-color: #eee;
+    border: 0.05em solid #707070;
+}
+  
+/* Quand la souris passe sur la case */
+.container:hover input ~ .checkmark {
+    background-color: #707070;
+}
+  
+/* Quand l'utilisateur clique sur la case */
+.container input:checked ~ .checkmark {
+    background-color: #52908b;
+}
+  
+/* Sigle qui montre que la case a été cochée */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+/* Personnalisation du sigle qui montre que la case a été cochée */
+.container .checkmark:after {
+    left: 0.25em;
+    top: -0.08em;
+    width: 0.40em;
+    height: 0.90em;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+} 
+
+
+/* LIEN VERS CONDITIONS GENERALES D'UTILISATION */
+.liencgu:link {
+    color: #707070;
+}
+  
+.liencgu:visited {
+    color: #707070;
+}
+  
+.liencgu:focus {
+    background: #dcdacd;
+}
+  
+.liencgu:hover {     
+    background: #dcdacd;
+}
+
+
+/* BOUTON JE M'INSCRIS */
+.boutoninscription {
+    font-family: 'Halant', serif;
+    font-size:1.5em;
+    color:white;
+    background-color: #52908b;
+    width:12em;
+    margin-left:3.3em;
+    height:1.8em;
+    margin-top:-0.5em;
+}
+
+
+/* PHRASE CONNEXION */
+.connexion {
+    font-family: 'Halant', serif;
+    color: #52908b;
+    font-size:1.25em;
+    text-align:center;
+    margin-top:1em;
+}
+
+/* LIEN VERS LA PAGE CONNEXION */
+.lienconnexion:link {
+    color: #52908b;
+}
+  
+.lienconnexion:visited {
+    color: #52908b;
+}
+  
+.lienconnexion:focus {
+    background: #52908b;
+}
+  
+.lienconnexion:hover {     
+    background: #dcdacd;
+}
+
+
+/* POLAROID DE GAUCHE */
+.polaroid1 {
+    height: 15em;
+    width: 15em;
+    margin-left:5em;
+    margin-top:2em;
+    transform: rotate(-15deg);
+}
+
+/* POLAROID DE DROITE */
+.polaroid2 {
+    height: 24em;
+    width: 20em;
+    margin-top:-13.5em;
+    margin-left:4em;
+    transform: rotate(8deg);
+}
