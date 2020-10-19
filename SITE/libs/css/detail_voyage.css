@@ -15,8 +15,11 @@
 }
 
 .menU{
-    padding-left: 20%;
-    text-align: center !important;
+    padding-left: 15%;
+}
+
+.centrage {
+    text-align: center;
 }
 
 
@@ -27,10 +30,14 @@ color: rgba(255, 255, 255, 0.8);
 }
 
 .taille_photos_detail_voyage{
-    width: 50em;
+    width: 80em;
     height: auto;
 }
 
 .taille_photo_profil_detail_voyage{
     width: 20em;
+}
+
+.vadroite{
+    float: right;
 }
