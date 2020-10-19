@@ -1,0 +1,109 @@
+/* EN-TÊTE DE LA PAGE AVEC LOGO ET TITRE */
+.nomtravelog {
+    color: #52908b;
+    font-family: 'Rancho', cursive;
+    font-size:5em;
+    letter-spacing:0.15em;
+    margin-top:0.2em;
+}
+
+.logotravelog {
+    height: 18em;
+    width: 18em;
+    margin-top:-2em;
+    margin-left:12em;
+}
+
+
+/* DESIGN GENERAL DE L'ENCADRE */
+.encadreconnexion {
+    background-color: #dcdacd;
+    height:28em;
+    width:28em;
+    margin-top:-8em;
+    margin-left:8em;
+    border: solid #52908b 0.2em;
+}
+
+
+/* INTRODUCTION DE L'ENCADRE */
+.introencadreconnexion {
+    font-family: 'Halant', serif;
+    text-align:center;
+    font-size:1.6em;
+    padding-top:1.5em;
+}
+
+
+/* FORMULAIRE DE CONNEXION */
+.formulaireconnexion {
+    font-family: 'Halant', serif;
+    color:#707070;
+    width:18em;
+    padding-top:2em;
+    margin-left:5em;
+}
+
+.pseudoconnexion, .motdepasseconnexion {
+    border : solid #707070 0.01em;
+    font-size:1.25em;
+}
+
+
+/* BOUTON CONNEXION */
+.boutonconnexion {
+    font-family: 'Halant', serif;
+    font-size:1.5em;
+    color:white;
+    background-color: #52908b;
+    width:12em;
+    margin-left:3.3em;
+    height:1.8em;
+    margin-top:0.6em;
+}
+
+
+/* PHRASE INSCRIPTION */
+.inscription {
+    font-family: 'Halant', serif;
+    color: #52908b;
+    font-size:1.25em;
+    text-align:center;
+    margin-top:2em;
+}
+
+/* LIEN VERS LA PAGE INSCRIPTION */
+a:link {
+    color: #52908b;
+}
+  
+a:visited {
+    color: #52908b;
+}
+  
+a:focus {
+    background: #52908b;
+}
+  
+a:hover {     
+    background: #dcdacd;
+}
+
+
+/* POLAROID DE GAUCHE */
+.polaroid1 {
+    height: 15em;
+    width: 15em;
+    margin-left:5em;
+    margin-top:2em;
+    transform: rotate(-15deg);
+}
+
+/* POLAROID DE DROITE */
+.polaroid2 {
+    height: 24em;
+    width: 20em;
+    margin-top:-13.5em;
+    margin-left:4em;
+    transform: rotate(8deg);
+}
