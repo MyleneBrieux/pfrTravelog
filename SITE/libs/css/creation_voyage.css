@@ -9,3 +9,16 @@ h4{
 .header{
     margin-top: 3em;
 }
+.boutons{
+    margin-top: 1em;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus{
+    background-color: #52908b;
+}
+form{
+    text-align: center;
+}
