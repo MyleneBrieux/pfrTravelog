@@ -38,6 +38,7 @@ color: rgba(255, 255, 255, 0.8);
     width: 20em;
 }
 
-.vadroite{
-    float: right;
+.taille_logo_detail_voyage{
+    height:8em;
+    width: auto;
 }
