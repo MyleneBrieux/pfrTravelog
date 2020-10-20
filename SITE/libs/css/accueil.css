@@ -3,18 +3,59 @@
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
-    height:7em;
-    width:5.5em;
+    height:8em;
+    width:6.5em;
     margin-top:6em;
-    margin-left:25.3em;
+    margin-left:14.5em;
+}
+
+.titrevoyage1 {
+    font-family: 'Rancho', cursive;
+    font-size:3em;
+    color:#52908b;
+    margin-top:1.9em;
+    margin-left:0.4em;
 }
 
 .encadrevoyage1 {
     background-color: #dcdacd;
     height:18em;
-    width:50em;
-    margin-top:-3.5em;
-    margin-left:28em;
+    width:52em;
+    margin-top:-134em;
+    margin-left:35em;
+}
+
+.textevoyage1 {
+    font-family: 'Halant', serif;
+    text-align: right;
+    font-size:1.2em;
+    padding-left:24em;
+    padding-top:0.4em;
+    padding-right:0.8em;
+}
+
+.lienvoyage1 {
+    font-family: 'Halant', serif;
+    color:#707070;
+    font-style:italic;
+    text-align:right;
+    margin-left:40em;
+}
+
+a:link {
+    color: #707070;
+}
+  
+a:visited {
+    color: #707070;
+}
+  
+a:focus {
+    background: none;
+}
+  
+a:hover {     
+    background: none;
 }
 
 
@@ -23,18 +64,43 @@
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
-    height:7em;
-    width:5.5em;
-    margin-top:2em;
-    margin-left:75.25em;
+    height:8em;
+    width:6.5em;
+    margin-top:-113.5em;
+    margin-left:83.5em;
+}
+
+.titrevoyage2 {
+    font-family: 'Rancho', cursive;
+    color:#52908b;
+    font-size:3em;
+    margin-top:-37.9em;
+    margin-left:-4em;
 }
 
 .encadrevoyage2 {
     background-color: #dcdacd;
     height:18em;
-    width:50em;
-    margin-top:-3.75em;
-    margin-left:28em;
+    width:52em;
+    margin-top:-110em;
+    margin-left:35em;
+}
+
+.textevoyage2 {
+    font-family: 'Halant', serif;
+    font-size:1.2em;
+    padding-right:24em;
+    padding-top:0.4em;
+    padding-left:0.8em;
+}
+
+.lienvoyage2 {
+    font-family: 'Halant', serif;
+    color:#707070;
+    font-style:italic;
+    text-align:left;
+    padding-left:12em;
+    margin-top:-1.5em;
 }
 
 
@@ -43,18 +109,43 @@
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
-    height:7em;
-    width:5.5em;
-    margin-top:2em;
-    margin-left:25.3em;
+    height:8em;
+    width:6.5em;
+    margin-top:-89em;
+    margin-left:32em;
+}
+
+.titrevoyage3 {
+    font-family: 'Rancho', cursive;
+    color:#52908b;
+    font-size:3em;
+    margin-top:-29.65em;
+    margin-left:0.5em;
 }
 
 .encadrevoyage3 {
     background-color: #dcdacd;
     height:18em;
-    width:50em;
-    margin-top:-3.75em;
-    margin-left:28em;
+    width:52em;
+    margin-top:-85em;
+    margin-left:35em;
+}
+
+.textevoyage3 {
+    font-family: 'Halant', serif;
+    text-align:right;
+    font-size:1.2em;
+    padding-left:24em;
+    padding-top:0.4em;
+    padding-right:0.8em;
+}
+
+.lienvoyage3 {
+    font-family: 'Halant', serif;
+    color:#707070;
+    font-style:italic;
+    text-align:right;
+    margin-left:40em;
 }
 
 
@@ -63,17 +154,42 @@
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
-    height:7em;
-    width:5.5em;
-    margin-top:2em;
-    margin-left:75.25em;
+    height:8em;
+    width:6.5em;
+    margin-top:-64em;
+    margin-left:84em;
+}
+
+.titrevoyage4 {
+    font-family: 'Rancho', cursive;
+    color:#52908b;
+    font-size:3em;
+    margin-left:-4.1em;
+    margin-top:0.8em;
 }
 
 .encadrevoyage4 {
     background-color: #dcdacd;
     height:18em;
-    width:50em;
-    margin-top:-3.75em;
+    width:52em;
+    margin-top:-66.5em;
     margin-bottom:8em;
-    margin-left:28em;
+    margin-left:35em;
+}
+
+.textevoyage4 {
+    font-family: 'Halant', serif;
+    font-size:1.2em;
+    padding-right:24em;
+    padding-top:0.4em;
+    padding-left:0.8em;
+}
+
+.lienvoyage4 {
+    font-family: 'Halant', serif;
+    color:#707070;
+    font-style:italic;
+    text-align:left;
+    padding-left:12em;
+    margin-top:-1.5em;
 }
