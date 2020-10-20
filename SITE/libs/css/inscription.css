@@ -7,12 +7,93 @@
     margin-top:0.2em;
 }
 
+    @media screen and (max-width : 1280px) {
+        .nomtravelog {
+                font-size:4em;
+                margin-left:0.5em;
+                margin-top:0.6em;
+            }
+    }
+
+    @media screen and (max-width : 1070px) {
+        .nomtravelog {
+            margin-left:0.7em;
+            margin-top:0.5em;
+            }
+    }
+
+    @media screen and (max-width : 900px) {
+        .nomtravelog {
+            margin-left:0.5em;
+            margin-top:0.8em;
+            }
+    }
+
+    @media screen and (max-width : 700px) {
+        .nomtravelog {
+            margin-left:-0.2em;
+        }
+    }
+
+    @media screen and (max-width : 550px) {
+        .nomtravelog {
+            font-size:3em;
+            margin-top:-0.5em;
+            margin-left:2.25em;
+        }
+    }
+
 .logotravelog {
     height: 18em;
     width: 18em;
     margin-top:-2em;
     margin-left:12em;
 }
+
+    @media screen and (max-width : 1280px) {
+        .logotravelog {
+                height: 14em;
+                width: 14em;
+                margin-top:1em;
+                margin-left:13em;
+            }
+    }
+
+    @media screen and (max-width : 1070px) {
+        .logotravelog {
+            height:10em;
+            width: 10em;
+            margin-top:2.5em;
+            margin-left:11em;
+            }
+    }
+
+    @media screen and (max-width : 900px) {
+        .logotravelog {
+            height:10em;
+            width:10em;
+            margin-top:5em;
+            margin-left:7em;
+            }
+    }
+
+    @media screen and (max-width : 700px) {
+        .logotravelog {
+            height:9em;
+            width:9em;
+            margin-top:1.5em;
+            margin-left:5.5em;
+        }
+    }
+
+    @media screen and (max-width : 550px) {
+        .logotravelog {
+            height:8em;
+            width:8em;
+            margin-top:1em;
+            margin-left:10em;
+        }
+    }
 
 
 /* DESIGN GENERAL DE L'ENCADRE */
@@ -25,6 +106,51 @@
     border: solid #52908b 0.2em;
 }
 
+    @media screen and (max-width : 1280px) {
+        .encadreinscription {
+                height:25em;
+                width: 25em;
+                margin-top:-6em;
+                margin-left:9em;
+            }
+    }
+
+    @media screen and (max-width : 1070px) {
+        .encadreinscription {
+            height:25em;
+            width: 25em;
+            margin-top:-4em;
+            margin-left:21em;
+        }
+    }
+
+    @media screen and (max-width : 900px) {
+        .encadreinscription {
+            height:25em;
+            width:25em;
+            margin-top:-5em;
+            margin-left:16em;
+        }
+    }
+
+    @media screen and (max-width : 700px) {
+        .encadreinscription {
+            height:25em;
+            width:25em;
+            margin-top:-0.5em;
+            margin-left:8em;
+        }
+    }
+
+    @media screen and (max-width : 550px) {
+        .encadreinscription {
+            height:20em;
+            width:20em;
+            margin-top:1.5em;
+            margin-left:4em;
+        }
+    }
+
 
 /* INTRODUCTION DE L'ENCADRE */
 .introencadreinscription {
@@ -33,6 +159,18 @@
     font-size:1.6em;
     padding-top:0.5em;
 }
+
+    @media screen and (max-width : 1280px) {
+        .introencadreinscription {
+                font-size:1.2em;
+            }
+    }
+
+    @media screen and (max-width : 550px) {
+        .introencadreinscription {
+            font-size:1em;
+        }
+    }
 
 
 /* FORMULAIRE D'INSCRIPTION */
@@ -44,10 +182,37 @@
     margin-left:5em;
 }
 
+    @media screen and (max-width : 1280px) {
+        .formulaireinscription {
+                width: 14em;
+                margin-left:5.25em;
+            }
+    }
+
+    @media screen and (max-width : 550px) {
+        .formulaireinscription {
+            width:12em;
+            margin-left:4em;
+            padding-top:0.4em;
+        }
+    }
+
 .pseudoinscription, .adressemailinscription, .motdepasseinscription, .confirmationmotdepasseinscription {
     border : solid #707070 0.01em;
     font-size:1.25em;
 }
+
+    @media screen and (max-width : 1280px) {
+        .pseudoinscription, .adressemailinscription, .motdepasseinscription, .confirmationmotdepasseinscription {
+                font-size:0.9em;
+            }
+    }
+
+    @media screen and (max-width : 550px) {
+        .pseudoinscription, .adressemailinscription, .motdepasseinscription, .confirmationmotdepasseinscription {
+            font-size:0.7em;
+        }
+    }
 
 
 /* CONDITIONS GENERALES D'UTILISATION */
@@ -55,6 +220,19 @@
     color:#707070;
     font-size:0.8em;
 }
+
+    @media screen and (max-width : 1280px) {
+        .CGU {
+                font-size:0.6em;
+            }
+    }
+
+    @media screen and (max-width : 550px) {
+        .CGU {
+            font-size:0.52em;
+        }
+    }
+
 
  /* CASE */
 .container {
@@ -146,6 +324,24 @@
     margin-top:-0.5em;
 }
 
+    @media screen and (max-width : 1280px) {
+        .boutoninscription {
+                width: 11.2em;
+                margin-left:4.3em;
+                font-size:1.25em;
+                padding-top: 0.15em;;
+            }
+    }
+
+    @media screen and (max-width : 550px) {
+        .boutoninscription {
+            width:11.8em;
+            margin-left:4.2em;
+            font-size:1em;
+            margin-top:-1em;
+        }
+    }
+
 
 /* PHRASE CONNEXION */
 .connexion {
@@ -155,6 +351,19 @@
     text-align:center;
     margin-top:1em;
 }
+
+    @media screen and (max-width : 1280px) {
+        .connexion {
+                font-size:1.1em;
+            }
+    }
+
+    @media screen and (max-width : 550px) {
+        .connexion {
+            font-size:0.8em;
+            margin-top:0.5em;
+        }
+    }
 
 /* LIEN VERS LA PAGE CONNEXION */
 .lienconnexion:link {
@@ -183,6 +392,28 @@
     transform: rotate(-15deg);
 }
 
+    @media screen and (max-width : 1280px) {
+        .polaroid1 {
+                height:12em;
+                width: 12em;
+                margin-top:6em;
+            }
+    }
+
+    @media screen and (max-width : 1150px) {
+        .polaroid1 {
+                height:11em;
+                width:11em;
+                margin-left:6em;
+            }
+    }
+
+    @media screen and (max-width : 1070px) {
+        .polaroid1 {
+                display:none;
+            }
+    }
+
 /* POLAROID DE DROITE */
 .polaroid2 {
     height: 24em;
@@ -191,3 +422,27 @@
     margin-left:4em;
     transform: rotate(8deg);
 }
+
+    @media screen and (max-width : 1280px) {
+        .polaroid2 {
+                height:16em;
+                width: 14em;
+                margin-top:-10em;
+                margin-left:5em;
+            }
+    }
+
+    @media screen and (max-width : 1150px) {
+        .polaroid2 {
+                height:15em;
+                width:13em;
+                margin-top:-28em;
+                margin-left:54em;
+            }
+    }
+
+    @media screen and (max-width : 1070px) {
+        .polaroid2 {
+                display:none;
+            }
+    }
