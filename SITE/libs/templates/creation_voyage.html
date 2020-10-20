@@ -18,15 +18,21 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <h1>Création de voyage</h1>
+
+                <!--Titre du voyage-->
                     <div class="form-titre col-lg-12 col-md-12 col-sm-12 col-12">
-                        <input class="form-control" type="text" placeholder="Titre"> <!--Titre du voyage-->
+                        <input class="form-control" type="text" placeholder="Titre">
                     </div>
-                        <h4>Filtres</h4> <!--Les filtres-->
+
+                        <!--Les filtres-->
+                        <h4>Filtres</h4>
                             <div class="row col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-around">
                                 <p>+ ajouter un continent</p>
                                 <p>+ ajouter un pays</p>
                                 <p>+ ajouter une ville</p>
-                                    <div class="row col-lg-10 col-md-10 col-sm-10 col-10 justify-content-between"> <!--Les dates du séjour-->
+
+                                    <!--Les dates du séjour-->
+                                    <div class="row col-lg-10 col-md-10 col-sm-10 col-10 justify-content-between">
                                         <p>
                                             Date de début de séjour: <input type="date" name="date_debut_sejour">
                                         </p>
@@ -34,11 +40,14 @@
                                         <p>
                                             Date de fin de séjour: <input type="date" name="date_fin_sejour">
                                         </p>
+
+                                            <!--Formulaire du texte du voyage-->
                                             <div class="form_text col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <textarea class="form-control" id="texte_voyage" rows="20" placeholder="Texte"></textarea> <!--Formulaire du texte du voyage-->
+                                                <textarea class="form-control" id="texte_voyage" rows="20" placeholder="Texte"></textarea>
                                             </div>
 
-                                            <div class="boutons d-flex justify-content-center col-lg-12 col-md-12 col-sm-12 col-12"> <!--Les boutons-->
+                                            <!--Les boutons d'ajout-->
+                                            <div class="boutons d-flex justify-content-center col-lg-12 col-md-12 col-sm-12 col-12">
                                                 <button type="button" class="btn btn-primary btn-lg center-block">+ Ajouter un sous-titre</button>
                                             </div>
 
@@ -46,19 +55,27 @@
                                                 <button type="button" class="btn btn-primary btn-lg">+ Ajouter un texte</button>
                                             </div>
                                         
+                                            <!--Form pour ajouter ses fichiers-->
                                             <div class="add-file d-flex justify-content-center col-lg-12 col-md-12 col-sm-12 col-12">
                                                 <form>
                                                     <div class="form-files justify-content-center">
-                                                        <input type="file" class="form-control-file" id="ajoutFichiers"> <!--Form pour ajouter ses fichiers-->
+                                                        <input type="file" class="form-control-file" id="ajoutFichiers">
                                                     </div>
                                                 </form>
                                             </div>
 
-                                                <div class="checkbox">
+                                                <!--La checkbox-->
+                                                <div class="checkbox col-lg-12 col-md-12 col-sm-12 col-12">
                                                     <label>
                                                         <input type="checkbox"> Partager ce voyage uniquement avec mes amis
                                                     </label>
                                                 </div>
+
+                                                <!-- Les boutons pour la publication -->
+                                                <div class="btn-group d-flex justify-content-center" role="group" aria-label="Basic example">
+                                                    <button type="button" class="btn btn-primary">Ajouter maintenant</button>
+                                                    <button type="button" class="btn btn-primary">Ajouter plus tard</button>
+                                                  </div>
                                     </div>
                             </div>
             </div>
