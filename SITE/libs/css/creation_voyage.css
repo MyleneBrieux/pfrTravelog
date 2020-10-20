@@ -1,4 +1,7 @@
 /* Corps de la page */
+body{
+    background-color: #dcdacd;
+}
 h1{
     text-align: center;
     color: #52908b;
@@ -10,6 +13,10 @@ h4{
 
 .header{
     margin-top: 3em;
+}
+
+mark{
+    background-color: #52908b;
 }
 
 /* Boutons */
@@ -25,6 +32,11 @@ h4{
     background-color: #52908b;
 }
 
+.btn-group{
+    border: none;
+    margin-top: 1em;
+}
+
 /* Formulaires */
 .form-titre{
     margin-top: 1em;
@@ -32,9 +44,18 @@ h4{
 }
 
 .form-files{
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 
 .add-file{
     margin-top: 1em;
+}
+
+.checkbox{
+    color: white;
+}
+
+.addfiles{
+    color: white;
 }
