@@ -6,7 +6,7 @@
     height:8em;
     width:6.5em;
     margin-top:6em;
-    margin-left:14.5em;
+    margin-left:6.5em;
 }
 
 .titrevoyage1 {
@@ -21,8 +21,8 @@
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-134em;
-    margin-left:35em;
+    margin-top:-105.5em;
+    margin-left:24em;
 }
 
 .textevoyage1 {
@@ -39,24 +39,25 @@
     color:#707070;
     font-style:italic;
     text-align:right;
-    margin-left:40em;
+    margin-left:42.5em;
 }
 
-a:link {
-    color: #707070;
-}
-  
-a:visited {
-    color: #707070;
-}
-  
-a:focus {
-    background: none;
-}
-  
-a:hover {     
-    background: none;
-}
+    .lienvoyage1:link {
+        color: #707070;
+    }
+    
+    .lienvoyage1:visited {
+        color: #707070;
+    }
+    
+    .lienvoyage1:focus {
+        background: none;
+    }
+    
+    .lienvoyage1:hover {   
+        color:#52908b;  
+        background: none;
+    }
 
 
 /* VOYAGE 2 */
@@ -66,15 +67,15 @@ a:hover {
     background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:-113.5em;
-    margin-left:83.5em;
+    margin-top:-84em;
+    margin-left:72.5em;
 }
 
 .titrevoyage2 {
     font-family: 'Rancho', cursive;
     color:#52908b;
     font-size:3em;
-    margin-top:-37.9em;
+    margin-top:-28em;
     margin-left:-4em;
 }
 
@@ -82,8 +83,8 @@ a:hover {
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-110em;
-    margin-left:35em;
+    margin-top:-80em;
+    margin-left:24em;
 }
 
 .textevoyage2 {
@@ -103,6 +104,23 @@ a:hover {
     margin-top:-1.5em;
 }
 
+    .lienvoyage2:link {
+        color: #707070;
+    }
+    
+    .lienvoyage2:visited {
+        color: #707070;
+    }
+    
+    .lienvoyage2:focus {
+        background: none;
+    }
+    
+    .lienvoyage2:hover {   
+        color:#52908b;  
+        background: none;
+    }
+
 
 /* VOYAGE 3 */
 .photoprofil3 {
@@ -111,15 +129,15 @@ a:hover {
     background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:-89em;
-    margin-left:32em;
+    margin-top:-58.5em;
+    margin-left:21em;
 }
 
 .titrevoyage3 {
     font-family: 'Rancho', cursive;
     color:#52908b;
     font-size:3em;
-    margin-top:-29.65em;
+    margin-top:-19.5em;
     margin-left:0.5em;
 }
 
@@ -127,8 +145,8 @@ a:hover {
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-85em;
-    margin-left:35em;
+    margin-top:-54.5em;
+    margin-left:24em;
 }
 
 .textevoyage3 {
@@ -145,8 +163,25 @@ a:hover {
     color:#707070;
     font-style:italic;
     text-align:right;
-    margin-left:40em;
+    margin-left:42.5em;
 }
+
+    .lienvoyage3:link {
+        color: #707070;
+    }
+    
+    .lienvoyage3:visited {
+        color: #707070;
+    }
+    
+    .lienvoyage3:focus {
+        background: none;
+    }
+    
+    .lienvoyage3:hover {   
+        color:#52908b;  
+        background: none;
+    }
 
 
 /* VOYAGE 4 */
@@ -156,8 +191,8 @@ a:hover {
     background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:-64em;
-    margin-left:84em;
+    margin-top:-33em;
+    margin-left:72.5em;
 }
 
 .titrevoyage4 {
@@ -165,16 +200,16 @@ a:hover {
     color:#52908b;
     font-size:3em;
     margin-left:-4.1em;
-    margin-top:0.8em;
+    margin-top:-11em;
 }
 
 .encadrevoyage4 {
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-66.5em;
+    margin-top:-29em;
     margin-bottom:8em;
-    margin-left:35em;
+    margin-left:24em;
 }
 
 .textevoyage4 {
@@ -193,3 +228,20 @@ a:hover {
     padding-left:12em;
     margin-top:-1.5em;
 }
+
+    .lienvoyage4:link {
+        color: #707070;
+    }
+    
+    .lienvoyage4:visited {
+        color: #707070;
+    }
+    
+    .lienvoyage4:focus {
+        background: none;
+    }
+    
+    .lienvoyage4:hover {   
+        color:#52908b;  
+        background: none;
+    }
