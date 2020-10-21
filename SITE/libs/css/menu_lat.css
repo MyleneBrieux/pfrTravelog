@@ -5,7 +5,34 @@
     margin-top:3.7em;
     margin-bottom:2.8em;
     padding-bottom:100%;
+    width:14.5em;
 }
+
+    @media screen and (max-width : 1200px) {
+        .menulat {
+                width:12em;
+            }
+    }
+
+    @media screen and (max-width : 1000px) {
+        .menulat {
+                width:10em;
+            }
+    }
+
+    @media screen and (max-width : 600px) {
+        .menulat {
+                width:36.5em;
+                padding-bottom:1%;
+            }
+    }
+
+    @media screen and (max-width : 480px) {
+        .menulat {
+                width:29em;
+                padding-bottom:1%;
+            }
+    }
 
 
 /* FLECHES */
@@ -20,6 +47,50 @@
     margin-bottom:10%;
 }
 
+    @media screen and (max-width : 1200px) {
+        .fleche-bas {
+            border-right: 0.4em solid transparent;
+            border-left: 0.4em solid transparent;
+            border-top: 0.4em solid black;
+            margin-left:80%;
+            margin-top:-12.5%;
+            margin-bottom:10%;
+            }
+    }
+
+    @media screen and (max-width : 1000px) {
+        .fleche-bas {
+            border-right: 0.3em solid transparent;
+            border-left: 0.3em solid transparent;
+            border-top: 0.3em solid black;
+            margin-left:80%;
+            margin-top:-14.5%;
+            margin-bottom:10%;
+            }
+    }
+
+    @media screen and (max-width : 600px) {
+        .fleche-bas {
+            border-right: 0.4em solid transparent;
+            border-left: 0.4em solid transparent;
+            border-top: 0.4em solid black;
+            margin-left:80%;
+            margin-top:-3%;
+            margin-bottom:4%;
+            }
+    }
+
+    @media screen and (max-width : 480px) {
+        .fleche-bas {
+            border-right: 0.3em solid transparent;
+            border-left: 0.3em solid transparent;
+            border-top: 0.3em solid black;
+            margin-left:80%;
+            margin-top:-3%;
+            margin-bottom:4%;
+            }
+    }
+
 .fleche-haut {
     width: 0;
     height: 0;
@@ -31,21 +102,149 @@
     margin-bottom:10%;
 }
 
+    @media screen and (max-width : 1200px) {
+        .fleche-haut {
+            border-right: 0.4em solid transparent;
+            border-left: 0.4em solid transparent;
+            border-bottom: 0.4em solid black;
+            margin-left:80%;
+            margin-top:-12.5%;
+            margin-bottom:10%;
+            }
+    }
+
+    @media screen and (max-width : 1000px) {
+        .fleche-haut {
+            border-right: 0.3em solid transparent;
+            border-left: 0.3em solid transparent;
+            border-bottom: 0.3em solid black;
+            margin-left:80%;
+            margin-top:-14.5%;
+            margin-bottom:10%;
+            }
+    }
+
+    @media screen and (max-width : 600px) {
+        .fleche-haut {
+            border-right: 0.4em solid transparent;
+            border-left: 0.4em solid transparent;
+            border-bottom: 0.4em solid black;
+            margin-left:80%;
+            margin-top:-5%;
+            margin-bottom:4%;
+            }
+    }
+
+    @media screen and (max-width : 480px) {
+        .fleche-haut {
+            border-right: 0.3em solid transparent;
+            border-left: 0.3em solid transparent;
+            border-bottom: 0.3em solid black;
+            margin-left:80%;
+            margin-top:-5%;
+            margin-bottom:4%;
+            }
+    }
 
 /* FILTRES */
 .continent {
     padding-top:7%;
+    padding-left:0.6em;;
     font-size:1.25em;
 }
 
+    @media screen and (max-width : 1200px) {
+        .continent {
+            font-size:1.1em;
+            }
+    }
+
+    @media screen and (max-width : 1000px) {
+        .continent {
+            font-size:1em;
+            }
+    }
+
+    @media screen and (max-width : 600px) {
+        .continent {
+            font-size:1.1em;
+            padding-top:3%;
+            padding-bottom:1%;
+            }
+    }
+
+    @media screen and (max-width : 480px) {
+        .continent {
+            font-size:0.8em;
+            padding-top:3%;
+            padding-bottom:1%;
+            }
+    }
+
 .pays, .ville, .leplus {
     font-size:1.25em;
+    padding-left:0.6em;
 }
+
+    @media screen and (max-width : 1200px) {
+        .pays, .ville, .leplus {
+            font-size:1.1em;
+            }
+    }
+
+    @media screen and (max-width : 1000px) {
+        .pays, .ville, .leplus {
+            font-size:1em;
+            }
+    }
+
+    @media screen and (max-width : 600px) {
+        .pays, .ville, .leplus {
+            font-size:1.1em;
+            }
+    }
+
+    @media screen and (max-width : 480px) {
+        .pays, .ville, .leplus {
+            font-size:0.8em;
+            }
+    }
 
 .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
     color:#707070;
     font-size:1em;
+    padding-left:1em;
 }
+
+    @media screen and (max-width : 1200px) {
+        .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+            font-size:0.9em;
+            }
+    }
+
+    @media screen and (max-width : 1000px) {
+        .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+            font-size:0.8em;
+            }
+
+        .AmeriqueNord, .AmeriqueSud {
+            margin-bottom:-1.6em;
+        }
+    }
+
+    @media screen and (max-width : 600px) {
+        .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+            font-size:0.9em;
+            margin-bottom:0em;
+            }
+    }
+
+    @media screen and (max-width : 480px) {
+        .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+            font-size:0.7em;
+            margin-bottom:0em;
+            }
+    }
 
  /* CASES ou CHECKBOX */
 .container {
