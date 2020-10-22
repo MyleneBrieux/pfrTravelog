@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="libs/icofont/icofont.css">
-    <link rel="stylesheet" href="libs/css/navbar.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../icofont/icofont.css">
+    <link rel="stylesheet" href="../css/navbar.css">
 
-    <script src="libs/jquery/jquery-3.5.1.js" defer></script>
-    <script src="libs/popper/popper.js" defer></script>
-    <script src="libs/bootstrap/js/bootstrap.js" defer></script>
-    <script src="libs/js/index.js" defer></script>
+    <script src="../jquery/jquery-3.5.1.js" defer></script>
+    <script src="../popper/popper.js" defer></script>
+    <script src="../bootstrap/js/bootstrap.js" defer></script>
+    <script src="../js/index.js" defer></script>
 
     <title>TRAVELOG</title>
 </head>
@@ -27,7 +27,7 @@
 
             <nav class="navbar navbar-expand-md navbar-dark bg-perso nav fixed-top bg-turquoise fixed-top">
 
-                <div class="logo-navbar"><img  src="img/logo_site/logo_blanc2.png"
+                <div class="logo-navbar"><img  src="../../img/logo_site/logo_blanc2.png"
                         alt="logo Travelog"></div>
 
                 <div class="col-3">
@@ -56,8 +56,8 @@
 
                 <div class="barre-bl-droite"></div>
 
-                <img class="cloche" src="img/notifs.png" alt="cloche de notification">
-                <img class="logo-ami" src="img/ami.png" alt="logo ami">
+                <img class="cloche" src="../../img/notifs.png" alt="cloche de notification">
+                <img class="logo-ami" src="../../img/ami.png" alt="logo ami">
 
 
 
@@ -101,7 +101,6 @@
 
 
 
-                
 
 
             </nav>
