@@ -3,11 +3,13 @@ body{
     background-color: #dcdacd;
 }
 h1{
+    font-family: 'Rancho', cursive;
     text-align: center;
     color: #52908b;
 }
 
 h4{
+    font-family: 'Halant', serif;
     text-align: center;
 }
 
@@ -19,8 +21,13 @@ mark{
     background-color: #52908b;
 }
 
+p{
+    font-family: 'Halant', serif;
+}
+
 /* Boutons */
 .boutons{
+    font-family: 'Halant', serif;
     margin-top: 1em;
 }
 
@@ -29,6 +36,7 @@ mark{
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus{
+    font-family: 'Halant', serif;
     background-color: #52908b;
 }
 
@@ -39,11 +47,17 @@ mark{
 
 /* Formulaires */
 .form-titre{
+    font-family: 'Halant', serif;
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
+.form-text{
+    font-family: 'Halant', serif;
+}
+
 .form-files{
+    font-family: 'Halant', serif;
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -53,6 +67,7 @@ mark{
 }
 
 .checkbox{
+    font-family: 'Halant', serif;
     color: white;
 }
 
