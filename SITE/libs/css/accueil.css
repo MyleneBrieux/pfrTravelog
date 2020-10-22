@@ -1,19 +1,28 @@
+/* RESULTATS FILTRES VOYAGES */
+.rsvoyages {
+    font-family: 'Halant', serif;
+    color: #707070;
+    font-size:1em;
+    font-style: italic;
+    margin-top:5em;
+    margin-left:30em;
+}
+
 /* VOYAGE 1 */
 .photoprofil1 {
     z-index:2;
     border:solid #707070 0.1em;
-    background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:6em;
-    margin-left:6.5em;
+    margin-top:-113em;
+    margin-left:21em;
 }
 
 .titrevoyage1 {
     font-family: 'Rancho', cursive;
     font-size:3em;
     color:#52908b;
-    margin-top:1.9em;
+    margin-top:-37.65em;
     margin-left:0.4em;
 }
 
@@ -21,9 +30,17 @@
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-105.5em;
+    margin-top:-109.5em;
     margin-left:24em;
 }
+
+/* .photovoyage1 {
+    border:solid #707070 0.1em;
+    height:8em;
+    width:20em;
+    margin-top:-109.5em;
+    margin-left:24em;
+} */
 
 .textevoyage1 {
     font-family: 'Halant', serif;
@@ -67,7 +84,7 @@
     background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:-84em;
+    margin-top:-88em;
     margin-left:72.5em;
 }
 
@@ -75,7 +92,7 @@
     font-family: 'Rancho', cursive;
     color:#52908b;
     font-size:3em;
-    margin-top:-28em;
+    margin-top:-29.25em;
     margin-left:-4em;
 }
 
@@ -83,8 +100,16 @@
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-80em;
+    margin-top:-84.5em;
     margin-left:24em;
+}
+
+.photovoyage2 {
+    border:solid #707070 0.1em;
+    height:16em;
+    width:22em;
+    margin-top:1em;
+    margin-left:25em;
 }
 
 .textevoyage2 {
@@ -129,7 +154,7 @@
     background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:-58.5em;
+    margin-top:-63em;
     margin-left:21em;
 }
 
@@ -137,7 +162,7 @@
     font-family: 'Rancho', cursive;
     color:#52908b;
     font-size:3em;
-    margin-top:-19.5em;
+    margin-top:-20.9em;
     margin-left:0.5em;
 }
 
@@ -145,7 +170,7 @@
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-54.5em;
+    margin-top:-59em;
     margin-left:24em;
 }
 
@@ -191,7 +216,7 @@
     background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:-33em;
+    margin-top:-37em;
     margin-left:72.5em;
 }
 
@@ -200,14 +225,14 @@
     color:#52908b;
     font-size:3em;
     margin-left:-4.1em;
-    margin-top:-11em;
+    margin-top:-12.25em;
 }
 
 .encadrevoyage4 {
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-29em;
+    margin-top:-33em;
     margin-bottom:8em;
     margin-left:24em;
 }
@@ -245,3 +270,13 @@
         color:#52908b;  
         background: none;
     }
+
+
+/* PAGES */
+.pages {
+    font-family: 'Halant', serif;
+    color: #707070;
+    font-size:1.5em;
+    margin-top:-4em;
+    margin-left:30em;
+}

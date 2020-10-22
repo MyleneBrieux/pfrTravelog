@@ -17,15 +17,20 @@
 <body>
     <div class="container-fluid">
 
-        <!-- VOYAGE 1 -->
+        <!-- RESULTATS FILTRES VOYAGES -->
         <div class="row">
-
+            <?php include ("navbar.php")?>
             <?php include ("menu_lat.php")?>
 
-            <div class="photoprofil1">
-            </div>
+            <p class="rsvoyages">XX voyages trouvés</p>
+        </div>
+
+        <div class="row">
+        <!-- VOYAGE 1 -->
+            <img src="../../images/photos/photo_profil_detail_voyage.jgp" class="photoprofil1"/>
             <h1 class="titrevoyage1">Titre</h1>
             <div class="encadrevoyage1">
+                <!-- <img src="../../images/photos/trevi.jgp" class="photovoyage1"/> -->
                 <p class="textevoyage1">
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -86,6 +91,11 @@
                     Découvrir ce voyage
                 </a>
             </div>
+        </div>
+
+        <!-- PAGES -->
+        <div class="row">
+            <p class="pages">< 1 2 ... 4 ></p>
         </div>
 
     </div>
