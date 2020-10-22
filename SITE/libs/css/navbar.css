@@ -1,59 +1,117 @@
-/* body {
-    color: white !important;
-} */
+.utilisateur{
+font-size: 1.5em;
+color: white !important;
+}
 
-.navbar {
+.bg-turquoise{
     background-color: #52908B;
-    height: 3.7em;
+    max-height: 5em !important ;
     }
 
-/*SECTION GAUCHE*/
-.logo{
-    margin-left: -10%;
+    @media (max-width: 600px){
+        .travelog-navbar{
+            margin-left: 00%;
+            margin-right: 20% !important;
+            }
+        }
+
+.logo-navbar{
+    max-height: 8em !important;
+    margin-top: -2%;
+    margin-bottom: -2%;
+    margin-right: -7%;
+}
+
+@media (max-width: 770px){
+    .logo-navbar{
+        display: none !important;
+        }
     }
 
-.travelog {
-    color: white !important;
+.travelog-navbar{
+    font-size: 1.5em !important;
     font-weight: bolder;
-    font-size: 2em;
-    margin-top: 15%;
-    margin-left: 30%;
-    }
+    margin-left: 80%;
+}
+
+    @media (max-width: 712px){
+        .travelog-navbar{
+            margin-left: 00%;
+            margin-right: 20% !important;
+            font-size: 1.3em !important;    
+            }
+        }
+
+    @media (min-width: 712px) and (max-width: 905px){
+        .travelog-navbar{
+            margin-left: 40%;
+            margin-right: 20% !important;
+            }
+        }  
 
 
-/*SECTION MILLIEU*/
-.petite-barre-gauche {
-    height: 3em;
-    background-color: white;
+.logo-ami{
+    max-width: 50% !important;
+}
+  
+/* BARRES BLANCHES*/
+
+.barre-bl-gauche{
+    background-color: white !important;
     width: 0.1em;
-    }
-
-.recherche {
-    position: relative;
-    left: 5.5em;
-    width: 30em !important;
+    height: 3em;
+    margin-left: 55%;
 }
 
-.petite-barre-droite{
-    height: 3em;
-    background-color: white;
+    @media (min-width: 1058px) and (max-width: 1461px){
+        .barre-bl-gauche{
+            margin-left: 40%;
+            }
+        } 
+
+    @media (max-width: 1058px){
+        .barre-bl-gauche, .barre-bl-droite{
+              display: none;
+            }
+        } 
+
+
+.barre-bl-droite{
+    background-color: white !important;
     width: 0.1em;
-    margin-left: 20%;
-    z-index: 500;
+    height: 3.5em;
+    margin-left: 2%;  
+}
+
+    .barre-bl-bas{
+        background-color: white !important;
+        width: 0.1em;
+        height: 2em;
+        margin-top: 0.5em;
     }
 
-/*SECTION DROITE*/
-
-.menuDeroulant {
-    width: 10em;
-    height: 3em;
-    background-color: #52908B;
-    border: hidden;
-    font-size: 1.5em;
-    position: relative;
-    top: -0.3em;
+.footer{
+    height: 6%;
+    background-color:  #52908B;
+    color: white;
+    font-weight: bolder;
+    font-size: 1em;
+    text-align: center !important;
+    align-items: center !important;
 }
 
+@media (max-width: 818px){
+    .footer{
+        font-size: 0.8em !important;
+        justify-content: center !important;
+        padding-bottom: 20px !important;
+        min-height: 40px !important;
+        }
+    } 
+
+
+
+    
 
 
 
@@ -62,14 +120,18 @@
 
 
 
-.logo-bonhomme {
-    position: relative;
-    top: -7.8em;
-    right: 2em;
-}
 
-.logo-cloche {
-    position: relative;
-    top: -10.5em;
-    right: 7em;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
