@@ -22,6 +22,13 @@
     text-align: center;
 }
 
+.placenav{
+    margin-top:3.7em;
+}
+
+.placefooter{
+    margin-bottom:2.8em;
+}
 
 /*CORPS*/
 
@@ -41,4 +48,15 @@ color: rgba(255, 255, 255, 0.8);
 .taille_logo_detail_voyage{
     height:8em;
     width: auto;
+}
+
+.element_like_comm{
+    padding-left: 61em !important;
+    margin-top: -5.5em;
+}
+
+.nofloat{
+    float:none !important;
+    color:red !important;
+    opacity: 1 !important;
 }
