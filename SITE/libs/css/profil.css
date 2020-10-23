@@ -1,0 +1,65 @@
+body{
+    color: #48515D !important;
+}
+
+
+.menu-gauche {
+    background-color:#dcdacd;
+    font-family: 'Halant', serif;
+    width:20% !important;
+    min-height: 42em !important;
+    margin-left: -0.9em;
+}
+
+.photo-profil{
+margin-top: 30%;
+margin-left: 25%;
+}
+
+.membre{
+    margin-top: 5%;
+font-size: 1.1em;
+margin-left: 22%;
+}
+
+.age{
+    font-size: 1.8em;
+    margin-left: 32%;
+    font-weight: bolder;
+}
+
+.langues-parlees{
+    margin-top: 10%;
+    font-size: 1.2em;
+    margin-left: 22%;
+    font-weight: bolder;
+    text-decoration-line: underline ;
+}
+
+.langues{
+    font-size: 1em;
+    margin-left: 22%;
+}
+
+.logos-menu{
+    margin-top: 10% !important;
+    margin-left: 25%;
+    }
+
+.oeil{
+margin-bottom: 05%;
+}
+
+.photo-profil{
+
+}
+
+.bouton-contact{
+    background-color: #52908B !important;
+    margin-top: 10%;
+    margin-left: 23%;
+}
+
+.formulaire1{
+margin-top: 5% !important;
+}
