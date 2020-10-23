@@ -25,62 +25,66 @@
     ?>
 
     <div class="container-fluid">
-        <div class="row">
 
-            <div class="menu-gauche col-3">
+        <!-- MENU DE GAUCHE -->
+        <div class="menu-gauche menulat col-3">
 
-                <img src="../../img/photos/nath.jpg" alt="Bootstrap" class="photo-profil">
+            <img src="../../img/photos/nath.jpg" alt="Bootstrap" class="photo-profil">
 
-                <div class="membre">Membre depuis le : </div>
-                <div class="age">35 ans</div>
-                <div class="langues-parlees">Langues parlées :</div>
+            <div class="membre">Membre depuis le : </div>
+            <div class="age">35 ans</div>
+            <div class="langues-parlees">Langues parlées :</div>
 
-                <div class="langues">
-                    <ul>
-                        <li>Français</li>
-
-                    </ul>
-                </div>
-
-                <div class="logos-menu">
-                    <div><img class="oeil" src="../../img/logos_divers/suivre2.png" alt="logo suivre"
-                            class="photo-profil"><span>Suivre</span></div>
-                    <div><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
-                            class="photo-profil"><span>Ajouter en ami</span></div>
-                </div>
-
-                <button type="button" class="btn btn-info bouton-contact">Contactez moi</button>
-
+            <div class="langues">
+                <ul>
+                    <li>Français</li>
+                </ul>
             </div>
 
+            <div class="logos-menu">
+                <div><a href=""><img class="oeil" src="../../img/logos_divers/suivre2.png" alt="logo suivre"
+                            class="photo-profil"><span class="liens">Suivre</span></a></div>
+
+                <div><a href=""><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
+                            class="photo-profil"><span class="liens">Ajouter en ami</span></a></div>
+            </div>
+
+            <button type="button" class="btn btn-info bouton-contact">Contactez moi</button>
+
+        </div>
 
 
+        <!-- BODY -->
+        <div class="col-9">
 
+            <div class="row">
+                <div class="txt-profil">Profil :</div>
+            </div>
 
-
-
-            <div class="container col-8 formulaire1">
-                <h1>Formulaires</h1>
+            <div class="row formulaire1">
                 <form>
                     <div class="row mb-3">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Nom">
+                        <span>Nom :</span>
+                        <div class="col-5">
+                            <input type="text" class="form-control">
                         </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Prénom">
+                        <span>Prénom :</span>
+                        <div class="col-5">
+                            <input type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Nom">
+                        <span>Date de naissance :</span>
+                        <div class="col-3">
+                            <input type="date" class="form-control">
                         </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Prénom">
+                        <span class="nationnalite">Nationnalité :</span>
+                        <div class="col-5">
+                            <input type="text" class="form-control">
                         </div>
                     </div>
                 </form>
             </div>
-
 
         </div>
 
@@ -89,7 +93,22 @@
 
 
 
-        <?php   
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <?php   
         include("footer.php");
         ?>
 

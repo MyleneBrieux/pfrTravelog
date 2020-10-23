@@ -2,31 +2,80 @@ body{
     color: #48515D !important;
 }
 
-
-.menu-gauche {
+/* .menu-gauche {
     background-color:#dcdacd;
     font-family: 'Halant', serif;
     width:20% !important;
     min-height: 42em !important;
     margin-left: -0.9em;
+} */
+
+.menulat{
+    background-color:#dcdacd;
+    font-family: 'Halant', serif;
+    margin-top:3em;
+    margin-bottom:2.4em;
+    padding-bottom:100%;
+    width:14.5em;
+    }
+
+@media screen and (max-width : 1200px){
+    .menulat{
+        width:12em;
+        }
+    }
+
+ @media screen and (max-width : 1000px){
+    .menulat{
+        width:10em;
+        }
+    }
+
+@media screen and (max-width : 600px){
+    .menulat{
+         width:36.5em;
+        padding-bottom:1%;
+        }
+    }
+
+@media screen and (max-width : 480px){
+    .menulat{
+        width:29em;
+        padding-bottom:1%;
+        }
+    }
+
+
+
+
+.liens{
+    color: #48515D !important;
+    margin-left: 1em;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+a:hover{
+    text-decoration: none !important;
+    color: #52908B;
 }
 
 .photo-profil{
-margin-top: 30%;
-margin-left: 25%;
-}
+    margin-top: 15%;
+    margin-left: 25%;
+    }
 
 .membre{
     margin-top: 5%;
-font-size: 1.1em;
-margin-left: 22%;
-}
+    font-size: 120%;
+    margin-left: 22%;
+    }
 
 .age{
     font-size: 1.8em;
     margin-left: 32%;
     font-weight: bolder;
-}
+    }
 
 .langues-parlees{
     margin-top: 10%;
@@ -34,32 +83,45 @@ margin-left: 22%;
     margin-left: 22%;
     font-weight: bolder;
     text-decoration-line: underline ;
-}
+    }
 
 .langues{
     font-size: 1em;
     margin-left: 22%;
-}
+    margin-top: 5% !important;
+    }
 
 .logos-menu{
     margin-top: 10% !important;
-    margin-left: 25%;
+    margin-left: 20%;
     }
 
 .oeil{
-margin-bottom: 05%;
-}
+    margin-bottom: 05%;
+    }
 
 .photo-profil{
-
-}
+max-width: 40%;
+    }
 
 .bouton-contact{
     background-color: #52908B !important;
     margin-top: 10%;
     margin-left: 23%;
-}
+    }
 
 .formulaire1{
-margin-top: 5% !important;
+    margin-top:10% !important;
+    padding-top: 1%;
+    background-color: #dcdacd;
+    max-height: 7.7em;
+    }
+
+.nationnalite{
+    margin-left: 4.4%;
 }
+
+/* .txt-profil{
+    color: #48515D !important; 
+    margin-top: 7%;
+} */
