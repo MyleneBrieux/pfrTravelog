@@ -56,8 +56,8 @@
 
                 <div class="barre-bl-droite"></div>
 
-                <img class="cloche" src="../../img/notifs.png" alt="cloche de notification">
-                <img class="logo-ami" src="../../img/ami.png" alt="logo ami">
+                <img class="cloche" src="../../img/logos_divers/notifs2.png" alt="cloche de notification">
+                <img class="logo-ami" src="../../img/logos_divers/ami2.png" alt="logo ami">
 
 
 
@@ -92,7 +92,7 @@
 
                     </ul>
 
-                    <!-- <img src="images/photo01.jpg" alt="Bootstrap" class="img-circle"> -->
+                    <img class="rounded-circle photo-profil-navbar" src="../../img/photos/nath.jpg" alt="Bootstrap" >
 
 
                 </div>
@@ -108,30 +108,7 @@
 
 
 
-        <footer>
-            <div class="footer fixed-bottom row">
-
-                <div class="col-4">Conditions générales d'utilisation</div>
-                <div class="barre-bl-bas"></div>
-
-                <div class="col-3">Confidentialité</div>
-                <div class="barre-bl-bas"></div>
-
-                <div class="col-2">Contact</div>
-                <div class="barre-bl-bas"></div>
-
-                <div class="col-2">2020 Travelog</div>
-
-
-
-
-
-
-
-
-
-            </div>
-        </footer>
+        
     </div>
 
 

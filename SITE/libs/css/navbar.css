@@ -109,9 +109,15 @@ color: white !important;
         }
     } 
 
+.photo-profil-navbar{
+    max-height: 60px !important;
+}
 
-
-
+@media (max-width: 920px){
+    .photo-profil-navbar{
+        display: none !important;
+        }
+    } 
 
 
 
