@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Création de Voyage</title>
 </head>
-        <body>
+        <body class="background-body">
             <!--Bloc central-->
                 <div class="container">
                     <div class="header">
-
+                        <?php include 'navbar.php' ?>
                     </div>
 
                     <h1>Création de voyage</h1>
@@ -57,14 +57,14 @@
 
                     <!--Form pour ajouter ses fichiers-->
                         <div class="row form-files d-flex justify-content-center">
-                            <mark><form class="addfiles">
+                            <mark class="checkbox-background"><form class="addfiles">
                                 <input type="file" class="form-control-file" id="ajoutFichiers">
                             </form></mark>
                         </div>
 
                     <!--La checkbox-->
                         <div class="row d-flex justify-content-center">
-                            <mark><label class="checkbox">
+                            <mark class="checkbox-background"><label class="checkbox">
                                 <input type="checkbox"> Partager ce voyage uniquement avec mes amis
                             </label></mark>
                         </div>
@@ -76,4 +76,7 @@
                         </div>
                 </div>
         </body>
+        <footer class="footer">
+            <?php include 'footer.php' ?>
+        </footer>
 </html>
