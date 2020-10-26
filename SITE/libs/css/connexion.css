@@ -43,6 +43,19 @@
         }
     }
 
+    @media screen and (max-width : 450px) {
+        .nomtravelog {
+            margin-top:0em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .nomtravelog {
+            font-size:2.75em;
+            margin-left:1.75em;
+        }
+    }
+
 
 
 
@@ -95,6 +108,22 @@
             width:8em;
             margin-top:1em;
             margin-left:10em;
+        }
+    }
+
+    @media screen and (max-width : 450px) {
+        .logotravelog {
+            margin-top:1.5em;
+            margin-left:9em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .logotravelog {
+            height:7.5em;
+            width:7.5em;
+            margin-top:2em;
+            margin-left:8em;
         }
     }
 
@@ -155,6 +184,22 @@
         }
     }
 
+    @media screen and (max-width : 450px) {
+        .encadreconnexion {
+            margin-top:2em;
+            margin-left:3.25em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .encadreconnexion {
+            height:17em;
+            width:17em;
+            margin-top:2em;
+            margin-left:3em;
+        }
+    }
+
 
 /* INTRODUCTION DE L'ENCADRE */
 .introencadreconnexion {
@@ -173,6 +218,12 @@
     @media screen and (max-width : 550px) {
         .introencadreconnexion {
             font-size:1em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .introencadreconnexion {
+            font-size:0.75em;
         }
     }
 
@@ -200,6 +251,12 @@
         }
     }
 
+    @media screen and (max-width : 400px) {
+        .formulaireconnexion {
+            margin-left:2.25em;
+        }
+    }
+
 
 .pseudoconnexion, .motdepasseconnexion {
     border : solid #707070 0.01em;
@@ -215,6 +272,12 @@
     @media screen and (max-width : 550px) {
         .pseudoconnexion, .motdepasseconnexion {
             font-size:0.8em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .pseudoconnexion, .motdepasseconnexion {
+            font-size:0.6em;
         }
     }
 
@@ -248,6 +311,14 @@
         }
     }
 
+    @media screen and (max-width : 400px) {
+        .boutonconnexion {
+            width:15em;
+            margin-left:3em;
+            font-size:0.8em;
+        }
+    }
+
 
 /* PHRASE INSCRIPTION */
 .inscription {
@@ -270,6 +341,12 @@
         }
     }
 
+    @media screen and (max-width : 400px) {
+        .inscription {
+            font-size:0.8em;
+        }
+    }
+
 
 /* LIEN VERS LA PAGE INSCRIPTION */
 a:link {
@@ -281,11 +358,11 @@ a:visited {
 }
   
 a:focus {
-    background: #52908b;
+    background: none;
 }
   
 a:hover {     
-    background: #dcdacd;
+    background: none;
 }
 
 

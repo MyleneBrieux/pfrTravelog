@@ -54,7 +54,7 @@
 
                 <!-- LIEN VERS LA PAGE D'INSCRIPTION -->
                 <div class="inscription">
-                    <strong>Pour s'inscrire, c'est par <a href src="inscription.html">ici</a></strong>
+                    <strong>Pour s'inscrire, c'est par <a href="inscription.php">ici</a></strong>
                 </div>
             </div>
 
