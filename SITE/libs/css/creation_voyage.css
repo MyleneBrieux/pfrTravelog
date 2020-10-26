@@ -35,14 +35,18 @@ p{
     margin-top: 1em;
 }
 
-.btn-primary,
+.bouton-ajout{
+    background-color: #52908b;
+}
+
+/*.btn-primary,
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus{
     font-family: 'Halant', serif;
     background-color: #52908b;
-}
+}*/
 
 .btn-group{
     border: none;

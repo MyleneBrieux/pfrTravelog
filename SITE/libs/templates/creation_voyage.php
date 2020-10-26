@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="row boutons d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary btn-lg">+ Ajouter un texte</button>
+                            <button type="button" class="btn btn-primary bouton-ajout btn-lg">+ Ajouter un texte</button>
                         </div>
 
                     <!--Form pour ajouter ses fichiers-->
