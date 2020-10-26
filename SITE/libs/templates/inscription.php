@@ -70,7 +70,7 @@
                 </div>
 
                 <!-- POP UP CGU -->
-                <div class="modal fade" id="CGUPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <!-- <div class="modal fade" id="CGUPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- BOUTON INSCRIPTION -->
                 <button type="submit" class="boutoninscription btn"><strong>JE M'INSCRIS</strong></button>

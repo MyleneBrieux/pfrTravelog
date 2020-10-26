@@ -42,6 +42,19 @@
             margin-left:2.25em;
         }
     }
+    
+    @media screen and (max-width : 450px) {
+        .nomtravelog {
+            margin-top:0em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .nomtravelog {
+            font-size:2.75em;
+            margin-left:1.75em;
+        }
+    }
 
 .logotravelog {
     height: 18em;
@@ -92,6 +105,22 @@
             width:8em;
             margin-top:1em;
             margin-left:10em;
+        }
+    }
+    
+    @media screen and (max-width : 450px) {
+        .logotravelog {
+            margin-top:1.5em;
+            margin-left:9em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .logotravelog {
+            height:7.5em;
+            width:7.5em;
+            margin-top:2em;
+            margin-left:8em;
         }
     }
 
@@ -150,6 +179,22 @@
             margin-left:4em;
         }
     }
+    
+    @media screen and (max-width : 450px) {
+        .encadreinscription {
+            margin-top:2em;
+            margin-left:3.25em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .encadreinscription {
+            height:17em;
+            width:17em;
+            margin-top:2em;
+            margin-left:3em;
+        }
+    }
 
 
 /* INTRODUCTION DE L'ENCADRE */
@@ -169,6 +214,12 @@
     @media screen and (max-width : 550px) {
         .introencadreinscription {
             font-size:1em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .introencadreinscription {
+            font-size:0.75em;
         }
     }
 
@@ -196,6 +247,14 @@
             padding-top:0.4em;
         }
     }
+    
+    @media screen and (max-width : 400px) {
+        .formulaireinscription {
+            margin-left:2.25em;
+            padding-top:0.2em;
+            padding-bottom:0.2em;
+        }
+    }
 
 .pseudoinscription, .adressemailinscription, .motdepasseinscription, .confirmationmotdepasseinscription {
     border : solid #707070 0.01em;
@@ -211,6 +270,12 @@
     @media screen and (max-width : 550px) {
         .pseudoinscription, .adressemailinscription, .motdepasseinscription, .confirmationmotdepasseinscription {
             font-size:0.7em;
+        }
+    }
+
+    @media screen and (max-width : 400px) {
+        .pseudoinscription, .adressemailinscription, .motdepasseinscription, .confirmationmotdepasseinscription {
+            font-size:0.5em;
         }
     }
 
@@ -342,6 +407,15 @@
         }
     }
 
+    @media screen and (max-width : 400px) {
+        .boutoninscription {
+            width:15em;
+            margin-left:3em;
+            font-size:0.8em;
+            margin-top:-2.5em;
+        }
+    }
+
 
 /* PHRASE CONNEXION */
 .connexion {
@@ -365,6 +439,13 @@
         }
     }
 
+    @media screen and (max-width : 400px) {
+        .connexion {
+            margin-top:-1em;
+            font-size:0.6em;
+        }
+    }
+
 /* LIEN VERS LA PAGE CONNEXION */
 .lienconnexion:link {
     color: #52908b;
@@ -375,11 +456,11 @@
 }
   
 .lienconnexion:focus {
-    background: #52908b;
+    background: none;
 }
   
 .lienconnexion:hover {     
-    background: #dcdacd;
+    background: none;
 }
 
 
