@@ -17,7 +17,7 @@
                     <h1>Création de voyage</h1>
 
             <!--Titre du voyage-->
-                    <div class="row form-titre">
+                    <div class="row form-titre ml-1 mr-1">
                         <input class="form-control" type="text" placeholder="Titre">
                     </div>
 
@@ -30,18 +30,18 @@
                             </div>
 
                     <!--Les dates du séjour-->
-                        <div class="row d-flex justify-content-between">
+                        <div class="row ml-1 mr-1 d-flex justify-content-between">
                             <p>
-                                Date de début de séjour: <input type="date" name="date_debut_sejour">
+                                Date de début de séjour:</br> <input type="date" name="date_debut_sejour">
                             </p>
 
                             <p>
-                                Date de fin de séjour: <input type="date" name="date_fin_sejour">
+                                Date de fin de séjour:</br> <input type="date" name="date_fin_sejour">
                             </p>
                         </div>
 
                     <!--Formulaire du texte du voyage-->
-                        <div class="row form-text">
+                        <div class="row form-text ml-1 mr-1">
                             <textarea class="form-control" id="texte_voyage" rows="20" placeholder="Texte"></textarea>
                         </div>
 
@@ -69,7 +69,7 @@
                         </div>
 
                     <!-- Les boutons pour la publication -->
-                        <div class="row btn-group d-flex justify-content-center" role="group">
+                        <div class="row boutons btn-group d-flex justify-content-center" role="group">
                             <button type="button" class="btn btn-primary">Ajouter maintenant</button>
                             <button type="button" class="btn btn-primary">Ajouter plus tard</button>
                         </div>
