@@ -34,13 +34,14 @@
     margin-left:24em;
 }
 
-/* .photovoyage1 {
+.photovoyage1 {
+    z-index:2;
     border:solid #707070 0.1em;
-    height:8em;
-    width:20em;
-    margin-top:-109.5em;
-    margin-left:24em;
-} */
+    height:14em;
+    width:22em;
+    margin-top:-107.5em;
+    margin-left:-4em;
+}
 
 .textevoyage1 {
     font-family: 'Halant', serif;
@@ -100,16 +101,17 @@
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-84.5em;
+    margin-top:-84em;
     margin-left:24em;
 }
 
 .photovoyage2 {
+    z-index:2;
     border:solid #707070 0.1em;
-    height:16em;
+    height:14em;
     width:22em;
-    margin-top:1em;
-    margin-left:25em;
+    margin-top:-82em;
+    margin-left:49em;
 }
 
 .textevoyage2 {
@@ -174,6 +176,15 @@
     margin-left:24em;
 }
 
+.photovoyage3 {
+    z-index:2;
+    border:solid #707070 0.1em;
+    height:14em;
+    width:22em;
+    margin-top:-57em;
+    margin-left:29em;
+}
+
 .textevoyage3 {
     font-family: 'Halant', serif;
     text-align:right;
@@ -235,6 +246,15 @@
     margin-top:-33em;
     margin-bottom:8em;
     margin-left:24em;
+}
+
+.photovoyage4 {
+    z-index:2;
+    border:solid #707070 0.1em;
+    height:14em;
+    width:22em;
+    margin-top:-31em;
+    margin-left:49em;
 }
 
 .textevoyage4 {
