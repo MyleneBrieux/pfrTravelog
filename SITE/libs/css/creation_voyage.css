@@ -14,11 +14,11 @@ h4{
 }
 
 .header{
-    margin-top: 4em;
+    margin-top: 6em;
 }
 
 .footer{
-    margin-top: 4em;
+    margin-top: 2em;
 }
 
 .checkbox-background{
@@ -27,6 +27,7 @@ h4{
 
 .files-background{
     background-color: #52908b;
+    overflow-wrap: break-word;
 }
 
 p{
@@ -34,14 +35,6 @@ p{
 }
 
 /* Boutons */
-.boutons{
-    font-family: 'Halant', serif;
-    margin-top: 1em;
-}
-
-.bouton-ajout{
-    background-color: #52908b;
-}
 
 .button {
     background-color: #52908b;
@@ -53,6 +46,8 @@ p{
     display: inline-block;
     font-size: 17px;
     border-radius: 10px;
+    font-family: 'Halant', serif;
+    margin-top: 1em;
   }
 
 .btn-group button{
@@ -63,12 +58,6 @@ p{
     padding: 10px 24px;
     cursor: pointer;
 }
-
-.btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-  }
 
 /* Formulaires */
 .form-titre{
@@ -98,4 +87,19 @@ p{
 
 .addfiles{
     color: white;
+}
+
+.rectangle-files{
+	width:300px;
+	height:35px;
+    background:#52908b;
+    position: relative;
+}
+
+.rectangle-checkbox{
+	width:350px;
+    height:35px;
+    text-align: center;
+    background:#52908b;
+    position: relative;
 }

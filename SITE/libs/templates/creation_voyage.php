@@ -47,30 +47,30 @@
                         </div>
 
                     <!--Les boutons d'ajout-->
-                        <div class="row boutons d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center">
                             <button type="button" class="button">+ Ajouter un sous-titre</button>
                         </div>
 
-                        <div class="row boutons d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center">
                             <button type="button" class="button">+ Ajouter un texte</button>
                         </div>
 
                     <!--Form pour ajouter ses fichiers-->
                         <div class="row form-files d-flex justify-content-center">
-                            <mark class="files-background"><form class="addfiles">
+                            <form class="rectangle-files addfiles">
                                 <input type="file" class="form-control-file" id="ajoutFichiers" name="files" multiple>
-                            </form></mark>
+                            </form>
                         </div>
 
                     <!--La checkbox-->
                         <div class="row d-flex justify-content-center">
-                            <mark class="checkbox-background"><label class="checkbox">
+                            <label class="rectangle-checkbox checkbox">
                                 <input type="checkbox"> Partager ce voyage uniquement avec mes amis
-                            </label></mark>
+                            </label>
                         </div>
 
                     <!-- Les boutons pour la publication -->
-                        <div class="row boutons btn-group d-flex justify-content-center" role="group">
+                        <div class="row btn-group d-flex justify-content-center" role="group">
                             <button type="button" class="btn-group">Ajouter maintenant</button>
                             <button type="button" class="btn-group">Ajouter plus tard</button>
                         </div>
