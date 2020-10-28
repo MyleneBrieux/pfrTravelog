@@ -98,6 +98,10 @@
             <p class="pages">< 1 2 ... 4 ></p>
         </div>
 
+        <div class="row">
+            <?php include ("footer.php")?>
+        </div>
+
     </div>
 
 </body>

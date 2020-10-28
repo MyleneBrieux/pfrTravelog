@@ -1,109 +1,88 @@
-
-
-.utilisateur{
-font-size: 1.5em;
-color: white !important;
-font-family: 'Halant', serif;
-}
-
-@media (max-width: 770px){
-    .utilisateur{
-
-        }
-    }
-
-
-.bg-turquoise{
+/* ESTHETIQUE GENERALE DE LA NAVBAR */
+.navbar{
     background-color: #52908B;
-    max-height: 5em !important ;
+    max-height: 3.5em ;
     }
 
-    @media (max-width: 600px){
-        .travelog-navbar{
-            margin-left: 00%;
-            margin-right: 20% !important;
-            }
-        }
 
-.logo-navbar{
-    max-height: 8em !important;
+/* LOGO */
+.logoTravelog{
+    height: 6em;
+    width:6em;
     margin-top: -2%;
     margin-bottom: -2%;
-    margin-right: -7%;
+    margin-left:-1.25%;
 }
 
-@media (max-width: 770px){
+/* @media (max-width: 770px){
     .logo-navbar{
         display: none !important;
         }
-    }
+    } */
 
-.travelog-navbar{
-    font-size: 1.7em !important;
-    /* font-weight: bolder; */
-    margin-left: 80%;
+
+/* NOM TRAVELOG */
+.nomTravelog{
+    font-size: 1.7em;
     font-family: 'Rancho', cursive;
+    margin-left: -5%;
+    border-right:1px solid white;
+    padding-right:0.5em;
 }
 
+    @media (min-width: 712px) and (max-width: 905px){
+        .nomTravelog{
+            margin-left: 40%;
+            margin-right: 20% !important;
+        }
+    } 
+
     @media (max-width: 712px){
-        .travelog-navbar{
+        .nomTravelog{
             margin-left: 00%;
             margin-right: 20% !important;
             font-size: 1.3em !important;    
-            }
         }
+    }
 
-    @media (min-width: 712px) and (max-width: 905px){
-        .travelog-navbar{
-            margin-left: 40%;
+    @media (max-width: 600px){
+        .nomTravelog{
+            margin-left: 00%;
             margin-right: 20% !important;
-            }
-        }  
+        }
+    }
 
 
+ /* NOTIFICATIONS */
+ .cloche{
+    color: white;
+    margin-left: 0.5em;
+    border-left:1px solid white;
+}
+
+
+/* AMIS */
 .logo-ami{
     font-size: 1.3em;
     margin-top: 0.2em;
     margin-left: 0.2em;
 }
 
-.cloche{
-    color: white;
-    margin-left: 0.5em;
 
-}
-  
-/* BARRES BLANCHES*/
-
-.barre-bl-gauche{
-    background-color: white !important;
-    width: 0.1em;
-    height: 3em;
-    margin-left: 55%;
-    margin-top: 1em !important;
-}
-
-    @media (min-width: 1058px) and (max-width: 1461px){
-        .barre-bl-gauche{
-            margin-left: 40%;
+/* UTILISATEUR */
+.utilisateur{
+    font-size: 1.5em;
+    color: white !important;
+    font-family: 'Halant', serif;
+    }
+    
+    @media (max-width: 770px){
+        .utilisateur{
+    
             }
-        } 
+        }
 
-    @media (max-width: 1190px){
-        .barre-bl-gauche, .barre-bl-droite{
-              display: none;
-            }
-        } 
-
-
-.barre-bl-droite{
-    background-color: white !important;
-    width: 0.12em;
-    height: 3em;
-    margin-left: 2%;  
-}
-
-
+/* PHOTO UTILISATEUR */
 .photo-profil-navbar{
     max-height: 60px !important;
 }
