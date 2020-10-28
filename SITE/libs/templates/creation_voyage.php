@@ -48,17 +48,17 @@
 
                     <!--Les boutons d'ajout-->
                         <div class="row boutons d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary btn-lg center-block">+ Ajouter un sous-titre</button>
+                            <button type="button" class="button">+ Ajouter un sous-titre</button>
                         </div>
 
                         <div class="row boutons d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary bouton-ajout btn-lg">+ Ajouter un texte</button>
+                            <button type="button" class="button">+ Ajouter un texte</button>
                         </div>
 
                     <!--Form pour ajouter ses fichiers-->
                         <div class="row form-files d-flex justify-content-center">
-                            <mark class="checkbox-background"><form class="addfiles">
-                                <input type="file" class="form-control-file" id="ajoutFichiers">
+                            <mark class="files-background"><form class="addfiles">
+                                <input type="file" class="form-control-file" id="ajoutFichiers" name="files" multiple>
                             </form></mark>
                         </div>
 
@@ -71,8 +71,8 @@
 
                     <!-- Les boutons pour la publication -->
                         <div class="row boutons btn-group d-flex justify-content-center" role="group">
-                            <button type="button" class="btn btn-primary">Ajouter maintenant</button>
-                            <button type="button" class="btn btn-primary">Ajouter plus tard</button>
+                            <button type="button" class="btn-group">Ajouter maintenant</button>
+                            <button type="button" class="btn-group">Ajouter plus tard</button>
                         </div>
                 </div>
         </body>
