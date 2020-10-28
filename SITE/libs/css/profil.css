@@ -1,22 +1,22 @@
 body{
     color: #48515D !important;
-}
+    }
 
-/* .menu-gauche {
-    background-color:#dcdacd;
-    font-family: 'Halant', serif;
-    width:20% !important;
-    min-height: 42em !important;
-    margin-left: -0.9em;
-} */
+a:hover{
+    text-decoration: none !important;
+    color: #52908B;
+    }
 
+/*MENU DE GAUCHE*/
 .menulat{
     background-color:#dcdacd;
     font-family: 'Halant', serif;
     margin-top:3em;
     margin-bottom:2.4em;
     padding-bottom:100%;
+    margin-left: -2em;
     width:14.5em;
+    height: 100%;
     }
 
 @media screen and (max-width : 1200px){
@@ -44,22 +44,20 @@ body{
         padding-bottom:1%;
         }
     }
+    
+/* FIN MENU*/    
 
 
-
-
-.liens{
+.liens-menu{
     color: #48515D !important;
     margin-left: 1em;
     font-size: 1.2em;
     font-weight: bolder;
 }
 
-a:hover{
-    text-decoration: none !important;
-    color: #52908B;
-}
 
+
+/* TEXTES MENU */
 .photo-profil{
     margin-top: 15%;
     margin-left: 25%;
@@ -67,15 +65,28 @@ a:hover{
 
 .membre{
     margin-top: 5%;
-    font-size: 120%;
     margin-left: 22%;
     }
 
+    @media (max-width : 580px){
+        .membre{
+            margin-left: 25% !important;
+             }
+        } 
+
 .age{
     font-size: 1.8em;
-    margin-left: 32%;
+    margin-left: 30%;
     font-weight: bolder;
     }
+
+    @media (min-width: 600px) and (max-width : 1189px){
+        .age{
+            font-size: 1.5em;
+            margin-left: 28%;
+
+             }
+        }     
 
 .langues-parlees{
     margin-top: 10%;
@@ -91,15 +102,44 @@ a:hover{
     margin-top: 5% !important;
     }
 
+    @media screen and (max-width : 1185px){
+        .txt-menu-responsive{
+            font-size: 0.9em;
+            }
+        }
+
+    @media (min-width: 600px) and (max-width : 986px){
+        .txt-menu-responsive{
+            font-size: 0.7em;
+             }
+        }   
+
+    @media (max-width : 600px){
+        .txt-menu-responsive{
+            font-size: 1em;
+            margin-right: 30% !important;
+                }
+        }          
+
+
+/* OEIL ET AMI*/
 .logos-menu{
     margin-top: 10% !important;
     margin-left: 20%;
     }
 
+    /* @media (max-width : 1186px){
+        .logos-menu{
+max-height: 2em;
+                }
+        }  */
+
+
 .oeil{
     margin-bottom: 05%;
     }
 
+    
 .photo-profil{
 max-width: 40%;
     }
@@ -108,20 +148,62 @@ max-width: 40%;
     background-color: #52908B !important;
     margin-top: 10%;
     margin-left: 23%;
+    border-radius: 5em !important;
     }
 
+/*INPUTS*/
 .formulaire1{
     margin-top:10% !important;
     padding-top: 1%;
+    padding-bottom: 1%;
+    /* justify-content: center !important; */
     background-color: #dcdacd;
     max-height: 7.7em;
+    max-width: 70% !important;
     }
 
-.nationnalite{
-    margin-left: 4.4%;
+.txt-profil{
+    color: #48515D; 
+    margin-top: -3em;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-size: 0.9em;
+    margin-left: -3%;
+    }
+
+.txt-nationnalite{
+    margin-left: 6.8%;
+    }
+
+.input-nationnalite{
+    max-width: 97% !important;
+    margin-left: 2%;
+    }
+
+.container-nom{
+    margin-top: 2%;
 }
 
-/* .txt-profil{
-    color: #48515D !important; 
-    margin-top: 7%;
-} */
+.txt-nom{
+    padding-left: 2% !important;
+    }
+
+.input-nom{
+    max-width: 40% !important;
+    margin-right: 3% !important;
+    }
+
+.input-birthday{
+    width: 125% !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
