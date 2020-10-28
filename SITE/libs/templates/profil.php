@@ -24,48 +24,50 @@
         // include("menu_lat.php");
     ?>
 
-    <div class="container-fluid">
 
-        <!-- MENU DE GAUCHE -->
-        <div class="menu-gauche menulat col-3">
+    <div class="container-fluid d-flex">
 
-            <img src="../../img/photos/nath.jpg" alt="Bootstrap" class="photo-profil">
+        <div class="col-3">
+            <div class="menu-gauche menulat">
 
-            <div class="membre">Membre depuis le : </div>
-            <div class="age">35 ans</div>
-            <div class="langues-parlees">Langues parlées :</div>
+                <img src="../../img/photos/nath.jpg" alt="Bootstrap" class="photo-profil">
 
-            <div class="langues">
-                <ul>
-                    <li>Français</li>
-                </ul>
+                <div class="membre txt-menu-responsive">Membre depuis le : </div>
+                <div class="age">35 ans</div>
+                <div class="langues-parlees">Langues parlées :</div>
+
+                <div class="langues">
+                    <ul>
+                        <li class="txt-menu-responsive">Français</li>
+                    </ul>
+                </div>
+
+                <div class="logos-menu">
+                    <div><a href=""><img class="oeil" src="../../img/logos_divers/suivre2.png" alt="logo suivre"
+                                class="photo-profil"><span class="liens-menu">Suivre</span></a></div>
+
+                    <div><a href=""><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
+                                class="photo-profil"><span class="liens-menu">Ajouter en ami</span></a></div>
+                </div>
+
+                <button type="button" class="btn btn-info bouton-contact">Mes voyages</button>
+
             </div>
-
-            <div class="logos-menu">
-                <div><a href=""><img class="oeil" src="../../img/logos_divers/suivre2.png" alt="logo suivre"
-                            class="photo-profil"><span class="liens">Suivre</span></a></div>
-
-                <div><a href=""><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
-                            class="photo-profil"><span class="liens">Ajouter en ami</span></a></div>
-            </div>
-
-            <button type="button" class="btn btn-info bouton-contact">Contactez moi</button>
-
         </div>
 
 
-        <!-- BODY -->
-        <div class="col-9">
+        <div class="col-9 formulaire1">
 
-            <div class="row">
-                <div class="txt-profil">Profil :</div>
+            <div class="col-1 txt-profil">
+                <div>Profil :</div>
             </div>
 
-            <div class="row formulaire1">
+            <div>
                 <form>
-                    <div class="row mb-3">
-                        <span>Nom :</span>
-                        <div class="col-5">
+
+                    <div class="form-row mb-3 container-nom ">
+                        <span class="txt-nom">Nom :</span>
+                        <div class="col-5 input-nom ">
                             <input type="text" class="form-control">
                         </div>
                         <span>Prénom :</span>
@@ -73,20 +75,27 @@
                             <input type="text" class="form-control">
                         </div>
                     </div>
+
                     <div class="form-row">
-                        <span>Date de naissance :</span>
+                        <span class="txt-birthday">Date de naissance :</span>
                         <div class="col-3">
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control input-birthday">
                         </div>
-                        <span class="nationnalite">Nationnalité :</span>
+                        <span class="txt-nationnalite">Nationnalité :</span>
                         <div class="col-5">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control input-nationnalite">
                         </div>
                     </div>
+
                 </form>
             </div>
 
+
         </div>
+
+
+
+
 
 
 
@@ -106,6 +115,13 @@
 
 
     </div>
+
+
+
+
+
+
+
 
 
     <?php   
@@ -142,7 +158,7 @@
 
 
 
-    </div>
+
 
 
 

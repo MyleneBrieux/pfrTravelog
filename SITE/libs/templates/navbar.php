@@ -13,6 +13,10 @@
     <script src="../popper/popper.js" defer></script>
     <script src="../bootstrap/js/bootstrap.js" defer></script>
     <script src="../js/index.js" defer></script>
+    <script src="https://kit.fontawesome.com/20f2b0d45a.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 
     <title>TRAVELOG</title>
 </head>
@@ -22,27 +26,23 @@
 
 <body>
 
-    <div class="container mb-4">
+    <div>
         <header class="row">
 
             <nav class="navbar navbar-expand-md navbar-dark bg-perso nav fixed-top bg-turquoise fixed-top">
 
-                <div class="logo-navbar"><img  src="../../img/logo_site/logo_blanc2.png"
-                        alt="logo Travelog"></div>
+                <div class="logo-navbar"><img src="../../img/logo_site/logo_blanc2.png" alt="logo Travelog"></div>
 
                 <div class="col-3">
 
                     <div class="row">
                         <a class="navbar-brand d-flex align-items-center" href="index.php?page=home">
-                            <div class=" travelog-navbar">Travelog</div>
+                            <div class=" travelog-navbar">TRAVELOG</div>
                         </a>
                         <div class="barre-bl-gauche"></div>
                     </div>
 
                 </div>
-
-
-
 
                 <!-- BARRE DE RECHERCHE-->
                 <div class="input-group md-form form-sm form-1 pl-0 col-4">
@@ -56,10 +56,27 @@
 
                 <div class="barre-bl-droite"></div>
 
-                <img class="cloche" src="../../img/logos_divers/notifs2.png" alt="cloche de notification">
-                <img class="logo-ami" src="../../img/logos_divers/ami2.png" alt="logo ami">
+                <i class="far fa-bell cloche fa-2x"></i>
 
 
+                <!-- LOGO AMI-->
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link  font-white utilisateur" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user logo-ami"></i>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="mesvoyages.html" target="blank">Mes voyages</a>
+
+                        <a class="dropdown-item" href="monprofil.html" target="blank">Mon profil</a>
+
+                        <?php if(!isset($_SESSION['user'])){ ?>
+                        <a class="dropdown-item" href="index.php?page=figurines">Deconnexion</a>
+                        <?php } ?>
+                    </div>
+                </li>
 
 
                 <!-- BOUTON HAMBURGER-->
@@ -71,28 +88,25 @@
 
 
                 <div class="collapse navbar-collapse justify-content-end col-3" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle font-white utilisateur" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Utilisateur
-                            </a>
+                    <a class="nav-link dropdown-toggle font-white utilisateur" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Utilisateur
+            </a>
 
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="mesvoyages.html" target="blank">Mes voyages</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="mesvoyages.html" target="blank">Mes voyages</a>
 
-                                <a class="dropdown-item" href="monprofil.html" target="blank">Mon profil</a>
+                            <a class="dropdown-item" href="monprofil.html" target="blank">Mon profil</a>
 
-                                <?php if(!isset($_SESSION['user'])){ ?>
-                                <a class="dropdown-item" href="index.php?page=figurines">Deconnexion</a>
-                                <?php } ?>
-                            </div>
-                        </li>
+                            <?php if(!isset($_SESSION['user'])){ ?>
+                            <a class="dropdown-item" href="index.php?page=figurines">Deconnexion</a>
+                            <?php } ?>
+                        </div>
+                    </li>
 
-                    </ul>
-
-                    <img class="rounded-circle photo-profil-navbar" src="../../img/photos/nath.jpg" alt="Bootstrap" >
+                    <img class="rounded-circle photo-profil-navbar" src="../../img/photos/nath.jpg" alt="Bootstrap">
 
 
                 </div>
@@ -108,7 +122,7 @@
 
 
 
-        
+
     </div>
 
 
