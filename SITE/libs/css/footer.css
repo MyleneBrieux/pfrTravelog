@@ -1,0 +1,59 @@
+.footer{
+background-color: #52908B;
+text-align: center;
+}
+
+.CGU, .mentionslegales, .contact {
+    color:white;
+    font-family: 'Halant', serif;
+    font-weight: bolder;
+    font-size:1em;
+    border-right:1px solid white;
+    padding-top:0.25em;
+    padding-bottom:0.25em;
+}
+
+    @media screen and (max-width : 1050px) {
+        .CGU, .mentionslegales, .contact {
+                font-size:0.8em;
+            }
+    }
+
+    @media screen and (max-width : 855px) {
+        .CGU, .mentionslegales, .contact {
+                font-size:0.6em;
+                align-items:center;
+            }
+    }
+
+        .liencontact:link {
+            color: white;
+            text-decoration:none;
+        }
+
+        .liencontact:visited {
+            color: white;
+        }
+
+
+.copyright {
+    color:white;
+    font-family: 'Halant', serif;
+    font-weight: bolder;
+    font-size:1em;
+    padding-top:0.25em;
+    padding-bottom:0.25em;
+}
+
+
+    @media screen and (max-width : 1050px) {
+        .copyright {
+                font-size:0.8em;
+            }
+    }
+
+    @media screen and (max-width : 855px) {
+        .copyright {
+                font-size:0.6em;
+            }
+    }
