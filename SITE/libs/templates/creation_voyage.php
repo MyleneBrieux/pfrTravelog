@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="../css/creation_voyage.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/20f2b0d45a.js" crossorigin="anonymous"></script>
     <title>Création de Voyage</title>
 </head>
         <body class="background-body">

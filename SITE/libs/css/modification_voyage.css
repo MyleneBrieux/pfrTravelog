@@ -2,6 +2,11 @@
     margin-top: 3em;
 }
 
+.footer{
+    margin-top: 3em;
+}
+
+
 /*Menu de gauche*/
 .bg-sable{
     background-color:#dcdacd;
@@ -43,31 +48,8 @@ p{
     font-family: 'Halant', serif;
 }
 
-
-.img-wraps {
-    position: relative;
-    display: inline-block;
-   
-    font-size: 0;
-}
-.img-wraps .closes {
-    position: absolute;
-    top: 5px;
-    right: 8px;
-    z-index: 100;
-    background-color: #FFF;
-    padding: 4px 3px;
-    
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-   
-    text-align: center;
-    font-size: 22px;
-    line-height: 10px;
-    border-radius: 50%;
-    border:1px solid red;
-}
-.img-wraps:hover .closes {
-    opacity: 1;
+.rectangle{
+	width:300px;
+	height:100px;
+	background:#dcdacd;
 }

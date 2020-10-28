@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="../css/modification_voyage.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/20f2b0d45a.js" crossorigin="anonymous"></script>
     <title>Modification de voyage</title>
 </head>
 <body>
@@ -56,31 +57,22 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active taille_photos_detail_voyage">
-                                    <div  class="img-wraps">
-                                        <span  class="closes" title="Delete">&times;</span>
                                         <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="First slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
                                             <h2 class="">La Fontaine de Trevi</h2>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
-                                    <div  class="img-wraps">
-                                        <span  class="closes" title="Delete">&times;</span>
                                         <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="Second slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
                                             <h2 class="">La Fontaine de Trello</h2>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
-                                    <div  class="img-wraps">
-                                        <span  class="closes" title="Delete">&times;</span>
                                         <img class="d-block w-100" src="../../../images/photos/benzaie.gif" alt="Third slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
                                             <h2 class="">La Fontaine de Thomas</h2>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
@@ -111,13 +103,58 @@
                 </p>
 
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-sable">
-                        <p>                 </p>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 rectangle">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+
+                        <!-- Carousel -->
+
+                <div class="card">
+                    <div id="slider">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active taille_photos_detail_voyage">
+                                        <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="First slide">
+                                        <div class="card-img-overlay titre_photo_detail_voyage halant">
+                                            <h2 class="">La Fontaine de Trevi</h2>
+                                        </div>
+                                </div>
+                                <div class="carousel-item taille_photos_detail_voyage">
+                                        <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="Second slide">
+                                        <div class="card-img-overlay titre_photo_detail_voyage halant">
+                                            <h2 class="">La Fontaine de Trello</h2>
+                                        </div>
+                                </div>
+                                <div class="carousel-item taille_photos_detail_voyage">
+                                        <img class="d-block w-100" src="../../../images/photos/benzaie.gif" alt="Third slide">
+                                        <div class="card-img-overlay titre_photo_detail_voyage halant">
+                                            <h2 class="">La Fontaine de Thomas</h2>
+                                        </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
                         <h1>Jour 2 - 22 Juillet 2020</h1>
                             <p>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -135,9 +172,9 @@
             </div>
         </div>
 
-        <footer>
+        <div class="footer">
             <?php include 'footer.php' ?>
-        </footer>
+        </div>
             
 
     </div>
