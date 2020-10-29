@@ -67,13 +67,13 @@
                                         </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
-                                        <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="Second slide">
+                                        <img class="d-block w-100" src="../../../images/photos/japon.jpg" alt="Second slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
                                             <h2 class="">La Fontaine de Trello</h2>
                                         </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
-                                        <img class="d-block w-100" src="../../../images/photos/benzaie.gif" alt="Third slide">
+                                        <img class="d-block w-100" src="../../../images/photos/grece.jpg" alt="Third slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
                                             <h2 class="">La Fontaine de Thomas</h2>
                                         </div>
@@ -92,6 +92,15 @@
                         </div>
 
                     </div>
+                </div>
+
+                <div class="row d-flex justify-content-center">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Example file input</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple>
+                        </div>
+                    </form>
                 </div>
 
                 <h1>Jour 1 - 21 Juillet 2020</h1>
@@ -132,13 +141,13 @@
                                         </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
-                                        <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="Second slide">
+                                        <img class="d-block w-100" src="../../../images/photos/japon.jpg" alt="Second slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
                                             <h2 class="">La Fontaine de Trello</h2>
                                         </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
-                                        <img class="d-block w-100" src="../../../images/photos/benzaie.gif" alt="Third slide">
+                                        <img class="d-block w-100" src="../../../images/photos/grece.jpg" alt="Third slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
                                             <h2 class="">La Fontaine de Thomas</h2>
                                         </div>
