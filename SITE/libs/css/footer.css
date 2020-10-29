@@ -3,7 +3,7 @@ background-color: #52908B;
 text-align: center;
 }
 
-.CGU, .mentionslegales, .contact {
+.CGU, .mentionslegales, .contact, .copyright {
     color:white;
     font-family: 'Halant', serif;
     font-weight: bolder;
@@ -37,23 +37,5 @@ text-align: center;
 
 
 .copyright {
-    color:white;
-    font-family: 'Halant', serif;
-    font-weight: bolder;
-    font-size:1em;
-    padding-top:0.25em;
-    padding-bottom:0.25em;
+border-right:none;
 }
-
-
-    @media screen and (max-width : 1050px) {
-        .copyright {
-                font-size:0.8em;
-            }
-    }
-
-    @media screen and (max-width : 855px) {
-        .copyright {
-                font-size:0.6em;
-            }
-    }
