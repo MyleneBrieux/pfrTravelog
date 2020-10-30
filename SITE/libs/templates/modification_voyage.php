@@ -21,7 +21,7 @@
 
         <div class="row">
             <div class="col-lg-2 col-md-4 col-sm-4 pl-0 col-12 bg-sable">
-                <nav class="bg-sable menu centrage"></br>
+                <nav class="menu centrage"></br>
                     <div class="col-lg-12 col-md-6 col-sm-6 pl-1 col-12">
                         <h5>Titre</h5>
                         <h6>Dates voyage</h6>
@@ -53,11 +53,11 @@
 
                 <div class="card">
                     <div id="slider">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div id="carousel1" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel1" data-slide-to="1"></li>
+                                <li data-target="#carousel1" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active taille_photos_detail_voyage">
@@ -79,12 +79,12 @@
                                         </div>
                                 </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            <a class="carousel-control-prev" href="#carousel1" role="button"
                                 data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            <a class="carousel-control-next" href="#carousel1" role="button"
                                 data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
@@ -127,11 +127,11 @@
 
                 <div class="card">
                     <div id="slider">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div id="carousel2" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel2" data-slide-to="1"></li>
+                                <li data-target="#carousel2" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active taille_photos_detail_voyage">
@@ -153,12 +153,12 @@
                                         </div>
                                 </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            <a class="carousel-control-prev" href="#carousel2" role="button"
                                 data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            <a class="carousel-control-next" href="#carousel2" role="button"
                                 data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
@@ -190,11 +190,10 @@
             </div>
         </div>
 
+        <!--footer-->
         <div class="footer">
             <?php include 'footer.php' ?>
         </div>
-            
-
     </div>
 </body>
 </html>
