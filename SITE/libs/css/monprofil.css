@@ -1,0 +1,21 @@
+.header{
+    margin-top: 3em;
+}
+
+/*Menu de gauche*/
+.bg-sable{
+    background-color:#dcdacd;
+}
+
+.menu{
+    padding-left: 15%;
+}
+
+.centrage {
+    text-align: center;
+}
+
+.image-profil{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
