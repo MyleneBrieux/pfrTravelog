@@ -8,6 +8,12 @@
     margin-left:30em;
 }
 
+    @media screen and (max-width : 1270px) {
+        .rsvoyages {
+                margin-left:28em;
+            }
+    }
+
 /* VOYAGE 1 */
 .photoprofil1 {
     z-index:2;
@@ -18,6 +24,19 @@
     margin-left:21em;
 }
 
+    @media screen and (max-width : 1320px) {
+        .photoprofil1 {
+                margin-top:-108em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .photoprofil1 {
+                margin-top:-103em;
+                margin-left:18em;
+            }
+    }
+
 .titrevoyage1 {
     font-family: 'Rancho', cursive;
     font-size:3em;
@@ -26,6 +45,18 @@
     margin-left:0.4em;
 }
 
+    @media screen and (max-width : 1320px) {
+        .titrevoyage1 {
+                margin-top:-36em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .titrevoyage1 {
+                margin-top:-34.4em;
+            }
+    }
+
 .encadrevoyage1 {
     background-color: #dcdacd;
     height:18em;
@@ -33,6 +64,19 @@
     margin-top:-109.5em;
     margin-left:24em;
 }
+
+    @media screen and (max-width : 1320px) {
+        .encadrevoyage1 {
+                margin-top:-104.5em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .encadrevoyage1 {
+                margin-top:-99.5em;
+                margin-left:21em;
+            }
+    }
 
 .photovoyage1 {
     z-index:2;
@@ -43,6 +87,18 @@
     margin-left:-4em;
 }
 
+    @media screen and (max-width : 1320px) {
+        .photovoyage1 {
+                margin-top:-102.5em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .photovoyage1 {
+                margin-top:-97.5em;
+            }
+    }
+
 .textevoyage1 {
     font-family: 'Halant', serif;
     text-align: right;
@@ -51,6 +107,7 @@
     padding-top:0.4em;
     padding-right:0.8em;
 }
+
 
 .lienvoyage1 {
     font-family: 'Halant', serif;
@@ -89,6 +146,19 @@
     margin-left:72.5em;
 }
 
+    @media screen and (max-width : 1320px) {
+        .photoprofil2 {
+                margin-top:-83em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .photoprofil2 {
+                margin-top:-78em;
+                margin-left:69.5em;
+            }
+    }
+
 .titrevoyage2 {
     font-family: 'Rancho', cursive;
     color:#52908b;
@@ -96,6 +166,18 @@
     margin-top:-29.25em;
     margin-left:-4em;
 }
+
+    @media screen and (max-width : 1320px) {
+        .titrevoyage2 {
+                margin-top:-27.5em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .titrevoyage2 {
+                margin-top:-26em;
+            }
+    }
 
 .encadrevoyage2 {
     background-color: #dcdacd;
@@ -105,6 +187,19 @@
     margin-left:24em;
 }
 
+    @media screen and (max-width : 1320px) {
+        .encadrevoyage2 {
+                margin-top:-79em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .encadrevoyage2 {
+                margin-top:-74em;
+                margin-left:21em;
+            }
+    }
+
 .photovoyage2 {
     z-index:2;
     border:solid #707070 0.1em;
@@ -113,6 +208,19 @@
     margin-top:-82em;
     margin-left:49em;
 }
+
+    @media screen and (max-width : 1320px) {
+        .photovoyage2 {
+                margin-top:-77em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .photovoyage2 {
+                margin-top:-72em;
+                margin-left:46em;
+            }
+    }
 
 .textevoyage2 {
     font-family: 'Halant', serif;
@@ -160,6 +268,19 @@
     margin-left:21em;
 }
 
+    @media screen and (max-width : 1320px) {
+        .photoprofil3 {
+                margin-top:-58em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .photoprofil3 {
+                margin-top:-53em;
+                margin-left:18em;
+            }
+    }
+
 .titrevoyage3 {
     font-family: 'Rancho', cursive;
     color:#52908b;
@@ -167,6 +288,18 @@
     margin-top:-20.9em;
     margin-left:0.5em;
 }
+
+    @media screen and (max-width : 1320px) {
+        .titrevoyage3 {
+                margin-top:-19.25em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .titrevoyage3 {
+                margin-top:-17.75em;
+            }
+    }
 
 .encadrevoyage3 {
     background-color: #dcdacd;
@@ -176,14 +309,39 @@
     margin-left:24em;
 }
 
+    @media screen and (max-width : 1320px) {
+        .encadrevoyage3 {
+                margin-top:-54em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .encadrevoyage3 {
+                margin-top:-49em;
+                margin-left:21em;
+            }
+    }
+
 .photovoyage3 {
     z-index:2;
     border:solid #707070 0.1em;
     height:14em;
     width:22em;
     margin-top:-57em;
-    margin-left:29em;
+    margin-left:-4em;
 }
+
+    @media screen and (max-width : 1320px) {
+        .photovoyage3 {
+                margin-top:-52em;;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .photovoyage3 {
+                margin-top:-47em;
+            }
+    }
 
 .textevoyage3 {
     font-family: 'Halant', serif;
@@ -231,6 +389,19 @@
     margin-left:72.5em;
 }
 
+    @media screen and (max-width : 1320px) {
+        .photoprofil4 {
+                margin-top:-32em;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .photoprofil4 {
+                margin-top:-27em;
+                margin-left:69.5em;
+            }
+    }
+
 .titrevoyage4 {
     font-family: 'Rancho', cursive;
     color:#52908b;
@@ -238,6 +409,18 @@
     margin-left:-4.1em;
     margin-top:-12.25em;
 }
+
+    @media screen and (max-width : 1320px) {
+        .titrevoyage4 {
+                margin-top:-10.5em;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .titrevoyage4 {
+                margin-top:-9em;
+            }
+    }
 
 .encadrevoyage4 {
     background-color: #dcdacd;
@@ -248,6 +431,19 @@
     margin-left:24em;
 }
 
+    @media screen and (max-width : 1320px) {
+        .encadrevoyage4 {
+                margin-top:-28em;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .encadrevoyage4 {
+                margin-top:-23em;
+                margin-left:21em;
+            }
+    }
+
 .photovoyage4 {
     z-index:2;
     border:solid #707070 0.1em;
@@ -256,6 +452,19 @@
     margin-top:-31em;
     margin-left:49em;
 }
+
+    @media screen and (max-width : 1320px) {
+        .photovoyage4 {
+                margin-top:-26em;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .photovoyage4 {
+                margin-top:-21em;
+                margin-left:46em;
+            }
+    }
 
 .textevoyage4 {
     font-family: 'Halant', serif;
@@ -297,6 +506,18 @@
     font-family: 'Halant', serif;
     color: #707070;
     font-size:1.5em;
-    margin-top:-4em;
+    margin-top:-6em;
     margin-left:30em;
 }
+
+    @media screen and (max-width : 1320px) {
+        .pages {
+                margin-top:-4em;
+            }
+    }
+
+    @media screen and (max-width : 1270px) {
+        .pages {
+                margin-left:28em;
+            }
+    }

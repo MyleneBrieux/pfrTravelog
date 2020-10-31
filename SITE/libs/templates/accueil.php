@@ -20,6 +20,9 @@
         <!-- RESULTATS FILTRES VOYAGES -->
         <div class="row">
             <?php include ("navbar.php")?>
+        </div>
+
+        <div class="row">
             <?php include ("menulat.php")?>
 
             <p class="rsvoyages">XX voyages trouvés</p>
@@ -98,9 +101,7 @@
             <p class="pages">< 1 2 ... 4 ></p>
         </div>
 
-        <div class="row">
-            <?php include ("footer.php")?>
-        </div>
+        <?php include ("footer.php")?>
 
     </div>
 
