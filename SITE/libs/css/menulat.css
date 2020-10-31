@@ -3,7 +3,6 @@
     background-color:#dcdacd;
     font-family: 'Halant', serif;
     margin-top:3em;
-    margin-bottom:2.4em;
     padding-bottom:100%;
     width:14.5em;
 }
@@ -14,9 +13,10 @@
             }
     }
 
-    @media screen and (max-width : 1000px) {
+    @media screen and (max-width : 770px) {
         .menulat {
-                width:10em;
+                width:10.5em;
+                margin-top:2.5em;
             }
     }
 
@@ -223,10 +223,6 @@
         .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
             font-size:0.8em;
             }
-
-        .AmeriqueNord, .AmeriqueSud {
-            margin-bottom:-1.6em;
-        }
     }
 
     @media screen and (max-width : 600px) {
@@ -247,7 +243,7 @@
 .container {
     display: block;
     position: relative;
-    padding-left: 2em;
+    padding-left: 2em !important;
     margin-bottom: 0.5em;
 }
   
