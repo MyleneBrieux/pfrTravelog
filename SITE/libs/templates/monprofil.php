@@ -26,6 +26,22 @@
                             <div class="image-profil" width=250 height=250>
                                 <img src="../../img/photos/photo_profil_detail_voyage.jpg" alt="photo de profil" width="100%" height="100%" />
                             </div>
+                            <div class="row">
+                                <p>Membre depuis: (05/10/2020)</p>
+                            </div>
+                            <div class="row">
+                                <p>35 ans</p>
+                            </div>
+                            <div class="row">
+                                <p class="titre-lang">Langues parlées : </p>
+                                <p>
+                                    <ul>
+                                        <li>Français</li>
+                                        <li>Anglais</li>
+                                        <li>Espagnol</li>
+                                    </ul>
+                                </p>
+                            </div>
                         </div>
                     </nav>
                 </div>
@@ -34,9 +50,9 @@
 
             <footer>
             <!--footer-->
-        <div class="footer">
+        <footer class="footer">
             <?php include 'footer.php' ?>
-        </div>
+        </footer>
             </footer>
     </div>
 </body>
