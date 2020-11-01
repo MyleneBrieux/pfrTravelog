@@ -29,15 +29,15 @@
                         <label class="checkbox">
                             <input type="checkbox"> Partager ce voyage uniquement avec mes amis
                         </label>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Supprimer ce voyage</button>
-                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-target=".modal-delete">Supprimer ce voyage</button>
+                            <div class="modal fade modal-delete"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
+                                    <div class="modal-content"></br>
                                         <h2>Êtes-vous sûr de vouloir supprimer ce voyage ?</h2>
                                         <label class="checkbox">
                                             <input type="checkbox"> Oui, je souhaite supprimer mon voyage.
                                         </label>
-                                        <div class="modal-footer centrage">
+                                        <div class="modal-footer">
                                             <button type="button" class="btn btn-primary">supprimer</button>
                                         </div>
                                     </div>
@@ -95,10 +95,9 @@
                 </div>
 
                 <div class="row d-flex justify-content-center">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleFormControlFile1">Example file input</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple>
+                    <form class="form-files">
+                        <div class="form-group rectangle-files mt-2">
+                            <input type="file" class="form-control-file addfiles" id="ajoutFichiers1" multiple>
                         </div>
                     </form>
                 </div>
@@ -107,8 +106,7 @@
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                     Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer took a
-                    galley of type and scrambled it to make a type specimen book. It has survived not only five
+                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
                     centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                     It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
                     passages, and more recently with desktop publishing software like Aldus PageMaker including
@@ -164,16 +162,22 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-
                     </div>
+                </div>
+
+                <div class="row d-flex justify-content-center">
+                    <form class="form-files">
+                        <div class="form-group rectangle-files mt-2">
+                            <input type="file" class="form-control-file addfiles" id="ajoutFichiers2" multiple>
+                        </div>
+                    </form>
                 </div>
 
                         <h1>Jour 2 - 22 Juillet 2020</h1>
                             <p>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                 Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a
-                                galley of type and scrambled it to make a type specimen book. It has survived not only five
+                                printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
                                 centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                                 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
                                 passages, and more recently with desktop publishing software like Aldus PageMaker including
@@ -191,9 +195,9 @@
         </div>
 
         <!--footer-->
-        <div class="footer">
+        <footer class="footer">
             <?php include 'footer.php' ?>
-        </div>
+        </footer>
     </div>
 </body>
 </html>

@@ -15,11 +15,6 @@
     text-align: center;
 }
 
-/*Modal*/
-.modal-footer {
-    text-align:center
-}
-
 /*corps de page*/
 
 h1{
@@ -47,6 +42,21 @@ p{
 	width:300px;
 	height:100px;
 	background:#dcdacd;
+}
+
+.rectangle-files{
+	width:300px;
+	height:35px;
+    background:#52908b;
+    position: relative;
+}
+
+.form-files{
+    font-family: 'Halant', serif;
+}
+
+.addfiles{
+    color: white;
 }
 
 .button {
