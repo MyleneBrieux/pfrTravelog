@@ -23,18 +23,23 @@
 }
 
 .placenav{
-    margin-top:3.7em;
+    margin-top:3.5em;
 }
 
 .placefooter{
-    margin-bottom:2.8em;
+    margin-bottom:3em;
 }
 
 /*CORPS*/
 
+body{
+    overflow-x: hidden;
+}
+
 .titre_photo_detail_voyage{
 color: rgba(255, 255, 255, 0.8);
 }
+
 
 .taille_photos_detail_voyage{
     width: 80em;
@@ -42,21 +47,155 @@ color: rgba(255, 255, 255, 0.8);
 }
 
 .taille_photo_profil_detail_voyage{
-    width: 20em;
+    width: 50em;
 }
 
-.taille_logo_detail_voyage{
-    height:8em;
-    width: auto;
-}
+
+
+
+
 
 .element_like_comm{
-    padding-left: 61em !important;
-    margin-top: -5.5em;
+    /* padding-left: 61em !important; */
+    margin-top: -2em;
 }
 
 .nofloat{
     float:none !important;
     color:red !important;
     opacity: 1 !important;
+}
+
+.fond_carrousel{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+ /* CASE */
+ .container {
+    /* display: block; */
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+    margin-left:0.6em;
+}
+  
+/* Cache la case par défaut */
+.container input {
+    opacity: 0;
+}
+
+/* Personnalisation de la case */
+.checkmark {
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    background-color: #eee;
+    border: 0.05em solid #707070;
+}
+  
+/* Quand la souris passe sur la case */
+.container:hover input ~ .checkmark {
+    background-color: #707070;
+}
+  
+/* Quand l'utilisateur clique sur la case */
+.container input:checked ~ .checkmark {
+    background-color: #52908b;
+}
+  
+/* Sigle qui montre que la case a été cochée */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+/* Personnalisation du sigle qui montre que la case a été cochée */
+.container .checkmark:after {
+    left: 0.25em;
+    top: -0.08em;
+    width: 0.40em;
+    height: 0.90em;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+} 
+
+
+/* Titre carousel */
+
+@media screen and (min-width:941px){
+    .taille_titre_photo_detail_voyage{
+        font-size: 2em !important;
+    }
+    .sous_titre_carrousel{
+        font-size:3em
+    }
+}
+
+@media screen and (max-width:940px){
+    .taille_titre_photo_detail_voyage{
+        font-size: 1.5em !important;
+    }
+    .sous_titre_carrousel{
+        font-size:2.5em
+    }
+}
+
+@media screen and (max-width:600px){
+    .taille_titre_photo_detail_voyage{
+        font-size: 1.2em !important;
+    }
+    .sous_titre_carrousel{
+        font-size:2em
+    }
+}
+
+@media screen and (max-width:500px){
+    .taille_titre_photo_detail_voyage{
+        font-size: 1em !important;
+    }
+    .sous_titre_carrousel{
+        font-size:1.5em
+    }
+}
+
+/* Taille logo like et commentaire */
+
+@media screen and (min-width:1565px){
+    .taille_logo_detail_voyage{
+        height:8em;
+        width: auto;
+    }
+}
+
+@media screen and (max-width:1565px){
+    .taille_logo_detail_voyage{
+        height:7em;
+        width: auto;
+    }
+}
+
+@media screen and (max-width:1315px){
+    .taille_logo_detail_voyage{
+        height:6em;
+        width: auto;
+    }
+}
+
+@media screen and (max-width:500px){
+    .taille_logo_detail_voyage{
+        height:4em;
+        width: auto;
+    }
 }
