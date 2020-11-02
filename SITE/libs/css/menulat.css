@@ -3,20 +3,22 @@
     background-color:#dcdacd;
     font-family: 'Halant', serif;
     margin-top:3em;
-    padding-bottom:100%;
+    padding-bottom:80em;
     width:14.5em;
 }
 
     @media screen and (max-width : 1200px) {
         .menulat {
-                width:12em;
+                width:11.7em;
+                padding-bottom:70em;
             }
     }
 
-    @media screen and (max-width : 770px) {
+    @media screen and (max-width : 910px) {
         .menulat {
                 width:10.5em;
                 margin-top:2.5em;
+                padding-bottom:45em;
             }
     }
 

@@ -4,51 +4,33 @@
     color: #707070;
     font-size:1em;
     font-style: italic;
-    margin-top:5em;
+    margin-top:6em;
     margin-left:30em;
 }
 
-    @media screen and (max-width : 1270px) {
+    @media screen and (max-width : 1280px) { 
         .rsvoyages {
-                margin-left:28em;
+                margin-left:27em;
             }
     }
 
-    @media screen and (max-width : 1220px) {
+    @media screen and (max-width : 1200px) { 
         .rsvoyages {
-                margin-left:26em;
+                margin-left:24em;
             }
     }
 
-    @media screen and (max-width : 1120px) {
+    @media screen and (max-width : 910px) { 
         .rsvoyages {
-                margin-left:22em;
-            }
-    }
-
-    @media screen and (max-width : 1030px) {
-        .rsvoyages {
-                margin-left:20em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
-        .rsvoyages {
-                margin-left:16em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
-        .rsvoyages {
-                font-size:0.8em;
-                margin-left:15em;
+                font-size:0.9em;
+                margin-top:4em;
+                margin-left:18em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .rsvoyages {
                 font-size:0.8em;
-                margin-left:18em;
             }
     }
 
@@ -68,7 +50,7 @@
         .rsvoyages {
                 margin-left:10em;
             }
-    }
+    } 
 
 
 
@@ -78,96 +60,58 @@
     border:solid #707070 0.1em;
     height:8em;
     width:6.5em;
-    margin-top:-113em;
+    margin-top:-104em;
     margin-left:21em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .photoprofil1 {
-                margin-top:-108em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .photoprofil1 {
-                margin-top:-103em;
-                margin-left:18em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .photoprofil1 {
-                margin-top:-98em;
                 margin-left:15em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
+        .photoprofil1 {
+                height:7em;
+                width:5.5em;
+                margin-top:-93.5em;
+            }
+    }
+
+    @media screen and (max-width : 1090px) {
         .photoprofil1 {
                 height:6em;
                 width:4.5em;
-                margin-top:-93em;
+                margin-top:-91em;
+                margin-left:13.75em;
             }
     }
 
-    @media screen and (max-width : 1120px) {
-        .photoprofil1 {
-                margin-top:-90em;
-                margin-left:13em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .photoprofil1 {
-                margin-top:-86em;
-            }
-    }
-
-    @media screen and (max-width : 1030px) {
-        .photoprofil1 {
-                margin-top:-82em;
-            }
-    }
-
-    @media screen and (max-width : 930px) {
-        .photoprofil1 {
-                margin-top:-70em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .photoprofil1 {
                 height:5em;
                 width:3.5em;
-                margin-top:-66em;
+                margin-top:-67.5em;
+                margin-left:14.5em;
             }
     }
 
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 780px) {
         .photoprofil1 {
-                height:4em;
-                width:2.75em;
-                margin-top:-62.5em;
                 margin-left:11em;
-            }
-    }
-    
-    @media screen and (max-width : 660px) {
-        .photoprofil1 {
-                margin-top:-58.5em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .photoprofil1 {
-                margin-top:2em;
-                margin-left:5.25em;
+            margin-top:2em;
+            margin-left:5.25em;
             }
     }
 
     @media screen and (max-width : 500px) {
         .photoprofil1 {
-                margin-left:2em;
+                margin-left:1.5em;
             }
     }
 
@@ -183,92 +127,44 @@
                 height:3.5em;
                 width:2.25em;
             }
-    }
+    } 
 
 .titrevoyage1 {
     font-family: 'Rancho', cursive;
     font-size:3em;
     color:#52908b;
-    margin-top:-37.65em;
+    margin-top:-34.5em;
     margin-left:0.4em;
 }
 
-    @media screen and (max-width : 1320px) {
-        .titrevoyage1 {
-                margin-top:-36em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .titrevoyage1 {
-                margin-top:-34.4em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .titrevoyage1 {
-                margin-top:-32.5em;
-            }
-    }
-
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .titrevoyage1 {
                 font-size:2.8em;
-                margin-top:-33.25em;
+                margin-top:-33.4em;
             }
     }
 
-    @media screen and (max-width : 1120px) {
-        .titrevoyage1 {
-                margin-top:-32.25em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
+    @media screen and (max-width : 1090px) {
         .titrevoyage1 {
                 font-size:2.6em;
-                margin-top:-33em;
+                margin-top:-35em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
-        .titrevoyage1 {
-                margin-top:-31.5em;
-            }
-    }
-
-    @media screen and (max-width : 930px) {
-        .titrevoyage1 {
-                margin-top:-27em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .titrevoyage1 {
                 font-size:2em;
-                margin-top:-33em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
-        .titrevoyage1 {
-                font-size:1.8em;
-                margin-top:-34.75em;
-            }
-    }
-
-    @media screen and (max-width : 660px) {
-        .titrevoyage1 {
-                margin-top:-32.5em;
+                margin-top:-33.75em;
+                margin-left:0.5em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .titrevoyage1 {
-                margin-top:1em;
+                margin-top:0.9em;
             }
     }
-
+    
     @media screen and (max-width : 430px) {
         .titrevoyage1 {
                 margin-top:1.25em;
@@ -280,104 +176,64 @@
                 font-size:1.5em;
                 margin-top:1.5em;
             }
-    }
+    } 
 
 .encadrevoyage1 {
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-109.5em;
+    margin-top:-100em;
     margin-left:24em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .encadrevoyage1 {
-                margin-top:-104.5em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .encadrevoyage1 {
-                margin-top:-99.5em;
-                margin-left:21em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .encadrevoyage1 {
-                margin-top:-94em;
                 margin-left:18em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .encadrevoyage1 {
                 height:16em;
-                width:50em;
-                margin-top:-90em;
-                margin-left:17.25em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .encadrevoyage1 {
-                margin-top:-87em;
-                margin-left:15.25em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .encadrevoyage1 {
-                height:12em;
                 width:46em;
-                margin-top:-83em;
+                margin-top:-90em;
+                margin-left:18em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 1090px) {
         .encadrevoyage1 {
-                height:12em;
-                width:36em;
-                margin-top:-79em;
+                height:14em;
+                width:38em;
+                margin-top:-88em;
+                margin-left:16em;
             }
     }
 
-    @media screen and (max-width : 930px) {
-        .encadrevoyage1 {
-                margin-top:-67em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .encadrevoyage1 {
                 height:12em;
                 width:30em;
-                margin-top:-63.5em;
+                margin-top:-65em;
             }
     }
 
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 780px) {
         .encadrevoyage1 {
-                height:12em;
                 width:26em;
-                margin-top:-60.5em;
-                margin-left:12.5em;
+                margin-left:12.75em;
             }
     }
-    
-    @media screen and (max-width : 660px) {
+
+    @media screen and (max-width : 665px) {
         .encadrevoyage1 {
-                height:10em;
                 width:22em;
-                margin-top:-56.5em;
-                margin-left:12.5em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .encadrevoyage1 {
                 height:10em;
-                width:22em;
                 margin-top:-9em;
                 margin-left:7em;
             }
@@ -393,111 +249,72 @@
         .encadrevoyage1 {
                 height:8em;
                 width:20em;
-                margin-left:1.75em;
-                margin-top:-8em;
+                margin-left:2.15em;
+                margin-top:-7em;
             }
     }
 
     @media screen and (max-width : 380px) {
         .encadrevoyage1 {
                 width:16em;
+                margin-top:-8em;
             }
-    }
+    } 
 
 .photovoyage1 {
     z-index:2;
     border:solid #707070 0.1em;
     height:14em;
     width:22em;
-    margin-top:-107.5em;
+    margin-top:-98em;
     margin-left:-4em;
 }
 
-    @media screen and (max-width : 1320px) {
-        .photovoyage1 {
-                margin-top:-102.5em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .photovoyage1 {
-                margin-top:-97.5em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .photovoyage1 {
-                margin-top:-92em;
-            }
-    }
-    
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .photovoyage1 {
                 height:12em;
                 width:20em;
                 margin-top:-88em;
-                margin-left:-3em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .photovoyage1 {
-                margin-top:-85em;
-                margin-left:-2em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .photovoyage1 {
-                height:10em;
-                width:16em;
-                margin-top:-82em;
-            }
-    }
-
-    @media screen and (max-width : 1030px) {
-        .photovoyage1 {
-                height:10em;
-                width:14em;
-                margin-top:-78em;
-                margin-left:-3em;
-            }
-    }
-
-    @media screen and (max-width : 930px) {
-        .photovoyage1 {
-                margin-top:-66em;
-                margin-left:-3em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
-        .photovoyage1 {
-                height:10em;
-                width:14em;
-                margin-top:-62.5em;
             }
     }
     
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 1090px) {
         .photovoyage1 {
-                height:10em;
-                width:13em;
-                margin-top:-59.5em;
+                height:11em;
+                width:16em;
+                margin-top:-86.5em;
+                margin-left:-3em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 910px) {
+        .photovoyage1 {
+                height:10em;
+                width:14em;
+                margin-top:-64em;
+            }
+    }
+
+    @media screen and (max-width : 780px) {
+        .photovoyage1 {
+                height:9em;
+                width:12em;
+                margin-left:-3em;
+            }
+    }
+
+    @media screen and (max-width : 665px) {
         .photovoyage1 {
                 height:8em;
                 width:10em;
-                margin-top:-55.5em;
+                margin-top:-63em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .photovoyage1 {
                 margin-top:5em;
+                margin-left:-3.4em !important;
             }
     }
 
@@ -505,7 +322,7 @@
         .photovoyage1 {
                 height:7em;
                 width:9em;
-                margin-bottom:0.5em;
+                margin-bottom:-0.5em;
             }
     }
 
@@ -514,7 +331,7 @@
                 height:6em;
                 width:8em;
                 margin-bottom:1em;
-                margin-left:-2.5em;
+                margin-left:-2.25em !important;
             }
     }
 
@@ -527,42 +344,47 @@
     padding-right:0.8em;
 }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .textevoyage1 {
                 font-size:1em;
-                padding-left:28em;
+                padding-left:25em;
                 padding-top:1em;
                 padding-right:1em;
             }
     }
 
-    @media screen and (max-width : 1080px) {
+    @media screen and (max-width : 1090px) {
         .textevoyage1 {
                 font-size:0.85em;
+                padding-left:25em;
+
             }
     }
 
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 910px) {
         .textevoyage1 {
-                font-size:0.75em;
+                font-size:0.65em;
                 margin-bottom:0em;
             }
     }
 
-    @media screen and (max-width : 870px) {
-        .textevoyage1 {
-                font-size:0.65em;
-                padding-left:27em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 780px) {
         .textevoyage1 {
                 padding-left:23em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
+        .textevoyage1 {
+                font-size:0.6em;
+                padding-left:21em;
+                padding-top:1em;
+                padding-right:1em;
+                margin-bottom:0em;
+            }
+    }
+
+    @media screen and (max-width : 600px) {
         .textevoyage1 {
                 font-size:0.55em;
                 padding-left:22em;
@@ -591,42 +413,36 @@
     margin-left:42.5em;
 }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .lienvoyage1 {
                 font-size:0.8em;
-                margin-left:52em;
+                margin-left:48em;
             }
     }
 
-    @media screen and (max-width : 1080px) {
+    @media screen and (max-width : 1090px) {
         .lienvoyage1 {
-                font-size:0.7em;
-                margin-left:55em;
+                font-size:0.75em;
+                margin-left:41em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
-        .lienvoyage1 {
-                margin-left:42em;
-            }
-    }
-    
-    @media screen and (max-width : 870px) {
-        .lienvoyage1 {
-                margin-left:33em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 910px) {
         .lienvoyage1 {
                 font-size:0.6em;
+                padding-left:-12em;
+            }
+    }
+
+    @media screen and (max-width : 780px) {
+        .lienvoyage1 {
                 margin-left:34em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .lienvoyage1 {
-                margin-left:27em;
+            margin-left:27em;
             }
     }
 
@@ -668,95 +484,64 @@
     background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:-88em;
+    margin-top:-80em;
     margin-left:72.5em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .photoprofil2 {
-                margin-top:-83em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .photoprofil2 {
-                margin-top:-78em;
-                margin-left:69.5em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .photoprofil2 {
-                margin-top:-73em;
                 margin-left:66.5em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
+        .photoprofil2 {
+                height:7em;
+                width:5.5em;
+                margin-top:-72em;
+                margin-left:61.5em;
+            }
+    }
+
+    @media screen and (max-width : 1090px) {
         .photoprofil2 {
                 height:6em;
                 width:4.5em;
-                margin-top:-71em;
-                margin-left:65em;
+                margin-top:-72em;
+                margin-left:51.5em;
             }
     }
 
-    @media screen and (max-width : 1120px) {
-        .photoprofil2 {
-                margin-top:-68em;
-                margin-left:63em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .photoprofil2 {
-                margin-top:-68em;
-                margin-left:59.5em;
-            }
-    }
-
-    @media screen and (max-width : 1030px) {
-        .photoprofil2 {
-                margin-top:-65em;
-                margin-left:49em;
-            }
-    }
-
-    @media screen and (max-width : 930px) {
-        .photoprofil2 {
-                margin-top:-53em;
-                margin-left:49em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .photoprofil2 {
                 height:5em;
                 width:3.5em;
-                margin-top:-50em;
-                margin-left:43em;
+                margin-top:-52.5em;
+                margin-left:44em;
             }
     }
 
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 780px) {
         .photoprofil2 {
-                height:4em;
-                width:2.75em;
-                margin-top:-47em;
                 margin-left:37em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .photoprofil2 {
-                margin-top:-45em;
-                margin-left:33em;
+                margin-left:33.5em;
             }
     }
-    
+
     @media screen and (max-width : 600px) {
         .photoprofil2 {
                 margin-top:2em;
+                margin-left:27.5em;
+            }
+    }
+
+    @media screen and (max-width : 500px) {
+        .photoprofil2 {
                 margin-left:24em;
             }
     }
@@ -779,72 +564,31 @@
     font-family: 'Rancho', cursive;
     color:#52908b;
     font-size:3em;
-    margin-top:-29.25em;
+    margin-top:-26.5em;
     margin-left:-4em;
 }
 
-    @media screen and (max-width : 1320px) {
-        .titrevoyage2 {
-                margin-top:-27.5em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .titrevoyage2 {
-                margin-top:-26em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .titrevoyage2 {
-                margin-top:-24.25em;
-            }
-    }
-
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .titrevoyage2 {
                 font-size:2.8em;
-                margin-top:-25.35em;
-                margin-left:-3.25em;
+                margin-top:-25.5em;
+                margin-left:-3.75em;
             }
     }
 
-    @media screen and (max-width : 1120px) {
+    @media screen and (max-width : 1090px) {
         .titrevoyage2 {
-                margin-top:-24.25em;
+                font-size:2.6em;
+                margin-top:-27.75em;
+                margin-left:-3.5em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 910px) {
         .titrevoyage2 {
-                margin-top:-23.25em;
-            }
-    }
-
-    @media screen and (max-width : 930px) {
-        .titrevoyage2 {
-                margin-top:-19em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
-        .titrevoyage2 {
-            font-size:2em;
-            margin-top:-25.25em;
-            margin-left:-3.5em;
-            }
-    }
-    
-    @media screen and (max-width : 760px) {
-        .titrevoyage2 {
-                font-size:1.8em;
-                margin-top:-26.1em;
-            }
-    }
-
-    @media screen and (max-width : 660px) {
-        .titrevoyage2 {
-                margin-top:-25em;
+                font-size:2em;
+                margin-top:-26.25em;
+                margin-left:-3.6em;
             }
     }
 
@@ -865,99 +609,59 @@
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-84em;
+    margin-top:-76em;
     margin-left:24em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .encadrevoyage2 {
-                margin-top:-79em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .encadrevoyage2 {
-                margin-top:-74em;
-                margin-left:21em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .encadrevoyage2 {
-                margin-top:-69em;
                 margin-left:18em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
+    
+    @media screen and (max-width : 1200px) {
         .encadrevoyage2 {
                 height:16em;
-                width:50em;
-                margin-top:-68em;
-                margin-left:17.5em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .encadrevoyage2 {
-                margin-top:-65em;
-                margin-left:15.25em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .encadrevoyage2 {
-                height:12em;
                 width:46em;
-                margin-top:-65em;
+                margin-top:-68em;
+                margin-left:18em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 1090px) {
         .encadrevoyage2 {
-                height:12em;
-                width:36em;
-                margin-top:-62em;
+                height:14em;
+                width:38em;
+                margin-top:-69em;
+                margin-left:16em;
             }
     }
 
-    @media screen and (max-width : 930px) {
+    @media screen and (max-width : 910px) {
         .encadrevoyage2 {
                 height:12em;
-                width:36em;
+                width:30em;
                 margin-top:-50em;
             }
     }
 
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 780px) {
         .encadrevoyage2 {
-                height:12em;
-                width:30em;
-                margin-top:-48em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
-        .encadrevoyage2 {
-                height:12em;
                 width:26em;
-                margin-top:-45em;
-                margin-left:12.5em;
+                margin-left:12.75em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .encadrevoyage2 {
-                height:10em;
                 width:22em;
-                margin-top:-43em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .encadrevoyage2 {
                 height:10em;
-                width:22em;
                 margin-top:-8.75em;
                 margin-left:7em;
             }
@@ -990,93 +694,69 @@
     border:solid #707070 0.1em;
     height:14em;
     width:22em;
-    margin-top:-82em;
+    margin-top:-74em;
     margin-left:49em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .photovoyage2 {
-                margin-top:-77em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .photovoyage2 {
-                margin-top:-72em;
-                margin-left:46em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .photovoyage2 {
-                margin-top:-67em;
                 margin-left:43em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .photovoyage2 {
                 height:12em;
                 width:20em;
                 margin-top:-66em;
-                margin-left:42em;
+                margin-left:40.5em;
             }
     }
-
-    @media screen and (max-width : 1120px) {
+    
+    @media screen and (max-width : 1090px) {
         .photovoyage2 {
-                margin-top:-63em;
-                margin-left:40em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .photovoyage2 {
-                height:10em;
+                height:11em;
                 width:16em;
-                margin-top:-64em;
+                margin-top:-67.5em;
+                margin-left:34em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 910px) {
         .photovoyage2 {
                 height:10em;
                 width:14em;
                 margin-top:-49em;
-                margin-left:33em;
+                margin-left:29em;
             }
     }
 
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 780px) {
         .photovoyage2 {
-                height:10em;
-                width:14em;
-                margin-top:-47em;
-                margin-left:28.5em;
-        }
-}
-
-    @media screen and (max-width : 760px) {
-        .photovoyage2 {
-                height:10em;
-                width:13em;
-                margin-left:23.85em !important;
-                margin-top:-44em;
+                height:9em;
+                width:12em;
+                margin-left:24.5em;
             }
     }
-
-    @media screen and (max-width : 660px) {
+    
+    @media screen and (max-width : 665px) {
         .photovoyage2 {
                 height:8em;
                 width:10em;
-                margin-top:-42em;
-                margin-left:22.75em !important;
+                margin-top:-48em;
+                margin-left:23em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .photovoyage2 {
-                margin-top:-1.5em;
+                margin-top:-1.8em;
+                margin-left:17.25em !important;
+            }
+    }
+        
+    @media screen and (max-width : 500px) {
+        .photovoyage2 {
                 margin-left:13.75em !important;
             }
     }
@@ -1107,43 +787,37 @@
     padding-left:0.8em;
 }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .textevoyage2 {
                 font-size:1em;
-                padding-right:28em;
+                padding-right:25em;
                 padding-top:1em;
                 padding-left:1em;
             }
     }
 
-    @media screen and (max-width : 1080px) {
+    @media screen and (max-width : 1090px) {
         .textevoyage2 {
                 font-size:0.85em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
-        .textevoyage2 {
-                font-size:0.75em;
-                margin-bottom:0em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .textevoyage2 {
                 font-size:0.65em;
-                padding-right:27em;
+                padding-right:23em;
                 margin-bottom:0em;
             }
     }
-
-    @media screen and (max-width : 760px) {
+        
+    @media screen and (max-width : 665px) {
         .textevoyage2 {
-                padding-right:23em;
+                font-size:0.6em;
+                padding-right:21em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 600px) {
         .textevoyage2 {
                 font-size:0.55em;
                 padding-right:22em;
@@ -1173,42 +847,36 @@
     margin-top:-1.5em;
 }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .lienvoyage2 {
                 font-size:0.8em;
-                margin-left:6em;
+                padding-left:16em;
             }
     }
 
-    @media screen and (max-width : 1080px) {
+    @media screen and (max-width : 1090px) {
         .lienvoyage2 {
-                font-size:0.7em;
-                margin-left:8em;
+                font-size:0.75em;
+                padding-left:13em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
-        .lienvoyage2 {
-                margin-left:2em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
-        .lienvoyage2 {
-                margin-left:-2.5em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 910px) {
         .lienvoyage2 {
                 font-size:0.6em;
+                padding-left:12em;
+            }
+    }
+
+    @media screen and (max-width : 780px) {
+        .lienvoyage2 {
                 margin-left:-3em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .lienvoyage2 {
-                margin-left:-4em;
+                margin-left:-5em;
             }
     }
 
@@ -1221,8 +889,8 @@
 
     @media screen and (max-width : 380px) {
         .lienvoyage2 {
-                margin-left:-5em;
                 font-size:0.4em;
+                margin-left:-5em;
             }
     }
 
@@ -1251,96 +919,65 @@
     background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:-63em;
+    margin-top:-56em;
     margin-left:21em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .photoprofil3 {
-                margin-top:-58em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .photoprofil3 {
-                margin-top:-53em;
-                margin-left:18em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .photoprofil3 {
-                margin-top:-48em;
                 margin-left:15em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
+    
+    @media screen and (max-width : 1200px) {
         .photoprofil3 {
-                height:6em;
-                width:4.5em;
-                margin-top:-49em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .photoprofil3 {
-                margin-top:-46em;
-                margin-left:13em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .photoprofil3 {
+                height:7em;
+                width:5.5em;
                 margin-top:-50em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 1090px) {
         .photoprofil3 {
-                margin-top:-48em;
+                height:6em;
+                width:4.5em;
+                margin-top:-53em;
+                margin-left:13.75em;
             }
     }
 
-    @media screen and (max-width : 930px) {
-        .photoprofil3 {
-                margin-top:-36em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .photoprofil3 {
                 height:5em;
                 width:3.5em;
-                margin-top:-35em;
+                margin-top:-37.5em;
+                margin-left:14.5em;
             }
     }
 
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 780px) {
         .photoprofil3 {
-                height:4em;
-                width:2.75em;
-                margin-top:-31.5em;
                 margin-left:11em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .photoprofil3 {
-                margin-top:2em ;
-                margin-left:6em;
+            margin-top:2em;
+            margin-left:5.25em ! important;
             }
     }
-
+   
     @media screen and (max-width : 500px) {
         .photoprofil3 {
-                margin-left:2em;
+            margin-left:1.5em !important;
             }
     }
 
     @media screen and (max-width : 430px) {
         .photoprofil3 {
-                margin-left:0.5em;
+                margin-left:0.5em !important;
                 margin-top:2.5em;
             }
     }
@@ -1350,77 +987,36 @@
                 height:3.5em;
                 width:2.25em;
             }
-    }
+    } 
 
 
 .titrevoyage3 {
     font-family: 'Rancho', cursive;
     color:#52908b;
     font-size:3em;
-    margin-top:-20.9em;
+    margin-top:-18.5em;
     margin-left:0.5em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1200px) {
         .titrevoyage3 {
-                margin-top:-19.25em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .titrevoyage3 {
+                font-size:2.8em;
                 margin-top:-17.75em;
             }
     }
 
-    @media screen and (max-width : 1220px) {
+    @media screen and (max-width : 1090px) {
         .titrevoyage3 {
-                margin-top:-16em;
+                font-size:2.6em;
+                margin-top:-20.5em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
-        .titrevoyage3 {
-                font-size:2.8em;
-                margin-top:-17.5em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .titrevoyage3 {
-                margin-top:-16.5em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .titrevoyage3 {
-                margin-top:-18em;
-            }
-    }
-
-    @media screen and (max-width : 1030px) {
-        .titrevoyage3 {
-                margin-top:-17.25em;
-            }
-    }
-
-    @media screen and (max-width : 930px) {
-        .titrevoyage3 {
-                margin-top:-13em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .titrevoyage3 {
                 font-size:2em;
-                margin-top:-17.5em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
-        .titrevoyage3 {
-                font-size:1.8em;
-                margin-top:-17.5em;
+                margin-top:-18.75em;
+                margin-left:0.5em;
             }
     }
 
@@ -1447,98 +1043,58 @@
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-59em;
+    margin-top:-52em;
     margin-left:24em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .encadrevoyage3 {
-                margin-top:-54em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .encadrevoyage3 {
-                margin-top:-49em;
-                margin-left:21em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .encadrevoyage3 {
-                margin-top:-44em;
                 margin-left:18em;
             }
     }
 
-    
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .encadrevoyage3 {
                 height:16em;
-                width:50em;
-                margin-top:-46em;
-                margin-left:17.25em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .encadrevoyage3 {
-                margin-top:-43em;
-                margin-left:15.25em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .encadrevoyage3 {
-                height:12em;
                 width:46em;
-                margin-top:-47em;
+                margin-top:-46.5em;
+                margin-left:18em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 1090px) {
         .encadrevoyage3 {
-                height:12em;
-                width:36em;
-                margin-top:-45em;
+                height:14em;
+                width:38em;
+                margin-top:-50em;
+                margin-left:16em;
             }
     }
 
-    @media screen and (max-width : 930px) {
-        .encadrevoyage3 {
-                margin-top:-33em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .encadrevoyage3 {
                 height:12em;
                 width:30em;
-                margin-top:-32.5em;
+                margin-top:-35em;
             }
     }
-
-    @media screen and (max-width : 760px) {
+    
+    @media screen and (max-width : 780px) {
         .encadrevoyage3 {
-                height:12em;
                 width:26em;
-                margin-top:-29.5em;
-                margin-left:12.5em;
+                margin-left:12.75em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .encadrevoyage3 {
-                height:10em;
                 width:22em;
-                margin-top:-29.25em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .encadrevoyage3 {
                 height:10em;
-                width:22em;
                 margin-top:-9em;
                 margin-left:7em;
             }
@@ -1570,95 +1126,56 @@
     border:solid #707070 0.1em;
     height:14em;
     width:22em;
-    margin-top:-57em;
+    margin-top:-50em;
     margin-left:-4em;
 }
 
-    @media screen and (max-width : 1320px) {
-        .photovoyage3 {
-                margin-top:-52em;;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .photovoyage3 {
-                margin-top:-47em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .photovoyage3 {
-                margin-top:-42em;
-            }
-    }
-
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .photovoyage3 {
                 height:12em;
                 width:20em;
-                margin-top:-44em;
-                margin-left:-3em;
+                margin-top:-44.5em;
             }
     }
 
-    @media screen and (max-width : 1120px) {
+    @media screen and (max-width : 1090px) {
         .photovoyage3 {
-                margin-top:-41em;
-                margin-left:-2em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .photovoyage3 {
-                height:10em;
+                height:11em;
                 width:16em;
-                margin-top:-46em;
-            }
-    }
-
-    @media screen and (max-width : 1030px) {
-        .photovoyage3 {
-                height:10em;
-                width:14em;
-                margin-top:-44em;
+                margin-top:-48.5em;
                 margin-left:-3em;
             }
     }
 
-    @media screen and (max-width : 930px) {
+    @media screen and (max-width : 910px) {
         .photovoyage3 {
-                margin-top:-32em;
+                height:10em;
+                width:14em;
+                margin-top:-34em;
                 margin-left:-3em;
             }
     }
 
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 780px) {
         .photovoyage3 {
-                height:10em;
-                width:14em;
-                margin-top:-31.5em;
+                height:9em;
+                width:12em;
+                margin-left:-3em;
             }
     }
 
-    @media screen and (max-width : 760px) {
-        .photovoyage3 {
-                height:10em;
-                width:13em;
-                margin-top:-28.5em;
-            }
-    }
-
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .photovoyage3 {
                 height:8em;
                 width:10em;
-                margin-top:-28.25em;
+                margin-top:-33em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .photovoyage3 {
-                margin-top:5em;
+                margin-top:5.5em;
+                margin-left:-3.25em !important;
             }
     }
 
@@ -1675,7 +1192,7 @@
                 height:6em;
                 width:8em;
                 margin-bottom:1em;
-                margin-left:-2.5em;
+                margin-left:-2.25em !important;
             }
     }
 
@@ -1688,30 +1205,22 @@
     padding-right:0.8em;
 }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .textevoyage3 {
                 font-size:1em;
-                padding-left:28em;
+                padding-left:25em;
                 padding-top:1em;
                 padding-right:1em;
             }
     }
 
-    @media screen and (max-width : 1080px) {
+    @media screen and (max-width : 1090px) {
         .textevoyage3 {
                 font-size:0.85em;
             }
     }
 
-    
-    @media screen and (max-width : 1030px) {
-        .textevoyage3 {
-                font-size:0.75em;
-                margin-bottom:0em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .textevoyage3 {
                 font-size:0.65em;
                 padding-left:27em;
@@ -1719,13 +1228,20 @@
             }
     }
 
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 780px) {
         .textevoyage3 {
                 padding-left:23em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
+        .textevoyage3 {
+                font-size:0.6em;
+                padding-left:21em;
+            }
+    }
+
+    @media screen and (max-width : 600px) {
         .textevoyage3 {
                 font-size:0.55em;
                 padding-left:22em;
@@ -1754,40 +1270,34 @@
     margin-left:42.5em;
 }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .lienvoyage3 {
                 font-size:0.8em;
-                margin-left:52em;
+                margin-left:48em;
             }
     }
 
-    @media screen and (max-width : 1080px) {
+    @media screen and (max-width : 1090px) {
         .lienvoyage3 {
-                font-size:0.7em;
-                margin-left:56em;
+                font-size:0.75em;
+                margin-left:41em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
-        .lienvoyage3 {
-                margin-left:42em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
-        .lienvoyage3 {
-                margin-left:33em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 910px) {
         .lienvoyage3 {
                 font-size:0.6em;
+                padding-left:-12em;
+            }
+    }
+
+    @media screen and (max-width : 780px) {
+        .lienvoyage3 {
                 margin-left:34em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .lienvoyage3 {
                 margin-left:27em;
             }
@@ -1831,94 +1341,64 @@
     background-color:white;
     height:8em;
     width:6.5em;
-    margin-top:-37em;
+    margin-top:-32em;
     margin-left:72.5em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .photoprofil4 {
-                margin-top:-32em;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .photoprofil4 {
-                margin-top:-27em;
-                margin-left:69.5em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .photoprofil4 {
-                margin-top:-23em;
                 margin-left:66.5em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
+        .photoprofil4 {
+                height:7em;
+                width:5.5em;
+                margin-top:-28.5em;
+                margin-left:61em;
+            }
+    }
+
+    @media screen and (max-width : 1090px) {
         .photoprofil4 {
                 height:6em;
                 width:4.5em;
-                margin-top:-27em;
-                margin-left:65em;
+                margin-top:-34em;
+                margin-left:51.5em;
             }
     }
 
-    @media screen and (max-width : 1120px) {
-        .photoprofil4 {
-                margin-top:-24em;
-                margin-left:63em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .photoprofil4 {
-                margin-top:-32em;
-                margin-left:59.5em;
-            }
-    }
-
-    @media screen and (max-width : 1030px) {
-        .photoprofil4 {
-                margin-top:-31em;
-                margin-left:49em;
-            }
-    }
-
-    @media screen and (max-width : 930px) {
-        .photoprofil4 {
-                margin-top:-19em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .photoprofil4 {
                 height:5em;
                 width:3.5em;
-                margin-top:-19.5em;
-                margin-left:43em;
+                margin-top:-22.5em;
+                margin-left:44em;
             }
     }
 
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 780px) {
         .photoprofil4 {
-                height:4em;
-                width:2.75em;
-                margin-top:-15.5em;
                 margin-left:37em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .photoprofil4 {
-                margin-top:-17.5em;
-                margin-left:24em;
+                margin-left:33.5em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .photoprofil4 {
-                margin-top:2em;
+            margin-top:2em;
+            margin-left:27em;
+            }
+    }
+
+    @media screen and (max-width : 500px) {
+        .photoprofil4 {
                 margin-left:24em;
             }
     }
@@ -1942,89 +1422,29 @@
     color:#52908b;
     font-size:3em;
     margin-left:-4.1em;
-    margin-top:-12.25em;
+    margin-top:-10.5em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1200px) {
         .titrevoyage4 {
-                margin-top:-10.5em;
+                margin-top:-9.5em;
+                margin-left:-3.6em;
             }
     }
-
-    @media screen and (max-width : 1270px) {
-        .titrevoyage4 {
-                margin-top:-9em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .titrevoyage4 {
-                margin-top:-7.75em;
-            }
-    }
-
-    @media screen and (max-width : 1170px) {
-        .titrevoyage4 {
-                font-size:2.8em;
-                margin-top:-9.75em;
-                margin-left:-3.5em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .titrevoyage4 {
-                margin-top:-8.75em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .titrevoyage4 {
-                margin-top:-11.5em;
-            }
-    }
-
-    @media screen and (max-width : 1030px) {
-        .titrevoyage4 {
-                margin-top:-11.25em;
-                margin-left:-6em;
-            }
-    }
-
-    @media screen and (max-width : 930px) {
-        .titrevoyage4 {
-                margin-top:-6.85em;
-                margin-left:-3.5em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    
+    @media screen and (max-width : 910px) {
         .titrevoyage4 {
                 font-size:2em;
-                margin-top:-9.75em;
-                margin-left:-3.5em;
+                margin-top:-11.25em;
             }
     }
-    
-    @media screen and (max-width : 760px) {
-        .titrevoyage4 {
-                font-size:1.8em;
-                margin-top:-8.65em;
-            }
-    }
-
-    @media screen and (max-width : 660px) {
-        .titrevoyage4 {
-                margin-top:-9.75em;
-            }
-    }
-
-    
+        
     @media screen and (max-width : 600px) {
         .titrevoyage4 {
                 margin-top:1em;
             }
     }
-
+  
     @media screen and (max-width : 380px) {
         .titrevoyage4 {
                 font-size:1.5em;
@@ -2036,100 +1456,62 @@
     background-color: #dcdacd;
     height:18em;
     width:52em;
-    margin-top:-33em;
+    margin-top:-28em;
     margin-bottom:8em;
     margin-left:24em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .encadrevoyage4 {
-                margin-top:-28em;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .encadrevoyage4 {
-                margin-top:-23em;
-                margin-left:21em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .encadrevoyage4 {
-                margin-top:-19em;
                 margin-left:18em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .encadrevoyage4 {
                 height:16em;
-                width:50em;
-                margin-top:-24em;
-                margin-left:17.5em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .encadrevoyage4 {
-                margin-top:-21em;
-                margin-left:15.25em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .encadrevoyage4 {
-                height:12em;
                 width:46em;
-                margin-top:-29em;
+                margin-top:-25em;
+                margin-left:18em;
             }
     }
-
-    @media screen and (max-width : 1030px) {
+    
+    @media screen and (max-width : 1090px) {
         .encadrevoyage4 {
-                height:12em;
-                width:36em;
-                margin-top:-28em;
+                height:14em;
+                width:38em;
+                margin-top:-31em;
+                margin-left:16em;
             }
     }
 
-    @media screen and (max-width : 930px) {
-        .encadrevoyage4 {
-                margin-top:-16em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .encadrevoyage4 {
                 height:12em;
                 width:30em;
-                margin-top:-17em;
+                margin-top:-20em;
+                margin-left:16em;
             }
     }
 
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 780px) {
         .encadrevoyage4 {
-                height:12em;
                 width:26em;
-                margin-top:-13.5em;
-                margin-left:12.5em;
+                margin-left:12.75em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .encadrevoyage4 {
-                height:10em;
                 width:22em;
-                margin-top:-15.5em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .encadrevoyage4 {
                 height:10em;
-                width:22em;
                 margin-top:-9em;
-                margin-left:7em;
+                margin-left:6.5em;
             }
     }
 
@@ -2151,7 +1533,7 @@
     @media screen and (max-width : 380px) {
         .encadrevoyage4 {
                 width:16em;
-                margin-top:-6.75em;
+                margin-top:-7em;
             }
     }
 
@@ -2160,107 +1542,79 @@
     border:solid #707070 0.1em;
     height:14em;
     width:22em;
-    margin-top:-31em;
+    margin-top:-26em;
     margin-left:49em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
         .photovoyage4 {
-                margin-top:-26em;
-            }
-    }
-
-    @media screen and (max-width : 1270px) {
-        .photovoyage4 {
-                margin-top:-21em;
-                margin-left:46em;
-            }
-    }
-
-    @media screen and (max-width : 1220px) {
-        .photovoyage4 {
-                margin-top:-17em;
                 margin-left:43em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .photovoyage4 {
                 height:12em;
                 width:20em;
-                margin-top:-22em;
-                margin-left:42em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .photovoyage4 {
-                margin-top:-19em;
+                margin-top:-23em;
                 margin-left:40em;
             }
     }
 
-    @media screen and (max-width : 1080px) {
+    @media screen and (max-width : 1090px) {
         .photovoyage4 {
-                height:10em;
+                height:11em;
                 width:16em;
-                margin-top:-28em;
+                margin-top:-29.5em;
+                margin-left:34.25em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 910px) {
         .photovoyage4 {
                 height:10em;
                 width:14em;
-                margin-top:-27em;
-                margin-left:33em;
+                margin-top:-19em;
+                margin-left:29em;
             }
     }
 
-    @media screen and (max-width : 930px) {
+    @media screen and (max-width : 780px) {
         .photovoyage4 {
-                margin-top:-15em;
-                margin-left:33em;
+                height:9em;
+                width:12em;
+                margin-left:24.5em;
             }
     }
 
-    @media screen and (max-width : 870px) {
-        .photovoyage4 {
-            height:10em;
-            width:14em;
-            margin-top:-16em;
-            margin-left:28em;
-        }
-    }
-
-    @media screen and (max-width : 760px) {
-        .photovoyage4 {
-                height:10em;
-                width:13em;
-                margin-left:23.85em !important;
-                margin-top:-12.5em;
-            }
-    }
-
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .photovoyage4 {
                 height:8em;
                 width:10em;
-                margin-top:-14.5em;
-                margin-left:22.75em !important;
+                margin-top:-18em;
+                margin-left:23em;
             }
     }
 
     @media screen and (max-width : 600px) {
         .photovoyage4 {
-                margin-top:-0.75em !important;
+                margin-top:-1.5em;
+                margin-left:17em !important;
+            }
+    }
+
+    @media screen and (max-width : 500px) {
+        .photovoyage4 {
                 margin-left:13.75em !important;
             }
     }
 
-    @media screen and (max-width : 600px) {
+    @media screen and (max-width : 430px) {
         .photovoyage4 {
-                margin-left:13.75em !important;
+                height:7em;
+                width:9em;
+                margin-top:-2em !important;
+                margin-left:11.25em !important;
             }
     }
 
@@ -2268,7 +1622,7 @@
         .photovoyage4 {
                 height:6em;
                 width:8em;
-                margin-top:-1.25em;
+                margin-top:-0.5em !important;
                 margin-left:8.25em !important;
             }
     }
@@ -2281,29 +1635,22 @@
     padding-left:0.8em;
 }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .textevoyage4 {
                 font-size:1em;
-                padding-right:28em;
+                padding-right:25em;
                 padding-top:1em;
                 padding-left:1em;
             }
     }
 
-    @media screen and (max-width : 1080px) {
+    @media screen and (max-width : 1090px) {
         .textevoyage4 {
                 font-size:0.85em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
-        .textevoyage4 {
-                font-size:0.75em;
-                margin-bottom:0em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    @media screen and (max-width : 910px) {
         .textevoyage4 {
                 font-size:0.65em;
                 padding-right:27em;
@@ -2311,18 +1658,25 @@
             }
     }
 
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 910px) {
         .textevoyage4 {
                 padding-right:23em;
             }
     }
+    
+    @media screen and (max-width : 665px) {
+        .textevoyage4 {
+                font-size:0.6em;
+                padding-right:21em;
+            }
+    }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 600px) {
         .textevoyage4 {
                 font-size:0.55em;
                 padding-right:22em;
             }
-    }
+    }  
 
     @media screen and (max-width : 430px) {
         .textevoyage4 {
@@ -2347,35 +1701,36 @@
     margin-top:-1.5em;
 }
 
-    @media screen and (max-width : 1170px) {
+    @media screen and (max-width : 1200px) {
         .lienvoyage4 {
-                font-size:0.7em;
-                margin-left:6em;
+                font-size:0.8em;
+                padding-left:16em;
             }
     }
 
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 1090px) {
         .lienvoyage4 {
-                margin-left:1em;
+                font-size:0.75em;
+                padding-left:13em;
             }
     }
 
-    @media screen and (max-width : 870px) {
-        .lienvoyage4 {
-                margin-left:-2.75em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
+    @media screen and (max-width : 910px) {
         .lienvoyage4 {
                 font-size:0.6em;
+                padding-left:12em;
+            }
+    }
+
+    @media screen and (max-width : 780px) {
+        .lienvoyage4 {
                 margin-left:-3em;
             }
     }
 
-    @media screen and (max-width : 660px) {
+    @media screen and (max-width : 665px) {
         .lienvoyage4 {
-                margin-left:-4em;
+                margin-left:-5em;
             }
     }
 
@@ -2415,74 +1770,41 @@
 .pages {
     font-family: 'Halant', serif;
     color: #707070;
-    font-size:1.5em;
-    margin-top:-6em;
-    margin-left:30em;
+    font-size:1.4em;
+    margin-top:-4em;
+    margin-left:34em;
 }
 
-    @media screen and (max-width : 1320px) {
+    @media screen and (max-width : 1280px) {
+        .pages {
+                margin-left:28em;
+            }
+    }
+
+    @media screen and (max-width : 1200px) {
         .pages {
                 margin-top:-4em;
             }
     }
 
-    @media screen and (max-width : 1270px) {
+    @media screen and (max-width : 1090px) {
         .pages {
-                margin-left:28em;
+                margin-top:-6em;
+                margin-left:24em;
             }
     }
 
-    @media screen and (max-width : 1170px) {
-        .pages {
-                font-size:1.4em;
-                margin-left:28em;
-            }
-    }
-
-    @media screen and (max-width : 1120px) {
-        .pages {
-                margin-left:26em;
-            }
-    }
-
-    @media screen and (max-width : 1080px) {
-        .pages {
-                margin-left:25em;
-                margin-top:-8em;
-            }
-    }
-
-    @media screen and (max-width : 1030px) {
+    @media screen and (max-width : 910px) {
         .pages {
                 font-size:1.2em;
-                margin-left:28em;
-                margin-top:-8em;
+                margin-top:-4em;
+                margin-left:25em;
             }
     }
-
-    @media screen and (max-width : 930px) {
-        .pages {
-                margin-left:26em;
-                margin-top:-5em;
-            }
-    }
-
-    @media screen and (max-width : 870px) {
+    
+    @media screen and (max-width : 780px) {
         .pages {
                 font-size:1em;
-                margin-left:28em;
-            }
-    }
-
-    @media screen and (max-width : 760px) {
-        .pages {
-                margin-left:26em;
-            }
-    }
-
-    @media screen and (max-width : 660px) {
-        .pages {
-                margin-left:23em;
             }
     }
 
