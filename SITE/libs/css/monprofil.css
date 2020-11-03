@@ -43,9 +43,16 @@
     text-decoration: underline;
 }
 
-.rectangle{
+.rectangle_desc{
 	width:1500px;
 	height:200px;
+    background:#dcdacd;
+    margin-left: 2em;
+}
+
+.rectangle_voyages{
+	width:1500px;
+	height:300px;
     background:#dcdacd;
     margin-left: 2em;
 }
@@ -57,9 +64,9 @@
 
 @media all and (max-device-width: 480px)
 {
-    .rectangle{
-        width:100px;
-        height:300px;
+    .rectangle_desc{
+        width:300px;
+        height:200px;
         background:#dcdacd;
         margin-left: 0.5em;
         margin-right: 0.5em;

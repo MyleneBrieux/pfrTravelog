@@ -63,12 +63,19 @@
                         <p class="pr-4 bd-highlight">3 contienents visités</p>
                         <p class="pr-4 bd-highlight">12 pays visités</p>
                     </div>
-                    <div class="pl-2 rectangle">
+                    <div class="pl-2 rectangle_desc">
                         <p class="description">Description : </p>
                     </div>
-                    <div class="row">
+                    <div class="row d-flex justify-content-around mt-2">
                         <h3>Mon dernier voyage : </h3>
                         <h3>Le plus populaire : </h3>
+                    </div>
+                    <div class="pl-2 rectangle_voyages d-flex justify-content-around">
+                        <img class="mt-3" src="../../img/photos/polaroid2.png" alt="" width=250 height=250>
+                        <img class="mt-3" src="../../img/photos/polaroid2.png" alt="" width=250 height=250>
+                    </div>
+                    <div class="row">
+                        <h3></h3>
                     </div>
                 </div>
             </div>
