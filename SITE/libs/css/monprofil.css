@@ -23,3 +23,45 @@
 .titre-lang{
     text-decoration: underline;
 }
+
+.button {
+    background-color: #52908b;
+    border: none;
+    color: white;
+    padding: 10px 28px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    border-radius: 10px;
+    font-family: 'Halant', serif;
+}
+
+  /*Corps de page*/
+
+  h3{
+    font-family: 'Rancho', cursive;
+    text-decoration: underline;
+}
+
+.rectangle{
+	width:1500px;
+	height:200px;
+    background:#dcdacd;
+    margin-left: 2em;
+}
+
+.description{
+    font-family: 'Rancho', cursive;
+    text-decoration: underline;
+}
+
+@media all and (max-device-width: 480px)
+{
+    .rectangle{
+        width:100px;
+        height:300px;
+        background:#dcdacd;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+}
