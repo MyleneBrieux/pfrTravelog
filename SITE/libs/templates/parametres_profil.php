@@ -24,43 +24,14 @@
         // include("menu_lat.php");
     ?>
 
-<<<<<<< HEAD
-
-    <div class="container-fluid d-flex">
-
-        <div class="col-3">
-            <div class="menu-gauche menulat">
-=======
 
     <div class="container-fluid">
         <div class="row">
 
->>>>>>> a51f4ca... MAJ pages profil et parametres
 
             <div class="col-12 col-sm-9 col-md-7 col-lg-5 col-xl-3">
                 <div class="menu-gauche menulat">
 
-<<<<<<< HEAD
-                <div class="membre txt-menu-responsive">Membre depuis le : </div>
-                <div class="age">35 ans</div>
-                <div class="langues-parlees">Langues parlées :</div>
-
-                <div class="langues">
-                    <ul>
-                        <li class="txt-menu-responsive">Français</li>
-                    </ul>
-                </div>
-
-                <div class="logos-menu">
-                    <div><a href=""><img class="oeil" src="../../img/logos_divers/suivre2.png" alt="logo suivre"
-                                class="photo-profil"><span class="liens-menu">Suivre</span></a></div>
-
-                    <div><a href=""><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
-                                class="photo-profil"><span class="liens-menu">Ajouter en ami</span></a></div>
-                </div>
-
-                <button type="button" class="btn btn-info bouton-contact">Mes voyages</button>
-=======
                     <img src="../../img/photos/nath.jpg" alt="Bootstrap" class="photo-profil">
 
                     <div class="membre txt-menu-responsive">Membre depuis le : </div>
@@ -80,49 +51,15 @@
                         <div><a href=""><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
                                     class="photo-profil"><span class="liens-menu">Ajouter en ami</span></a></div>
                     </div>
->>>>>>> a51f4ca... MAJ pages profil et parametres
 
                     <button type="button" class="btn btn-info bouton-contact">Mes voyages</button>
 
                 </div>
             </div>
-        </div>
 
 
-        <div class="col-9 formulaire1">
 
-            <div class="col-1 txt-profil">
-                <div>Profil :</div>
-            </div>
 
-<<<<<<< HEAD
-            <div>
-                <form>
-
-                    <div class="form-row mb-3 container-nom ">
-                        <span class="txt-nom">Nom :</span>
-                        <div class="col-5 input-nom ">
-                            <input type="text" class="form-control">
-                        </div>
-                        <span>Prénom :</span>
-                        <div class="col-5">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <span class="txt-birthday">Date de naissance :</span>
-                        <div class="col-3">
-                            <input type="date" class="form-control input-birthday">
-                        </div>
-                        <span class="txt-nationnalite">Nationnalité :</span>
-                        <div class="col-5">
-                            <input type="text" class="form-control input-nationnalite">
-                        </div>
-                    </div>
-
-                </form>
-=======
 
 
 
@@ -274,7 +211,6 @@
 
 
                 </div>
->>>>>>> a51f4ca... MAJ pages profil et parametres
             </div>
 
 
@@ -289,103 +225,9 @@
 
 
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> a51f4ca... MAJ pages profil et parametres
     <?php   
         include("footer.php");
         ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

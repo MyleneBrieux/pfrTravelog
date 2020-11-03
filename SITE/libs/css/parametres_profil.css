@@ -19,42 +19,13 @@ a:hover{
     height: 100%;
     }
 
-<<<<<<< HEAD
-@media screen and (max-width : 1200px){
-    .menulat{
-        width:12em;
-        }
-    }
-
- @media screen and (max-width : 1000px){
-    .menulat{
-        width:10em;
-        }
-    }
-
-@media screen and (max-width : 600px){
-=======
 @media screen and (max-width : 575px){
->>>>>>> a51f4ca... MAJ pages profil et parametres
     .menulat{
          width:36.5em;
         padding-bottom:1%;
         }
     }
 
-<<<<<<< HEAD
-@media screen and (max-width : 480px){
-    .menulat{
-        width:29em;
-        padding-bottom:1%;
-        }
-    }
-    
-/* FIN MENU*/    
-
-
-=======
->>>>>>> a51f4ca... MAJ pages profil et parametres
 .liens-menu{
     color: #48515D !important;
     margin-left: 1em;
@@ -66,11 +37,6 @@ a:hover{
 
 /* TEXTES MENU */
 .photo-profil{
-<<<<<<< HEAD
-    margin-top: 15%;
-    margin-left: 25%;
-    }
-=======
     margin-top: 50%;
     margin-left: 25%;
     }
@@ -81,7 +47,6 @@ a:hover{
             margin-top: 10%;
              }
         }
->>>>>>> a51f4ca... MAJ pages profil et parametres
 
 .membre{
     margin-top: 5%;
@@ -122,10 +87,7 @@ a:hover{
     margin-top: 5% !important;
     }
 
-<<<<<<< HEAD
-=======
     
->>>>>>> a51f4ca... MAJ pages profil et parametres
     @media screen and (max-width : 1185px){
         .txt-menu-responsive{
             font-size: 0.9em;
@@ -137,7 +99,6 @@ a:hover{
             font-size: 0.7em;
              }
         }   
-<<<<<<< HEAD
 
     @media (max-width : 600px){
         .txt-menu-responsive{
@@ -147,35 +108,16 @@ a:hover{
         }          
 
 
-=======
-
-    @media (max-width : 600px){
-        .txt-menu-responsive{
-            font-size: 1em;
-            margin-right: 30% !important;
-                }
-        }          
-
-
->>>>>>> a51f4ca... MAJ pages profil et parametres
 /* OEIL ET AMI*/
 .logos-menu{
     margin-top: 10% !important;
     margin-left: 20%;
     }
 
-    /* @media (max-width : 1186px){
-        .logos-menu{
-max-height: 2em;
-                }
-        }  */
-
-
 .oeil{
     margin-bottom: 05%;
     }
 
-    
 .photo-profil{
 max-width: 40%;
     }
@@ -186,60 +128,6 @@ max-width: 40%;
     margin-left: 23%;
     border-radius: 5em !important;
     }
-<<<<<<< HEAD
-
-/*INPUTS*/
-.formulaire1{
-    margin-top:10% !important;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    /* justify-content: center !important; */
-    background-color: #dcdacd;
-    max-height: 7.7em;
-    max-width: 70% !important;
-    }
-
-.txt-profil{
-    color: #48515D; 
-    margin-top: -3em;
-    font-weight: bolder;
-    text-decoration: underline;
-    font-size: 0.9em;
-    margin-left: -3%;
-    }
-
-.txt-nationnalite{
-    margin-left: 6.8%;
-    }
-
-.input-nationnalite{
-    max-width: 97% !important;
-    margin-left: 2%;
-    }
-
-.container-nom{
-    margin-top: 2%;
-}
-
-.txt-nom{
-    padding-left: 2% !important;
-    }
-
-.input-nom{
-    max-width: 40% !important;
-    margin-right: 3% !important;
-    }
-
-.input-birthday{
-    width: 125% !important;
-    }
-
-
-
-
-
-
-=======
 
     
 
@@ -276,7 +164,7 @@ max-width: 40%;
 
 /*INPUTS*/
 .formulaire-coordonnees{
-    margin-top: 30.5em;
+    margin-top: 4em;
     background-color: #dcdacd;
     height: 10em;
 
@@ -287,36 +175,35 @@ max-width: 40%;
     @media (max-width : 1200px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
             margin-left: -20% !important;
-            max-width: 95% !important ;
+            max-width: 80% !important ;
             }
         }  
 
     @media (max-width : 992px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            max-width: 160% !important ;
-            margin-left: -80% !important;
+            max-width: 70% !important ;
+            margin-left: -30% !important;
             }
         }
 
     @media (max-width : 856px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            margin-left: -75% !important;
-            max-width: 160% !important ;
-            margin-top: 40em;
+            margin-left: -20% !important;
+            max-width: 50% !important ;
             }
         }
 
     @media (max-width : 767px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            max-width: 280% !important;
-            margin-left: -200% !important;
+            max-width: 40% !important;
+            margin-left: -25% !important;
             }
         }
 
     @media (max-width : 614px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            margin-left: -180% !important;
-            min-width: 280% !important;
+            margin-left: -22% !important;
+            min-width: 20em !important;
             max-width: 30% !important;
             }
         }
@@ -360,13 +247,6 @@ max-width: 40%;
     font-weight: bolder;
     text-decoration: underline;
     }
-
-    @media (max-width : 1200px){
-        .profil{
-          margin-left: -10em !important;
-            }
-        }
-
 
 .txt-securite{
     color: #48515D; 
@@ -431,7 +311,6 @@ max-width: 40%;
 
 }
 
->>>>>>> a51f4ca... MAJ pages profil et parametres
 
 
 
