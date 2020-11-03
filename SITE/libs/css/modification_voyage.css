@@ -71,3 +71,45 @@ p{
     border-radius: 10px;
     font-family: 'Halant', serif;
   }
+
+  /* Titre carousel */
+
+@media screen and (min-width:941px){
+    .taille_titre_photo_detail_voyage{
+        font-size: 2em !important;
+        color: white;
+    }
+    .sous_titre_carrousel{
+        font-size:3em
+    }
+}
+
+@media screen and (max-width:940px){
+    .taille_titre_photo_detail_voyage{
+        font-size: 1.5em !important;
+        color: white;
+    }
+    .sous_titre_carrousel{
+        font-size:2.5em
+    }
+}
+
+@media screen and (max-width:600px){
+    .taille_titre_photo_detail_voyage{
+        font-size: 1.2em !important;
+        color: white;
+    }
+    .sous_titre_carrousel{
+        font-size:2em
+    }
+}
+
+@media screen and (max-width:500px){
+    .taille_titre_photo_detail_voyage{
+        font-size: 1em !important;
+        color: white;
+    }
+    .sous_titre_carrousel{
+        font-size:1.5em
+    }
+}

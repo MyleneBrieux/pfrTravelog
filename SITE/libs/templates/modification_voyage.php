@@ -19,7 +19,7 @@
                 <?php include 'navbar.php' ?>
             </div>
 
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-lg-2 col-md-4 col-sm-4 pl-0 col-12 bg-sable">
                 <nav class="menu centrage"></br>
                     <div class="col-lg-12 col-md-6 col-sm-6 pl-1 col-12">
@@ -47,7 +47,8 @@
                 </nav>
             </div>
 
-            <div class="col-lg-10 col-md-8 col-sm-8 col-12">
+            <div class="col-md-1 col-2"></div>
+            <div class="col-md-7 col-6 placenav">
 
                 <!-- Carousel -->
 
@@ -63,19 +64,19 @@
                                 <div class="carousel-item active taille_photos_detail_voyage">
                                         <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="First slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
-                                            <h2 class="">La Fontaine de Trevi</h2>
+                                            <h2 class="taille_titre_photo_detail_voyage">La Fontaine de Trevi</h2>
                                         </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
-                                        <img class="d-block w-100" src="../../../images/photos/japon.jpg" alt="Second slide">
+                                        <img class="d-block w-100" src="../../../images/photos/vatican.jpg" alt="Second slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
-                                            <h2 class="">La Fontaine de Trello</h2>
+                                            <h2 class="taille_titre_photo_detail_voyage">Le vatican</h2>
                                         </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
                                         <img class="d-block w-100" src="../../../images/photos/grece.jpg" alt="Third slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
-                                            <h2 class="">La Fontaine de Thomas</h2>
+                                            <h2 class="taille_titre_photo_detail_voyage">Un chat</h2>
                                         </div>
                                 </div>
                             </div>
@@ -123,7 +124,7 @@
 
                         <!-- Carousel -->
 
-                <div class="card">
+                <div class="card mt-2">
                     <div id="slider">
                         <div id="carousel2" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -135,19 +136,19 @@
                                 <div class="carousel-item active taille_photos_detail_voyage">
                                         <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="First slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
-                                            <h2 class="">La Fontaine de Trevi</h2>
+                                            <h2 class="taille_titre_photo_detail_voyage">La Fontaine de Trevi</h2>
                                         </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
-                                        <img class="d-block w-100" src="../../../images/photos/japon.jpg" alt="Second slide">
+                                        <img class="d-block w-100" src="../../../images/photos/vatican.jpg" alt="Second slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
-                                            <h2 class="">La Fontaine de Trello</h2>
+                                            <h2 class="taille_titre_photo_detail_voyage">Le vatican</h2>
                                         </div>
                                 </div>
                                 <div class="carousel-item taille_photos_detail_voyage">
                                         <img class="d-block w-100" src="../../../images/photos/grece.jpg" alt="Third slide">
                                         <div class="card-img-overlay titre_photo_detail_voyage halant">
-                                            <h2 class="">La Fontaine de Thomas</h2>
+                                            <h2 class="taille_titre_photo_detail_voyage">Un chat</h2>
                                         </div>
                                 </div>
                             </div>
