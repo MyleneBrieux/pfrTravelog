@@ -1,0 +1,172 @@
+/* ENCADRE SABLE */
+.encadreSable{
+    background-color:#dcdacd;
+    height:26em;
+    width:50em;
+    margin-top:6.5em;
+    margin-bottom:4.6em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+    @media screen and (max-width : 820px) {
+        .encadreSable {
+            height:26em;
+            width:30em;
+        }
+    }
+
+    @media screen and (max-width : 500px) {
+        .encadreSable {
+            height:20em;
+            width:18em;
+        }
+    }
+
+
+/* "UN PROBLEME ? UNE SUGGESTION ? CONTACTEZ-NOUS" */
+.texteContact{
+    color: #52908b;
+    font-family: 'Halant', serif;
+    font-size:2em;
+    margin-top:0.5em;
+    margin-left:1.25em;
+}
+
+    @media screen and (max-width : 820px) {
+        .texteContact {
+            font-size:1.30em !important;
+            margin-left:0.5em;
+        }
+    }
+
+    @media screen and (max-width : 500px) {
+        .texteContact {
+            font-size:1em !important;
+            text-align:center;
+        }
+    }
+
+
+/* FORMULAIRE DANS SON ENSEMBLE */
+.formContact {
+    font-family: 'Halant', serif;
+    color:#707070;
+}
+
+
+/* LIGNE 1 FORMULAIRE AVEC PSEUDO ET EMAIL */
+.formLigne1{
+    margin-left:7em !important;
+}
+
+    @media screen and (max-width : 820px) {
+        .formLigne1 {
+            margin-left:4.5em !important;
+        }
+    }
+
+    @media screen and (max-width : 775px) {
+        .formLigne1 {
+            padding-right:4.5em !important;
+        }
+    }
+
+    @media screen and (max-width : 500px) {
+        .formLigne1 {
+            margin-left:3em !important;
+            padding-right:3em !important;
+        }
+    }
+
+
+/* TEXTE A L'INTERIEUR DES INPUTS PSEUDO ET EMAIL */
+    @media screen and (max-width : 820px) {
+        .Pseudo, .Email, .Message {
+            font-size:0.8em !important;
+        }
+    }
+
+    @media screen and (max-width : 500px) {
+        .Pseudo, .Email, .Message {
+            font-size:0.6em !important;
+        }
+    }
+
+
+/* LIGNE 2 DU FORMULAIRE AVEC MESSAGE */
+.formLigne2{
+    margin-left:6.35em !important;
+}
+
+    @media screen and (max-width : 820px) {
+        .formLigne2 {
+            margin-left:4em !important;
+        }
+    }
+
+    @media screen and (max-width : 775px) {
+        .formLigne2 {
+            padding-right:8.5em !important;
+        }
+    }
+
+    @media screen and (max-width : 500px) {
+        .formLigne2 {
+            margin-left:2.4em !important;
+            padding-right:5.25em !important;
+        }
+    }
+
+
+/* TEXTE A L'INTERIEUR DE L'INPUT MESSAGE */
+.Message{
+    padding-top:1em !important;
+    padding-bottom:12.5em !important;
+}
+
+    @media screen and (max-width : 820px) {
+        .Message {
+            padding-bottom:18em !important;
+        }
+    }
+
+    @media screen and (max-width : 775px) {
+        .Message {
+            padding-bottom:14em !important;
+        }
+    }
+
+    @media screen and (max-width : 500px) {
+        .Message {
+            padding-bottom:10em !important;
+        }
+    }
+
+
+/* BOUTON ENVOYER */
+.boutonEnvoyer {
+    background-color: #52908b !important;
+    color:white !important;
+    font-family: 'Halant', serif;
+    font-size:1.1em !important;
+    letter-spacing:0.025em;
+    font-weight:bold !important;
+    width:8em;
+    margin-top:-0.25em;
+    margin-left:18em;
+}
+
+    @media screen and (max-width : 820px) {
+        .boutonEnvoyer {
+            font-size:0.9em !important;
+            margin-left:13em;
+        }
+    }
+
+    @media screen and (max-width : 500px) {
+        .boutonEnvoyer {
+            font-size:0.6em !important;
+            margin-left:11em;
+        }
+    }
