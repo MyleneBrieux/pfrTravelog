@@ -11,10 +11,6 @@
     padding-left: 15%;
 }
 
-.centrage {
-    text-align: center;
-}
-
 .image-profil{
     margin-top: 1em;
     margin-bottom: 1em;
@@ -36,6 +32,10 @@
     font-family: 'Halant', serif;
 }
 
+p{
+    font-family: 'Halant', serif;
+}
+
   /*Corps de page*/
 
   h3{
@@ -43,11 +43,19 @@
     text-decoration: underline;
 }
 
+h6{
+    font-family: 'Rancho', cursive;
+    text-decoration: underline;
+}
+
 .rectangle_desc{
-	width:1500px;
-	height:200px;
+	position: relative;
+    width: 95%;
+    height: 20%;
+    overflow: hidden;
     background:#dcdacd;
     margin-left: 2em;
+    margin-right: 2em;
 }
 
 .rectangle_voyages{
@@ -62,13 +70,32 @@
     text-decoration: underline;
 }
 
+.polaroid1{
+    height: 15em;
+    width: 15em;
+}
+
+.polaroid2{
+    height: 15em;
+    width: 15em;
+}
+
+.photo_voyage1{
+    height: 15em;
+    width: 15em;
+}
+
+.photo_voyage2{
+    height: 15em;
+    width: 15em;
+}
+
 @media all and (max-device-width: 480px)
 {
-    .rectangle_desc{
+    .rectangle_voyages{
         width:300px;
-        height:200px;
+        height:400px;
         background:#dcdacd;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
+        margin-left: 2em;
     }
 }
