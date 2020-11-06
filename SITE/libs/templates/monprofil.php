@@ -62,20 +62,28 @@
                         <p class="description">Description : </p>
                     </div>
                     
-                    <div class="row d-inline-flex justify-content-around mt-2">
-                        <h3>Mon dernier voyage : </h3>
-                        <img class="mt-3" src="../../img/photos/polaroid2.png" alt="" width=250 height=250>
-                        <h3>Le plus populaire : </h3>
-                        <img class="mt-3" src="../../img/photos/polaroid2.png" alt="" width=250 height=250>
+                    <div class="row d-flex justify-content-around mt-2">
+                        <div>
+                            <h3>Mon dernier voyage : </h3>
+                            <img src="../../img/photos/polaroid2.png" alt="" width=250 height=250>
+                        </div>
+                        <div>
+                            <h3>Le plus populaire : </h3>
+                            <img src="../../img/photos/polaroid2.png" alt="" width=250 height=250>
+                        </div>
                     </div>
                     <div>
                         <h3>Ses autres voyages</h3>
                     </div>
                     <div class="row d-inline-flex justify-content-around">
-                        <h6>japon</h6>
-                        <img class="mt-3" src="../../img/photos/japon.jpg" alt="" width=250 height=250>
-                        <h6>grèce</h6>
-                        <img class="mt-3" src="../../img/photos/grece.jpg" alt="" width=250 height=250>
+                        <div class="ml-5">
+                            <h4>japon</h4>
+                            <img class="mt-3" src="../../img/photos/japon.jpg" alt="" width=350 height=250>
+                        </div>
+                        <div class="ml-5">
+                            <h4>grèce</h4>
+                            <img class="mt-3" src="../../img/photos/grece.jpg" alt="" width=350 height=250>
+                        </div>
                     </div>
                 </div>
             </div>
