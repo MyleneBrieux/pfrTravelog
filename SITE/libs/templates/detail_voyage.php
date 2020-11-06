@@ -29,12 +29,12 @@
 
             <!--MENU DE GAUCHE-->
 
-            <div class="pl-0 col-md-2 col-12 bg-sable placenav">
+            <div class="pl-0 menu_lateral_detail_voyage">
                 <nav class="bg-sable mr-3 pr-3 menU centrage">
                     <div class="row">
-                        <img class="taille_photo_profil_detail_voyage col-md-12 col-6 mt-3 float-left"
+                        <img class=" col-md-12 col-6 mt-3 float-left"
                             src="../../../images/photos/photo_profil_detail_voyage.jpg" alt="Claude">
-                        <div class="col-lg-12 col-md-6 col-sm-6 mt-5 pl-1 col-6 float-right">
+                        <div class="col-lg-12 mt-5 pl-1 col-6">
                             <h4>Utilisateur</h4> </br>
                             <h5>Titre</h5>
                             <h6>Dates voyage</h6>

@@ -30,6 +30,44 @@
     margin-bottom:3em;
 }
 
+.menu_lateral_detail_voyage {
+    background-color:#dcdacd;
+    font-family: 'Halant', serif;
+    margin-top:3em;
+    padding-bottom:80em;
+    width:14.5em;
+}
+
+    @media screen and (max-width : 1200px) {
+        .menu_lateral_detail_voyage {
+                width:11.7em;
+                padding-bottom:70em;
+            }
+    }
+
+    @media screen and (max-width : 910px) {
+        .menu_lateral_detail_voyage {
+                width:10.5em;
+                margin-top:2.5em;
+                padding-bottom:45em;
+            }
+    }
+
+    @media screen and (max-width : 750px) {
+        .menu_lateral_detail_voyage {
+                width:36.5em;
+                padding-bottom:1%;
+            }
+    }
+
+    @media screen and (max-width : 480px) {
+        .menu_lateral_detail_voyage {
+                width:29em;
+                padding-bottom:1%;
+                width:30em;
+            }
+    }
+
 /*CORPS*/
 
 body{
@@ -45,14 +83,6 @@ color: rgba(255, 255, 255, 0.8);
     width: 80em;
     height: auto;
 }
-
-.taille_photo_profil_detail_voyage{
-    width: 50em;
-}
-
-
-
-
 
 
 .element_like_comm{
