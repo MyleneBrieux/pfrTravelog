@@ -20,7 +20,7 @@
 <body>
 
     <footer>
-        <div class="footer row">
+        <div class="footer row fixed-bottom">
 
             <div class="CGU col-3">Conditions générales d'utilisation</div>
 

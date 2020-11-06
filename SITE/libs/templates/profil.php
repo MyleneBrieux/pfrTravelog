@@ -14,6 +14,8 @@
     <script src="../bootstrap/js/bootstrap.js" defer></script>
     <script src="../js/index.js" defer></script>
 
+     <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet"> 
+
     <title>TRAVELOG</title>
 </head>
 
@@ -21,46 +23,17 @@
 
     <?php   
         include("navbar.php");
-        // include("menu_lat.php");
+      
     ?>
 
-<<<<<<< HEAD
 
     <div class="container-fluid d-flex">
 
-        <div class="col-3">
-            <div class="menu-gauche menulat">
-=======
-
-    <div class="container-fluid">
         <div class="row">
 
->>>>>>> a51f4ca... MAJ pages profil et parametres
+            <div class="col-12 col-sm-8 col-md-7 col-lg-5 col-xl-3">
+                <div class=" menulat">
 
-            <div class="col-12 col-sm-9 col-md-7 col-lg-5 col-xl-3">
-                <div class="menu-gauche menulat">
-
-<<<<<<< HEAD
-                <div class="membre txt-menu-responsive">Membre depuis le : </div>
-                <div class="age">35 ans</div>
-                <div class="langues-parlees">Langues parlées :</div>
-
-                <div class="langues">
-                    <ul>
-                        <li class="txt-menu-responsive">Français</li>
-                    </ul>
-                </div>
-
-                <div class="logos-menu">
-                    <div><a href=""><img class="oeil" src="../../img/logos_divers/suivre2.png" alt="logo suivre"
-                                class="photo-profil"><span class="liens-menu">Suivre</span></a></div>
-
-                    <div><a href=""><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
-                                class="photo-profil"><span class="liens-menu">Ajouter en ami</span></a></div>
-                </div>
-
-                <button type="button" class="btn btn-info bouton-contact">Mes voyages</button>
-=======
                     <img src="../../img/photos/nath.jpg" alt="Bootstrap" class="photo-profil">
 
                     <div class="membre txt-menu-responsive">Membre depuis le : </div>
@@ -80,192 +53,160 @@
                         <div><a href=""><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
                                     class="photo-profil"><span class="liens-menu">Ajouter en ami</span></a></div>
                     </div>
->>>>>>> a51f4ca... MAJ pages profil et parametres
 
                     <button type="button" class="btn btn-info bouton-contact">Mes voyages</button>
 
                 </div>
             </div>
-        </div>
-
-
-        <div class="col-9 formulaire1">
-
-            <div class="col-1 txt-profil">
-                <div>Profil :</div>
-            </div>
-
-<<<<<<< HEAD
-            <div>
-                <form>
-
-                    <div class="form-row mb-3 container-nom ">
-                        <span class="txt-nom">Nom :</span>
-                        <div class="col-5 input-nom ">
-                            <input type="text" class="form-control">
-                        </div>
-                        <span>Prénom :</span>
-                        <div class="col-5">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <span class="txt-birthday">Date de naissance :</span>
-                        <div class="col-3">
-                            <input type="date" class="form-control input-birthday">
-                        </div>
-                        <span class="txt-nationnalite">Nationnalité :</span>
-                        <div class="col-5">
-                            <input type="text" class="form-control input-nationnalite">
-                        </div>
-                    </div>
-
-                </form>
-=======
 
 
 
-            <!-- INPUT COORDONNEES-->
-
-            <div class="col-12 col-sm-3 col-md-5 col-lg-7 col-xl-9">
+            <div class="col-9 col-sm-4 col-md-5 col-lg-7 col-xl-9 formulaire1">
                 <div class="">
 
-                    <div class="col-12 txt-nom">
-                        <div class="nom">John Doe</div>
-                    </div>
+                    <!-- INPUT COORDONNEES-->
 
-                    <div class="col-12">
-                        <div class="profil">Profil :</div>
-                    </div>
+                    <div class="row">
 
-                    <form>
+                        <div class="col-12 txt-nom">
+                            <div class="nom">John Doe</div>
+                        </div>
 
-                        <div class="col-12 formulaire-coordonnees">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label>Nom:</label><input type="text" class="form-control">
+                     
+                        <form>
+
+                            <div class="col-12">
+                                <div class="txt-securite">Profil :</div>
+                            </div>
+
+                            <div class="col-12 formulaire-coordonnees securite">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Nom:</label><input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Prenom:</label><input type="text" class="form-control">
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <label>Prenom:</label><input type="text" class="form-control">
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Date de naissance:</label><input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Nationnalité:</label><input type="text" class="form-control">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-6">
-                                    <label>Date de naissance:</label><input type="date" class="form-control">
-                                </div>
-                                <div class="col-6">
-                                    <label>Nationnalité:</label><input type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
 
-
-                        <!-- <button type="button" class="btn btn-info bouton-modifier1">Modifier</button> -->
+                            <!-- <button type="button" class="btn btn-info bouton-modifier1">Modifier</button> -->
 
 
 
-                        <!-- INPUT SECURITE -->
+                            <!-- INPUT SECURITE -->
 
-                        <div class="col-12 txt-securite">
-                            <div class="">Securité :</div>
-                        </div>
-
-                        <div class="col-12 formulaire-coordonnees securite ">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label>Mots de passe:</label><input type="password" class="form-control">
-                                </div>
-                                <div class="col-6">
-                                    <label>Confirmation:</label><input type="password" class="form-control">
-                                </div>
+                            <div class="col-12 txt-securite">
+                                <div class="">Securité :</div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-6">
-                                    <label>Email:</label><input type="email" class="form-control">
+                            <div class="col-12 formulaire-coordonnees securite ">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Mots de passe:</label><input type="password" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Confirmation:</label><input type="password" class="form-control">
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <label>Confirmation:</label><input type="email" class="form-control">
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Email:</label><input type="email" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Confirmation:</label><input type="email" class="form-control">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- <button type="button" class="btn btn-info bouton-modifier1">Modifier</button> -->
-
+                            <!-- <button type="button" class="btn btn-info bouton-modifier1">Modifier</button> -->
 
 
 
-                        <!-- INPUT DIVERS -->
+
+                            <!-- INPUT DIVERS -->
 
 
-                        <div class="col-12 txt-securite">
-                            <div class="">Divers :</div>
-                        </div>
+                            <div class="col-12 txt-securite">
+                                <div class="">Divers :</div>
+                            </div>
 
-                        <div class="col-12 formulaire-coordonnees2 securite ">
-                            <div class="row">
-                                <div class="col-12">
-                                    <label>Langues parlées:</label>
+                            <div class="col-12 formulaire-coordonnees2 securite ">
+                                <div class="row">
                                     
-                                    <select id="langues" class="select">
-                                        <option value="valeur1" selected>Français</option>
-                                        <option value="valeur2">Allemand</option>
-                                        <option value="valeur2">Anglais</option>
-                                        <option value="valeur3">Chinois</option>
-                                        <option value="valeur3">Coréen</option>
-                                        <option value="valeur3">Espagnol</option>
-                                        <option value="valeur2">Italien</option>
-                                        <option value="valeur3">Japonais</option>
-                                        <option value="valeur2">Russe</option>
-                                    </select>
+                                    <div class="col-12">
+                                        <label>Langues parlées:</label>
+
+                                        <select id="langues" class="select">
+                                            <option value="valeur1" selected>Français</option>
+                                            <option value="valeur2">Allemand</option>
+                                            <option value="valeur2">Anglais</option>
+                                            <option value="valeur3">Chinois</option>
+                                            <option value="valeur3">Coréen</option>
+                                            <option value="valeur3">Espagnol</option>
+                                            <option value="valeur2">Italien</option>
+                                            <option value="valeur3">Japonais</option>
+                                            <option value="valeur2">Russe</option>
+                                        </select>
+                                    </div>
+
                                 </div>
+
 
                             </div>
 
-
-                        </div>
-
-                        <!-- INPUT CONFIDENTIALITE -->
+                            <!-- INPUT CONFIDENTIALITE -->
 
 
-                        <div class="col-12 txt-securite">
-                            <div class="">Confidentialité :</div>
-                        </div>
-
-                        <div class="col-12 formulaire-coordonnees securite">
-                            <div class="row">
-
-                                <div class="col-12 mt-3">
-                                <input type="checkbox" class="checkbox"><label>J'accepte de reçevoir des demande d'ami</label>
-                                </div>
-
-                                <div class="col-12">
-                                <input type="checkbox" class="checkbox"><label>J'accepte de reçevoir des notifications par mail</label>
-                                </div>
-
+                            <div class="col-12 txt-securite">
+                                <div class="">Confidentialité :</div>
                             </div>
 
-                            <div class="row">
+                            <div class="col-12 formulaire-coordonnees securite">
+                                <div class="row">
 
-                                <div class="col-12">
-                                <input type="checkbox" class="checkbox"><label>Supprimer mon compte</label>
+                                    <div class="col-12 mt-3">
+                                        <input type="checkbox" class="checkbox"><label>J'accepte de reçevoir des
+                                            demande d'ami</label>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="checkbox" class="checkbox"><label>J'accepte de reçevoir des
+                                            notifications par mail</label>
+                                    </div>
+
                                 </div>
 
+                                <div class="row">
+
+                                    <div class="col-12">
+                                        <input type="checkbox" class="checkbox"><label>Supprimer mon compte</label>
+                                    </div>
+
+                                </div>
                             </div>
-                        </div>
-
-
-                       
-
-                    </form>
-
-                    <button type="button" class="row btn btn-info bouton-modifier1 mt-5">VALIDER</button>
 
 
 
 
+                        </form>
+
+                        <button type="button" class="row btn btn-info bouton-modifier1 ">VALIDER</button>
+
+
+
+                    </div>
 
 
 
@@ -274,7 +215,6 @@
 
 
                 </div>
->>>>>>> a51f4ca... MAJ pages profil et parametres
             </div>
 
 
@@ -289,34 +229,6 @@
 
 
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> a51f4ca... MAJ pages profil et parametres
     <?php   
         include("footer.php");
         ?>

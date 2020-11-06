@@ -11,50 +11,21 @@ a:hover{
 .menulat{
     background-color:#dcdacd;
     font-family: 'Halant', serif;
-    margin-top:3em;
-    margin-bottom:2.4em;
+    margin-top:2.5em;
+    /* margin-bottom:2.4em; */
     padding-bottom:100%;
     margin-left: -2em;
     width:14.5em;
-    height: 100%;
+    height: 110%;
     }
 
-<<<<<<< HEAD
-@media screen and (max-width : 1200px){
-    .menulat{
-        width:12em;
-        }
-    }
-
- @media screen and (max-width : 1000px){
-    .menulat{
-        width:10em;
-        }
-    }
-
-@media screen and (max-width : 600px){
-=======
 @media screen and (max-width : 575px){
->>>>>>> a51f4ca... MAJ pages profil et parametres
     .menulat{
          width:36.5em;
         padding-bottom:1%;
         }
     }
 
-<<<<<<< HEAD
-@media screen and (max-width : 480px){
-    .menulat{
-        width:29em;
-        padding-bottom:1%;
-        }
-    }
-    
-/* FIN MENU*/    
-
-
-=======
->>>>>>> a51f4ca... MAJ pages profil et parametres
 .liens-menu{
     color: #48515D !important;
     margin-left: 1em;
@@ -66,11 +37,6 @@ a:hover{
 
 /* TEXTES MENU */
 .photo-profil{
-<<<<<<< HEAD
-    margin-top: 15%;
-    margin-left: 25%;
-    }
-=======
     margin-top: 50%;
     margin-left: 25%;
     }
@@ -81,7 +47,6 @@ a:hover{
             margin-top: 10%;
              }
         }
->>>>>>> a51f4ca... MAJ pages profil et parametres
 
 .membre{
     margin-top: 5%;
@@ -122,10 +87,7 @@ a:hover{
     margin-top: 5% !important;
     }
 
-<<<<<<< HEAD
-=======
     
->>>>>>> a51f4ca... MAJ pages profil et parametres
     @media screen and (max-width : 1185px){
         .txt-menu-responsive{
             font-size: 0.9em;
@@ -137,7 +99,6 @@ a:hover{
             font-size: 0.7em;
              }
         }   
-<<<<<<< HEAD
 
     @media (max-width : 600px){
         .txt-menu-responsive{
@@ -147,17 +108,6 @@ a:hover{
         }          
 
 
-=======
-
-    @media (max-width : 600px){
-        .txt-menu-responsive{
-            font-size: 1em;
-            margin-right: 30% !important;
-                }
-        }          
-
-
->>>>>>> a51f4ca... MAJ pages profil et parametres
 /* OEIL ET AMI*/
 .logos-menu{
     margin-top: 10% !important;
@@ -186,60 +136,6 @@ max-width: 40%;
     margin-left: 23%;
     border-radius: 5em !important;
     }
-<<<<<<< HEAD
-
-/*INPUTS*/
-.formulaire1{
-    margin-top:10% !important;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    /* justify-content: center !important; */
-    background-color: #dcdacd;
-    max-height: 7.7em;
-    max-width: 70% !important;
-    }
-
-.txt-profil{
-    color: #48515D; 
-    margin-top: -3em;
-    font-weight: bolder;
-    text-decoration: underline;
-    font-size: 0.9em;
-    margin-left: -3%;
-    }
-
-.txt-nationnalite{
-    margin-left: 6.8%;
-    }
-
-.input-nationnalite{
-    max-width: 97% !important;
-    margin-left: 2%;
-    }
-
-.container-nom{
-    margin-top: 2%;
-}
-
-.txt-nom{
-    padding-left: 2% !important;
-    }
-
-.input-nom{
-    max-width: 40% !important;
-    margin-right: 3% !important;
-    }
-
-.input-birthday{
-    width: 125% !important;
-    }
-
-
-
-
-
-
-=======
 
     
 
@@ -276,59 +172,66 @@ max-width: 40%;
 
 /*INPUTS*/
 .formulaire-coordonnees{
-    margin-top: 30.5em;
+    margin-top: 3.5em;
     background-color: #dcdacd;
     height: 10em;
-
     width: 55em !important ;
     margin-right: 8% !important;
     }
 
     @media (max-width : 1200px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            margin-left: -20% !important;
-            max-width: 95% !important ;
+            margin-left: -18% !important;
+            max-width: 82% !important;
+            margin-top: 4em;
             }
         }  
 
     @media (max-width : 992px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            max-width: 160% !important ;
-            margin-left: -80% !important;
+            max-width: 70% !important ;
+            margin-left: -30% !important;
             }
         }
 
-    @media (max-width : 856px){
+    @media (max-width : 870px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            margin-left: -75% !important;
-            max-width: 160% !important ;
-            margin-top: 40em;
+            margin-left: -25% !important;
+            max-width: 55% !important ;
             }
         }
 
     @media (max-width : 767px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            max-width: 280% !important;
-            margin-left: -200% !important;
+            max-width: 45% !important;
+            margin-left: -32% !important;
             }
         }
 
-    @media (max-width : 614px){
+    @media (max-width : 698px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            margin-left: -180% !important;
-            min-width: 280% !important;
+            margin-left: -33% !important;
+            min-width: 40% !important;
             max-width: 30% !important;
             }
         }
 
-    @media (max-width : 573px){
+    @media (max-width : 650px){
         .formulaire-coordonnees, .formulaire-coordonnees2{
-            margin-left: 2% !important;
-            min-width: 28em !important;
+            margin-left: -36% !important;
+            min-width: 22em !important;
             max-width: 20% !important;
             margin-bottom: 10%;
             }
         }
+
+@media (max-width : 575px){
+        .formulaire-coordonnees, .formulaire-coordonnees2{
+            margin-left: 10% !important;
+            width: 30em !important;
+            margin-bottom: 5%;
+            }
+        }       
 
 .formulaire-coordonnees2{
     margin-top: 4em;
@@ -350,7 +253,29 @@ max-width: 40%;
     font-size: 1.8em;
     font-style: italic;
     margin-top: 10%;
+    margin-left: 0.5em !important;
     }
+
+    @media (max-width : 1200px){
+        .nom{
+          margin-left: -5.5em !important;
+            }
+        }
+
+    @media (max-width : 992px){
+        .nom{
+            margin-left: -9em !important;
+            }
+        }
+
+    @media (max-width : 575px){
+        .nom{
+            margin-top: 5em;
+            margin-bottom: -2em;
+            margin-left: 9em !important;
+            z-index: 500;
+            }
+        }
 
 .profil{
     font-size: 1em;
@@ -364,6 +289,7 @@ max-width: 40%;
     @media (max-width : 1200px){
         .profil{
           margin-left: -10em !important;
+          margin-top: 0.5em;
             }
         }
 
@@ -374,8 +300,51 @@ max-width: 40%;
     text-decoration: underline;
     font-size: 1em;
     margin-top: 6em;
-    margin-left: -2%;
+    /* margin-left: -20%; */
     }
+
+    @media (max-width : 1200px){
+        .txt-securite{
+          margin-left: -10em !important;
+            }
+        }
+
+    @media (max-width : 992px){
+        .txt-securite{
+          margin-left: -17em !important;
+            }
+        }
+
+    @media (max-width : 869px){
+        .txt-securite{
+            margin-left: -14em !important;
+            }
+        }
+
+    @media (max-width : 768px){
+        .txt-securite{
+            margin-left: -18em !important;
+            }
+        }
+
+        @media (max-width : 574px){
+            .txt-securite{
+                margin-left: 5em !important;
+                /* margin-top: 20em; */
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
 
 .securite{
     margin-top: 0.5em;
@@ -402,14 +371,24 @@ max-width: 40%;
 
     @media (max-width : 767px){
         .bouton-modifier1{
-            margin-left: -10% !important;
+            margin-left: -8% !important;
             }
         }
 
+        @media (max-width : 700px){
+            .bouton-modifier1{
+                margin-left: -15% !important;
+                margin-top: -5em !important;
+
+                }
+            }
+
     @media (max-width :575px){
         .bouton-modifier1{
-            margin-left: 40% !important;
-            margin-bottom: 5em ;
+            margin-left: 25% !important;
+            margin-top: 1em !important;
+            margin-bottom: 4em ;
+            z-index: 500;
             }
         }
 
@@ -431,7 +410,6 @@ max-width: 40%;
 
 }
 
->>>>>>> a51f4ca... MAJ pages profil et parametres
 
 
 
