@@ -76,13 +76,21 @@
                         <h3>Ses autres voyages</h3>
                     </div>
                     <div class="row d-inline-flex justify-content-around">
-                        <div class="ml-5">
-                            <h4>japon</h4>
-                            <img class="mt-3" src="../../img/photos/japon.jpg" alt="" width=350 height=250>
+                        <div class="ml-4">
+                            <h4>Japon</h4>
+                            <img class="mt-3" src="../../img/photos/osaka.jpg" alt="" width=350 height=250>
                         </div>
-                        <div class="ml-5">
-                            <h4>grèce</h4>
-                            <img class="mt-3" src="../../img/photos/grece.jpg" alt="" width=350 height=250>
+                        <div class="ml-4">
+                            <h4>Venise</h4>
+                            <img class="mt-3" src="../../img/photos/venise.jpg" alt="" width=350 height=250>
+                        </div>
+                        <div class="ml-4">
+                            <h4>Londres</h4>
+                            <img class="mt-3" src="../../img/photos/londres.jpg" alt="" width=350 height=250>
+                        </div>
+                        <div class="ml-4">
+                            <h4>Hambourg</h4>
+                            <img class="mt-3" src="../../img/photos/hambourg.jpg" alt="" width=350 height=250>
                         </div>
                     </div>
                 </div>
