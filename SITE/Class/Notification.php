@@ -38,7 +38,7 @@ class Notification {
 
 
     public function __toString():string{
-        return "[Code de la notification]: " . $this->codeNotif . " [Type]: " . $this->type . " [Date]: " . $this->date ;
+        return "[Code de la notification]: " . $this->codeNotif . " [Type]: " . $this->type ;
     }
 
 }

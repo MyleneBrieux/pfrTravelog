@@ -1,17 +1,17 @@
 <?php
 
-include_once("Notification.php");
+include_once('Notification.php');
 
 class Like extends Notification {
 
     private $codeLike;
-    private $nombreVu;
+    private $nombreLike;
 
 
-    public function __construct(int $codeNotif, string $type, DateTime $date, int $codeLike, int $nombreVu){
+    public function __construct(int $codeNotif, string $type, DateTime $date, int $codeLike, int $nombreLike){
         parent::__construct($codeNotif,$type,$date);
         $this->codeLike=$codeLike;
-        $this->nombreVu=$nombreVu;
+        $this->nombreLike=$nombreLike;
     }
 
 
@@ -19,19 +19,19 @@ class Like extends Notification {
         return $this->codeLike;
     }
 
-    public function getNombreVu():int{
-        return $this->nombreVu;
+    public function getNombreLike():int{
+        return $this->nombreLike;
     }
 
-    public function setNombreVu(int $nombreVu):self{
-        $this->nombreVu=$nombreVu;
+    public function setNombreLike(int $nombreLike):self{
+        $this->nombreLike=$nombreLike;
         return $this;
     }
 
 
     public function __toString():string{
         return "[Code de la notification]: " . parent::__toString() . " [Type]: " . parent::__toString() . " [Date]: " . parent::__toString() . 
-               " [Code du like]: " . $this->codeLike . " [Nombre de vues]: " . $this->nombreVu ;
+               " [Code du like]: " . $this->codeLike . " [Nombre de vues]: " . $this->nombreLike ;
     } 
     
 }
