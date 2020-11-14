@@ -7,11 +7,13 @@ class Utilisateur {
     private $nom;
     private $prenom;
     private $birthday;
+    private $photoProfil;
     private $nationalite;
     private $contact;
     private $notifmail;
 
-    public function __construct(int $id, string $mail, string $password, string $nom, string $prenom, DateTime $birthday, string $nationalite, string $contact, string $notifmail)
+    public function __construct(int $id, string $mail, string $password, string $nom, string $prenom, DateTime $birthday, string $photoProfil, 
+    string $nationalite, string $contact, string $notifmail)
     {
         $this->id = $id;
         $this->mail = $mail;
@@ -19,6 +21,7 @@ class Utilisateur {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->birthday = $birthday;
+        $this->photoProfil = $photoProfil;
         $this->nationalite = $nationalite;
         $this->contact = $contact;
         $this->notifmail = $notifmail;
@@ -133,6 +136,26 @@ class Utilisateur {
     }
 
     /**
+     * Get the value of photoProfil
+     */ 
+    public function getPhotoProfil() : string
+    {
+        return $this->photoProfil;
+    }
+
+    /**
+     * Set the value of photoProfil
+     *
+     * @return  self
+     */ 
+    public function setPhotoProfil(string $photoProfil) : self
+    {
+        $this->photoProfil = $photoProfil;
+
+        return $this;
+    }
+
+    /**
      * Get the value of nationalite
      */ 
     public function getNationalite() : string
@@ -195,7 +218,8 @@ class Utilisateur {
     public function __toString() : string
     {
         return "[id] : " . $this->id . "[mail] : " . $this->mail . "[password] : " . $this->password . "[nom] : " . $this->nom . "[prenom] : " . $this->prenom . 
-        "[birthday] : " . $this->birthday . "[nationalité] : " . $this->nationalite . "[contact] : " . $this->contact . "[notifmail] : " . $this->notifmail;
+        "[birthday] : " . $this->birthday . "[Photo profil] : " . $this->photoProfil . "[nationalité] : " . $this->nationalite . 
+        "[contact] : " . $this->contact . "[notifmail] : " . $this->notifmail;
     }
 }
 
