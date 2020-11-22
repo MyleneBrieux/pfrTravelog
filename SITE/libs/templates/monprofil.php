@@ -52,7 +52,7 @@
 
                 <div class="col-lg-10 col-md-8 col-sm-8 col-12 mt-2">
                     <div class="d-inline-flex p-2 bd-highlight">
-                        <h3>John Doe</h3>
+                        <h3><img src="../../img/flags/flags/flat/24/France.png" alt="drapeau de nationalité">John Doe</h3>
                     </div>
                     <div class="d-flex justify-content-end">
                         <p class="pr-4 bd-highlight">3 contienents visités</p>
@@ -76,19 +76,19 @@
                         <h3>Ses autres voyages</h3>
                     </div>
                     <div class="row d-inline-flex justify-content-around">
-                        <div class="ml-4">
+                        <div class="ml-2">
                             <h4>Japon</h4>
                             <img class="mt-3" src="../../img/photos/osaka.jpg" alt="" width=350 height=250>
                         </div>
-                        <div class="ml-4">
+                        <div class="ml-2">
                             <h4>Venise</h4>
                             <img class="mt-3" src="../../img/photos/venise.jpg" alt="" width=350 height=250>
                         </div>
-                        <div class="ml-4">
+                        <div class="ml-2">
                             <h4>Londres</h4>
                             <img class="mt-3" src="../../img/photos/londres.jpg" alt="" width=350 height=250>
                         </div>
-                        <div class="ml-4">
+                        <div class="ml-2">
                             <h4>Hambourg</h4>
                             <img class="mt-3" src="../../img/photos/hambourg.jpg" alt="" width=350 height=250>
                         </div>
