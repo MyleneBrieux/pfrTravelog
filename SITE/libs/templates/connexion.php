@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <div class="container-fluid">
 
         <!-- EN-TÊTE DE LA PAGE AVEC LOGO ET TITRE -->
@@ -40,14 +41,14 @@
                 </div>
 
                 <!-- FORMULAIRE -->
-                <div class="formulaireconnexion">
+                <form class="formulaireconnexion" action="../Class/controleur/ConnexionCONTROLEUR.php?action=connexion" method="post">
                     <div class="form-group">
                         <input type="text" class="pseudoconnexion form-control" placeholder="Pseudo">
                     </div>
                     <div class="form-group">
                         <input type="password" class="motdepasseconnexion form-control" placeholder="Mot de passe">
                     </div>
-                </div>
+                </form>
 
                 <!-- BOUTON CONNEXION -->
                 <button type="submit" class="boutonconnexion btn"><strong>CONNEXION</strong></button>
