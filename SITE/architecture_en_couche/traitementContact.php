@@ -3,9 +3,9 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require_once '../libs/phpmailer/Exception.php';
-require_once '../libs/phpmailer/PHPMailer.php';
-require_once '../libs/phpmailer/SMTP.php';
+require_once('../libs/phpmailer/Exception.php'); // juste mis des parenthèses
+require_once('../libs/phpmailer/PHPMailer.php');
+require_once('../libs/phpmailer/SMTP.php');
 
 
 
@@ -32,13 +32,13 @@ require_once '../libs/phpmailer/SMTP.php';
     
 
         $mail = new PHPMailer();
-            $mail->IsSMTP();
+            $mail->isSMTP(); // "is" au lieu de "Is" ?
             $mail->Mailer="smtp";
             $mail->SMTPDebug=0;  
             $mail->SMTPAuth=TRUE;
             $mail->SMTPSecure="tls";
             $mail->Port=587;
-            $mail->Host="smtp.gmail.com";
+            $mail->Host="smtp.gmail.com"; //  'mail.votredomaine.com'; // Spécifier le serveur SMTP
             $mail->Username="andhromede@gmail.com";
             $mail->Password="Fm8APqpp";
             $mail->AddAddress("andhromede@gmail.com", "recipient-name");
