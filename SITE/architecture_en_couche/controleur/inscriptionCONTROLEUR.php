@@ -15,21 +15,32 @@ $utilisateurservice = new UtilisateurService();
         if (isset($_POST["pseudo"]) && !empty($_POST["pseudo"])
         && isset($_POST["mail"]) && !empty($_POST["mail"])
         && isset($_POST["password"]) && !empty($_POST["password"])
-        && isset($_POST["confirmpassword"]) && !empty($_POST["confirmpassword"])) {
-            $pseudo=$_POST["pseudo"];
+        && isset($_POST["confirmpassword"]) && !empty($_POST["confirmpassword"])
+        && isset($_POST["checkcgu"])) {
             $mail=$_POST["mail"];
             $password=$_POST["password"];
-            $confirmpassword=$_POST["confirmpassword"];
             $data=$utilisateurservice->chercherUtilisateur($mail);
                 if (!empty($data) && ($_POST["mail"]) == ($data["mail"])){
-                    header('Location: inscriptionCONTROLEUR.php?warning=mailused');
+                    displayMailUsed();
                 } else {
                     $newPassword=$utilisateurservice->passwordHash($password);
                     $utilisateurservice->ajoutUtilisateur($mail,$newPassword);
                     header('Location: connexionCONTROLEUR.php');
-                }   
+                } 
+        } else if (empty($_POST["pseudo"])) {
+            displayEmptyPseudo();
+        } else if (empty($_POST["mail"])) {
+            displayEmptyMail();
+        } else if (empty($_POST["password"])) {
+            displayEmptyPassword();
+        } else if (empty($_POST["confirmpassword"])) {
+            displayEmptyConfirmPassword();  
+        } else if (($_POST["password"]) != ($_POST["confirmpassword"])) {
+            displayDifferentPasswords();
+        } else if (empty($_POST["checkcgu"])) {
+            displayEmptyCgu();
         } else {
-            echo "La saisie des champs est obligatoire ! ";
+            displayEmptyForm();
         }
     }
 

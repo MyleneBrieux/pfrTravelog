@@ -41,7 +41,7 @@ include_once("../metier/Utilisateur.php");
         //     return $data;
         // }
 
-        public function chercherUtilisateur(string $mail) : ?array {
+        public function chercherUtilisateurParMail(string $mail) : ?array {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
             $stmt->bind_param("s",$mail);

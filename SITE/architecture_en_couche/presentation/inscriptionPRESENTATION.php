@@ -35,6 +35,7 @@ function displayHead(){
             <link rel="stylesheet" href="../../libs/css/inscription.css">
             <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.css"/>
 
+            <script src="../../libs/jquery/jquery-3.5.1.min.js"></script>
 
             <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet"> 
@@ -94,7 +95,7 @@ function displayInscriptionFrame(){
 
                     <div class="CGU">
                         <label class="container">J\'accepte les <a href src="" class="liencgu" name="checkcgu" data-toggle="modal" data-target="#CGUPopUp">conditions générales d\'utilisation</a>
-                            <input type="checkbox">
+                            <input name="checkcgu"type="checkbox">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -131,11 +132,67 @@ function displayBottomTagHTML(){
 }
 
 // messages d'erreur //
+function displayPseudoUsed(){
+    echo
+        '<script>
+            window.alert("Ce pseudo est déjà pris !");
+        </script>';
+}
+
 function displayMailUsed(){
     echo
-        '<div class="alert alert-danger col-6 offset-3 mt-2 m3-2" role="alert">
-            <p class="text-center p-0 m-0"> Cette adresse email est déjà utilisée ! </p>
-        </div>';
+        '<script>
+            window.alert("Cette adresse e-mail est déjà prise !");
+        </script>';
+}
+
+function displayEmptyPseudo(){
+    echo
+        '<script>
+            window.alert("La saisie d\'un pseudo est nécessaire pour s\'inscrire ! ");
+        </script>';
+}
+
+function displayEmptyMail(){
+    echo
+        '<script>
+            window.alert("La saisie d\'une adresse email est nécessaire pour s\'inscrire ! ");
+        </script>';
+}
+
+function displayEmptyPassword(){
+    echo
+        '<script>
+            window.alert("La saisie d\'un mot de passe est nécessaire pour s\'inscrire ! ");
+        </script>';
+}
+
+function displayEmptyConfirmPassword(){
+    echo
+        '<script>
+            window.alert("Vous devez confirmer votre mot de passe pour vous inscrire ! ");
+        </script>';
+}
+
+function displayDifferentPasswords(){
+    echo
+        '<script>
+            window.alert("Les deux mots de passe renseignés sont différents !");
+        </script>';
+}
+
+function displayEmptyCgu(){
+    echo
+        '<script>
+            window.alert("Les conditions générales d\'utilisation doivent être acceptées pour pouvoir s\'inscrire ! ");
+        </script>';
+}
+
+function displayEmptyForm(){
+    echo
+        '<script>
+            window.alert("La saisie de tous les champs est obligatoire ! ");
+        </script>';
 }
 
 ?>
