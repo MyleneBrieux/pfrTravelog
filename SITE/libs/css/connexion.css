@@ -289,7 +289,6 @@
     color:white;
     background-color: #52908b;
     width:12em;
-    margin-left:3.3em;
     height:1.8em;
     margin-top:0.6em;
 }
@@ -297,7 +296,6 @@
     @media screen and (max-width : 1280px) {
         .boutonconnexion {
                 width: 11.2em;
-                margin-left:4.3em;
                 font-size:1.25em;
                 padding-top: 0.15em;;
             }
@@ -306,7 +304,6 @@
     @media screen and (max-width : 550px) {
         .boutonconnexion {
             width:11.8em;
-            margin-left:4.2em;
             font-size:1em;
         }
     }
@@ -314,7 +311,6 @@
     @media screen and (max-width : 400px) {
         .boutonconnexion {
             width:15em;
-            margin-left:3em;
             font-size:0.8em;
         }
     }

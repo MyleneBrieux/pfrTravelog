@@ -258,7 +258,11 @@
 
 .pseudoinscription, .adressemailinscription, .motdepasseinscription, .confirmationmotdepasseinscription {
     border : solid #707070 0.01em;
+    border-radius:0.25em;
     font-size:1.25em;
+    height:2.15em;
+    width: 14.5em;
+    padding-left:0.5em;
 }
 
     @media screen and (max-width : 1280px) {
@@ -284,6 +288,7 @@
 .CGU {
     color:#707070;
     font-size:0.8em;
+    padding-left:0.5em;
 }
 
     @media screen and (max-width : 1280px) {
@@ -383,8 +388,8 @@
     font-size:1.5em;
     color:white;
     background-color: #52908b;
+    border-radius:0.25em;
     width:12em;
-    margin-left:3.3em;
     height:1.8em;
     margin-top:-0.5em;
 }
@@ -392,7 +397,6 @@
     @media screen and (max-width : 1280px) {
         .boutoninscription {
                 width: 11.2em;
-                margin-left:4.3em;
                 font-size:1.25em;
                 padding-top: 0.15em;;
             }
@@ -401,7 +405,6 @@
     @media screen and (max-width : 550px) {
         .boutoninscription {
             width:11.8em;
-            margin-left:4.2em;
             font-size:1em;
             margin-top:-1em;
         }
@@ -410,7 +413,6 @@
     @media screen and (max-width : 400px) {
         .boutoninscription {
             width:15em;
-            margin-left:3em;
             font-size:0.8em;
             margin-top:-2.5em;
         }
