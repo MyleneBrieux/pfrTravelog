@@ -34,5 +34,22 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
+    //Modif Voyage 
 
+    public function modifVoyageDAO($voyage){
+        $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+    
+        $stmt=$mysqli->prepare("update voyages set date_debut=?, date_fin=?, media=?, statut=?, paragraphe=? where code_voyage= ?"); 
+        $date_debut=$voyage->getDateDebut();
+        $date_fin=$voyage->getDateFin();
+        $media=$voyage->getMedia();
+        $statut=$voyage->getStatut();
+        $paragraphe=$voyage->getParagraphe();
+        $codeVoyage=$voyage->getCodeVoyage();
+        
+        $stmt->bind_param("ssssssi", $date_debut, $date_fin, $couverture, $media, $statut, $paragraphe, $codeVoyage);
+        $stmt->execute();
+        $mysqli->close();
+    
+    }
 }
