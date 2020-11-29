@@ -18,8 +18,13 @@ class UtilisateurService {
         $this->utilisateurDao->ajoutUtilisateur($mail,$password);
     }
 
-    public function chercherUtilisateur($mail) : ?array {
-        $data = $this->utilisateurDao->chercherUtilisateur($mail);
+    public function chercherUtilisateurParMail($mail) : ?array {
+        $data = $this->utilisateurDao->chercherUtilisateurParMail($mail);
+        return $data;
+    }
+
+    public function chercherUtilisateurParPseudo($pseudo) : ?array {
+        $data = $this->utilisateurDao->chercherUtilisateurParPseudo($pseudo);
         return $data;
     }
 

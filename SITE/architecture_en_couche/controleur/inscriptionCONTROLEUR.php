@@ -19,7 +19,7 @@ $utilisateurservice = new UtilisateurService();
         && isset($_POST["checkcgu"])) {
             $mail=$_POST["mail"];
             $password=$_POST["password"];
-            $data=$utilisateurservice->chercherUtilisateur($mail);
+            $data=$utilisateurservice->chercherUtilisateurParMail($mail);
                 if (!empty($data) && ($_POST["mail"]) == ($data["mail"])){
                     displayMailUsed();
                 } else {

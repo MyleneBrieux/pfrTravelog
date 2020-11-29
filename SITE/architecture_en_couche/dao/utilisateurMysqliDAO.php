@@ -53,6 +53,18 @@ include_once("../metier/Utilisateur.php");
             return $data;
         }
 
+        public function chercherUtilisateurParPseudo(string $pseudo) : ?array {
+            $mysqli=$this->connexion();
+            $stmt = $mysqli->prepare("select * from utilisateurs where pseudo=?");
+            $stmt->bind_param("s",$pseudo);
+            $stmt->execute();
+            $rs = $stmt->get_result();
+            $data = $rs->fetch_array(MYSQLI_ASSOC);
+            $rs->free();
+            $mysqli->close();
+            return $data;
+        }
+
     }
 
 ?>

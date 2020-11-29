@@ -11,27 +11,26 @@ session_start();
 $utilisateurservice = new UtilisateurService();
 
     if (isset($_GET["action"]) && $_GET["action"]=="connexion" && !empty($_POST)) { 
-        if (isset($_POST["mail"]) && !empty($_POST["mail"])
+        if (isset($_POST["pseudo"]) && !empty($_POST["pseudo"])
         && isset($_POST["password"]) && !empty($_POST["password"])) {
-            $mail=$_POST["mail"];
+            $pseudo=$_POST["pseudo"];
             $password=$_POST["password"];
-            $data=$serviceuser->searchUser($mail);
+            $data=$utilisateurservice->chercherUtilisateurParPseudo($pseudo);
                 if ($passwordOk=$serviceuser->passwordVerify($password,$data)){
                     $_SESSION["mail"]=$mail;
-                    $_SESSION["profil"]=$data["profil"];
                     header('Location: accueilCONTROLEUR.php');
                 } else {
-                    header('Location: connexionCONTROLEUR.php?warning=failconnexion');
+                    displayNotIdem();
                 }
+        } else if (empty($_POST["pseudo"])) {
+            displayEmptyPseudo();
+        } else if (empty($_POST["password"])) {
+            displayEmptyPassword();
+        } else {
+            displayEmptyForm();
         }
     }
 
 displayPageConnexion();
-
-//     if (isset($_GET['warning']) && $_GET['warning']=='failconnexion') {
-//         displayConnexionKo();
-//     } 
-
-// displayConnexion2();
 
 ?>

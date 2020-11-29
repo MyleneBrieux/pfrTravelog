@@ -17,7 +17,7 @@ function displayPageConnexion(){
 
 
 // FONCTIONS EN VRAC //
-
+// affichage de base //
 function displayTopTagHtml(){
     echo
         '<!DOCTYPE html>
@@ -114,3 +114,34 @@ function displayBottomTagHTML(){
     echo
         '</html>';
 }
+
+// messages d'erreur //
+function displayNotIdem(){
+    echo
+        '<script>
+            window.alert("Le pseudo et/ou le mot de passe est incorrect ! ");
+        </script>';
+}
+
+function displayEmptyPseudo(){
+    echo
+        '<script>
+            window.alert("La saisie d\'un pseudo est nécessaire pour s\'inscrire ! ");
+        </script>';
+}
+
+function displayEmptyMail(){
+    echo
+        '<script>
+            window.alert("La saisie d\'une adresse email est nécessaire pour s\'inscrire ! ");
+        </script>';
+}
+
+function displayEmptyForm(){
+    echo
+        '<script>
+            window.alert("La saisie de tous les champs est obligatoire ! ");
+        </script>';
+}
+
+?>
