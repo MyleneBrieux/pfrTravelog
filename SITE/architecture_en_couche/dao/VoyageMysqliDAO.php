@@ -23,5 +23,16 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
-    
+    // suppression Voyage
+
+    public function suppVoyageDAO(int $codeVoyage){
+        $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+        
+        $stmt=$mysqli->prepare('delete from voyages where code_voyage= ?');
+        $stmt->bind_param("i",$codeVoyage);
+        $stmt->execute();
+        $mysqli->close();
+    }
+
+
 }
