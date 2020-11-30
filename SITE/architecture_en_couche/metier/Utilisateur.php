@@ -2,24 +2,22 @@
 
 class Utilisateur {
     private $id;
+    private $pseudo;
     private $mail;
     private $password;
-    private $nom;
-    private $prenom;
     private $birthday;
     private $photoProfil;
     private $nationalite;
     private $contact;
     private $notifmail;
 
-    public function __construct(int $id, string $mail, string $password, string $nom, string $prenom, DateTime $birthday, string $photoProfil, 
+    public function __construct(int $id, string $pseudo, string $mail, string $password, DateTime $birthday, string $photoProfil, 
     string $nationalite, string $contact, string $notifmail)
     {
         $this->id = $id;
+        $this->pseudo = $pseudo;
         $this->mail = $mail;
         $this->password = $password;
-        $this->nom = $nom;
-        $this->prenom = $prenom;
         $this->birthday = $birthday;
         $this->photoProfil = $photoProfil;
         $this->nationalite = $nationalite;
@@ -33,6 +31,26 @@ class Utilisateur {
     public function getId() : int
     {
         return $this->id;
+    }
+
+        /**
+     * Get the value of pseudo
+     */ 
+    public function getPseudo() : string
+    {
+        return $this->pseudo;
+    }
+
+    /**
+     * Set the value of pseudo
+     *
+     * @return  self
+     */ 
+    public function setPseudo(string $pseudo) : self
+    {
+        $this->pseudo = $pseudo;
+
+        return $this;
     }
 
     /**
@@ -71,46 +89,6 @@ class Utilisateur {
     public function setPassword(string $password) : self
     {
         $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of nom
-     */ 
-    public function getNom() : string
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set the value of nom
-     *
-     * @return  self
-     */ 
-    public function setNom(string $nom) : self
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of prenom
-     */ 
-    public function getPrenom() : string
-    {
-        return $this->prenom;
-    }
-
-    /**
-     * Set the value of prenom
-     *
-     * @return  self
-     */ 
-    public function setPrenom(string $prenom) : self
-    {
-        $this->prenom = $prenom;
 
         return $this;
     }

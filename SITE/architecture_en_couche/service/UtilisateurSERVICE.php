@@ -14,8 +14,8 @@ class UtilisateurService {
             return $mysqli;
     }
 
-    public function ajoutUtilisateur($mail, $password) { 
-        $this->utilisateurDao->ajoutUtilisateur($mail,$password);
+    public function ajoutUtilisateur($pseudo, $mail, $password) { 
+        $this->utilisateurDao->ajoutUtilisateur($pseudo,$mail,$password);
     }
 
     public function chercherUtilisateurParMail($mail) : ?array {

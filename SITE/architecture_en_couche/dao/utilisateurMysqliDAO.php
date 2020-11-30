@@ -23,10 +23,10 @@ include_once("../metier/Utilisateur.php");
         //     $mysqli->exec($stmt);
         // }
 
-        public function ajoutUtilisateur(string $mail, string $password) {
+        public function ajoutUtilisateur(string $pseudo, string $mail, string $password) {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("insert into utilisateurs(id,mail,password) values(null,?,?)");
-            $stmt->bind_param("ss",$mail,$password);
+            $stmt = $mysqli->prepare("insert into utilisateurs(id,pseudo,mail,password) values(null,?,?,?)");
+            $stmt->bind_param("sss",$pseudo,$mail,$password);
             $stmt->execute();
             $mysqli->close();
         }
