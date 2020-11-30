@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 29 nov. 2020 à 20:56
+-- Généré le : lun. 30 nov. 2020 à 19:00
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.2.34
 
@@ -85,10 +85,9 @@ CREATE TABLE `signalements` (
 
 CREATE TABLE `utilisateurs` (
   `id` int(11) NOT NULL,
+  `pseudo` varchar(20) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
   `photoprofil` blob DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `nat` varchar(50) DEFAULT NULL,
@@ -100,8 +99,8 @@ CREATE TABLE `utilisateurs` (
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id`, `mail`, `password`, `name`, `firstname`, `photoprofil`, `birthday`, `nat`, `contact`, `notifmail`) VALUES
-(1, 'mylene.brieux@gmail.com', '$2y$10$eQKORdPvoE2WTDj7fzbCL.ror5RystrhUWXXdwzVYcBroqgYh2/D2', '', '', NULL, NULL, NULL, '', '');
+INSERT INTO `utilisateurs` (`id`, `pseudo`, `mail`, `password`, `photoprofil`, `birthday`, `nat`, `contact`, `notifmail`) VALUES
+(4, 'mylene', 'mylene.brieux@gmail.com', '$2y$10$RC6OTMPk8YhqvxD9pSjGEOkm.sC5MRQHSALZqLHtJOBp2PVplEzy6', NULL, NULL, NULL, '', '');
 
 -- --------------------------------------------------------
 
@@ -225,7 +224,7 @@ ALTER TABLE `signalements`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `voyages`
