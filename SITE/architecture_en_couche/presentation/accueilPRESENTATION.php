@@ -1,7 +1,33 @@
 <?php
 
 // FONCTIONS GLOBALES //
+function displayPageAccueil1(){
+    displayTopTagHtml();
+    displayHead();
+    displayTopTagBody();
+    displayTopTagContainer();
+    displayTopRowNavbar();
+}
 
+function displayPageAccueil2(){
+    displayBottomRowNavBar();
+    displayTopRowMenuLat();
+}
+
+function displayPageAccueil3(){
+    displayTripResults();
+    displayTripOne();
+    displayTripTwo();
+    displayTripThree();
+    displayTripFour();
+    displayPages();
+}
+
+function displayPageAccueil4(){
+    displayBottomTagContainer();
+    displayBottomTagBody();
+    displayBottomTagHTML();
+}
 
 
 // FONCTIONS EN VRAC //
@@ -19,8 +45,8 @@ function displayHead(){
         
             <link href='https://fonts.googleapis.com/css2?family=Halant&display=swap' rel='stylesheet'>
             <link href='https://fonts.googleapis.com/css2?family=Rancho&display=swap' rel='stylesheet'> 
-            <link rel='stylesheet' href='../bootstrap/css/bootstrap.css'/>
-            <link rel='stylesheet' href='../css/accueil.css'>
+            <link rel='stylesheet' href='../../libs/bootstrap/css/bootstrap.css'/>
+            <link rel='stylesheet' href='../../libs/css/accueil.css'>
         
             <title>
                 Accueil
@@ -62,9 +88,9 @@ function displayTripResults(){
 function displayTripOne(){
     echo
         "<div class='row'>
-            <img src='../../../images/photos/photo_profil_detail_voyage.jpg' class='photoprofil1'/>
+            <img src='../../img/photos/photo_profil_detail_voyage.jpg' class='photoprofil1'/>
             <h1 class='titrevoyage1'>Titre</h1>
-            <img src='../../../images/photos/trevi.jpg' class='photovoyage1'/>
+            <img src='../../img/photos/trevi.jpg' class='photovoyage1'/>
             <div class='encadrevoyage1'>
                 <p class='textevoyage1'>
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -81,9 +107,9 @@ function displayTripOne(){
 function displayTripTwo(){
     echo
         "<div class='row'>
-            <img src='../../../images/photos/photo_profil_femme1.jpg' class='photoprofil2'/>
+            <img src='../../img/photos/photo_profil_femme1.jpg' class='photoprofil2'/>
             <h1 class='titrevoyage2'>Titre</h1>
-            <img src='../../../images/photos/grece.jpg' class='photovoyage2'/>
+            <img src='../../img/photos/grece.jpg' class='photovoyage2'/>
             <div class='encadrevoyage2'>
                 <p class='textevoyage2'>
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -100,9 +126,9 @@ function displayTripTwo(){
 function displayTripThree(){
     echo
         "<div class='row'>
-            <img src='../../../images/photos/photo_profil_homme2.jpg' class='photoprofil3'/>
+            <img src='../../img/photos/photo_profil_homme2.jpg' class='photoprofil3'/>
             <h1 class='titrevoyage3'>Titre</h1>
-            <img src='../../../images/photos/lac.jpg' class='photovoyage3'/>
+            <img src='../../img/photos/lac.jpg' class='photovoyage3'/>
             <div class='encadrevoyage3'>
                 <p class='textevoyage3'>
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -119,9 +145,9 @@ function displayTripThree(){
 function displayTripFour(){
     echo
         "<div class='row'>
-            <img src='../../../images/photos/photo_profil_femme2.jpg' class='photoprofil4'/>
+            <img src='../../img/photos/photo_profil_femme2.jpg' class='photoprofil4'/>
             <h1 class='titrevoyage4'>Titre</h1>
-            <img src='../../../images/photos/japon.jpg' class='photovoyage4'/>
+            <img src='../../../img/photos/japon.jpg' class='photovoyage4'/>
             <div class='encadrevoyage4'>
                 <p class='textevoyage4'>
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
