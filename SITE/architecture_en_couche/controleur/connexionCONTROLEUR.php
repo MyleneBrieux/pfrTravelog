@@ -16,7 +16,7 @@ $utilisateurservice = new UtilisateurService();
             $pseudo=$_POST["pseudo"];
             $password=$_POST["password"];
             $data=$utilisateurservice->chercherUtilisateurParPseudo($pseudo);
-                if ($passwordOk=$serviceuser->passwordVerify($password,$data)){
+                if ($passwordOk=$utilisateurservice->passwordVerify($password,$data)){
                     $_SESSION["mail"]=$mail;
                     header('Location: accueilCONTROLEUR.php');
                 } else {
