@@ -4,7 +4,7 @@ class Voyage {
 
     private $codeVoyage;
     private $title;
-    private $desc;
+    private $description;
     private $datedebut;
     private $datefin;
     private $couverture;
@@ -13,12 +13,12 @@ class Voyage {
     private $paragraphe;
 
 
-    public function __construct(int $codeVoyage, string $title, string $desc, DateTime $datedebut, DateTime $datefin, string $couverture, 
+    public function __construct(int $codeVoyage, string $title, string $description, DateTime $datedebut, DateTime $datefin, string $couverture, 
                                 string $media, string $statut, string $paragraphe){
 
         $this->codeVoyage=$codeVoyage;
         $this->title=$title;
-        $this->desc=$desc;
+        $this->description=$description;
         $this->datedebut=$datedebut;
         $this->datefin=$datefin;
         $this->couverture=$couverture;
@@ -46,12 +46,12 @@ class Voyage {
 
     // Desc
 
-    public function getDesc():string{
-        return $this->desc;
+    public function getDescription():string{
+        return $this->description;
     }
 
-    public function setDesc(string $desc):self{
-        $this->desc=$desc;
+    public function setDescription(string $description):self{
+        $this->description=$description;
         return $this;
     }
 
@@ -125,7 +125,7 @@ class Voyage {
     // ToString
 
     public function __toString():string{
-        return "[Code du Voyage]: " . $this->codeVoyage . " [Titre]: " . $this->title . " [Description]: " . $this->desc . 
+        return "[Code du Voyage]: " . $this->codeVoyage . " [Titre]: " . $this->title . " [Description]: " . $this->description . 
         "[Date de debut]: " . $this->datedebut . " [Date de fin]: " . $this->datefin . " [Couverture]: " . $this->couverture . 
         "[Media]: " . $this->media . " [Statut]: " . $this->statut . " [Paragraphe]: " . $this->paragraphe ;
     }
