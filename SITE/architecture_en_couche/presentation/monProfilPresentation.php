@@ -16,7 +16,7 @@
         echo '<body>
         <div class="container-fluid">
         <header class="header">
-            <?php include "navbar.php" ?>
+            <?php include "navbarCONTROLEUR.php" ?>
         </header>';
     }
 
@@ -110,7 +110,7 @@
 
     function footer(){
         echo'<footer class="footer">
-            <?php include "footer.php" ?>
+            <?php include "footerCONTROLEUR.php" ?>
         </footer>';
     }
 
