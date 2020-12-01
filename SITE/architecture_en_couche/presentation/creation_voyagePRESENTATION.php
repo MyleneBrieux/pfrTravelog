@@ -5,8 +5,8 @@ function creation_head(){
         <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" type="text/css">
-            <link rel="stylesheet" href="../css/creation_voyage.css" type="text/css">
+            <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.css" type="text/css">
+            <link rel="stylesheet" href="../../libs/css/creation_voyage.css" type="text/css">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <script src="https://kit.fontawesome.com/20f2b0d45a.js" crossorigin="anonymous"></script>
             <title>Création de Voyage</title>
@@ -21,7 +21,7 @@ function creation_bodyTop(){
 function creation_header(){
     echo '<div class="container">
             <div class="header">';
-                include ('navbar.php');
+                // include('navbarCONTROLEUR.php');
     echo   '</div>';
 }
 
@@ -96,7 +96,7 @@ function creation_checkbox(){
             <label class="rectangle-checkbox checkbox">
                 <input type="checkbox"> Partager ce voyage uniquement avec mes amis
             </label>
-        </div>'
+        </div>';
 }
 
 // Les boutons pour la publication
@@ -117,8 +117,8 @@ function creation_bodyBottom(){
 }
 
 function creation_footer(){
-    echo '<footer class="footer">'
-            include ('navbar.php');
+    echo '<footer class="footer">';
+        include('footerCONTROLEUR.php');
     echo '</footer>';
 }
 
