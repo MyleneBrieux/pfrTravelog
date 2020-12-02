@@ -2,9 +2,7 @@
 
 include_once '../presentation/mesVoyagesPresentation.php';
 
-voyagesHead();
-
-voyagesHeader();
+voyagesDebut();
 
 menuLat();
 
@@ -16,8 +14,6 @@ afficheVoyages();
 
 nbPages();
 
-footer();
-
-finPage();
+voyagesFin();
 
 ?>

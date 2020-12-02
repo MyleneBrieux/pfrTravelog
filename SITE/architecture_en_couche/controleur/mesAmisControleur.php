@@ -2,15 +2,13 @@
 
 include_once '../presentation/mesAmisPresentation.php';
 
-amisHead();
-
-amisHeader();
+amisDebut();
 
 menuLat();
 
 listeAmis();
 
-amis();
+contenuListeAmis();
 
 nbPages();
 

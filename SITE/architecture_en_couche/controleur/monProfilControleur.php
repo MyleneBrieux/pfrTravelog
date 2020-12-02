@@ -2,9 +2,7 @@
 
 include_once '../presentation/monProfilPresentation.php';
 
-profilHead();
-
-profilHeader();
+profilDebut();
 
 menuLat();
 
@@ -12,8 +10,6 @@ presentationUser();
 
 voyagesUser();
 
-footer();
-
-finPage();
+profilFin();
 
 ?>
