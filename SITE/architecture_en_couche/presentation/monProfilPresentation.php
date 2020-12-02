@@ -109,15 +109,25 @@
     }
 
     function footer(){
-        echo'<footer class="footer">
-            <?php include "footerCONTROLEUR.php" ?>
-        </footer>';
+        echo'<footer class="footer">';
+            include "footerCONTROLEUR.php";
+        echo'</footer>';
     }
 
     function finPage(){
         echo '</div>
             </body>
             </html>';
+    }
+
+    function profilDebut(){
+        profilHead();
+        profilHeader();
+    }
+
+    function profilFin(){
+        footer();
+        finPage();
     }
 
 ?>

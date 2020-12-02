@@ -132,13 +132,23 @@
     }
 
     function footer(){
-        include ("footer.php");
+        include ("footerCONTROLEUR.php");
     }
 
     function finPage(){
         echo'</div>
         </body>
         </html>';
+    }
+
+    function voyagesDebut(){
+        voyagesHead();
+        voyagesHeader();
+    }
+
+    function voyagesFin(){
+        footer();
+        finPage();
     }
 
 ?>

@@ -63,7 +63,7 @@
         <h1 class="placenav_titre mb-3">Liste des amis (XX)</h1>';
     }
 
-    function amis(){
+    function ami1(){
         echo'<div class="row bg-sable mb-3">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="row">
@@ -82,6 +82,186 @@
     </div>';
     }
 
+    function ami2(){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
+                <h4 class="mt-4 mb-3">Utilisateur2</h4>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+            <a href="contacter.php?page=contacter"><button
+                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                data-target="#ModalSupp_Ami">Supprimer</button>
+        </div>
+
+    </div>';
+    }
+
+    function ami3(){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
+                <h4 class="mt-4 mb-3">Utilisateur3</h4>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+            <a href="contacter.php?page=contacter"><button
+                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                data-target="#ModalSupp_Ami">Supprimer</button>
+        </div>
+
+    </div>';
+    }
+
+    function ami4(){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
+                <h4 class="mt-4 mb-3">Utilisateur4</h4>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+            <a href="contacter.php?page=contacter"><button
+                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                data-target="#ModalSupp_Ami">Supprimer</button>
+        </div>
+
+    </div>';
+    }
+
+    function ami5(){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
+                <h4 class="mt-4 mb-3">Utilisateur5</h4>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+            <a href="contacter.php?page=contacter"><button
+                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                data-target="#ModalSupp_Ami">Supprimer</button>
+        </div>
+
+    </div>';
+    }
+
+    function ami6(){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
+                <h4 class="mt-4 mb-3">Utilisateur6</h4>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+            <a href="contacter.php?page=contacter"><button
+                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                data-target="#ModalSupp_Ami">Supprimer</button>
+        </div>
+
+    </div>';
+    }
+
+    function ami7(){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
+                <h4 class="mt-4 mb-3">Utilisateur7</h4>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+            <a href="contacter.php?page=contacter"><button
+                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                data-target="#ModalSupp_Ami">Supprimer</button>
+        </div>
+
+    </div>';
+    }
+
+    function ami8(){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
+                <h4 class="mt-4 mb-3">Utilisateur8</h4>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+            <a href="contacter.php?page=contacter"><button
+                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                data-target="#ModalSupp_Ami">Supprimer</button>
+        </div>
+
+    </div>';
+    }
+
+    function ami9(){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
+                <h4 class="mt-4 mb-3">Utilisateur9</h4>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+            <a href="contacter.php?page=contacter"><button
+                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                data-target="#ModalSupp_Ami">Supprimer</button>
+        </div>
+
+    </div>';
+    }
+
+    function ami10(){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
+                <h4 class="mt-4 mb-3">Utilisateur10</h4>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+            <a href="contacter.php?page=contacter"><button
+                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                data-target="#ModalSupp_Ami">Supprimer</button>
+        </div>
+
+    </div>';
+    }
+
     function nbPages(){
         echo'<p class="text-center">
             < 1 2 ... 4>
@@ -91,6 +271,24 @@
     function finPage(){
         echo'</div>
         </body>';
+    }
+
+    function amisDebut(){
+        amisHead();
+        amisHeader();
+    }
+
+    function contenuListeAmis(){
+        ami1();
+        ami2();
+        ami3();
+        ami4();
+        ami5();
+        ami6();
+        ami7();
+        ami8();
+        ami9();
+        ami10();
     }
 
 ?>
