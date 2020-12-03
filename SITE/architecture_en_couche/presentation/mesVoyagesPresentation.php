@@ -8,7 +8,7 @@
             <title>Mes voyages</title>
             <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.css" />
+            <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.css">
             <link rel="stylesheet" href="../../libs/css/mes_voyages.css">
         </head>';
     }
@@ -22,8 +22,8 @@
     }
 
     function menuLat(){
-        echo'<div class="row">
-        <?php include ("menulat.php")?>';
+        echo'<div class="row">';
+        include ("menulatCONTROLEUR.php");
     }
 
     function débutCorps(){
@@ -49,7 +49,7 @@
 </div>';
     }
 
-    function afficheVoyages(){
+    function voyage1(){
         echo'<div class="row">
         <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil1 ghost" />
         <h1 class="titrevoyage1">Titre</h1>
@@ -66,9 +66,11 @@
                 Découvrir ce voyage
             </a>
         </div>
-    </div>
+    </div>';
+    }
         
-    <div class="row">
+    function voyage2(){
+    echo'<div class="row">
         <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil2 ghost" />
         <h1 class="titrevoyage2">Titre</h1>
         <img src="../../../images/photos/beijing_temple_du_ciel.jpg" class="photovoyage2" />
@@ -84,9 +86,11 @@
                 Découvrir ce voyage
             </a>
         </div>
-    </div>
+    </div>';
+    }
 
-    <div class="row">
+    function voyage3(){
+    echo'<div class="row">
         <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil3 ghost" />
         <h1 class="titrevoyage3">Titre</h1>
         <img src="../../../images/photos/st_petersburg_russia.jpg" class="photovoyage3" />
@@ -102,9 +106,11 @@
                 Découvrir ce voyage
             </a>
         </div>
-    </div>
+    </div>';
+    }
 
-    <div class="row">
+    function voyage4(){
+    echo'<div class="row">
         <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil4 ghost" />
         <h1 class="titrevoyage4">Titre</h1>
         <img src="../../../images/photos/palais_gyeongbok.jpg" class="photovoyage4" />
@@ -144,6 +150,13 @@
     function voyagesDebut(){
         voyagesHead();
         voyagesHeader();
+    }
+
+    function afficherVoyages(){
+        voyage1();
+        voyage2();
+        voyage3();
+        voyage4();
     }
 
     function voyagesFin(){

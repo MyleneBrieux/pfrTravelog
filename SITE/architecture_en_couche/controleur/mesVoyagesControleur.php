@@ -10,7 +10,7 @@ débutCorps();
 
 afficheUser();
 
-afficheVoyages();
+afficherVoyages();
 
 nbPages();
 
