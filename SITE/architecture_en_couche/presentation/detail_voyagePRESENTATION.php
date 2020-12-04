@@ -31,7 +31,8 @@ function detail_bodyTop(){
 }
 
 function detail_header(){
-    echo '<div class="row">';
+    echo '<div class="container-fluid ">
+            <div class="row">';
         // include ("navbarCONTROLEUR.php");
 }
 
@@ -224,7 +225,7 @@ function detail_zoneComm(){
 function detail_footer(){
     echo '</div>
     <div class="col-2"></div>';
-    include ("footerCONTROLEUR.php");
+    // include ("footerCONTROLEUR.php");
 }
 
 function detail_finDivConteneur(){
