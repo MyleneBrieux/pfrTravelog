@@ -31,7 +31,7 @@
         <p class="rsvoyages">XX voyages - XX continents visités - XX pays visités</p>';
     }
 
-    function afficheUser(){
+    function afficherUser(){
         echo'<div class="row">
         <div class="encadrevoyage">
             <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
