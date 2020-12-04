@@ -1,7 +1,5 @@
 <?php
 
-include_once("../metier/Utilisateur.php");
-
     class UtilisateurMysqliDao {
 
         // public function connexion() {
@@ -11,9 +9,14 @@ include_once("../metier/Utilisateur.php");
         //     return $mysqli;
         // }
 
+
+ /*CONNEXION*/       
         public function connexion() {
             $mysqli= new mysqli('localhost','mylene','afpamy13','pfrtravelog');
             return $mysqli;
+
+            // $mysqli = new PDO('mysql:host=localhost; dbname=pfrtravelog', 'andhromede', 'Fm8APqpp');
+            // return $mysqli;
         }
 
         // public function ajoutUtilisateur(string $mail, string $password) {
@@ -23,10 +26,11 @@ include_once("../metier/Utilisateur.php");
         //     $mysqli->exec($stmt);
         // }
 
-        public function ajoutUtilisateur(string $pseudo, string $mail, string $password) {
+/* AJOUT UTILISATEUR*/
+        public function ajoutUtilisateur(string $mail, string $password) {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("insert into utilisateurs(id,pseudo,mail,password) values(null,?,?,?)");
-            $stmt->bind_param("sss",$pseudo,$mail,$password);
+            $stmt = $mysqli->prepare("INSERT INTO utilisateurs (id,mail,password) VALUES (null,?,?)");
+            $stmt->bind_param("ss",$mail,$password);
             $stmt->execute();
             $mysqli->close();
         }
@@ -41,9 +45,11 @@ include_once("../metier/Utilisateur.php");
         //     return $data;
         // }
 
+
+/* RECHERCHE UTILISATEUR PAR MAIL*/        
         public function chercherUtilisateurParMail(string $mail) : ?array {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
+            $stmt = $mysqli->prepare("SELECT * FROM utilisateurs WHERE mail=?");
             $stmt->bind_param("s",$mail);
             $stmt->execute();
             $rs = $stmt->get_result();
@@ -53,9 +59,11 @@ include_once("../metier/Utilisateur.php");
             return $data;
         }
 
+
+/* RECHERCHE UTILISATEUR PAR PSEUDO*/
         public function chercherUtilisateurParPseudo(string $pseudo) : ?array {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("select * from utilisateurs where pseudo=?");
+            $stmt = $mysqli->prepare("SELECT * FROM utilisateurs WHERE pseudo=?");
             $stmt->bind_param("s",$pseudo);
             $stmt->execute();
             $rs = $stmt->get_result();
@@ -64,6 +72,43 @@ include_once("../metier/Utilisateur.php");
             $mysqli->close();
             return $data;
         }
+
+
+/* MODIFICATION de PROFIL*/        
+        public function updateProfil(Utilisateur $utilisateur):void{   
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, login=?, birthday=?, nationnalite=?, contact=?, notifMail=? WHERE login=?");
+            $stmt->bind_param("ssssssss", $mail, $password, $login, $birthday, $nationnalite, $contact, $notifMail);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $employe=$rs->fetch_array(MYSQLI_ASSOC);
+    
+            $objetUtilisateur= New Utilisateur(
+            ($utilisateur['mail']), 
+            ($utilisateur['password']), 
+            ($utilisateur['login']), 
+            ($utilisateur['birthday']),  
+            ($utilisateur['nationalite']), 
+            ($utilisateur['contact']), 
+            ($utilisateur['notifMail']) );
+            $mysqli->close();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

@@ -2,22 +2,22 @@
 
 class Utilisateur {
     private $id;
-    private $pseudo;
     private $mail;
     private $password;
+    private $login;
     private $birthday;
     private $photoProfil;
     private $nationalite;
     private $contact;
     private $notifmail;
 
-    public function __construct(int $id, string $pseudo, string $mail, string $password, DateTime $birthday, string $photoProfil, 
+    public function __construct(int $id, string $mail, string $password, string $login, date $birthday, string $photoProfil, 
     string $nationalite, string $contact, string $notifmail)
     {
         $this->id = $id;
-        $this->pseudo = $pseudo;
         $this->mail = $mail;
         $this->password = $password;
+        $this->login = $login;
         $this->birthday = $birthday;
         $this->photoProfil = $photoProfil;
         $this->nationalite = $nationalite;
@@ -31,26 +31,6 @@ class Utilisateur {
     public function getId() : int
     {
         return $this->id;
-    }
-
-        /**
-     * Get the value of pseudo
-     */ 
-    public function getPseudo() : string
-    {
-        return $this->pseudo;
-    }
-
-    /**
-     * Set the value of pseudo
-     *
-     * @return  self
-     */ 
-    public function setPseudo(string $pseudo) : self
-    {
-        $this->pseudo = $pseudo;
-
-        return $this;
     }
 
     /**
@@ -89,6 +69,26 @@ class Utilisateur {
     public function setPassword(string $password) : self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of login
+     */ 
+    public function getLogin() : string
+    {
+        return $this->login;
+    }
+
+    /**
+     * Set the value of login
+     *
+     * @return  self
+     */ 
+    public function setLogin(string $login) : self
+    {
+        $this->login = $login;
 
         return $this;
     }
@@ -195,9 +195,9 @@ class Utilisateur {
 
     public function __toString() : string
     {
-        return "[id] : " . $this->id . "[mail] : " . $this->mail . "[password] : " . $this->password . "[nom] : " . $this->nom . "[prenom] : " . $this->prenom . 
-        "[birthday] : " . $this->birthday . "[Photo profil] : " . $this->photoProfil . "[nationalité] : " . $this->nationalite . 
-        "[contact] : " . $this->contact . "[notifmail] : " . $this->notifmail;
+        return "[id]: " . $this->id . "[mail] : " . $this->mail . "[password] : " . $this->password . "[login] : " . $this->login . "[birthday] : " . 
+        $this->birthday . "[Photo profil] : " . $this->photoProfil . "[nationalité] : " . $this->nationalite . "[contact] : " . 
+        $this->contact . "[notifmail] : " . $this->notifmail;
     }
 }
 

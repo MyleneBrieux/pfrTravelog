@@ -10,12 +10,12 @@ class UtilisateurService {
 
 
     public function connexion() {
-            $mysqli = $this->utilisateurDao->connexion();
-            return $mysqli;
+        $mysqli = $this->utilisateurDao->connexion();
+        return $mysqli;
     }
 
-    public function ajoutUtilisateur($pseudo, $mail, $password) { 
-        $this->utilisateurDao->ajoutUtilisateur($pseudo,$mail,$password);
+    public function ajoutUtilisateur($mail, $password) { 
+        $this->utilisateurDao->ajoutUtilisateur($mail,$password);
     }
 
     public function chercherUtilisateurParMail($mail) : ?array {
@@ -37,6 +37,11 @@ class UtilisateurService {
         $passwordOk = password_verify($password,$data["password"]);
         return $passwordOk;
     }
+
+    public function updateProfil($utilisateur) :void {
+        $data = $this->utilisateurDao->updateProfil($utilisateur);
+    }
+    
 
 }
 
