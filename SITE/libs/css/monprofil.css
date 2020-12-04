@@ -39,7 +39,7 @@ p{
 
   /*Corps de page*/
 
-  h3{
+h3{
     font-family: 'Rancho', cursive;
     text-decoration: underline;
 }
@@ -97,6 +97,27 @@ h4{
         width:300px;
         height:400px;
         background:#dcdacd;
+        margin-right: 2em;
+    }
+}
+
+@media all and (max-device-width: 480px)
+{
+    .menu{
+        padding-left: 15%;
+        padding-bottom: 25%;
+    }
+}
+
+@media all and (max-device-width: 480px)
+{
+    .rectangle_desc{
+        position: relative;
+        width: 80%;
+        height: 20%;
+        overflow: hidden;
+        background:#dcdacd;
+        margin-left: 2em;
         margin-right: 2em;
     }
 }

@@ -26,6 +26,18 @@
     width:14.5em;
 }
 
+.button {
+    background-color: #52908b;
+    border: none;
+    color: white;
+    padding: 10px 28px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    border-radius: 10px;
+    font-family: 'Halant', serif;
+}
+
     @media screen and (max-width : 1200px) {
         .menu_lateral_detail_voyage {
                 width:11.7em;
