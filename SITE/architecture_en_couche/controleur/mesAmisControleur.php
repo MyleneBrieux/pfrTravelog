@@ -12,6 +12,6 @@ contenuListeAmis();
 
 nbPages();
 
-finPage();
+finAmis();
 
 ?>

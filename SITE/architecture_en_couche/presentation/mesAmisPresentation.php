@@ -265,12 +265,19 @@
     function nbPages(){
         echo'<p class="text-center">
             < 1 2 ... 4>
-        </p>';
+        </p>
+        </div>
+        </div>';
+    }
+
+    function footer(){
+        include ("footerCONTROLEUR.php");
     }
 
     function finPage(){
         echo'</div>
-        </body>';
+        </body>
+        </html>';
     }
 
     function amisDebut(){
@@ -289,6 +296,11 @@
         ami8();
         ami9();
         ami10();
+    }
+
+    function finAmis(){
+        footer();
+        finPage();
     }
 
 ?>
