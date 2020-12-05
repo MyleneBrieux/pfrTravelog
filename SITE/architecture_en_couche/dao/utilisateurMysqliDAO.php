@@ -1,4 +1,8 @@
 <?php
+include_once("../model-metier/Utilisateur.php");
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+include_once("dao_exception.php");
+
 
     class UtilisateurMysqliDao {
 
@@ -29,7 +33,7 @@
 /* AJOUT UTILISATEUR*/
         public function ajoutUtilisateur(string $mail, string $password) {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("INSERT INTO utilisateurs (id,mail,password) VALUES (null,?,?)");
+            $stmt = $mysqli->prepare("INSERT INTO utilisateurs (id, mail, password) VALUES (null,?,?)");
             $stmt->bind_param("ss",$mail,$password);
             $stmt->execute();
             $mysqli->close();
@@ -47,7 +51,7 @@
 
 
 /* RECHERCHE UTILISATEUR PAR MAIL*/        
-        public function chercherUtilisateurParMail(string $mail) : ?array {
+        public function chercherEmail(string $mail) : ?array {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("SELECT * FROM utilisateurs WHERE mail=?");
             $stmt->bind_param("s",$mail);
@@ -61,7 +65,7 @@
 
 
 /* RECHERCHE UTILISATEUR PAR PSEUDO*/
-        public function chercherUtilisateurParPseudo(string $pseudo) : ?array {
+        public function chercherPseudo(string $pseudo) : ?array {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("SELECT * FROM utilisateurs WHERE pseudo=?");
             $stmt->bind_param("s",$pseudo);
@@ -77,8 +81,8 @@
 /* MODIFICATION de PROFIL*/        
         public function updateProfil(Utilisateur $utilisateur):void{   
             $mysqli=$this->connexion();
-            $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, login=?, birthday=?, nationnalite=?, contact=?, notifMail=? WHERE login=?");
-            $stmt->bind_param("ssssssss", $mail, $password, $login, $birthday, $nationnalite, $contact, $notifMail);
+            $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, pseudo=?, birthday=?, nation=?, contact=?, notifMail=? WHERE login=?");
+            $stmt->bind_param("ssssssss", $mail, $password, $pseudo, $birthday, $nation, $contact, $notifMail);
             $stmt->execute();
             $rs=$stmt->get_result();
             $employe=$rs->fetch_array(MYSQLI_ASSOC);
@@ -86,9 +90,9 @@
             $objetUtilisateur= New Utilisateur(
             ($utilisateur['mail']), 
             ($utilisateur['password']), 
-            ($utilisateur['login']), 
+            ($utilisateur['pseudo']), 
             ($utilisateur['birthday']),  
-            ($utilisateur['nationalite']), 
+            ($utilisateur['nation']), 
             ($utilisateur['contact']), 
             ($utilisateur['notifMail']) );
             $mysqli->close();
