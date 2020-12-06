@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 04 déc. 2020 à 16:08
+-- Généré le : Dim 06 déc. 2020 à 12:36
 -- Version du serveur :  10.4.14-MariaDB
--- Version de PHP : 7.4.9
+-- Version de PHP : 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -112,7 +112,7 @@ CREATE TABLE `utilisateurs` (
 CREATE TABLE `voyages` (
   `code_voyage` int(11) NOT NULL,
   `titre` varchar(50) NOT NULL,
-  `resume` varchar(500) DEFAULT NULL,
+  `resume` varchar(500) NOT NULL,
   `date_debut` date NOT NULL,
   `date_fin` date NOT NULL,
   `couverture` mediumblob NOT NULL,
