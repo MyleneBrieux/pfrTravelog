@@ -38,8 +38,8 @@ class UtilisateurService {
         return $passwordOk;
     }
 
-    public function updateProfil($utilisateur) :void {
-        $data = $this->utilisateurDao->updateProfil($utilisateur);
+    public function modifierUtilisateur($utilisateur) : void {
+        $data = $this->utilisateurDao->modifierUtilisateur($utilisateur);
     }
     
 
