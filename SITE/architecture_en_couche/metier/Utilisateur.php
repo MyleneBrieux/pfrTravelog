@@ -4,22 +4,23 @@ class Utilisateur {
     private $id;
     private $mail;
     private $password;
-    private $login;
+    private $pseudo;
     private $birthday;
     private $photoProfil;
     private $nationalite;
     private $contact;
     private $notifmail;
 
-    public function __construct(int $id, string $mail, string $password, string $login, date $birthday, string $photoProfil, 
-    string $nationalite, string $contact, string $notifmail)
+    public function __construct(int $id, string $mail, string $password, string $pseudo, string $description, string $photoProfil,
+                                DateTime $birthday, string $nationalite, string $contact, string $notifmail)
     {
         $this->id = $id;
         $this->mail = $mail;
         $this->password = $password;
-        $this->login = $login;
-        $this->birthday = $birthday;
+        $this->pseudo = $pseudo ;
+        $this->description= $description;
         $this->photoProfil = $photoProfil;
+        $this->birthday = $birthday;
         $this->nationalite = $nationalite;
         $this->contact = $contact;
         $this->notifmail = $notifmail;
@@ -74,21 +75,41 @@ class Utilisateur {
     }
 
     /**
-     * Get the value of login
+     * Get the value of pseudo
      */ 
-    public function getLogin() : string
+    public function getPseudo() : string
     {
-        return $this->login;
+        return $this->pseudo;
     }
 
     /**
-     * Set the value of login
+     * Set the value of pseudo
      *
      * @return  self
      */ 
-    public function setLogin(string $login) : self
+    public function setPseudo(string $pseudo) : self
     {
-        $this->login = $login;
+        $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+        /**
+     * Get the value of description
+     */ 
+    public function getDescription() : string
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set the value of description
+     *
+     * @return  self
+     */ 
+    public function setDescription(string $description) : self
+    {
+        $this->description = $description;
 
         return $this;
     }
@@ -195,9 +216,9 @@ class Utilisateur {
 
     public function __toString() : string
     {
-        return "[id]: " . $this->id . "[mail] : " . $this->mail . "[password] : " . $this->password . "[login] : " . $this->login . "[birthday] : " . 
-        $this->birthday . "[Photo profil] : " . $this->photoProfil . "[nationalité] : " . $this->nationalite . "[contact] : " . 
-        $this->contact . "[notifmail] : " . $this->notifmail;
+        return "[id]: " . $this->id . "[mail] : " . $this->mail . "[password] : " . $this->password . "[pseudo] : " . $this->pseudo . "[description] : " . 
+        $this->description . "[birthday] : " . $this->birthday . "[Photo profil] : " . $this->photoProfil . "[nationalité] : " . $this->nationalite . 
+        "[contact] : " . $this->contact . "[notifmail] : " . $this->notifmail;
     }
 }
 
