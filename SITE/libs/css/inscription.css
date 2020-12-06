@@ -312,6 +312,20 @@
         }
     }
 
+.cgu-title{
+    color : #52908b;
+    margin-left:2em;
+}
+
+.text-cgu{
+    text-align:justify;
+}
+
+#btn-fermer-cgu{
+    background-color:#52908b;
+    border:none;
+}
+
 
  /* CASE */
 .container {
