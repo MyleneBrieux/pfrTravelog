@@ -9,11 +9,11 @@ include_once("../metier/Utilisateur.php");
 session_start();
 
 displayPageAccueil1();
-include ("navbar.php");
+// include ("navbar.php");
 displayPageAccueil2();
-include ("menulat.php");
+// include ("menulat.php");
 displayPageAccueil3();
-include ("footerCONTROLEUR.php");
+// include ("footerCONTROLEUR.php");
 displayPageAccueil4();
 
 ?>
