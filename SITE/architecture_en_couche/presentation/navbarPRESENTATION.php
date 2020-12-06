@@ -10,22 +10,23 @@ function displayNavbarConnectedOnly(){
 }
 
 function displayNavbarNotConnected(){
-    displayTopTagHtml();
-    displayHead();
-    displayTopTagBody();
+    displayTagTopHtml();
+    displayHeader();
+    displayTagTopBody();
     navbarNotConnected();
-    displayBottomTagBody();
+    displayTagBottomBody();
+    displayTagBottomHtml();
 }
 
 
 // FONCTIONS EN VRAC //
-function displayTopTagHtml(){
+function displayTagTopHtml(){
     echo
         '<!DOCTYPE html>
             <html lang="fr">';
 }
 
-function displayHead(){
+function displayHeader(){
     echo
         '<head>
             <meta charset="UTF-8">
@@ -46,7 +47,7 @@ function displayHead(){
         </head>';
 }
 
-function displayTopTagBody(){
+function displayTagTopBody(){
     echo
         '<body>';
 }
@@ -89,12 +90,12 @@ function navbarNotConnected(){
         </div>';
 }
 
-function displayBottomTagBody(){
+function displayTagBottomBody(){
     echo
         '</body>';
 }
 
-function displayBottomTagHTML(){
+function displayTagBottomHTML(){
     echo
         '</html>';
 }

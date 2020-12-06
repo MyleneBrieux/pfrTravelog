@@ -2,23 +2,24 @@
 
 // FONCTIONS GLOBALES //
 function displayMenuLat(){
-    displayTopTagHtml();
-    displayHead();
-    displayTopTagBody();
+    displayTopHtml();
+    topHeader();
+    displayTopBody();
     displayLeftMenuLat();
-    displayBottomTagBody();
+    displayBottomBody();
+    displayBottomHtml();
 }
 
 
 // FONCTIONS EN VRAC //
 
-function displayTopTagHtml(){
+function displayTopHtml(){
     echo
         '<!DOCTYPE html>
         <html lang="fr">';
 }
 
-function displayHead(){
+function topHeader(){
     echo
         '<head>
             <meta charset="utf-8">
@@ -35,7 +36,7 @@ function displayHead(){
         </head>';
 }
 
-function displayTopTagBody(){
+function displayTopBody(){
     echo
         '<body>';
 }
@@ -133,12 +134,12 @@ function displayLeftMenuLat(){
         </div>';
 }
 
-function displayBottomTagBody(){
+function displayBottomBody(){
     echo
         '</body>';
 }
 
-function displayBottomTagHTML(){
+function displayBottomHTML(){
     echo
         '</html>';
 }

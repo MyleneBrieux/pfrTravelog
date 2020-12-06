@@ -6,14 +6,14 @@ include_once("../service/UtilisateurSERVICE.php");
 include_once("../metier/Utilisateur.php");
 
 
-session_start();
+// session_start();
 
 displayPageAccueil1();
-// include ("navbar.php");
+include ("navbarCONTROLEUR.php");
 displayPageAccueil2();
-// include ("menulat.php");
+include ("menulatCONTROLEUR.php");
 displayPageAccueil3();
-// include ("footerCONTROLEUR.php");
+include ("footerCONTROLEUR.php");
 displayPageAccueil4();
 
 ?>

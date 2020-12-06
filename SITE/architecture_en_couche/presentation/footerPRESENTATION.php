@@ -2,24 +2,25 @@
 
 // FONCTIONS GLOBALES //
 function displayFooter(){
-    displayTopTagHtml();
-    displayHead();
-    displayTopTagBody();
+    topTagHtml();
+    head();
+    topTagBody();
     displayBottomFooter();
     popUpCGU();
-    displayBottomTagBody();
+    bottomTagBody();
+    bottomTagHtml();
 }
 
 
 // FONCTIONS EN VRAC //
 
-function displayTopTagHtml(){
+function topTagHtml(){
     echo
         "<!DOCTYPE html>
         <html lang='fr'>";
 }
 
-function displayHead(){
+function head(){
     echo
         '<head>
             <meta charset="UTF-8">
@@ -34,7 +35,7 @@ function displayHead(){
         </head>';
 }
 
-function displayTopTagBody(){
+function topTagBody(){
     echo
         '<body>';
 }
@@ -42,7 +43,7 @@ function displayTopTagBody(){
 function displayBottomFooter(){
     echo
         '<footer>
-            <div class="footer row fixed-bottom">
+            <div class="footer row">
 
                 <div class="CGU col-3">
                     <a href src="" class="liencgu" name="checkcgu" data-toggle="modal" data-target="#CGUPopUp">
@@ -127,12 +128,12 @@ function popUpCGU(){
         </div>';
 }
 
-function displayBottomTagBody(){
+function bottomTagBody(){
     echo
         '</body>';
 }
 
-function displayBottomTagHTML(){
+function bottomTagHTML(){
     echo
         '</html>';
 }

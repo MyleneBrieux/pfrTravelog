@@ -3,7 +3,7 @@
 // LIAISON AVEC AUTRES COUCHES //
 include_once("../presentation/menulatPRESENTATION.php");
 
-session_start();
+// session_start();
 
 displayMenuLat();
 

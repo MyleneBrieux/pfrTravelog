@@ -34,153 +34,155 @@ function displayPageAccueil4(){
 
 function displayTopTagHtml(){
     echo
-        "<!DOCTYPE html>
-        <html lang='fr'>";
+        '<!DOCTYPE html>
+        <html lang="fr">';
 }
 
 function displayHead(){
     echo
-        "<head>
-            <meta charset='utf-8'>
-        
-            <link href='https://fonts.googleapis.com/css2?family=Halant&display=swap' rel='stylesheet'>
-            <link href='https://fonts.googleapis.com/css2?family=Rancho&display=swap' rel='stylesheet'> 
-            <link rel='stylesheet' href='../../libs/bootstrap/css/bootstrap.css'/>
-            <link rel='stylesheet' href='../../libs/css/accueil.css'>
+        '<head>
+            <meta charset="utf-8">
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+                  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+            <link rel="stylesheet" href="../../libs/css/accueil.css">
+
+            <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet"> 
         
             <title>
                 Accueil
             </title>
-        </head>";
+        </head>';
 }
 
 function displayTopTagBody(){
     echo
-        "<body>";
+        '<body>';
 }
 
 function displayTopTagContainer(){
     echo
-        "<div class='container-fluid'>";
+        '<div class="container-fluid">';
 }
 
 function displayTopRowNavbar(){
     echo
-        "<div class='row'>";
+        '<div class="row">';
 }
 
 function displayBottomRowNavBar(){
     echo
-        "</div>";
+        '</div>';
 }
 
 function displayTopRowMenuLat(){
     echo
-        "<div class='row'>";
+        '<div class="row">';
 }
 
 function displayTripResults(){
     echo
-            "<p class='rsvoyages'>XX voyages trouvés</p>
-        </div>";
+            '<p class="rsvoyages">XX voyages trouvés</p>
+        </div>';
 }
 
 function displayTripOne(){
     echo
-        "<div class='row'>
-            <img src='../../img/photos/photo_profil_detail_voyage.jpg' class='photoprofil1'/>
-            <h1 class='titrevoyage1'>Titre</h1>
-            <img src='../../img/photos/trevi.jpg' class='photovoyage1'/>
-            <div class='encadrevoyage1'>
-                <p class='textevoyage1'>
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        '<div class="row">
+            <img src="../../img/photos/photo_profil_detail_voyage.jpg" class="photoprofil1"/>
+            <h1 class="titrevoyage1">Titre</h1>
+            <img src="../../img/photos/trevi.jpg" class="photovoyage1"/>
+            <div class="encadrevoyage1">
+                <p class="textevoyage1">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.'
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla."
                 </p>
-                <a href='detail_voyage.php' class='lienvoyage1'>
+                <a href="detail_voyage.php" class="lienvoyage1">
                     Découvrir ce voyage
                 </a>
             </div>
-        </div>";
+        </div>';
 }
 
 function displayTripTwo(){
     echo
-        "<div class='row'>
-            <img src='../../img/photos/photo_profil_femme1.jpg' class='photoprofil2'/>
-            <h1 class='titrevoyage2'>Titre</h1>
-            <img src='../../img/photos/grece.jpg' class='photovoyage2'/>
-            <div class='encadrevoyage2'>
-                <p class='textevoyage2'>
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        '<div class="row">
+            <img src="../../img/photos/photo_profil_femme1.jpg" class="photoprofil2"/>
+            <h1 class="titrevoyage2">Titre</h1>
+            <img src="../../img/photos/grece.jpg" class="photovoyage2"/>
+            <div class="encadrevoyage2">
+                <p class="textevoyage2">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.'
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla."
                 </p>
-                <a href='' class='lienvoyage2'>
+                <a href="" class="lienvoyage2">
                     Découvrir ce voyage
                 </a>
             </div>
-        </div>";
+        </div>';
 }
 
 function displayTripThree(){
     echo
-        "<div class='row'>
-            <img src='../../img/photos/photo_profil_homme2.jpg' class='photoprofil3'/>
-            <h1 class='titrevoyage3'>Titre</h1>
-            <img src='../../img/photos/lac.jpg' class='photovoyage3'/>
-            <div class='encadrevoyage3'>
-                <p class='textevoyage3'>
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        '<div class="row">
+            <img src="../../img/photos/photo_profil_homme2.jpg" class="photoprofil3"/>
+            <h1 class="titrevoyage3">Titre</h1>
+            <img src="../../img/photos/lac.jpg" class="photovoyage3"/>
+            <div class="encadrevoyage3">
+                <p class="textevoyage3">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.'
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla."
                 </p>
-                <a href='' class='lienvoyage3'>
+                <a href="" class="lienvoyage3">
                     Découvrir ce voyage
                 </a>
             </div>
-        </div>";
+        </div>';
 }
 
 function displayTripFour(){
     echo
-        "<div class='row'>
-            <img src='../../img/photos/photo_profil_femme2.jpg' class='photoprofil4'/>
-            <h1 class='titrevoyage4'>Titre</h1>
-            <img src='../../../img/photos/japon.jpg' class='photovoyage4'/>
-            <div class='encadrevoyage4'>
-                <p class='textevoyage4'>
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        '<div class="row">
+            <img src="../../img/photos/photo_profil_femme2.jpg" class="photoprofil4"/>
+            <h1 class="titrevoyage4">Titre</h1>
+            <img src="../../img/photos/japon.jpg" class="photovoyage4"/>
+            <div class="encadrevoyage4">
+                <p class="textevoyage4">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.'
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla."
                 </p>
-                <a href='' class='lienvoyage4'>
+                <a href="" class="lienvoyage4">
                     Découvrir ce voyage
                 </a>
             </div>
-        </div>";
+        </div>';
 }
 
 function displayPages(){
     echo
-        "<div class='row'>
-            <p class='pages'>< 1 2 ... 4 ></p>
-        </div>";
+        '<div class="row">
+            <p class="pages">< 1 2 ... 4 ></p>
+        </div>';
 }
 
 function displayBottomTagContainer(){
     echo
-        "</div>";
+        '</div>';
 }
 
 function displayBottomTagBody(){
     echo
-        "</body>";
+        '</body>';
 }
 
 function displayBottomTagHTML(){
     echo
-        "</html>";
+        '</html>';
 }
 
 ?>
