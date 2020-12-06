@@ -16,10 +16,11 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             return $mysqli;
         }
 
-        // AJOUT //
+        // AJOUT UTILISATEUR //
         public function ajoutUtilisateur(string $mail, string $password, string $pseudo) {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("insert into utilisateurs(id,mail,password,pseudo) VALUES (null,?,?,?)");
+            $stmt = $mysqli->prepare("insert into utilisateurs(id,mail,password,pseudo,description,photoprofil,birthday,nation,contact,notifmail,code_langue) 
+                                      VALUES (null,?,?,?,null,'photo',null,null,'Y','Y','1')");
             $stmt->bind_param("sss",$mail,$password,$pseudo);
             $stmt->execute();
             $mysqli->close();
