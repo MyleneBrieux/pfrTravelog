@@ -1,59 +1,34 @@
 <?php
-include_once("../model-metier/Utilisateur.php");
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+// LIAISONS AVEC AUTRES COUCHES //
+include_once("../metier/Utilisateur.php");
 include_once("dao_exception.php");
+
+// GESTION DES ERREURS //
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 
     class UtilisateurMysqliDao {
 
-        // public function connexion() {
-        //     $user = 'mylene';
-        //     $password = 'afpamy13';
-        //     $mysqli = new PDO('mysql:host=localhost; dbname=pfrtravelog', $user, $password);
-        //     return $mysqli;
-        // }
-
-
- /*CONNEXION*/       
+        // CONNEXION //
         public function connexion() {
-            $mysqli= new mysqli('localhost','mylene','afpamy13','pfrtravelog');
+            $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
             return $mysqli;
-
-            // $mysqli = new PDO('mysql:host=localhost; dbname=pfrtravelog', 'andhromede', 'Fm8APqpp');
-            // return $mysqli;
         }
 
-        // public function ajoutUtilisateur(string $mail, string $password) {
-        //     $mysqli=$this->connexion();
-        //     $stmt = $mysqli->prepare("insert into utilisateurs(mail,password) values(?,?)");
-        //     $stmt->bindParam(":mail",$mail, ":password", $password);
-        //     $mysqli->exec($stmt);
-        // }
-
-/* AJOUT UTILISATEUR*/
-        public function ajoutUtilisateur(string $mail, string $password) {
+        // AJOUT //
+        public function ajoutUtilisateur(string $mail, string $password, string $pseudo) {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("INSERT INTO utilisateurs (id, mail, password) VALUES (null,?,?)");
-            $stmt->bind_param("ss",$mail,$password);
+            $stmt = $mysqli->prepare("insert into utilisateurs(id,mail,password,pseudo) VALUES (null,?,?,?)");
+            $stmt->bind_param("sss",$mail,$password,$pseudo);
             $stmt->execute();
             $mysqli->close();
         }
-        
-        // public function chercherUtilisateur(string $mail) : ?array {
-        //     $mysqli=$this->connexion();
-        //     $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
-        //     $stmt->bindParam(":mail",$mail);
-        //     $rs=exec($stmt);
-        //     $data = $rs->fetch(PDO::FETCH_ASSOC);
-        //     $rs->close();
-        //     return $data;
-        // }
 
-
-/* RECHERCHE UTILISATEUR PAR MAIL*/        
-        public function chercherEmail(string $mail) : ?array {
+        // RECHERCHE UTILISATEUR PAR EMAIL //
+        public function chercherUtilisateurParMail(string $mail) : ?array {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("SELECT * FROM utilisateurs WHERE mail=?");
+            $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
             $stmt->bind_param("s",$mail);
             $stmt->execute();
             $rs = $stmt->get_result();
@@ -63,11 +38,10 @@ include_once("dao_exception.php");
             return $data;
         }
 
-
-/* RECHERCHE UTILISATEUR PAR PSEUDO*/
-        public function chercherPseudo(string $pseudo) : ?array {
+        // RECHERCHE UTILISATEUR PAR PSEUDO //
+        public function chercherUtilisateurParPseudo(string $pseudo) : ?array {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("SELECT * FROM utilisateurs WHERE pseudo=?");
+            $stmt = $mysqli->prepare("select * from utilisateurs where pseudo=?");
             $stmt->bind_param("s",$pseudo);
             $stmt->execute();
             $rs = $stmt->get_result();
@@ -77,42 +51,21 @@ include_once("dao_exception.php");
             return $data;
         }
 
-
-/* MODIFICATION de PROFIL*/        
-        public function updateProfil(Utilisateur $utilisateur):void{   
+        // MODIFICATION //
+        public function modifierUtilisateur(Utilisateur $utilisateur):void{   
             $mysqli=$this->connexion();
-            $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, pseudo=?, birthday=?, nation=?, contact=?, notifMail=? WHERE login=?");
-            $stmt->bind_param("ssssssss", $mail, $password, $pseudo, $birthday, $nation, $contact, $notifMail);
+            $stmt=$mysqli->prepare("update utilisateurs set mail=?, password=?, pseudo=?, birthday=?, nation=?, contact=?, notifMail=? where pseudo=?");
+            $mail=$utilisateur->getMail();
+            $password=$utilisateur->getPassword();
+            $pseudo=$utilisateur->getPseudo();
+            $birthday=$utilisateur->getBirthday();
+            $nation=$utilisateur->getNationalite();
+            $contact=$utilisateur->getContact();
+            $notifMail=$utilisateur->getNotifMail();
+            $stmt->bind_param("ssssssss", $mail, $password, $pseudo, $birthday, $nation, $contact, $notifMail, $pseudo);
             $stmt->execute();
-            $rs=$stmt->get_result();
-            $employe=$rs->fetch_array(MYSQLI_ASSOC);
-    
-            $objetUtilisateur= New Utilisateur(
-            ($utilisateur['mail']), 
-            ($utilisateur['password']), 
-            ($utilisateur['pseudo']), 
-            ($utilisateur['birthday']),  
-            ($utilisateur['nation']), 
-            ($utilisateur['contact']), 
-            ($utilisateur['notifMail']) );
             $mysqli->close();
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
