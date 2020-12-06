@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 06 déc. 2020 à 12:36
+-- Généré le : Dim 06 déc. 2020 à 20:52
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.2.34
 
@@ -60,6 +60,17 @@ CREATE TABLE `langues` (
   `type_langue` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `langues`
+--
+
+INSERT INTO `langues` (`code_langue`, `type_langue`) VALUES
+(1, 'anglais'),
+(2, 'français'),
+(3, 'chinois'),
+(4, 'arabe'),
+(5, 'espagnol');
+
 -- --------------------------------------------------------
 
 --
@@ -91,9 +102,9 @@ CREATE TABLE `signalements` (
 
 CREATE TABLE `utilisateurs` (
   `id` int(11) NOT NULL,
+  `pseudo` varchar(20) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `pseudo` varchar(20) NOT NULL,
   `description` varchar(500) DEFAULT NULL,
   `photoprofil` mediumblob NOT NULL,
   `birthday` date DEFAULT NULL,
@@ -102,6 +113,13 @@ CREATE TABLE `utilisateurs` (
   `notifmail` varchar(1) NOT NULL,
   `code_langue` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`id`, `pseudo`, `mail`, `password`, `description`, `photoprofil`, `birthday`, `nation`, `contact`, `notifmail`, `code_langue`) VALUES
+(5, 'mylene', 'mylene.brieux@gmail.com', '$2y$10$Jki9d9KNdUqZ5N1FQUua.etuqYF20oblp8ekW8FLbbWQLn31VmpK.', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1);
 
 -- --------------------------------------------------------
 
@@ -195,7 +213,7 @@ ALTER TABLE `etape`
 -- AUTO_INCREMENT pour la table `langues`
 --
 ALTER TABLE `langues`
-  MODIFY `code_langue` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `code_langue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `notifications`
@@ -213,7 +231,7 @@ ALTER TABLE `signalements`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `voyages`
