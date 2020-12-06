@@ -1,8 +1,10 @@
+/* DESIGN GENERAL */
 .footer{
 background-color: #52908B;
 text-align: center;
 }
 
+/* TEXTES */
 .CGU, .mentionslegales, .contact, .copyright {
     color:white;
     font-family: 'Halant', serif;
@@ -38,4 +40,37 @@ text-align: center;
 
 .copyright {
 border-right:none;
+}
+
+/* CONDITIONS GENERALES D'UTILISATION */
+.cgu-title{
+    color : #52908b;
+    margin-left:2em;
+}
+
+.text-cgu{
+    text-align:justify;
+}
+
+#btn-fermer-cgu{
+    background-color:#52908b;
+    border:none;
+}
+
+/* LIEN VERS CONDITIONS GENERALES D'UTILISATION */
+.liencgu:link {
+    color: white;
+}
+  
+.liencgu:visited {
+    color: white;
+}
+  
+.liencgu:focus {
+    background: white;
+}
+  
+.liencgu:hover {     
+    background: none;
+    text-decoration:none;
 }
