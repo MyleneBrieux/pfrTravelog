@@ -35,7 +35,12 @@ function displayHead(){
             <link rel="stylesheet" href="../../libs/css/inscription.css">
             <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.css"/>
 
-            <script src="../../libs/jquery/jquery-3.5.1.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
             <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet"> 
@@ -66,9 +71,22 @@ function displayHeader(){
 
 function displayLeftPolaroid(){
     echo
-        '<div class="row">
-
-            <img src="../../img/photos/polaroid2.png" class="polaroid1"/>';
+    '<div class="row">
+        <div class="left-polaroid">
+            <div id="left-caroussel" class ="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="1000">
+                        <img src="../../img/photos/photos_carousels/grece.jpg" alt="left-caroussel slide 1" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-interval="1000">
+                        <img src="../../img/photos/photos_carousels/hambourg.jpg" alt="Carrousel slide 2" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-interval="1000">
+                        <img src="../../img/photos/photos_carousels/lac.jpg" alt="Carrousel slide 3" class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+        </div>';
 }
 
 function displayInscriptionFrame(){
@@ -110,11 +128,31 @@ function displayInscriptionFrame(){
 }
 
 function displayRightPolaroid(){
-    echo    
-            '<img src="../../img/photos/polaroid.png" class="polaroid2"/>
-
-        </div>';
+    echo
+        '<div class="right-polaroid">
+            <div id="right-caroussel" class ="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="1000">
+                        <img src="../../img/photos/photos_carousels/japon.jpg" alt="left-caroussel slide 1" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-interval="1000">
+                        <img src="../../img/photos/photos_carousels/londres.jpg" alt="Carrousel slide 2" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-interval="1000">
+                        <img src="../../img/photos/photos_carousels/venise.jpg" alt="Carrousel slide 3" class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>';
 }
+
+// function displayRightPolaroid(){
+//     echo    
+//             '<img src="../../img/photos/polaroid.png" class="polaroid2"/>
+
+//         </div>';
+// }
 
 function displayBottomTagContainer(){
     echo
