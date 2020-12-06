@@ -3,28 +3,28 @@
 class Voyage {
 
     private $codeVoyage;
-    private $title;
-    private $desc;
+    private $titre;
+    private $resume;
     private $datedebut;
     private $datefin;
     private $couverture;
-    private $media;
     private $statut;
-    private $paragraphe;
+    private $likes;
+    private $vues;
 
 
-    public function __construct(int $codeVoyage, string $title, string $desc, DateTime $datedebut, DateTime $datefin, string $couverture, 
-                                string $media, string $statut, string $paragraphe){
+    public function __construct(int $codeVoyage, string $titre, string $resume, DateTime $datedebut, DateTime $datefin, string $couverture, 
+                                string $statut, int $likes, int $vues){
 
         $this->codeVoyage=$codeVoyage;
-        $this->title=$title;
-        $this->desc=$desc;
+        $this->titre=$titre;
+        $this->resume=$resume;
         $this->datedebut=$datedebut;
         $this->datefin=$datefin;
         $this->couverture=$couverture;
-        $this->media=$media;
         $this->statut=$statut;
-        $this->paragraphe=$paragraphe;
+        $this->likes=$likes;
+        $this->vues=$vues;
     }
 
     // CodeVoyage
@@ -33,25 +33,25 @@ class Voyage {
         return $this->codeVoyage;
     }
 
-    // Title
+    // Titre
 
-    public function getTitle():string{
-        return $this->title;
+    public function getTitre():string{
+        return $this->titre;
     }
 
-    public function setTitle(string $title):self{
-        $this->title=$title;
+    public function setTitre(string $titre):self{
+        $this->titre=$titre;
         return $this;
     }
 
     // Desc
 
-    public function getDesc():string{
-        return $this->desc;
+    public function getResume():string{
+        return $this->resume;
     }
 
-    public function setDesc(string $desc):self{
-        $this->desc=$desc;
+    public function setResume(string $resume):self{
+        $this->resume=$resume;
         return $this;
     }
 
@@ -88,17 +88,6 @@ class Voyage {
         return $this;
     }
 
-    // Media
-
-    public function getMedia():string{
-        return $this->media;
-    }
-
-    public function setMedia(string $media):self{
-        $this->media=$media;
-        return $this;
-    }
-
     // Statut
 
     public function getStatut():string{
@@ -110,24 +99,37 @@ class Voyage {
         return $this;
     }
 
-    // Paragraphe
+    // Likes
 
-    public function getParagraphe():string{
-        return $this->paragraphe;
+    public function getLikes():int{
+        return $this->likes;
     }
 
-    public function setParagraphe(string $paragraphe):self{
-        $this->paragraphe=$paragraphe;
+    public function setLikes(int $likes):self{
+        $this->likes=$likes;
         return $this;
     }
+
+    // Vues
+
+    public function getVues():int{
+        return $this->vues;
+    }
+    
+    public function setVues(int $vues):self{
+        $this->vues=$vues;
+        return $this;
+    }
+
+
 
 
     // ToString
 
     public function __toString():string{
-        return "[Code du Voyage]: " . $this->codeVoyage . " [Titre]: " . $this->title . " [Description]: " . $this->desc . 
+        return "[Code du Voyage]: " . $this->codeVoyage . " [Titre]: " . $this->titre . " [Résumé]: " . $this->resume . 
         "[Date de debut]: " . $this->datedebut . " [Date de fin]: " . $this->datefin . " [Couverture]: " . $this->couverture . 
-        "[Media]: " . $this->media . " [Statut]: " . $this->statut . " [Paragraphe]: " . $this->paragraphe ;
+       " [Statut]: " . $this->statut . " [Likes]: " . $this->likes . " [Vues] : " . $this->vues ;
     }
 
 }
