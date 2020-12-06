@@ -64,8 +64,21 @@ function displayHeader(){
 function displayLeftPolaroid(){
     echo
         '<div class="row">
-
-            <img src="../../img/photos/polaroid2.png" class="polaroid1"/>';
+            <div class="left-polaroid">
+                <div id="left-caroussel" class ="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-interval="750">
+                            <img src="../../img/photos/photos_carousels/grece.jpg" alt="left-caroussel slide 1" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item" data-interval="750">
+                            <img src="../../img/photos/photos_carousels/hambourg.jpg" alt="Carrousel slide 2" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item" data-interval="750">
+                            <img src="../../img/photos/photos_carousels/lac.jpg" alt="Carrousel slide 3" class="d-block w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>';
 }
 
 function displayConnexionFrame(){
@@ -94,10 +107,23 @@ function displayConnexionFrame(){
 }
 
 function displayRightPolaroid(){
-    echo    
-        '<img src="../../img/photos/polaroid.png" class="polaroid2"/>
-
-        </div>';
+    echo
+        '<div class="right-polaroid">
+            <div id="right-caroussel" class ="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="750">
+                        <img src="../../img/photos/photos_carousels/japon.jpg" alt="left-caroussel slide 1" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-interval="750">
+                        <img src="../../img/photos/photos_carousels/londres.jpg" alt="Carrousel slide 2" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-interval="750">
+                        <img src="../../img/photos/photos_carousels/venise.jpg" alt="Carrousel slide 3" class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>';
 }
 
 function displayBottomTagContainer(){

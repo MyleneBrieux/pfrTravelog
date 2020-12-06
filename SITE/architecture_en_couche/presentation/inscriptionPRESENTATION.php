@@ -218,13 +218,13 @@ function displayRightPolaroid(){
         '<div class="right-polaroid">
             <div id="right-caroussel" class ="carousel slide carousel-fade" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-interval="1000">
+                    <div class="carousel-item active" data-interval="750">
                         <img src="../../img/photos/photos_carousels/japon.jpg" alt="left-caroussel slide 1" class="d-block w-100">
                     </div>
-                    <div class="carousel-item" data-interval="1000">
+                    <div class="carousel-item" data-interval="750">
                         <img src="../../img/photos/photos_carousels/londres.jpg" alt="Carrousel slide 2" class="d-block w-100">
                     </div>
-                    <div class="carousel-item" data-interval="1000">
+                    <div class="carousel-item" data-interval="750">
                         <img src="../../img/photos/photos_carousels/venise.jpg" alt="Carrousel slide 3" class="d-block w-100">
                     </div>
                 </div>
