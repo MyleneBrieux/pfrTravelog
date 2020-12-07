@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 06 déc. 2020 à 20:52
+-- Généré le : lun. 07 déc. 2020 à 21:23
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.2.34
 
@@ -69,7 +69,22 @@ INSERT INTO `langues` (`code_langue`, `type_langue`) VALUES
 (2, 'français'),
 (3, 'chinois'),
 (4, 'arabe'),
-(5, 'espagnol');
+(5, 'espagnol'),
+(6, 'hindi'),
+(7, 'portugais'),
+(8, 'russe'),
+(9, 'japonais'),
+(10, 'coreen'),
+(11, 'allemand'),
+(12, 'turc'),
+(13, 'vietnamien'),
+(14, 'italien'),
+(15, 'polonais'),
+(16, 'neerlandais'),
+(17, 'grec'),
+(18, 'thai'),
+(19, 'bengali'),
+(20, 'pendjabi');
 
 -- --------------------------------------------------------
 
@@ -106,7 +121,7 @@ CREATE TABLE `utilisateurs` (
   `mail` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `description` varchar(500) DEFAULT NULL,
-  `photoprofil` mediumblob NOT NULL,
+  `photoprofil` mediumblob DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `nation` varchar(50) DEFAULT NULL,
   `contact` varchar(1) NOT NULL,
@@ -213,7 +228,7 @@ ALTER TABLE `etape`
 -- AUTO_INCREMENT pour la table `langues`
 --
 ALTER TABLE `langues`
-  MODIFY `code_langue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `code_langue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT pour la table `notifications`
