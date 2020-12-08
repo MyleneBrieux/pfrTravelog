@@ -15,9 +15,9 @@
     function profilHeader(){
         echo '<body>
         <div class="container-fluid">
-        <header class="header">
-            <?php include "navbarCONTROLEUR.php" ?>
-        </header>';
+        <header class="header">';
+            include "navbarCONTROLEUR.php";
+        echo'</header>';
     }
 
     function menuLat(){
@@ -72,18 +72,23 @@
                     </div>';
     }
 
-    function voyagesUser(){
+    function lastTrip(){
         echo'<div class="row d-flex justify-content-around mt-2">
                         <div>
                             <h3>Son dernier voyage : </h3>
-                            <img src="../../img/photos/polaroid2.png" alt="" width=250 height=250>
-                        </div>
-                        <div>
-                            <h3>Le plus populaire : </h3>
-                            <img src="../../img/photos/polaroid2.png" alt="" width=250 height=250>
-                        </div>
-                    </div>
-                    <div>
+                            <img class="mt-3" src="../../img/photos/etats-unis.jpg" alt="" width=350 height=250>
+                        </div>';
+                    }
+
+    function mostPopular(){
+        echo'<div>
+                <h3>Le plus populaire : </h3>
+                <img class="mt-3" src="../../img/photos/dubai.jpg" alt="" width=350 height=250>
+                </div>
+            </div>';
+    }
+    function autresVoyage() {
+                    echo'<div>
                         <h3>Ses autres voyages</h3>
                     </div>
                     <div class="row d-inline-flex justify-content-around">
@@ -123,6 +128,12 @@
     function profilDebut(){
         profilHead();
         profilHeader();
+    }
+
+    function voyages(){
+        lastTrip();
+        mostPopular();
+        autresVoyage();
     }
 
     function profilFin(){

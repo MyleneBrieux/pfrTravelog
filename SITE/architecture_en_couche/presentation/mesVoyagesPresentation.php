@@ -16,9 +16,9 @@
     function voyagesHeader(){
         echo'<body>
         <div class="container-fluid">
-            <div class="row">
-                <?php include ("navbar.php")?>
-            </div>';
+            <div class="row">';
+                include ("navbarCONTROLEUR.php");
+            echo'</div>';
     }
 
     function menuLat(){

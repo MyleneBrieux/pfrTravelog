@@ -16,8 +16,8 @@
     function amisHeader(){
         echo'<body>
         <div class="container-fluid ">
-            <div class="row">
-                <?php include ("navbar.php")?>';
+            <div class="row">';
+                include ("navbarCONTROLEUR.php");
     }
 
     function menuLat(){
