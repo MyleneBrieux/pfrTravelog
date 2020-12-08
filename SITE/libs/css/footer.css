@@ -5,7 +5,7 @@ text-align: center;
 }
 
 /* TEXTES */
-.CGU, .mentionslegales, .contact, .copyright {
+.CGU, .ML, .contact, .copyright {
     color:white;
     font-family: 'Halant', serif;
     font-weight: bolder;
@@ -16,13 +16,13 @@ text-align: center;
 }
 
     @media screen and (max-width : 1050px) {
-        .CGU, .mentionslegales, .contact {
+        .CGU, .ML, .contact {
                 font-size:0.8em;
             }
     }
 
     @media screen and (max-width : 855px) {
-        .CGU, .mentionslegales, .contact {
+        .CGU, .ML, .contact {
                 font-size:0.6em;
                 align-items:center;
             }
@@ -42,22 +42,23 @@ text-align: center;
 border-right:none;
 }
 
-/* CONDITIONS GENERALES D'UTILISATION */
-.cgu-title{
+/* CONDITIONS GENERALES D'UTILISATION et MENTIONS LEGALES */
+.cgu-title,.ML-title{
     color : #52908b;
     margin-left:2em;
 }
 
-.text-cgu{
+.text-cgu,.text-ML{
     text-align:justify;
 }
 
-#btn-fermer-cgu{
+#btn-fermer-cgu,#btn-fermer-ML{
     background-color:#52908b;
     border:none;
 }
 
-/* LIEN VERS CONDITIONS GENERALES D'UTILISATION */
+/* LIENS VERS POP-UP */
+/* CGU */
 .liencgu:link {
     color: white;
 }
@@ -67,10 +68,28 @@ border-right:none;
 }
   
 .liencgu:focus {
-    background: white;
+    background:none;
 }
   
 .liencgu:hover {     
+    background: none;
+    text-decoration:none;
+}
+
+/* MENTIONS LEGALES */
+.lienML:link {
+    color: white;
+}
+  
+.lienML:visited {
+    color: white;
+}
+  
+.lienML:focus {
+    background:none;
+}
+  
+.lienML:hover {     
     background: none;
     text-decoration:none;
 }

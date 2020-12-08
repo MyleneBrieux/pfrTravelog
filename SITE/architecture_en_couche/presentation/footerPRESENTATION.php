@@ -28,6 +28,13 @@ function head(){
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
                   integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
             <link rel="stylesheet" href="../../libs/css/footer.css">
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
             <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet"> 
         
@@ -51,9 +58,17 @@ function displayBottomFooter(){
                     </a>
                 </div>
 
-                <div class="mentionslegales col-3">Mentions légales</div>
+                <div class="ML col-3">
+                    <a href src="" class="lienML" name="checkML" data-toggle="modal" data-target="#mlPopUp">
+                        Mentions légales
+                    </a>
+                </div>
 
-                <div class="contact col-3"><a href="../controleur/contactCONTROLEUR.php" class="liencontact">Contact</a></div>
+                <div class="contact col-3">
+                    <a href="../controleur/contactCONTROLEUR.php" class="liencontact">
+                        Contact
+                    </a>
+                </div>
 
                 <div class="copyright col-3">© 2020 Travelog</div>
             </div>
@@ -122,6 +137,40 @@ function popUpCGU(){
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" id="btn-fermer-cgu" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>';
+}
+
+function popUpML(){
+    echo
+        '<div class="modal fade" id="mlPopUp">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="ML-title"><strong>Mentions légales</strong></h4>
+                    </div>
+            
+                    <div class="modal-body">
+                        <h5><strong>Informations sur la société</strong></h5>
+                            <p class="text-ML">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim odio vitae nibh volutpat blandit. 
+                                Integer massa elit, sodales vitae purus quis, tempus aliquet quam. Vivamus pharetra nunc sed est malesuada vulputate. 
+                                Fusce imperdiet lacus sit amet erat vehicula, vitae suscipit ex pharetra. Quisque in velit sem. Mauris malesuada tellus et mi tempus cursus. 
+                                Morbi ut diam aliquet, bibendum libero porta, finibus augue. Maecenas pharetra vulputate sapien in mattis. Pellentesque gravida pharetra facilisis. 
+                                Nullam libero nulla, gravida dapibus mi ut, finibus malesuada neque. Nunc tincidunt sed odio sed pretium. 
+                            </p>
+                        <h5><strong>Activité</strong></h5>
+                            <p class="text-ML">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim odio vitae nibh volutpat blandit. 
+                                Integer massa elit, sodales vitae purus quis, tempus aliquet quam. Vivamus pharetra nunc sed est malesuada vulputate. 
+                                Fusce imperdiet lacus sit amet erat vehicula, vitae suscipit ex pharetra. Quisque in velit sem. Mauris malesuada tellus et mi tempus cursus. 
+                                Morbi ut diam aliquet, bibendum libero porta, finibus augue. Maecenas pharetra vulputate sapien in mattis. Pellentesque gravida pharetra facilisis. 
+                                Nullam libero nulla, gravida dapibus mi ut, finibus malesuada neque. Nunc tincidunt sed odio sed pretium. 
+                            </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="btn-fermer-ML" data-dismiss="modal">Fermer</button>
                     </div>
                 </div>
             </div>
