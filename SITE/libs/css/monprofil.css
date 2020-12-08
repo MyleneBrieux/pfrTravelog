@@ -71,25 +71,9 @@ h4{
     text-decoration: underline;
 }
 
-.polaroid1{
-    height: 15em;
-    width: 15em;
-}
-
-.polaroid2{
-    height: 15em;
-    width: 15em;
-}
-
-.photo_voyage1{
-    height: 15em;
-    width: 15em;
-}
-
-.photo_voyage2{
-    height: 15em;
-    width: 15em;
-}
+.tourne {
+    transform: rotate(45deg); /* Équivalent à rotateZ(45deg) */
+  }
 
 @media all and (max-device-width: 480px)
 {
