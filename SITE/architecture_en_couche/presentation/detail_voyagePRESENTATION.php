@@ -33,7 +33,7 @@ function detail_bodyTop(){
 function detail_header(){
     echo '<div class="container-fluid ">
             <div class="row">';
-        // include ("navbarCONTROLEUR.php");
+        include ("navbarCONTROLEUR.php");
 }
 
 function detail_menuLateral(){
@@ -48,7 +48,7 @@ function detail_menuLateral(){
                 <h6>Dates voyage</h6>
                 <h6>xxx vues - xxx likes</h6>
                 </div>
-                <button type="button" class="btn btn-primary addItem col-12 mt-4 mb-3">Mes autres</br>voyages</button>
+                <button type="button" class="btn btn-primary addItem col-12 mt-4 mb-3">Mes autres</br>voyages</button>';
             
             //  Bouton supprimer avec modal 
 
@@ -82,7 +82,7 @@ function detail_menuLateral(){
             //     </div>
             // </div> 
 
-        </div>
+    echo'    </div>
     </nav>
 </div>';
 }
@@ -225,7 +225,7 @@ function detail_zoneComm(){
 function detail_footer(){
     echo '</div>
     <div class="col-2"></div>';
-    // include ("footerCONTROLEUR.php");
+    include ("footerCONTROLEUR.php");
 }
 
 function detail_finDivConteneur(){
