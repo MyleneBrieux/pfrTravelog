@@ -21,7 +21,7 @@ function creation_bodyTop(){
 function creation_header(){
     echo '<div class="container">
             <div class="header">';
-                // include('navbarCONTROLEUR.php');
+                include('navbarCONTROLEUR.php');
     echo   '</div>';
 }
 
