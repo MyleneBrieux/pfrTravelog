@@ -1,6 +1,7 @@
 <?php 
 
 require_once("../metier/Voyage.php");
+require_once("../metier/Etape.php");
 
 class VoyageMysqliDAO {
 
@@ -9,9 +10,9 @@ class VoyageMysqliDAO {
     public function addVoyagesDAO($voyage){
         $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
         
-        $stmt=$mysqli->prepare("insert into voyages (code_voyage, title, resume, date_debut, date_fin, couverture, statut, likes, vues) values (null,?,?,?,?,?,?,0,0)");
+        $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, couverture, statut, likes, vues) values (null,?,?,?,?,?,?,0,0)");
         // $codeVoyage=$voyage->getCodeVoyage();
-        $title=$voyage->getTitle();
+        $titre=$voyage->getTitre();
         $resume=$voyage->getResume();
         $date_debut=$voyage->getDateDebut();
         $date_fin=$voyage->getDateFin();
@@ -19,10 +20,27 @@ class VoyageMysqliDAO {
         $statut=$voyage->getStatut();
         // $likes=$voyage->getLikes();
         // $vues=$voyage->getVues();
-        $stmt->bind_param("ssssss", $title, $resume, $date_debut, $date_fin, $couverture, $statut);
+        $stmt->bind_param("ssssss", $titre, $resume, $date_debut, $date_fin, $couverture, $statut);
         $stmt->execute();
         $mysqli->close();
     }
+
+    //ajout Etape
+
+    public function addEtapeDAO($etape){
+        $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+        
+        $stmt=$mysqli->prepare("insert into etape (code_etape, sous-titre, description, media, likes, code_comm) values (null,?,?,?,0,null)");
+        // $codeEtape=$voyage->getCodeEtape();
+        $sousTitre=$voyage->getSousTitre();
+        $description=$voyage->getDescription();
+        $media=$voyage->getMedia();
+        // $likesEtape=$voyage->getLikesEtape();
+        $stmt->bind_param("sss", $sousTitre, $description, $media);
+        $stmt->execute();
+        $mysqli->close();
+    }
+
 
     // suppression Voyage
 
