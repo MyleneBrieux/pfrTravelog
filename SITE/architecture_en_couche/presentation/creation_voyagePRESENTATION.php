@@ -71,8 +71,39 @@ function creation_description(){
 
 function creation_addButton(){
     echo '<div class="row d-flex justify-content-center">
-            <button type="button" class="button">+ Ajouter un sous-titre</button>
+            <button type="button" class="button" data-toggle="modal" data-target="#ModalSousTitre">+ Ajouter un sous-titre</button>
         </div>
+
+        <div class="modal fade" id="ModalSousTitre" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Ecrire un sous-titre
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+    
+                        <form action="creation_voyage.php?action=soustitre" method="post">
+        
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Ecrivez votre sous-titre ici ..."></textarea>
+        
+                        </form>
+    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-primary">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="row d-flex justify-content-center">
             <button type="button" class="button">+ Ajouter un texte</button>
         </div>';
