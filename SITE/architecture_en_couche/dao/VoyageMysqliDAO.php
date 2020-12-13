@@ -4,21 +4,22 @@ require_once("../metier/Voyage.php");
 
 class VoyageMysqliDAO {
 
-    //ajout Voyage
+    //ajout Voyages
 
-    public function addVoyageDAO($voyage){
+    public function addVoyagesDAO($voyage){
         $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
         
-        $stmt=$mysqli->prepare("insert into voyages (title, description, date_debut, date_fin, couverture, media, statut, paragraphe) values (?,?,?,?,?,?,?,?)");
+        $stmt=$mysqli->prepare("insert into voyages (code_voyage, title, resume, date_debut, date_fin, couverture, statut, likes, vues) values (null,?,?,?,?,?,?,0,0)");
+        // $codeVoyage=$voyage->getCodeVoyage();
         $title=$voyage->getTitle();
-        $description=$voyage->getDescription();
+        $resume=$voyage->getResume();
         $date_debut=$voyage->getDateDebut();
         $date_fin=$voyage->getDateFin();
         $couverture=$voyage->getCouverture();
-        $media=$voyage->getMedia();
         $statut=$voyage->getStatut();
-        $paragraphe=$voyage->getParagraphe();
-        $stmt->bind_param("ssssssss", $title, $description, $date_debut, $date_fin, $couverture, $media, $statut, $paragraphe);
+        // $likes=$voyage->getLikes();
+        // $vues=$voyage->getVues();
+        $stmt->bind_param("ssssss", $title, $resume, $date_debut, $date_fin, $couverture, $statut);
         $stmt->execute();
         $mysqli->close();
     }
