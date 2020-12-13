@@ -23,7 +23,7 @@ function modif_bodyTop(){
 function modif_header(){
     echo '<div class="container-fluid">
         <div class="header">';
-            // include ("navbarCONTROLEUR.php");
+            include ("navbarCONTROLEUR.php");
     echo '</div>
     <div class="row">';
 }
@@ -171,6 +171,7 @@ function modif_corpsPage(){
     modif_menuLateral();
     modif_placeNav();
     modif_carousel();
+    modif_addPhoto();
     modif_ssTitre();
     modif_description();
     modif_zoneComm();
@@ -178,6 +179,7 @@ function modif_corpsPage(){
 
 function modif_basPage(){
     modif_footer();
+    modif_finDivConteneur();
     modif_bodyBottom();
     modif_finHtml();
 }
