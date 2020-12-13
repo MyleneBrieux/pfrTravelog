@@ -69,7 +69,7 @@ function creation_description(){
 // Les boutons d'ajout
 
 
-function creation_addButton(){
+function creation_addButton(/*$soustitre, $description*/){
     echo '<div class="row d-flex justify-content-center">
             <button type="button" class="button" data-toggle="modal" data-target="#ModalSousTitre">+ Ajouter un sous-titre</button>
         </div>
@@ -86,7 +86,7 @@ function creation_addButton(){
                     </div>
                     <div class="modal-body">
     
-                        <form action="creation_voyage.php?soustitre=' . $soustitre . '" method="post">
+                        <form action="creation_voyage.php?soustitre=$soustitre" method="post">
         
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                 placeholder="Ecrivez votre sous-titre ici ..."></textarea>
@@ -105,7 +105,7 @@ function creation_addButton(){
 
 
         <div class="row d-flex justify-content-center">
-            <button type="button" class="button" data-toggle="modal" data-target="#ModalDescription">+ Ajouter un texte</button>
+            <button type="button" class="button" data-toggle="modal" data-target="#ModalDescription">+ Ajouter une description</button>
         </div>
 
         <div class="modal fade" id="ModalDescription" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -120,7 +120,7 @@ function creation_addButton(){
                     </div>
                     <div class="modal-body">
     
-                        <form action="creation_voyage.php?description=' . $description . '" method="post">
+                        <form action="creation_voyage.php?description=$description" method="post">
         
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                 placeholder="Ecrivez votre description ici ..."></textarea>
@@ -193,14 +193,14 @@ function creation_headBodyTop(){
     creation_bodyTop();
 }
 
-function creation_corpsPage(){
+function creation_corpsPage(/*$soustitre, $description*/){
     creation_header();
     creation_h1();
     creation_champTitre();
     creation_filtres();
     creation_dates();
     creation_description();
-    creation_addButton();
+    creation_addButton(/*$soustitre, $description*/);
     creation_addFiles();
     creation_checkbox();
     creation_publicationButton();
