@@ -36,7 +36,7 @@ function detail_header(){
         include ("navbarCONTROLEUR.php");
 }
 
-function detail_menuLateral(){
+function detail_menuLateral(/*$isMyVoyage*/){
     echo '<div class="pl-0 menu_lateral_detail_voyage">
     <nav class="bg-sable mr-3 pr-3 menU centrage">
         <div class="row">
@@ -51,8 +51,8 @@ function detail_menuLateral(){
                 <button type="button" class="btn btn-primary addItem col-12 mt-4 mb-3">Mes autres</br>voyages</button>';
             
             //  Bouton supprimer avec modal 
-
-            // <button type="button" class="btn btn-danger addItem mt-5" data-toggle="modal"
+                // if($isMyVoyage){
+            // echo '<button type="button" class="btn btn-danger addItem mt-5" data-toggle="modal"
             //     data-target="#ModalSupp">Supprimer le voyage</button>
 
             // <div class="modal fade" id="ModalSupp" tabindex="-1" role="dialog" aria-labelledby="ModalSupp"
@@ -80,7 +80,8 @@ function detail_menuLateral(){
             //             </div>
             //         </div>
             //     </div>
-            // </div> 
+            // </div>
+        // }'; 
 
     echo'    </div>
     </nav>
@@ -224,8 +225,10 @@ function detail_zoneComm(){
 
 function detail_footer(){
     echo '</div>
-    <div class="col-2"></div>';
+    <div class="col-2"></div>
+    <footer class="footer">';
     include ("footerCONTROLEUR.php");
+echo '</footer>';
 }
 
 function detail_finDivConteneur(){
@@ -247,9 +250,9 @@ function detail_headBodyTop(){
     detail_bodyTop();
 }
 
-function detail_corpsPage(){
+function detail_corpsPage(/*$isMyVoyage*/){
     detail_header();
-    detail_menuLateral();
+    detail_menuLateral(/*$isMyVoyage*/);
     detail_placeNav();
     detail_carousel();
     detail_ssTitreLogos();
@@ -260,6 +263,7 @@ function detail_corpsPage(){
 
 function detail_basPage(){
     detail_footer();
+    detail_finDivConteneur();
     detail_bodyBottom();
     detail_finHtml();
 }
