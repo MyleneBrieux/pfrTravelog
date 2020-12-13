@@ -1,4 +1,9 @@
 /* Corps de la page */
+
+body{
+    overflow-x: hidden;
+}
+
 .background-body{
     background-color: #dcdacd;
 }
