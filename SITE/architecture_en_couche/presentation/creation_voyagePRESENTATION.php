@@ -42,16 +42,16 @@ function creation_champTitre(){
 function creation_filtres(){
     echo '<h4>Filtres</h4>
         <div class="row d-flex justify-content-around">
-            <p>+ ajouter un continent</p>
-            <p>+ ajouter un pays</p>
-            <p>+ ajouter une ville</p>
+        <button type="button" class="button">+ Ajouter un continent</button>
+        <button type="button" class="button">+ Ajouter un pays</button>
+        <button type="button" class="button">+ Ajouter une ville</button>
         </div>';
 }
 
 // Dates du séjour
 
 function creation_dates(){
-    echo '<div class="row ml-1 mr-1 d-flex justify-content-between">
+    echo '<div class="row ml-1 mr-1 mt-4 d-flex justify-content-between">
             <p> Date de début de séjour:</br> <input type="date" name="date_debut_sejour"></p>
             <p>Date de fin de séjour:</br> <input type="date" name="date_fin_sejour"></p>
         </div>';
@@ -103,8 +103,8 @@ function creation_checkbox(){
 
 function creation_publicationButton(){
     echo '<div class="row btn-group d-flex justify-content-center" role="group">
-            <button type="button" class="btn-group">Ajouter maintenant</button>
-            <button type="button" class="btn-group">Ajouter plus tard</button>
+            <button type="button" class="border-right">Ajouter maintenant</button>
+            <button type="button" class="border-left">Ajouter plus tard</button>
         </div>';
 }
 
