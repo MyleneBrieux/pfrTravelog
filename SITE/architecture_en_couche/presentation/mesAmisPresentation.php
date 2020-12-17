@@ -35,12 +35,10 @@
                         <p>35 ans</p>
                     </div>
                     <div class="row">
-                        <p class="titre-lang">Langues parlées : </p>
+                        <p class="titre-lang">Langue parlée : </p>
                         <p>
                         <ul>
                             <li>Français</li>
-                            <li>Anglais</li>
-                            <li>Espagnol</li>
                         </ul>
                         </p>
                     </div>
@@ -78,6 +76,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>';
     }
@@ -97,6 +120,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>';
@@ -117,6 +165,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>';
@@ -137,6 +210,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>';
@@ -157,6 +255,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>';
@@ -177,6 +300,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>';
@@ -197,6 +345,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>';
@@ -217,6 +390,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>';
@@ -237,6 +435,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>';
@@ -257,6 +480,31 @@
                     class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
             <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
                 data-target="#ModalSupp_Ami">Supprimer</button>
+                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>';
