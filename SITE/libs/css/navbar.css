@@ -235,22 +235,55 @@
     }
 
 
+/* CONNEXION|INSCRIPTION POUR UTILISATEURS NON INSCRITS */
+.seConnecter {
+    font-family: 'Halant', serif;
+    color:white;
+    font-size: 1.5em;
+    margin-left:9em;
+    margin-top:0.5em;
+}
 
+.sinscrire {
+    font-family: 'Halant', serif;
+    color:white;
+    font-size: 1.5em;
+    margin-left:2em;
+    margin-top:0.5em;
+}
 
+    @media screen and (max-width : 1090px) {
+        .seConnecter, .sinscrire {
+            font-size:1.25em;
+            }
+    }
 
+    @media screen and (max-width : 900px) {
+        .seConnecter, .sinscrire {
+            font-size:1em;
+            margin-left:1em;
+            }
+    }
 
+    @media screen and (max-width : 600px) {
+        .seConnecter, .sinscrire {
+            font-size:0.75em;
+            }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.lienConnexion:link, .lienInscription:link {
+    color: white;
+    text-decoration:none;
+}
+  
+.lienConnexion:visited, .lienInscription:visited {
+    color: white;
+}
+  
+.lienConnexion:focus, .lienInscription:focus {
+    background: none
+}
+  
+.lienConnexion:hover, .lienInscription:hover {     
+    background: none;
+}
