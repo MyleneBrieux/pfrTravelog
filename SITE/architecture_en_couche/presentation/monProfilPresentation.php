@@ -35,12 +35,10 @@
                                 <p>35 ans</p>
                             </div>
                             <div class="row">
-                                <p class="titre-lang">Langues parlées : </p>
+                                <p class="titre-lang">Langue parlée : </p>
                                 <p>
                                     <ul>
                                         <li>Français</li>
-                                        <li>Anglais</li>
-                                        <li>Espagnol</li>
                                     </ul>
                                 </p>
                             </div>
@@ -75,38 +73,40 @@
     function lastTrip(){
         echo'<div class="row d-flex justify-content-around mt-2">
                         <div>
-                            <h3>Son dernier voyage : </h3>
-                            <img class="mt-3" src="../../img/photos/etats-unis.jpg" alt="" width=350 height=250>
+                            <a href="../controleur/detail_voyageControleur.php"><h3>Son dernier voyage : </h3>
+                            <h4>Etats-Unis</h4>
+                            <img class="mt-2" src="../../img/photos/etats-unis.jpg" alt="" width=350 height=250></a>
                         </div>';
                     }
 
     function mostPopular(){
         echo'<div>
-                <h3>Le plus populaire : </h3>
-                <img class="mt-3" src="../../img/photos/dubai.jpg" alt="" width=350 height=250>
+                <a href="../controleur/detail_voyageControleur.php"><h3>Le plus populaire : </h3>
+                <h4>Dubaï</h4>
+                <img class="mt-2" src="../../img/photos/dubai.jpg" alt="" width=350 height=250></a>
                 </div>
             </div>';
     }
     function autresVoyage() {
                     echo'<div>
-                        <h3>Ses autres voyages</h3>
+                        <a href="../controleur/mesVoyagesControleur.php"><h3>Ses autres voyages</h3></a>
                     </div>
                     <div class="row d-inline-flex justify-content-around">
-                        <div class="ml-2">
-                            <h4>Japon</h4>
-                            <img class="mt-3" src="../../img/photos/osaka.jpg" alt="" width=350 height=250>
+                        <div class="ml-3">
+                        <a href="../controleur/detail_voyageControleur.php"><h4>Japon</h4>
+                            <img class="mt-2" src="../../img/photos/osaka.jpg" alt="" width=350 height=250></a>
                         </div>
-                        <div class="ml-2">
-                            <h4>Venise</h4>
-                            <img class="mt-3" src="../../img/photos/venise.jpg" alt="" width=350 height=250>
+                        <div class="ml-3">
+                        <a href="../controleur/detail_voyageControleur.php"><h4>Venise</h4>
+                            <img class="mt-2" src="../../img/photos/venise.jpg" alt="" width=350 height=250></a>
                         </div>
-                        <div class="ml-2">
-                            <h4>Londres</h4>
-                            <img class="mt-3" src="../../img/photos/londres.jpg" alt="" width=350 height=250>
+                        <div class="ml-3">
+                        <a href="../controleur/detail_voyageControleur.php"><h4>Londres</h4>
+                            <img class="mt-2" src="../../img/photos/londres.jpg" alt="" width=350 height=250></a>
                         </div>
-                        <div class="ml-2">
-                            <h4>Hambourg</h4>
-                            <img class="mt-3" src="../../img/photos/hambourg.jpg" alt="" width=350 height=250>
+                        <div class="ml-3">
+                        <a href="../controleur/detail_voyageControleur.php"><h4>Hambourg</h4>
+                            <img class="mt-2" src="../../img/photos/hambourg.jpg" alt="" width=350 height=250></a>
                         </div>
                     </div>
                 </div>
