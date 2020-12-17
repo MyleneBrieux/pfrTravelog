@@ -7,6 +7,7 @@ function displayFooter(){
     topTagBody();
     displayBottomFooter();
     popUpCGU();
+    popUpML();
     bottomTagBody();
     bottomTagHtml();
 }
