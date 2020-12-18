@@ -4,23 +4,22 @@ class Utilisateur {
     private $id;
     private $mail;
     private $password;
-    private $pseudo;
+    private $login;
     private $birthday;
     private $photoProfil;
     private $nationalite;
     private $contact;
     private $notifmail;
 
-    public function __construct(int $id, string $mail, string $password, string $pseudo, string $description, string $photoProfil,
-                                DateTime $birthday, string $nationalite, string $contact, string $notifmail)
+    public function __construct(int $id, string $mail, string $password, string $login, date $birthday, string $photoProfil, 
+    string $nationalite, string $contact, string $notifmail)
     {
         $this->id = $id;
         $this->mail = $mail;
         $this->password = $password;
-        $this->pseudo = $pseudo ;
-        $this->description= $description;
-        $this->photoProfil = $photoProfil;
+        $this->login = $login;
         $this->birthday = $birthday;
+        $this->photoProfil = $photoProfil;
         $this->nationalite = $nationalite;
         $this->contact = $contact;
         $this->notifmail = $notifmail;
@@ -75,41 +74,21 @@ class Utilisateur {
     }
 
     /**
-     * Get the value of pseudo
+     * Get the value of login
      */ 
-    public function getPseudo() : string
+    public function getLogin() : string
     {
-        return $this->pseudo;
+        return $this->login;
     }
 
     /**
-     * Set the value of pseudo
+     * Set the value of login
      *
      * @return  self
      */ 
-    public function setPseudo(string $pseudo) : self
+    public function setLogin(string $login) : self
     {
-        $this->pseudo = $pseudo;
-
-        return $this;
-    }
-
-        /**
-     * Get the value of description
-     */ 
-    public function getDescription() : string
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set the value of description
-     *
-     * @return  self
-     */ 
-    public function setDescription(string $description) : self
-    {
-        $this->description = $description;
+        $this->login = $login;
 
         return $this;
     }
@@ -216,9 +195,9 @@ class Utilisateur {
 
     public function __toString() : string
     {
-        return "[id]: " . $this->id . "[mail] : " . $this->mail . "[password] : " . $this->password . "[pseudo] : " . $this->pseudo . "[description] : " . 
-        $this->description . "[birthday] : " . $this->birthday . "[Photo profil] : " . $this->photoProfil . "[nationalité] : " . $this->nationalite . 
-        "[contact] : " . $this->contact . "[notifmail] : " . $this->notifmail;
+        return "[id]: " . $this->id . "[mail] : " . $this->mail . "[password] : " . $this->password . "[login] : " . $this->login . "[birthday] : " . 
+        $this->birthday . "[Photo profil] : " . $this->photoProfil . "[nationalité] : " . $this->nationalite . "[contact] : " . 
+        $this->contact . "[notifmail] : " . $this->notifmail;
     }
 }
 

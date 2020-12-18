@@ -8,23 +8,22 @@ class UtilisateurService {
         $this->utilisateurDao = new UtilisateurMysqliDao;
     }
 
-
     public function connexion() {
         $mysqli = $this->utilisateurDao->connexion();
         return $mysqli;
     }
 
-    public function ajoutUtilisateur($mail, $password, $pseudo) { 
-        $this->utilisateurDao->ajoutUtilisateur($mail,$password, $pseudo);
+    public function ajoutUtilisateur($mail, $password) { 
+        $this->utilisateurDao->ajoutUtilisateur($mail,$password);
     }
 
-    public function chercherUtilisateurParMail($mail) : ?array {
-        $data = $this->utilisateurDao->chercherUtilisateurParMail($mail);
+    public function chercherMail($mail) : ?array {
+        $data = $this->utilisateurDao->chercherMail($mail);
         return $data;
     }
 
-    public function chercherUtilisateurParPseudo($pseudo) : ?array {
-        $data = $this->utilisateurDao->chercherUtilisateurParPseudo($pseudo);
+    public function chercherPseudo($pseudo) : ?array {
+        $data = $this->utilisateurDao->chercherPseudo($pseudo);
         return $data;
     }
 
@@ -38,8 +37,8 @@ class UtilisateurService {
         return $passwordOk;
     }
 
-    public function modifierUtilisateur($utilisateur) : void {
-        $data = $this->utilisateurDao->modifierUtilisateur($utilisateur);
+    public function updateProfil($utilisateur) :void {
+        $data = $this->utilisateurDao->updateProfil($utilisateur);
     }
     
 

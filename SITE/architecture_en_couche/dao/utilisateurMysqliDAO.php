@@ -8,23 +8,32 @@ include_once("dao_exception.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 
+
     class UtilisateurMysqliDao {
 
-        // CONNEXION //
+ /*CONNEXION*/       
         public function connexion() {
-            $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+            $mysqli= new mysqli('localhost','andhromede','Fm8APqpp','travelog');
             return $mysqli;
-            
-            // $pdo = new PDO('mysql:host=localhost;dbname=travelog', 'mylene', 'afpamy13');
-            // return $pdo;
+
+            // $mysqli = new PDO('mysql:host=localhost; dbname=travelog', 'andhromede', 'Fm8APqpp');
+            // return $mysqli;
         }
 
-        // AJOUT UTILISATEUR //
+        // public function ajoutUtilisateur(string $mail, string $password) {
+        //     $mysqli=$this->connexion();
+        //     $stmt = $mysqli->prepare("insert into utilisateurs(mail,password) values(?,?)");
+        //     $stmt->bindParam(":mail",$mail, ":password", $password);
+        //     $mysqli->exec($stmt);
+        // }
+
+
+/* AJOUT UTILISATEUR*/
         public function ajoutUtilisateur(string $pseudo, string $mail, string $password) {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("insert into utilisateurs(id,pseudo,mail,password,description,photoprofil,birthday,nation,contact,notifmail,code_langue) 
-                                      VALUES (null,?,?,?,null,'photo',null,null,'Y','Y','1')");
-            $stmt->bind_param("sss",$pseudo,$mail,$password);
+            $stmt = $mysqli->prepare("INSERT INTO utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
+                                      VALUES (null, ?, ?, ?, null, 'photo', null, null, 'Y', 'Y', '1')");
+            $stmt->bind_param("sss", $pseudo, $mail, $password);
             $stmt->execute();
             $mysqli->close();
 
@@ -39,10 +48,10 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             // $pdo=null;
         }
 
-        // RECHERCHE UTILISATEUR PAR EMAIL //
+/* RECHERCHE UTILISATEUR PAR MAIL*/        
         public function chercherUtilisateurParMail(string $mail) : ?array {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
+            $stmt = $mysqli->prepare("SELECT * from utilisateurs where mail=?");
             $stmt->bind_param("s",$mail);
             $stmt->execute();
             $rs = $stmt->get_result();
@@ -61,10 +70,10 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             // return $data;
         }
 
-        // RECHERCHE UTILISATEUR PAR PSEUDO //
+/* RECHERCHE UTILISATEUR PAR PSEUDO*/
         public function chercherUtilisateurParPseudo(string $pseudo) : ?array {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("select * from utilisateurs where pseudo=?");
+            $stmt = $mysqli->prepare("SELECT * from utilisateurs where pseudo=?");
             $stmt->bind_param("s",$pseudo);
             $stmt->execute();
             $rs = $stmt->get_result();
@@ -84,21 +93,48 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             // var_dump($data);
         }
 
-        // MODIFICATION //
-        public function modifierUtilisateur(Utilisateur $utilisateur):void{   
-            $pdo=$this->connexion();
-            $stmt=$pdo->prepare("update utilisateurs set mail=?, password=?, pseudo=?, birthday=?, nation=?, contact=?, notifMail=? where pseudo=?");
-            $mail=$utilisateur->getMail();
-            $password=$utilisateur->getPassword();
-            $pseudo=$utilisateur->getPseudo();
-            $birthday=$utilisateur->getBirthday();
-            $nation=$utilisateur->getNationalite();
-            $contact=$utilisateur->getContact();
-            $notifMail=$utilisateur->getNotifMail();
-            $stmt->bindParam("ssssssss", $mail, $password, $pseudo, $birthday, $nation, $contact, $notifMail, $pseudo);
-            $stmt->execute();
-            $pdo=null;
-        }
+/* MODIFICATION de PROFIL*/        
+    public function modifierUtilisateur(Utilisateur $utilisateur):void{   
+        $mail=$utilisateur->getMail();
+        $password=$utilisateur->getPassword();
+        $pseudo=$utilisateur->getPseudo();
+        $birthday=$utilisateur->getBirthday();
+        $nation=$utilisateur->getNationalite();
+        $contact=$utilisateur->getContact();
+        $notifMail=$utilisateur->getNotifMail();
+
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare("UPDATE utilisateurs set mail=?, password=?, pseudo=?, birthday=?, nation=?, contact=?, notifMail=? where pseudo=?");
+        $stmt->bindParam("ssssssss", $mail, $password, $pseudo, $birthday, $nation, $contact, $notifMail, $pseudo);
+        $stmt->execute();
+
+        // $pdo=$this->connexion();
+        // $stmt=$pdo->prepare("UPDATE utilisateurs set mail=?, password=?, pseudo=?, birthday=?, nation=?, contact=?, notifMail=? where pseudo=?");
+        // $stmt->bindParam("ssssssss", $mail, $password, $pseudo, $birthday, $nation, $contact, $notifMail, $pseudo);
+        // $stmt->execute();
+        // $pdo=null;
+    }
+
+
+/*SUPPRESSION DES UTILISATEURS*/
+    public function deleteUtilisateur(int $noemp) :void{ 
+        $mysqli= new mysqli('localhost','andhromede','Fm8APqpp','utilisateur');
+        $stmt=$mysqli->prepare("DELETE from utilisateur WHERE pseudo=?");
+        $stmt->bind_param("i", $pseudo);
+        $stmt->execute();
+        $mysqli->close();
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

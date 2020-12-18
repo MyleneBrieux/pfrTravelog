@@ -1,46 +1,27 @@
 <?php 
 
 require_once("../metier/Voyage.php");
-require_once("../metier/Etape.php");
 
 class VoyageMysqliDAO {
 
-    //ajout Voyages
+    //ajout Voyage
 
-    public function addVoyagesDAO($voyage){
+    public function addVoyageDAO($voyage){
         $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
         
-        $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, couverture, statut, likes, vues) values (null,?,?,?,?,?,?,0,0)");
-        // $codeVoyage=$voyage->getCodeVoyage();
-        $titre=$voyage->getTitre();
-        $resume=$voyage->getResume();
+        $stmt=$mysqli->prepare("insert into voyages (title, description, date_debut, date_fin, couverture, media, statut, paragraphe) values (?,?,?,?,?,?,?,?)");
+        $title=$voyage->getTitle();
+        $description=$voyage->getDescription();
         $date_debut=$voyage->getDateDebut();
         $date_fin=$voyage->getDateFin();
         $couverture=$voyage->getCouverture();
-        $statut=$voyage->getStatut();
-        // $likes=$voyage->getLikes();
-        // $vues=$voyage->getVues();
-        $stmt->bind_param("ssssss", $titre, $resume, $date_debut, $date_fin, $couverture, $statut);
-        $stmt->execute();
-        $mysqli->close();
-    }
-
-    //ajout Etape
-
-    public function addEtapeDAO($etape){
-        $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
-        
-        $stmt=$mysqli->prepare("insert into etape (code_etape, sous-titre, description, media, likes, code_comm) values (null,?,?,?,0,null)");
-        // $codeEtape=$voyage->getCodeEtape();
-        $sousTitre=$voyage->getSousTitre();
-        $description=$voyage->getDescription();
         $media=$voyage->getMedia();
-        // $likesEtape=$voyage->getLikesEtape();
-        $stmt->bind_param("sss", $sousTitre, $description, $media);
+        $statut=$voyage->getStatut();
+        $paragraphe=$voyage->getParagraphe();
+        $stmt->bind_param("ssssssss", $title, $description, $date_debut, $date_fin, $couverture, $media, $statut, $paragraphe);
         $stmt->execute();
         $mysqli->close();
     }
-
 
     // suppression Voyage
 
