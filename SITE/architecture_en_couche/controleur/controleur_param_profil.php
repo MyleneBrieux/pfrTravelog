@@ -41,7 +41,7 @@ include('../presentation/fonctionsProfil.php');
     }
 
 
-/*AJOUT DES EMPLOYES*/
+/*AJOUT DES UTILISATEURS*/
     $nbr = 0;
     if(isset($_GET["action"]) && $_GET["action"] == "ajouter"){
         
@@ -84,7 +84,7 @@ include('../presentation/fonctionsProfil.php');
 
 
    
-/*DELETE DES EMPLOYES*/    
+/*DELETE DES UTILISATEURS*/    
     if(isset($_GET["action"]) && $_GET["action"] == "effacer"){
             
         if ( isset($_GET["pseudo"]) && !Empty($_GET["pseudo"]) ){
