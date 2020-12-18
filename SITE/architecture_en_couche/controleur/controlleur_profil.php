@@ -101,7 +101,7 @@ include('../presentation/fonctionsProfil.php');
     }
     
 
-    affichageParamProfil();
+    affichageProfil();
 
 
 

@@ -12,9 +12,9 @@
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-                <link rel="stylesheet" href="../icofont/icofont.css">
-                <link rel="stylesheet" href="../css/parametres_profil.css">
+                <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.css">
+                // <link rel="stylesheet" href="../icofont/icofont.css">
+                <link rel="stylesheet" href="../../libs/css/parametres_profil.css">
 
                 <script src="../jquery/jquery-3.5.1.js" defer></script>
                 <script src="../popper/popper.js" defer></script>
@@ -35,8 +35,7 @@
 
 /*FONCTION INCLUDE NAVBAR*/    
     function includeNavbar(){
-        echo   
-            ' include("navbar.php") ';
+            include("navbarCONTROLEUR.php") ;
     }
 
 /*FONCTION DIV CONTAINER-FLUID AND D-FLEX*/    
@@ -120,7 +119,7 @@
 /*FONCTION FORM ACTION*/    
     function formAction(){
         echo   
-            '<form action="../../architecture_en_couche/traitementParametresProfil.php?action=modifierProfil" method="POST">';
+            '<form action="../controleur/controleur_param_profil.php?action=modifierProfil" method="POST">';
     } 
 
 /*FONCTION DIV DU NOM*/    
@@ -260,28 +259,28 @@ function btnVoyages(){
 function divCheckbox(){
     echo 
         '<div class="col-12 formulaire-coordonnees securite txt-input">
-        <div class="row">
+            <div class="row">
 
-            <div class="col-12 mt-3">
-                <input type="checkbox" class="checkbox" name="notifAmi"><label>J\'accepte de reçevoir des
+                <div class="col-12 mt-3">
+                    <input type="checkbox" class="checkbox" name="notifAmi"><label>J\'accepte de reçevoir des
                     demande d\'ami</label>
-            </div>
+                </div>
 
-            <div class="col-12">
-                <input type="checkbox" class="checkbox" name="notifEmail"><label>J\'accepte de reçevoir des
+                <div class="col-12">
+                    <input type="checkbox" class="checkbox" name="notifEmail"><label>J\'accepte de reçevoir des
                     notifications par mail</label>
+                </div>
+
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class="row">
+                <div class="col-12">
+                    <input type="checkbox" class="checkbox" name="supressionCompte"><label>Supprimer mon compte</label>
+                </div>
 
-            <div class="col-12">
-                <input type="checkbox" class="checkbox" name="supressionCompte"><label>Supprimer mon compte</label>
             </div>
-
-        </div>
-    </div>';
+        </div>';
 } 
 
 /*FONCTION BOUTON VAIDER*/  
@@ -297,7 +296,10 @@ function divCheckbox(){
 
 /*FONCTION INCLUDE FOOTER*/  
     function includeFooter(){
-        echo 'include("footer.php")';
+        echo
+        '<footer>'; 
+        include("footerCONTROLEUR.php");
+        echo'</footer>';
     } 
 
 /*FONCTION FERMETURE BODY & HTML*/  
@@ -312,6 +314,67 @@ function divCheckbox(){
 
 
 // PAGE PROFIL
+
+/*FONCTION INPUT DES FONCTIONS UTILISATEURS*/  
+function inputInfosUserProfil(){
+    echo '
+    <div class="col-12 col-sm-8 col-md-7 col-lg-5 col-xl-3">
+                    <div class=" menulat">
+
+                        <img src="../../img/photos/nath.jpg" alt="Bootstrap" class="photo-profil">
+
+                        <div class="membre txt-menu-responsive">Membre depuis le : </div>
+                        <div class="age">35 ans</div>
+                        <div class="langues-parlees">Langues parlées :</div>
+
+                        <div class="langues">
+                            <ul>
+                                <li class="txt-menu-responsive">Français</li>
+                            </ul>
+                        </div>
+
+                        <div class="logos-menu">
+                            <div><a href=""><img class="oeil" src="../../img/logos_divers/suivre2.png" alt="logo suivre"
+                                        class="photo-profil"><span class="liens-menu">Suivre</span></a></div>
+
+                            <div><a href=""><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
+                                        class="photo-profil"><span class="liens-menu">Ajouter en ami</span></a></div>
+                        </div>
+
+                        <button type="button" class="btn btn-info bouton-contact">Mes voyages</button>
+
+                    </div>
+                </div>';
+}
+
+
+
+
+/*FONCTION FORM ACTION*/    
+function divClassTxtSecuriteProfil(){
+    echo   
+        '<div class="col-12 formulaire-coordonnees securite">
+        <div class="row">
+            <div class="col-6">
+                <label>Nom:</label><input type="text" class="form-control">
+            </div>
+            <div class="col-6">
+                <label>Prenom:</label><input type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <label>Date de naissance:</label><input type="date" class="form-control">
+            </div>
+            <div class="col-6">
+                <label>Nationnalité:</label><input type="text" class="form-control">
+            </div>
+        </div>
+    </div>';
+} 
+
+
     
 /*FONCTION INPUT DES FONCTIONS UTILISATEURS*/  
 function inputInfosUser(){
@@ -400,16 +463,123 @@ function OptionLanguesProfil(){
     }
 
 
+/*FONCTION OUVERTURE DIV FORMULAIRE COORDONNEES PROFIL*/  
+    function checkbox2(){
+    echo'
+    <div class="row">
+        <div class="col-12 mt-3">
+            <input type="checkbox" class="checkbox"><label>J\'accepte de reçevoir des
+                demande d\'ami</label>
+        </div>
+
+        <div class="col-12">
+            <input type="checkbox" class="checkbox"><label>J\'accepte de reçevoir des
+                notifications par mail</label>
+        </div>
+    </div>
+    
+    <div class="row">
+
+         <div class="col-12">
+            <input type="checkbox" class="checkbox" name="supressionCompte"><label>Supprimer mon compte</label>
+        </div>
+
+    </div>';
+}
+
+
+
+    function affichageParamProfil(){
+        enteteHtml();
+        ouvertureBody();
+        includeNavbar();
+        ouvertureDivClassContFluidAndDFlex();
+        ouvertureDivClassRow();
+        ouvertureDivClassCols();
+        ouvertureDivMenuLat();
+        photoMenuLat();
+        infoUserMenuLat();
+        divLangues();
+        divSocial();
+        btnContact();
+        fermetureDiv();
+        fermetureDiv();
+        ouvertureDivFormulaire();
+        ouvertureDivClassRow();
+        ouvertureDivClassRow();
+        formAction();
+        divClassNom();
+        divClassTxtProfil();
+        divClassTxtSecurite();
+        divBtnModifier();
+        divSecurite();
+        OuvertureDivFormulaireSecurite();
+        divMDP();
+        divEmail();
+        fermetureDiv();
+        divBtnModifier();
+        divDivers();
+        divOptionLangues();
+        divBtnModifier();
+        divConfidential();
+        divCheckbox();
+        btnValidation();
+        fermetureForm();
+        fermetureDiv();
+        fermetureDiv();
+        fermetureDiv();
+        fermetureDiv();
+        fermetureDiv();
+        includeFooter();
+        fermetureBodyHtml();
+    }
 
 
 
 
 
 
-
-
-
-
+    function affichageProfil(){
+        enteteHtml();
+        ouvertureBody();
+        includeNavbar();
+        ouvertureDivClassContFluidAndDFlex();
+        ouvertureDivClassRow();
+        ouvertureDivClassCols();
+        ouvertureDivMenuLat();
+        photoMenuLat();
+        infoUserMenuLat();
+        divLangues();
+        divSocial();
+        btnContact();
+        fermetureDiv();
+        fermetureDiv();
+        ouvertureDivFormulaire();
+        ouvertureDivClassRow();
+        ouvertureDivClassRow();
+        divClassNom();
+        formAction();
+        divClassTxtProfil();
+        divClassTxtSecuriteProfil();
+        divSecurite();
+        inputInfosUser();
+        divDivers();
+        divOptionLangues();
+        fermetureDiv();
+        divConfidential();
+        ouvertureFormCoordonneeSecur();
+        checkbox2();
+        fermetureDiv();
+        fermetureForm();
+        fermetureDiv();
+        btnValidation();
+        fermetureDiv();
+        fermetureDiv();
+        fermetureDiv();
+        fermetureDiv();
+        includeFooter();
+        fermetureBodyHtml();
+    }
 
 
 

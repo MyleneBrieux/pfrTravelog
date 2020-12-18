@@ -1,10 +1,10 @@
 <?php
+session_start();
 
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-include_once("../presentation/fonctionsContact.php");
-// include '../libs/phpmailer/Exception.php';
+include '../libs/phpmailer/Exception.php';
 // include '../libs/phpmailer/PHPMailer.php';
 // include '../libs/phpmailer/SMTP.php';
 
@@ -74,9 +74,7 @@ include_once("../presentation/fonctionsContact.php");
 
     }
 
-    contact_enteteHtml();
-    contact_corpsPage();
-    contact_basDePage();
+
 
 
 
