@@ -27,7 +27,7 @@ include('../presentation/fonctionsProfil.php');
                 htmlentities($_POST["description"]?$_POST["description"]:null),
                 htmlentities($_POST["photoprofil"]?$_POST["birthday"]:null),
                 htmlentities($_POST["contact"]),
-                htmlentities($_POST["notifmail"]),
+                htmlentities($_POST["notifmail"])
             );
             $newUtilisateur = new UtilisateurService;
 
