@@ -13,7 +13,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
  /*CONNEXION*/       
         public function connexion() {
-            $mysqli= new mysqli('localhost','andhromede','Fm8APqpp','travelog');
+            $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
             return $mysqli;
 
             // $mysqli = new PDO('mysql:host=localhost; dbname=travelog', 'andhromede', 'Fm8APqpp');

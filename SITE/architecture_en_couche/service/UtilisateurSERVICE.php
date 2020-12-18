@@ -22,8 +22,8 @@ class UtilisateurService {
         return $data;
     }
 
-    public function chercherPseudo($pseudo) : ?array {
-        $data = $this->utilisateurDao->chercherPseudo($pseudo);
+    public function chercherUtilisateurParPseudo($pseudo) : ?array {
+        $data = $this->utilisateurDao->chercherUtilisateurParPseudo($pseudo);
         return $data;
     }
 
