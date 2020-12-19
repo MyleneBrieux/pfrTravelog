@@ -204,7 +204,7 @@ function detail_description(){
 }
 
 function detail_zoneComm(){
-    echo '<div class="col-lg-8 col-md-7 col-sm-7 ml-5 col-12 bg-sable pb-2 placefooter">
+    echo '<div class="col-lg-11 col-md-7 col-sm-7 ml-2 col-12 bg-sable pb-2 placefooter">
     <h3>Commentaire (xxx)</h3>
     <div class="row">
 
@@ -262,8 +262,8 @@ function detail_corpsPage(/*$isMyVoyage*/){
 }
 
 function detail_basPage(){
-    detail_footer();
     detail_finDivConteneur();
+    detail_footer();
     detail_bodyBottom();
     detail_finHtml();
 }
