@@ -17,8 +17,8 @@ class UtilisateurService {
         $this->utilisateurDao->ajoutUtilisateur($mail,$password);
     }
 
-    public function chercherMail($mail) : ?array {
-        $data = $this->utilisateurDao->chercherMail($mail);
+    public function chercherUtilisateurParMail($mail) : ?array {
+        $data = $this->utilisateurDao->chercherUtilisateurParMail($mail);
         return $data;
     }
 
@@ -37,8 +37,8 @@ class UtilisateurService {
         return $passwordOk;
     }
 
-    public function updateProfil($utilisateur) :void {
-        $data = $this->utilisateurDao->updateProfil($utilisateur);
+    public function modifierUtilisateur($utilisateur) :void {
+        $data = $this->utilisateurDao->modifierUtilisateur($utilisateur);
     }
     
 

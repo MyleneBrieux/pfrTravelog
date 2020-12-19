@@ -31,7 +31,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 /* AJOUT UTILISATEUR*/
         public function ajoutUtilisateur(string $pseudo, string $mail, string $password) {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("INSERT INTO utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
+            $stmt = $mysqli->prepare("insert into utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
                                       VALUES (null, ?, ?, ?, null, 'photo', null, null, 'Y', 'Y', '1')");
             $stmt->bind_param("sss", $pseudo, $mail, $password);
             $stmt->execute();
@@ -51,7 +51,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 /* RECHERCHE UTILISATEUR PAR MAIL*/        
         public function chercherUtilisateurParMail(string $mail) : ?array {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("SELECT * from utilisateurs where mail=?");
+            $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
             $stmt->bind_param("s",$mail);
             $stmt->execute();
             $rs = $stmt->get_result();
@@ -73,7 +73,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 /* RECHERCHE UTILISATEUR PAR PSEUDO*/
         public function chercherUtilisateurParPseudo(string $pseudo) : ?array {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("SELECT * from utilisateurs where pseudo=?");
+            $stmt = $mysqli->prepare("select * from utilisateurs where pseudo=?");
             $stmt->bind_param("s",$pseudo);
             $stmt->execute();
             $rs = $stmt->get_result();
