@@ -7,11 +7,9 @@ include_once("dao_exception.php");
 // GESTION DES ERREURS //
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-
-
     class UtilisateurMysqliDao {
 
- /*CONNEXION*/       
+ /* CONNEXION */       
         public function connexion() {
             $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
             return $mysqli;
@@ -28,7 +26,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         // }
 
 
-/* AJOUT UTILISATEUR*/
+/* AJOUT UTILISATEUR */
         public function ajoutUtilisateur(string $pseudo, string $mail, string $password) {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("insert into utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
@@ -48,7 +46,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             // $pdo=null;
         }
 
-/* RECHERCHE UTILISATEUR PAR MAIL*/        
+/* RECHERCHE UTILISATEUR PAR MAIL */        
         public function chercherUtilisateurParMail(string $mail) : ?array {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
@@ -70,7 +68,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             // return $data;
         }
 
-/* RECHERCHE UTILISATEUR PAR PSEUDO*/
+/* RECHERCHE UTILISATEUR PAR PSEUDO */
         public function chercherUtilisateurParPseudo(string $pseudo) : ?array {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("select * from utilisateurs where pseudo=?");
@@ -93,7 +91,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             // var_dump($data);
         }
 
-/* MODIFICATION de PROFIL*/        
+/* MODIFICATION D'UN UTILISATEUR */        
     public function modifierUtilisateur(Utilisateur $utilisateur):void{   
         $mail=$utilisateur->getMail();
         $password=$utilisateur->getPassword();
@@ -116,7 +114,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     }
 
 
-/*SUPPRESSION DES UTILISATEURS*/
+/* SUPPRESSION D'UN UTILISATEUR */
     public function deleteUtilisateur(int $noemp) :void{ 
         $mysqli= new mysqli('localhost','andhromede','Fm8APqpp','utilisateur');
         $stmt=$mysqli->prepare("DELETE from utilisateur WHERE pseudo=?");
