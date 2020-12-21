@@ -1,6 +1,6 @@
 <?php
 
-// FONCTIONS GLOBALES //
+// FONCTION GLOBALE //
 function displayPageConnexion(){
     displayTopTagHtml();
     displayHead();
@@ -17,6 +17,7 @@ function displayPageConnexion(){
 
 
 // FONCTIONS EN VRAC //
+
 // affichage de base //
 function displayTopTagHtml(){
     echo
@@ -99,10 +100,10 @@ function displayConnexionFrame(){
 
             <form class="formulaireconnexion" action="../controleur/connexionCONTROLEUR.php?action=connexion" method="post">
                 <div class="form-group">
-                    <input type="text" class="pseudoconnexion form-control" name="pseudo" placeholder="Pseudo">
+                    <input type="text" class="pseudoconnexion form-control" name="pseudo" placeholder="Pseudo" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="motdepasseconnexion form-control" name="password" placeholder="Mot de passe">
+                    <input type="password" class="motdepasseconnexion form-control" name="password" placeholder="Mot de passe" required>
                 </div>
                 
                 <button type="submit" class="boutonconnexion btn"><strong>CONNEXION</strong></button>
@@ -148,6 +149,7 @@ function displayBottomTagHTML(){
     echo
         '</html>';
 }
+
 
 // messages d'erreur //
 function displayNotIdem(){
