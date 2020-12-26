@@ -9,16 +9,16 @@ class VoyageMysqliDAO {
     public function addVoyageDAO($voyage){
         $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
         
-        $stmt=$mysqli->prepare("insert into voyages (title, description, date_debut, date_fin, couverture, media, statut, paragraphe) values (?,?,?,?,?,?,?,?)");
-        $title=$voyage->getTitle();
-        $description=$voyage->getDescription();
+        $stmt=$mysqli->prepare("insert into voyages (titre, resume, date_debut, date_fin, couverture, statut, likes, vues) values (?,?,?,?,?,?,?,?)");
+        $titre=$voyage->getTitre();
+        $resume=$voyage->getResume();
         $date_debut=$voyage->getDateDebut();
         $date_fin=$voyage->getDateFin();
         $couverture=$voyage->getCouverture();
-        $media=$voyage->getMedia();
         $statut=$voyage->getStatut();
-        $paragraphe=$voyage->getParagraphe();
-        $stmt->bind_param("ssssssss", $title, $description, $date_debut, $date_fin, $couverture, $media, $statut, $paragraphe);
+        $likes=$voyage->getLikes();
+        $vues=$voyage->getVues();
+        $stmt->bind_param("ssssssii", $titre, $resume, $date_debut, $date_fin, $couverture, $statut, $likes, $vues);
         $stmt->execute();
         $mysqli->close();
     }
@@ -39,15 +39,14 @@ class VoyageMysqliDAO {
     public function modifVoyageDAO($voyage){
         $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
     
-        $stmt=$mysqli->prepare("update voyages set date_debut=?, date_fin=?, media=?, statut=?, paragraphe=? where code_voyage= ?"); 
+        $stmt=$mysqli->prepare("update voyages set date_debut=?, date_fin=?, couverture=?, statut=? where code_voyage= ?"); 
         $date_debut=$voyage->getDateDebut();
         $date_fin=$voyage->getDateFin();
-        $media=$voyage->getMedia();
+        $couverture=$voyage->getCouverture();
         $statut=$voyage->getStatut();
-        $paragraphe=$voyage->getParagraphe();
         $codeVoyage=$voyage->getCodeVoyage();
         
-        $stmt->bind_param("ssssssi", $date_debut, $date_fin, $couverture, $media, $statut, $paragraphe, $codeVoyage);
+        $stmt->bind_param("ssssssi", $date_debut, $date_fin, $couverture, $statut, $codeVoyage);
         $stmt->execute();
         $mysqli->close();
     
