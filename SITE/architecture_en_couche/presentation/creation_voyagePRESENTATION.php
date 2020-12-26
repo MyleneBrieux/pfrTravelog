@@ -31,9 +31,13 @@ function creation_h1(){
 
 //  Titre du voyage
 
+function creation_debutForm(){
+    echo '<form action="../controleur/detail_voyageCONTROLEUR.php?action=creation" method="post">';
+}
+
 function creation_champTitre(){
     echo '<div class="row form-titre ml-1 mr-1">
-            <input class="form-control" type="text" placeholder="Titre">
+            <input type="text" class="form-control" name="titre" placeholder="Titre" required>
         </div>';
 }
 
@@ -52,8 +56,11 @@ function creation_filtres(){
 
 function creation_dates(){
     echo '<div class="row ml-1 mr-1 mt-4 d-flex justify-content-between">
-            <p> Date de début de séjour:</br> <input type="date" name="date_debut_sejour"></p>
-            <p>Date de fin de séjour:</br> <input type="date" name="date_fin_sejour"></p>
+            <p> Date de début de séjour:</br> 
+            <input type="date" name="date_debut" required></p>
+
+            <p>Date de fin de séjour:</br> 
+            <input type="date" name="date_fin" required></p>
         </div>';
 }
 
@@ -62,7 +69,7 @@ function creation_dates(){
 
 function creation_description(){
     echo '<div class="row form-text ml-1 mr-1">
-            <textarea class="form-control" id="texte_voyage" rows="20" placeholder="Texte"></textarea>
+            <textarea class="form-control" id="texte_voyage" rows="10" name="resume" placeholder="Texte"></textarea>
         </div>';
 }
 
@@ -86,13 +93,9 @@ function creation_addButton(/*$soustitre, $description*/){
                     </div>
                     <div class="modal-body">
     
-                        <form action="creation_voyage.php?soustitre=$soustitre" method="post">
-        
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                 placeholder="Ecrivez votre sous-titre ici ..."></textarea>
         
-                        </form>
-    
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
@@ -120,12 +123,8 @@ function creation_addButton(/*$soustitre, $description*/){
                     </div>
                     <div class="modal-body">
     
-                        <form action="creation_voyage.php?description=$description" method="post">
-        
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                 placeholder="Ecrivez votre description ici ..."></textarea>
-        
-                        </form>
     
                     </div>
                     <div class="modal-footer">
@@ -143,9 +142,9 @@ function creation_addButton(/*$soustitre, $description*/){
 
 function creation_addFiles(){
     echo '<div class="row form-files d-flex justify-content-center">
-            <form class="rectangle-files addfiles">
+            <div class="rectangle-files addfiles">
                 <input type="file" class="form-control-file" id="ajoutFichiers" name="files" multiple>
-            </form>
+            </div>
         </div>';
 }
 
@@ -163,9 +162,12 @@ function creation_checkbox(){
 
 function creation_publicationButton(){
     echo '<div class="row btn-group d-flex justify-content-center" role="group">
-            <button type="button" class="border-right">Ajouter maintenant</button>
-            <button type="button" class="border-left">Ajouter plus tard</button>
+            <button type="submit" class="border-right">Ajouter mon voyage</button>
         </div>';
+}
+
+function creation_finForm(){
+    echo '</form>';
 }
 
 function creation_finDivConteneur(){
@@ -196,6 +198,7 @@ function creation_headBodyTop(){
 function creation_corpsPage(/*$soustitre, $description*/){
     creation_header();
     creation_h1();
+    creation_debutForm();
     creation_champTitre();
     creation_filtres();
     creation_dates();
@@ -204,6 +207,7 @@ function creation_corpsPage(/*$soustitre, $description*/){
     creation_addFiles();
     creation_checkbox();
     creation_publicationButton();
+    creation_finForm();
     creation_finDivConteneur();
 }
 
