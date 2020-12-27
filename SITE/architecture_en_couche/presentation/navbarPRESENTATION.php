@@ -106,7 +106,7 @@ function menuUtilisateur1(){
     echo
         '<div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../controleur/mesvoyagesCONTROLEUR.php" target="blank">Mes voyages</a>
-            <a class="dropdown-item" href="../controleur/monprofilCONTROLEUR.php" target="blank">Mon profil</a>';
+            <a class="dropdown-item" href="../controleur/monProfilControleur.php" target="blank">Mon profil</a>';
 }
 
 function deconnexion(){
@@ -130,7 +130,7 @@ function menuUtilisateur2(){
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="../controleur/mesvoyagesCONTROLEUR.php" target="blank">Mes voyages</a>
-                        <a class="dropdown-item" href="../controleur/profilCONTROLEUR.php" target="blank">Mon profil</a>
+                        <a class="dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'" target="blank">Mon profil</a>
                         <a class="dropdown-item" href="../controleur/connexionCONTROLEUR.php">Deconnexion</a>
                     </div>
             </li>';
