@@ -20,13 +20,13 @@
         echo'</header>';
     }
 
-    function menuLat(){
+    function menuLat($profil){
         echo'<div class="row">
                 <div class="col-lg-2 col-md-4 col-sm-4 pl-0 col-12 bg-sable">
                     <nav class="menu">
                         <div class="col-lg-12 col-md-6 col-sm-6 pl-1 col-12">
                             <div class="image-profil">
-                                <img src="../../img/photos/photo_profil_detail_voyage.jpg" alt="photo de profil" width="100%" height="100%" />
+                                <img src="' . $profil['photoprofil'] . '" alt="photo de profil" width="100%" height="100%" />
                             </div>
                             <div class="row">
                                 <p>Membre depuis: (05/10/2020)</p>
@@ -38,7 +38,7 @@
                                 <p class="titre-lang">Langue parlée : </p>
                                 <p>
                                     <ul>
-                                        <li>Français</li>
+                                        <li>'. $profil['code_langue'] .'</li>
                                     </ul>
                                 </p>
                             </div>
@@ -56,18 +56,28 @@
                 </div>';
     }
 
-    function presentationUser(){
+    function presentationUser($profil){
         echo '<div class="col-lg-10 col-md-8 col-sm-8 col-12 mt-2">
-                    <div class="d-inline-flex p-2 bd-highlight">
-                        <h3><img src="../../img/flags/flags/flat/24/France.png" alt="drapeau de nationalité">John Doe</h3>
-                    </div>
+                    <div class="d-inline-flex p-2 bd-highlight">';
+                    if (isset($profil['nation']) && !Empty($profil['nation'])) {
+                        echo'<h3><img src="../../img/flags/flags/flat/24/'. $profil['nation'] .'.png" alt="drapeau de nationalité">'. $profil['pseudo'] .'</h3>';
+                    }else{
+                        echo'<h3>'. $profil['pseudo'] .'</h3>';
+                    }
+                        
+                    echo'</div>
                     <div class="d-flex justify-content-end">
                         <p class="pr-4 bd-highlight">3 contienents visités</p>
                         <p class="pr-4 bd-highlight">12 pays visités</p>
                     </div>
                     <div class="pl-2 rectangle_desc">
-                        <p class="description">Description : </p>
-                    </div>';
+                        <p class="description">Description : </p>';
+                        if (isset($profil['description']) && !empty($profil['description'])) {
+                            echo'<p>'. $profil['description'] .'</p>';
+                        }else{
+                            echo'<p>Cet utilisateur a choisi de rester mystérieux.</p>';
+                        }
+                    echo'</div>';
     }
 
     function lastTrip(){
