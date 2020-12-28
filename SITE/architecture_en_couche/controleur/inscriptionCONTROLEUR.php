@@ -21,27 +21,18 @@ $utilisateurservice = new UtilisateurService();
             $mail=$_POST["mail"];
             $password=$_POST["password"];
             $data=$utilisateurservice->chercherUtilisateurParMail($mail);
+            $info=$utilisateurservice->chercherUtilisateurParPseudo($pseudo);
                 if (!empty($data) && ($_POST["mail"]) == ($data["mail"])){
                     displayMailUsed();
+                } else if (!empty($info) && ($_POST["pseudo"]) == ($info["pseudo"])) {
+                    displayPseudoUsed();
+                } else if (($_POST["password"]) != ($_POST["confirmpassword"])) {
+                    displayDifferentPasswords();
                 } else {
                     $newPassword=$utilisateurservice->passwordHash($password);
                     $utilisateurservice->ajoutUtilisateur($pseudo,$mail,$newPassword);
                     header('Location: connexionCONTROLEUR.php');
-                } 
-        } else if (empty($_POST["pseudo"])) {
-            displayEmptyPseudo();
-        } else if (empty($_POST["mail"])) {
-            displayEmptyMail();
-        } else if (empty($_POST["password"])) {
-            displayEmptyPassword();
-        } else if (empty($_POST["confirmpassword"])) {
-            displayEmptyConfirmPassword();  
-        } else if (($_POST["password"]) != ($_POST["confirmpassword"])) {
-            displayDifferentPasswords();
-        } else if (empty($_POST["checkcgu"])) {
-            displayEmptyCgu();
-        } else {
-            displayEmptyForm();
+                }  
         }
     }
 

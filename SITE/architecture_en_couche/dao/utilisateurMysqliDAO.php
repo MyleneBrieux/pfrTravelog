@@ -75,10 +75,10 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             $stmt->bind_param("s",$pseudo);
             $stmt->execute();
             $rs = $stmt->get_result();
-            $data = $rs->fetch_array(MYSQLI_ASSOC);
+            $info = $rs->fetch_array(MYSQLI_ASSOC);
             $rs->free();
             $mysqli->close();
-            return $data;
+            return $info;
 
             // $pdo=$this->connexion();
             // $stmt = $pdo->prepare("select * from utilisateurs where pseudo=?");

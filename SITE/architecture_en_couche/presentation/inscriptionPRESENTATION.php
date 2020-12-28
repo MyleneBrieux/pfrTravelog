@@ -107,16 +107,20 @@ function displayFormInscription(){
         '<div class="formulaireinscription">
             <form action="../controleur/inscriptionCONTROLEUR.php?action=inscription" method="post">
                 <div class="form-group">
-                    <input type="text" class="pseudoinscription" name="pseudo" placeholder="Pseudo">
+                    <input type="text" class="pseudoinscription" name="pseudo" placeholder="Pseudo"
+                           pattern="[a-zA-Z._-]{2,20}" title="20 caractères maximum (caractères spéciaux autorisés : _ , - et . )" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="adressemailinscription" name="mail" placeholder="Adresse email">
+                    <input type="email" class="adressemailinscription" name="mail" placeholder="Adresse email"
+                           pattern="[0-9a-z.-_]{2,}@[0-9a-z]{2,}.[a-z]{2,3}$" title="xx@xx.xx" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="motdepasseinscription" name="password" placeholder="Mot de passe">
+                    <input type="password" class="motdepasseinscription" name="password" placeholder="Mot de passe"
+                           pattern="(?=^.{8,}$)(?=.*\d)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="8 caractères minimum dont 1 majuscule, 1 minuscule et 1 chiffre" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="confirmationmotdepasseinscription" name="confirmpassword" placeholder="Confirmation du mot de passe">
+                    <input type="password" class="confirmationmotdepasseinscription" name="confirmpassword" placeholder="Confirmation du mot de passe" 
+                           required>
                 </div>';
 }
 
@@ -124,7 +128,7 @@ function displayLienCGU(){
     echo
         '<div class="CGU">
         <label class="container">J\'accepte les <a href src="" class="liencgu" name="checkcgu" data-toggle="modal" data-target="#CGUPopUp">conditions générales d\'utilisation</a>
-            <input name="checkcgu"type="checkbox">
+            <input name="checkcgu"type="checkbox" required>
             <span class="checkmark"></span>
         </label>
     </div>';
@@ -200,7 +204,7 @@ function popUpCGU(){
 
 function displayInscriptionButton(){
     echo
-            '<button type="submit" class="boutoninscription"><strong>JE M\'INSCRIS</strong></button>
+            '<button type="submit" class="boutoninscription" id="validerinscription"><strong>JE M\'INSCRIS</strong></button>
         </form>
     </div>';
 }   
@@ -248,68 +252,30 @@ function displayBottomTagHTML(){
         '</html>';
 }
 
+
 // messages d'erreur //
 function displayPseudoUsed(){
     echo
-        '<script>
-            window.alert("Ce pseudo est déjà pris !");
-        </script>';
+        '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="text-align:center;font-family:Halant,serif;">
+            Ce pseudo est déjà attribué à un utilisateur.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+        </div>';
 }
 
 function displayMailUsed(){
     echo
-        '<script>
-            window.alert("Cette adresse e-mail est déjà prise !");
-        </script>';
-}
-
-function displayEmptyPseudo(){
-    echo
-        '<script>
-            window.alert("La saisie d\'un pseudo est nécessaire pour s\'inscrire ! ");
-        </script>';
-}
-
-function displayEmptyMail(){
-    echo
-        '<script>
-            window.alert("La saisie d\'une adresse email est nécessaire pour s\'inscrire ! ");
-        </script>';
-}
-
-function displayEmptyPassword(){
-    echo
-        '<script>
-            window.alert("La saisie d\'un mot de passe est nécessaire pour s\'inscrire ! ");
-        </script>';
-}
-
-function displayEmptyConfirmPassword(){
-    echo
-        '<script>
-            window.alert("Vous devez confirmer votre mot de passe pour vous inscrire ! ");
-        </script>';
+        '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="text-align:center;font-family:Halant,serif;">
+            Cette adresse email est déjà utilisée.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+        </div>';
 }
 
 function displayDifferentPasswords(){
     echo
-        '<script>
-            window.alert("Les deux mots de passe renseignés sont différents !");
-        </script>';
-}
-
-function displayEmptyCgu(){
-    echo
-        '<script>
-            window.alert("Les conditions générales d\'utilisation doivent être acceptées pour pouvoir s\'inscrire ! ");
-        </script>';
-}
-
-function displayEmptyForm(){
-    echo
-        '<script>
-            window.alert("La saisie de tous les champs est obligatoire ! ");
-        </script>';
+        '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="text-align:center;font-family:Halant,serif;">
+            Les deux mots de passe saisis ne correspondent pas.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+        </div>';
 }
 
 ?>

@@ -23,8 +23,8 @@ class UtilisateurService {
     }
 
     public function chercherUtilisateurParPseudo($pseudo) : ?array {
-        $data = $this->utilisateurDao->chercherUtilisateurParPseudo($pseudo);
-        return $data;
+        $info = $this->utilisateurDao->chercherUtilisateurParPseudo($pseudo);
+        return $info;
     }
 
     public function passwordHash($password) {
