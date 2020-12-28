@@ -126,12 +126,12 @@ function menuUtilisateur2(){
         <div class="menuUtilisateur collapse navbar-collapse justify-content-end col-3" id="navbarSupportedContent">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle font-white utilisateur" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilisateur</a>
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$_SESSION["pseudo"].'</a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../controleur/mesvoyagesCONTROLEUR.php" target="blank">Mes voyages</a>
-                        <a class="dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'" target="blank">Mon profil</a>
-                        <a class="dropdown-item" href="../controleur/connexionCONTROLEUR.php">Deconnexion</a>
+                        <a class="dropdown-item" href="../controleur/mesvoyagesCONTROLEUR.php">Mes voyages</a>
+                        <a class="dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'">Mon profil</a>
+                        <a class="dropdown-item" href="../controleur/deconnexionCONTROLEUR.php">Deconnexion</a>
                     </div>
             </li>';
 }
