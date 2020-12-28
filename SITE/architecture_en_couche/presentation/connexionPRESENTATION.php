@@ -100,10 +100,12 @@ function displayConnexionFrame(){
 
             <form class="formulaireconnexion" action="../controleur/connexionCONTROLEUR.php?action=connexion" method="post">
                 <div class="form-group">
-                    <input type="text" class="pseudoconnexion form-control" name="pseudo" placeholder="Pseudo" required>
+                    <input type="text" class="pseudoconnexion form-control" name="pseudo" placeholder="Pseudo"
+                           pattern="[a-zA-Z._-]{2,20}" title="20 caractères maximum (caractères spéciaux autorisés : _ , - et . )" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="motdepasseconnexion form-control" name="password" placeholder="Mot de passe" required>
+                    <input type="password" class="motdepasseconnexion form-control" name="password" placeholder="Mot de passe"
+                           pattern="(?=^.{8,}$)(?=.*\d)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="8 caractères minimum dont 1 majuscule, 1 minuscule et 1 chiffre" required>
                 </div>
                 
                 <button type="submit" class="boutonconnexion btn"><strong>CONNEXION</strong></button>
@@ -154,30 +156,10 @@ function displayBottomTagHTML(){
 // messages d'erreur //
 function displayNotIdem(){
     echo
-        '<script>
-            window.alert("Le pseudo et/ou le mot de passe est incorrect ! ");
-        </script>';
-}
-
-function displayEmptyPseudo(){
-    echo
-        '<script>
-            window.alert("La saisie d\'un pseudo est nécessaire pour s\'inscrire ! ");
-        </script>';
-}
-
-function displayEmptyMail(){
-    echo
-        '<script>
-            window.alert("La saisie d\'une adresse email est nécessaire pour s\'inscrire ! ");
-        </script>';
-}
-
-function displayEmptyForm(){
-    echo
-        '<script>
-            window.alert("La saisie de tous les champs est obligatoire ! ");
-        </script>';
+        '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="text-align:center;font-family:Halant,serif;">
+            Le pseudo et/ou le mot de passe est incorrect.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+        </div>';
 }
 
 ?>

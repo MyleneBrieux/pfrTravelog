@@ -120,7 +120,7 @@ function displayFormInscription(){
                 </div>
                 <div class="form-group">
                     <input type="password" class="confirmationmotdepasseinscription" name="confirmpassword" placeholder="Confirmation du mot de passe" 
-                           required>
+                    pattern="(?=^.{8,}$)(?=.*\d)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="8 caractères minimum dont 1 majuscule, 1 minuscule et 1 chiffre" required>
                 </div>';
 }
 

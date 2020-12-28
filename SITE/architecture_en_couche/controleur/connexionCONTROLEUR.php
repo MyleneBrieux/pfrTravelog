@@ -22,13 +22,7 @@ $utilisateurservice = new UtilisateurService();
                 } else {
                     displayNotIdem();
                 }
-        } else if (empty($_POST["pseudo"])) {
-            displayEmptyPseudo();
-        } else if (empty($_POST["password"])) {
-            displayEmptyPassword();
-        } else {
-            displayEmptyForm();
-        }
+        } 
     }
 
 displayPageConnexion();
