@@ -32,7 +32,7 @@ function creation_h1(){
 //  Titre du voyage
 
 function creation_debutForm(){
-    echo '<form action="../controleur/detail_voyageCONTROLEUR.php?action=creation" method="post">';
+    echo '<form action="../controleur/creation_voyageCONTROLEUR.php?action=creation" method="post">';
 }
 
 function creation_champTitre(){
@@ -57,10 +57,10 @@ function creation_filtres(){
 function creation_dates(){
     echo '<div class="row ml-1 mr-1 mt-4 d-flex justify-content-between">
             <p> Date de début de séjour:</br> 
-            <input type="date" name="date_debut" required></p>
+            <input type="date" name="datedebut" required></p>
 
             <p>Date de fin de séjour:</br> 
-            <input type="date" name="date_fin" required></p>
+            <input type="date" name="datefin" required></p>
         </div>';
 }
 
@@ -69,7 +69,7 @@ function creation_dates(){
 
 function creation_description(){
     echo '<div class="row form-text ml-1 mr-1">
-            <textarea class="form-control" id="texte_voyage" rows="10" name="resume" placeholder="Texte"></textarea>
+            <textarea class="form-control" id="texte_voyage" rows="10" name="resume" placeholder="Texte" required></textarea>
         </div>';
 }
 
@@ -143,7 +143,7 @@ function creation_addButton(/*$soustitre, $description*/){
 function creation_addFiles(){
     echo '<div class="row form-files d-flex justify-content-center">
             <div class="rectangle-files addfiles">
-                <input type="file" class="form-control-file" id="ajoutFichiers" name="files" multiple>
+                <input type="file" class="form-control-file" id="ajoutFichiers" name="couverture" multiple>
             </div>
         </div>';
 }
