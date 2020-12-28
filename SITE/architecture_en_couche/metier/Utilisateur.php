@@ -2,24 +2,26 @@
 
 class Utilisateur {
     private $id;
+    private $pseudo;
     private $mail;
     private $password;
-    private $login;
+    private $description;
     private $birthday;
     private $photoProfil;
     private $nationalite;
     private $contact;
     private $notifmail;
 
-    public function __construct(int $id, string $mail, string $password, string $login, date $birthday, string $photoProfil, 
+    public function __construct(int $id, string $pseudo, string $mail, string $password, string $description,  string $photoProfil, DateTime $birthday,
     string $nationalite, string $contact, string $notifmail)
     {
         $this->id = $id;
+        $this->pseudo = $pseudo;
         $this->mail = $mail;
         $this->password = $password;
-        $this->login = $login;
-        $this->birthday = $birthday;
+        $this->description = $description;
         $this->photoProfil = $photoProfil;
+        $this->birthday = $birthday;
         $this->nationalite = $nationalite;
         $this->contact = $contact;
         $this->notifmail = $notifmail;
@@ -31,6 +33,26 @@ class Utilisateur {
     public function getId() : int
     {
         return $this->id;
+    }
+
+    /**
+     * Get the value of pseudo
+     */ 
+    public function getPseudo() : string
+    {
+        return $this->pseudo;
+    }
+
+    /**
+     * Set the value of pseudo
+     *
+     * @return  self
+     */ 
+    public function setPseudo(string $pseudo) : self
+    {
+        $this->pseudo = $pseudo;
+
+        return $this;
     }
 
     /**
@@ -74,41 +96,21 @@ class Utilisateur {
     }
 
     /**
-     * Get the value of login
+     * Get the value of description
      */ 
-    public function getLogin() : string
+    public function getDescription() : string
     {
-        return $this->login;
+        return $this->description;
     }
 
     /**
-     * Set the value of login
+     * Set the value of description
      *
      * @return  self
      */ 
-    public function setLogin(string $login) : self
+    public function setDescription(string $description) : self
     {
-        $this->login = $login;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of birthday
-     */ 
-    public function getBirthday() : DateTime
-    {
-        return $this->birthday;
-    }
-
-    /**
-     * Set the value of birthday
-     *
-     * @return  self
-     */ 
-    public function setBirthday(DateTime $birthday) : self
-    {
-        $this->birthday = $birthday;
+        $this->description = $description;
 
         return $this;
     }
@@ -129,6 +131,26 @@ class Utilisateur {
     public function setPhotoProfil(string $photoProfil) : self
     {
         $this->photoProfil = $photoProfil;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of birthday
+     */ 
+    public function getBirthday() : DateTime
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Set the value of birthday
+     *
+     * @return  self
+     */ 
+    public function setBirthday(DateTime $birthday) : self
+    {
+        $this->birthday = $birthday;
 
         return $this;
     }
