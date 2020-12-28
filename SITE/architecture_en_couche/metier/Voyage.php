@@ -13,7 +13,7 @@ class Voyage {
     private $vues;
 
 
-    public function __construct(int $codeVoyage, string $titre, string $resume, DateTime $datedebut, DateTime $datefin, string $couverture, 
+    public function __construct(int $codeVoyage, string $titre, string $resume, string $datedebut, string $datefin, string $couverture, 
                                 string $statut, int $likes, int $vues){
 
         $this->codeVoyage=$codeVoyage;
@@ -57,22 +57,22 @@ class Voyage {
 
     // DateDebut
 
-    public function getDateDebut():DateTime{
+    public function getDateDebut():string{
         return $this->datedebut;
     }
 
-    public function setDateDebut(DateTime $datedebut):self{
+    public function setDateDebut(string $datedebut):self{
         $this->datedebut=$datedebut;
         return $this;
     }
 
     // DateFin
 
-    public function getDateFin():DateTime{
+    public function getDateFin():string{
         return $this->datefin;
     }
 
-    public function setDateFin(DateTime $datefin):self{
+    public function setDateFin(string $datefin):self{
         $this->datefin=$datefin;
         return $this;
     }

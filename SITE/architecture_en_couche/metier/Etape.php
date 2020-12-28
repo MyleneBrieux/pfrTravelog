@@ -11,7 +11,7 @@ class Etape extends Voyage {
     private $likesEtape;
 
 
-    public function __construct(int $codeVoyage, string $titre, string $resume, DateTime $datedebut, DateTime $datefin, string $couverture, string $statut, 
+    public function __construct(int $codeVoyage, string $titre, string $resume, string $datedebut, string $datefin, string $couverture, string $statut, 
                                 int $likes, int $vues, int $codeEtape, string $sousTitre, string $description, string $media, int $likesEtape){
         parent::__construct($codeVoyage,$titre,$resume,$datedebut,$datefin,$couverture,$statut,$likes,$vues);
         $this->codeEtape=$codeEtape;
