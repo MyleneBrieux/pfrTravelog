@@ -1,24 +1,34 @@
 <?php 
 
 require_once("../metier/Voyage.php");
+require_once("../metier/Utilisateur.php");
+require_once("../metier/Etape.php");
+require_once("../metier/Commentaire.php");
 
 class VoyageMysqliDAO {
 
     //ajout Voyage
 
-    public function addVoyageDAO($voyage){
+    // public function addVoyageDAO($voyage){
+    //     $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+    //     $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, couverture, statut, likes, vues,id,code_etape) values (null,?,?,?,?,?,Y,0,0,6,2)");
+    //     $titre=$voyage->getTitre();
+    //     $resume=$voyage->getResume();
+    //     $datedebut=$voyage->getDateDebut();
+    //     $datefin=$voyage->getDateFin();
+    //     $couverture=$voyage->getCouverture();
+    //     // $statut=$voyage->getStatut();
+    //     // $likes=$voyage->getLikes();
+    //     // $vues=$voyage->getVues();
+    // $stmt->bind_param("sssss", $titre, $resume, $datedebut, $datefin, $couverture, /*$statut, $likes, $vues*/);
+    //     $stmt->execute();
+    //     $mysqli->close();
+    // }
+
+    public function addVoyageDAO(/*$codeVoyage, */$titre, $resume, $datedebut, $datefin, $couverture/*, $statut, $likes, $vues*/){
         $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
-        
-        $stmt=$mysqli->prepare("insert into voyages (titre, resume, date_debut, date_fin, couverture, statut, likes, vues) values (?,?,?,?,?,?,?,?)");
-        $titre=$voyage->getTitre();
-        $resume=$voyage->getResume();
-        $date_debut=$voyage->getDateDebut();
-        $date_fin=$voyage->getDateFin();
-        $couverture=$voyage->getCouverture();
-        $statut=$voyage->getStatut();
-        $likes=$voyage->getLikes();
-        $vues=$voyage->getVues();
-        $stmt->bind_param("ssssssii", $titre, $resume, $date_debut, $date_fin, $couverture, $statut, $likes, $vues);
+        $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, couverture, statut, likes, vues, id, code_etape) values (null,?,?,?,?,?,'Y',0,0,6,2)");
+    $stmt->bind_param(/*"issssssii"*/ "sssss", /*$codeVoyage, */$titre, $resume, $datedebut, $datefin, $couverture/*, $statut, $likes, $vues*/);
         $stmt->execute();
         $mysqli->close();
     }
