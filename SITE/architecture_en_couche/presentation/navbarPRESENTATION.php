@@ -129,7 +129,7 @@ function menuUtilisateur2(){
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$_SESSION["pseudo"].'</a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../controleur/mesvoyagesCONTROLEUR.php">Mes voyages</a>
+                        <a class="dropdown-item" href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'">Mes voyages</a>
                         <a class="dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'">Mon profil</a>
                         <a class="dropdown-item" href="../controleur/deconnexionCONTROLEUR.php">Deconnexion</a>
                     </div>
