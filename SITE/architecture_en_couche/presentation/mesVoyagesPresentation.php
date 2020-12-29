@@ -26,16 +26,16 @@
         include ("menulatCONTROLEUR.php");
     }
 
-    function débutCorps(){
-        echo' <h1 class="titre_mesvoyages">Les voyages de <strong>Utilisateur</strong></h1>
+    function débutCorps($profil){
+        echo' <h1 class="titre_mesvoyages">Les voyages de <strong>'. $profil['pseudo'] .'</strong></h1>
         <p class="rsvoyages">XX voyages - XX continents visités - XX pays visités</p>';
     }
 
-    function afficherUser(){
+    function afficherUser($profil){
         echo'<div class="row">
         <div class="encadrevoyage">
             <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
-            <a href="detail_voyage.php" class="">
+            <a href="../controleur/monProfilControleur.php?pseudo='.$profil["pseudo"].'" class="">
                 Voir le profil
             </a>
             <a href="detail_voyage.php" class="">
