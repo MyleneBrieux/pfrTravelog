@@ -38,11 +38,19 @@
     width:14.5em;
 }
 
+.tailleImageProfilDetail{
+    width: 10.325em;
+}
+
     @media screen and (max-width : 1200px) {
         .menu_lateral_detail_voyage {
                 width:11.7em;
                 padding-bottom:70em;
-            }
+        }
+
+        .tailleImageProfilDetail{
+            width: 7.9458em;
+        }
     }
 
     @media screen and (max-width : 910px) {
@@ -50,14 +58,22 @@
                 width:10.5em;
                 margin-top:2.5em;
                 padding-bottom:45em;
-            }
+        }
+
+        .tailleImageProfilDetail{
+            width: 6.925em;
+        }
     }
 
     @media screen and (max-width : 750px) {
         .menu_lateral_detail_voyage {
                 width:36.5em;
                 padding-bottom:1%;
-            }
+        }
+
+        .tailleImageProfilDetail{
+            width: 13.575em;
+        }
     }
 
     @media screen and (max-width : 480px) {
