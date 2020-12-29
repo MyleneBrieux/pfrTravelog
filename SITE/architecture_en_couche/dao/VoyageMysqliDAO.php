@@ -9,26 +9,21 @@ class VoyageMysqliDAO {
 
     //ajout Voyage
 
-    // public function addVoyageDAO($voyage){
-    //     $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
-    //     $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, couverture, statut, likes, vues,id,code_etape) values (null,?,?,?,?,?,Y,0,0,6,2)");
-    //     $titre=$voyage->getTitre();
-    //     $resume=$voyage->getResume();
-    //     $datedebut=$voyage->getDateDebut();
-    //     $datefin=$voyage->getDateFin();
-    //     $couverture=$voyage->getCouverture();
-    //     // $statut=$voyage->getStatut();
-    //     // $likes=$voyage->getLikes();
-    //     // $vues=$voyage->getVues();
-    // $stmt->bind_param("sssss", $titre, $resume, $datedebut, $datefin, $couverture, /*$statut, $likes, $vues*/);
-    //     $stmt->execute();
-    //     $mysqli->close();
-    // }
-
-    public function addVoyageDAO(/*$codeVoyage, */$titre, $resume, $datedebut, $datefin, $couverture/*, $statut, $likes, $vues*/){
+    public function addVoyageDAO($titre, $resume, $datedebut, $datefin, $couverture){
         $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+
+        //modifier l'id user
         $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, couverture, statut, likes, vues, id, code_etape) values (null,?,?,?,?,?,'Y',0,0,6,2)");
-    $stmt->bind_param(/*"issssssii"*/ "sssss", /*$codeVoyage, */$titre, $resume, $datedebut, $datefin, $couverture/*, $statut, $likes, $vues*/);
+        $stmt->bind_param("sssss",$titre, $resume, $datedebut, $datefin, $couverture);
+        $stmt->execute();
+        $mysqli->close();
+    }
+
+    public function addEtapeDAO($sousTitre, $description){
+        $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+
+        $stmt=$mysqli->prepare("insert into etape (code_etape, sous_titre, description, media, likes, code_comm) values (null,?,?,'[photo1.jpg]',0,null)");
+        $stmt->bind_param("ss", $sousTitre, $description);
         $stmt->execute();
         $mysqli->close();
     }
