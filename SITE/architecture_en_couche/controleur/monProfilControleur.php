@@ -13,10 +13,6 @@ include_once '../metier/Voyage.php';
         
     // }
 
-// if(!isset($profil['pseudo'])){
-//     header('Location: accueilCONTROLEUR.php');
-// }
-
 // $voyage = VoyageSERVICE:: ;
 
 profilDebut();
@@ -25,7 +21,7 @@ menuLat($profil);
 
 presentationUser($profil);
 
-voyages();
+voyages($profil);
 
 profilFin();
 
