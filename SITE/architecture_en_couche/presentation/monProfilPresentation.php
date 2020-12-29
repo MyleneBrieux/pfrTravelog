@@ -38,7 +38,7 @@
                                 <p class="titre-lang">Langue parlée : </p>
                                 <p>
                                     <ul>
-                                        <li>'. $profil['code_langue'] .'</li>
+                                        <li>'. $profil['type_langue'] .'</li>
                                     </ul>
                                 </p>
                             </div>
@@ -97,9 +97,9 @@
                 </div>
             </div>';
     }
-    function autresVoyage() {
+    function autresVoyage($profil) {
                     echo'<div>
-                        <a href="../controleur/mesVoyagesControleur.php"><h3>Ses autres voyages</h3></a>
+                        <a href="../controleur/mesVoyagesControleur.php?pseudo='.$profil["pseudo"].'"><h3>Ses autres voyages</h3></a>
                     </div>
                     <div class="row d-inline-flex justify-content-around">
                         <div class="ml-3">
@@ -140,10 +140,10 @@
         profilHeader();
     }
 
-    function voyages(){
+    function voyages($profil){
         lastTrip();
         mostPopular();
-        autresVoyage();
+        autresVoyage($profil);
     }
 
     function profilFin(){
