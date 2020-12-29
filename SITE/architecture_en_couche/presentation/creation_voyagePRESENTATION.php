@@ -32,7 +32,7 @@ function creation_h1(){
 //  Titre du voyage
 
 function creation_debutForm(){
-    echo '<form action="../controleur/creation_voyageCONTROLEUR.php?action=creation" method="post">';
+    echo '<form action="../controleur/detail_voyageCONTROLEUR.php?action=creation" method="post">';
 }
 
 function creation_champTitre(){
@@ -69,72 +69,23 @@ function creation_dates(){
 
 function creation_description(){
     echo '<div class="row form-text ml-1 mr-1">
-            <textarea class="form-control" id="texte_voyage" rows="10" name="resume" placeholder="Texte" required></textarea>
+            <textarea class="form-control" id="texte_voyage" rows="10" name="resume" placeholder="Faites un résumé de votre voyage en quelques lignes" required></textarea>
         </div>';
 }
 
 // Les boutons d'ajout
 
 
-function creation_addButton(/*$soustitre, $description*/){
-    echo '<div class="row d-flex justify-content-center">
-            <button type="button" class="button" data-toggle="modal" data-target="#ModalSousTitre">+ Ajouter un sous-titre</button>
-        </div>
-
-        <div class="modal fade" id="ModalSousTitre" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Ecrire un sous-titre
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
+function creation_addButton(){
+    echo '<h1 class="mt-5">Création de votre première étape</h1>
     
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Ecrivez votre sous-titre ici ..."></textarea>
-        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Fermer</button>
-                        <button type="button" class="btn btn-primary">Envoyer</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row d-flex justify-content-center">
-            <button type="button" class="button" data-toggle="modal" data-target="#ModalDescription">+ Ajouter une description</button>
-        </div>
-
-        <div class="modal fade" id="ModalDescription" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Ecrire une description
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-    
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Ecrivez votre description ici ..."></textarea>
-    
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Fermer</button>
-                        <button type="button" class="btn btn-primary">Envoyer</button>
-                    </div>
-                </div>
-            </div>
+    <div class="row form-titre  ml-1 mr-1">
+            <input type="text" class="form-control" name="sous_titre" placeholder="sous-titre" required>
         </div>';
+        
+    echo '<div class="row form-titre ml-1 mr-1">
+        <textarea class="form-control" id="texte_voyage" rows="10" name="description" placeholder="Une petite description de votre étape" required></textarea>
+    </div>';
 }
 
 
