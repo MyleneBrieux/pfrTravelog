@@ -33,25 +33,24 @@
             }
     }
 
-    @media screen and (max-width : 770px) {
+    @media screen and (max-width : 910px) {
         .logoTravelog{
-            margin-top:-2.75em;
+            margin-left:-3%;
             }
     }
 
-    @media screen and (max-width : 650px) {
+    @media screen and (max-width : 770px) {
         .logoTravelog{
             display:none;
             }
     }
 
 
-
 /* NOM TRAVELOG */
 .nomTravelog{
     font-size: 1.7em;
     font-family: 'Rancho', cursive;
-    margin-left: -5%;
+    margin-left: -8%;
     border-right:1px solid white;
     padding-right:0.5em;
 }
@@ -62,137 +61,180 @@
             }
     }
 
+    @media screen and (max-width : 910px) {
+        .nomTravelog{
+            margin-left:-16%;
+            }
+    }
+
+    @media screen and (max-width : 780px) {
+        .nomTravelog{
+            font-size:1.25em;
+            margin-top:0em;
+            margin-left:-1em;
+            }
+    }
+
+    /* @media screen and (max-width : 770px) {
+        .nomTravelog{
+            margin-top:-3em;
+            }
+    }
+
+    @media screen and (max-width : 700px) {
+        .nomTravelog{
+            font-size:1em;
+            margin-top:-3.25em;
+            margin-left:-1.25em;
+            }
+    }
+
+    @media screen and (max-width : 610px) {
+        .nomTravelog{
+            font-size:0.75em;
+            margin-top:-4em;
+            margin-left:-1.75em;
+            }
+    } */
+
     @media screen and (max-width : 770px) {
         .nomTravelog{
             font-size:1.25em;
-            margin-top:-1em;
+            margin-top:0em;
             margin-left:-1em;
             }
     }
 
     @media screen and (max-width : 650px) {
         .nomTravelog{
+            margin-top:-1.5em;
             margin-left:0.25em;
             }
     }
 
     @media screen and (max-width : 460px) {
         .nomTravelog{
+            margin-top:-0.5em;
             margin-left:-0.5em;
             }
     }
 
 
 /* BARRE DE RECHERCHE */
- .barreRecherche{
+ #barreRecherche{
     margin-left:-2.5em;
 }
 
     @media screen and (max-width : 1280px) {
-        .barreRecherche{
-                margin-left:-4em;;
+        #barreRecherche{
+                margin-left:-4em;
             }
     }
 
     @media screen and (max-width : 770px) {
-        .barreRecherche{
-            margin-top:-1.6em;
+        #barreRecherche{
+            margin-right:20em;
+            margin-top:-7em;
             }
     }
 
-    @media screen and (max-width : 650px) {
-        .barreRecherche{
-            margin-left:-2em;
+    @media screen and (max-width : 690px) {
+        #barreRecherche{
+            margin-right:-26em;
             }
     }
 
     @media screen and (max-width : 580px) {
-        .barreRecherche{
-            margin-left:-0.5em;
+        #barreRecherche{
+            margin-right:14em;
             }
     }
 
-    @media screen and (max-width : 510px) {
-        .barreRecherche{
-            margin-left:0.25em;
+    @media screen and (max-width : 520px) {
+        #barreRecherche{
+            margin-right:10em;
             }
     }
 
-    @media screen and (max-width : 460px) {
-        .barreRecherche{
-            margin-left:-0.25em;
+    @media screen and (max-width : 440px) {
+        #barreRecherche{
+            margin-right:8em;
             }
     }
 
 
 
  /* NOTIFICATIONS */
- .logoNotif{
+ #menuNotifs{
     color: white;
     height:1.5em;
     padding-left:1em;
     padding-top:0.2em;
-    margin-left: 5em;
+    margin-left: 4em;
     border-left:1px solid white;
 }
 
     @media screen and (max-width : 1200px) {
-        .logoNotif{
+        #menuNotifs{
             margin-left:3em;
             }
     }
 
     @media screen and (max-width : 1000px) {
-        .logoNotif{
+        #menuNotifs{
             margin-left:1em;
             }
     }
 
     @media screen and (max-width : 770px) {
-        .logoNotif{
-            margin-top:-0.75em;
+        #menuNotifs{
+            margin-left:-10em;
+            margin-top:-0.4em;
             }
     }
 
     @media screen and (max-width : 580px) {
-        .logoNotif{
-            margin-left:0.25em;
+        #menuNotifs{
+            margin-left:-10em;
             }
     }
 
     @media screen and (max-width : 510px) {
-        .logoNotif{
-            margin-left:-0.25em;
+        #menuNotifs{
+            margin-left:-10em;
             }
     }
 
     @media screen and (max-width : 460px) {
-        .logoNotif{
-            padding-left:0.1em;
+        #menuNotifs{
+            padding-left:-10em;
             }
     }
+
+#dropdownMenuNotifs {
+    margin-left:6em;
+}
 
 
 /* AMIS */
-.logoAmi{
+#menuAmis{
     color:white;
-    font-size: 1.3em;
+    font-size: 2em;
     margin-top: 0.2em;
-    margin-left:0.5em;
+    margin-left:1em;
 }
 
     @media screen and (max-width : 770px) {
-        .logoAmi{
-            margin-top:-0.6em;
+        #menuAmis{
+            margin-left:-7em;
+            margin-top:-6em;
             }
     }
 
-    @media screen and (max-width : 510px) {
-        .logoAmi{
-            margin-left:0em;
-            }
-    }
-
+#dropdownMenuAmis {
+    margin-left:61em;
+    margin-top:-0.005em;
+}
 
 /* UTILISATEUR */
 .dropdown-menu{ /* menu relatif à l'utilisateur */
@@ -223,21 +265,20 @@
     }
 
 
-.menuUtilisateur{
-    margin-left:-6.5em;
+#menuUtilisateur {
+    margin-left:3em;
 }
 
-    @media screen and (max-width : 1200px) {
-        .menuUtilisateur{
-            margin-left:-2.5em;
+    @media screen and (max-width : 770px) {
+        #menuUtilisateur{
+            margin-left:-4em;
             }
     }
 
-    @media screen and (max-width : 770px) {
-        .menuHamb{
-            margin-top:-1.25em;
-            }
-    }
+
+#dropdownMenuUtilisateur {
+    margin-left:5em;
+}
 
 .utilisateur{
     font-family: 'Halant', serif;
@@ -257,7 +298,7 @@
     max-height: 3em;
 }
 
-    @media screen and (max-width : 1000px) {
+    @media screen and (max-width : 1030px) {
         .photoProfil{
             display:none;
             }

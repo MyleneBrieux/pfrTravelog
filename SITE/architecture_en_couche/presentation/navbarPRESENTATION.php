@@ -79,7 +79,7 @@ function navbarBrand(){
 
 function navbarSearch(){
     echo
-        '<div class="barreRecherche input-group md-form form-sm form-1 pl-0 col-4">
+        '<div class="input-group md-form form-sm form-1 pl-0 col-4" id="barreRecherche">
             <div class="input-group-prepend">
                 <span class="input-group-text lighten-3" id="basic-text1">
                     <i class="fas fa-search text-white" aria-hidden="true"></i>
@@ -91,11 +91,11 @@ function navbarSearch(){
 
 function notifications(){
     echo
-        '<div class="collapse navbar-collapse" id="navbarSupportedContent">
+        '<div class="navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                    <div class="logoNotif far fa-bell cloche fa-2x" id="dropdownMenuNotifs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuNotifs">
+                    <div class="logoNotif far fa-bell cloche fa-2x" id="menuNotifs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+                    <div class="dropdown-menu" id="dropdownMenuNotifs" aria-labelledby="dropdownMenuNotifs">
                         <a class="dropdown-item" href="#">Exemple notifs</a>
                     </div>
                 </li>';
@@ -104,8 +104,8 @@ function notifications(){
 function amis(){
     echo
         '<li class="nav-item">
-            <div class="logoAmi far fa-user ami fa-2x" id="dropdownMenuAmis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuAmis">
+            <div class="logoAmi far fa-user ami fa-2x" id="menuAmis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+            <div class="dropdown-menu" id="dropdownMenuAmis" aria-labelledby="dropdownMenuAmis">
                 <a class="dropdown-item" href="#">Exemple amis</a>
             </div>
         </li>';
@@ -114,10 +114,10 @@ function amis(){
 function menuUtilisateur(){
     echo
         '<li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle font-white utilisateur" href="#" id="dropdownMenuUtilisateur" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle font-white utilisateur" href="#" id="menuUtilisateur" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 '. $_SESSION["pseudo"] .'
             </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuUtilisateur">
+            <div class="dropdown-menu" id="dropdownMenuUtilisateur" aria-labelledby="dropdownMenuUtilisateur">
                 <a class="mesvoyages dropdown-item" href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'">Mes voyages</a>
                 <a class="monprofil dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'">Mon profil</a>
                 <a class="deconnexion dropdown-item" href="../controleur/deconnexionCONTROLEUR.php">Déconnexion</a>
