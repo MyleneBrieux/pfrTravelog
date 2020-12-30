@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 07 déc. 2020 à 21:23
+-- Généré le : mer. 30 déc. 2020 à 16:30
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.2.34
 
@@ -45,7 +45,7 @@ CREATE TABLE `etape` (
   `sous_titre` varchar(40) NOT NULL,
   `description` varchar(500) NOT NULL,
   `media` mediumblob NOT NULL,
-  `likes` int(11) DEFAULT NULL,
+  `likesEtape` int(11) DEFAULT NULL,
   `code_comm` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -134,7 +134,7 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `pseudo`, `mail`, `password`, `description`, `photoprofil`, `birthday`, `nation`, `contact`, `notifmail`, `code_langue`) VALUES
-(5, 'mylene', 'mylene.brieux@gmail.com', '$2y$10$Jki9d9KNdUqZ5N1FQUua.etuqYF20oblp8ekW8FLbbWQLn31VmpK.', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1);
+(38, 'mylene', 'mylene.brieux@gmail.com', '$2y$10$ZtuxhdTaRYssZHfUE/amN.Vg3VS4mBCwt1kV.NWgNSbAFT.oXFpom', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1);
 
 -- --------------------------------------------------------
 
@@ -148,6 +148,9 @@ CREATE TABLE `voyages` (
   `resume` varchar(500) NOT NULL,
   `date_debut` date NOT NULL,
   `date_fin` date NOT NULL,
+  `continent` varchar(20) NOT NULL,
+  `pays` varchar(50) NOT NULL,
+  `ville` varchar(50) NOT NULL,
   `couverture` mediumblob NOT NULL,
   `statut` varchar(6) NOT NULL,
   `likes` int(12) DEFAULT NULL,
@@ -246,7 +249,7 @@ ALTER TABLE `signalements`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT pour la table `voyages`
