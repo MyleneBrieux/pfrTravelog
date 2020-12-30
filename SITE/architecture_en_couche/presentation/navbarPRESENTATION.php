@@ -8,6 +8,7 @@ function displayNavbarConnectedOnly(){
     navbarBrand();
     navbarSearch();
     notifications();
+    amis();
     menuUtilisateur1();
     deconnexion();
     menuUtilisateur2();
@@ -94,12 +95,24 @@ function navbarSearch(){
 
 function notifications(){
     echo
-        '<i class="logoNotif far fa-bell cloche fa-2x"></i>
+        '<div class="dropdown">
+            <div class="logoNotif far fa-bell cloche fa-2x" id="dropdownMenuNotifs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuNotifs">
+                <a class="dropdown-item" href="#">Notif</a>
+            </div>
+        </div>';
+}
 
+function amis(){
+    echo
+        '<div class="dropdown">
             <li class="nav-item dropdown">
-                <a class="nav-link font-white utilisateur" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user logoAmi"></i>
-                </a>';
+            <a class="nav-link font-white utilisateur" href="#" id="dropdownMenuAmis" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="fas fa-user font-white logoAmi" id="dropdownMenuAmis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuAmis">
+                    <a class="dropdown-item" href="#">Ami</a>
+                </div>
+        </div>';
 }
 
 function menuUtilisateur1(){
