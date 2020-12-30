@@ -105,13 +105,13 @@ function notifications(){
 function menuUtilisateur1(){
     echo
         '<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../controleur/mesvoyagesCONTROLEUR.php" target="blank">Mes voyages</a>
-            <a class="dropdown-item" href="../controleur/monProfilControleur.php" target="blank">Mon profil</a>';
+            <a class="mesvoyages dropdown-item" href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'">Mes voyages</a>
+            <a class="monprofil dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'">Mon profil</a>';
 }
 
 function deconnexion(){
     echo
-                '<a class="dropdown-item" href="index.php?page=figurines">Deconnexion</a>
+                '<a class="deconnexion dropdown-item" href="../controleur/deconnexionCONTROLEUR.php">Déconnexion</a>
             </div>
         </li>';
 }
@@ -129,9 +129,9 @@ function menuUtilisateur2(){
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$_SESSION["pseudo"].'</a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'">Mes voyages</a>
-                        <a class="dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'">Mon profil</a>
-                        <a class="dropdown-item" href="../controleur/deconnexionCONTROLEUR.php">Deconnexion</a>
+                        <a class="mesvoyages dropdown-item" href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'">Mes voyages</a>
+                        <a class="monprofil dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'">Mon profil</a>
+                        <a class="deconnexion dropdown-item" href="../controleur/deconnexionCONTROLEUR.php">Déconnexion</a>
                     </div>
             </li>';
 }
