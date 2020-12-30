@@ -15,12 +15,12 @@ class VoyageMysqliDAO {
 
     //ajout Voyage
 
-    public function addVoyageDAO($titre, $resume, $datedebut, $datefin, $couverture){
+    public function addVoyageDAO($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture){
         $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
 
         //modifier l'id user
-        $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, couverture, statut, likesEtape, vues, id, code_etape) values (null,?,?,?,?,?,'Y',0,0,6,2)");
-        $stmt->bind_param("sssss",$titre, $resume, $datedebut, $datefin, $couverture);
+        $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, continent, pays, ville, couverture, statut, likesEtape, vues, id, code_etape) values (null,?,?,?,?,?,?,?,?,'Y',0,0,6,2)");
+        $stmt->bind_param("sssss",$titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture);
         $stmt->execute();
         $mysqli->close();
     }
@@ -50,14 +50,17 @@ class VoyageMysqliDAO {
     public function modifVoyageDAO($voyage){
         $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
     
-        $stmt=$mysqli->prepare("update voyages set date_debut=?, date_fin=?, couverture=?, statut=? where code_voyage= ?"); 
+        $stmt=$mysqli->prepare("update voyages set date_debut=?, date_fin=?, continent=?, pays=?, ville=?, couverture=?, statut=? where code_voyage= ?"); 
         $date_debut=$voyage->getDateDebut();
         $date_fin=$voyage->getDateFin();
+        $continent=$voyage->getContinent();
+        $pays=$voyage->getPays();
+        $ville=$voyage->getVille();
         $couverture=$voyage->getCouverture();
         $statut=$voyage->getStatut();
         $codeVoyage=$voyage->getCodeVoyage();
         
-        $stmt->bind_param("ssssssi", $date_debut, $date_fin, $couverture, $statut, $codeVoyage);
+        $stmt->bind_param("sssssssssi", $date_debut, $date_fin, $continent, $pays, $ville, $couverture, $statut, $codeVoyage);
         $stmt->execute();
         $mysqli->close();
     

@@ -13,6 +13,9 @@ if(isset($_GET["action"]) && $_GET["action"] == "creation" && !empty($_POST)){
         && isset($_POST["resume"]) && !Empty($_POST["resume"])
         && isset($_POST["datedebut"]) && !Empty($_POST["datedebut"])
         && isset($_POST["datefin"]) && !Empty($_POST["datefin"])
+        && isset($_POST["continent"]) && !Empty($_POST["continent"])
+        && isset($_POST["pays"]) && !Empty($_POST["pays"])
+        && isset($_POST["ville"]) && !Empty($_POST["ville"])
         && isset($_POST["couverture"]) && !Empty($_POST["couverture"])){
             
         $voyage = new Etape(
@@ -21,6 +24,9 @@ if(isset($_GET["action"]) && $_GET["action"] == "creation" && !empty($_POST)){
             $resume=htmlentities($_POST["resume"]),
             $datedebut=($_POST["datedebut"]),
             $datefin=($_POST["datefin"]),
+            $continent=($_POST["continent"]),
+            $pays=($_POST["pays"]),
+            $ville=($_POST["ville"]),
             $couverture=htmlentities($_POST["couverture"]),
             $statut=htmlentities($_POST["statut"]=null),
             $likes=(int)htmlentities($_POST["likes"]=null),
@@ -36,7 +42,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "creation" && !empty($_POST)){
         $addEtape->addEtapeService($sousTitre, $description);
 
         $addVoyage= new VoyageService;
-        $addVoyage->addVoyageService($titre, $resume, $datedebut, $datefin, $couverture);
+        $addVoyage->addVoyageService($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture);
         // if ($passwordOk=$utilisateurservice->passwordVerify($password,$data)){
             header('Location: detail_voyageCONTROLEUR.php');
         // }

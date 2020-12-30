@@ -7,20 +7,26 @@ class Voyage {
     private $resume;
     private $datedebut;
     private $datefin;
+    private $continent;
+    private $pays;
+    private $ville;
     private $couverture;
     private $statut;
     private $likes;
     private $vues;
 
 
-    public function __construct(int $codeVoyage, string $titre, string $resume, string $datedebut, string $datefin, string $couverture, 
-                                string $statut, int $likes, int $vues){
+    public function __construct(int $codeVoyage, string $titre, string $resume, string $datedebut, string $datefin, string $continent, string $pays,
+                                string $ville, string $couverture, string $statut, int $likes, int $vues){
 
         $this->codeVoyage=$codeVoyage;
         $this->titre=$titre;
         $this->resume=$resume;
         $this->datedebut=$datedebut;
         $this->datefin=$datefin;
+        $this->continent=$continent;
+        $this->pays=$pays;
+        $this->ville=$ville;
         $this->couverture=$couverture;
         $this->statut=$statut;
         $this->likes=$likes;
@@ -74,6 +80,39 @@ class Voyage {
 
     public function setDateFin(string $datefin):self{
         $this->datefin=$datefin;
+        return $this;
+    }
+
+    // Continent
+
+    public function getContinent():string{
+        return $this->continent;
+    }
+    
+    public function setContinent(string $continent):self{
+        $this->continent=$continent;
+        return $this;
+    }
+
+    // Pays
+
+    public function getPays():string{
+        return $this->pays;
+    }
+    
+    public function setPays(string $pays):self{
+        $this->pays=$pays;
+        return $this;
+    }
+
+    // Ville
+
+    public function getVille():string{
+        return $this->ville;
+    }
+    
+    public function setVille(string $ville):self{
+        $this->ville=$ville;
         return $this;
     }
 
