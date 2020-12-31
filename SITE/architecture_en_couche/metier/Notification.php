@@ -3,13 +3,13 @@
 class Notification {
 
     private $codeNotif;
-    private $type;
+    private $typeNotif;
     private $date;
 
 
-    public function __construct(int $codeNotif, string $type, DateTime $date){
+    public function __construct(int $codeNotif, string $typeNotif, DateTime $date){
         $this->codeNotif=$codeNotif;
-        $this->type=$type;
+        $this->typeNotif=$typeNotif;
         $this->date=$date;
     }
 
@@ -18,12 +18,12 @@ class Notification {
         return $this->codeNotif;
     }
 
-    public function getType():string{
-        return $this->type;
+    public function getTypeNotif():string{
+        return $this->typeNotif;
     }
 
-    public function setType(string $type):self{
-        $this->type=$type;
+    public function setTypeNotif(string $typeNotif):self{
+        $this->typeNotif=$typeNotif;
         return $this;
     }
 
@@ -38,7 +38,7 @@ class Notification {
 
 
     public function __toString():string{
-        return "[Code de la notification]: " . $this->codeNotif . " [Type]: " . $this->type ;
+        return "[Code de la notification]: " . $this->codeNotif . " [Type]: " . $this->typeNotif . " [Date]: " . $this->date ;
     }
 
 }
