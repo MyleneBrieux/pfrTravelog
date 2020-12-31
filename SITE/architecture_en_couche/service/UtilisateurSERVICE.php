@@ -27,6 +27,11 @@ class UtilisateurService {
         return $info;
     }
 
+    public function chercherPhotoProfilUtilisateur($photoProfil) : ?array {
+        $data = $this->utilisateurDao->chercherPhotoProfilUtilisateur($photoProfil);
+        return $data;
+    }
+
     public function passwordHash($password) {
         $newPassword=password_hash($password,PASSWORD_DEFAULT);
         return $newPassword;

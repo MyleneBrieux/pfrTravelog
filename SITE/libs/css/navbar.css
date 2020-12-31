@@ -75,36 +75,6 @@
             }
     }
 
-    /* @media screen and (max-width : 770px) {
-        .nomTravelog{
-            margin-top:-3em;
-            }
-    }
-
-    @media screen and (max-width : 700px) {
-        .nomTravelog{
-            font-size:1em;
-            margin-top:-3.25em;
-            margin-left:-1.25em;
-            }
-    }
-
-    @media screen and (max-width : 610px) {
-        .nomTravelog{
-            font-size:0.75em;
-            margin-top:-4em;
-            margin-left:-1.75em;
-            }
-    } */
-
-    @media screen and (max-width : 770px) {
-        .nomTravelog{
-            font-size:1.25em;
-            margin-top:0em;
-            margin-left:-1em;
-            }
-    }
-
     @media screen and (max-width : 650px) {
         .nomTravelog{
             margin-top:-1.5em;
@@ -121,7 +91,7 @@
 
 
 /* BARRE DE RECHERCHE */
- #barreRecherche{
+ #barreRecherche{ /* général */
     margin-left:-2.5em;
 }
 
@@ -162,10 +132,13 @@
             }
     }
 
+#rechercher { /* placeholder */
+    font-family: 'Halant', serif;
+}
 
 
  /* NOTIFICATIONS */
- #menuNotifs{
+ #menuNotifs{ /* logo */
     color: white;
     height:1.5em;
     padding-left:1em;
@@ -211,13 +184,14 @@
             }
     }
 
-#dropdownMenuNotifs {
+#dropdownMenuNotifs { /* menu déroulant */
     margin-left:6em;
+    background-color:#52908B !important;
 }
 
 
 /* AMIS */
-#menuAmis{
+#menuAmis{ /* logo */
     color:white;
     font-size: 2em;
     margin-top: 0.2em;
@@ -231,17 +205,39 @@
             }
     }
 
-#dropdownMenuAmis {
+#dropdownMenuAmis { /* menu déroulant */
     margin-left:61em;
     margin-top:-0.005em;
-}
-
-/* UTILISATEUR */
-.dropdown-menu{ /* menu relatif à l'utilisateur */
     background-color:#52908B !important;
 }
 
-.dropdown-item{ /* liens (mes voyages, mon profil et déconnexion) du menu relatif à l'utilisateur */
+
+/* UTILISATEUR */
+.utilisateur{ /* pseudo dynamique de l'utilisateur */
+    font-family: 'Halant', serif;
+    color: white !important;
+    font-size: 1.5em;
+    margin-left:3em;
+    }
+    
+    @media screen and (max-width : 1200px) {
+        .utilisateur{
+            font-size:1.4em;
+            }
+    }
+
+    @media screen and (max-width : 770px) {
+        .utilisateur{
+            margin-left:-4em;
+            }
+    }
+
+#dropdownMenuUtilisateur { /* menu déroulant */
+    margin-left:5em;
+    background-color:#52908B !important;
+}
+
+.mesvoyages, .monprofil, .deconnexion{ /* liens du menu déroulant utilisateur */
     color:white !important;
     font-family: 'Halant', serif;
     font-size:1.25em;
@@ -262,34 +258,6 @@
 
     .mesvoyages:hover, .monprofil:hover, .deconnexion:hover {     
         background: none !important;
-    }
-
-
-#menuUtilisateur {
-    margin-left:3em;
-}
-
-    @media screen and (max-width : 770px) {
-        #menuUtilisateur{
-            margin-left:-4em;
-            }
-    }
-
-
-#dropdownMenuUtilisateur {
-    margin-left:5em;
-}
-
-.utilisateur{
-    font-family: 'Halant', serif;
-    color: white !important;
-    font-size: 1.5em;
-    }
-
-    @media screen and (max-width : 1200px) {
-        .utilisateur{
-            font-size:1.4em;
-            }
     }
 
 
@@ -341,19 +309,19 @@
             }
     }
 
-.lienConnexion:link, .lienInscription:link {
-    color: white;
-    text-decoration:none;
-}
-  
-.lienConnexion:visited, .lienInscription:visited {
-    color: white;
-}
-  
-.lienConnexion:focus, .lienInscription:focus {
-    background: none
-}
-  
-.lienConnexion:hover, .lienInscription:hover {     
-    background: none;
-}
+    .lienConnexion:link, .lienInscription:link {
+        color: white;
+        text-decoration:none;
+    }
+    
+    .lienConnexion:visited, .lienInscription:visited {
+        color: white;
+    }
+    
+    .lienConnexion:focus, .lienInscription:focus {
+        background: none
+    }
+    
+    .lienConnexion:hover, .lienInscription:hover {     
+        background: none;
+    }

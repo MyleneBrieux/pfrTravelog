@@ -1,7 +1,8 @@
 <?php
 
 // FONCTIONS GLOBALES //
-function displayNavbarConnectedOnly(){
+// utilisateur connecté //
+function displayNavbarConnectedOnly1(){
     displayTagTopHtml();
     displayHeader();
     displayTagTopBody();
@@ -10,10 +11,13 @@ function displayNavbarConnectedOnly(){
     notifications();
     amis();
     menuUtilisateur();
-    photoUtilisateur();
+}
+
+function displayNavbarConnectedOnly2(){
     displayTagBottomBody();
 }
 
+// visiteur //
 function displayNavbarNotConnected(){
     displayTagTopHtml();
     displayHeader();
@@ -85,7 +89,7 @@ function navbarSearch(){
                     <i class="fas fa-search text-white" aria-hidden="true"></i>
                 </span>
             </div>
-            <input class="form-control my-0 py-1" type="search" placeholder="Rechercher..." aria-label="Search">
+            <input class="form-control my-0 py-1" type="search" id="rechercher" placeholder="Rechercher..." aria-label="Search">
         </div>';
 }
 
@@ -125,9 +129,21 @@ function menuUtilisateur(){
         </li>';
 }
 
-function photoUtilisateur(){
+function photoUtilisateurDefaut(){
     echo
-                            '<img class="photoProfil rounded-circle" src="../../img/photos/photo_profil_detail_voyage.jpg">
+                            '<img class="photoProfil rounded-circle" src="../../img/photos/photo_profil_defaut.png">
+                                    
+                        </ul>
+                    </div>
+                </nav>
+
+            </header>
+        </div>';
+}
+
+function photoUtilisateurBdd($data){
+    echo
+                            '<img class="photoProfil rounded-circle" src="'.$data["photoprofil"].'">
                                     
                         </ul>
                     </div>

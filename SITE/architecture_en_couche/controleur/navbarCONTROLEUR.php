@@ -2,12 +2,22 @@
 
 // LIAISON AVEC AUTRES COUCHES //
 include_once("../presentation/navbarPRESENTATION.php");
+include_once("../service/UtilisateurSERVICE.php");
+include_once("../metier/Utilisateur.php");
 
 session_start();
 
 // SI UTILISATEUR CONNECTE //
 if (isset($_SESSION["pseudo"])) {  
-    displayNavbarConnectedOnly();
+    displayNavbarConnectedOnly1();
+    if (isset($_SESSION["photoprofil"])){
+        photoUtilisateurBdd($data);
+    } else {
+        photoUtilisateurDefaut();
+    }
+    displayNavbarConnectedOnly2();
+
+
 // SI UTILISATEUR NON-CONNECTE/INSCRIT //
 } else {
     displayNavbarNotConnected();
