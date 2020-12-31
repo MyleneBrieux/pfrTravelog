@@ -36,11 +36,11 @@ function detail_header(){
         include ("navbarCONTROLEUR.php");
 }
 
-function detail_menuLateral(/*$isMyVoyage*/){
+function detail_menuLateral($isMyVoyage){
     echo '<div class="pl-0 menu_lateral_detail_voyage">
     <nav class="bg-sable mr-3 pr-3 menU centrage">
         <div class="row">
-            <img class=" col-md-12 col-6 mt-3 float-left"
+            <img class="tailleImageProfilDetail col-md-12 col-6 mt-3 float-left"
                 src="../../../images/photos/photo_profil_detail_voyage.jpg" alt="Claude">
             <div class="col-lg-12 mt-5 pl-1 col-6">
                 <h4>Utilisateur</h4> </br>
@@ -49,45 +49,47 @@ function detail_menuLateral(/*$isMyVoyage*/){
                 <h6>xxx vues - xxx likes</h6>
                 </div>
                 <button type="button" class="btn btn-primary addItem col-12 mt-4 mb-3">Mes autres</br>voyages</button>';
-            
-            //  Bouton supprimer avec modal 
+}
+
+            //  Bouton supprimer avec modal
+            function detail_boutonSupp() {
                 // if($isMyVoyage){
-            // echo '<button type="button" class="btn btn-danger addItem mt-5" data-toggle="modal"
-            //     data-target="#ModalSupp">Supprimer le voyage</button>
+            echo '<button type="button" class="btn btn-danger addItem mt-5" data-toggle="modal"
+                data-target="#ModalSupp">Supprimer le voyage</button>
 
-            // <div class="modal fade" id="ModalSupp" tabindex="-1" role="dialog" aria-labelledby="ModalSupp"
-            //     aria-hidden="true">
-            //     <div class="modal-dialog modal-dialog-centered" role="Supp">
-            //         <div class="modal-content">
-            //             <div class="modal-header">
-            //                 <h5 class="modal-title" id="exampleModalLongTitle">Suppression de voyage
-            //                 </h5>
-            //                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            //                     <span aria-hidden="true">&times;</span>
-            //                 </button>
-            //             </div>
-            //             <div class="modal-body">
-            //                 <h6>Vous êtes sur le point de supprimer votre voyage<br>Voulez-vous vraiment
-            //                     le supprimer ?</h6>
-            //                 <label class="container">Je souhaite supprimer définitivement mon voyage
-            //                     <input type="checkbox">
-            //                     <span class="checkmark"></span>
-            //                 </label>
-            //             </div>
-            //             <div class="modal-footer">
-            //                 <button type="button" class="btn btn-secondary"
-            //                     data-dismiss="modal">Fermer</button>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div>
-        // }'; 
+            <div class="modal fade" id="ModalSupp" tabindex="-1" role="dialog" aria-labelledby="ModalSupp"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="Supp">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression de voyage
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Vous êtes sur le point de supprimer votre voyage<br>Voulez-vous vraiment
+                                le supprimer ?</h6>
+                            <label class="container">Je souhaite supprimer définitivement mon voyage
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>';
+        } 
 
+function detail_menuLateralFin(){
     echo'    </div>
     </nav>
 </div>';
 }
-
 
 function detail_placeNav(){
     echo '<div class="col-md-1 col-2"></div>
@@ -243,16 +245,16 @@ function detail_finHtml(){
     echo '</html>';
 }
 
-
-
 function detail_headBodyTop(){
     detail_head();
     detail_bodyTop();
 }
 
-function detail_corpsPage(/*$isMyVoyage*/){
+function detail_corpsPage($isMyVoyage){
     detail_header();
-    detail_menuLateral(/*$isMyVoyage*/);
+    detail_menuLateral($isMyVoyage);
+    detail_boutonSupp();
+    detail_menuLateralFin();
     detail_placeNav();
     detail_carousel();
     detail_ssTitreLogos();
