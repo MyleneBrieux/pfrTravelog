@@ -8,8 +8,8 @@ class Commentaire extends Notification {
     private $nombreComm;
 
 
-    public function __construct(int $codeNotif, string $type, DateTime $date, int $codeComm, int $nombreComm){
-        parent::__construct($codeNotif,$type,$date);
+    public function __construct(int $codeNotif, string $typeNotif, DateTime $date, int $codeComm, int $nombreComm){
+        parent::__construct($codeNotif,$typeNotif,$date);
         $this->codeComm=$codeComm;
         $this->nombreComm=$nombreComm;
     }
