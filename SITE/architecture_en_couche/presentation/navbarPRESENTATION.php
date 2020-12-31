@@ -8,12 +8,13 @@ function displayNavbarConnectedOnly1(){
     displayTagTopBody();
     navbarBrand();
     navbarSearch();
-    notifications();
-    amis();
-    menuUtilisateur();
 }
 
 function displayNavbarConnectedOnly2(){
+    menuUtilisateur();
+}
+
+function displayNavbarConnectedOnly3(){
     displayTagBottomBody();
 }
 
@@ -105,10 +106,36 @@ function notifications(){
                 </li>';
 }
 
+function notificationsBadge(){
+    echo
+        '<div class="navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <div class="logoNotif far fa-bell cloche fa-2x" id="menuNotifs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="badge">'.test.'</span>
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenuNotifs" aria-labelledby="dropdownMenuNotifs">
+                        <a class="affichernotif dropdown-item" href="#">Exemple notifs</a>
+                    </div>
+                </li>';
+}
+
 function amis(){
     echo
         '<li class="nav-item">
             <div class="logoAmi far fa-user ami fa-2x" id="menuAmis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+            <div class="dropdown-menu" id="dropdownMenuAmis" aria-labelledby="dropdownMenuAmis">
+                <a class="afficheramis dropdown-item" href="#">Exemple amis</a>
+            </div>
+        </li>';
+}
+
+function amisBadge(){
+    echo
+        '<li class="nav-item">
+            <div class="logoAmi far fa-user ami fa-2x" id="menuAmis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="badge">'.test.'</span>
+            </div>
             <div class="dropdown-menu" id="dropdownMenuAmis" aria-labelledby="dropdownMenuAmis">
                 <a class="afficheramis dropdown-item" href="#">Exemple amis</a>
             </div>

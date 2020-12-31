@@ -10,12 +10,24 @@ session_start();
 // SI UTILISATEUR CONNECTE //
 if (isset($_SESSION["pseudo"])) {  
     displayNavbarConnectedOnly1();
-    if (isset($_SESSION["photoprofil"])){
+
+    if (isset($_POST["type_notif"])) {
+        notificationsBadge();
+        amisBadge();
+    } else {
+        notifications();
+        amis();
+    }
+
+    displayNavbarConnectedOnly2();
+
+    if (isset($_SESSION["photoprofil"])) {
         photoUtilisateurBdd($data);
     } else {
         photoUtilisateurDefaut();
     }
-    displayNavbarConnectedOnly2();
+
+    displayNavbarConnectedOnly3();
 
 
 // SI UTILISATEUR NON-CONNECTE/INSCRIT //

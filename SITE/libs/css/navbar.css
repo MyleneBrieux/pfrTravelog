@@ -235,6 +235,18 @@
     background-color:#52908B !important;
 }
 
+/* Badges */
+.badge {
+    background-color:red;
+    color:white;
+    border-radius:10px;
+    position: absolute;
+    margin-top:1%;
+    margin-left:-3.5%;
+    width:18px;
+    height:18px;
+   }
+
 
 /* UTILISATEUR */
 .utilisateur{ /* pseudo dynamique de l'utilisateur */
