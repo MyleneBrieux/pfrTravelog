@@ -100,7 +100,7 @@ function notifications(){
                 <li class="nav-item dropdown">
                     <div class="logoNotif far fa-bell cloche fa-2x" id="menuNotifs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
                     <div class="dropdown-menu" id="dropdownMenuNotifs" aria-labelledby="dropdownMenuNotifs">
-                        <a class="dropdown-item" href="#">Exemple notifs</a>
+                        <a class="affichernotif dropdown-item" href="#">Exemple notifs</a>
                     </div>
                 </li>';
 }
@@ -110,7 +110,7 @@ function amis(){
         '<li class="nav-item">
             <div class="logoAmi far fa-user ami fa-2x" id="menuAmis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
             <div class="dropdown-menu" id="dropdownMenuAmis" aria-labelledby="dropdownMenuAmis">
-                <a class="dropdown-item" href="#">Exemple amis</a>
+                <a class="afficheramis dropdown-item" href="#">Exemple amis</a>
             </div>
         </li>';
 }

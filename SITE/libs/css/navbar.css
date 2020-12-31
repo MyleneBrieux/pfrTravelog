@@ -136,6 +136,30 @@
     font-family: 'Halant', serif;
 }
 
+/* MENUS DEROULANTS */
+.dropdown-item{ /* dans les menus déroulants */
+    color:white !important;
+    font-family: 'Halant', serif;
+    font-size:1.25em;
+}
+
+    .dropdown-item:link {
+        text-decoration:none;
+        background: none !important;
+    }
+
+    .dropdown-item:visited {
+        background: none !important;
+    }
+
+    .dropdown-item:focus {
+        background: none !important;
+    }
+
+    .dropdown-item:hover {     
+        background: none !important;
+    }
+
 
  /* NOTIFICATIONS */
  #menuNotifs{ /* logo */
@@ -186,7 +210,7 @@
 
 #dropdownMenuNotifs { /* menu déroulant */
     margin-left:6em;
-    background-color:#52908B !important;
+        background-color:#52908B !important;
 }
 
 
@@ -237,12 +261,6 @@
     background-color:#52908B !important;
 }
 
-.mesvoyages, .monprofil, .deconnexion{ /* liens du menu déroulant utilisateur */
-    color:white !important;
-    font-family: 'Halant', serif;
-    font-size:1.25em;
-}
-
     .mesvoyages:link, .monprofil:link, .deconnexion:link {
         text-decoration:none;
         background: none !important;
@@ -259,6 +277,8 @@
     .mesvoyages:hover, .monprofil:hover, .deconnexion:hover {     
         background: none !important;
     }
+
+
 
 
 /* PHOTO UTILISATEUR */
