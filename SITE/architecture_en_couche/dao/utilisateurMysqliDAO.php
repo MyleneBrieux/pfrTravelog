@@ -2,6 +2,8 @@
 
 // LIAISONS AVEC AUTRES COUCHES //
 include_once("../metier/Utilisateur.php");
+include_once("../metier/Voyage.php");
+include_once("../metier/Notifications.php");
 include_once("dao_exception.php");
 
 // GESTION DES ERREURS //
@@ -67,6 +69,31 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             return $data;
         }
 
+        /* AFFICHER LES NOTIFICATIONS SELON L'UTILISATEUR */
+        // public function afficherNotificationsParUtilisateur() : ?array {
+        //     $mysqli=$this->connexion();
+        //     $stmt = $mysqli->prepare("select * from notifications where pseudo=?");
+        //     $stmt->bind_param("s",$photoProfil);
+        //     $stmt->execute();
+        //     $rs = $stmt->get_result();
+        //     $data = $rs->fetch_array(MYSQLI_ASSOC);
+        //     $rs->free();
+        //     $mysqli->close();
+        //     return $data;
+        // }
+
+        /* AFFICHER LES DEMANDES D'AMIS SELON L'UTILISATEUR */
+        // public function afficherDemandesAmisParUtilisateur(string $pseudo) : ?array {
+        //     $mysqli=$this->connexion();
+        //     $stmt = $mysqli->prepare("select * from utilisateurs as u inner join utilisateurs as ut on u.id=ut.id where pseudo=?");
+        //     $stmt->bind_param("s",$pseudo);
+        //     $stmt->execute();
+        //     $rs = $stmt->get_result();
+        //     $data = $rs->fetch_array(MYSQLI_ASSOC);
+        //     $rs->free();
+        //     $mysqli->close();
+        //     return $data;
+        // }
 
         /* MODIFICATION D'UN UTILISATEUR */        
         public function modifierUtilisateur(Utilisateur $utilisateur):void{   
