@@ -42,8 +42,13 @@ class UtilisateurService {
         return $passwordOk;
     }
 
-    public function modifierUtilisateur($utilisateur) :void {
-        $data = $this->utilisateurDao->modifierUtilisateur($utilisateur);
+    // public function modifierUtilisateur( $pseudo, $mail, $password, $description, $photoprofil, $birthday,  $nation, $contact, $notifmail, $code_langue) {
+    //     $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue);
+    // }
+
+    public function modifierUtilisateur($utilisateur){
+        $modifUtilisateur= new UtilisateurMysqliDao;
+        $modifUtilisateur->modifierUtilisateur($utilisateur);
     }
     
 

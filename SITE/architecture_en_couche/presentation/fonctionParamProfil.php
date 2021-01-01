@@ -1,7 +1,7 @@
 <?php
 
 /*FONCTION AFFICHAGE DE LA PAGE*/
-    function affichageProfil(){
+    function affichageParamProfil(){
 
         paramEnteteHtml();
         paramOuvertureBody();
@@ -20,22 +20,25 @@
         paramOuvertureDivFormulaire();
         paramOuvertureDivClassRow();
         paramOuvertureDivClassRow();
-        paramDivClassNom();
         paramFormAction();
+        paramDivClassNom();
         paramDivClassTxtProfil();
-        paramDivClassTxtSecuriteProfil();
+        paramDivClassTxtSecurite();
+        paramBtnValidation();
         paramDivSecurite();
-        profilDivClassTxtSecurite();
+        paramOuvertureDivFormulaireSecurite();
+        paramDivMDP();
+        paramDivEmail();
+        paramFermetureDiv();
+        paramBtnValidation();
         paramDivDivers();
         paramDivOptionLangues();
-        paramFermetureDiv();
+        paramBtnValidation();
         paramDivConfidential();
-        paramOuvertureFormCoordonneeSecur();
-        paramCheckbox2();
-        paramFermetureDiv();
+        paramDivCheckbox();
+        paramBtnValidation();
         paramFermetureForm();
         paramFermetureDiv();
-        paramDivBtnModifier();
         paramFermetureDiv();
         paramFermetureDiv();
         paramFermetureDiv();
@@ -43,6 +46,8 @@
         paramIncludeFooter();
         paramFermetureBodyHtml();
     }
+
+
 
 /*FONCTION ENTETE HTML5*/
     function paramEnteteHtml(){
@@ -77,25 +82,25 @@
 
 /*FONCTION INCLUDE NAVBAR*/    
     function paramIncludeNavbar(){
-            include ("navbarCONTROLEUR.php");
+        include ("navbarCONTROLEUR.php");
     }
 
 /*FONCTION DIV CONTAINER-FLUID AND D-FLEX*/    
     function paramOuvertureDivClassContFluidAndDFlex(){
-        echo   
-            '<div class="container-fluid d-flex">';
+    echo   
+        '<div class="container-fluid d-flex">';
     }
 
 /*FONCTION DIV CLASS ROW*/    
     function paramOuvertureDivClassRow(){
-        echo   
-            '<div class="row">';
+    echo   
+        '<div class="row">';
     }
 
 /*FONCTION DIV CLASS COLS*/    
     function paramOuvertureDivClassCols(){
-        echo   
-            '<div class="col-12 col-sm-8 col-md-7 col-lg-5 col-xl-3">';
+    echo   
+        '<div class="col-12 col-sm-8 col-md-7 col-lg-5 col-xl-3">';
     }
 
 /*FONCTION DIV MENU LAT*/    
@@ -109,7 +114,7 @@
         echo   
             ' <img src="../../img/photos/nath.jpg" alt="Bootstrap" class="photo-profil">';
     }
-    
+
 /*FONCTION INFOS UTILISATEUR DU MENU LAT*/    
     function paramInfoUserMenuLat(){
         echo   
@@ -127,7 +132,7 @@
                 </ul>
             </div>';
     }       
-    
+
 /*FONCTION DIV DES BOUTONS SUIVRE ET AJOUTER AMI*/    
     function paramDivSocial(){
         echo   
@@ -150,12 +155,18 @@
     function paramFermetureDiv(){
         echo   
             '</div>';
-    }   
+    } 
 
 /*FONCTION OUVERTURE DIV FORMULAIRE*/    
     function paramOuvertureDivFormulaire(){
         echo   
             '<div class="col-9 col-sm-4 col-md-5 col-lg-7 col-xl-9 formulaire1">';
+    }
+
+/*FONCTION FORM ACTION*/    
+    function paramFormAction(){
+        echo   
+            '<form action="../controleur/controleur_param_profil.php?action=modifier" method="post">';
     } 
 
 /*FONCTION DIV DU NOM*/    
@@ -164,12 +175,6 @@
             '<div class="col-12 txt-nom">
                 <div class="nom">John Doe</div>
             </div>';
-    }    
-
-/*FONCTION FORM ACTION*/    
-    function paramFormAction(){
-        echo   
-            '<form action="../controleur/controleur_param_profil.php?action=modifier" method="post">';
     } 
 
 /*FONCTION DIV DU TEXTE PROFIL*/    
@@ -181,26 +186,33 @@
     } 
 
 /*FONCTION FORM ACTION*/    
-    function paramDivClassTxtSecuriteProfil(){
+    function paramDivClassTxtSecurite(){
         echo   
-            '<div class="col-12 formulaire-coordonnees securite">
-            <div class="row">
-                <div class="col-6">
-                    <label>Pseudo:</label><input type="text" class="form-control name="pseudo" value="'.$_SESSION['pseudo'].'">
-                </div>
+            '<div class="col-12 formulaire-coordonnees securite  txt-input">
+                <div class="row">
+                    <div class="col-6">
+                        <label>Pseudo:</label><input type="text" class="form-control input-beige" placeholder="j.dupont59" name="pseudo" value="'.$_SESSION['pseudo'].'">
+                    </div>
 
-                <div class="col-6">
-                    <label>Date de naissance:</label><input type="date" class="form-control" name="birthday" value="">
+                    <div class="col-6">
+                        <label>Date de naissance:</label><input type="date" class="input-beige form-control" name="birthday" value="">
+                    </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-6">
-                    <label>Nationnalité:</label><input type="text" class="form-control" name="nation" value="">
+        
+                <div class="row">
+                    <div class="col-6">
+                        <label>Nationnalité:</label><input type="text" class="input-beige form-control" placeholder="Français" name="nation" value="">
+                    </div>
                 </div>
-            </div>
-        </div>';
+            </div>';     
     } 
+
+/*FONCTION BOUTON VAIDER*/  
+    function paramBtnValidation(){
+        echo 
+            '<a href="../controleur/controleur_param_profil.php"><button type="submit" class="row btn btn-info bouton-modifier1" name="btnValider">VALIDER</button></a>';
+    } 
+
 
 /*FONCTION DIV SECURITE*/  
     function paramDivSecurite(){
@@ -210,32 +222,36 @@
             </div>';
     }
 
-/*FONCTION FORM ACTION PROFIL*/ 
-    function profilDivClassTxtSecurite(){
-        echo   
-            '<div class="col-12 formulaire-coordonnees securite ">
-                <div class="row">
-                    <div class="col-6">
-                        <label>Mots de passe:</label><input type="password" class="form-control" name="password">
-                    </div>
+/*FONCTION DIV FORMULAIRE SECURITE*/  
+    function paramOuvertureDivFormulaireSecurite(){
+        echo '<div class="col-12 formulaire-coordonnees securite txt-input">';
+    }
 
-                    <div class="col-6">
-                        <label>Confirmation:</label><input type="password" class="form-control" name="confirmPassword">
-                    </div>
+/*FONCTION DIV POUR LES MOTS DE PASSE*/  
+    function paramDivMDP(){
+        echo 
+        '<div class="row">
+            <div class="col-6">
+                <label>Mots de passe:</label><input type="password" class="input-beige form-control" name="password" value="">
+            </div>
+            <div class="col-6">
+                <label>Confirmation:</label><input type="password" class="input-beige form-control" name="confirmPassword" value="">
+            </div>
+        </div>';
+    } 
 
-                </div>
-
-                    <div class="row">
-                        <div class="col-6">
-                            <label>Email:</label><input type="email" class="form-control" name="mail" >
-                        </div>
-
-                        <div class="col-6">
-                            <label>Confirmation:</label><input type="email" class="form-control" name="confirmMail">
-                        </div>
-                    </div>
-            </div>';
-        }
+/*FONCTION DIV POUR LES EMAILS*/  
+    function paramDivEmail(){
+        echo 
+        '<div class="row">
+            <div class="col-6">
+                <label>Email:</label><input type="email" class="input-beige form-control" placeholder="john.doe@gmail.com" name="mail" value="">
+            </div>
+            <div class="col-6">
+                <label>Confirmation:</label><input type="email" class="input-beige form-control" placeholder="john.doe@gmail.com" name="confirmMail" value="">
+            </div>
+        </div>';
+    } 
 
 /*FONCTION TEXTE DIVERS*/  
     function paramDivDivers(){
@@ -278,47 +294,41 @@
             '<div class="col-12 txt-securite">
                 <div class="">Confidentialité :</div>
             </div>';
+    }
+
+
+/*FONCTION DES CHOIX VIA CHECKBOX*/  
+    function paramDivCheckbox(){
+        echo 
+            '<div class="col-12 formulaire-coordonnees securite txt-input">
+                <div class="row">
+
+                    <div class="col-12 mt-3">
+                        <input type="checkbox" class="checkbox" name="notifAmi"><label>J\'accepte de recevoir des
+                        demande d\'ami</label>
+                    </div>
+
+                    <div class="col-12">
+                        <input type="checkbox" class="checkbox" name="notifmail"><label>J\'accepte de recevoir des
+                        notifications par mail</label>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <input type="checkbox" class="checkbox" name="supressionCompte"><label>Supprimer mon compte</label>
+                    </div>
+
+                </div>
+            </div>';
     } 
-
-/*FONCTION OUVERTURE DIV FORMULAIRE COORDONNEES SECURITE*/  
-    function paramOuvertureFormCoordonneeSecur(){
-        echo
-            '<div class="col-12 formulaire-coordonnees securite ">';
-    }
-
-/*FONCTION OUVERTURE DIV FORMULAIRE COORDONNEES PROFIL*/  
-    function paramCheckbox2(){
-        echo'
-        <div class="row">
-            <div class="col-12 mt-3">
-                <input type="checkbox" class="checkbox" name="notifAmi"><label>J\'accepte de reçevoir des
-                    demande d\'ami</label>
-            </div>
-
-            <div class="col-12">
-                <input type="checkbox" class="checkbox" name="notifmail"><label>J\'accepte de reçevoir des
-                    notifications par mail</label>
-            </div>
-        </div>
-        
-        <div class="row">
-
-            <div class="col-12">
-                <input type="checkbox" class="checkbox" name="supressionCompte"><label>Supprimer mon compte</label>
-            </div>
-
-        </div>';
-    }
 
 /*FONCTION FERMETURE FORM*/  
     function paramFermetureForm(){
         echo '</form>';
-    }
-
-/*FONCTION BOUTON MOFIDIER*/  
-    function paramDivBtnModifier(){
-        echo '<a href="controleur_param_profil.php"><button type="submit" class="btn btn-info bouton-modifier1" name="modifier">Modifier</button></a>';
-    }
+    } 
 
 /*FONCTION INCLUDE FOOTER*/  
     function paramIncludeFooter(){
@@ -335,4 +345,17 @@
 
 
 
-?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

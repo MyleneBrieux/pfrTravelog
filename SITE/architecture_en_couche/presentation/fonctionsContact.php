@@ -1,9 +1,28 @@
 <?php
 
-// PAGE CONTACT
+/*FONCTION D'AFFICHAGE DE LA PAGE*/
+    function affichageContact(){
+        enteteHtml();
+        ouvertureDivContainer();
+        includeNavbar();
+        ouvertureDivClassRow();
+        ouvertureDivClassSable();
+        paragrapheTitre();
+        ouvertureForm();
+        divClassForm();
+        divPseudo();
+        divEmail();
+        ouvertureDiv();
+        fermetureDiv();
+        input();
+        boutonEnvoyer();
+        fermetureForm();
+        includeFooter();
+        fermetureBodyHtml();
+    }
 
 /*FONCTION ENTETE HTML5*/
-    function contact_enteteHtml(){
+    function enteteHtml(){
         echo 
             '<!DOCTYPE html>
             <html lang="fr">
@@ -25,119 +44,97 @@
     }
 
 /*FONCTION ENTETE HTML5*/
-    function contact_ouvertureDivContainer(){
+    function ouvertureDivContainer(){
         echo ' <div class="container-fluid">';
     }
 
     /*FONCTION INCLUDE NAVBAR*/    
-    function contact_includeNavbar(){
-        include("navbarCONTROLEUR.php");
+    function includeNavbar(){
+        include ("navbarCONTROLEUR.php");
     }
 
 /*FONCTION DIV CLASS ROW*/    
-    function contact_ouvertureDivClassRow(){
+    function ouvertureDivClassRow(){
         echo '<div class="row">';
     }
 
 /*FONCTION DIV CLASS SABLE*/    
-    function contact_ouvertureDivClassSable(){
+    function ouvertureDivClassSable(){
         echo '<div class="encadreSable">';
     }
 
 /*FONCTION DIV TITRE*/    
-    function contact_paragrapheTitre(){
+    function paragrapheTitre(){
         echo
-        '<p class="texteContact"><strong>Un problème ? Une suggestion ? Contactez-nous !</strong></p>';
+            '<p class="texteContact"><strong>Un problème ? Une suggestion ? Contactez-nous !</strong></p>';
     }
 
 /*FONCTION OUVERTURE FORM*/    
-    function contact_ouvertureForm(){
+    function ouvertureForm(){
         echo
-        '<form action="../traitementContact.php?action=envoyer" method="POST"
-        class="formContact">';
+            '<form action="../controleur/controleur_contact.php?action=envoyer" method="POST"
+            class="formContact">';
     }
 
 /*FONCTION DIV CLASS FORM*/    
-    function contact_divClassForm(){
+    function divClassForm(){
         echo '<div class="formLigne1 form-row">';
     }
 
 /*FONCTION DIV PSEUDO*/    
-    function contact_divPseudo(){
+    function divPseudo(){
         echo
-        ' <div class="form-group col-md-5">
-            <input type="text" class="Pseudo form-control" id="pseudo" placeholder="Pseudo" name="pseudo">
-        </div>';
+            ' <div class="form-group col-md-5">
+                <input type="text" class="Pseudo form-control" id="pseudo" placeholder="Pseudo" name="pseudo">
+            </div>';
     }
 
 /*FONCTION DIV EMAIL*/    
-    function contact_divEmail(){
+    function divEmail(){
         echo
-        '<div class="form-group col-md-5">
-            <input type="email" class="Email form-control" id="email" placeholder="Adresse email" name="email">
-        </div>';
+            '<div class="form-group col-md-5">
+                <input type="email" class="Email form-control" id="email" placeholder="Adresse email" name="email">
+            </div>';
     }
 
 /*FONCTION OUVERTURE DIV*/    
-function contact_ouvertureDiv(){
+function ouvertureDiv(){
     echo '<div>';
 } 
 
 /*FONCTION FERMETURE DIV*/    
-    function contact_fermetureDiv(){
+    function fermetureDiv(){
         echo '</div>';
     } 
 
 /*FONCTION INPUT*/    
-    function contact_inputMessage(){
+    function input(){
         echo
-        '<div class="form-group col-md-10">
-            <input type="text" class="Message form-control" id="message" placeholder="Saisissez votre message ici..." name="message">
-        </div>';
+            '<div class="formLigne2 form-group col-md-9">
+                <input type="text" class="Message form-control" id="message" placeholder="Saisissez votre message ici..." name="message">
+            </div>';
     }
 
 /*FONCTION BOUTON ENVOYER*/    
-    function contact_boutonEnvoyer(){
+    function boutonEnvoyer(){
         echo ' <button type="submit" class="boutonEnvoyer btn btn-sm" name="envoyer">Envoyer</button>';
     }
 
 /*FONCTION FERMETURE FORM */    
-    function contact_fermetureForm(){
+    function fermetureForm(){
         echo '</form>';
     }
 
 /*FONCTION INCLUDE FOOTER*/  
-    function contact_includeFooter(){
+    function includeFooter(){
         include("footerCONTROLEUR.php");
     } 
 
 /*FONCTION FERMETURE BODY & HTML*/  
-    function contact_fermetureBodyHtml(){
+    function fermetureBodyHtml(){
         echo '
             </body>
         </html>';
     }
 
-function contact_corpsPage(){
-    contact_ouvertureDivContainer();   //div container
-    contact_includeNavbar();
-    contact_ouvertureDivClassRow();
-    contact_ouvertureDivClassSable();
-    contact_paragrapheTitre();
-    contact_ouvertureForm();
-    contact_divClassForm();
-    contact_divPseudo();
-    contact_divEmail();
-    contact_inputMessage();
-    contact_fermetureForm();
-    contact_boutonEnvoyer();
-    contact_fermetureDiv();
-    contact_fermetureDiv();
-    contact_fermetureDiv();
-}
 
-function contact_basDePage(){
-    contact_includeFooter();
-    
-    contact_fermetureBodyHtml();
-}
