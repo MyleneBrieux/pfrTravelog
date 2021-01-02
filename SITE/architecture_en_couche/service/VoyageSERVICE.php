@@ -6,9 +6,9 @@ class VoyageService {
 
 // ajout Voyage
 
-    public function addVoyageService($titre, $resume, $datedebut, $datefin, $couverture){
+    public function addVoyageService($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/){
         $addVoyage= new VoyageMysqliDAO;
-        $addVoyage->addVoyageDAO($titre, $resume, $datedebut, $datefin, $couverture);
+    $addVoyage->addVoyageDAO($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/);
         return $addVoyage;
     }
 
