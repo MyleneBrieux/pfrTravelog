@@ -32,7 +32,7 @@ function creation_h1(){
 //  Titre du voyage
 
 function creation_debutForm(){
-    echo '<form action="../controleur/detail_voyageCONTROLEUR.php?action=creation" method="post">';
+    echo '<form action="../controleur/creation_voyageCONTROLEUR.php?action=creation" method="post">';
 }
 
 function creation_champTitre(){
@@ -43,13 +43,25 @@ function creation_champTitre(){
 
 // Les filtres
 
-function creation_filtres(){
+function creation_filtres(/*$utilisateur*/){
     echo '<h4>Filtres</h4>
         <div class="row d-flex justify-content-around">
-        <button type="button" class="button">+ Ajouter un continent</button>
-        <button type="button" class="button">+ Ajouter un pays</button>
-        <button type="button" class="button">+ Ajouter une ville</button>
+            <div class="col-3">
+                <p> Continent:</br> 
+                <input type="text" name="continent" placeholder="Ex: Europe" required></p>
+            </div>
+            <div class="col-3">
+                <p> Pays:</br> 
+                <input type="text" name="pays" placeholder="Ex: France" required></p>
+            </div>
+            <div class="col-3">
+                <p> Ville:</br> 
+                <input type="text" name="ville" placeholder="Ex: Paris" required></p>
+            </div>
         </div>';
+        // echo $utilisateur["id"];
+        // echo $_SESSION["photoprofil"];
+        // echo "$id";
 }
 
 // Dates du séjour
@@ -57,10 +69,10 @@ function creation_filtres(){
 function creation_dates(){
     echo '<div class="row ml-1 mr-1 mt-4 d-flex justify-content-between">
             <p> Date de début de séjour:</br> 
-            <input type="date" name="datedebut" required></p>
+            <input type="date" name="date_debut" required></p>
 
             <p>Date de fin de séjour:</br> 
-            <input type="date" name="datefin" required></p>
+            <input type="date" name="date_fin" required></p>
         </div>';
 }
 
@@ -146,15 +158,15 @@ function creation_headBodyTop(){
     creation_bodyTop();
 }
 
-function creation_corpsPage(/*$soustitre, $description*/){
+function creation_corpsPage(/*$utilisateur*/){
     creation_header();
     creation_h1();
     creation_debutForm();
     creation_champTitre();
-    creation_filtres();
+    creation_filtres(/*$utilisateur*/);
     creation_dates();
     creation_description();
-    creation_addButton(/*$soustitre, $description*/);
+    creation_addButton();
     creation_addFiles();
     creation_checkbox();
     creation_publicationButton();
