@@ -9,26 +9,31 @@ class VoyageMysqliDAO {
 
      /* CONNEXION */       
      public function connexion() {
-        $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+        // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+        $mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
         return $mysqli;
     }
 
     //ajout Voyage
 
-    public function addVoyageDAO($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture){
-        $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+    public function addVoyageDAO($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/){
+        $mysqli=$this->connexion();
 
         //modifier l'id user
-        $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, continent, pays, ville, couverture, statut, likesEtape, vues, id, code_etape) values (null,?,?,?,?,?,?,?,?,'Y',0,0,6,2)");
-        $stmt->bind_param("sssss",$titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture);
+        $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, continent, pays, ville, couverture, statut, likes, vues, id, code_etape) 
+                                values (null,?,?,?,?,?,?,?,?,'Y',0,0,?,1)");
+    $stmt->bind_param("ssssssssi",$titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/);
+
+        // $stmt->bind_param("sssss",$titre, $resume, $datedebut, $datefin, $couverture);
+
         $stmt->execute();
         $mysqli->close();
     }
 
     public function addEtapeDAO($sousTitre, $description){
-        $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+        $mysqli=$this->connexion();
 
-        $stmt=$mysqli->prepare("insert into etape (code_etape, sous_titre, description, media, likesEtape, code_comm) values (null,?,?,'[photo1.jpg]',0,null)");
+        $stmt=$mysqli->prepare("insert into etape (code_etape, sous_titre, description, media, likesEtape, code_comm) values (null,?,?,'[photo1.jpg]',0,1)");
         $stmt->bind_param("ss", $sousTitre, $description);
         $stmt->execute();
         $mysqli->close();
@@ -37,7 +42,7 @@ class VoyageMysqliDAO {
     // suppression Voyage
 
     public function suppVoyageDAO(int $codeVoyage){
-        $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+        $mysqli=$this->connexion();
         
         $stmt=$mysqli->prepare('delete from voyages where code_voyage= ?');
         $stmt->bind_param("i",$codeVoyage);
@@ -48,7 +53,7 @@ class VoyageMysqliDAO {
     //Modif Voyage 
 
     public function modifVoyageDAO($voyage){
-        $mysqli= new mysqli('localhost','romain_wyon','luna1004','pfrtravelog');
+        $mysqli=$this->connexion();
     
         $stmt=$mysqli->prepare("update voyages set date_debut=?, date_fin=?, continent=?, pays=?, ville=?, couverture=?, statut=? where code_voyage= ?"); 
         $date_debut=$voyage->getDateDebut();
@@ -103,7 +108,7 @@ class VoyageMysqliDAO {
         return $data;
     }
 
-    /* FILTRER LES VOYAGES PAR PAYS */        
+    /* FILTRER LES VOYAGES PAR VILLE */        
     public function filtrerVoyagesParVille(string $ville) : ?array {
         $mysqli=$this->connexion();
         $stmt = $mysqli->prepare("select * from voyages where ville=?");
