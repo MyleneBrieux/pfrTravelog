@@ -5,7 +5,7 @@ include_once("../presentation/navbarPRESENTATION.php");
 include_once("../service/UtilisateurSERVICE.php");
 include_once("../metier/Utilisateur.php");
 
-session_start();
+// session_start();
 
 // SI UTILISATEUR CONNECTE //
 if (isset($_SESSION["pseudo"])) {  
