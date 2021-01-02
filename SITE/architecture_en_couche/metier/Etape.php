@@ -11,9 +11,10 @@ class Etape extends Voyage {
     private $likesEtape;
 
 
-    public function __construct(int $codeVoyage, string $titre, string $resume, string $datedebut, string $datefin, string $couverture, string $statut, 
-                                int $likes, int $vues, int $codeEtape, string $sousTitre, string $description, string $media, int $likesEtape){
-        parent::__construct($codeVoyage,$titre,$resume,$datedebut,$datefin,$couverture,$statut,$likes,$vues);
+    public function __construct(int $codeVoyage, string $titre, string $resume, string $datedebut, string $datefin, string $continent, 
+                                string $pays, string $ville, string $couverture, string $statut, int $likes, int $vues, int $codeEtape, 
+                                string $sousTitre, string $description, string $media, int $likesEtape){
+        parent::__construct($codeVoyage,$titre,$resume,$datedebut,$datefin, $continent, $pays, $ville,$couverture,$statut,$likes,$vues);
         $this->codeEtape=$codeEtape;
         $this->sousTitre=$sousTitre;
         $this->description=$description;
@@ -75,7 +76,8 @@ class Etape extends Voyage {
 
     public function __toString():string{
         return "[Code du Voyage]: " . parent::__toString() . " [Titre]: " . parent::__toString() . " [Résumé]: " . parent::__toString() . 
-        "[Date de debut]: " . parent::__toString() . " [Date de fin]: " . parent::__toString() . " [Couverture]: " . parent::__toString() . 
+        "[Date de debut]: " . parent::__toString() . " [Date de fin]: " . parent::__toString() . " [Continent]: " . parent::__toString() . 
+        " [Pays]: " . parent::__toString() . " [Ville]: " . parent::__toString() . " [Couverture]: " . parent::__toString() . 
         " [Statut]: " . parent::__toString() . " [Likes]: " . parent::__toString() . " [Vues] : " . parent::__toString() . 
         " [Code étape]: " . $this->codeEtape . " [Sous-titre]: " . $this->sousTitre . " [Description]: " . $this->description . 
         " [Media]: " . $this->media . " [Likes étape]: " . $this->likesEtape ;
