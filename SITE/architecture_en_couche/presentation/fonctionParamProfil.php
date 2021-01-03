@@ -1,7 +1,7 @@
 <?php
 
 /*FONCTION AFFICHAGE DE LA PAGE*/
-    function affichageParamProfil(){
+    function affichageParamProfil($utilisateur){
 
         paramEnteteHtml();
         paramOuvertureBody();
@@ -23,7 +23,7 @@
         paramFormAction();
         paramDivClassNom();
         paramDivClassTxtProfil();
-        paramDivClassTxtSecurite();
+        paramDivClassTxtSecurite($utilisateur);
         paramBtnValidation();
         paramDivSecurite();
         paramOuvertureDivFormulaireSecurite();
@@ -35,7 +35,7 @@
         paramDivOptionLangues();
         paramBtnValidation();
         paramDivConfidential();
-        paramDivCheckbox();
+        paramDivCheckbox($utilisateur);
         paramBtnValidation();
         paramFermetureForm();
         paramFermetureDiv();
@@ -166,7 +166,7 @@
 /*FONCTION FORM ACTION*/    
     function paramFormAction(){
         echo   
-            '<form action="../controleur/controleur_param_profil.php?action=modifier" method="post">';
+            '<form action="../controleur/controleur_profil.php?action=modifier" method="post">';
     } 
 
 /*FONCTION DIV DU NOM*/    
@@ -186,22 +186,22 @@
     } 
 
 /*FONCTION FORM ACTION*/    
-    function paramDivClassTxtSecurite(){
+    function paramDivClassTxtSecurite($utilisateur){
         echo   
-            '<div class="col-12 formulaire-coordonnees securite  txt-input">
+            '<div class="col-12 formulaire-coordonnees securite txt-input">
                 <div class="row">
                     <div class="col-6">
-                        <label>Pseudo:</label><input type="text" class="form-control input-beige" placeholder="j.dupont59" name="pseudo" value="'.$_SESSION['pseudo'].'">
+                        <label>Pseudo:</label><input type="text" class="form-control input-beige" placeholder="j.dupont59" name="pseudo" value=" '.$utilisateur["pseudo"].' " disabled="disabled">
                     </div>
 
                     <div class="col-6">
-                        <label>Date de naissance:</label><input type="date" class="input-beige form-control" name="birthday" value="">
+                        <label>Date de naissance:</label><input type="date" class="input-beige form-control" name="birthday" value=" '.$utilisateur["birthday"].' ">
                     </div>
                 </div>
         
                 <div class="row">
                     <div class="col-6">
-                        <label>Nationnalité:</label><input type="text" class="input-beige form-control" placeholder="Français" name="nation" value="">
+                        <label>Nationnalité:</label><input type="text" class="input-beige form-control" placeholder="Français" name="nation" value=" '.$utilisateur["nation"].' ">
                     </div>
                 </div>
             </div>';     
@@ -264,7 +264,7 @@
 /*FONCTION DES OPTIONS LANGUES*/  
     function paramDivOptionLangues(){
         echo 
-            '<div class="col-12 formulaire-coordonnees2 securite  txt-input">
+            '<div class="col-12 formulaire-coordonnees2 securite txt-input">
                 <div class="row">
                     <div class="col-12">
                         <label>Langues parlées:</label>
@@ -298,18 +298,18 @@
 
 
 /*FONCTION DES CHOIX VIA CHECKBOX*/  
-    function paramDivCheckbox(){
+    function paramDivCheckbox($utilisateur){
         echo 
             '<div class="col-12 formulaire-coordonnees securite txt-input">
                 <div class="row">
 
                     <div class="col-12 mt-3">
-                        <input type="checkbox" class="checkbox" name="notifAmi"><label>J\'accepte de recevoir des
+                        <input type="checkbox" class="checkbox" name="notifAmi" checked=" '.$utilisateur["contact"].' "><label>J\'accepte de recevoir des
                         demande d\'ami</label>
                     </div>
 
                     <div class="col-12">
-                        <input type="checkbox" class="checkbox" name="notifmail"><label>J\'accepte de recevoir des
+                        <input type="checkbox" class="checkbox" name="notifmail" checked=" '.$utilisateur["notifmail"].' "><label>J\'accepte de recevoir des
                         notifications par mail</label>
                     </div>
 

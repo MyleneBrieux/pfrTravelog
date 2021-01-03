@@ -1,6 +1,6 @@
 <?php
 
-include_once("../dao/UtilisateurMysqliDAO.php");
+include_once("../dao/utilisateurMysqliDAO.php");
 
 class UtilisateurService {
 
@@ -46,10 +46,12 @@ class UtilisateurService {
     //     $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue);
     // }
 
-    public function modifierUtilisateur($utilisateur){
+    public function modifierUtilisateur($mail){
         $modifUtilisateur= new UtilisateurMysqliDao;
-        $modifUtilisateur->modifierUtilisateur($utilisateur);
+        $modifUtilisateur->modifierUtilisateur($mail);
     }
+
+
     
 
 }

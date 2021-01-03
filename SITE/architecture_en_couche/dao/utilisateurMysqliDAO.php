@@ -14,7 +14,8 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 /* CONNEXION */       
         public function connexion() {
-            $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+            // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+            $mysqli= new mysqli('localhost','root','','travelog');
             return $mysqli;
         }
 
@@ -122,19 +123,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             
             }
         
-            // public function modifierUtilisateur(string $pseudo, string $mail, string $password, string $description, string $photoprofil, 
-            //                                     string $birthday, string $nation, string $contact, string $notifmail, int $code_langue){   
-            
-            //     // $mysqli= new mysqli('localhost','root','','travelog');
-            //     $mysqli=$this->connexion();
-            //     $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, description=?, photoprofil=?, 
-            //                             birthday=?, nation=?, contact=?, notifmail=?, code_langue=? where pseudo=?");
-            //     $stmt->bindParam("sssssssis", $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
-            //     $stmt->execute();
-            //     $mysqli->close();
-            // }
-        
-        
+
             /*SUPPRESSION DES UTILISATEURS*/
             public function deleteUtilisateur(string $pseudo) :void{ 
                 $mysqli=$this->connexion();
@@ -143,6 +132,8 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
                 $stmt->execute();
                 $mysqli->close();
             }
+
+
 
     }
 

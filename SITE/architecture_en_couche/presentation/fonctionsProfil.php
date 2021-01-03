@@ -1,7 +1,7 @@
 <?php
 
 /*FONCTION AFFICHAGE DE LA PAGE*/
-    function affichageProfil(){
+    function affichageProfil($utilisateur){
 
         paramEnteteHtml();
         paramOuvertureBody();
@@ -23,15 +23,15 @@
         paramDivClassNom();
         paramFormAction();
         paramDivClassTxtProfil();
-        paramDivClassTxtSecuriteProfil();
+        paramDivClassTxtSecuriteProfil($utilisateur);
         paramDivSecurite();
-        profilDivClassTxtSecurite();
+        profilDivClassTxtSecurite($utilisateur);
         paramDivDivers();
         paramDivOptionLangues();
         paramFermetureDiv();
         paramDivConfidential();
         paramOuvertureFormCoordonneeSecur();
-        paramCheckbox2();
+        paramCheckbox2($utilisateur);
         paramFermetureDiv();
         paramFermetureForm();
         paramFermetureDiv();
@@ -181,22 +181,22 @@
     } 
 
 /*FONCTION FORM ACTION*/    
-    function paramDivClassTxtSecuriteProfil(){
+    function paramDivClassTxtSecuriteProfil($utilisateur){
         echo   
             '<div class="col-12 formulaire-coordonnees securite">
             <div class="row">
                 <div class="col-6">
-                    <label>Pseudo:</label><input type="text" class="form-control name="pseudo" value="'.$_SESSION['pseudo'].'">
+                    <label>Pseudo:</label><input type="text" class="form-control name="pseudo" value="'.$utilisateur["pseudo"].'" disabled="disabled">
                 </div>
 
                 <div class="col-6">
-                    <label>Date de naissance:</label><input type="date" class="form-control" name="birthday" value="">
+                    <label>Date de naissance:</label><input type="date" class="form-control" name="birthday" value="'.$utilisateur["birthday"].'" disabled="disabled">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-6">
-                    <label>Nationnalité:</label><input type="text" class="form-control" name="nation" value="">
+                    <label>Nationnalité:</label><input type="text" class="form-control" name="nation" value="'.$utilisateur["nation"].'" disabled="disabled">
                 </div>
             </div>
         </div>';
@@ -211,30 +211,32 @@
     }
 
 /*FONCTION FORM ACTION PROFIL*/ 
-    function profilDivClassTxtSecurite(){
-        echo   
-            '<div class="col-12 formulaire-coordonnees securite ">
+    function profilDivClassTxtSecurite($utilisateur){
+        echo '
+            <div class="col-12 formulaire-coordonnees securite ">
                 <div class="row">
                     <div class="col-6">
-                        <label>Mots de passe:</label><input type="password" class="form-control" name="password">
+                        <label>Mots de passe:</label><input type="password" class="form-control" name="password" disabled="disabled" value="'.$utilisateur["password"].'">
                     </div>
 
                     <div class="col-6">
-                        <label>Confirmation:</label><input type="password" class="form-control" name="confirmPassword">
+                        <label>Confirmation:</label><input type="password" class="form-control" name="confirmPassword" disabled="disabled">
                     </div>
 
                 </div>
 
                     <div class="row">
                         <div class="col-6">
-                            <label>Email:</label><input type="email" class="form-control" name="mail" >
+                            <label>Email:</label><input type="email" class="form-control" name="mail" disabled="disabled" value=" '.$utilisateur["mail"].' ">
                         </div>
 
                         <div class="col-6">
-                            <label>Confirmation:</label><input type="email" class="form-control" name="confirmMail">
+                            <label>Confirmation:</label><input type="email" class="form-control" name="confirmMail" disabled="disabled">
                         </div>
                     </div>
-            </div>';
+            </div>
+            
+            ';
         }
 
 /*FONCTION TEXTE DIVERS*/  
@@ -253,7 +255,7 @@
                     <div class="col-12">
                         <label>Langues parlées:</label>
 
-                        <select id="langues" class="select" name="code_langue" value="">
+                        <select id="langues" class="select" name="code_langue" value="" disabled="disabled">
                             <option value="valeur1" selected>Français</option>
                             <option value="valeur2">Allemand</option>
                             <option value="valeur2">Anglais</option>
@@ -287,16 +289,16 @@
     }
 
 /*FONCTION OUVERTURE DIV FORMULAIRE COORDONNEES PROFIL*/  
-    function paramCheckbox2(){
+    function paramCheckbox2($utilisateur){
         echo'
         <div class="row">
             <div class="col-12 mt-3">
-                <input type="checkbox" class="checkbox" name="notifAmi"><label>J\'accepte de reçevoir des
+                <input type="checkbox" class="checkbox" name="notifAmi" disabled="disabled" checked="'.$utilisateur["contact"].'"><label>J\'accepte de reçevoir des
                     demande d\'ami</label>
             </div>
 
             <div class="col-12">
-                <input type="checkbox" class="checkbox" name="notifmail"><label>J\'accepte de reçevoir des
+                <input type="checkbox" class="checkbox" name="notifmail" disabled="disabled" checked="'.$utilisateur["notifmail"].'"><label>J\'accepte de reçevoir des
                     notifications par mail</label>
             </div>
         </div>
@@ -304,7 +306,7 @@
         <div class="row">
 
             <div class="col-12">
-                <input type="checkbox" class="checkbox" name="supressionCompte"><label>Supprimer mon compte</label>
+                <input type="checkbox" class="checkbox" name="supressionCompte" disabled="disabled"><label>Supprimer mon compte</label>
             </div>
 
         </div>';

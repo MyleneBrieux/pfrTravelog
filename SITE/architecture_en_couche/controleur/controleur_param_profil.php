@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 require_once('../presentation/fonctionParamProfil.php');
 require_once('../service/UtilisateurSERVICE.php');
 require_once('../metier/Utilisateurs.php'); 
@@ -14,7 +14,7 @@ require_once('../metier/Utilisateurs.php');
 
 
 /*MODIFICATION*/
-    if(isset($_POST["action"]) && $_POST["action"] == "modifier" && !empty($_POST)){
+    if(isset($_GET["action"]) && $_GET["action"] == "modifier" && !empty($_POST)){
         
 
         if (isset($_SESSION["pseudo"]) ){
@@ -43,47 +43,6 @@ require_once('../metier/Utilisateurs.php');
     }
 
 
-// /*AJOUT DES UTILISATEURS*/
-//     $nbr = 0;
-//     if(isset($_POST["action"]) && $_POST["action"] == "ajouter"){
-        
-//         if (isset($_POST["pseudo"]) && !Empty($_POST["pseudo"])
-//             || isset($_POST["mail"]) && !Empty($_POST["mail"])
-//             || isset($_POST["password"]) && !Empty($_POST["password"])
-//             || isset($_POST["description"]) && !Empty($_POST["description"])
-//             || isset($_POST["photoprofil"]) && !Empty($_POST["photoprofil"])
-//             || isset($_POST["birthday"]) && !Empty($_POST["birthday"])
-//             || isset($_POST["nation"]) && !Empty($_POST["nation"])
-//             || isset($_POST["contact"]) && !Empty($_POST["contact"])
-//             || isset($_POST["notifmail"]) && !Empty($_POST["notifmail"])
-//             ){
-
-//             if( !empty($chercherPseudo)){
-//                 echo "Ce Pseudo est déjà utilisé !";
-//             }
-
-//                 else{
-//                     $utilisateur = new Utilisateurs( 
-//                         (int)htmlentities($_POST["mail"]), 
-//                         htmlentities($_POST["password"]), 
-//                         htmlentities($_POST["description"]?$_POST["description"]:null), 
-//                         (int)htmlentities($_POST["photoprofil"]?$_POST["photoprofil"]:null), 
-//                         htmlentities($_POST["birthday"]?$_POST["birthday"]:null), 
-//                         htmlentities($_POST["nation"]?$_POST["nation"]:null),
-//                         (int)htmlentities($_POST["contact"]), 
-//                         (int)htmlentities($_POST["notifmail"]) );
-
-//                     try{
-//                         $newUtilisateur->ajoutUtilisateur($Utilisateur);
-//                     }
-//                     catch(ServiceException $se){
-//                         presentationAfficherInsert($se->getCode());
-//                     }
-//                 }    
-//         }
-//     }
-
-
 /*DELETE DES UTILISATEURS*/    
     if(isset($_POST["action"]) && $_POST["action"] == "effacer"){
             
@@ -102,27 +61,10 @@ require_once('../metier/Utilisateurs.php');
     
 
 //AFFICHAGE PAGE PARAMETRES PROFIL
-    // if(isset($_SESSION['pseudo']) ){
-    //     $utilisateur = $newUtilisateur->chercherUtilisateurParPseudo($_SESSION['pseudo']);
-    //     $_SESSION['birthday']=$utilisateur->getBirthday();
-    //     affichageParamProfil();
-    // }
-
-
-
-    affichageParamProfil();
+    $pseudo=$_SESSION["pseudo"];
+    $utilisateur=new UtilisateurService();
+    $utilisateur=$utilisateur->chercherUtilisateurParPseudo($pseudo);
+    affichageParamProfil($utilisateur);
     
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
