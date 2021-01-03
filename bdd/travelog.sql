@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 30 déc. 2020 à 16:30
+-- Généré le : Dim 03 jan. 2021 à 21:57
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.2.34
 
@@ -30,8 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `commentaires` (
   `code_comm` int(11) NOT NULL,
   `commentaire` varchar(500) NOT NULL,
-  `nombre` int(11) NOT NULL,
   `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `demande_ami`
+--
+
+CREATE TABLE `demande_ami` (
+  `id_ami` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `accepte` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -94,8 +105,10 @@ INSERT INTO `langues` (`code_langue`, `type_langue`) VALUES
 
 CREATE TABLE `notifications` (
   `code_notif` int(11) NOT NULL,
-  `type_notif` varchar(15) NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  `id` int(11) NOT NULL,
+  `code_voyage` int(11) NOT NULL,
+  `code_comm` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -171,6 +184,13 @@ ALTER TABLE `commentaires`
   ADD KEY `cle_secondaire` (`id`);
 
 --
+-- Index pour la table `demande_ami`
+--
+ALTER TABLE `demande_ami`
+  ADD PRIMARY KEY (`id_ami`),
+  ADD KEY `id_utilisateur` (`id`);
+
+--
 -- Index pour la table `etape`
 --
 ALTER TABLE `etape`
@@ -187,7 +207,10 @@ ALTER TABLE `langues`
 -- Index pour la table `notifications`
 --
 ALTER TABLE `notifications`
-  ADD PRIMARY KEY (`code_notif`);
+  ADD PRIMARY KEY (`code_notif`),
+  ADD KEY `id_utilisateur` (`id`),
+  ADD KEY `code_voyage` (`code_voyage`),
+  ADD KEY `code_comm` (`code_comm`);
 
 --
 -- Index pour la table `signalements`
@@ -220,6 +243,12 @@ ALTER TABLE `voyages`
 --
 ALTER TABLE `commentaires`
   MODIFY `code_comm` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `demande_ami`
+--
+ALTER TABLE `demande_ami`
+  MODIFY `id_ami` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `etape`
