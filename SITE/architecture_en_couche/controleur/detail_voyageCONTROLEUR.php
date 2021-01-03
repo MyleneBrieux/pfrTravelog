@@ -9,7 +9,7 @@ include("../service/VoyageSERVICE.php");
     $isMyVoyage=true;
 // }
 
-
+session_start();
 
 detail_headBodyTop();
 detail_corpsPage($isMyVoyage);
