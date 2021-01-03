@@ -6,7 +6,7 @@ include_once("../service/UtilisateurSERVICE.php");
 include_once("../metier/Utilisateur.php");
 
 
-// session_start();
+session_start();
 
 displayPageAccueil1();
 include ("navbarCONTROLEUR.php");
