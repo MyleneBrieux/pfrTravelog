@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+}
+
 .header{
     margin-top: 3em;
 }
@@ -13,7 +17,7 @@
 }
 
 .image-profil{
-    margin-top: 1em;
+    margin-top: 1.5em;
     margin-bottom: 1em;
 }
 
@@ -74,6 +78,14 @@ h4{
 
 @media all and (max-device-width: 480px)
 {
+    .image-profil{
+        width:70%;
+        height:70%;
+    }
+}
+
+@media all and (max-device-width: 480px)
+{
     .rectangle_voyages{
         width:300px;
         height:400px;
@@ -86,7 +98,8 @@ h4{
 {
     .menu{
         padding-left: 15%;
-        padding-bottom: 25%;
+        padding-bottom: 10%;
+        text-align: center;
     }
 }
 

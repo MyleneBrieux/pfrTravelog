@@ -26,13 +26,13 @@
                     <nav class="menu">
                         <div class="col-lg-12 col-md-6 col-sm-6 pl-1 col-12">
                             <div class="image-profil">
-                                <img src="' . $profil['photoprofil'] . '" alt="photo de profil" width="100%" height="100%" />
+                                <img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil" width="100%" height="100%" />
                             </div>
                             <div class="row">
-                                <p>Membre depuis: (05/10/2020)</p>
+                                <p class="date-membre">Membre depuis: (05/10/2020)</p>
                             </div>
                             <div class="row">
-                                <p>35 ans</p>
+                                <p class="age">XX ans</p>
                             </div>
                             <div class="row">
                                 <p class="titre-lang">Langue parlée : </p>
@@ -67,8 +67,8 @@
                         
                     echo'</div>
                     <div class="d-flex justify-content-end">
-                        <p class="pr-4 bd-highlight">3 contienents visités</p>
-                        <p class="pr-4 bd-highlight">12 pays visités</p>
+                        <p class="pr-4 bd-highlight">X contienents visités</p>
+                        <p class="pr-4 bd-highlight">XX pays visités</p>
                     </div>
                     <div class="pl-2 rectangle_desc">
                         <p class="description">Description : </p>';
@@ -85,7 +85,7 @@
                         <div>
                             <a href="../controleur/detail_voyageControleur.php"><h3>Son dernier voyage : </h3>
                             <h4>Etats-Unis</h4>
-                            <img class="mt-2" src="../../img/photos/etats-unis.jpg" alt="" width=350 height=250></a>
+                            <img class="mt-2" src="../../img/photos/etats-unis.jpg" alt="" width=352 height=224></a>
                         </div>';
                     }
 
@@ -93,7 +93,7 @@
         echo'<div>
                 <a href="../controleur/detail_voyageControleur.php"><h3>Le plus populaire : </h3>
                 <h4>Dubaï</h4>
-                <img class="mt-2" src="../../img/photos/dubai.jpg" alt="" width=350 height=250></a>
+                <img class="mt-2" src="../../img/photos/dubai.jpg" alt="" width=352 height=224></a>
                 </div>
             </div>';
     }
@@ -104,19 +104,19 @@
                     <div class="row d-inline-flex justify-content-around">
                         <div class="ml-3">
                         <a href="../controleur/detail_voyageControleur.php"><h4>Japon</h4>
-                            <img class="mt-2" src="../../img/photos/osaka.jpg" alt="" width=350 height=250></a>
+                            <img class="mt-2" src="../../img/photos/osaka.jpg" alt="" width=352 height=224></a>
                         </div>
                         <div class="ml-3">
                         <a href="../controleur/detail_voyageControleur.php"><h4>Venise</h4>
-                            <img class="mt-2" src="../../img/photos/venise.jpg" alt="" width=350 height=250></a>
+                            <img class="mt-2" src="../../img/photos/venise.jpg" alt="" width=352 height=224></a>
                         </div>
                         <div class="ml-3">
                         <a href="../controleur/detail_voyageControleur.php"><h4>Londres</h4>
-                            <img class="mt-2" src="../../img/photos/londres.jpg" alt="" width=350 height=250></a>
+                            <img class="mt-2" src="../../img/photos/londres.jpg" alt="" width=352 height=224></a>
                         </div>
-                        <div class="ml-3">
+                        <div class="ml-3 mb-2">
                         <a href="../controleur/detail_voyageControleur.php"><h4>Hambourg</h4>
-                            <img class="mt-2" src="../../img/photos/hambourg.jpg" alt="" width=350 height=250></a>
+                            <img class="mt-2" src="../../img/photos/hambourg.jpg" alt="" width=352 height=224></a>
                         </div>
                     </div>
                 </div>
