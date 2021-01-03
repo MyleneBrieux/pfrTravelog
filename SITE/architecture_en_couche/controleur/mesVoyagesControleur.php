@@ -19,9 +19,13 @@ voyagesDebut();
 
 menuLat();
 
-débutCorps($profil);
-
-afficherUser($profil);
+if ($_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo']) {
+    débutCorpsUtilisateur();
+    creationVoyage();
+} else {
+    débutCorpsVisiteur($profil);
+    afficherUser($profil);
+}
 
 afficherVoyages();
 

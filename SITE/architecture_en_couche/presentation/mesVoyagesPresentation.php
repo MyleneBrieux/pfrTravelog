@@ -26,8 +26,13 @@
         include ("menulatCONTROLEUR.php");
     }
 
-    function débutCorps($profil){
+    function débutCorpsVisiteur($profil){
         echo' <h1 class="titre_mesvoyages">Les voyages de <strong>'. $profil['pseudo'] .'</strong></h1>
+        <p class="rsvoyages">XX voyages - XX continents visités - XX pays visités</p>';
+    }
+
+    function débutCorpsUtilisateur(){
+        echo' <h1 class="titre_mesvoyages">Mes voyages</h1>
         <p class="rsvoyages">XX voyages - XX continents visités - XX pays visités</p>';
     }
 
@@ -43,6 +48,18 @@
             </a>
             <a href="detail_voyage.php" class="">
                 Le contacter
+            </a>
+        </div>
+    </div>
+</div>';
+    }
+
+    function creationVoyage(){
+        echo'<div class="row">
+        <div class="encadrevoyage">
+            <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
+            <a href="../controleur/creation_voyageCONTROLEUR.php" class="">
+                Créer un nouveau voyage
             </a>
         </div>
     </div>
