@@ -11,12 +11,12 @@ a:hover{
 .menulat{
     background-color:#dcdacd;
     font-family: 'Halant', serif;
-    margin-top:2.5em;
+    margin-top:1em;
     /* margin-bottom:2.4em; */
     padding-bottom:100%;
     margin-left: -2em;
     width:14.5em;
-    height: 110%;
+    height: 100.5%;
     }
 
 @media screen and (max-width : 575px){
@@ -149,35 +149,6 @@ max-width: 40%;
     .txt-input{
         font-style: italic;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

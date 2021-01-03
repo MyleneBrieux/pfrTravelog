@@ -33,9 +33,10 @@
         paramOuvertureFormCoordonneeSecur();
         paramCheckbox2($utilisateur);
         paramFermetureDiv();
+        paramDivBtnModifier();
         paramFermetureForm();
         paramFermetureDiv();
-        paramDivBtnModifier();
+        
         paramFermetureDiv();
         paramFermetureDiv();
         paramFermetureDiv();
@@ -216,24 +217,15 @@
             <div class="col-12 formulaire-coordonnees securite ">
                 <div class="row">
                     <div class="col-6">
-                        <label>Mots de passe:</label><input type="password" class="form-control" name="password" disabled="disabled" value="'.$utilisateur["password"].'">
+                        <label>Mots de passe:</label><input type="password" class="form-control" name="password" disabled="disabled" value="*******">
                     </div>
-
-                    <div class="col-6">
-                        <label>Confirmation:</label><input type="password" class="form-control" name="confirmPassword" disabled="disabled">
-                    </div>
-
                 </div>
 
-                    <div class="row">
-                        <div class="col-6">
-                            <label>Email:</label><input type="email" class="form-control" name="mail" disabled="disabled" value=" '.$utilisateur["mail"].' ">
-                        </div>
-
-                        <div class="col-6">
-                            <label>Confirmation:</label><input type="email" class="form-control" name="confirmMail" disabled="disabled">
-                        </div>
+                 <div class="row">
+                    <div class="col-6">
+                        <label>Email:</label><input type="email" class="form-control" name="mail" disabled="disabled" value=" '.$utilisateur["mail"].' ">
                     </div>
+                </div>
             </div>
             
             ';
@@ -285,30 +277,28 @@
 /*FONCTION OUVERTURE DIV FORMULAIRE COORDONNEES SECURITE*/  
     function paramOuvertureFormCoordonneeSecur(){
         echo
-            '<div class="col-12 formulaire-coordonnees securite ">';
+            '<div class="row">
+                <div class="col-12 formulaire-coordonnees securite ">';
     }
 
 /*FONCTION OUVERTURE DIV FORMULAIRE COORDONNEES PROFIL*/  
     function paramCheckbox2($utilisateur){
         echo'
-        <div class="row">
-            <div class="col-12 mt-3">
-                <input type="checkbox" class="checkbox" name="notifAmi" disabled="disabled" checked="'.$utilisateur["contact"].'"><label>J\'accepte de reçevoir des
-                    demande d\'ami</label>
-            </div>
-
-            <div class="col-12">
-                <input type="checkbox" class="checkbox" name="notifmail" disabled="disabled" checked="'.$utilisateur["notifmail"].'"><label>J\'accepte de reçevoir des
-                    notifications par mail</label>
-            </div>
-        </div>
         
-        <div class="row">
+                    <div class="col-12 mt-3 ">
+                        <input type="checkbox" class="checkbox" name="contact" disabled="disabled" checked="'.$utilisateur["contact"].'"><label>J\'accepte de reçevoir des
+                            demande d\'ami</label>
+                    </div>
 
-            <div class="col-12">
-                <input type="checkbox" class="checkbox" name="supressionCompte" disabled="disabled"><label>Supprimer mon compte</label>
+                    <div class="col-12">
+                        <input type="checkbox" class="checkbox" name="notifmail" disabled="disabled" checked="'.$utilisateur["notifmail"].'"><label>J\'accepte de reçevoir des
+                            notifications par mail</label>
+                    </div>
+
+                    <div class="col-12">
+                        <input type="checkbox" class="checkbox" name="supressionCompte" disabled="disabled"><label>Supprimer mon compte</label>
+                    </div>
             </div>
-
         </div>';
     }
 
@@ -324,6 +314,7 @@
 
 /*FONCTION INCLUDE FOOTER*/  
     function paramIncludeFooter(){
+        echo'<br>';
         include("footerCONTROLEUR.php");
     } 
 

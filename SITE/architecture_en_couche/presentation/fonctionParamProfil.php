@@ -304,7 +304,7 @@
                 <div class="row">
 
                     <div class="col-12 mt-3">
-                        <input type="checkbox" class="checkbox" name="notifAmi" checked=" '.$utilisateur["contact"].' "><label>J\'accepte de recevoir des
+                        <input type="checkbox" class="checkbox" name="contact" checked=" '.$utilisateur["contact"].' "><label>J\'accepte de recevoir des
                         demande d\'ami</label>
                     </div>
 
@@ -332,6 +332,7 @@
 
 /*FONCTION INCLUDE FOOTER*/  
     function paramIncludeFooter(){
+        echo'<br>';
         include("footerCONTROLEUR.php");
     } 
 
