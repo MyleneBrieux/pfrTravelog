@@ -9,8 +9,8 @@ class VoyageMysqliDAO {
 
      /* CONNEXION */       
      public function connexion() {
-        $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
-        // $mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
+        // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+        $mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
         return $mysqli;
     }
 
@@ -22,21 +22,44 @@ class VoyageMysqliDAO {
         //modifier l'id user
         $stmt=$mysqli->prepare("insert into voyages (code_voyage, titre, resume, date_debut, date_fin, continent, pays, ville, couverture, statut, likes, vues, id, code_etape) 
                                 values (null,?,?,?,?,?,?,?,?,'Y',0,0,?,1)");
-    $stmt->bind_param("ssssssssi",$titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/);
-
-        // $stmt->bind_param("sssss",$titre, $resume, $datedebut, $datefin, $couverture);
-
+        $stmt->bind_param("ssssssssi",$titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/);
         $stmt->execute();
         $mysqli->close();
     }
 
+    // Ajout Etape
     public function addEtapeDAO($sousTitre, $description){
         $mysqli=$this->connexion();
 
-        $stmt=$mysqli->prepare("insert into etape (code_etape, sous_titre, description, media, likesEtape, code_comm) values (null,?,?,'[photo1.jpg]',0,1)");
+        $stmt=$mysqli->prepare("insert into etape (code_etape, sous_titre, description, media, likesEtape, code_comm) values (null,?,?,'[photo1.jpg]',0,null)");
         $stmt->bind_param("ss", $sousTitre, $description);
         $stmt->execute();
         $mysqli->close();
+    }
+
+
+    public function afficherLesDetailsVoyageDAO(int $codeVoyage): array{
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare("select * from voyages where code_voyage=?");
+        $stmt->bind_param("i", $codeVoyage);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        $detailVoyage = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $detailVoyage;
+    }
+
+    public function afficherLesDetailsEtapeDAO(int $codeEtape): array{
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare("select * from etape where code_etape=?");
+        $stmt->bind_param("i", $codeEtape);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        $detailEtape = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $detailEtape;
     }
 
     // suppression Voyage
@@ -68,8 +91,9 @@ class VoyageMysqliDAO {
         $stmt->bind_param("sssssssssi", $date_debut, $date_fin, $continent, $pays, $ville, $couverture, $statut, $codeVoyage);
         $stmt->execute();
         $mysqli->close();
-    
     }
+
+
 
     /* AFFICHER TOUS LES VOYAGES */        
     public function afficherVoyages() {
@@ -80,20 +104,6 @@ class VoyageMysqliDAO {
         return $rs;
         $rs->free();
         $mysqli->close();
-    }
-
-    /* RECHERCHE VOYAGE PAR PSEUDO */
-    public function chercherVoyageParPseudo(string $pseudo) : ?array {
-        $mysqli=$this->connexion();
-        $stmt = $mysqli->prepare("select code_voyage, titre, resume, date_debut, date_fin, continent, pays, ville,
-        couverture, statut, likes, vues, voyages.id, code_etape from voyages inner join utilisateurs on voyages.id=utilisateurs.id where pseudo=?");
-        $stmt->bind_param("s",$pseudo);
-        $stmt->execute();
-        $rs = $stmt->get_result();
-        $info = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $info;
     }
 
     /* FILTRER LES VOYAGES PAR CONTINENT */        
@@ -134,6 +144,7 @@ class VoyageMysqliDAO {
         $mysqli->close();
         return $data;
     }
+
 
     /* COMPTER LE NOMBRE DE VOYAGES DANS LA BDD */
     public function compterVoyages() {
