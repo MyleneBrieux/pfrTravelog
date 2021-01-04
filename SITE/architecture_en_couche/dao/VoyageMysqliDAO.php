@@ -82,6 +82,20 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
+    /* RECHERCHE VOYAGE PAR PSEUDO */
+    public function chercherVoyageParPseudo(string $pseudo) : ?array {
+        $mysqli=$this->connexion();
+        $stmt = $mysqli->prepare("select code_voyage, titre, resume, date_debut, date_fin, continent, pays, ville,
+        couverture, statut, likes, vues, voyages.id, code_etape from voyages inner join utilisateurs on voyages.id=utilisateurs.id where pseudo=?");
+        $stmt->bind_param("s",$pseudo);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        $info = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $info;
+    }
+
     /* FILTRER LES VOYAGES PAR CONTINENT */        
     public function filtrerVoyagesParContinent(string $continent) : ?array {
         $mysqli=$this->connexion();
@@ -125,6 +139,18 @@ class VoyageMysqliDAO {
     public function compterVoyages() {
         $mysqli=$this->connexion();
         $stmt=$mysqli->prepare('select * from voyages');
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $data=mysqli_num_rows($rs);
+        $mysqli->close();
+        return $data;
+    }
+
+    /* COMPTER LE NOMBRE DE VOYAGES D'UN UTILISATEUR */
+    public function nbVoyagesUtilisateur() {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select * from voyages inner join utilisateurs on voyages.id=utilisateurs.id where pseudo=?');
+        $stmt->bind_param("s",$pseudo);
         $stmt->execute();
         $rs=$stmt->get_result();
         $data=mysqli_num_rows($rs);

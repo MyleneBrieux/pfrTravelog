@@ -43,11 +43,25 @@ class VoyageService {
         return $rs;
     }
 
+//Afficher voyages selon pseudo
+
+    public function chercherVoyageParPseudo($pseudo){
+        $voyagesService = $this->VoyageMysqliDao->chercherVoyageParPseudo($pseudo);
+        return $voyagesService;
+    }
+
 //Compter le nombre de voyages dans la bdd
 
     public function compterVoyages(){
         $data = $this->VoyageMysqliDao->compterVoyages();
         return $data;
     }
+
+//Compter le nombre de voyages d'un utilisateur
+
+public function nbVoyagesUtilisateur(){
+    $data = $this->VoyageMysqliDao->nbVoyagesUtilisateur();
+    return $data;
+}
 
 }
