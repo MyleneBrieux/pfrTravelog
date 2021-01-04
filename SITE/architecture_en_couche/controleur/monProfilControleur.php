@@ -28,7 +28,7 @@ include_once '../metier/Voyage.php';
 
 profilDebut();
 
-menuLat($profil, $age);
+menuLat($profil, isset($age));
 
 presentationUser($profil);
 
