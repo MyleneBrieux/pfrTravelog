@@ -4,6 +4,10 @@ include_once("../dao/VoyageMysqliDAO.php");
 
 class VoyageService {
 
+    public function __construct(){
+        $this->VoyageMysqliDao = new VoyageMysqliDao;
+    }
+
 // ajout Voyage
 
     public function addVoyageService($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/){
@@ -30,6 +34,12 @@ class VoyageService {
     public function modifVoyageService($voyage){
             $modifVoyage= new VoyageMysqliDAO;
             $modifVoyage->modifVoyageDAO($voyage);
+    }
+
+//Afficher voyages
+
+    public function afficherVoyages(){
+        $this->VoyageMysqliDao->afficherVoyages();
     }
 
 }
