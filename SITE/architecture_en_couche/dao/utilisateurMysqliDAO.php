@@ -100,6 +100,25 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         // }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
 /* MODIFICATION de PROFIL*/        
         // public function modifierUtilisateur(Utilisateurs $utilisateur):void{   
         //     $pseudo=$utilisateur->getPseudo();
@@ -113,19 +132,19 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         //     $notifmail=$utilisateur->getNotifmail();
         //     $code_langue=$utilisateur->getCode_langue();
         //     $mysqli=$this->connexion();
-        //     $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, description=?, photoprofil=?, 
+        //     $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, description=?, photoProfil=?, 
         //                                     birthday=?, nation=?, contact=?, notifmail=?, code_langue=? WHERE pseudo=?");
         //     $stmt->bindParam("ssssssssis", $mail, $password, $description, $photoProfil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
         //     $stmt->execute();
         //     $mysqli->close();
         //     }
 
-        public function modifierUtilisateur(string $pseudo, string $mail, string $password, string $description, string $photoprofil, string $birthday, string $nation, string $contact, string $notifmail, int $code_langue) {   
+        public function modifierUtilisateur(string $mail, string $password, string $photoprofil, string $birthday, string $nation, string $contact, string $notifmail, int $code_langue, string $pseudo) {   
             // $pseudo=$utilisateur->getPseudo();
             // $mail=$utilisateur->getMail();
             // $password=$utilisateur->getPassword();
             // $description=$utilisateur->getDescription();
-            // $photoProfil=$utilisateur->getPhotoProfil();
+            // $photoprofil=$utilisateur->photoprofil();
             // $birthday=$utilisateur->getBirthday();
             // $nation=$utilisateur->getNation();
             // $contact=$utilisateur->getContact();
@@ -134,7 +153,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             $mysqli=$this->connexion();
             $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, description=?, photoprofil=?, 
                                             birthday=?, nation=?, contact=?, notifmail=?, code_langue=? WHERE pseudo=?");
-            $stmt->bindParam("ssssssssis", $mail, $password, $description, $photoProfil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
+            $stmt->bindParam("ssssssssis", $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
             $stmt->execute();
             $mysqli->close();
             }

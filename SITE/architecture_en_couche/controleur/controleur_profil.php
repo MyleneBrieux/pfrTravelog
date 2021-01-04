@@ -71,7 +71,7 @@ require_once('../metier/Utilisateurs.php');
                 $notifmail = $utilisateur["notifmail"];
                 $code_langue = htmlentities($_POST["code_langue"]);
 
-                $utilisateur=$newUtilisateur->modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue);
+                $utilisateur=$newUtilisateur->modifierUtilisateur($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
                 
                 //MODIFIER L'UTILISATEUR
                 // $newUtilisateur= new Utilisateurs(

@@ -29,6 +29,12 @@
         paramOuvertureDivFormulaireSecurite();
         paramDivMDP();
         paramDivEmail();
+
+        paramBtnValidation();
+        paramDivDescription();
+        paramOuvertureDivFormulaireDescription();
+        paramDivDescriptionTxt();
+
         paramFermetureDiv();
         paramBtnValidation();
         paramDivDivers();
@@ -60,13 +66,12 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
                 <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.css">
-                // <link rel="stylesheet" href="../icofont/icofont.css">
                 <link rel="stylesheet" href="../../libs/css/parametres_profil.css">
 
-                <script src="../jquery/jquery-3.5.1.js" defer></script>
-                <script src="../popper/popper.js" defer></script>
-                <script src="../bootstrap/js/bootstrap.js" defer></script>
                 <script src="../js/index.js" defer></script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>       
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>       
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
                 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
                     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -257,8 +262,49 @@
             <div class="col-6">
                 <label>Confirmation:</label><input type="email" class="input-beige form-control" placeholder="john.doe@gmail.com" name="confirmMail" value="">
             </div>
+        </div>
         </div>';
     } 
+
+
+
+
+
+
+
+
+
+
+
+
+/*FONCTION DIV DESCRIPTION*/  
+function paramDivDescription(){
+    echo 
+        '<div class="col-12 txt-securite">
+            <div class="">A propos de vous :</div>
+        </div>';
+}
+
+/*FONCTION DIV FORMULAIRE DESCRITION*/  
+function paramOuvertureDivFormulaireDescription(){
+    echo '<div class="col-12 formulaire-coordonnees securite txt-input">';
+}
+
+/*FONCTION DIV POUR LA DESCRITION*/  
+function paramDivDescriptionTxt(){
+    echo 
+    '<div class="row">
+        <div class="col-12">
+            <label>Description:</label><textarea class="form-control" rows="4" class="input-beige form-control " name="description" value=""></textarea>
+        </div>
+    </div>';
+} 
+
+
+
+
+
+
 
 /*FONCTION TEXTE DIVERS*/  
     function paramDivDivers(){

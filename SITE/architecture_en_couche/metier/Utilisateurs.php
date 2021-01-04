@@ -78,7 +78,7 @@ class Utilisateurs {
 
 /*PHOTO DE PROFIL*/
     public function getPhotoprofil() :string{
-        return $this->photoprofil;
+        return $this->photoProfil;
     }
 
     public function setPhotoprofil(string $photoprofil) :self{
@@ -138,7 +138,7 @@ class Utilisateurs {
 
     // public function __toString() : string{
     //     return "[id]: " . $this->id . "[mail] : " . $this->mail . "[password] : " . $this->password . "[login] : " . $this->login . "[birthday] : " . 
-    //     $this->birthday . "[Photo profil] : " . $this->photoprofil . "[nationalité] : " . $this->nationalite . "[contact] : " . 
+    //     $this->birthday . "[Photoprofil] : " . $this->photoprofil . "[nationalité] : " . $this->nationalite . "[contact] : " . 
     //     $this->contact . "[notifmail] : " . $this->notifmail;
     // }
 

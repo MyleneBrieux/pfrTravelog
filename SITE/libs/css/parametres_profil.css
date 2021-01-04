@@ -1,5 +1,6 @@
 body{
     color: #48515D !important;
+    overflow-x: hidden;
     }
 
 a:hover{

@@ -1,12 +1,9 @@
 <?php
 session_start();
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+require_once('../presentation/fonctionsContact.php');
 
-include '../libs/phpmailer/Exception.php';
-// include '../libs/phpmailer/PHPMailer.php';
-// include '../libs/phpmailer/SMTP.php';
+    affichageContact();
 
     $errorMsg ="";
     $emailMSG = "";
@@ -31,46 +28,45 @@ include '../libs/phpmailer/Exception.php';
     
         echo($errorMsg);
 
-        $mail = new PHPMailer();
-            $mail->IsSMTP();
-            $mail->Mailer="smtp";
-            $mail->SMTPDebug=0;  
-            $mail->SMTPAuth=TRUE;
-            $mail->SMTPSecure="tls";
-            $mail->Port=587;
-            $mail->Host="smtp.gmail.com";
-            $mail->Username="andhromede@gmail.com";
-            $mail->Password="Fm8APqpp";
-            $mail->AddAddress("andhromede@gmail.com", "recipient-name");
-            $mail->SetFrom($email, "from-name");
-            $mail->AddReplyTo($email, "reply-to-name");
-            $mail->Subject=$subject;
-            $content=$message;
-            $mail->MsgHTML($content); 
+        // $mail = new PHPMailer();
+        //     $mail->IsSMTP();
+        //     $mail->Mailer="smtp";
+        //     $mail->SMTPDebug=0;  
+        //     $mail->SMTPAuth=TRUE;
+        //     $mail->SMTPSecure="tls";
+        //     $mail->Port=587;
+        //     $mail->Host="smtp.gmail.com";
+        //     $mail->Username="andhromede@gmail.com";
+        //     $mail->Password="Fm8APqpp";
+        //     $mail->AddAddress("andhromede@gmail.com", "recipient-name");
+        //     $mail->SetFrom($email, "from-name");
+        //     $mail->AddReplyTo($email, "reply-to-name");
+        //     $mail->Subject=$subject;
+        //     $content=$message;
+        //     $mail->MsgHTML($content); 
 
 
-        if(!$mail->send()) {
-            echo ("Une erreur s'est produite, votre message n'a pas pu être envoyé");
-            var_dump($mail);
-            } 
+        // if(!$mail->send()) {
+        //     echo ("Une erreur s'est produite, votre message n'a pas pu être envoyé");
+        //     var_dump($mail);
+        //     } 
 
-        else {
-            echo 'Le message a bien été envoyé !';
-            header('Location: ../../libs/templates/contact.php');
-            }
+        // else {
+        //     echo 'Le message a bien été envoyé !';
+        //     header('Location: ../../libs/templates/contact.php');
+        //     }
 
+        $destinataire = "andhromede@gmail.com";
+        $sujet = "Email de test";
+        $message = "Salut ceci est un email de test envoyer par un script PHP";
+        $envoyeur = "From: andhromede@hotmail.fr";
 
+        if (mail($destinataire, $sujet, $message, $envoyeur)) {
+          echo "Email envoyé avec succès à $destinataire ...";
+        } else {
+          echo "Échec de l'envoi de l'email...";
+        }
 
-          
-        // if($errorMsg == ''){
-        //     $subject ="Message envoyé par".$pseudo;
-        //     $emailAdmin = "n.gibilaro@andhromede.planethoster.world";
-        //     $subject = "message du site provenant de " .$pseudo;
-        //     $headers = array ('from' => $email, 'Reply-To' => $email);
-        //     // mail($emailAdmin, $subject, $message, $headers);
-        //     mail( $emailAdmin , $subject , $message , $headers);
-        //     $emailMSG= "Votre message à bien été envoyé !";
-        // }
 
     }
 

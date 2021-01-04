@@ -5,6 +5,7 @@ body{
 a:hover{
     text-decoration: none !important;
     color: #52908B;
+    overflow-x: hidden;
     }
 
 /*MENU DE GAUCHE*/

@@ -42,14 +42,23 @@ class UtilisateurService {
         return $passwordOk;
     }
 
+
+
+
+
+
+
+
+
+    
     // public function modifierUtilisateur( $pseudo, $mail, $password, $description, $photoprofil, $birthday,  $nation, $contact, $notifmail, $code_langue) {
     //     $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue);
     // }
 
-    public function modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue){
+    public function modifierUtilisateur ($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo){
         // $modifUtilisateur= new UtilisateurMysqliDao;
         // $modifUtilisateur->modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue);
-        $this->utilisateurDao->modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue);
+        $this->utilisateurDao->modifierUtilisateur($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
     }
 
 
