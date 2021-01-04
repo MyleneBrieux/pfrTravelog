@@ -16,12 +16,22 @@ include ("navbarCONTROLEUR.php");
 displayPageAccueil2();
 include ("menulatCONTROLEUR.php");
 
+// compteur de voyages trouvés dans la bdd //
 displayTripResults1();
 $data=$voyageService->compterVoyages();
 echo ($data . " voyages trouvés");
 
-displayPageAccueil3();
+displayTripResults2();
+
+// affichage dynamique des voyages dans le corps de page //
+$rs=$voyageService->afficherVoyages();
+while ($data=mysqli_fetch_array($rs)) {
+displayTrip($data);
+}
+
+displayPages();
+
 include ("footerCONTROLEUR.php");
-displayPageAccueil4();
+displayPageAccueil3();
 
 ?>
