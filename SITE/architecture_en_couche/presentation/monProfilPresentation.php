@@ -91,7 +91,7 @@
                     echo'</div>';
     }
 
-    function lastTrip(){
+    function lastTrip($voyage){
         echo'<div class="row d-flex justify-content-around mt-2">
                         <div>
                             <a href="../controleur/detail_voyageControleur.php"><h3>Son dernier voyage : </h3>
@@ -100,7 +100,7 @@
                         </div>';
                     }
 
-    function mostPopular(){
+    function mostPopular($voyage){
         echo'<div>
                 <a href="../controleur/detail_voyageControleur.php"><h3>Le plus populaire : </h3>
                 <h4>Dubaï</h4>
@@ -108,13 +108,13 @@
                 </div>
             </div>';
     }
-    function autresVoyage($profil) {
+    function autresVoyage($profil, $voyage) {
                     echo'<div>
                         <a href="../controleur/mesVoyagesControleur.php?pseudo='.$profil["pseudo"].'"><h3>Ses autres voyages</h3></a>
                     </div>
                     <div class="row d-inline-flex justify-content-around">
                         <div class="ml-3">
-                        <a href="../controleur/detail_voyageControleur.php"><h4>Japon</h4>
+                        <a href="../controleur/detail_voyageControleur.php"><h4>'. $voyage['titre'] .'</h4>
                             <img class="mt-2" src="../../img/photos/osaka.jpg" alt="" width=352 height=224></a>
                         </div>
                         <div class="ml-3">
@@ -151,10 +151,10 @@
         profilHeader();
     }
 
-    function voyages($profil){
-        lastTrip();
-        mostPopular();
-        autresVoyage($profil);
+    function voyages($profil, $voyage){
+        lastTrip($voyage);
+        mostPopular($voyage);
+        autresVoyage($profil, $voyage);
     }
 
     function profilFin(){

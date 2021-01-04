@@ -21,18 +21,19 @@ include_once '../metier/Voyage.php';
     // }catch(UtilisateurException $e){
         
     // }
-    // $id = $profil['id'];
-    // $voyage = new VoyageService();
-    // $voyage = $voyage->chercherVoyageParId($id);
-    //var_dump($voyage);
+
+    $voyagesService = new VoyageService();
+    // $data=$voyagesService->nbVoyagesUtilisateur();
+    $voyages = $voyagesService->chercherVoyageParPseudo($pseudo);
+    //var_dump($voyages);
 
 profilDebut();
 
-menuLat($profil, isset($age));
+menuLat($profil, $age);
 
 presentationUser($profil);
 
-voyages($profil);
+voyages($profil, $voyages);
 
 profilFin();
 
