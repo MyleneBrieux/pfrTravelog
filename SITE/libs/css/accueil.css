@@ -52,6 +52,89 @@
             }
     } 
 
+/* CARD VOYAGE */
+/* #voyage{ */
+    /* margin-left:40em;
+    margin-top:-40em; */
+/* }
+
+#encadre-voyage{
+    background-color: #dcdacd;
+}
+
+#titre-voyage{
+    font-family: 'Rancho', cursive;
+    color:#52908b;
+} */
+
+/* VOYAGE */
+.photoprofil {
+    z-index:2;
+    border:solid #707070 0.1em;
+    height:8em;
+    width:6.5em;
+    margin-top:-104em;
+    margin-left:21em;
+}
+
+.titrevoyage {
+    font-family: 'Rancho', cursive;
+    font-size:3em;
+    color:#52908b;
+    margin-top:-34.5em;
+    margin-left:0.4em;
+}
+
+.encadrevoyage {
+    background-color: #dcdacd;
+    height:18em;
+    width:52em;
+    margin-top:-114em;
+    margin-left:24em;
+}
+
+.photovoyage {
+    z-index:2;
+    border:solid #707070 0.1em;
+    height:14em;
+    width:22em;
+    margin-top:-98em;
+    margin-left:-4em;
+}
+
+.textevoyage {
+    font-family: 'Halant', serif;
+    text-align: right;
+    font-size:1.2em;
+    padding-left:24em;
+    padding-top:0.4em;
+    padding-right:0.8em;
+}
+
+.lienvoyage {
+    font-family: 'Halant', serif;
+    color:#707070;
+    font-style:italic;
+    text-align:right;
+    margin-left:42.5em;
+}
+
+    .lienvoyage:link {
+        color: #707070;
+    }
+    
+    .lienvoyage:visited {
+        color: #707070;
+    }
+    
+    .lienvoyage:focus {
+        background: none;
+    }
+    
+    .lienvoyage:hover {   
+        color:#52908b;  
+        background: none;
+    }
 
 
 /* VOYAGE 1 */

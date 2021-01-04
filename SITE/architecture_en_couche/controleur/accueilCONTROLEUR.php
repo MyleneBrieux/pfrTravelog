@@ -12,26 +12,25 @@ session_start();
 $voyageService = new VoyageService();
 
 displayPageAccueil1();
-include ("navbarCONTROLEUR.php");
-displayPageAccueil2();
-include ("menulatCONTROLEUR.php");
 
 // compteur de voyages trouvés dans la bdd //
-displayTripResults1();
 $data=$voyageService->compterVoyages();
 echo ($data . " voyages trouvés");
 
-displayTripResults2();
+displayPageAccueil2();
 
 // affichage dynamique des voyages dans le corps de page //
 $rs=$voyageService->afficherVoyages();
-while ($data=mysqli_fetch_array($rs)) {
-displayTrip($data);
+while ($data=mysqli_fetch_array($rs)) { // commenter lignes 24 et 25 pour voir affichage "en dur" //
+displayPageAccueil3($data);
 }
 
-displayPages();
+// $data=mysqli_fetch_array($rs); // commenter lignes 28 à 32 pour affichage "en dur" //
+// displayTripOne($data);
+// displayTripTwo($data);
+// displayTripThree($data);
+// displayTripFour($data);
 
-include ("footerCONTROLEUR.php");
-displayPageAccueil3();
+displayPageAccueil4();
 
 ?>

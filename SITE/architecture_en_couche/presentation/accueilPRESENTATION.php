@@ -4,25 +4,26 @@
 function displayPageAccueil1(){
     displayTopTagHtml();
     displayHead();
-    displayTopTagBody();
-    displayTopTagContainer();
-    displayTopRowNavbar();
+    navbar();
+    menuLateral();
 }
 
 function displayPageAccueil2(){
-    displayBottomRowNavBar();
-    displayTopRowMenuLat();
+    displayBottomResults();
 }
 
-function displayPageAccueil3(){
-    displayBottomTagContainer();
-    displayBottomTagBody();
-    displayBottomTagHTML();
+function displayPageAccueil3($data){
+    displayTrips($data);
+}
+
+function displayPageAccueil4(){
+    displayPages();
+    footer();
+    displayEnd();
 }
 
 
 // FONCTIONS EN VRAC //
-
 function displayTopTagHtml(){
     echo
         '<!DOCTYPE html>
@@ -54,79 +55,123 @@ function displayHead(){
         </head>';
 }
 
-function displayTopTagBody(){
-    echo
-        '<body>';
+function navbar(){
+    echo 
+        '<body>
+            <div class="container-fluid">';
+                include ("../controleur/navbarCONTROLEUR.php");
 }
 
-function displayTopTagContainer(){
-    echo
-        '<div class="container-fluid">';
-}
-
-function displayTopRowNavbar(){
-    echo
+function menuLateral(){
+    echo 
         '<div class="row">';
+            include ("menulatCONTROLEUR.php");
+                echo '<p class="rsvoyages">';
 }
 
-function displayBottomRowNavBar(){
+function displayBottomResults(){
     echo
-        '</div>';
+        '</p>';
 }
 
-function displayTopRowMenuLat(){
-    echo
-        '<div class="row">';
-}
-
-function displayTripResults1(){
-    echo
-            '<p class="rsvoyages">';
-}
-
-function displayTripResults2(){
-    echo
-        '</p>
-            </div>';
-}
-
-function displayTrip($data){
+function displayTrips($data){ // 1 ENCADRE DYNAMIQUE //
     echo
         '<div class="row">
-            <img src="'.$data["id"].'" class="photoprofil1"/>
-            <h1 class="titrevoyage1">'.$data["titre"].'</h1>
-            <img src="'.$data["couverture"].'" class="photovoyage1"/>
-            <div class="encadrevoyage1">
-                <p class="textevoyage1">
+            <img src="'.$data["id"].'" class="photoprofil"/>
+            <h1 class="titrevoyage">'.$data["titre"].'</h1>
+            <img src="'.$data["couverture"].'" class="photovoyage"/>
+            <div class="encadrevoyage">
+                <p class="textevoyage">
                     "'.$data["resume"].'"
                 </p>
-                <a href="../controleur/detail_voyageCONTROLEUR.php" class="lienvoyage1">
+                <a href="../controleur/detail_voyageCONTROLEUR.php" class="lienvoyage">
                     Découvrir ce voyage
                 </a>
             </div>
         </div>';
 }
 
+// function displayTripOne($data){ // 4 ENCADRES "EN DUR" //
+//     echo
+//         '<div class="row">
+//             <img src="'.$data["id"].'" class="photoprofil1"/>
+//             <h1 class="titrevoyage1">'.$data["titre"].'</h1>
+//             <img src="'.$data["couverture"].'" class="photovoyage1"/>
+//             <div class="encadrevoyage1">
+//                 <p class="textevoyage1">
+//                     "'.$data["resume"].'"
+//                 </p>
+//                 <a href="detail_voyage.php" class="lienvoyage1">
+//                 <a href="../controleur/detail_voyageCONTROLEUR.php" class="lienvoyage1">
+//                     Découvrir ce voyage
+//                 </a>
+//             </div>
+//         </div>';
+// }
+// function displayTripTwo($data){
+//     echo
+//         '<div class="row">
+//             <img src="'.$data["id"].'" class="photoprofil2"/>
+//             <h1 class="titrevoyage2">'.$data["titre"].'</h1>
+//             <img src="'.$data["couverture"].'" class="photovoyage2"/>
+//             <div class="encadrevoyage2">
+//                 <p class="textevoyage2">
+//                     "'.$data["resume"].'"
+//                 </p>
+//                 <a href="../controleur/detail_voyageCONTROLEUR.php" class="lienvoyage2">
+//                     Découvrir ce voyage
+//                 </a>
+//             </div>
+//         </div>';
+// }
+// function displayTripThree($data){
+//     echo
+//         '<div class="row">
+//             <img src="'.$data["id"].'" class="photoprofil3"/>
+//             <h1 class="titrevoyage3">'.$data["titre"].'</h1>
+//             <img src="'.$data["couverture"].'" class="photovoyage3"/>
+//             <div class="encadrevoyage3">
+//                 <p class="textevoyage3">
+//                     "'.$data["resume"].'"
+//                 </p>
+//                 <a href="../controleur/detail_voyageCONTROLEUR.php" class="lienvoyage3">
+//                     Découvrir ce voyage
+//                 </a>
+//             </div>
+//         </div>';
+// }
+// function displayTripFour($data){
+//     echo
+//         '<div class="row">
+//             <img src="'.$data["id"].'" class="photoprofil4"/>
+//             <h1 class="titrevoyage4">'.$data["titre"].'</h1>
+//             <img src="'.$data["couverture"].'" class="photovoyage4"/>
+//             <div class="encadrevoyage4">
+//                 <p class="textevoyage4">
+//                     "'.$data["resume"].'"
+//                 </p>
+//                 <a href="../controleur/detail_voyageCONTROLEUR.php" class="lienvoyage4">
+//                     Découvrir ce voyage
+//                 </a>
+//             </div>
+//         </div>';
+// }
+
 function displayPages(){
     echo
-        '<div class="row">
-            <p class="pages">< 1 2 ... 4 ></p>
+            '<p class="pages">< 1 2 ... 4 ></p>
         </div>';
 }
 
-function displayBottomTagContainer(){
-    echo
-        '</div>';
+function footer(){
+    include ("../controleur/footerCONTROLEUR.php");
 }
 
-function displayBottomTagBody(){
-    echo
-        '</body>';
-}
-
-function displayBottomTagHTML(){
-    echo
-        '</html>';
+function displayEnd(){
+    echo 
+                '</div>
+            </body>
+        </html>';
 }
 
 ?>
