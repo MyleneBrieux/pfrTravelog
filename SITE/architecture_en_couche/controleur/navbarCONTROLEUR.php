@@ -5,19 +5,19 @@ include_once("../presentation/navbarPRESENTATION.php");
 include_once("../service/UtilisateurSERVICE.php");
 include_once("../metier/Utilisateur.php");
 
-// session_start();
+$utilisateurService = new UtilisateurService();
 
 // SI UTILISATEUR CONNECTE //
 if (isset($_SESSION["pseudo"])) {  
     displayNavbarConnectedOnly1();
 
-    if (isset($_POST["type_notif"])) {
-        notificationsBadge();
-        amisBadge();
-    } else {
-        notifications();
-        amis();
-    }
+    notifications();
+
+    amisBadge1();
+    $data=$utilisateurService->compterDemandesAmi();
+    echo ($data);
+    amisBadge2();
+
 
     displayNavbarConnectedOnly2();
 

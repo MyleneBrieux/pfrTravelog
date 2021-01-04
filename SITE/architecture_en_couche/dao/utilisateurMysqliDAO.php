@@ -5,6 +5,7 @@
 include_once("../metier/Utilisateurs.php");
 include_once("../metier/Voyage.php");
 include_once("../metier/Notification.php");
+include_once("../metier/DemandeAmi.php");
 include_once("dao_exception.php");
 
 // GESTION DES ERREURS //
@@ -12,7 +13,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     class UtilisateurMysqliDao {
 
-/* CONNEXION */       
+    /* CONNEXION */       
         public function connexion() {
             // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
             $mysqli= new mysqli('localhost','root','','travelog');
@@ -20,7 +21,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         }
 
 
-/* AJOUT UTILISATEUR */
+    /* AJOUT UTILISATEUR */
         public function ajoutUtilisateur(string $pseudo, string $mail, string $password) {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("insert into utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
@@ -31,7 +32,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         }
 
 
-/* RECHERCHE UTILISATEUR PAR MAIL */        
+    /* RECHERCHE UTILISATEUR PAR MAIL */        
         public function chercherUtilisateurParMail(string $mail) : ?array {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
@@ -45,7 +46,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         }
 
 
-/* RECHERCHE UTILISATEUR PAR PSEUDO */
+    /* RECHERCHE UTILISATEUR PAR PSEUDO */
         public function chercherUtilisateurParPseudo(string $pseudo) : ?array {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("select * from utilisateurs inner join langues on utilisateurs.code_langue=langues.code_langue where pseudo=?");
@@ -59,7 +60,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         }
 
 
-/* RECHERCHE PHOTO DE PROFIL UTILISATEUR */
+    /* RECHERCHE PHOTO DE PROFIL UTILISATEUR */
         public function chercherPhotoProfilUtilisateur(string $photoProfil) : ?array {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("select photoprofil from utilisateurs where pseudo=?");
@@ -72,32 +73,33 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             return $data;
         }
 
-        
-/* AFFICHER LES NOTIFICATIONS SELON L'UTILISATEUR */
-        // public function afficherNotificationsParUtilisateur() : ?array {
-        //     $mysqli=$this->connexion();
-        //     $stmt = $mysqli->prepare("select * from notifications where pseudo=?");
-        //     $stmt->bind_param("s",$photoProfil);
-        //     $stmt->execute();
-        //     $rs = $stmt->get_result();
-        //     $data = $rs->fetch_array(MYSQLI_ASSOC);
-        //     $rs->free();
-        //     $mysqli->close();
-        //     return $data;
-        // }
 
-        /* AFFICHER LES DEMANDES D'AMIS SELON L'UTILISATEUR */
-        // public function afficherDemandesAmisParUtilisateur(string $pseudo) : ?array {
-        //     $mysqli=$this->connexion();
-        //     $stmt = $mysqli->prepare("select * from utilisateurs as u inner join utilisateurs as ut on u.id=ut.id where pseudo=?");
-        //     $stmt->bind_param("s",$pseudo);
-        //     $stmt->execute();
-        //     $rs = $stmt->get_result();
-        //     $data = $rs->fetch_array(MYSQLI_ASSOC);
-        //     $rs->free();
-        //     $mysqli->close();
-        //     return $data;
-        // }
+    /* COMPTER LES DEMANDES D'AMI */
+        public function compterDemandesAmi() {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from demande_ami');
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $data=mysqli_num_rows($rs);
+            $mysqli->close();
+            return $data;
+        }
+
+    /* RECHERCHE UTILISATEUR PAR PSEUDO / DEMANDE D'AMI */
+        public function chercherUtilisateurParPseudoAmi(string $pseudo) : ?array {
+            $mysqli=$this->connexion();
+            $stmt = $mysqli->prepare("select * from utilisateurs as u inner join utilisateurs as ut 
+                                      on u.id=ut.id where pseudo=?");
+            $stmt->bind_param("s",$pseudo);
+            $stmt->execute();
+            $rs = $stmt->get_result();
+            $info = $rs->fetch_array(MYSQLI_ASSOC);
+            $rs->free();
+            $mysqli->close();
+            return $info;
+        }
+
+    
 
 
 

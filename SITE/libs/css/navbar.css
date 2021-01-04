@@ -236,16 +236,22 @@
 }
 
 /* Badges */
-.badge {
+#badgeAmi {
     background-color:red;
     color:white;
     border-radius:10px;
     position: absolute;
-    margin-top:1%;
-    margin-left:-3.5%;
-    width:18px;
-    height:18px;
+    margin-left:-2.9em;
+    height:0.6em;
+    width:0.6em;
    }
+
+#compteurDemandesAmi {
+    font-family: 'Halant', serif;
+    font-size:0.5em;
+    margin-top:-0.35em;
+    margin-left:-0.5em;
+}
 
 
 /* UTILISATEUR */

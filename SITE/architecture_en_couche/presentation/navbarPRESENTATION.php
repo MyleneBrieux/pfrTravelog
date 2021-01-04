@@ -101,7 +101,7 @@ function notifications(){
                 <li class="nav-item dropdown">
                     <div class="logoNotif far fa-bell cloche fa-2x" id="menuNotifs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
                     <div class="dropdown-menu" id="dropdownMenuNotifs" aria-labelledby="dropdownMenuNotifs">
-                        <a class="affichernotif dropdown-item" href="#">Exemple notifs</a>
+                        <a class="affichernotif dropdown-item" href="#">Vous n\'avez pas de nouvelle notification.</a>
                     </div>
                 </li>';
 }
@@ -120,24 +120,19 @@ function notificationsBadge(){
                 </li>';
 }
 
-function amis(){
-    echo
-        '<li class="nav-item">
-            <div class="logoAmi far fa-user ami fa-2x" id="menuAmis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
-            <div class="dropdown-menu" id="dropdownMenuAmis" aria-labelledby="dropdownMenuAmis">
-                <a class="afficheramis dropdown-item" href="#">Exemple amis</a>
-            </div>
-        </li>';
-}
-
-function amisBadge(){
+function amisBadge1(){
     echo
         '<li class="nav-item">
             <div class="logoAmi far fa-user ami fa-2x" id="menuAmis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="badge">'.test.'</span>
+                <span class="badge" id="badgeAmi"><p id="compteurDemandesAmi">';
+}
+
+function amisBadge2(){
+    echo
+        '</p></span>
             </div>
             <div class="dropdown-menu" id="dropdownMenuAmis" aria-labelledby="dropdownMenuAmis">
-                <a class="afficheramis dropdown-item" href="#">Exemple amis</a>
+                <a class="afficheramis dropdown-item" href="#">Vous n\'avez pas de nouvelle demande d\'ami.</a>
             </div>
         </li>';
 }

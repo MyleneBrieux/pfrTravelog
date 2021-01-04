@@ -32,6 +32,16 @@ class UtilisateurService {
         return $data;
     }
 
+    public function compterDemandesAmi() {
+        $data = $this->utilisateurDao->compterDemandesAmi();
+        return $data;
+    }
+
+    public function chercherUtilisateurParPseudoAmi($pseudo) : ?array {
+        $info = $this->utilisateurDao->chercherUtilisateurParPseudoAmi($pseudo);
+        return $info;
+    }
+
     public function passwordHash($password) {
         $newPassword=password_hash($password,PASSWORD_DEFAULT);
         return $newPassword;
