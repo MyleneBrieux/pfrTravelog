@@ -9,8 +9,8 @@ class VoyageMysqliDAO {
 
      /* CONNEXION */       
      public function connexion() {
-        // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
-        $mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
+        $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+        // $mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
         return $mysqli;
     }
 
@@ -117,6 +117,17 @@ class VoyageMysqliDAO {
         $rs = $stmt->get_result();
         $data = $rs->fetch_array(MYSQLI_ASSOC);
         $rs->free();
+        $mysqli->close();
+        return $data;
+    }
+
+    /* COMPTER LE NOMBRE DE VOYAGES DANS LA BDD */
+    public function compterVoyages() {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select * from voyages');
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $data=mysqli_num_rows($rs);
         $mysqli->close();
         return $data;
     }

@@ -15,7 +15,7 @@ function displayPageAccueil2(){
 }
 
 function displayPageAccueil3(){
-    displayTripResults();
+    displayTripResults2();
     displayTripOne();
     displayTripTwo();
     displayTripThree();
@@ -88,10 +88,15 @@ function displayTopRowMenuLat(){
         '<div class="row">';
 }
 
-function displayTripResults(){
+function displayTripResults1(){
     echo
-            '<p class="rsvoyages">XX voyages trouvés</p>
-        </div>';
+            '<p class="rsvoyages">';
+}
+
+function displayTripResults2(){
+    echo
+        '</p>
+            </div>';
 }
 
 function displayTripOne(){

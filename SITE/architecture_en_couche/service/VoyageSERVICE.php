@@ -39,7 +39,15 @@ class VoyageService {
 //Afficher voyages
 
     public function afficherVoyages(){
-        $this->VoyageMysqliDao->afficherVoyages();
+        $rs=$this->VoyageMysqliDao->afficherVoyages();
+        return $rs;
+    }
+
+//Compter le nombre de voyages dans la bdd
+
+    public function compterVoyages(){
+        $data = $this->VoyageMysqliDao->compterVoyages();
+        return $data;
     }
 
 }
