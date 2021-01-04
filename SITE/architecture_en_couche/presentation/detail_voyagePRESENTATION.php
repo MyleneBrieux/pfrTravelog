@@ -36,24 +36,24 @@ function detail_header(){
         include ("navbarCONTROLEUR.php");
 }
 
-function detail_menuLateral($isMyVoyage){
+function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues){
     echo '<div class="pl-0 menu_lateral_detail_voyage">
     <nav class="bg-sable mr-3 pr-3 menU centrage">
         <div class="row">
             <img class="tailleImageProfilDetail col-md-12 col-6 mt-3 float-left"
-                src="../../../images/photos/photo_profil_detail_voyage.jpg" alt="Claude">
+                src="../../img/photos/photo_profil_defaut.png" alt="La photo profil">
             <div class="col-lg-12 mt-5 pl-1 col-6">
-                <h4>Utilisateur</h4> </br>
-                <h5>Titre</h5>
-                <h6>Dates voyage</h6>
-                <h6>xxx vues - xxx likes</h6>
+                <h4>'.$_SESSION["pseudo"].'</h4> </br>
+                <h5>'.$titre.'</h5>
+                <h6>Du '.$datedebut.' au '.$datefin.'</h6>
+                <h6>'.$likes.' likes - '.$vues.' vues</h6>
                 </div>
-                <button type="button" class="btn btn-primary addItem col-12 mt-4 mb-3">Mes autres</br>voyages</button>';
+                <a href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'"><button type="button" class="btn btn-primary addItem col-12 mt-4 mb-3">Mes autres</br>voyages</button></a>';
 }
 
             //  Bouton supprimer avec modal
-            function detail_boutonSupp() {
-                // if($isMyVoyage){
+        function detail_boutonSupp() {
+                
             echo '<button type="button" class="btn btn-danger addItem mt-5" data-toggle="modal"
                 data-target="#ModalSupp">Supprimer le voyage</button>
 
@@ -144,11 +144,11 @@ function detail_carousel(){
 </div>';
 }
 
-function detail_ssTitreLogos(){
+function detail_ssTitreLogos($sousTitre){
     echo '<div class="col-lg-12 col-md-8 col-sm-8 col-12">
     <div class="row">
         <div class="col-xl-8 col-sm-12 col-12">
-            <h1 class="sous_titre_carrousel">Jour 1 - 21 juillet 2020</h1>
+            <h1 class="sous_titre_carrousel">'.$sousTitre.'</h1>
         </div>
         <div class="row logo_position mt-2">
             <div class="element_like_comm col-xl-12 col-sm-12 col-12">
@@ -195,14 +195,8 @@ function detail_modalComm(){
 </div>';
 }
 
-function detail_description(){
-    echo '<p class="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-    Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown
-    printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
-    centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-    passages, and more recently with desktop publishing software like Aldus PageMaker including
-    versions of Lorem Ipsum.</p>';
+function detail_description($description){
+    echo '<p class="mb-3">'.$description.'</p>';
 }
 
 function detail_zoneComm(){
@@ -245,21 +239,27 @@ function detail_finHtml(){
     echo '</html>';
 }
 
+// REGROUPEMENTS DE PAGES
+
 function detail_headBodyTop(){
     detail_head();
     detail_bodyTop();
 }
 
-function detail_corpsPage($isMyVoyage){
+function detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues){
     detail_header();
-    detail_menuLateral($isMyVoyage);
-    detail_boutonSupp();
+    detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues);
+}
+    // detail_boutonSupp();
+function detail_menuFinEtNav(){
     detail_menuLateralFin();
     detail_placeNav();
-    detail_carousel();
-    detail_ssTitreLogos();
+}
+    // detail_carousel();
+function detail_restePage($sousTitre,$description){
+    detail_ssTitreLogos($sousTitre);
     detail_modalComm();
-    detail_description();
+    detail_description($description);
     detail_zoneComm();
 }
 

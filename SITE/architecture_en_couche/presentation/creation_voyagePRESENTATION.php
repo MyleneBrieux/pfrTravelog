@@ -49,7 +49,7 @@ function creation_champTitre(){
 
 // Les filtres
 
-function creation_filtres(/*$utilisateur*/){
+function creation_filtres(){
     echo '<h4>Filtres</h4>
         <div class="row d-flex justify-content-around">
             <div class="col-3">
@@ -65,9 +65,6 @@ function creation_filtres(/*$utilisateur*/){
                 <input type="text" name="ville" placeholder="Ex: Paris" required></p>
             </div>
         </div>';
-        // echo $utilisateur["id"];
-        // echo $_SESSION["photoprofil"];
-        // echo "$id";
 }
 
 // Dates du séjour
@@ -164,12 +161,12 @@ function creation_headBodyTop(){
     creation_bodyTop();
 }
 
-function creation_corpsPage(/*$utilisateur*/){
+function creation_corpsPage(){
     creation_header();
     creation_h1();
     creation_debutForm();
     creation_champTitre();
-    creation_filtres(/*$utilisateur*/);
+    creation_filtres();
     creation_dates();
     creation_description();
     creation_addButton();
