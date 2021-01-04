@@ -48,19 +48,14 @@ if(isset($_GET["action"]) && $_GET["action"] == "creation" && !empty($_POST)){
         $id=$data["id"];
 
         $addVoyage= new VoyageService;
-    $addVoyage->addVoyageService($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/);
-        // if ($passwordOk=$utilisateurservice->passwordVerify($password,$data)){
-            header('Location: detail_voyageCONTROLEUR.php');
-        // }
+        $addVoyage->addVoyageService($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id);
+            header('Location: detail_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape.'');
 
     }
 }
 
-
-// echo $id;
-
 creation_headBodyTop();
-creation_corpsPage(/*$utilisateur*/);
+creation_corpsPage();
 creation_basPage();
 
 
