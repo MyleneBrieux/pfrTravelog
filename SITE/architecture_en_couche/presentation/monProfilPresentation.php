@@ -26,7 +26,7 @@
         echo'</header>';
     }
 
-    function menuLat($profil){
+    function menuLat($profil, $age){
         echo'<div class="row">
                 <div class="col-lg-2 col-md-4 col-sm-4 pl-0 col-12 bg-sable">
                     <nav class="menu">
@@ -35,11 +35,13 @@
                                 <img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil" width="100%" height="100%" />
                             </div>
                             <div class="row">
-                                <p class="date-membre">Membre depuis: (05/10/2020)</p>
+                                <p class="date-membre">Membre depuis: (XX/XX/XXXX)</p>
                             </div>
-                            <div class="row">
-                                <p class="age">XX ans</p>
-                            </div>
+                            <div class="row">';
+                            if (isset($profil['birthday']) && !empty($profil['birthday'])) {
+                                echo'<p>'. $age->format('%y ans') .'</p>';
+                            }
+                            echo'</div>
                             <div class="row">
                                 <p class="titre-lang">Langue parlée : </p>
                                 <p>
@@ -55,7 +57,10 @@
                                 <p><img src="../../img/logos_divers/ami_turquoise2.png" alt="logo amis">Ajouter en ami</p>
                             </div>
                             <div class="row mt-3 mb-3">
-                                <button type="button" class="button">Contactez moi</button>
+                                <a href="../controleur/controleur_param_profil.php"><button type="button" class="button">Modifier le profil</button></a>
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <a href="../controleur/controleur_contact.php"><button type="button" class="button">Contactez moi</button></a>
                             </div>
                         </div>
                     </nav>
