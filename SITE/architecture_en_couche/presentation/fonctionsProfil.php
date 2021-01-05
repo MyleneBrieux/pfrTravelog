@@ -1,8 +1,8 @@
 <?php
 
 /*FONCTION AFFICHAGE DE LA PAGE*/
-    function affichageProfil($utilisateur){
 
+    function affichageEnteteProfil(){
         paramEnteteHtml();
         paramOuvertureBody();
         paramIncludeNavbar();
@@ -10,7 +10,9 @@
         paramOuvertureDivClassRow();
         paramOuvertureDivClassCols();
         paramOuvertureDivMenuLat();
-        paramPhotoMenuLat();
+    }
+
+    function affichageProfil($utilisateur){
         paramInfoUserMenuLat();
         paramDivLangues();
         paramDivSocial();
@@ -36,7 +38,6 @@
         paramDivBtnModifier();
         paramFermetureForm();
         paramFermetureDiv();
-        
         paramFermetureDiv();
         paramFermetureDiv();
         paramFermetureDiv();
@@ -57,11 +58,6 @@
 
                 <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.css">
                 <link rel="stylesheet" href="../../libs/css/parametres_profil.css">
-
-                <script src="../js/index.js" defer></script>
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>       
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>       
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
                 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
                     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -111,16 +107,22 @@
             '<div class=" menulat">';
     }
 
-/*FONCTION PHOTO MENU LAT*/    
-    function paramPhotoMenuLat(){
+/*FONCTION PHOTO MENU LAT PROFIL*/    
+    function paramPhotoMenuLatProfil($utilisateur){
         echo   
-            ' <img src="../../img/photos/nath.jpg" alt="Bootstrap" class="photo-profil">';
+            ' <img src="'.$utilisateur['photoprofil'].'" alt="Photo de Profil" class="photo-profil">';
+    }
+
+/*FONCTION PHOTO MENU LAT DEFAUT*/    
+    function paramPhotoMenuLatDefaut(){
+        echo   
+            ' <img src="../../img/photos/photo_profil_defaut.png" alt="Photo de Profil" class="photo-profil">';
     }
     
 /*FONCTION INFOS UTILISATEUR DU MENU LAT*/    
     function paramInfoUserMenuLat(){
         echo   
-            '<div class="membre txt-menu-responsive">Membre depuis le : </div>
+            '
             <div class="age">35 ans</div>
             <div class="langues-parlees">Langues parlées :</div>';
     }
@@ -150,7 +152,7 @@
 /*FONCTION BOUTON CONTACT*/    
     function paramBtnContact(){
         echo   
-            ' <button type="submit" class="btn btn-info bouton-contact" name="btnVoyages">Mes voyages</button>';
+            ' <a href="mesVoyagesControleur.php?pseudo='.$_SESSION['pseudo'].'"><button type="submit" class="btn btn-info bouton-contact" name="btnVoyages">Mes voyages</button></a>';
     }
 
 /*FONCTION FERMETURE DIV*/    
@@ -252,23 +254,30 @@
                 <div class="row">
                     <div class="col-12">
                         <label>Langues parlées:</label>
-
-                        <select id="langues" class="select" name="code_langue" value="" disabled="disabled">
-                            <option value="valeur1" selected>Français</option>
-                            <option value="valeur2">Allemand</option>
-                            <option value="valeur2">Anglais</option>
-                            <option value="valeur3">Chinois</option>
-                            <option value="valeur3">Coréen</option>
-                            <option value="valeur3">Espagnol</option>
-                            <option value="valeur2">Italien</option>
-                            <option value="valeur3">Japonais</option>
-                            <option value="valeur2">Russe</option>
+                            <select id="langues" class="select" name="langue" disabled="disabled">
+                                <option value="1" selected>Anglais</option>
+                                <option value="2">Francais</option>
+                                <option value="3">Chinois</option>
+                                <option value="4">Arabe</option>
+                                <option value="5">Espagnol</option>
+                                <option value="6">Hindi</option>
+                                <option value="7">Portugais</option>
+                                <option value="8">Russe</option>
+                                <option value="9">Japonais</option>
+                                <option value="10">Coreen</option>
+                                <option value="11">Allemand</option>
+                                <option value="12">Turc</option>
+                                <option value="13">Vietnamien</option>
+                                <option value="14">Italien</option>
+                                <option value="15">Polonais</option>
+                                <option value="16">Neerlandais</option>
+                                <option value="17">Grec</option>
+                                <option value="18">Thai</option>
+                                <option value="19">Bengali</option>
+                                <option value="20">Pendjabi</option>
                         </select>
                     </div>
-
                 </div>
-
-
             </div>';
     }
 

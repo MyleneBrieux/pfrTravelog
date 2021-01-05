@@ -5,12 +5,26 @@ require_once('../service/UtilisateurSERVICE.php');
 require_once('../metier/Utilisateurs.php'); 
 
 
+
 //AFFICHAGE PAGE PROFIL
     $pseudo=$_SESSION["pseudo"];
     $newUtilisateur=new UtilisateurService();
     $utilisateur=$newUtilisateur->chercherUtilisateurParPseudo($pseudo);
-    affichageProfil($utilisateur);
 
+
+//AFFICHAGE DE LA PHOTO DU MENU SELON UTILISATEUR
+    affichageEnteteProfil();
+
+    if (isset($utilisateur['photoprofil']) ){
+        paramPhotoMenuLatDefaut();
+    }
+    else {
+        paramPhotoMenuLatProfil($utilisateur);
+    }
+
+
+//AFFICHAGE DE LA PAGE
+    affichageProfil($utilisateur);
 
 
 /*REDIRECTION*/
@@ -18,99 +32,63 @@ require_once('../metier/Utilisateurs.php');
     //     header("location: ../../libs/templates/accueil.php");
     // }
 
-  
-    // echo($id);
- 
+
+//SWITCH LANGUE
+    // $langue = $_POST['langue'];
+        
+    // if ($langue == "Anglais"){
+    //     $code_langue==1;
+    // }
+    // elseif ($langue == "Francais"){
+    //     $code_langue==2;
+    // }
+    // elseif ($langue == "Chinois"){
+    //     $code_langue==3;
+    // }
+    // elseif ($langue == "Arabe"){
+    //     $code_langue==4;
+    // }
+    // elseif ($langue == "Espagnol"){
+    //     $code_langue==5;
+    // }
+    // elseif ($langue == "Hindi"){
+    //     $code_langue==6;
+    // }
+    // elseif ($langue == "Portuguais"){
+    //     $code_langue==7;
+    // }
+    // else{
+    //     $code_langue==20;
+    // }
+    // echo $code_langue;
 
 /*MODIFICATION*/
-    
+    if(isset($_GET["action"]) && $_GET["action"] == "modifier" && !empty($_POST)){
+        echo $_POST['langue'];
 
-    // if(isset($_GET["action"]) && $_GET["action"] == "modifier" && !empty($_POST)){
-        
-    //     if (isset($_SESSION["pseudo"]) ){
+        if (isset($_SESSION["pseudo"]) ){
 
-    //         //RECUPERER LE PSEUDO
-    //         $pseudo=$_SESSION["pseudo"];
-    //         $utilisateur = new UtilisateurService();
-    //         $utilisateur=$utilisateur->chercherUtilisateurParPseudo($pseudo);
-            
-    //         //MODIFIER L'UTILISATEUR
-    //         $newUtilisateur= new Utilisateurs(
-    //             $id=$utilisateur['id'],
-    //             $pseudo = htmlentities($_SESSION["pseudo"]),
-    //             $mail = htmlentities($_POST["mail"]),
-    //             $password = htmlentities($_POST["password"]),
-    //             $description = $utilisateur['description'],
-    //             $photoprofil = $utilisateur['photoprofil'],
-    //             $birthday = htmlentities($_POST["birthday"]?$_POST["birthday"]:null),
-    //             $nation = htmlentities($_POST["nation"]?$_POST["nation"]:null),
-    //             $contact = $utilisateur['contact'],
-    //             $notifmail = htmlentities($_POST["notifmail"]),
-    //             $code_langue = htmlentities($_POST["code_langue"]) );
+            $user= new Utilisateurs(
+            htmlentities($_SESSION['id']=NULL),
+            htmlentities($utilisateur['pseudo']),
+            htmlentities($_POST["mail"]),
+            htmlentities($_POST["password"]),
+            htmlentities($utilisateur['description']),
+            htmlentities($utilisateur['photoprofil']),
+            htmlentities($_POST["birthday"]?$_POST["birthday"]:null),
+            htmlentities($_POST["nation"]?$_POST["nation"]:null),
+            htmlentities($utilisateur['contact']),
+            htmlentities($utilisateur["notifmail"]),
+            htmlentities($_POST['langue']) 
+            );
 
-    //         $modifUtilisateur->modifierUtilisateur($newUtilisateur);
-    //     }
-    // }
+            $newUtilisateur = new UtilisateurService;
+            $modifUtilisateur->modifierUtilisateur($user);
+        }  
+    }
 
 
-
-        if (isset($_GET["action"]) && $_GET["action"] == "modifier"){
-            
-            if (isset($_SESSION["pseudo"]) ){
-
-                //RECUPERER LES INFOS
-                $id = $utilisateur['id'];
-                $pseudo=$_SESSION["pseudo"];
-                $mail = htmlentities($_POST["mail"]);
-                $password = htmlentities($_POST["password"]);
-                $description = $utilisateur['description'];
-                $photoprofil = $utilisateur['photoprofil'];
-                $birthday = htmlentities($_POST["birthday"]?$_POST["birthday"]:null);
-                $nation = htmlentities($_POST["nation"]?$_POST["nation"]:null);
-                $contact = $utilisateur['contact'];
-                $notifmail = $utilisateur["notifmail"];
-                $code_langue = htmlentities($_POST["code_langue"]);
-
-                $utilisateur=$newUtilisateur->modifierUtilisateur($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
-                
-                //MODIFIER L'UTILISATEUR
-                // $newUtilisateur= new Utilisateurs(
-                //     $id=$utilisateur['id'],
-                //     $pseudo = htmlentities($_SESSION["pseudo"]),
-                //     $mail = htmlentities($_POST["mail"]),
-                //     $password = htmlentities($_POST["password"]),
-                //     $description = $utilisateur['description'],
-                //     $photoprofil = $utilisateur['photoprofil'],
-                //     $birthday = htmlentities($_POST["birthday"]?$_POST["birthday"]:null),
-                //     $nation = htmlentities($_POST["nation"]?$_POST["nation"]:null),
-                //     $contact = $utilisateur['contact'],
-                //     $notifmail = htmlentities($_POST["notifmail"]),
-                //     $code_langue = htmlentities($_POST["code_langue"]) );
-
-                // $modifUtilisateur->modifierUtilisateur($newUtilisateur);
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
+  
 /*DELETE DES UTILISATEURS*/    
     if(isset($_POST["action"]) && $_POST["action"] == "effacer"){
                 
@@ -128,12 +106,6 @@ require_once('../metier/Utilisateurs.php');
     }
     
 
-//AFFICHAGE PAGE PROFIL
-    // if(isset($_SESSION['pseudo']) ){
-    //     $utilisateur = $newUtilisateur->chercherUtilisateurParPseudo($_SESSION['pseudo']);
-    //     $_SESSION['birthday']=$utilisateur->getBirthday();
-    //     affichageProfil();
-    // }
 
 
 ?>

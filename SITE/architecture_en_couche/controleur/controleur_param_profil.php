@@ -6,41 +6,98 @@ require_once('../metier/Utilisateurs.php');
 
 
 
+//AFFICHAGE PAGE PARAMETRES PROFIL
+    $pseudo=$_SESSION["pseudo"];
+    $utilisateur=new UtilisateurService();
+    $utilisateur=$utilisateur->chercherUtilisateurParPseudo($pseudo);
+
+
+//AFFICHAGE DE LA PHOTO DU MENU SELON UTILISATEUR
+    affichageEnteteParamProfil();
+
+    if (isset($utilisateur['photoprofil'])){
+        paramPhotoMenuLatDefaut();
+    }
+    else {
+        paramPhotoMenuLatProfil($utilisateur);
+    }
+
+
+//AFFICHAGE DE LA PAGE
+    affichageParamProfil($utilisateur);
+
 
 /*REDIRECTION*/
     // if(!isset($_SESSION['pseudo'])){
     //     header("location: ../../libs/templates/accueil.php");
     // }
 
+    
+
+
+    // $langue = $_POST['langue'];
+        
+    // if ($langue == "Anglais"){
+    //     $code_langue=1;
+    // }
+    // elseif ($langue == "Francais"){
+    //     $code_langue=2;
+    // }
+    // elseif ($langue == "Chinois"){
+    //     $code_langue=3;
+    // }
+    // elseif ($langue == "Arabe"){
+    //     $code_langue=4;
+    // }
+    // elseif ($langue == "Espagnol"){
+    //     $code_langue=5;
+    // }
+    // elseif ($langue == "Hindi"){
+    //     $code_langue==6;
+    // }
+    // elseif ($langue == "Portuguais"){
+    //     $code_langue==7;
+    // }
+    // else{
+    //     $code_langue==20;
+    // }
+    // echo $code_langue;
+
+
+
+
+
+
+
+
+
+
+
 
 /*MODIFICATION*/
     if(isset($_GET["action"]) && $_GET["action"] == "modifier" && !empty($_POST)){
-        
 
         if (isset($_SESSION["pseudo"]) ){
+            
+            $utilisateur= new Utilisateurs(
+            htmlentities($_SESSION['id']),
+            htmlentities($utilisateur['pseudo']),
+            htmlentities($_POST["mail"]),
+            htmlentities($_POST["password"]),
+            htmlentities($utilisateur['description']),
+            htmlentities($utilisateur['photoprofil']),
+            htmlentities($_POST["birthday"]?$_POST["birthday"]:null),
+            htmlentities($_POST["nation"]?$_POST["nation"]:null),
+            htmlentities($utilisateur['contact']),
+            htmlentities($utilisateur["notifmail"]),
+            (int)htmlentities($_POST["langue"]) 
+            );
 
-            // if($_POST['password'] == $_POST['confirmPassword'] || !isset($_POST['password']) ){
-                
-                $utilisateur= new Utilisateurs(
-                    $id = htmlentities($_POST["id"]?$_POST["id"]:null),
-                    $pseudo = htmlentities($_SESSION["pseudo"]),
-                    $mail = htmlentities($_POST["mail"]),
-                    $password = htmlentities($_POST["password"]),
-                    $description = htmlentities($_POST["description"]?$_POST["description"]:null),
-                    $photoprofil = htmlentities($_POST["photoprofil"]?$_POST["photoprofil"]:null),
-                    $birthday = htmlentities($_POST["birthday"]?$_POST["birthday"]:null),
-                    $nation = htmlentities($_POST["nation"]?$_POST["nation"]:null),
-                    $contact = htmlentities($_POST["contact"]),
-                    $notifmail = htmlentities($_POST["notifmail"]),
-                    $code_langue = htmlentities($_POST["code_langue"]?$_POST["code_langue"]:null)
-                );
-
-                $modifUtilisateur = new UtilisateurService;
-                $modifUtilisateur->modifierUtilisateur($utilisateur);
-                // $modifUtilisateur->modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue);
-            // }
-        }
+            $newUtilisateur = new UtilisateurService;
+            $modifUtilisateur->modifierUtilisateur($utilisateur);
+        }  
     }
+
 
 
 /*DELETE DES UTILISATEURS*/    
@@ -60,11 +117,15 @@ require_once('../metier/Utilisateurs.php');
     }
     
 
-//AFFICHAGE PAGE PARAMETRES PROFIL
-    $pseudo=$_SESSION["pseudo"];
-    $utilisateur=new UtilisateurService();
-    $utilisateur=$utilisateur->chercherUtilisateurParPseudo($pseudo);
-    affichageParamProfil($utilisateur);
-    
+
+
+//CALUL DE L'AGE UTILISATEUR
+    // $age=new UtilisateurService();
+    // $age->calculAge($pseudo);
+    // echo($age);
+
+
+
+
 
 ?>

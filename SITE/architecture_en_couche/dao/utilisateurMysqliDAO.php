@@ -119,49 +119,35 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 
 
-        
+
 
 /* MODIFICATION de PROFIL*/        
-        // public function modifierUtilisateur(Utilisateurs $utilisateur):void{   
-        //     $pseudo=$utilisateur->getPseudo();
-        //     $mail=$utilisateur->getMail();
-        //     $password=$utilisateur->getPassword();
-        //     $description=$utilisateur->getDescription();
-        //     $photoProfil=$utilisateur->getPhotoProfil();
-        //     $birthday=$utilisateur->getBirthday();
-        //     $nation=$utilisateur->getNation();
-        //     $contact=$utilisateur->getContact();
-        //     $notifmail=$utilisateur->getNotifmail();
-        //     $code_langue=$utilisateur->getCode_langue();
-        //     $mysqli=$this->connexion();
-        //     $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, description=?, photoProfil=?, 
-        //                                     birthday=?, nation=?, contact=?, notifmail=?, code_langue=? WHERE pseudo=?");
-        //     $stmt->bindParam("ssssssssis", $mail, $password, $description, $photoProfil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
-        //     $stmt->execute();
-        //     $mysqli->close();
-        //     }
+        public function modifierUtilisateur(Utilisateurs $utilisateur) :void{   
+            $pseudo=$utilisateur->getPseudo();
+            $mail=$utilisateur->getMail();
+            $password=$utilisateur->getPassword();
+            $description=$utilisateur->getDescription();
+            $photoProfil=$utilisateur->getPhotoProfil();
+            $birthday=$utilisateur->getBirthday();
+            $nation=$utilisateur->getNation();
+            $contact=$utilisateur->getContact();
+            $notifmail=$utilisateur->getNotifmail();
+            $code_langue=$utilisateur->getCode_langue();
 
-        public function modifierUtilisateur(string $mail, string $password, string $photoprofil, string $birthday, string $nation, string $contact, string $notifmail, int $code_langue, string $pseudo) {   
-            // $pseudo=$utilisateur->getPseudo();
-            // $mail=$utilisateur->getMail();
-            // $password=$utilisateur->getPassword();
-            // $description=$utilisateur->getDescription();
-            // $photoprofil=$utilisateur->photoprofil();
-            // $birthday=$utilisateur->getBirthday();
-            // $nation=$utilisateur->getNation();
-            // $contact=$utilisateur->getContact();
-            // $notifmail=$utilisateur->getNotifmail();
-            // $code_langue=$utilisateur->getCode_langue();
             $mysqli=$this->connexion();
-            $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, description=?, photoprofil=?, 
-                                            birthday=?, nation=?, contact=?, notifmail=?, code_langue=? WHERE pseudo=?");
-            $stmt->bindParam("ssssssssis", $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
+            $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, description=?, photoProfil=?, 
+                                    birthday=?, nation=?, contact=?, notifmail=?, code_langue=? WHERE pseudo=?");
+
+            $stmt->bindParam("ssssssssis", $mail, $password, $description, $photoProfil, $birthday, $nation, $contact, 
+                                    $notifmail, $code_langue, $pseudo);
             $stmt->execute();
             $mysqli->close();
-            }
+        }
+
+        
         
 
-            /*SUPPRESSION DES UTILISATEURS*/
+/*SUPPRESSION DES UTILISATEURS*/
             public function deleteUtilisateur(string $pseudo) :void{ 
                 $mysqli=$this->connexion();
                 $stmt=$mysqli->prepare("DELETE from utilisateurs WHERE pseudo=?");
@@ -171,6 +157,63 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             }
 
 
+            
+/*AGE DES UTILISATEURS*/
+            // public function calculAge($pseudo) :?array{
+            //     $mysqli=$this->connexion();
+            //     $stmt=$mysqli->prepare("SELECT birthday, DATE_DIFF(year,birthday,SYSDATE()) from utilisateurs WHERE pseudo=? ");
+            //     $stmt->bind_param("s", $pseudo);
+            //     $stmt->execute();
+            //     $rs = $stmt->get_result();
+            //     $age = $rs->fetch_array(MYSQLI_ASSOC);
+            //     $rs->free();
+            //     $mysqli->close();
+            //     return $age;
+            // }
+       
+           
+            
+            // function calculAge($pseudo, $dateJour){
+            //     $mysqli=$this->connexion();
+            //     $stmt=$mysqli->prepare("SELECT birthday from utilisateurs WHERE pseudo=? ");
+            //     $stmt->bind_param("s", $pseudo);
+            //     $stmt->execute();
+            //     $rs = $stmt->get_result();
+            //     $tabAge = $rs->fetch_array(MYSQLI_ASSOC);
+                
+            //     // $dateJour = new DateTime('now');
+            //     // $birthday = new DateTime($tabAge['birthday']);
+            //     // $age = $birthday->diff($dateJour);
+            //     // return $age->format('%R%a days');
+
+            //     $dateJour = date("Y-m-d");
+            //     $birthday = date_create($tabAge);
+            //     $age = date_diff($birthday, $dateJour);
+            //     return $age->format('%R%a days');
+                
+            // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
 
     }
 

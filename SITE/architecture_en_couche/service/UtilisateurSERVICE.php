@@ -60,18 +60,19 @@ class UtilisateurService {
 
 
 
-    
-    // public function modifierUtilisateur( $pseudo, $mail, $password, $description, $photoprofil, $birthday,  $nation, $contact, $notifmail, $code_langue) {
-    //     $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue);
-    // }
 
-    public function modifierUtilisateur ($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo){
-        // $modifUtilisateur= new UtilisateurMysqliDao;
-        // $modifUtilisateur->modifierUtilisateur($pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue);
-        $this->utilisateurDao->modifierUtilisateur($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
+    public function modifierUtilisateur($utilisateur) {
+        $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($utilisateur);
     }
 
+    // public function modifierUtilisateur ($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo){
+    //     $this->utilisateurDao->modifierUtilisateur($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
+    // }
 
+    // public function calculAge($pseudo) {
+    //     $age = $this->utilisateurDao->calculAge($pseudo);
+    //     return $age;
+    // }
     
 
 }
