@@ -168,4 +168,18 @@ class VoyageMysqliDAO {
         $mysqli->close();
         return $info;
     }
+
+    /* AFFICHER LE PSEUDO UTILISATEUR (TABLE UTILISATEURS) DEPUIS ID UTILISATEUR (TABLE VOYAGE) */
+    public function afficherPseudoDepuisId(int $id) {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select * from voyages inner join utilisateurs on voyages.id=utilisateurs.id where id=?');
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        $data = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $data;
+    }
+
 }

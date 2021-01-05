@@ -79,31 +79,27 @@ function displayBottomResults(){
 
 function displayColTable(){
     echo
-        '<table class="table">
-            <thead class="thead-dark">
+        '<table class="table table-sm" id="tableVoyage">
+            <thead class="thead" id="enteteTableVoyage">
                 <tr>
-                    <th scope="col">TITRE</th>
-                    <th scope="col">UTILISATEUR</th>
-                    <th scope="col">CONTINENT</th>
-                    <th scope="col">PAYS</th>
-                    <th scope="col">VILLE</th>
-                    <th scope="col">RESUME</th>
-                    <th scope="col">Détails</th>
+                    <th scope="col" id="top-left-col">TITRE</th>
+                    <th scope="col">PAR</th>
+                    <th scope="col">EN IMAGE</th>
+                    <th scope="col">EN BREF</th>
+                    <th scope="col"></th>
                 </tr>
-            </thead>
-        <tbody>';
+            </thead>';
 }
 
 function displayDatasTable($data){
     echo
-                '<tr>
-                    <td>' . $data["titre"] . '</td>
-                    <td>' . $data["id"] . '</td>
-                    <td>' . $data["continent"] . '</td>
-                    <td>' . $data["pays"] . '</td>
-                    <td>' . $data["ville"] . '</td>
-                    <td>' . $data["resume"] . '</td>
-                    <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php"><button class="btn btn-secondary">Détails</button></a></td>';
+        '<tbody id="corpsTableVoyage">
+            <tr>
+                <td>' . $data["titre"] . '</td>
+                <td>' . $data["pseudo"] . '</td>
+                <td><img src="' . $data["couverture"] . '"/></td>
+                <td>' . $data["resume"] . '</td>
+                <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["id"] . '"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
 }
 
 function displayBottomTable(){

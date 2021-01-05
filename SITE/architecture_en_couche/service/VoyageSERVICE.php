@@ -77,4 +77,11 @@ class VoyageService {
         $voyagesService = $this->voyageDao->chercherVoyagesParPseudo($pseudo);
         return $voyagesService;
     }
+
+//Afficher pseudo depuis id
+
+    public function afficherPseudoDepuisId(int $id){
+        $data = $this->voyageDao->afficherPseudoDepuisId($id);
+        return $data;
+    }
 }

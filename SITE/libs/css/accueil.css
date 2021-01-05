@@ -52,23 +52,103 @@
             }
     } 
 
-/* CARD VOYAGE */
-/* #voyage{ */
-    /* margin-left:40em;
-    margin-top:-40em; */
-/* }
 
-#encadre-voyage{
-    background-color: #dcdacd;
+/* TABLEAU */
+#tableVoyage {
+    border-radius:50% 50% 50% 50% !important; /* TODO : FAIRE FONCTIONNER BORDER RADIUS !!! */
+    text-align:center;
 }
 
-#titre-voyage{
-    font-family: 'Rancho', cursive;
-    color:#52908b;
-} */
+#enteteTableVoyage {
+    background-color:#52908b;
+    border-radius:50%;
+    font-family: 'Halant', serif;
+    color:white;
+    font-size:1em;
+    border-radius : 5px 4px 3px 2px;
+}
 
-/* VOYAGE */
-.photoprofil {
+#corpsTableVoyage {
+    background-color: #dcdacd;
+    border-radius : 5px 4px 3px 2px;
+}
+
+#btnDetailsVoyage {
+    background-color:#52908b;
+    font-family: 'Halant', serif;
+    color:white;
+    border:none;
+}
+
+/* PAGES */
+.pages {
+    font-family: 'Halant', serif;
+    color: #707070;
+    font-size:1.4em;
+    margin-top:-4em;
+    margin-left:34em;
+}
+
+    @media screen and (max-width : 1280px) {
+        .pages {
+                margin-left:28em;
+            }
+    }
+
+    @media screen and (max-width : 1200px) {
+        .pages {
+                margin-top:-4em;
+            }
+    }
+
+    @media screen and (max-width : 1090px) {
+        .pages {
+                margin-top:-6em;
+                margin-left:24em;
+            }
+    }
+
+    @media screen and (max-width : 910px) {
+        .pages {
+                font-size:1.2em;
+                margin-top:-4em;
+                margin-left:25em;
+            }
+    }
+    
+    @media screen and (max-width : 780px) {
+        .pages {
+                font-size:1em;
+            }
+    }
+
+    @media screen and (max-width : 600px) {
+        .pages {
+                margin-left:16em;
+            }
+    }
+
+    @media screen and (max-width : 500px) {
+        .pages {
+                margin-left:12em;
+            }
+    }
+
+    @media screen and (max-width : 430px) {
+        .pages {
+                margin-left:10em;
+            }
+    }
+
+    @media screen and (max-width : 380px) {
+        .pages {
+                margin-left:9em;
+            }
+    }
+
+
+/* VOYAGE / ENCADRE DYNAMIQUE */
+/* .photoprofil {
     z-index:2;
     border:solid #707070 0.1em;
     height:8em;
@@ -136,11 +216,8 @@
         background: none;
     }
 
-
-
-
 /* VOYAGE 1 */
-.photoprofil1 {
+/* .photoprofil1 {
     z-index:2;
     border:solid #707070 0.1em;
     height:8em;
@@ -559,11 +636,10 @@
     .lienvoyage1:hover {   
         color:#52908b;  
         background: none;
-    }
-
+    } */
 
 /* VOYAGE 2 */
-.photoprofil2 {
+/* .photoprofil2 {
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
@@ -994,11 +1070,10 @@
     .lienvoyage2:hover {   
         color:#52908b;  
         background: none;
-    }
-
+    } */
 
 /* VOYAGE 3 */
-.photoprofil3 {
+/* .photoprofil3 {
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
@@ -1416,11 +1491,10 @@
     .lienvoyage3:hover {   
         color:#52908b;  
         background: none;
-    }
-
+    } */
 
 /* VOYAGE 4 */
-.photoprofil4 {
+/* .photoprofil4 {
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
@@ -1848,71 +1922,4 @@
     .lienvoyage4:hover {   
         color:#52908b;  
         background: none;
-    }
-
-
-/* PAGES */
-.pages {
-    font-family: 'Halant', serif;
-    color: #707070;
-    font-size:1.4em;
-    margin-top:-4em;
-    margin-left:34em;
-}
-
-    @media screen and (max-width : 1280px) {
-        .pages {
-                margin-left:28em;
-            }
-    }
-
-    @media screen and (max-width : 1200px) {
-        .pages {
-                margin-top:-4em;
-            }
-    }
-
-    @media screen and (max-width : 1090px) {
-        .pages {
-                margin-top:-6em;
-                margin-left:24em;
-            }
-    }
-
-    @media screen and (max-width : 910px) {
-        .pages {
-                font-size:1.2em;
-                margin-top:-4em;
-                margin-left:25em;
-            }
-    }
-    
-    @media screen and (max-width : 780px) {
-        .pages {
-                font-size:1em;
-            }
-    }
-
-    @media screen and (max-width : 600px) {
-        .pages {
-                margin-left:16em;
-            }
-    }
-
-    @media screen and (max-width : 500px) {
-        .pages {
-                margin-left:12em;
-            }
-    }
-
-    @media screen and (max-width : 430px) {
-        .pages {
-                margin-left:10em;
-            }
-    }
-
-    @media screen and (max-width : 380px) {
-        .pages {
-                margin-left:9em;
-            }
-    }
+    }  */
