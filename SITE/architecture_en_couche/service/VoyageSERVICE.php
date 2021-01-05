@@ -57,13 +57,6 @@ class VoyageService {
         return $rs;
     }
 
-//Afficher voyages selon pseudo
-
-    public function chercherVoyageParPseudo($pseudo){
-        $voyagesService = $this->voyageDao->chercherVoyageParPseudo($pseudo);
-        return $voyagesService;
-    }
-
 //Compter le nombre de voyages dans la bdd
 
     public function compterVoyages(){
@@ -73,9 +66,15 @@ class VoyageService {
 
 //Compter le nombre de voyages d'un utilisateur
 
-    public function nbVoyagesUtilisateur(){
-        $data = $this->voyageDao->nbVoyagesUtilisateur();
-        return $data;
+    public function nbVoyagesUtilisateur($pseudo){
+        $info = $this->voyageDao->nbVoyagesUtilisateur($pseudo);
+        return $info;
     }
 
+//Afficher voyages selon pseudo
+
+    public function chercherVoyagesParPseudo($pseudo){
+        $voyagesService = $this->voyageDao->chercherVoyagesParPseudo($pseudo);
+        return $voyagesService;
+    }
 }

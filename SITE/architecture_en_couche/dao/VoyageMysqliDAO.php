@@ -9,8 +9,8 @@ class VoyageMysqliDAO {
 
      /* CONNEXION */       
      public function connexion() {
-        // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
-        $mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
+        $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+        //$mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
         return $mysqli;
     }
 
@@ -158,14 +158,14 @@ class VoyageMysqliDAO {
     }
 
     /* COMPTER LE NOMBRE DE VOYAGES D'UN UTILISATEUR */
-    public function nbVoyagesUtilisateur() {
+    public function nbVoyagesUtilisateur(string $pseudo) {
         $mysqli=$this->connexion();
         $stmt=$mysqli->prepare('select * from voyages inner join utilisateurs on voyages.id=utilisateurs.id where pseudo=?');
         $stmt->bind_param("s",$pseudo);
         $stmt->execute();
         $rs=$stmt->get_result();
-        $data=mysqli_num_rows($rs);
+        $info=mysqli_num_rows($rs);
         $mysqli->close();
-        return $data;
+        return $info;
     }
 }
