@@ -10,22 +10,26 @@ include_once '../presentation/mesAmisPresentation.php';
 include '../metier/Utilisateur.php';
 include_once '../service/UtilisateurSERVICE.php';
 
-//$pseudo = htmlentities($_GET["pseudo"]);
+$pseudo = htmlentities($_GET["pseudo"]);
+$utilisateur = new UtilisateurService();
 //try{
-    //$utilisateur = utilisateurSERVICE::chercherPseudo($pseudo);
+    $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo);
+    if (isset ($profil['birthday']) && !empty ($profil['birthday'])) {
+        $dateNaissance = new DateTime($profil['birthday']);
+        $dateAjd = new DateTime();
+        $age = date_diff($dateNaissance, $dateAjd);
+    }
 //}catch(UtilisateurException $e){
     //
 //}
 
 amisDebut();
 
-menuLat();
+menuLat($profil, $age);
 
 listeAmis();
 
 contenuListeAmis();
-
-nbPages();
 
 finAmis();
 

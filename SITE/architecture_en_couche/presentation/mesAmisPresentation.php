@@ -26,26 +26,28 @@
                 include ("navbarCONTROLEUR.php");
     }
 
-    function menuLat(){
+    function menuLat($profil, $age){
         echo'<div class="pl-0 menu_lateral_detail_voyage">
             <nav class="bg-sable mr-3 pr-3 menU centrage">
                 <div class="col-lg-12 col-md-6 col-sm-6 pl-1 col-12">
                     <div class="image-profil">
-                        <img src="../../img/photos/photo_profil_detail_voyage.jpg" alt="photo de profil"
+                        <img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil"
                             width="100%" height="100%" />
                     </div>
                     <div class="row">
-                        <p>Membre depuis: (05/10/2020)</p>
+                        <p>Membre depuis: (XX/XX/XXXX)</p>
                     </div>
-                    <div class="row">
-                        <p>35 ans</p>
-                    </div>
+                    <div class="row">';
+                    if (isset($profil['birthday']) && !empty($profil['birthday'])) {
+                        echo'<p>'. $age->format('%y ans') .'</p>';
+                    }
+                    echo'</div>
                     <div class="row">
                         <p class="titre-lang">Langue parlée : </p>
                         <p>
-                        <ul>
-                            <li>Français</li>
-                        </ul>
+                            <ul>
+                                <li>'. $profil['type_langue'] .'</li>
+                            </ul>
                         </p>
                     </div>
                     <div class="row mt-3">
@@ -553,6 +555,7 @@
     }
 
     function finAmis(){
+        nbPages();
         footer();
         finPage();
     }
