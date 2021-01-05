@@ -10,13 +10,15 @@ function displayPageAccueil1(){
 
 function displayPageAccueil2(){
     displayBottomResults();
+    displayColTable();
 }
 
-function displayPageAccueil3($data){
-    displayTrips($data);
-}
+// function displayPageAccueil3($data){
+//     displayTrips($data);
+// }
 
-function displayPageAccueil4(){
+function displayPageAccueil3(){
+    displayBottomTable();
     displayPages();
     footer();
     displayEnd();
@@ -66,7 +68,8 @@ function menuLateral(){
     echo 
         '<div class="row">';
             include ("menulatCONTROLEUR.php");
-                echo '<p class="rsvoyages">';
+        echo '<div class="col-9">
+                <p class="rsvoyages">';
 }
 
 function displayBottomResults(){
@@ -74,22 +77,76 @@ function displayBottomResults(){
         '</p>';
 }
 
-function displayTrips($data){ // 1 ENCADRE DYNAMIQUE //
+function displayColTable(){
     echo
-        '<div class="row">
-            <img src="'.$data["id"].'" class="photoprofil"/>
-            <h1 class="titrevoyage">'.$data["titre"].'</h1>
-            <img src="'.$data["couverture"].'" class="photovoyage"/>
-            <div class="encadrevoyage">
-                <p class="textevoyage">
-                    "'.$data["resume"].'"
-                </p>
-                <a href="../controleur/detail_voyageCONTROLEUR.php" class="lienvoyage">
-                    Découvrir ce voyage
-                </a>
-            </div>
+        '<table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">TITRE</th>
+                    <th scope="col">UTILISATEUR</th>
+                    <th scope="col">CONTINENT</th>
+                    <th scope="col">PAYS</th>
+                    <th scope="col">VILLE</th>
+                    <th scope="col">RESUME</th>
+                    <th scope="col">Détails</th>
+                </tr>
+            </thead>
+        <tbody>';
+}
+
+function displayDatasTable($data){
+    echo
+                '<tr>
+                    <td>' . $data["titre"] . '</td>
+                    <td>' . $data["id"] . '</td>
+                    <td>' . $data["continent"] . '</td>
+                    <td>' . $data["pays"] . '</td>
+                    <td>' . $data["ville"] . '</td>
+                    <td>' . $data["resume"] . '</td>
+                    <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php"><button class="btn btn-secondary">Détails</button></a></td>';
+}
+
+function displayBottomTable(){
+    echo
+                '</tr>
+            </tbody>
+        </table>
+    </div>';
+}
+
+function displayPages(){
+    echo
+            '<p class="pages">< 1 2 ... 4 ></p>
         </div>';
 }
+
+function footer(){
+    include ("../controleur/footerCONTROLEUR.php");
+}
+
+function displayEnd(){
+    echo 
+                '</div>
+            </body>
+        </html>';
+}
+
+// function displayTrips($data){ // 1 ENCADRE DYNAMIQUE //
+//     echo
+//         '<div class="row">
+//             <img src="'.$data["id"].'" class="photoprofil"/>
+//             <h1 class="titrevoyage">'.$data["titre"].'</h1>
+//             <img src="'.$data["couverture"].'" class="photovoyage"/>
+//             <div class="encadrevoyage">
+//                 <p class="textevoyage">
+//                     "'.$data["resume"].'"
+//                 </p>
+//                 <a href="../controleur/detail_voyageCONTROLEUR.php" class="lienvoyage">
+//                     Découvrir ce voyage
+//                 </a>
+//             </div>
+//         </div>';
+// }
 
 // function displayTripOne($data){ // 4 ENCADRES "EN DUR" //
 //     echo
@@ -156,22 +213,5 @@ function displayTrips($data){ // 1 ENCADRE DYNAMIQUE //
 //             </div>
 //         </div>';
 // }
-
-function displayPages(){
-    echo
-            '<p class="pages">< 1 2 ... 4 ></p>
-        </div>';
-}
-
-function footer(){
-    include ("../controleur/footerCONTROLEUR.php");
-}
-
-function displayEnd(){
-    echo 
-                '</div>
-            </body>
-        </html>';
-}
 
 ?>

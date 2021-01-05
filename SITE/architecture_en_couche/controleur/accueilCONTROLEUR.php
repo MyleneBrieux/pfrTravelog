@@ -21,16 +21,23 @@ displayPageAccueil2();
 
 // affichage dynamique des voyages dans le corps de page //
 $rs=$voyageService->afficherVoyages();
-while ($data=mysqli_fetch_array($rs)) { // commenter lignes 24 et 25 pour voir affichage "en dur" //
-displayPageAccueil3($data);
-}
+    
+    while($data=mysqli_fetch_array($rs)){
+        displayDatasTable($data);
+    }
+
+displayPageAccueil3();
+
+// ENCADRES //
+// while ($data=mysqli_fetch_array($rs)) { // commenter lignes 24 et 25 pour voir affichage "en dur" //
+// displayPageAccueil3($data);
+// }
 
 // $data=mysqli_fetch_array($rs); // commenter lignes 28 à 32 pour affichage "en dur" //
 // displayTripOne($data);
 // displayTripTwo($data);
 // displayTripThree($data);
 // displayTripFour($data);
-
-displayPageAccueil4();
+// var_dump($data);
 
 ?>
