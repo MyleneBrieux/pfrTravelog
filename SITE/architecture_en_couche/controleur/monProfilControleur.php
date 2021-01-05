@@ -8,10 +8,10 @@ include_once '../metier/Utilisateur.php';
 include_once '../service/VoyageSERVICE.php';
 include_once '../metier/Voyage.php';
 
-    $pseudo = htmlentities(trim($_GET['pseudo']));
+    $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     $utilisateur = new UtilisateurService();
     // try{
-        $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo);
+        $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
         if (isset ($profil['birthday']) && !empty ($profil['birthday'])) {
             $dateNaissance = new DateTime($profil['birthday']);
             $dateAjd = new DateTime();

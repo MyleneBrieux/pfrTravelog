@@ -57,7 +57,10 @@
                                 <p><img src="../../img/logos_divers/ami_turquoise2.png" alt="logo amis">Ajouter en ami</p>
                             </div>
                             <div class="row mt-3 mb-3">
-                                <a href="../controleur/controleur_param_profil.php"><button type="button" class="button">Modifier le profil</button></a>
+                                <a href="../controleur/controleur_profil.php"><button type="button" class="button">Modifier le profil</button></a>
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <a href="../controleur/mesAmisControleur.php?pseudo='. $_SESSION['pseudo'] .'"><button type="button" class="button">Mes Amis</button></a>
                             </div>
                             <div class="row mt-3 mb-3">
                                 <a href="../controleur/controleur_contact.php"><button type="button" class="button">Contactez moi</button></a>
