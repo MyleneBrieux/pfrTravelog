@@ -24,7 +24,7 @@ include_once '../metier/Voyage.php';
 
     $voyagesService = new VoyageService();
     // $data=$voyagesService->nbVoyagesUtilisateur();
-    $voyages = $voyagesService->chercherVoyageParPseudo($pseudo);
+    //$voyages = $voyagesService->chercherVoyageParPseudo($pseudo);
     //var_dump($voyages);
 
 profilDebut();
