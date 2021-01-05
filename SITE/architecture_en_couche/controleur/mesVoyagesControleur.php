@@ -8,16 +8,16 @@ include_once '../metier/Voyage.php';
 include_once '../service/VoyageSERVICE.php';
 include_once '../service/UtilisateurSERVICE.php';
 
-$pseudo = htmlentities(trim($_GET['pseudo']));
+$pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     $utilisateur = new UtilisateurService();
     $voyagesService = new VoyageService();
     // try{
-        $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo);
+        $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
     // }catch(UtilisateurException $e){
         
     // }
 
-    $info=$voyagesService->nbVoyagesUtilisateur($pseudo);
+    $info=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages crées par l'utilisateur dont on visite la page
     // $voyages = $voyagesService->chercherVoyageParPseudo($pseudo);
     // var_dump($voyages);
     // var_dump($data);
@@ -27,9 +27,9 @@ voyagesDebut();
 menuLat();
 
 if ($_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo']) {
-    débutCorpsUtilisateur($info);
+    débutCorpsUtilisateur($info); //Si le pseudo correspond à celui de l'utilisateur connecté alors un lien vers la création de voyage s'affiche
 } else {
-    débutCorpsVisiteur($profil, $info);
+    débutCorpsVisiteur($profil, $info); //Sinon un lien pour accéder à son profil s'affiche à la place
 }
 
 afficherVoyages();
