@@ -17,7 +17,7 @@ $pseudo = htmlentities(trim($_GET['pseudo']));
         
     // }
 
-    // $data=$voyagesService->nbVoyagesUtilisateur();
+    $info=$voyagesService->nbVoyagesUtilisateur($pseudo);
     // $voyages = $voyagesService->chercherVoyageParPseudo($pseudo);
     // var_dump($voyages);
     // var_dump($data);
@@ -27,9 +27,9 @@ voyagesDebut();
 menuLat();
 
 if ($_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo']) {
-    débutCorpsUtilisateur();
+    débutCorpsUtilisateur($info);
 } else {
-    débutCorpsVisiteur($profil);
+    débutCorpsVisiteur($profil, $info);
 }
 
 afficherVoyages();

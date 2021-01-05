@@ -32,9 +32,9 @@
         include ("menulatCONTROLEUR.php");
     }
 
-    function débutCorpsVisiteur($profil){
+    function débutCorpsVisiteur($profil, $info){
         echo' <h1 class="titre_mesvoyages">Les voyages de <strong>'. $profil['pseudo'] .'</strong></h1>
-        <p class="rsvoyages">XX voyages - XX continents visités - XX pays visités</p>
+        <p class="rsvoyages">'. $info .' voyages - XX continents visités - XX pays visités</p>
         <div class="row">
         <div class="encadrevoyage">
             <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
@@ -52,9 +52,9 @@
 </div>';
     }
 
-    function débutCorpsUtilisateur(){
+    function débutCorpsUtilisateur($info){
         echo' <h1 class="titre_mesvoyages">Mes voyages</h1>
-        <p class="rsvoyages">XX voyages - XX continents visités - XX pays visités</p>
+        <p class="rsvoyages">'. $info .' voyages - XX continents visités - XX pays visités</p>
         <div class="row">
         <div class="encadrevoyage">
             <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
