@@ -71,11 +71,33 @@
     font-family: 'Halant', serif;
 }
 
+    .lienProfil:link {
+        color:#707070;
+    }
+
+    .lienProfil:visited {
+        color:#707070;
+    }
+
+    .lienProfil:focus {
+        background: none;
+    }
+
+    .lienProfil:hover {   
+        color:#707070; 
+        background: none;
+        text-decoration:none;
+    }
+
 #btnDetailsVoyage {
     background-color:#52908b;
     font-family: 'Halant', serif;
     color:white;
     border:none;
+}
+
+.photosVoyage {
+    width:20em;
 }
 
 /* PAGES */

@@ -100,14 +100,14 @@ function displayDatasTable1($data){
 
 function displayPseudoTable($donnee){
     echo
-        '<td>' . $donnee["pseudo"] . '</td>';
+        '<td>' . '<a href="../controleur/monProfilControleur.php?pseudo=' . $donnee["pseudo"] . '" class="lienProfil">' . $donnee["pseudo"] . '</a></td>';
 }
 
 function displayDatasTable2($data){
     echo
-        '<td><img src="' . $data["couverture"] . '"/></td>
+        '<td><img src="../../img/photos/' . $data["couverture"] . '" class="photosVoyage"/></td>
         <td>' . $data["resume"] . '</td>
-        <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '"><button class="btn" id="btnDetailsVoyage">En savoir +</button></a></td>';
+        <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
 }
 
 function displayBottomTable(){
