@@ -31,7 +31,6 @@ $rs=$voyageService->afficherVoyages();
         displayDatasTable2($data);
     }
 
-
 displayPageAccueil3();
 
 // ENCADRES //

@@ -37,9 +37,9 @@ function displayHead(){
         '<head>
             <meta charset="utf-8">
 
+            <link rel="stylesheet" href="../../libs/css/accueil.css">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
                   integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-            <link rel="stylesheet" href="../../libs/css/accueil.css">
 
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -82,7 +82,7 @@ function displayColTable(){
         '<table class="table table-sm" id="tableVoyage">
             <thead class="thead" id="enteteTableVoyage">
                 <tr>
-                    <th scope="col" id="top-left-col">TITRE</th>
+                    <th scope="col" id="top-left-col">DÉCOUVREZ</th>
                     <th scope="col">PAR</th>
                     <th scope="col">EN IMAGE</th>
                     <th scope="col">EN BREF</th>
@@ -107,7 +107,7 @@ function displayDatasTable2($data){
     echo
         '<td><img src="' . $data["couverture"] . '"/></td>
         <td>' . $data["resume"] . '</td>
-        <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["id"] . '"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
+        <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '"><button class="btn" id="btnDetailsVoyage">En savoir +</button></a></td>';
 }
 
 function displayBottomTable(){
