@@ -128,4 +128,16 @@ class VoyageMysqliDAO {
         return $info;
     }
 
+    /* RECHERCHE VOYAGE PAR PSEUDO */
+    public function chercherVoyagesParPseudo(string $pseudo) {
+        $mysqli=$this->connexion();
+        $stmt = $mysqli->prepare("select code_voyage, titre, resume, date_debut, date_fin, continent, pays, ville,
+        couverture, statut, likes, vues, voyages.id, code_etape from voyages inner join utilisateurs on voyages.id=utilisateurs.id where pseudo=?");
+        $stmt->bind_param("s",$pseudo);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        return $rs;
+        $rs->free();
+        $mysqli->close();
+    }
 }
