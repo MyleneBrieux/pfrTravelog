@@ -18,9 +18,9 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     // }
 
     $info=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages crées par l'utilisateur dont on visite la page
-    // $voyages = $voyagesService->chercherVoyageParPseudo($pseudo);
-    // var_dump($voyages);
-    // var_dump($data);
+    $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo);
+    //var_dump($voyages);
+    
 
 voyagesDebut();
 
@@ -32,7 +32,10 @@ if ($_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo']) {
     débutCorpsVisiteur($profil, $info); //Sinon un lien pour accéder à son profil s'affiche à la place
 }
 
-afficherVoyages();
+while($data=mysqli_fetch_array($voyages)){
+    afficherVoyages($data);
+    //var_dump($data);
+}
 
 nbPages();
 
