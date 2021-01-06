@@ -42,6 +42,11 @@ class UtilisateurService {
         return $info;
     }
 
+    public function afficherPseudoDepuisId(int $id){
+        $donnee = $this->utilisateurDao->afficherPseudoDepuisId($id);
+        return $donnee;
+    }
+
     public function passwordHash($password) {
         $newPassword=password_hash($password,PASSWORD_DEFAULT);
         return $newPassword;

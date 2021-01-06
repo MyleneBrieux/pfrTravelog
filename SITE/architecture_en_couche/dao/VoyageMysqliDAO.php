@@ -94,7 +94,6 @@ class VoyageMysqliDAO {
     }
 
 
-
     /* AFFICHER TOUS LES VOYAGES */        
     public function afficherVoyages() {
         $mysqli=$this->connexion();
@@ -105,46 +104,6 @@ class VoyageMysqliDAO {
         $rs->free();
         $mysqli->close();
     }
-
-    /* FILTRER LES VOYAGES PAR CONTINENT */        
-    public function filtrerVoyagesParContinent(string $continent) : ?array {
-        $mysqli=$this->connexion();
-        $stmt = $mysqli->prepare("select * from voyages where continent=?");
-        $stmt->bind_param("s",$continent);
-        $stmt->execute();
-        $rs = $stmt->get_result();
-        $data = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $data;
-    }
-
-    /* FILTRER LES VOYAGES PAR PAYS */        
-    public function filtrerVoyagesParPays(string $pays) : ?array {
-        $mysqli=$this->connexion();
-        $stmt = $mysqli->prepare("select * from voyages where pays=?");
-        $stmt->bind_param("s",$pays);
-        $stmt->execute();
-        $rs = $stmt->get_result();
-        $data = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $data;
-    }
-
-    /* FILTRER LES VOYAGES PAR VILLE */        
-    public function filtrerVoyagesParVille(string $ville) : ?array {
-        $mysqli=$this->connexion();
-        $stmt = $mysqli->prepare("select * from voyages where ville=?");
-        $stmt->bind_param("s",$ville);
-        $stmt->execute();
-        $rs = $stmt->get_result();
-        $data = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $data;
-    }
-
 
     /* COMPTER LE NOMBRE DE VOYAGES DANS LA BDD */
     public function compterVoyages() {
@@ -167,19 +126,6 @@ class VoyageMysqliDAO {
         $info=mysqli_num_rows($rs);
         $mysqli->close();
         return $info;
-    }
-
-    /* AFFICHER LE PSEUDO UTILISATEUR (TABLE UTILISATEURS) DEPUIS ID UTILISATEUR (TABLE VOYAGE) */
-    public function afficherPseudoDepuisId(int $id) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from voyages inner join utilisateurs on voyages.id=utilisateurs.id where id=?');
-        $stmt->bind_param("i",$id);
-        $stmt->execute();
-        $rs = $stmt->get_result();
-        $data = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $data;
     }
 
 }

@@ -91,15 +91,23 @@ function displayColTable(){
             </thead>';
 }
 
-function displayDatasTable($data){
+function displayDatasTable1($data){
     echo
         '<tbody id="corpsTableVoyage">
             <tr>
-                <td>' . $data["titre"] . '</td>
-                <td>' . $data["pseudo"] . '</td>
-                <td><img src="' . $data["couverture"] . '"/></td>
-                <td>' . $data["resume"] . '</td>
-                <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["id"] . '"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
+                <td>' . $data["titre"] . '</td>';
+}
+
+function displayPseudoTable($donnee){
+    echo
+        '<td>' . $donnee["pseudo"] . '</td>';
+}
+
+function displayDatasTable2($data){
+    echo
+        '<td><img src="' . $data["couverture"] . '"/></td>
+        <td>' . $data["resume"] . '</td>
+        <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["id"] . '"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
 }
 
 function displayBottomTable(){

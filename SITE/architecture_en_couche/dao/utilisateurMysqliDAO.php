@@ -1,8 +1,8 @@
 <?php
 
 // LIAISONS AVEC AUTRES COUCHES //
-// include_once("../metier/Utilisateur.php");
-include_once("../metier/Utilisateurs.php");
+include_once("../metier/Utilisateur.php");
+// include_once("../metier/Utilisateurs.php");
 include_once("../metier/Voyage.php");
 include_once("../metier/Notification.php");
 include_once("../metier/DemandeAmi.php");
@@ -15,8 +15,8 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     /* CONNEXION */       
         public function connexion() {
-            // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
-            $mysqli= new mysqli('localhost','root','','travelog');
+            $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+            // $mysqli= new mysqli('localhost','root','','travelog');
             return $mysqli;
         }
 
@@ -97,6 +97,19 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             $rs->free();
             $mysqli->close();
             return $info;
+        }
+
+    /* AFFICHER LE PSEUDO UTILISATEUR (TABLE UTILISATEURS) DEPUIS ID UTILISATEUR (TABLE VOYAGE) */
+        public function afficherPseudoDepuisId(int $id) {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select pseudo from utilisateurs inner join voyages on utilisateurs.id=voyages.id where voyages.id=?');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs = $stmt->get_result();
+            $donnee = $rs->fetch_array(MYSQLI_ASSOC);
+            $rs->free();
+            $mysqli->close();
+            return $donnee;
         }
 
     

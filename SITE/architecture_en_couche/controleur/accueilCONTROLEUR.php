@@ -9,6 +9,7 @@ include_once("../metier/Voyage.php");
 
 session_start();
 
+$utilisateurService = new UtilisateurService();
 $voyageService = new VoyageService();
 
 displayPageAccueil1();
@@ -23,8 +24,13 @@ displayPageAccueil2();
 $rs=$voyageService->afficherVoyages();
     
     while($data=mysqli_fetch_array($rs)){
-        displayDatasTable($data);
+        displayDatasTable1($data);
+        $id=$data["id"];
+        $donnee=$utilisateurService->afficherPseudoDepuisId($id);
+        displayPseudoTable($donnee);
+        displayDatasTable2($data);
     }
+
 
 displayPageAccueil3();
 
