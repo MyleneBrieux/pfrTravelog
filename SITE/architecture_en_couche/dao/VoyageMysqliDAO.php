@@ -97,7 +97,7 @@ class VoyageMysqliDAO {
     /* AFFICHER TOUS LES VOYAGES */        
     public function afficherVoyages() {
         $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from voyages');
+        $stmt=$mysqli->prepare('select * from voyages order by date_debut asc');
         $stmt->execute();
         $rs=$stmt->get_result();
         return $rs;
