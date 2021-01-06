@@ -23,9 +23,13 @@ include_once '../metier/Voyage.php';
     // }
 
     $voyagesService = new VoyageService();
-    // $data=$voyagesService->nbVoyagesUtilisateur();
-    //$voyages = $voyagesService->chercherVoyageParPseudo($pseudo);
+    $data=$voyagesService->nbVoyagesUtilisateur($pseudo);
+    $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo);
     //var_dump($voyages);
+
+    // while($data=mysqli_fetch_array($voyages)){
+    //     var_dump($data);
+    // }
 
 profilDebut();
 
@@ -33,7 +37,11 @@ menuLat($profil, $age);
 
 presentationUser($profil);
 
-voyages($profil, $voyages);
+while($data=mysqli_fetch_array($voyages)){
+    voyages($profil, $data);
+    var_dump($data);
+}
+
 
 profilFin();
 

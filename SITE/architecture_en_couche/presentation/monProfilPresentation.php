@@ -22,7 +22,7 @@
         echo '<body>
         <div class="container-fluid">
         <header class="header">';
-            include "navbarCONTROLEUR.php";
+            //include "navbarCONTROLEUR.php";
         echo'</header>';
     }
 
@@ -111,13 +111,13 @@
                 </div>
             </div>';
     }
-    function autresVoyage($profil, $voyage) {
+    function autresVoyage($profil, $data) {
                     echo'<div>
                         <a href="../controleur/mesVoyagesControleur.php?pseudo='.$profil["pseudo"].'"><h3>Ses autres voyages</h3></a>
                     </div>
                     <div class="row d-inline-flex justify-content-around">
                         <div class="ml-3">
-                        <a href="../controleur/detail_voyageControleur.php"><h4>'. $voyage['titre'] .'</h4>
+                        <a href="../controleur/detail_voyageControleur.php?=code_voyage='. $data['code_voyage'] .'"><h4>'. $data['titre'] .'</h4>
                             <img class="mt-2" src="../../img/photos/osaka.jpg" alt="" width=352 height=224></a>
                         </div>
                         <div class="ml-3">
@@ -154,10 +154,10 @@
         profilHeader();
     }
 
-    function voyages($profil, $voyage){
-        lastTrip($voyage);
-        mostPopular($voyage);
-        autresVoyage($profil, $voyage);
+    function voyages($profil, $data){
+        lastTrip($data);
+        mostPopular($data);
+        autresVoyage($profil, $data);
     }
 
     function profilFin(){
