@@ -122,12 +122,13 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 
 /* MODIFICATION de PROFIL*/        
-        public function modifierUtilisateur(Utilisateurs $utilisateur) :void{   
+        public function modifierUtilisateur(Utilisateurs $utilisateur) :void{ 
+            $id=$utilisateur->getId(); 
             $pseudo=$utilisateur->getPseudo();
             $mail=$utilisateur->getMail();
             $password=$utilisateur->getPassword();
             $description=$utilisateur->getDescription();
-            $photoProfil=$utilisateur->getPhotoProfil();
+            $photoprofil=$utilisateur->getPhotoprofil();
             $birthday=$utilisateur->getBirthday();
             $nation=$utilisateur->getNation();
             $contact=$utilisateur->getContact();
@@ -135,16 +136,14 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             $code_langue=$utilisateur->getCode_langue();
 
             $mysqli=$this->connexion();
-            $stmt=$mysqli->prepare("UPDATE utilisateurs SET mail=?, password=?, description=?, photoProfil=?, 
-                                    birthday=?, nation=?, contact=?, notifmail=?, code_langue=? WHERE pseudo=?");
-
-            $stmt->bindParam("ssssssssis", $mail, $password, $description, $photoProfil, $birthday, $nation, $contact, 
-                                    $notifmail, $code_langue, $pseudo);
+            $stmt=$mysqli->prepare("UPDATE utilisateurs SET id=?, pseudo=?, mail=?, password=?, description=?, photoprofil=?, birthday=?, nation=?, contact=?, notifmail=?, code_langue=? WHERE pseudo=?");
+            $stmt->bind_Param("isssssssssis", $id, $pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
             $stmt->execute();
             $mysqli->close();
         }
 
-        
+        // $stmt = $mysqli->prepare("insert into utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
+        //                               VALUES (null, ?, ?, ?, null, 'photo', null, null, 'Y', 'Y', '1')");
         
 
 /*SUPPRESSION DES UTILISATEURS*/

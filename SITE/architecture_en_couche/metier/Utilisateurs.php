@@ -78,7 +78,7 @@ class Utilisateurs {
 
 /*PHOTO DE PROFIL*/
     public function getPhotoprofil() :string{
-        return $this->photoProfil;
+        return $this->photoprofil;
     }
 
     public function setPhotoprofil(string $photoprofil) :self{

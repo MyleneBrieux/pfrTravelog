@@ -33,46 +33,34 @@ require_once('../metier/Utilisateurs.php');
     // }
 
     
-
-
-    // $langue = $_POST['langue'];
+//SWITCH LANGUE
+    // $code_langue = $_POST['code_langue'];
         
-    // if ($langue == "Anglais"){
+    // if ($code_langue == "Anglais"){
     //     $code_langue=1;
     // }
-    // elseif ($langue == "Francais"){
+    // elseif ($code_langue == "Francais"){
     //     $code_langue=2;
     // }
-    // elseif ($langue == "Chinois"){
+    // elseif ($code_langue == "Chinois"){
     //     $code_langue=3;
     // }
-    // elseif ($langue == "Arabe"){
+    // elseif ($code_langue == "Arabe"){
     //     $code_langue=4;
     // }
-    // elseif ($langue == "Espagnol"){
+    // elseif ($code_langue == "Espagnol"){
     //     $code_langue=5;
     // }
-    // elseif ($langue == "Hindi"){
+    // elseif ($code_langue == "Hindi"){
     //     $code_langue==6;
     // }
-    // elseif ($langue == "Portuguais"){
+    // elseif ($code_langue == "Portuguais"){
     //     $code_langue==7;
     // }
     // else{
     //     $code_langue==20;
     // }
     // echo $code_langue;
-
-
-
-
-
-
-
-
-
-
-
 
 /*MODIFICATION*/
     if(isset($_GET["action"]) && $_GET["action"] == "modifier" && !empty($_POST)){
@@ -90,7 +78,7 @@ require_once('../metier/Utilisateurs.php');
             htmlentities($_POST["nation"]?$_POST["nation"]:null),
             htmlentities($utilisateur['contact']),
             htmlentities($utilisateur["notifmail"]),
-            (int)htmlentities($_POST["langue"]) 
+            (int)htmlentities($_POST["code_langue"]) 
             );
 
             $newUtilisateur = new UtilisateurService;

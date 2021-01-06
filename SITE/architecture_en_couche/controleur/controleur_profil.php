@@ -34,7 +34,7 @@ require_once('../metier/Utilisateurs.php');
 
 
 //SWITCH LANGUE
-    // $langue = $_POST['langue'];
+    // $code_langue = $_POST['code_langue'];
         
     // if ($langue == "Anglais"){
     //     $code_langue==1;
@@ -64,26 +64,28 @@ require_once('../metier/Utilisateurs.php');
 
 /*MODIFICATION*/
     if(isset($_GET["action"]) && $_GET["action"] == "modifier" && !empty($_POST)){
-        echo $_POST['langue'];
 
         if (isset($_SESSION["pseudo"]) ){
-
+            
+            $password=$_POST['password'];
+            $newPassword=$newUtilisateur->passwordHash($password);
             $user= new Utilisateurs(
-            htmlentities($_SESSION['id']=NULL),
+            htmlentities($_SESSION['id']),
             htmlentities($utilisateur['pseudo']),
-            htmlentities($_POST["mail"]),
-            htmlentities($_POST["password"]),
-            htmlentities($utilisateur['description']),
-            htmlentities($utilisateur['photoprofil']),
-            htmlentities($_POST["birthday"]?$_POST["birthday"]:null),
-            htmlentities($_POST["nation"]?$_POST["nation"]:null),
+            htmlentities($_POST["mail"]?$_POST["mail"]:$utilisateur['mail']),
+            htmlentities($newPassword?$newPassword:$utilisateur['password']),
+            htmlentities($utilisateur['description']?$_POST["description"]:$utilisateur['description']),
+            htmlentities($utilisateur['photoprofil']?$_POST["photoprofil"]:$utilisateur['photoprofil']),
+            htmlentities($_POST["birthday"]?$_POST["birthday"]:$utilisateur['birthday']),
+            htmlentities($_POST["nation"]?$_POST["nation"]:$utilisateur['nation']),
             htmlentities($utilisateur['contact']),
             htmlentities($utilisateur["notifmail"]),
             htmlentities($_POST['langue']) 
             );
 
             $newUtilisateur = new UtilisateurService;
-            $modifUtilisateur->modifierUtilisateur($user);
+            $newUtilisateur->modifierUtilisateur($user);
+            
         }  
     }
 

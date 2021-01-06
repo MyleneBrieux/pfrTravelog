@@ -254,7 +254,7 @@
                 <div class="row">
                     <div class="col-12">
                         <label>Langues parlées:</label>
-                            <select id="langues" class="select" name="langue" disabled="disabled">
+                            <select id="langue" class="select" name="langue" disabled="disabled">
                                 <option value="1" selected>Anglais</option>
                                 <option value="2">Francais</option>
                                 <option value="3">Chinois</option>
