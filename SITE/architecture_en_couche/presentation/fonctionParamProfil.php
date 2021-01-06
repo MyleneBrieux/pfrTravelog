@@ -307,7 +307,7 @@ function paramDivDescriptionTxt(){
                 <div class="row">
                     <div class="col-12">
                         <label>Langues parlées:</label>
-                            <select id="langues" class="select" name="langue">
+                            <select id="langue" class="select" name="langue">
                                 <option value="1" selected>Anglais</option>
                                 <option value="2">Francais</option>
                                 <option value="3">Chinois</option>
