@@ -82,7 +82,7 @@ function displayColTable(){
         '<table class="table table-sm" id="tableVoyage">
             <thead class="thead" id="enteteTableVoyage">
                 <tr>
-                    <th scope="col" id="top-left-col">DÉCOUVREZ</th>
+                    <th scope="col">DÉCOUVREZ</th>
                     <th scope="col">PAR</th>
                     <th scope="col">EN IMAGE</th>
                     <th scope="col">EN BREF</th>

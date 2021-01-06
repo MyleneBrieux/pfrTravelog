@@ -279,20 +279,20 @@
     background-color:#52908B !important;
 }
 
-    .mesvoyages:link, .monprofil:link, .deconnexion:link {
+    .creationvoyage:link, .mesvoyages:link, .monprofil:link, .editerprofil:link, .deconnexion:link {
         text-decoration:none;
         background: none !important;
     }
 
-    .mesvoyages:visited, .monprofil:visited, .deconnexion:visited {
+    .creationvoyage:visited, .mesvoyages:visited, .monprofil:visited, .editerprofil:visited, .deconnexion:visited {
         background: none !important;
     }
 
-    .mesvoyages:focus, .monprofil:focus, .deconnexion:focus {
+    .creationvoyage:focus, .mesvoyages:focus, .monprofil:focus, .editerprofil:focus, .deconnexion:focus {
         background: none !important;
     }
 
-    .mesvoyages:hover, .monprofil:hover, .deconnexion:hover {     
+    .creationvoyags:hover, .mesvoyages:hover, .monprofil:hover, .editerprofil:hover, .deconnexion:hover {     
         background: none !important;
     }
 

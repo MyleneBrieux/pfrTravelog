@@ -144,8 +144,10 @@ function menuUtilisateur(){
                 '. $_SESSION["pseudo"] .'
             </a>
             <div class="dropdown-menu" id="dropdownMenuUtilisateur" aria-labelledby="dropdownMenuUtilisateur">
+                <a class="creationvoyage dropdown-item" href="../controleur/creation_voyageCONTROLEUR.php">Créer un voyage</a>
                 <a class="mesvoyages dropdown-item" href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'">Mes voyages</a>
                 <a class="monprofil dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'">Mon profil</a>
+                <a class="editerprofil dropdown-item" href="../controleur/controleur_param_profil.php?pseudo='.$_SESSION["pseudo"].'">Éditer mon profil</a>
                 <a class="deconnexion dropdown-item" href="../controleur/deconnexionCONTROLEUR.php">Déconnexion</a>
             </div>
         </li>';
