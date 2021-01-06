@@ -19,7 +19,8 @@ function displayPageAccueil2(){
 
 function displayPageAccueil3(){
     displayBottomTable();
-    displayPages();
+    // displayPages();
+    displayPagination();
     footer();
     displayEnd();
 }
@@ -95,7 +96,7 @@ function displayDatasTable1($data){
     echo
         '<tbody id="corpsTableVoyage">
             <tr>
-                <td>' . $data["titre"] . '</td>';
+                <td id="titreVoyage">' . $data["titre"] . '</td>';
 }
 
 function displayPseudoTable($donnee){
@@ -106,8 +107,8 @@ function displayPseudoTable($donnee){
 function displayDatasTable2($data){
     echo
         '<td><img src="../../img/photos/' . $data["couverture"] . '" class="photosVoyage"/></td>
-        <td>' . $data["resume"] . '</td>
-        <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
+        <td id="resumeTable">' . $data["resume"] . '</td>
+        <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '" id="lienVoyage"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
 }
 
 function displayBottomTable(){
@@ -121,6 +122,28 @@ function displayBottomTable(){
 function displayPages(){
     echo
             '<p class="pages">< 1 2 ... 4 ></p>
+        </div>';
+}
+
+function displayPagination(){
+    echo
+            '<nav aria-label="Page navigation" class="pages">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>';
 }
 

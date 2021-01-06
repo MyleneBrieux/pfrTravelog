@@ -66,10 +66,58 @@
     font-size:1em;
 }
 
+    @media screen and (max-width : 900px) {
+        #enteteTableVoyage {
+                font-size:0.75em;
+            }
+    }
+
 #corpsTableVoyage {
     background-color: #dcdacd;
     font-family: 'Halant', serif;
 }
+
+    @media screen and (max-width : 1330px) {
+        #resumeTable {
+                font-size:0.85em;
+            }
+    }
+
+    @media screen and (max-width : 1200px) {
+        #resumeTable {
+                font-size:0.75em;
+            }
+    }
+
+    @media screen and (max-width : 910px) {
+        #resumeTable {
+                font-size:0.65em;
+            }
+    }
+
+    @media screen and (max-width : 760px) {
+        #resumeTable {
+                font-size:0.5em;
+            }
+    }
+
+    @media screen and (max-width : 690px) {
+        #resumeTable {
+                font-size:0.75em;
+            }
+    }
+
+    @media screen and (max-width : 1130px) {
+        #titreVoyage {
+                font-size:0.85em;
+            }
+    }
+
+    @media screen and (max-width : 910px) {
+        #titreVoyage {
+                font-size:0.65em;
+            }
+    }
 
     .lienProfil:link {
         color:#707070;
@@ -89,6 +137,53 @@
         text-decoration:none;
     }
 
+    @media screen and (max-width : 990px) {
+        .lienProfil {
+                font-size:0.75em;
+            }
+    }
+
+
+.photosVoyage {
+    width:20em;
+}
+
+    @media screen and (max-width : 1330px) {
+        .photosVoyage {
+                width:18em;
+            }
+    }
+
+    @media screen and (max-width : 1120px) {
+        .photosVoyage {
+                width:16em;
+            }
+    }
+
+    @media screen and (max-width : 990px) {
+        .photosVoyage {
+                width:12em;
+            }
+    }
+
+    @media screen and (max-width : 900px) {
+        .photosVoyage {
+                width:10em;
+            }
+    }
+
+    @media screen and (max-width : 820px) {
+        .photosVoyage {
+                width:8em;
+            }
+    }
+
+    @media screen and (max-width : 690px) {
+        .photosVoyage {
+                width:10em;
+            }
+    }
+
 #btnDetailsVoyage {
     background-color:#52908b;
     font-family: 'Halant', serif;
@@ -96,9 +191,13 @@
     border:none;
 }
 
-.photosVoyage {
-    width:20em;
-}
+    @media screen and (max-width : 910px) {
+        #btnDetailsVoyage {
+                width:5em;
+                font-size:1em;
+            }
+    }
+
 
 /* PAGES */
 .pages {
