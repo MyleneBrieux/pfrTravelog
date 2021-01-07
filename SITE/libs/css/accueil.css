@@ -265,6 +265,11 @@
             }
     }
 
+.page-link {
+    color:#52908b;
+    font-family: 'Halant', serif;
+}
+
 
 /* VOYAGE / ENCADRE DYNAMIQUE */
 /* .photoprofil {

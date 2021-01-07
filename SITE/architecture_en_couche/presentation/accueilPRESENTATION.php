@@ -130,7 +130,7 @@ function displayPagination(){
             '<nav aria-label="Page navigation" class="pages">
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
+                        <a class="page-link" href="#" aria-label="Précédent">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
@@ -138,7 +138,7 @@ function displayPagination(){
                     <li class="page-item"><a class="page-link" href="#">2</a></li>
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
+                        <a class="page-link" href="#" aria-label="Suivant">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
