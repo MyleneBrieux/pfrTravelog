@@ -8,7 +8,8 @@
             <title>Mes voyages</title>
             <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="../../libs/bootstrap/css/bootstrap.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+                  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
             <link rel="stylesheet" href="../../libs/css/mes_voyages.css">
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -66,21 +67,52 @@
 </div>';
     }
 
-    function voyage1($data){ //encadré dynamique
-        echo'<div class="row">
-        <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil1 ghost" />
-        <h1 class="titrevoyage1">'. $data['titre'] .'</h1>
-        <img src="../../../images/photos/trevi.jpg" class="photovoyage1" />
-        <div class="encadrevoyage1">
-            <p class="textevoyage1">
-                '. $data['resume'] .'
-            </p>
-            <a href="detail_voyageCONTROLEUR.php?=code_voyage='. $data['code_voyage'] .'" class="lienvoyage1">
-                Découvrir ce voyage
-            </a>
-        </div>
+    function tableauEntete(){
+        echo
+            '<table class="table table-sm" id="tableVoyage">
+                <thead class="thead" id="enteteTableVoyage">
+                    <tr>
+                        <th scope="col">TITRE</th>
+                        <th scope="col">EN IMAGE</th>
+                        <th scope="col">EN BREF</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>';
+    }
+
+    function tableauVoyages($data){
+        echo
+                '<tbody id="corpsTableVoyage">
+                <tr>
+                    <td>' . $data["titre"] . '</td>
+                    <td><img src="' . $data["couverture"] . '"/></td>
+                    <td>' . $data["resume"] . '</td>
+                    <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["id"] . '"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
+    }
+    function finTableau(){
+        echo
+            '</tr>
+        </tbody>
+    </table>
     </div>';
     }
+    
+
+    // function voyage1($data){ //encadré dynamique
+    //     echo'<div class="row">
+    //     <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil1 ghost" />
+    //     <h1 class="titrevoyage1">'. $data['titre'] .'</h1>
+    //     <img src="'. base64_encode($data['couverture']) .'" class="photovoyage1" />
+    //     <div class="encadrevoyage1">
+    //         <p class="textevoyage1">
+    //             '. $data['resume'] .'
+    //         </p>
+    //         <a href="detail_voyageCONTROLEUR.php?=code_voyage='. $data['code_voyage'] .'" class="lienvoyage1">
+    //             Découvrir ce voyage
+    //         </a>
+    //     </div>
+    // </div>';
+    // }
         
     // function voyage2(){ //encadrés brut
     // echo'<div class="row">
@@ -166,7 +198,8 @@
     }
 
     function afficherVoyages($data){
-        voyage1($data);
+        tableauVoyages($data);
+        //voyage1($data);
         // voyage2();
         // voyage3();
         // voyage4();

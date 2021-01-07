@@ -52,6 +52,33 @@
             }
     } 
 
+    /* TABLEAU */
+#tableVoyage {
+    border-radius:50% 50% 50% 50% !important; /* TODO : FAIRE FONCTIONNER BORDER RADIUS !!! */
+    text-align:center;
+}
+
+#enteteTableVoyage {
+    background-color:#52908b;
+    border-radius:50%;
+    font-family: 'Halant', serif;
+    color:white;
+    font-size:1em;
+    border-radius : 5px 4px 3px 2px;
+}
+
+#corpsTableVoyage {
+    background-color: #dcdacd;
+    border-radius : 5px 4px 3px 2px;
+}
+
+#btnDetailsVoyage {
+    background-color:#52908b;
+    font-family: 'Halant', serif;
+    color:white;
+    border:none;
+}
+
 /* HAUT DE PAGE */
 
 .titre_mesvoyages{
@@ -157,7 +184,7 @@
 
 
 /* VOYAGE 1 */
-.photoprofil1 {
+/*.photoprofil1 {
     z-index:2;
     border:solid #707070 0.1em;
     height:8em;
@@ -576,11 +603,11 @@
     .lienvoyage1:hover {   
         color:#52908b;  
         background: none;
-    }
+    }*/
 
 
 /* VOYAGE 2 */
-.photoprofil2 {
+/* .photoprofil2 {
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
@@ -1011,11 +1038,11 @@
     .lienvoyage2:hover {   
         color:#52908b;  
         background: none;
-    }
+    } */
 
 
 /* VOYAGE 3 */
-.photoprofil3 {
+/* .photoprofil3 {
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
@@ -1433,11 +1460,11 @@
     .lienvoyage3:hover {   
         color:#52908b;  
         background: none;
-    }
+    } */
 
 
 /* VOYAGE 4 */
-.photoprofil4 {
+/*.photoprofil4 {
     z-index:2;
     border:solid #707070 0.1em;
     background-color:white;
@@ -1865,7 +1892,7 @@
     .lienvoyage4:hover {   
         color:#52908b;  
         background: none;
-    }
+    }*/
 
 
 /* PAGES */

@@ -32,10 +32,12 @@ if ($_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo']) {
     débutCorpsVisiteur($profil, $info); //Sinon un lien pour accéder à son profil s'affiche à la place
 }
 
+tableauEntete(); //en-tête du tableau
 while($data=mysqli_fetch_array($voyages)){
-    afficherVoyages($data);
+    afficherVoyages($data); //affichage des voyages
     //var_dump($data);
 }
+finTableau();
 
 nbPages();
 
