@@ -12,11 +12,6 @@ include_once '../metier/Voyage.php';
     $utilisateur = new UtilisateurService();
     // try{
         $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
-        if (isset ($profil['birthday']) && !empty ($profil['birthday'])) {
-            $dateNaissance = new DateTime($profil['birthday']);
-            $dateAjd = new DateTime();
-            $age = date_diff($dateNaissance, $dateAjd);
-        }
         //var_dump($profil);
     // }catch(UtilisateurException $e){
         
@@ -33,7 +28,7 @@ include_once '../metier/Voyage.php';
 
 profilDebut();
 
-menuLat($profil, $age);
+menuLat($profil);
 
 presentationUser($profil);
 

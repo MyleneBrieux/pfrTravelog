@@ -22,11 +22,11 @@
         echo '<body>
         <div class="container-fluid">
         <header class="header">';
-            //include "navbarCONTROLEUR.php";
+            include "navbarCONTROLEUR.php";
         echo'</header>';
     }
 
-    function menuLat($profil, $age){
+    function menuLat($profil){
         echo'<div class="row">
                 <div class="col-lg-2 col-md-4 col-sm-4 pl-0 col-12 bg-sable">
                     <nav class="menu">
@@ -39,6 +39,9 @@
                             </div>
                             <div class="row">';
                             if (isset($profil['birthday']) && !empty($profil['birthday'])) {
+                                $dateNaissance = new DateTime($profil['birthday']);
+                                $dateAjd = new DateTime();
+                                $age = date_diff($dateNaissance, $dateAjd);
                                 echo'<p>'. $age->format('%y ans') .'</p>';
                             }
                             echo'</div>
@@ -60,7 +63,7 @@
                                 <a href="../controleur/controleur_profil.php"><button type="button" class="button">Modifier le profil</button></a>
                             </div>
                             <div class="row mt-3 mb-3">
-                                <a href="../controleur/mesAmisControleur.php?pseudo='. $_SESSION['pseudo'] .'"><button type="button" class="button">Mes Amis</button></a>
+                                <a href="../controleur/mesAmisControleur.php?pseudo='. $profil['pseudo'] .'"><button type="button" class="button">Mes Amis</button></a>
                             </div>
                             <div class="row mt-3 mb-3">
                                 <a href="../controleur/controleur_contact.php"><button type="button" class="button">Contactez moi</button></a>
@@ -111,13 +114,13 @@
                 </div>
             </div>';
     }
-    function autresVoyage($profil, $data) {
+    function autresVoyages($profil, $data) {
                     echo'<div>
                         <a href="../controleur/mesVoyagesControleur.php?pseudo='.$profil["pseudo"].'"><h3>Ses autres voyages</h3></a>
                     </div>
                     <div class="row d-inline-flex justify-content-around">
                         <div class="ml-3">
-                        <a href="../controleur/detail_voyageControleur.php?=code_voyage='. $data['code_voyage'] .'"><h4>'. $data['titre'] .'</h4>
+                        <a href="../controleur/detail_voyageControleur.php?=code_voyage='. $data['code_voyage'] .'&code_etape='. $data['code_etape'] .'"><h4>'. $data['titre'] .'</h4>
                             <img class="mt-2" src="../../img/photos/osaka.jpg" alt="" width=352 height=224></a>
                         </div>
                         <div class="ml-3">
@@ -157,7 +160,7 @@
     function voyages($profil, $data){
         lastTrip($data);
         mostPopular($data);
-        autresVoyage($profil, $data);
+        autresVoyages($profil, $data);
     }
 
     function profilFin(){
