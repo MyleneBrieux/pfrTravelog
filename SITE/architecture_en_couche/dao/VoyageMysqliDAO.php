@@ -144,7 +144,7 @@ class VoyageMysqliDAO {
     /* RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
     public function chercherContinents() {
         $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select continent from voyages');
+        $stmt=$mysqli->prepare('select distinct continent from voyages order by continent asc');
         $stmt->execute();
         $continents=$stmt->get_result();
         return $continents;
@@ -155,7 +155,7 @@ class VoyageMysqliDAO {
     /* RECHERCHER LES PAYS DE LA TABLE VOYAGES */
     public function chercherPays() {
         $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select pays from voyages');
+        $stmt=$mysqli->prepare('select distinct pays from voyages order by pays asc');
         $stmt->execute();
         $pays=$stmt->get_result();
         return $pays;
@@ -166,7 +166,7 @@ class VoyageMysqliDAO {
     /* RECHERCHER LES VILLES DE LA TABLE VOYAGES */
     public function chercherVilles() {
         $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select ville from voyages');
+        $stmt=$mysqli->prepare('select distinct ville from voyages order by ville asc');
         $stmt->execute();
         $villes=$stmt->get_result();
         return $villes;
