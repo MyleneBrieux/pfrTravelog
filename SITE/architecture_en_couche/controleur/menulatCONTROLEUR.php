@@ -10,7 +10,7 @@ $voyageService = new VoyageService();
 
 displayTopMenuLat();
 
-$continents=$voyageService->chercherContinents();    
+$continents=$voyageService->chercherContinents(); 
     while($data=mysqli_fetch_array($continents)){
         displayContinents($data);
     }

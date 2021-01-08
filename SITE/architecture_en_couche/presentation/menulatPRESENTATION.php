@@ -141,8 +141,7 @@ function displayLePlus(){
 
 function displayBottomBody(){
     echo
-        '</div>
-    </body>';
+        '</body>';
 }
 
 function displayBottomHTML(){
