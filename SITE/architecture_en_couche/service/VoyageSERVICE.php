@@ -57,6 +57,13 @@ class VoyageService {
         return $rs;
     }
 
+//Récupérer données voyages
+
+    public function donneesVoyages(){
+        $data=$this->voyageDao->donneesVoyages();
+        return $data;
+    }
+
 //Compter le nombre de voyages dans la bdd
 
     public function compterVoyages(){
