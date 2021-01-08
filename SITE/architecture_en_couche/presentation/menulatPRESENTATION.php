@@ -32,6 +32,15 @@ function topHeader(){
                   integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
             <link rel="stylesheet" href="../../libs/css/menulat.css">
 
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            
+            <script src="../../libs/script_js/scriptMenuLat.js"></script>
+
             <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
         
             <title>
@@ -61,7 +70,7 @@ function displayContinents($data){
     echo
         '<div class="continent">
             <label class="container">' . $data["continent"] . '
-                <input type="checkbox">
+                <input type="checkbox" id="checkedContinent">
                 <span class="checkmark"></span>
             </label>
         </div>';
