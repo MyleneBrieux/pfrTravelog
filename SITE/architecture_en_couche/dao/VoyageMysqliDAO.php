@@ -105,6 +105,18 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
+    /* RECUPERER DONNEES DE TOUS LES VOYAGES */
+    public function donneesVoyage() {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select * from voyages');
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $data = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $data;
+    }
+
     /* COMPTER LE NOMBRE DE VOYAGES DANS LA BDD */
     public function compterVoyages() {
         $mysqli=$this->connexion();
