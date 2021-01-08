@@ -6,18 +6,22 @@ include_once("../metier/Utilisateur.php");
 include_once("../metier/Voyage.php");
 include_once("../metier/Notification.php");
 include_once("../metier/DemandeAmi.php");
-include_once("dao_exception.php");
 
 // GESTION DES ERREURS //
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+include_once("dao_exception.php");
 
     class UtilisateurMysqliDao {
 
     /* CONNEXION */       
         public function connexion() {
-            $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
-            // $mysqli= new mysqli('localhost','root','','travelog');
-            return $mysqli;
+            try {
+                $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+                // $mysqli= new mysqli('localhost','root','','travelog');
+                return $mysqli;
+            } catch (mysqli_sql_exception $a) {
+                throw new DaoException($a->getMessage(), $a->getCode());
+            }
         }
 
 

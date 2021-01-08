@@ -1,6 +1,12 @@
 <?php
 
+// LIAISON AVEC LES AUTRES COUCHES //
 include_once("../dao/utilisateurMysqliDAO.php");
+
+// GESTION DES ERREURS //
+include_once("ServiceException.php");
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 
 class UtilisateurService {
 
@@ -9,8 +15,12 @@ class UtilisateurService {
     }
 
     public function connexion() {
-        $mysqli = $this->utilisateurDao->connexion();
-        return $mysqli;
+        try {
+            $mysqli = $this->utilisateurDao->connexion();
+            return $mysqli;
+        } catch (DaoException $a){
+            throw new ServiceException($a->getMessage(),$a->getCode());
+        }
     }
 
     public function ajoutUtilisateur($pseudo,$mail, $password) { 
