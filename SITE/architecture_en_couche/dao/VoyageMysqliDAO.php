@@ -140,4 +140,28 @@ class VoyageMysqliDAO {
         $rs->free();
         $mysqli->close();
     }
+
+    /* RECHERCHE VOYAGE LE + RÉCENT */
+    public function VoyagePlusRecentUtilisateur(string $pseudo){
+        $mysqli=$this->connexion();
+        $stmt = $mysqli->prepare("SELECT * FROM voyages inner join utilisateurs on voyages.id=utilisateurs.id where pseudo=? ORDER BY code_voyage DESC LIMIT 1");
+        $stmt->bind_param("s", $pseudo);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        return $rs;
+        $rs->free();
+        $mysqli->close();
+    }
+
+    /* RECHERCHE VOYAGE LE + POPULAIRE */
+    public function VoyagePlusPopulaireUtilisateur(string $pseudo){
+        $mysqli=$this->connexion();
+        $stmt = $mysqli->prepare("SELECT * FROM voyages inner join utilisateurs on voyages.id=utilisateurs.id where pseudo=? ORDER BY likes AND vues DESC LIMIT 1");
+        $stmt->bind_param("s", $pseudo);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        return $rs;
+        $rs->free();
+        $mysqli->close();
+    }
 }

@@ -78,4 +78,18 @@ class VoyageService {
         return $voyagesService;
     }
 
+//Afficher le voyage le plus récent d'un utilisateur
+
+    public function VoyagePlusRecentUtilisateur($pseudo){
+        $mostRecentVoyage = $this->voyageDao->VoyagePlusRecentUtilisateur($pseudo);
+        return $mostRecentVoyage;
+    }
+
+//Afficher le voyage le plus populaire d'un utilisateur
+
+    public function VoyagePlusPopulaireUtilisateur($pseudo){
+        $mostPopularVoyage = $this->voyageDao->VoyagePlusPopulaireUtilisateur($pseudo);
+        return $mostPopularVoyage;
+    }
+
 }
