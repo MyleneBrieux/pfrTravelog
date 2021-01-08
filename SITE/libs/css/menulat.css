@@ -146,26 +146,26 @@
     }
 
 /* FILTRES */
-.continent {
+.titreContinent {
     padding-top:7%;
     padding-left:0.6em;;
     font-size:1.25em;
 }
 
     @media screen and (max-width : 1200px) {
-        .continent {
+        .titreContinent {
             font-size:1.1em;
             }
     }
 
     @media screen and (max-width : 1000px) {
-        .continent {
+        .titreContinent {
             font-size:1em;
             }
     }
 
     @media screen and (max-width : 600px) {
-        .continent {
+        .titreContinent {
             font-size:0.8em;
             padding-top:3%;
             padding-bottom:1%;
@@ -173,69 +173,69 @@
     }
 
     @media screen and (max-width : 480px) {
-        .continent {
+        .titreContinent {
             font-size:0.6em;
             padding-top:3%;
             padding-bottom:1%;
             }
     }
 
-.pays, .ville, .leplus {
+.titrePays, .titreVille, .titreLeplus {
     font-size:1.25em;
     padding-left:0.6em;
 }
 
     @media screen and (max-width : 1200px) {
-        .pays, .ville, .leplus {
+        .titrePays, .titreVille, .titreLeplus {
             font-size:1.1em;
             }
     }
 
     @media screen and (max-width : 1000px) {
-        .pays, .ville, .leplus {
+        .titrePays, .titreVille, .titreLeplus {
             font-size:1em;
             }
     }
 
     @media screen and (max-width : 600px) {
-        .pays, .ville, .leplus {
+        .titrePays, .titreVille, .titreLeplus {
             font-size:0.8em;
             }
     }
 
     @media screen and (max-width : 480px) {
-        .pays, .ville, .leplus {
+        .titrePays, .titreVille, .titreLeplus {
             font-size:0.6em;
             }
     }
 
-.Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+.continent, .pays, .ville, .populaire, .recent {
     color:#707070;
     font-size:1em;
     padding-left:1em;
 }
 
     @media screen and (max-width : 1200px) {
-        .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+        .continent, .pays, .ville, .populaire, .recent {
             font-size:0.9em;
             }
     }
 
     @media screen and (max-width : 1000px) {
-        .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+        .continent, .pays, .ville, .populaire, .recent {
             font-size:0.8em;
             }
     }
 
     @media screen and (max-width : 600px) {
-        .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+        .continent, .pays, .ville, .populaire, .recent {
             font-size:0.7em;
             margin-bottom:0em;
             }
     }
 
     @media screen and (max-width : 480px) {
-        .Afrique, .Asie, .AmeriqueNord, .AmeriqueSud, .Europe, .Oceanie, .Populaire, .Recent {
+        .continent, .pays, .ville, .populaire, .recent {
             font-size:0.6em;
             margin-bottom:0em;
             }

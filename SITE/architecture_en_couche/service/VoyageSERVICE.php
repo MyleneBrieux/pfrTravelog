@@ -57,13 +57,6 @@ class VoyageService {
         return $rs;
     }
 
-//Récupérer données voyages
-
-    public function donneesVoyages(){
-        $data=$this->voyageDao->donneesVoyages();
-        return $data;
-    }
-
 //Compter le nombre de voyages dans la bdd
 
     public function compterVoyages(){
@@ -84,6 +77,28 @@ class VoyageService {
         $voyagesService = $this->voyageDao->chercherVoyagesParPseudo($pseudo);
         return $voyagesService;
     }
+
+//Rechercher les continents
+
+    public function chercherContinents(){
+        $continents=$this->voyageDao->chercherContinents();
+        return $continents;
+    }
+
+//Rechercher les pays
+
+public function chercherPays(){
+    $pays=$this->voyageDao->chercherPays();
+    return $pays;
+}
+
+//Rechercher les villes
+
+public function chercherVilles(){
+    $villes=$this->voyageDao->chercherVilles();
+    return $villes;
+}
+
 
 //Afficher le voyage le plus récent d'un utilisateur
 

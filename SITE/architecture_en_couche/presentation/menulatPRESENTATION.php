@@ -1,11 +1,15 @@
 <?php
 
 // FONCTIONS GLOBALES //
-function displayMenuLat(){
+function displayTopMenuLat(){
     displayTopHtml();
     topHeader();
     displayTopBody();
-    displayLeftMenuLat();
+    displayTitreContinent();
+}
+
+function displayBottomMenuLat(){
+    displayLePlus();
     displayBottomBody();
     displayBottomHtml();
 }
@@ -41,102 +45,104 @@ function displayTopBody(){
         '<body>';
 }
 
-function displayLeftMenuLat(){
-    echo
+function displayTitreContinent(){
+    echo 
         '<div class="menulat fixed-left">
-            
-            <h6 class="continent"><strong>CONTINENT</strong></h6>
-                <div class="arrow-wrapper">
-                    <div class="fleche-haut"></div>
-                </div>
-
-            <hr>
-
-                <div class="Afrique">
-                    <label class="container">Afrique
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-                <div class="AmeriqueNord">
-                    <label class="container">Amérique du Nord
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-                <div class="AmeriqueSud">
-                    <label class="container">Amérique du Sud
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-                <div class="Asie">
-                    <label class="container">Asie
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-                <div class="Europe">
-                    <label class="container">Europe
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-                <div class="Oceanie">
-                    <label class="container">Océanie
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-            <hr>
-
-            <h6 class="pays"><strong>PAYS</strong></h6>
-                <div class="arrow-wrapper">
-                    <div class="fleche-bas"></div>
-                </div>
-
-            <hr>
-
-            <h6 class="ville"><strong>VILLE</strong></h6>
-                <div class="arrow-wrapper">
-                    <div class="fleche-bas"></div>
-                </div>
                 
-            <hr>
+                <h6 class="titreContinent"><strong>CONTINENT</strong></h6>
+                    <div class="arrow-wrapper">
+                        <div class="fleche-haut"></div>
+                    </div>
 
-            <h6 class="leplus"><strong>LE PLUS...</strong></h6>
-                <div class="arrow-wrapper">
-                    <div class="fleche-haut"></div>
-                </div>
+                <hr>';
+}
 
-            <hr>
-
-                <div class="Populaire">
-                    <label class="container">Populaire
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-                <div class="Recent">
-                    <label class="container">Récent
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
+function displayContinents($data){
+    echo
+        '<div class="continent">
+            <label class="container">' . $data["continent"] . '
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
         </div>';
+}
+
+function displayTitrePays(){
+    echo
+        '<hr>
+
+        <h6 class="titrePays"><strong>PAYS</strong></h6>
+            <div class="arrow-wrapper">
+                <div class="fleche-bas"></div>
+            </div>
+
+        <hr>';
+}
+
+function displayPays($data){
+    echo
+        '<div class="pays">
+            <label class="container">' . $data["pays"] . '
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>';
+}
+
+function displayTitreVille(){
+    echo
+        '<hr>
+        
+        <h6 class="titreVille"><strong>VILLE</strong></h6>
+            <div class="arrow-wrapper">
+                <div class="fleche-bas"></div>
+            </div>
+        
+        <hr>';
+}
+
+function displayVilles($data){
+    echo
+        '<div class="ville">
+            <label class="container">' . $data["ville"] . '
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>';
+}
+
+function displayLePlus(){
+    echo
+        '<hr>
+        
+        <h6 class="titreLeplus"><strong>LE PLUS...</strong></h6>
+            <div class="arrow-wrapper">
+                <div class="fleche-haut"></div>
+            </div>
+
+        <hr>
+
+            <div class="populaire">
+                <label class="container">Populaire
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="recent">
+                <label class="container">Récent
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+    </div>';
 }
 
 function displayBottomBody(){
     echo
-        '</body>';
+        '</div>
+    </body>';
 }
 
 function displayBottomHTML(){

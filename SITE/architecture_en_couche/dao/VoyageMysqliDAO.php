@@ -105,18 +105,6 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
-    /* RECUPERER DONNEES DE TOUS LES VOYAGES */
-    public function donneesVoyage() {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from voyages');
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $data = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $data;
-    }
-
     /* COMPTER LE NOMBRE DE VOYAGES DANS LA BDD */
     public function compterVoyages() {
         $mysqli=$this->connexion();
@@ -150,6 +138,39 @@ class VoyageMysqliDAO {
         $rs = $stmt->get_result();
         return $rs;
         $rs->free();
+        $mysqli->close();
+    }
+
+    /* RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
+    public function chercherContinents() {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select continent from voyages');
+        $stmt->execute();
+        $continents=$stmt->get_result();
+        return $continents;
+        $continent->free();
+        $mysqli->close();
+    }
+
+    /* RECHERCHER LES PAYS DE LA TABLE VOYAGES */
+    public function chercherPays() {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select pays from voyages');
+        $stmt->execute();
+        $pays=$stmt->get_result();
+        return $pays;
+        $pays->free();
+        $mysqli->close();
+    }
+
+    /* RECHERCHER LES VILLES DE LA TABLE VOYAGES */
+    public function chercherVilles() {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select ville from voyages');
+        $stmt->execute();
+        $villes=$stmt->get_result();
+        return $villes;
+        $ville->free();
         $mysqli->close();
     }
 
