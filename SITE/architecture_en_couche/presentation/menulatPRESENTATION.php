@@ -59,9 +59,6 @@ function displayTitreContinent(){
         '<div class="menulat fixed-left">
                 
                 <h6 class="titreContinent"><strong>CONTINENT</strong></h6>
-                    <div class="arrow-wrapper">
-                        <div class="fleche-haut"></div>
-                    </div>
 
                 <hr>';
 }
@@ -81,9 +78,6 @@ function displayTitrePays(){
         '<hr>
 
         <h6 class="titrePays"><strong>PAYS</strong></h6>
-            <div class="arrow-wrapper">
-                <div class="fleche-bas"></div>
-            </div>
 
         <hr>';
 }
@@ -103,9 +97,6 @@ function displayTitreVille(){
         '<hr>
         
         <h6 class="titreVille"><strong>VILLE</strong></h6>
-            <div class="arrow-wrapper">
-                <div class="fleche-bas"></div>
-            </div>
         
         <hr>';
 }
