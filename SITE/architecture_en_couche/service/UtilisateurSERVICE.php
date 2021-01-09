@@ -42,8 +42,13 @@ class UtilisateurService {
         return $data;
     }
 
-    public function compterDemandesAmi() {
-        $data = $this->utilisateurDao->compterDemandesAmi();
+    public function compterNotifications(int $id) {
+        $data = $this->utilisateurDao->compterNotifications($id);
+        return $data;
+    }
+
+    public function compterDemandesAmi(int $id) {
+        $data = $this->utilisateurDao->compterDemandesAmi($id);
         return $data;
     }
 
@@ -55,6 +60,11 @@ class UtilisateurService {
     public function afficherPseudoDepuisId(int $id){
         $donnee = $this->utilisateurDao->afficherPseudoDepuisId($id);
         return $donnee;
+    }
+
+    public function filtreBarreRecherche(){
+        $filtre = $this->utilisateurDao->filtreBarreRecherche();
+        return $filtre;
     }
 
     public function passwordHash($password) {

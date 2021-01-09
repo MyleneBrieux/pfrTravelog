@@ -236,12 +236,29 @@
 }
 
 /* Badges */
+#badgeNotifs {
+    background-color:red;
+    color:white;
+    border-radius:10px;
+    position: absolute;
+    margin-left:-0.5em;
+    height:0.6em;
+    width:0.6em;
+   }
+
+#compteurNotifs {
+    font-family: 'Halant', serif;
+    font-size:0.5em;
+    margin-top:-0.35em;
+    margin-left:-0.5em;
+}
+
 #badgeAmi {
     background-color:red;
     color:white;
     border-radius:10px;
     position: absolute;
-    margin-left:-2.9em;
+    margin-left:-0.4em;
     height:0.6em;
     width:0.6em;
    }

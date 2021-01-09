@@ -63,7 +63,6 @@ include_once("dao_exception.php");
             return $info;
         }
 
-
     /* RECHERCHE PHOTO DE PROFIL UTILISATEUR */
         public function chercherPhotoProfilUtilisateur(string $photoProfil) : ?array {
             $mysqli=$this->connexion();
@@ -77,11 +76,23 @@ include_once("dao_exception.php");
             return $data;
         }
 
+    /* COMPTER LES NOTIFICATIONS */
+    public function compterNotifications(int $id) {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select * from notifications where id=?');
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $data=mysqli_num_rows($rs);
+        $mysqli->close();
+        return $data;
+    }
 
     /* COMPTER LES DEMANDES D'AMI */
-        public function compterDemandesAmi() {
+        public function compterDemandesAmi(int $id) {
             $mysqli=$this->connexion();
-            $stmt=$mysqli->prepare('select * from demande_ami');
+            $stmt=$mysqli->prepare('select * from demande_ami where id=?');
+            $stmt->bind_param("i",$id);
             $stmt->execute();
             $rs=$stmt->get_result();
             $data=mysqli_num_rows($rs);
@@ -114,6 +125,17 @@ include_once("dao_exception.php");
             $rs->free();
             $mysqli->close();
             return $donnee;
+        }
+
+    /* FILTRES POUR LA BARRE DE RECHERCHE / NAVBAR */
+        public function filtreBarreRecherche(){
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare("select * from utilisateurs inner join voyages on utilisateurs.id = voyages.id");
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $filtre=$rs->fetch_all(MYSQLI_ASSOC);
+            $mysqli->close();
+            return $filtre;
         }
 
     

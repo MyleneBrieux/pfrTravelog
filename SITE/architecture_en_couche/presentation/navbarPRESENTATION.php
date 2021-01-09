@@ -7,7 +7,6 @@ function displayNavbarConnectedOnly1(){
     displayHeader();
     displayTagTopBody();
     navbarBrand();
-    navbarSearch();
 }
 
 function displayNavbarConnectedOnly2(){
@@ -46,11 +45,14 @@ function displayHeader(){
             <link rel="stylesheet" href="../../libs/css/navbar.css">
         
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+            <script src="../../libs/script_js/jquery-3.5.1.min.js"></script>
+            <script src="../../libs/script_js/scriptBarreRecherche.js"></script>
         
             <script src="https://kit.fontawesome.com/20f2b0d45a.js" crossorigin="anonymous"></script>
         
@@ -100,24 +102,47 @@ function notifications(){
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <div class="logoNotif far fa-bell cloche fa-2x" id="menuNotifs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
-                    <div class="dropdown-menu" id="dropdownMenuNotifs" aria-labelledby="dropdownMenuNotifs">
-                        <a class="affichernotif dropdown-item" href="#">Vous n\'avez pas de nouvelle notification.</a>
-                    </div>
                 </li>';
 }
 
-function notificationsBadge(){
+function notificationsBadge1(){
     echo
         '<div class="navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <div class="logoNotif far fa-bell cloche fa-2x" id="menuNotifs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="badge">'.test.'</span>
+                        <span class="badge" id="badgeNotifs"><p id="compteurNotifs">';
+}
+
+function notificationsBadge2(){
+    echo
+                        '</p></span>
                     </div>
-                    <div class="dropdown-menu" id="dropdownMenuNotifs" aria-labelledby="dropdownMenuNotifs">
-                        <a class="affichernotif dropdown-item" href="#">Exemple notifs</a>
-                    </div>
+                    <div class="dropdown-menu" id="dropdownMenuNotifs" aria-labelledby="dropdownMenuNotifs">';
+}
+
+function afficherNotifications1($donnee){
+    echo
+        '<a class="affichernotif dropdown-item" href="#">' . $donnee["pseudo"] . ' vous a laissé un commentaire';
+}
+
+function afficherNotifications2($data){
+    echo
+        ' sur ' . $data["titre"] . '</a>';
+}
+
+function notificationsBadge3(){
+    echo
+                    '</div>
                 </li>';
+}
+
+function amis(){
+    echo
+        '<li class="nav-item">
+            <div class="logoAmi far fa-user ami fa-2x" id="menuAmis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </div>
+        </li>';
 }
 
 function amisBadge1(){
@@ -132,7 +157,7 @@ function amisBadge2(){
         '</p></span>
             </div>
             <div class="dropdown-menu" id="dropdownMenuAmis" aria-labelledby="dropdownMenuAmis">
-                <a class="afficheramis dropdown-item" href="#">Vous n\'avez pas de nouvelle demande d\'ami.</a>
+                <a class="afficheramis dropdown-item" href="#">Exemple ami</a>
             </div>
         </li>';
 }
