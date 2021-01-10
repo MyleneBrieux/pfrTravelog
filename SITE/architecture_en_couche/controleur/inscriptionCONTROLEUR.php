@@ -5,45 +5,75 @@ include_once("../presentation/inscriptionPRESENTATION.php");
 include_once("../service/UtilisateurSERVICE.php");
 include_once("../metier/Utilisateur.php");
 
+// GESTION DES ERREURS //
+include_once("../service/ServiceException.php");
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-session_start();
+
+try {
+
+    session_start();
 
 
-$utilisateurservice = new UtilisateurService();
+    $utilisateurservice = new UtilisateurService();
+    
+        if (isset($_GET["action"]) && $_GET["action"]=="inscription" && !empty($_POST)) {
+            if (isset($_POST["pseudo"]) && !empty($_POST["pseudo"])
+            && isset($_POST["mail"]) && !empty($_POST["mail"])
+            && isset($_POST["password"]) && !empty($_POST["password"])
+            && isset($_POST["confirmpassword"]) && !empty($_POST["confirmpassword"])
+            && isset($_POST["checkcgu"])) {
+                
+                $var1 = htmlentities($_POST["pseudo"]);
+                $var2 = htmlentities($_POST["mail"]);
+                $var3 = htmlentities($_POST["password"]);
+    
+                $pseudo=$var1;
+                $mail=$var2;
+                $password=$var3;
+    
+                    try {
+                        $data=$utilisateurservice->chercherUtilisateurParMail($mail);
+                    } catch (ServiceException $b) {
+                        erreur($b->getCode(), $b->getMessage());
+                    }
 
-    if (isset($_GET["action"]) && $_GET["action"]=="inscription" && !empty($_POST)) {
-        if (isset($_POST["pseudo"]) && !empty($_POST["pseudo"])
-        && isset($_POST["mail"]) && !empty($_POST["mail"])
-        && isset($_POST["password"]) && !empty($_POST["password"])
-        && isset($_POST["confirmpassword"]) && !empty($_POST["confirmpassword"])
-        && isset($_POST["checkcgu"])) {
-            
-            $var1 = htmlentities($_POST["pseudo"]);
-            $var2 = htmlentities($_POST["mail"]);
-            $var3 = htmlentities($_POST["password"]);
+                    try {
+                        $info=$utilisateurservice->chercherUtilisateurParPseudo($pseudo);
+                    } catch (ServiceException $c) {
+                        erreur($c->getCode(), $c->getMessage());
+                    }
 
-            $pseudo=$var1;
-            $mail=$var2;
-            $password=$var3;
+                    if (!empty($data) && ($_POST["mail"]) == ($data["mail"])){
+                        displayMailUsed();
+                    } else if (!empty($info) && ($_POST["pseudo"]) == ($info["pseudo"])) {
+                        displayPseudoUsed();
+                    } else if (($_POST["password"]) != ($_POST["confirmpassword"])) {
+                        displayDifferentPasswords();
+                    } else {
+                        try {
+                            $newPassword=$utilisateurservice->passwordHash($password);
+                        } catch (ServiceException $d) {
+                            erreur($d->getCode(), $d->getMessage());
+                        }
 
-            $data=$utilisateurservice->chercherUtilisateurParMail($mail);
-            $info=$utilisateurservice->chercherUtilisateurParPseudo($pseudo);
+                        try {
+                            $utilisateurservice->ajoutUtilisateur($pseudo,$mail,$newPassword);
+                        } catch (ServiceException $e) {
+                            erreur($e->getCode(), $e->getMessage());
+                        }
 
-                if (!empty($data) && ($_POST["mail"]) == ($data["mail"])){
-                    displayMailUsed();
-                } else if (!empty($info) && ($_POST["pseudo"]) == ($info["pseudo"])) {
-                    displayPseudoUsed();
-                } else if (($_POST["password"]) != ($_POST["confirmpassword"])) {
-                    displayDifferentPasswords();
-                } else {
-                    $newPassword=$utilisateurservice->passwordHash($password);
-                    $utilisateurservice->ajoutUtilisateur($pseudo,$mail,$newPassword);
-                    header('Location: connexionCONTROLEUR.php');
-                }  
-
+                        header('Location: connexionCONTROLEUR.php');
+                        
+                    }  
+    
+            }
         }
-    }
+    
+    displayPageInscription();
 
-displayPageInscription();
+} catch (ServiceException $a) {
+    erreur($a->getCode(), $a->getMessage());
+}
 
 ?>
