@@ -13,15 +13,22 @@ $utilisateurservice = new UtilisateurService();
     if (isset($_GET["action"]) && $_GET["action"]=="connexion" && !empty($_POST)) { 
         if (isset($_POST["pseudo"]) && !empty($_POST["pseudo"])
         && isset($_POST["password"]) && !empty($_POST["password"])) {
-            $pseudo=$_POST["pseudo"];
-            $password=$_POST["password"];
+            
+            $var1 = htmlentities($_POST["pseudo"]);
+            $var2 = htmlentities($_POST["password"]);
+            
+            $pseudo=$var1;
+            $password=$var2;
+
             $data=$utilisateurservice->chercherUtilisateurParPseudo($pseudo);
+
                 if ($passwordOk=$utilisateurservice->passwordVerify($password,$data)){
                     $_SESSION["pseudo"]=$pseudo;
                     header('Location: accueilCONTROLEUR.php');
                 } else {
                     displayNotIdem();
                 }
+                
         } 
     }
 
