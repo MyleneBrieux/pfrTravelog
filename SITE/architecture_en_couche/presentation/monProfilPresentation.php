@@ -117,34 +117,21 @@
     function redirectionPageVoyages($profil) {
                     echo'<div>
                         <a href="../controleur/mesVoyagesControleur.php?pseudo='.$profil["pseudo"].'"><h3>Ses autres voyages</h3></a>
-                    </div>';
+                    </div>
+                    <div class="row d-inline-flex justify-content-around">';
     }
     
     function autresVoyages($data) {
-                    echo'<div class="row d-inline-flex justify-content-around">
+                    echo'
                         <div class="ml-3">
                         <a href="../controleur/detail_voyageControleur.php?=code_voyage='. $data['code_voyage'] .'&code_etape='. $data['code_etape'] .'"><h4>'. $data['titre'] .'</h4>
                             <img class="mt-2" src="../../img/photos/osaka.jpg" alt="" width=352 height=224></a>
-                        </div>
-                        <div class="ml-3">
-                        <a href="../controleur/detail_voyageControleur.php"><h4>Venise</h4>
-                            <img class="mt-2" src="../../img/photos/venise.jpg" alt="" width=352 height=224></a>
-                        </div>
-                        <div class="ml-3">
-                        <a href="../controleur/detail_voyageControleur.php"><h4>Londres</h4>
-                            <img class="mt-2" src="../../img/photos/londres.jpg" alt="" width=352 height=224></a>
-                        </div>
-                        <div class="ml-3 mb-2">
-                        <a href="../controleur/detail_voyageControleur.php"><h4>Hambourg</h4>
-                            <img class="mt-2" src="../../img/photos/hambourg.jpg" alt="" width=352 height=224></a>
-                        </div>
-                    </div>
-                </div>
-            </div>';
+                        </div>';
     }
 
     function footer(){
-        echo'<footer class="footer">';
+        echo'</div>
+        <footer class="footer">';
             include "footerCONTROLEUR.php";
         echo'</footer>';
     }
