@@ -21,9 +21,7 @@ include_once '../metier/Voyage.php';
     $data=$voyagesService->nbVoyagesUtilisateur($pseudo);
     $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo);
     $mostRecentVoyage = $voyagesService->VoyagePlusRecentUtilisateur($pseudo);
-    $voyageRecent = mysqli_fetch_array($mostRecentVoyage, MYSQLI_ASSOC);
     $mostPopularVoyage = $voyagesService->VoyagePlusPopulaireUtilisateur($pseudo);
-    $voyagePopulaire = mysqli_fetch_array($mostPopularVoyage, MYSQLI_ASSOC);
     //var_dump($voyagePopulaire);
     //var_dump($voyageRecent);
     //var_dump($voyages);
@@ -34,12 +32,14 @@ menuLat($profil);
 
 presentationUser($profil);
 
-lastTrip($voyageRecent);
+lastTrip($mostRecentVoyage);
 
-mostPopular($voyagePopulaire);
+mostPopular($mostPopularVoyage);
+
+redirectionPageVoyages($profil);
 
 while($data=mysqli_fetch_array($voyages)){
-    autresVoyages($profil, $data);
+    autresVoyages($data);
     //var_dump($data);
 }
 

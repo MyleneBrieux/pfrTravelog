@@ -22,7 +22,7 @@
         echo '<body>
         <div class="container-fluid">
         <header class="header">';
-            //include "navbarCONTROLEUR.php";
+            include "navbarCONTROLEUR.php";
         echo'</header>';
     }
 
@@ -97,28 +97,31 @@
                     echo'</div>';
     }
 
-    function lastTrip($voyageRecent){
+    function lastTrip($mostRecentVoyage){
         echo'<div class="row d-flex justify-content-around mt-2">
                         <div>
                             <a href="../controleur/detail_voyageControleur.php"><h3>Son dernier voyage : </h3>
-                            <h4>'. $voyageRecent['titre'] .'</h4>
+                            <h4>'. $mostRecentVoyage['titre'] .'</h4>
                             <img class="mt-2" src="../../img/photos/etats-unis.jpg" alt="" width=352 height=224></a>
                         </div>';
                     }
 
-    function mostPopular($voyagePopulaire){
+    function mostPopular($mostPopularVoyage){
         echo'<div>
                 <a href="../controleur/detail_voyageControleur.php"><h3>Le plus populaire : </h3>
-                <h4>'. $voyagePopulaire['titre'] .'</h4>
+                <h4>'. $mostPopularVoyage['titre'] .'</h4>
                 <img class="mt-2" src="../../img/photos/dubai.jpg" alt="" width=352 height=224></a>
                 </div>
             </div>';
     }
-    function autresVoyages($profil, $data) {
+    function redirectionPageVoyages($profil) {
                     echo'<div>
                         <a href="../controleur/mesVoyagesControleur.php?pseudo='.$profil["pseudo"].'"><h3>Ses autres voyages</h3></a>
-                    </div>
-                    <div class="row d-inline-flex justify-content-around">
+                    </div>';
+    }
+    
+    function autresVoyages($data) {
+                    echo'<div class="row d-inline-flex justify-content-around">
                         <div class="ml-3">
                         <a href="../controleur/detail_voyageControleur.php?=code_voyage='. $data['code_voyage'] .'&code_etape='. $data['code_etape'] .'"><h4>'. $data['titre'] .'</h4>
                             <img class="mt-2" src="../../img/photos/osaka.jpg" alt="" width=352 height=224></a>
