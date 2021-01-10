@@ -29,42 +29,26 @@
     }
 
     function menuLat(){
-        echo'<div class="row">';
+        echo'<div class="row">
+        <div class="row col-2">';
         include ("menulatCONTROLEUR.php");
+        echo'</div>';
     }
 
     function débutCorpsVisiteur($profil, $info){
-        echo' <h1 class="titre_mesvoyages">Les voyages de <strong>'. $profil['pseudo'] .'</strong></h1>
+        echo'<div class="col-10">
+        <h1 class="titre_mesvoyages">Les voyages de <strong>'. $profil['pseudo'] .'</strong></h1>
         <p class="rsvoyages">'. $info .' voyages - XX continents visités - XX pays visités</p>
-        <div class="row">
-        <div class="encadrevoyage">
-            <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
-            <a href="../controleur/monProfilControleur.php?pseudo='.$profil["pseudo"].'" class="">
-                Voir le profil
-            </a>
-            <a href="detail_voyage.php" class="">
-                Le suivre
-            </a>
-            <a href="detail_voyage.php" class="">
-                Le contacter
-            </a>
-        </div>
-    </div>
-</div>';
+        ';
     }
 
+    
+
     function débutCorpsUtilisateur($info){
-        echo' <h1 class="titre_mesvoyages">Mes voyages</h1>
+        echo'<div class="col-10">
+        <h1 class="titre_mesvoyages">Mes voyages</h1>
         <p class="rsvoyages">'. $info .' voyages - XX continents visités - XX pays visités</p>
-        <div class="row">
-        <div class="encadrevoyage">
-            <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
-            <a href="../controleur/creation_voyageCONTROLEUR.php" class="">
-                Créer un nouveau voyage
-            </a>
-        </div>
-    </div>
-</div>';
+        ';
     }
 
     function tableauEntete(){
@@ -87,13 +71,42 @@
                     <td>' . $data["titre"] . '</td>
                     <td><img src="' . $data["couverture"] . '"/></td>
                     <td>' . $data["resume"] . '</td>
-                    <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_etape"] .'&code_etape='. $data["code_etape"] .'"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
+                    <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] .'&code_etape='. $data["code_etape"] .'"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
     }
     function finTableau(){
         echo
             '</tr>
         </tbody>
     </table>
+    </div>
+    </div>';
+    }
+
+    function encadreVisiteur($profil){
+        echo'
+        <div class="encadrevoyage">
+            <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
+            <a href="../controleur/monProfilControleur.php?pseudo='.$profil["pseudo"].'" class="">
+                Voir le profil
+            </a>
+            <a href="detail_voyage.php" class="">
+                Le suivre
+            </a>
+            <a href="detail_voyage.php" class="">
+                Le contacter
+            </a>
+        </div>
+    </div>';
+    }
+
+    function encadreUtilisateur(){
+        echo'
+        <div class="encadrevoyage">
+            <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
+            <a href="../controleur/creation_voyageCONTROLEUR.php" class="">
+                Créer un nouveau voyage
+            </a>
+        </div>
     </div>';
     }
     
@@ -175,10 +188,26 @@
     // }
 
     function nbPages(){
-        echo'<div class="row">
-        <p class="pages">
-            < 1 2 ... 4>
-        </p>
+        echo'<div class="pagination">
+        <nav aria-label="Page navigation " class="pages">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
     </div>';
     }
 

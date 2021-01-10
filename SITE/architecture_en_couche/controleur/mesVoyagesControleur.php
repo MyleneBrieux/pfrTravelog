@@ -39,6 +39,12 @@ while($data=mysqli_fetch_array($voyages)){
 }
 finTableau();
 
+if ($_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo']) {
+    encadreVisiteur($profil);
+} else{
+    encadreUtilisateur();
+}
+
 nbPages();
 
 voyagesFin();
