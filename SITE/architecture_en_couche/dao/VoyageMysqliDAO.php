@@ -181,9 +181,10 @@ class VoyageMysqliDAO {
         $stmt->bind_param("s", $pseudo);
         $stmt->execute();
         $rs = $stmt->get_result();
-        return $rs;
+        $voyageRecent = $rs->fetch_array(MYSQLI_ASSOC);
         $rs->free();
         $mysqli->close();
+        return $voyageRecent;
     }
 
     /* RECHERCHE VOYAGE LE + POPULAIRE */
@@ -193,9 +194,10 @@ class VoyageMysqliDAO {
         $stmt->bind_param("s", $pseudo);
         $stmt->execute();
         $rs = $stmt->get_result();
-        return $rs;
+        $voyagePopulaire = $rs->fetch_array(MYSQLI_ASSOC);
         $rs->free();
         $mysqli->close();
+        return $voyagePopulaire;
     }
 
     /* RECUPERER COMMENTAIRE DEPUIS NOTIFICATION */        
