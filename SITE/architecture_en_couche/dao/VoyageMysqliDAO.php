@@ -197,4 +197,31 @@ class VoyageMysqliDAO {
         $rs->free();
         $mysqli->close();
     }
+
+    /* RECUPERER COMMENTAIRE DEPUIS NOTIFICATION */        
+    public function recupererCommentaire(int $codeComm) {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select * from commentaires where code_comm=?');
+        $stmt->bind_param("i",$codeComm);
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $comm = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $comm;
+    }
+
+    /* CHERCHER VOYAGE PAR CODE VOYAGE */
+    public function chercherVoyageParCode(int $codeVoyage) : ?array {
+        $mysqli=$this->connexion();
+        $stmt = $mysqli->prepare("select * from voyages where code_voyage=?");
+        $stmt->bind_param("i",$codeVoyage);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        $voyage = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $voyage;
+    }
+
 }

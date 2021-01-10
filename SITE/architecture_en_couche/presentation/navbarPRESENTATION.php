@@ -121,14 +121,16 @@ function notificationsBadge2(){
                     <div class="dropdown-menu" id="dropdownMenuNotifs" aria-labelledby="dropdownMenuNotifs">';
 }
 
-function afficherNotifications1($donnee){
+function afficherNotifications1($user){
     echo
-        '<a class="affichernotif dropdown-item" href="#">' . $donnee["pseudo"] . ' vous a laissé un commentaire';
+        '<a class="affichernotif dropdown-item" href="#">' . $user["pseudo"] . ' vous a laissé un commentaire';
 }
 
-function afficherNotifications2($data){
+function afficherNotifications2($voyage){
     echo
-        ' sur ' . $data["titre"] . '</a>';
+        ' sur </br>
+        <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $voyage["code_voyage"] . '&code_etape=' . $voyage["code_etape"] . '" id="lienVoyageNotif"> 
+        <em>' . $voyage["titre"] . '</em></a></a>';
 }
 
 function notificationsBadge3(){
@@ -156,10 +158,18 @@ function amisBadge2(){
     echo
         '</p></span>
             </div>
-            <div class="dropdown-menu" id="dropdownMenuAmis" aria-labelledby="dropdownMenuAmis">
-                <a class="afficheramis dropdown-item" href="#">Exemple ami</a>
-            </div>
-        </li>';
+            <div class="dropdown-menu" id="dropdownMenuAmis" aria-labelledby="dropdownMenuAmis">';
+}
+
+function afficherAmis($donnee){
+    echo
+        '<a class="afficheramis dropdown-item" href="../controleur/mesAmisControleur.php">' . $donnee["pseudo"] . ' vous a demandé en ami.</a>';
+}
+
+function amisBadge3(){
+    echo
+                    '</div>
+                </li>';
 }
 
 function menuUtilisateur(){

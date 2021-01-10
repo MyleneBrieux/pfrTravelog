@@ -37,6 +37,11 @@ class UtilisateurService {
         return $info;
     }
 
+    public function chercherUtilisateurParId(int $id) : ?array {
+        $user = $this->utilisateurDao->chercherUtilisateurParId($id);
+        return $user;
+    }
+
     public function chercherPhotoProfilUtilisateur($photoProfil) : ?array {
         $data = $this->utilisateurDao->chercherPhotoProfilUtilisateur($photoProfil);
         return $data;
@@ -47,14 +52,28 @@ class UtilisateurService {
         return $data;
     }
 
+    public function afficherNotifications(int $id) {
+        $rs = $this->utilisateurDao->afficherNotifications($id);
+        return $rs;
+    }
+
     public function compterDemandesAmi(int $id) {
         $data = $this->utilisateurDao->compterDemandesAmi($id);
         return $data;
     }
 
-    public function chercherUtilisateurParPseudoAmi($pseudo) : ?array {
-        $info = $this->utilisateurDao->chercherUtilisateurParPseudoAmi($pseudo);
-        return $info;
+    public function afficherDemandesAmi(int $id) {
+        $rs = $this->utilisateurDao->afficherDemandesAmi($id);
+        return $rs;
+    }
+
+    public function supprimerDemandeAmi(int $idAmi) {
+        $this->utilisateurDao->supprimerDemandeAmi($idAmi);
+    }
+
+    public function afficherPseudoDepuisIdAmi(int $idAmi){
+        $donnee = $this->utilisateurDao->afficherPseudoDepuisIdAmi($idAmi);
+        return $donnee;
     }
 
     public function afficherPseudoDepuisId(int $id){

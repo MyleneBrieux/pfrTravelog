@@ -17,7 +17,6 @@ if (isset($_SESSION["pseudo"])) {
 
     $filtre=$utilisateurService->filtreBarreRecherche();
     navbarSearch($filtre);
-    // navbarSearch();
 
     $pseudo=$_SESSION["pseudo"];
     $info=$utilisateurService->chercherUtilisateurParPseudo($pseudo); // on cherche l'id avec le pseudo de l'utilisateur connecté
@@ -29,13 +28,21 @@ if (isset($_SESSION["pseudo"])) {
             echo ($data);
             notificationsBadge2();
             
-            $rs=$voyageService->afficherVoyages();
-            while($data=mysqli_fetch_array($rs)){
-                $id=$data["id"];
-                $donnee=$utilisateurService->afficherPseudoDepuisId($id);
-                afficherNotifications1($donnee);
-                afficherNotifications2($data);
-            }
+            $rs=$utilisateurService->afficherNotifications($id); // on récupère les informations des notifications
+
+                while($data=mysqli_fetch_array($rs)){
+                    
+                    $codeComm=$data["code_comm"]; // on récupère le code commentaire de la notif en question
+                    $comm=$voyageService->recupererCommentaire($codeComm); // on récupère les infos du commentaire depuis son code commentaire
+                    $idCommentateur=$comm["id"]; // on récupère l'id de celui qui a écrit le commentaire
+                    $user=$utilisateurService->chercherUtilisateurParId($idCommentateur); // on récupère les infos du commentateur depuis son id
+
+                    $codeVoyage=$data["code_voyage"]; // on récupère le code voyage de la notif en question
+                    $voyage=$voyageService->chercherVoyageParCode($codeVoyage); // on récupère les infos du voyage depuis son code voyage
+
+                    afficherNotifications1($user);
+                    afficherNotifications2($voyage);
+                }
 
             notificationsBadge3();
         } else { // sinon on n'affiche rien
@@ -47,6 +54,16 @@ if (isset($_SESSION["pseudo"])) {
             amisBadge1();
             echo ($data);
             amisBadge2();
+
+            $rs=$utilisateurService->afficherDemandesAmi($id); // on sélectionne toutes les demandes d'amis
+                while($data=mysqli_fetch_array($rs)){
+                    $idAmi=$data["id_ami"];
+                    $donnee=$utilisateurService->afficherPseudoDepuisIdAmi($idAmi); // on les parcourt et on associe l'id ami à son pseudo
+                    afficherAmis($donnee);
+                }
+
+            amisBadge3();
+
         } else { 
             amis();
         }

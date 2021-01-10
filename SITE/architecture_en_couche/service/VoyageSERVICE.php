@@ -114,4 +114,18 @@ public function chercherVilles(){
         return $mostPopularVoyage;
     }
 
+//Récupérer commentaire depuis notification
+
+    public function recupererCommentaire(int $codeComm) {
+        $comm = $this->voyageDao->recupererCommentaire($codeComm);
+        return $comm;
+    }
+
+//Récupérer les informations d'un voyage depuis son code
+
+    public function chercherVoyageParCode($codeVoyage) : ?array {
+        $voyage = $this->voyageDao->chercherVoyageParCode($codeVoyage);
+        return $voyage;
+    }
+
 }
