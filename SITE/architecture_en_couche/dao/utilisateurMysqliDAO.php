@@ -11,6 +11,7 @@ include_once("../metier/DemandeAmi.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 include_once("dao_exception.php");
 
+
     class UtilisateurMysqliDao {
 
     /* CONNEXION */       
@@ -27,151 +28,199 @@ include_once("dao_exception.php");
 
     /* AJOUT UTILISATEUR */
         public function ajoutUtilisateur(string $pseudo, string $mail, string $password) {
-            $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("insert into utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
-                                      VALUES (null, ?, ?, ?, null, 'photo', null, null, 'Y', 'Y', '1')");
-            $stmt->bind_param("sss", $pseudo, $mail, $password);
-            $stmt->execute();
-            $mysqli->close();
+            try {
+                $mysqli=$this->connexion();
+                $stmt = $mysqli->prepare("insert into utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
+                                        VALUES (null, ?, ?, ?, null, 'photo', null, null, 'Y', 'Y', '1')");
+                $stmt->bind_param("sss", $pseudo, $mail, $password);
+                $stmt->execute();
+                $mysqli->close();
+            } catch (mysqli_sql_exception $b) {
+                throw new DaoException($b->getMessage(), $b->getCode());
+            }
         }
 
 
     /* RECHERCHE UTILISATEUR PAR MAIL */        
         public function chercherUtilisateurParMail(string $mail) : ?array {
-            $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
-            $stmt->bind_param("s",$mail);
-            $stmt->execute();
-            $rs = $stmt->get_result();
-            $data = $rs->fetch_array(MYSQLI_ASSOC);
-            $rs->free();
-            $mysqli->close();
-            return $data;
+            try {
+                $mysqli=$this->connexion();
+                $stmt = $mysqli->prepare("select * from utilisateurs where mail=?");
+                $stmt->bind_param("s",$mail);
+                $stmt->execute();
+                $rs = $stmt->get_result();
+                $data = $rs->fetch_array(MYSQLI_ASSOC);
+                $rs->free();
+                $mysqli->close();
+                return $data;
+            } catch (mysqli_sql_exception $c) {
+                throw new DaoException($c->getMessage(), $c->getCode());
+            }
         }
 
 
     /* RECHERCHE UTILISATEUR PAR PSEUDO */
         public function chercherUtilisateurParPseudo(string $pseudo) : ?array {
-            $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("select * from utilisateurs inner join langues on utilisateurs.code_langue=langues.code_langue where pseudo=?");
-            $stmt->bind_param("s",$pseudo);
-            $stmt->execute();
-            $rs = $stmt->get_result();
-            $info = $rs->fetch_array(MYSQLI_ASSOC);
-            $rs->free();
-            $mysqli->close();
-            return $info;
+            try {
+                $mysqli=$this->connexion();
+                $stmt = $mysqli->prepare("select * from utilisateurs inner join langues on utilisateurs.code_langue=langues.code_langue where pseudo=?");
+                $stmt->bind_param("s",$pseudo);
+                $stmt->execute();
+                $rs = $stmt->get_result();
+                $info = $rs->fetch_array(MYSQLI_ASSOC);
+                $rs->free();
+                $mysqli->close();
+                return $info;
+            } catch (mysqli_sql_exception $d) {
+                throw new DaoException($d->getMessage(), $d->getCode());
+            }
         }
 
     /* RECHERCHE UTILISATEUR PAR ID */
         public function chercherUtilisateurParId(int $id) : ?array {
-            $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("select * from utilisateurs where id=?");
-            $stmt->bind_param("i",$id);
-            $stmt->execute();
-            $rs = $stmt->get_result();
-            $user = $rs->fetch_array(MYSQLI_ASSOC);
-            $rs->free();
-            $mysqli->close();
-            return $user;
+            try {
+                $mysqli=$this->connexion();
+                $stmt = $mysqli->prepare("select * from utilisateurs where id=?");
+                $stmt->bind_param("i",$id);
+                $stmt->execute();
+                $rs = $stmt->get_result();
+                $user = $rs->fetch_array(MYSQLI_ASSOC);
+                $rs->free();
+                $mysqli->close();
+                return $user;
+            } catch (mysqli_sql_exception $e) {
+                throw new DaoException($e->getMessage(), $e->getCode());
+            }
         }
 
     /* RECHERCHE PHOTO DE PROFIL UTILISATEUR */
         public function chercherPhotoProfilUtilisateur(string $photoProfil) : ?array {
-            $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("select photoprofil from utilisateurs where pseudo=?");
-            $stmt->bind_param("s",$photoProfil);
-            $stmt->execute();
-            $rs = $stmt->get_result();
-            $data = $rs->fetch_array(MYSQLI_ASSOC);
-            $rs->free();
-            $mysqli->close();
-            return $data;
+            try {
+                $mysqli=$this->connexion();
+                $stmt = $mysqli->prepare("select photoprofil from utilisateurs where pseudo=?");
+                $stmt->bind_param("s",$photoProfil);
+                $stmt->execute();
+                $rs = $stmt->get_result();
+                $data = $rs->fetch_array(MYSQLI_ASSOC);
+                $rs->free();
+                $mysqli->close();
+                return $data;
+            } catch (mysqli_sql_exception $f) {
+                throw new DaoException($f->getMessage(), $f->getCode());
+            }
         }
 
     /* COMPTER LES NOTIFICATIONS */
     public function compterNotifications(int $id) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from notifications where id=?');
-        $stmt->bind_param("i",$id);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $data=mysqli_num_rows($rs);
-        $mysqli->close();
-        return $data;
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from notifications where id=?');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $data=mysqli_num_rows($rs);
+            $mysqli->close();
+            return $data;
+        } catch (mysqli_sql_exception $g) {
+            throw new DaoException($g->getMessage(), $g->getCode());
+        }
     }
     
     /* AFFICHER TOUTES LES NOTIFICATIONS */        
     public function afficherNotifications(int $id) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from notifications where id=? order by date desc');
-        $stmt->bind_param("i",$id);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        return $rs;
-        $rs->free();
-        $mysqli->close();
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from notifications where id=? order by date desc');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            return $rs;
+            $rs->free();
+            $mysqli->close();
+        } catch (mysqli_sql_exception $h) {
+            throw new DaoException($h->getMessage(), $h->getCode());
+        }
     }
 
     /* COMPTER LES DEMANDES D'AMI */
     public function compterDemandesAmi(int $id) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from demande_ami where id=?');
-        $stmt->bind_param("i",$id);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $data=mysqli_num_rows($rs);
-        $mysqli->close();
-        return $data;
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from demande_ami where id=?');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $data=mysqli_num_rows($rs);
+            $mysqli->close();
+            return $data;
+        } catch (mysqli_sql_exception $i) {
+            throw new DaoException($i->getMessage(), $i->getCode());
+        }
     }
 
     /* AFFICHER TOUTES LES DEMANDES D'AMIS */        
     public function afficherDemandesAmi(int $id) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from demande_ami where id=?');
-        $stmt->bind_param("i",$id);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        return $rs;
-        $rs->free();
-        $mysqli->close();
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from demande_ami where id=?');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            return $rs;
+            $rs->free();
+            $mysqli->close();
+        } catch (mysqli_sql_exception $j) {
+            throw new DaoException($j->getMessage(), $j->getCode());
+        }
     }
 
     /* AFFICHER LE PSEUDO UTILISATEUR (TABLE UTILISATEURS) DEPUIS ID AMI (TABLE DEMANDE_AMI) */
     public function afficherPseudoDepuisIdAmi(int $idAmi) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select pseudo from utilisateurs inner join demande_ami on utilisateurs.id=demande_ami.id_ami where demande_ami.id_ami=?');
-        $stmt->bind_param("i",$idAmi);
-        $stmt->execute();
-        $rs = $stmt->get_result();
-        $donnee = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $donnee;
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select pseudo from utilisateurs inner join demande_ami on utilisateurs.id=demande_ami.id_ami where demande_ami.id_ami=?');
+            $stmt->bind_param("i",$idAmi);
+            $stmt->execute();
+            $rs = $stmt->get_result();
+            $donnee = $rs->fetch_array(MYSQLI_ASSOC);
+            $rs->free();
+            $mysqli->close();
+            return $donnee;
+        } catch (mysqli_sql_exception $k) {
+            throw new DaoException($k->getMessage(), $k->getCode());
+        }
     }
 
     /* AFFICHER LE PSEUDO UTILISATEUR (TABLE UTILISATEURS) DEPUIS ID UTILISATEUR (TABLE VOYAGE) */
     public function afficherPseudoDepuisId(int $id) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select pseudo from utilisateurs inner join voyages on utilisateurs.id=voyages.id where voyages.id=?');
-        $stmt->bind_param("i",$id);
-        $stmt->execute();
-        $rs = $stmt->get_result();
-        $donnee = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $donnee;
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select pseudo from utilisateurs inner join voyages on utilisateurs.id=voyages.id where voyages.id=?');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs = $stmt->get_result();
+            $donnee = $rs->fetch_array(MYSQLI_ASSOC);
+            $rs->free();
+            $mysqli->close();
+            return $donnee;
+        } catch (mysqli_sql_exception $l) {
+            throw new DaoException($l->getMessage(), $l->getCode());
+        }
     }
 
     /* FILTRES POUR LA BARRE DE RECHERCHE / NAVBAR */
     public function filtreBarreRecherche(){
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare("select * from utilisateurs inner join voyages on utilisateurs.id = voyages.id");
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $filtre=$rs->fetch_all(MYSQLI_ASSOC);
-        $mysqli->close();
-        return $filtre;
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare("select * from utilisateurs inner join voyages on utilisateurs.id = voyages.id");
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $filtre=$rs->fetch_all(MYSQLI_ASSOC);
+            $mysqli->close();
+            return $filtre;
+        } catch (mysqli_sql_exception $m) {
+            throw new DaoException($m->getMessage(), $m->getCode());
+        }
     }
 
     
