@@ -87,7 +87,7 @@
                     <td>' . $data["titre"] . '</td>
                     <td><img src="' . $data["couverture"] . '"/></td>
                     <td>' . $data["resume"] . '</td>
-                    <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["id"] . '"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
+                    <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_etape"] .'&code_etape='. $data["code_etape"] .'"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
     }
     function finTableau(){
         echo
