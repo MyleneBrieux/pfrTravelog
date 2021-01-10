@@ -49,7 +49,8 @@ if(isset($_GET["action"]) && $_GET["action"] == "creation" && !empty($_POST)){
 
         $addVoyage= new VoyageService;
         $addVoyage->addVoyageService($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id);
-            header('Location: detail_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape.'');
+            // header('Location: detail_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape.'');
+            header('Location: mesVoyagesControleur.php?pseudo='.$pseudo.'');
 
     }
 }
