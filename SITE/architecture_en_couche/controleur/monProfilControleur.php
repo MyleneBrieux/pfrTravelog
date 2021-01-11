@@ -12,25 +12,24 @@ include_once '../metier/Voyage.php';
     $utilisateur = new UtilisateurService();
     // try{
         $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
-        //var_dump($profil);
+        $setDescription = isset($profil['description']) && !empty($profil['description']); //Récupère si il y a une description
+        $setNation = isset($profil['nation']) && !Empty($profil['nation']); //Récupère si il y a une nation
+        $setBirthday = isset($profil['birthday']) && !empty($profil['birthday']); //Récupère si il y a une date de naissance
     // }catch(UtilisateurException $e){
         
     // }
 
     $voyagesService = new VoyageService();
-    $data=$voyagesService->nbVoyagesUtilisateur($pseudo);
-    $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo);
-    $mostRecentVoyage = $voyagesService->VoyagePlusRecentUtilisateur($pseudo);
-    $mostPopularVoyage = $voyagesService->VoyagePlusPopulaireUtilisateur($pseudo);
-    //var_dump($voyagePopulaire);
-    //var_dump($voyageRecent);
-    //var_dump($voyages);
+    $data=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages de l'utilisateur
+    $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo); //Cherche les voyages de l'utilisateur
+    $mostRecentVoyage = $voyagesService->VoyagePlusRecentUtilisateur($pseudo); //Cherche le voyage le + récent de l'utilisateur
+    $mostPopularVoyage = $voyagesService->VoyagePlusPopulaireUtilisateur($pseudo); //Cherche le voyage le + populaire de l'utilisateur
 
 profilDebut();
 
-menuLat($profil);
+menuLat($profil, $setBirthday);
 
-presentationUser($profil);
+presentationUser($profil, $setNation, $setDescription);
 
 lastTrip($mostRecentVoyage);
 
@@ -40,7 +39,6 @@ redirectionPageVoyages($profil);
 
 while($data=mysqli_fetch_array($voyages)){
     autresVoyages($data);
-    //var_dump($data);
 }
 
 

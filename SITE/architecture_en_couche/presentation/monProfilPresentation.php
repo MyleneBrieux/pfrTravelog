@@ -26,7 +26,7 @@
         echo'</header>';
     }
 
-    function menuLat($profil){
+    function menuLat($profil, $setBirthday){
         echo'<div class="row">
                 <div class="col-lg-2 col-md-4 col-sm-4 pl-0 col-12 bg-sable">
                     <nav class="menu">
@@ -38,7 +38,7 @@
                                 <p class="date-membre">Membre depuis: (XX/XX/XXXX)</p>
                             </div>
                             <div class="row">';
-                            if (isset($profil['birthday']) && !empty($profil['birthday'])) {
+                            if ($setBirthday) {
                                 $dateNaissance = new DateTime($profil['birthday']);
                                 $dateAjd = new DateTime();
                                 $age = date_diff($dateNaissance, $dateAjd);
@@ -73,10 +73,10 @@
                 </div>';
     }
 
-    function presentationUser($profil){
+    function presentationUser($profil, $setNation, $setDescription){
         echo '<div class="col-lg-10 col-md-8 col-sm-8 col-12 mt-2">
                     <div class="d-inline-flex p-2 bd-highlight">';
-                    if (isset($profil['nation']) && !Empty($profil['nation'])) {
+                    if ($setNation) {
                         echo'<h3><img src="../../img/flags/flags/flat/24/'. $profil['nation'] .'.png" alt="drapeau de nationalité">'. $profil['pseudo'] .'</h3>';
                     }else{
                         echo'<h3>'. $profil['pseudo'] .'</h3>';
@@ -89,7 +89,7 @@
                     </div>
                     <div class="pl-2 rectangle_desc">
                         <p class="description">Description : </p>';
-                        if (isset($profil['description']) && !empty($profil['description'])) {
+                        if ($setDescription) {
                             echo'<p>'. $profil['description'] .'</p>';
                         }else{
                             echo'<p>Cet utilisateur a choisi de rester mystérieux.</p>';
@@ -131,6 +131,8 @@
 
     function footer(){
         echo'</div>
+        </div>
+        </div>
         <footer class="footer">';
             include "footerCONTROLEUR.php";
         echo'</footer>';
