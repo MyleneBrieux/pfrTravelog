@@ -12,10 +12,10 @@
         paramOuvertureDivMenuLat();
     }
 
-    function affichageProfil($utilisateur){
-        paramInfoUserMenuLat();
-        paramDivLangues();
-        paramDivSocial();
+    function affichageProfil($utilisateur, $age){
+        // paramInfoUserMenuLat($age);
+        paramDivLangues($utilisateur);
+        // paramDivSocial();
         paramBtnContact();
         paramFermetureDiv();
         paramFermetureDiv();
@@ -155,19 +155,18 @@
     }
     
 /*FONCTION INFOS UTILISATEUR DU MENU LAT*/    
-    function paramInfoUserMenuLat(){
+    function paramInfoUserMenuLat($age){
         echo   
-            '
-            <div class="age">35 ans</div>
-            <div class="langues-parlees">Langues parlées :</div>';
+            '<div class="age">'.$age.'</div>';
     }
 
 /*FONCTION DIV DES LANGUES DU MENU LAT*/    
-    function paramDivLangues(){
+    function paramDivLangues($utilisateur){
         echo   
-            '<div class="langues">
+            '<div class="langues-parlees">Langue parlée :</div>
+            <div class="langues">
                 <ul>
-                    <li class="txt-menu-responsive">Français</li>
+                    <li class="txt-menu-responsive">'.$utilisateur["type_langue"].'</li>
                 </ul>
             </div>';
     }       
@@ -260,7 +259,7 @@
             <div class="col-12 formulaire-coordonnees securite ">
                 <div class="row">
                     <div class="col-6">
-                        <label>Mots de passe:</label><input type="password" class="form-control" name="password" disabled="disabled" value="*******">
+                        <label>Mot de passe:</label><input type="password" class="form-control" name="password" disabled="disabled" value="*******">
                     </div>
                 </div>
 

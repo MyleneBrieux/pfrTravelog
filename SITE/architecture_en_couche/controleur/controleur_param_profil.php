@@ -8,70 +8,47 @@ require_once('../metier/Utilisateurs.php');
 
 //AFFICHAGE PAGE PARAMETRES PROFIL
     $pseudo=$_SESSION["pseudo"];
-    // $password=$_POST['password'];
     $newUtilisateur=new UtilisateurService();
     $utilisateur=$newUtilisateur->chercherUtilisateurParPseudo($pseudo);
-    // $mdpUtilisateur=$newUtilisateur->chercherUtilisateurParPassword($password); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*MODIFICATION*/
     if(isset($_GET["action"]) && $_GET["action"] == "modifier"){ 
         $password=$_POST['password'];
 
-        if(isset($_POST['confirmPassword']) && ($_POST['password']) == ($_POST['confirmPassword'])
-        ||Empty($_POST['confirmPassword']) ){
+            if(($_POST['password']) == ($_POST['confirmPassword'] )){
         
-            if($mdpOk=password_verify($password, $utilisateur["password"])){
-                $newPassword=$newUtilisateur->passwordHash($_POST["password"], PASSWORD_DEFAULT);
-                $user= new Utilisateurs(
-                htmlentities($utilisateur['id']),
-                htmlentities($utilisateur['pseudo']),
-                htmlentities($_POST["mail"]?$_POST["mail"]:$utilisateur['mail']),
-                htmlentities($newPassword?$newPassword:$utilisateur['password']),
-                htmlentities($_POST['description']?$_POST["description"]:$utilisateur['description']),
-                htmlentities($utilisateur['photoprofil']?$_POST["photoprofil"]:$utilisateur['photoprofil']),
-                htmlentities($_POST["birthday"]?$_POST["birthday"]:$utilisateur['birthday']),
-                htmlentities($_POST["nation"]?$_POST["nation"]:$utilisateur['nation']),
-                htmlentities($_POST['contact']?$_POST['contact']:$utilisateur['contact']),
-                htmlentities($_POST['notifmail']?$_POST['notifmail']:$utilisateur['contact']),
-                htmlentities($_POST['langue']?$_POST['langue']:$utilisateur['langue']) 
-                );
-                try{
-                    $newUtilisateur->modifierUtilisateur($user);
-                    header("Location: controleur_profil.php");   
-                }catch(ServiceException $se){
-                    erreurModifProfil($se->getCode());
+                if(($_POST['mail']) == ($_POST['confirmMail']) ){
+
+                        $newPassword=$newUtilisateur->passwordHash($_POST["password"], PASSWORD_DEFAULT);
+                        $user= new Utilisateurs(
+                        htmlentities($utilisateur['id']),
+                        htmlentities($utilisateur['pseudo']),
+                        htmlentities($_POST["mail"]?$_POST["mail"]:$utilisateur['mail']),
+                        htmlentities($newPassword?$newPassword:$utilisateur['password']),
+                        htmlentities($_POST['description']?$_POST["description"]:$utilisateur['description']),
+                        htmlentities($utilisateur['photoprofil']?$_POST["photoprofil"]:$utilisateur['photoprofil']),
+                        htmlentities($_POST["birthday"]?$_POST["birthday"]:$utilisateur['birthday']),
+                        htmlentities($_POST["nation"]?$_POST["nation"]:$utilisateur['nation']),
+                        htmlentities($_POST['contact']?$_POST['contact']:$utilisateur['contact']),
+                        htmlentities($_POST['notifmail']?$_POST['notifmail']:$utilisateur['contact']),
+                        htmlentities($_POST['langue']?$_POST['langue']:$utilisateur['langue']) 
+                        );
+                        try{
+                            $newUtilisateur->modifierUtilisateur($user);
+                            header("Location: controleur_profil.php");   
+                        }catch(ServiceException $se){
+                            erreurModifProfil($se->getCode());
+                        }   
                 }
+                else{
+                    mdpInvalide();
+                    // header("Location: controleur_param_profil.php");  
+                }  
             }
             else{
-                mdpInvalide();   
-            } 
-             
-        }else{
-            mdpDifferents();       
-        }
-
+                mdpDifferents();
+            }
     }
 
 
@@ -108,10 +85,14 @@ require_once('../metier/Utilisateurs.php');
 
 
 
+/*CALCUL D'AGE UTILISATEUR*/  
+    $age=implode(" ",$newUtilisateur->calculAge($pseudo));
+    echo($age);
+
 
 
 //AFFICHAGE DE LA PAGE
-    affichageParamProfil($utilisateur);
+    affichageParamProfil($utilisateur, $age);
 
 
 

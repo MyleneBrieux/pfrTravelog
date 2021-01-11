@@ -8,13 +8,11 @@ require_once('../metier/Utilisateurs.php');
 
 //AFFICHAGE PAGE PROFIL
     $pseudo=$_SESSION["pseudo"];
-    // $password=$_POST['password'];
     $newUtilisateur=new UtilisateurService();
     $utilisateur=$newUtilisateur->chercherUtilisateurParPseudo($pseudo);
-    // $mdpUtilisateur=$newUtilisateur->chercherUtilisateurParPassword($password); 
 
 
-    
+
 /*MODIFICATION*/
     if(isset($_GET["action"]) && $_GET["action"] == "modifier"){ 
         $password=$_POST['password'];
@@ -55,6 +53,7 @@ require_once('../metier/Utilisateurs.php');
     }
 
 
+
 //AFFICHAGE DE LA PHOTO DU MENU SELON UTILISATEUR
     affichageEnteteProfil();
 
@@ -66,7 +65,6 @@ require_once('../metier/Utilisateurs.php');
     }
 
 
-    
   
 /*DELETE DES UTILISATEURS*/    
     if(isset($_POST["action"]) && $_POST["action"] == "effacer"){
@@ -86,10 +84,13 @@ require_once('../metier/Utilisateurs.php');
 
 
 
+/*CALCUL D'AGE UTILISATEUR*/  
+    $age=$newUtilisateur->calculAge($pseudo);
+    
 
 
 //AFFICHAGE DE LA PAGE
-    affichageProfil($utilisateur);
+    affichageProfil($utilisateur, $age);
 
 
     

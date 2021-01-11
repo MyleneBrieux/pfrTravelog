@@ -12,10 +12,10 @@
         paramOuvertureDivMenuLat();
     }
 
-    function affichageParamProfil($utilisateur){
-        paramInfoUserMenuLat();
-        paramDivLangues();
-        paramDivSocial();
+    function affichageParamProfil($utilisateur, $age){
+        paramInfoUserMenuLat($age);
+        paramDivLangues($utilisateur);
+        // paramDivSocial();
         paramBtnContact();
         paramFermetureDiv();
         paramFermetureDiv();
@@ -59,20 +59,22 @@
 
 /*AFFICHAGE DES MESSAGES D'ERREUR*/ 
     function mdpDifferents(){
-        echo '<div class= "alert alert-danger msg-erreur"> Les 2 mots de passe doivent être identiques ! </div>';
+        echo '<div class= "alert alert-danger msg-erreur"> L\'email ou le mot de passe n\'est pas valide ! </div>';
     }
 
     function mdpInvalide(){
-        echo '<div class= "alert alert-danger msg-erreur"> Le mot de passe ne correspond pas à ce compte utilisateur ! </div>';
+        echo '<div class= "alert alert-danger msg-erreur"> Les deux adresses mail ne sont pas identiques ! </div>';
     }
 
     function erreurModifProfil($errorCode=null){
         if($errorCode && $errorCode == !1045){
-            echo "<div class= 'alert alert-danger'> Modification impossible, veuillez réesayer ultèrieurement ! </div>";
+            echo "<div class= 'alert alert-danger'> Modification impossible, veuillez réessayer ultèrieurement ! </div>";
         }
     }
 
-
+    function mailDifferents(){
+        echo '<div class= "alert alert-danger msg-erreur"> Les deux adresses mail ne sont pas identiques ! </div>';
+    }
 
 
 
@@ -160,19 +162,18 @@
     }
 
 /*FONCTION INFOS UTILISATEUR DU MENU LAT*/    
-    function paramInfoUserMenuLat(){
+    function paramInfoUserMenuLat($age){
         echo   
-            '
-            <div class="age">35 ans</div>
-            <div class="langues-parlees">Langues parlées :</div>';
+            '<div class="age">'.$age.'</div>';
     }
 
 /*FONCTION DIV DES LANGUES DU MENU LAT*/    
-    function paramDivLangues(){
+    function paramDivLangues($utilisateur){
         echo   
-            '<div class="langues">
+            '<div class="langues-parlees">Langue parlée :</div>
+            <div class="langues">
                 <ul>
-                    <li class="txt-menu-responsive">Français</li>
+                    <li class="txt-menu-responsive">'.$utilisateur["type_langue"].'</li>
                 </ul>
             </div>';
     }       
@@ -276,7 +277,7 @@
         echo 
         '<div class="row">
             <div class="col-6">
-                <label>Mot de passe (obligatoire):</label><input type="password" class="input-beige form-control" name="password" value="" required>
+                <label>Nouveau mot de passe:</label><input type="password" class="input-beige form-control" name="password" value="">
             </div>
             <div class="col-6">
                 <label>Confirmation:</label><input type="password" class="input-beige form-control" name="confirmPassword" value="">

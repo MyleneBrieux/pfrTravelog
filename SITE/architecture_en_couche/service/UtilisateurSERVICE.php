@@ -172,23 +172,15 @@ class UtilisateurService {
 
 
 
-    public function chercherUtilisateurParPassword($password) : ?array {
-        $info = $this->utilisateurDao->chercherUtilisateurParPassword($password);
-        return $info;
-    }
 
     public function modifierUtilisateur($utilisateur) {
         $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($utilisateur);
     }
 
-    // public function modifierUtilisateur ($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo){
-    //     $this->utilisateurDao->modifierUtilisateur($mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
-    // }
-
-    // public function calculAge($pseudo) {
-    //     $age = $this->utilisateurDao->calculAge($pseudo);
-    //     return $age;
-    // }
+    public function calculAge($pseudo) {
+        $age = $this->utilisateurDao->calculAge($pseudo);
+        return $age;
+    }
     
 
 }

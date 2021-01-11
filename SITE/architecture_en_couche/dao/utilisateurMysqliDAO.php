@@ -1,8 +1,8 @@
 <?php
 
 // LIAISONS AVEC AUTRES COUCHES //
-include_once("../metier/Utilisateur.php");
-// include_once("../metier/Utilisateurs.php");
+// include_once("../metier/Utilisateur.php");
+include_once("../metier/Utilisateurs.php");
 include_once("../metier/Voyage.php");
 include_once("../metier/Notification.php");
 include_once("../metier/DemandeAmi.php");
@@ -17,8 +17,8 @@ include_once("dao_exception.php");
     /* CONNEXION */       
         public function connexion() {
             try {
-                $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
-                // $mysqli= new mysqli('localhost','root','','travelog');
+                // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+                $mysqli= new mysqli('localhost','root','','travelog');
                 return $mysqli;
             } catch (mysqli_sql_exception $a) {
                 throw new DaoException($a->getMessage(), $a->getCode());
@@ -294,8 +294,6 @@ include_once("dao_exception.php");
             $mysqli->close();
         }
 
-        // $stmt = $mysqli->prepare("insert into utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
-        //                               VALUES (null, ?, ?, ?, null, 'photo', null, null, 'Y', 'Y', '1')");
         
 
 /*SUPPRESSION DES UTILISATEURS*/
@@ -308,55 +306,18 @@ include_once("dao_exception.php");
             }
 
 
-    /* RECHERCHE UTILISATEUR PAR PASSWORD */
-    public function chercherUtilisateurParPassword(string $password) : ?array {
+
+/*AGE DES UTILISATEURS*/
+    function calculAge($pseudo) {
+        $dateJour = date("Y-m-d");
         $mysqli=$this->connexion();
-        $stmt = $mysqli->prepare("SELECT * from utilisateurs where password=?");
-        $stmt->bind_param("s",$password);
+        $stmt=$mysqli->prepare("SELECT timestampdiff(year,birthday,$dateJour) from utilisateurs WHERE pseudo=? ");
+        $stmt->bind_param("s", $pseudo);
         $stmt->execute();
         $rs = $stmt->get_result();
-        $info = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $info;
+        $age = $rs->fetch_array(MYSQLI_ASSOC);
+        return $age;
     }
-            
-/*AGE DES UTILISATEURS*/
-            // public function calculAge($pseudo) :?array{
-            //     $mysqli=$this->connexion();
-            //     $stmt=$mysqli->prepare("SELECT birthday, DATE_DIFF(year,birthday,SYSDATE()) from utilisateurs WHERE pseudo=? ");
-            //     $stmt->bind_param("s", $pseudo);
-            //     $stmt->execute();
-            //     $rs = $stmt->get_result();
-            //     $age = $rs->fetch_array(MYSQLI_ASSOC);
-            //     $rs->free();
-            //     $mysqli->close();
-            //     return $age;
-            // }
-       
-           
-            
-            // function calculAge($pseudo, $dateJour){
-            //     $mysqli=$this->connexion();
-            //     $stmt=$mysqli->prepare("SELECT birthday from utilisateurs WHERE pseudo=? ");
-            //     $stmt->bind_param("s", $pseudo);
-            //     $stmt->execute();
-            //     $rs = $stmt->get_result();
-            //     $tabAge = $rs->fetch_array(MYSQLI_ASSOC);
-                
-            //     // $dateJour = new DateTime('now');
-            //     // $birthday = new DateTime($tabAge['birthday']);
-            //     // $age = $birthday->diff($dateJour);
-            //     // return $age->format('%R%a days');
-
-            //     $dateJour = date("Y-m-d");
-            //     $birthday = date_create($tabAge);
-            //     $age = date_diff($birthday, $dateJour);
-            //     return $age->format('%R%a days');
-                
-            // }
-
-
 
 
 
