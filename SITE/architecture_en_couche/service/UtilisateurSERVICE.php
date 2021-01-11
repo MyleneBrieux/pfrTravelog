@@ -165,6 +165,15 @@ class UtilisateurService {
         }
     }
 
+    public function listeAmis(int $id) {
+        try {
+            $rs = $this->utilisateurDao->listeAmis($id);
+            return $rs;
+        } catch (DaoException $r){
+            throw new ServiceException($r->getMessage(),$r->getCode());
+        }
+    }
+
 
 
 

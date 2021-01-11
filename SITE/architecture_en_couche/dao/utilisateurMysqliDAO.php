@@ -228,7 +228,7 @@ include_once("dao_exception.php");
         try{
             $mysqli=$this->connexion();
             $stmt=$mysqli->prepare('select * from demande_ami where id=? and accepte="Y"');
-            $stmt->bind_param("s",$id);
+            $stmt->bind_param("i",$id);
             $stmt->execute();
             $rs=$stmt->get_result();
             $nbAmis=mysqli_num_rows($rs);
@@ -240,15 +240,31 @@ include_once("dao_exception.php");
     }
 
     /* AJOUTER UN UTILISATEUR EN AMI */
-    public function ajouterAmi($id){
+    public function ajouterAmi($idAmi, $id){
         try {
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("insert into demande_ami (id_ami, id, accepte) VALUES (?, ?, 'Y')");
-            $stmt->bind_param("ii", $id, $_SESSION['id']);
+            $stmt->bind_param("ii", $idAmi, $id);
             $stmt->execute();
             $mysqli->close();
         } catch (mysqli_sql_exception $o) {
             throw new DaoException($o->getMessage(), $o->getCode());
+        }
+    }
+
+    /* RECHERCHE DES AMIS ACCEPTES */        
+    public function listeAmis(int $id) {
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from demande_ami where id=? and accepte="Y"');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            return $rs;
+            $rs->free();
+            $mysqli->close();
+        } catch (mysqli_sql_exception $p) {
+            throw new DaoException($p->getMessage(), $p->getCode());
         }
     }
     
