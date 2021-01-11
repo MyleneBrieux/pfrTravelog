@@ -72,13 +72,13 @@
         <h1 class="placenav_titre mb-3">Liste des amis ('. $nbAmis .')</h1>';
     }
 
-    function ami1(){
+    function ami1($ami){
         echo'<div class="row bg-sable mb-3">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="row">
                 <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
                     src="../../img/photos/photo_profil_detail_voyage.jpg" />
-                <h4 class="mt-4 mb-3">Utilisateur1</h4>
+                <h4 class="mt-4 mb-3">' . $ami['pseudo'] . '</h4>
             </div>
         </div>
         <div class="col-lg-2 col-md-1"></div>
@@ -544,8 +544,8 @@
         amisHeader();
     }
 
-    function contenuListeAmis(){
-        ami1();
+    function contenuListeAmis($ami){
+        ami1($ami);
         // ami2();
         // ami3();
         // ami4();
