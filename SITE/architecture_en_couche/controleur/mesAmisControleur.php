@@ -15,11 +15,9 @@ if(!isset ($_SESSION["pseudo"]) && $_SESSION['pseudo']!==$profil['pseudo']){
 
 //try{
     $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
-    if (isset ($profil['birthday']) && !empty ($profil['birthday'])) {
-        $dateNaissance = new DateTime($profil['birthday']);
-        $dateAjd = new DateTime();
-        $age = date_diff($dateNaissance, $dateAjd);
-    }
+    $id = $profil['id'];
+    $setBirthday = isset ($profil['birthday']) && !empty ($profil['birthday']);
+    $nbAmis = $utilisateur->nbAmisUtilisateur($id);
 //}catch(UtilisateurException $e){
     //
 //}
@@ -28,9 +26,9 @@ if(!isset ($_SESSION["pseudo"]) && $_SESSION['pseudo']!==$profil['pseudo']){
 
 amisDebut();
 
-menuLat($profil, $age);
+menuLat($profil, $setBirthday);
 
-listeAmis();
+listeAmis($nbAmis);
 
 contenuListeAmis();
 
