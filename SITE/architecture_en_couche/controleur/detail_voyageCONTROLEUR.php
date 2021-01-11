@@ -5,6 +5,8 @@ include_once("../presentation/detail_voyagePRESENTATION.php");
 include("../service/VoyageSERVICE.php");
 include("../service/UtilisateurSERVICE.php");
 
+$numDiapo=0;
+
 $pseudo=$_SESSION["pseudo"];
         $data=new UtilisateurService();
         $data=$data->chercherUtilisateurParPseudo($pseudo);
@@ -18,6 +20,8 @@ $pseudo=$_SESSION["pseudo"];
         $datefin=$detailVoyage["date_fin"];
         $likes=$detailVoyage["likes"];
         $vues=$detailVoyage["vues"];
+        $couverture=$detailVoyage["couverture"];
+        // $couvertureImplode=implode("", $couverture);
 
         $detailEtape=new VoyageService();
         $codeEtape = htmlentities(trim($_GET['code_etape']));
@@ -44,8 +48,8 @@ if ($isMyVoyage==true){
 detail_menuFinEtNav();
 
 // foreach 
-detail_carousel();
-
+detail_carousel($couverture, $numDiapo);
+echo($couverture);
 detail_restePage($sousTitre,$description);
 
 detail_basPage();
