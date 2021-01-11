@@ -97,38 +97,59 @@ function detail_placeNav(){
 }
 
 // mettre un for
-function detail_carousel(){
+function detail_carousel($couverture, $numDiapo){
     echo '<div class="card col-12 mt-2 fond_carrousel">
     <div id="slider">
         <div id="carouselDetailVoyage" class="carousel slide" data-ride="carousel"
             data-interval="false">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselDetailVoyage" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselDetailVoyage" data-slide-to="1"></li>
-                <li data-target="#carouselDetailVoyage" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="First slide">
-                    <div class="card-img-overlay titre_photo_detail_voyage halant ">
-                        <h2 class="taille_titre_photo_detail_voyage">La Fontaine de Trevi</h2>
-                    </div>
-                </div>
-                <div class="carousel-item taille_photos_detail_voyage">
-                    <img class="d-block w-100" src="../../../images/photos/grece.jpg"
-                        alt="Second slide">
-                    <div class="card-img-overlay titre_photo_detail_voyage halant">
-                        <h2 class="taille_titre_photo_detail_voyage">Mon minou</h2>
-                    </div>
-                </div>
-                <div class="carousel-item taille_photos_detail_voyage">
-                    <img class="d-block w-100" src="../../../images/photos/lac.jpg" alt="Third slide">
-                    <div class="card-img-overlay titre_photo_detail_voyage halant">
-                        <h2 class="taille_titre_photo_detail_voyage">Le lac</h2>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselDetailVoyage" role="button"
+            <ol class="carousel-indicators">';
+
+            $numDiapo=1;
+            // for($i=1;$i=>$){
+                // $numDiapo++;
+                echo '<div class="carousel-item'; 
+                if($numDiapo==1){ 
+                    echo " active"; 
+                }
+                echo '<li data-target="#carouselDetailVoyage" data-slide-to="'.$numDiapo.'" class="'; 
+                if($numDiapo==1){ 
+                    echo " active"; 
+                } echo '"></li>';
+            // }
+
+            echo '</ol>';
+            $numDiapo=1;
+            // while($donnees = $couverture->fetch_assoc()){
+                // $numDiapo++;
+                echo '<div class="carousel-item'.''; 
+                if($numDiapo==1){ 
+                    echo " active"; 
+                }
+                echo '"><img class="d-block w-100" src="../../img/photos/'. $couverture .'" alt="Slide'. $numDiapo.'" /></div>';
+            // }
+
+            // <div class="carousel-inner">
+            //     <div class="carousel-item active">
+            //         <img class="d-block w-100" src="../../../images/photos/Trevi.jpg" alt="First slide">
+            //         <div class="card-img-overlay titre_photo_detail_voyage halant ">
+            //             <h2 class="taille_titre_photo_detail_voyage">La Fontaine de Trevi</h2>
+            //         </div>
+            //     </div>
+            //     <div class="carousel-item taille_photos_detail_voyage">
+            //         <img class="d-block w-100" src="../../../images/photos/grece.jpg"
+            //             alt="Second slide">
+            //         <div class="card-img-overlay titre_photo_detail_voyage halant">
+            //             <h2 class="taille_titre_photo_detail_voyage">Mon minou</h2>
+            //         </div>
+            //     </div>
+            //     <div class="carousel-item taille_photos_detail_voyage">
+            //         <img class="d-block w-100" src="../../../images/photos/lac.jpg" alt="Third slide">
+            //         <div class="card-img-overlay titre_photo_detail_voyage halant">
+            //             <h2 class="taille_titre_photo_detail_voyage">Le lac</h2>
+            //         </div>
+            //     </div>
+            // </div>
+            echo '<a class="carousel-control-prev" href="#carouselDetailVoyage" role="button"
                 data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
