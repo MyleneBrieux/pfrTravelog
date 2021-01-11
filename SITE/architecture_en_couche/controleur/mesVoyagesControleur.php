@@ -13,20 +13,20 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     $voyagesService = new VoyageService();
     // try{
         $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
+        $isUser = $_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo'];
     // }catch(UtilisateurException $e){
         
     // }
 
     $info=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages crées par l'utilisateur dont on visite la page
     $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo);
-    //var_dump($voyages);
     
 
 voyagesDebut();
 
 menuLat();
 
-if ($_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo']) {
+if ($isUser) {
     débutCorpsUtilisateur($info); //Si le pseudo correspond à celui de l'utilisateur connecté alors un lien vers la création de voyage s'affiche
 } else {
     débutCorpsVisiteur($profil, $info); //Sinon un lien pour accéder à son profil s'affiche à la place
@@ -35,14 +35,13 @@ if ($_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo']) {
 tableauEntete(); //en-tête du tableau
 while($data=mysqli_fetch_array($voyages)){
     afficherVoyages($data); //affichage des voyages
-    //var_dump($data);
 }
 finTableau();
 
-if ($_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo']) {
-    encadreVisiteur($profil);
+if ($isUser) {
+    encadreUtilisateur(); //affichage d'un lien pour créer un voyage pour l'utilisateur
 } else{
-    encadreUtilisateur();
+    encadreVisiteur($profil); //affichage d'un lien pour le visiteur pour visiter le profil de l'utilisateur
 }
 
 nbPages();
