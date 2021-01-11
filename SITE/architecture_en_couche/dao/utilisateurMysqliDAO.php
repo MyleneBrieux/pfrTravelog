@@ -280,6 +280,18 @@ include_once("dao_exception.php");
             }
 
 
+    /* RECHERCHE UTILISATEUR PAR PASSWORD */
+    public function chercherUtilisateurParPassword(string $password) : ?array {
+        $mysqli=$this->connexion();
+        $stmt = $mysqli->prepare("SELECT * from utilisateurs where password=?");
+        $stmt->bind_param("s",$password);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        $info = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $info;
+    }
             
 /*AGE DES UTILISATEURS*/
             // public function calculAge($pseudo) :?array{

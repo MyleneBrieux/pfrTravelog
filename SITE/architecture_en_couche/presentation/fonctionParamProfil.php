@@ -40,7 +40,7 @@
         paramFermetureDiv();
         paramBtnValidation();
         paramDivDivers();
-        paramDivOptionLangues();
+        paramDivOptionLangues($utilisateur);
         paramBtnValidation();
         paramDivConfidential();
         paramDivCheckbox($utilisateur);
@@ -54,6 +54,35 @@
         paramIncludeFooter();
         paramFermetureBodyHtml();
     }
+
+
+
+/*AFFICHAGE DES MESSAGES D'ERREUR*/ 
+    function mdpDifferents(){
+        echo '<div class= "alert alert-danger msg-erreur"> Les 2 mots de passe doivent être identiques ! </div>';
+    }
+
+    function mdpInvalide(){
+        echo '<div class= "alert alert-danger msg-erreur"> Le mot de passe ne correspond pas à ce compte utilisateur ! </div>';
+    }
+
+    function erreurModifProfil($errorCode=null){
+        if($errorCode && $errorCode == !1045){
+            echo "<div class= 'alert alert-danger'> Modification impossible, veuillez réesayer ultèrieurement ! </div>";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -181,7 +210,7 @@
 /*FONCTION FORM ACTION*/    
     function paramFormAction(){
         echo   
-            '<form action="../controleur/controleur_profil.php?action=modifier" method="post">';
+            '<form action="../controleur/controleur_param_profil.php?action=modifier" method="post">';
     } 
 
 /*FONCTION DIV DU NOM*/    
@@ -206,17 +235,17 @@
             '<div class="col-12 formulaire-coordonnees securite txt-input">
                 <div class="row">
                     <div class="col-6">
-                        <label>Pseudo:</label><input type="text" class="form-control input-beige" placeholder="j.dupont59" name="pseudo" value=" '.$utilisateur["pseudo"].' " disabled="disabled">
+                        <label>Pseudo:</label><input type="text" class="form-control input-beige" placeholder="j.dupont59" name="pseudo" value="'.$utilisateur["pseudo"].'" disabled="disabled">
                     </div>
 
                     <div class="col-6">
-                        <label>Date de naissance:</label><input type="date" class="input-beige form-control" name="birthday" value=" '.$utilisateur["birthday"].' ">
+                    <label>Date de naissance:</label><input type="date" class="form-control input-beige" name="birthday" value="'.$utilisateur["birthday"].'">
                     </div>
                 </div>
         
                 <div class="row">
                     <div class="col-6">
-                        <label>Nationnalité:</label><input type="text" class="input-beige form-control" placeholder="Français" name="nation" value=" '.$utilisateur["nation"].' ">
+                        <label>Nationnalité:</label><input type="text" class="input-beige form-control" placeholder="Français" name="nation" value="'.$utilisateur["nation"].'">
                     </div>
                 </div>
             </div>';     
@@ -247,7 +276,7 @@
         echo 
         '<div class="row">
             <div class="col-6">
-                <label>Mots de passe:</label><input type="password" class="input-beige form-control" name="password" value="">
+                <label>Mot de passe (obligatoire):</label><input type="password" class="input-beige form-control" name="password" value="" required>
             </div>
             <div class="col-6">
                 <label>Confirmation:</label><input type="password" class="input-beige form-control" name="confirmPassword" value="">
@@ -301,14 +330,16 @@ function paramDivDescriptionTxt(){
     } 
 
 /*FONCTION DES OPTIONS LANGUES*/  
-    function paramDivOptionLangues(){
+    function paramDivOptionLangues($utilisateur){
         echo 
             '<div class="col-12 formulaire-coordonnees2 securite txt-input">
                 <div class="row">
                     <div class="col-12">
                         <label>Langues parlées:</label>
                             <select id="langue" class="select" name="langue">
-                                <option value="1" selected>Anglais</option>
+                                <option value="'.$utilisateur["code_langue"].'"selected>'.$utilisateur["type_langue"].'</option>
+                                <option value="1"><-- Langues --></option>
+                                <option value="1">Anglais</option>
                                 <option value="2">Francais</option>
                                 <option value="3">Chinois</option>
                                 <option value="4">Arabe</option>
@@ -328,6 +359,7 @@ function paramDivDescriptionTxt(){
                                 <option value="18">Thai</option>
                                 <option value="19">Bengali</option>
                                 <option value="20">Pendjabi</option>
+                                
                         </select>
                     </div>
                 </div>
@@ -349,12 +381,12 @@ function paramDivDescriptionTxt(){
                 <div class="row">
 
                     <div class="col-12 mt-3">
-                        <input type="checkbox" class="checkbox" name="contact" checked=" '.$utilisateur["contact"].' "><label>J\'accepte de recevoir des
+                        <input type="checkbox" class="checkbox" name="contact" checked="'.$utilisateur["contact"].'" value="Y"><label>J\'accepte de recevoir des
                         demande d\'ami</label>
                     </div>
 
                     <div class="col-12">
-                        <input type="checkbox" class="checkbox" name="notifmail" checked=" '.$utilisateur["notifmail"].' "><label>J\'accepte de recevoir des
+                        <input type="checkbox" class="checkbox" name="notifmail" checked="'.$utilisateur["notifmail"].'" value="Y"><label>J\'accepte de recevoir des
                         notifications par mail</label>
                     </div>
 

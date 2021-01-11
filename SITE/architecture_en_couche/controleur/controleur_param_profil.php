@@ -8,14 +8,79 @@ require_once('../metier/Utilisateurs.php');
 
 //AFFICHAGE PAGE PARAMETRES PROFIL
     $pseudo=$_SESSION["pseudo"];
-    $utilisateur=new UtilisateurService();
-    $utilisateur=$utilisateur->chercherUtilisateurParPseudo($pseudo);
+    // $password=$_POST['password'];
+    $newUtilisateur=new UtilisateurService();
+    $utilisateur=$newUtilisateur->chercherUtilisateurParPseudo($pseudo);
+    // $mdpUtilisateur=$newUtilisateur->chercherUtilisateurParPassword($password); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*MODIFICATION*/
+    if(isset($_GET["action"]) && $_GET["action"] == "modifier"){ 
+        $password=$_POST['password'];
+
+        if(isset($_POST['confirmPassword']) && ($_POST['password']) == ($_POST['confirmPassword'])
+        ||Empty($_POST['confirmPassword']) ){
+        
+            if($mdpOk=password_verify($password, $utilisateur["password"])){
+                $newPassword=$newUtilisateur->passwordHash($_POST["password"], PASSWORD_DEFAULT);
+                $user= new Utilisateurs(
+                htmlentities($utilisateur['id']),
+                htmlentities($utilisateur['pseudo']),
+                htmlentities($_POST["mail"]?$_POST["mail"]:$utilisateur['mail']),
+                htmlentities($newPassword?$newPassword:$utilisateur['password']),
+                htmlentities($_POST['description']?$_POST["description"]:$utilisateur['description']),
+                htmlentities($utilisateur['photoprofil']?$_POST["photoprofil"]:$utilisateur['photoprofil']),
+                htmlentities($_POST["birthday"]?$_POST["birthday"]:$utilisateur['birthday']),
+                htmlentities($_POST["nation"]?$_POST["nation"]:$utilisateur['nation']),
+                htmlentities($_POST['contact']?$_POST['contact']:$utilisateur['contact']),
+                htmlentities($_POST['notifmail']?$_POST['notifmail']:$utilisateur['contact']),
+                htmlentities($_POST['langue']?$_POST['langue']:$utilisateur['langue']) 
+                );
+                try{
+                    $newUtilisateur->modifierUtilisateur($user);
+                    header("Location: controleur_profil.php");   
+                }catch(ServiceException $se){
+                    erreurModifProfil($se->getCode());
+                }
+            }
+            else{
+                mdpInvalide();   
+            } 
+             
+        }else{
+            mdpDifferents();       
+        }
+
+    }
+
+
 
 
 //AFFICHAGE DE LA PHOTO DU MENU SELON UTILISATEUR
     affichageEnteteParamProfil();
 
-    if (isset($utilisateur['photoprofil'])){
+    if (isset($utilisateur['photoprofil']) ){
         paramPhotoMenuLatDefaut();
     }
     else {
@@ -23,77 +88,14 @@ require_once('../metier/Utilisateurs.php');
     }
 
 
-//AFFICHAGE DE LA PAGE
-    affichageParamProfil($utilisateur);
-
-
-/*REDIRECTION*/
-    // if(!isset($_SESSION['pseudo'])){
-    //     header("location: ../../libs/templates/accueil.php");
-    // }
-
-    
-//SWITCH LANGUE
-    // $code_langue = $_POST['code_langue'];
-        
-    // if ($code_langue == "Anglais"){
-    //     $code_langue=1;
-    // }
-    // elseif ($code_langue == "Francais"){
-    //     $code_langue=2;
-    // }
-    // elseif ($code_langue == "Chinois"){
-    //     $code_langue=3;
-    // }
-    // elseif ($code_langue == "Arabe"){
-    //     $code_langue=4;
-    // }
-    // elseif ($code_langue == "Espagnol"){
-    //     $code_langue=5;
-    // }
-    // elseif ($code_langue == "Hindi"){
-    //     $code_langue==6;
-    // }
-    // elseif ($code_langue == "Portuguais"){
-    //     $code_langue==7;
-    // }
-    // else{
-    //     $code_langue==20;
-    // }
-    // echo $code_langue;
-
-/*MODIFICATION*/
-    if(isset($_GET["action"]) && $_GET["action"] == "modifier" && !empty($_POST)){
-
-        if (isset($_SESSION["pseudo"]) ){
-            
-            $utilisateur= new Utilisateurs(
-            htmlentities($_SESSION['id']),
-            htmlentities($utilisateur['pseudo']),
-            htmlentities($_POST["mail"]),
-            htmlentities($_POST["password"]),
-            htmlentities($utilisateur['description']),
-            htmlentities($utilisateur['photoprofil']),
-            htmlentities($_POST["birthday"]?$_POST["birthday"]:null),
-            htmlentities($_POST["nation"]?$_POST["nation"]:null),
-            htmlentities($utilisateur['contact']),
-            htmlentities($utilisateur["notifmail"]),
-            (int)htmlentities($_POST["code_langue"]) 
-            );
-
-            $newUtilisateur = new UtilisateurService;
-            $modifUtilisateur->modifierUtilisateur($utilisateur);
-        }  
-    }
-
 
 
 /*DELETE DES UTILISATEURS*/    
     if(isset($_POST["action"]) && $_POST["action"] == "effacer"){
-            
+                        
         if ( isset($_GET["pseudo"]) && !Empty($_GET["pseudo"]) ){
             $pseudo=htmlentities($_GET["pseudo"]); 
-            $delUtilisateur=new UtilisateurService;
+            $delUtilisateur=new UtilisateurService();
 
             try{
                 $delEmploye->deleteEmployes($pseudo);
@@ -103,14 +105,21 @@ require_once('../metier/Utilisateurs.php');
             }
         }
     }
+
+
+
+
+
+//AFFICHAGE DE LA PAGE
+    affichageParamProfil($utilisateur);
+
+
+
+
+
+
+
     
-
-
-
-//CALUL DE L'AGE UTILISATEUR
-    // $age=new UtilisateurService();
-    // $age->calculAge($pseudo);
-    // echo($age);
 
 
 

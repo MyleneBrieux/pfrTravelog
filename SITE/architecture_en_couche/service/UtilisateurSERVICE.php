@@ -155,7 +155,10 @@ class UtilisateurService {
 
 
 
-
+    public function chercherUtilisateurParPassword($password) : ?array {
+        $info = $this->utilisateurDao->chercherUtilisateurParPassword($password);
+        return $info;
+    }
 
     public function modifierUtilisateur($utilisateur) {
         $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($utilisateur);

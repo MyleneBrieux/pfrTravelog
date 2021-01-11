@@ -23,20 +23,22 @@
         paramOuvertureDivClassRow();
         paramOuvertureDivClassRow();
         paramDivClassNom();
-        paramFormAction();
+        // paramFormAction();
         paramDivClassTxtProfil();
         paramDivClassTxtSecuriteProfil($utilisateur);
         paramDivSecurite();
         profilDivClassTxtSecurite($utilisateur);
         paramDivDivers();
-        paramDivOptionLangues();
+        paramDivOptionLangues($utilisateur);
         paramFermetureDiv();
         paramDivConfidential();
         paramOuvertureFormCoordonneeSecur();
         paramCheckbox2($utilisateur);
         paramFermetureDiv();
+
+        // paramFermetureForm();
         paramDivBtnModifier();
-        paramFermetureForm();
+        
         paramFermetureDiv();
         paramFermetureDiv();
         paramFermetureDiv();
@@ -45,6 +47,39 @@
         paramIncludeFooter();
         paramFermetureBodyHtml();
     }
+
+
+/*AFFICHAGE DES MESSAGES D'ERREUR*/ 
+    function mdpDifferents(){
+        echo '<div class= "alert alert-danger msg-erreur"> Les 2 mots de passe doivent être identiques ! </div>';
+    }
+
+    function mdpInvalide(){
+        echo '<div class= "alert alert-danger msg-erreur"> Le mot de passe ne correspond pas à ce compte utilisateur ! </div>';
+    }
+
+    function erreurModifProfil($errorCode=null){
+        if($errorCode && $errorCode == !1045){
+            echo "<div class= 'alert alert-danger'> Modification impossible, veuillez réesayer ultèrieurement ! </div>";
+        }
+    }
+
+
+
+    // function mdpDifferents(){
+    //     echo '<div class="alert alert-danger msg-erreur" role="alert">
+    //         <h4 class="alert-heading">ERREUR !</h4>
+    //             <p>Les 2 mots de passe doivent être identiques !</p>
+    //         <hr>
+    //     </div>';
+    // }
+
+
+
+
+
+
+
 
 /*FONCTION ENTETE HTML5*/
     function paramEnteteHtml(){
@@ -178,7 +213,7 @@
 /*FONCTION FORM ACTION*/    
     function paramFormAction(){
         echo   
-            '<form action="../controleur/controleur_param_profil.php?action=modifier" method="post">';
+            '<form action="../controleur/controleur_profil.php?action=modifier" method="post">';
     } 
 
 /*FONCTION DIV DU TEXTE PROFIL*/    
@@ -231,7 +266,7 @@
 
                  <div class="row">
                     <div class="col-6">
-                        <label>Email:</label><input type="email" class="form-control" name="mail" disabled="disabled" value=" '.$utilisateur["mail"].' ">
+                        <label>Email:</label><input type="email" class="form-control" name="mail" disabled="disabled" value="'.$utilisateur["mail"].'">
                     </div>
                 </div>
             </div>
@@ -248,33 +283,15 @@
     } 
 
 /*FONCTION DES OPTIONS LANGUES*/  
-    function paramDivOptionLangues(){
+    function paramDivOptionLangues($utilisateur){
         echo 
             '<div class="col-12 formulaire-coordonnees2 securite  txt-input">
                 <div class="row">
                     <div class="col-12">
                         <label>Langues parlées:</label>
                             <select id="langue" class="select" name="langue" disabled="disabled">
-                                <option value="1" selected>Anglais</option>
-                                <option value="2">Francais</option>
-                                <option value="3">Chinois</option>
-                                <option value="4">Arabe</option>
-                                <option value="5">Espagnol</option>
-                                <option value="6">Hindi</option>
-                                <option value="7">Portugais</option>
-                                <option value="8">Russe</option>
-                                <option value="9">Japonais</option>
-                                <option value="10">Coreen</option>
-                                <option value="11">Allemand</option>
-                                <option value="12">Turc</option>
-                                <option value="13">Vietnamien</option>
-                                <option value="14">Italien</option>
-                                <option value="15">Polonais</option>
-                                <option value="16">Neerlandais</option>
-                                <option value="17">Grec</option>
-                                <option value="18">Thai</option>
-                                <option value="19">Bengali</option>
-                                <option value="20">Pendjabi</option>
+                                <option value="1" selected>'.$utilisateur["type_langue"].'</option>
+                                
                         </select>
                     </div>
                 </div>

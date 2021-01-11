@@ -393,23 +393,23 @@ max-width: 40%;
             }
         }
 
-.select{
-    margin-top: 0.5em;
-    margin-left: 1em;
-    width: 10em;
-}
-
-@media (max-width : 993px){
     .select{
         margin-top: 0.5em;
         margin-left: 1em;
-        }
+        width: 10em;
     }
 
-.checkbox{
-    margin-right: 1em;
+    @media (max-width : 993px){
+        .select{
+            margin-top: 0.5em;
+            margin-left: 1em;
+            }
+        }
 
-}
+    .checkbox{
+        margin-right: 1em;
+
+    }
 
 
 

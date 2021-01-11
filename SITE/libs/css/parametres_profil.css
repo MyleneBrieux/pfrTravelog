@@ -12,12 +12,12 @@ a:hover{
 .menulat{
     background-color:#dcdacd;
     font-family: 'Halant', serif;
-    margin-top:1em;
+    /* margin-top:0.35em; */
     /* margin-bottom:2.4em; */
     padding-bottom:100%;
     margin-left: -2em;
     width:14.5em;
-    height: 100.5%;
+    height: 101%;
     }
 
 @media screen and (max-width : 575px){
@@ -394,7 +394,16 @@ max-width: 40%;
 }
 
 
+.msg-erreur{
+    margin-top: 3em !important;
+    position: absolute !important;
+    z-index: 500;
+    width: 100% !important;
+    height: 2.5em;
+    text-align: center;
+    
 
+}
 
 
 
