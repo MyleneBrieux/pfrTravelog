@@ -223,6 +223,34 @@ include_once("dao_exception.php");
         }
     }
 
+    /* COMPTER LE NOMBRE D'AMIS */
+    public function nbAmisUtilisateur(int $id) {
+        try{
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from demande_ami where id=? and accepte="Y"');
+            $stmt->bind_param("s",$id);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $nbAmis=mysqli_num_rows($rs);
+            $mysqli->close();
+            return $nbAmis;
+        }catch (mysqli_sql_exception $n) {
+            throw new DaoException($n->getMessage(), $n->getCode());
+        }
+    }
+
+    /* AJOUTER UN UTILISATEUR EN AMI */
+    public function ajouterAmi($id){
+        try {
+            $mysqli=$this->connexion();
+            $stmt = $mysqli->prepare("insert into demande_ami (id_ami, id, accepte) VALUES (?, ?, 'Y')");
+            $stmt->bind_param("ii", $id, $_SESSION['id']);
+            $stmt->execute();
+            $mysqli->close();
+        } catch (mysqli_sql_exception $o) {
+            throw new DaoException($o->getMessage(), $o->getCode());
+        }
+    }
     
 
 

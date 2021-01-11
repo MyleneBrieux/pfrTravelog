@@ -148,6 +148,23 @@ class UtilisateurService {
         }
     }
 
+    public function nbAmisUtilisateur($id){
+        try{
+            $nbAmis = $this->utilisateurDao->nbAmisUtilisateur($id);
+            return $nbAmis;
+        }catch(DaoException $p){
+            throw new ServiceException($p->getMessage(),$p->getCode());
+        }
+    }
+
+    public function ajouterAmi($id){
+        try{
+            $this->utilisateurDao->ajoutAmi($id);
+        }catch(DaoException $q){
+            throw new ServiceException($q->getMessage(),$q->getCode());
+        }
+    }
+
 
 
 
