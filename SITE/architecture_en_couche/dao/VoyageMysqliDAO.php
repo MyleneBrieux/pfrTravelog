@@ -98,7 +98,7 @@ class VoyageMysqliDAO {
     /* AFFICHER TOUS LES VOYAGES */        
     public function afficherVoyages() {
         $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from voyages order by date_debut asc');
+        $stmt=$mysqli->prepare('select * from voyages order by date_debut desc limit 3');
         $stmt->execute();
         $rs=$stmt->get_result();
         return $rs;
@@ -106,15 +106,17 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
+    /*
+
     /* COMPTER LE NOMBRE DE VOYAGES DANS LA BDD */
     public function compterVoyages() {
         $mysqli=$this->connexion();
         $stmt=$mysqli->prepare('select * from voyages');
         $stmt->execute();
         $rs=$stmt->get_result();
-        $data=mysqli_num_rows($rs);
+        $nbVoyages=mysqli_num_rows($rs);
         $mysqli->close();
-        return $data;
+        return $nbVoyages;
     }
 
     /* COMPTER LE NOMBRE DE VOYAGES D'UN UTILISATEUR */
@@ -142,38 +144,38 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
-    /* RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
-    public function chercherContinents() {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select distinct continent from voyages order by continent asc');
-        $stmt->execute();
-        $continents=$stmt->get_result();
-        return $continents;
-        $continent->free();
-        $mysqli->close();
-    }
+    // /* RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
+    // public function chercherContinents() {
+    //     $mysqli=$this->connexion();
+    //     $stmt=$mysqli->prepare('select distinct continent from voyages order by continent asc');
+    //     $stmt->execute();
+    //     $continents=$stmt->get_result();
+    //     return $continents;
+    //     $continent->free();
+    //     $mysqli->close();
+    // }
 
-    /* RECHERCHER LES PAYS DE LA TABLE VOYAGES */
-    public function chercherPays() {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select distinct pays from voyages order by pays asc');
-        $stmt->execute();
-        $pays=$stmt->get_result();
-        return $pays;
-        $pays->free();
-        $mysqli->close();
-    }
+    // /* RECHERCHER LES PAYS DE LA TABLE VOYAGES */
+    // public function chercherPays() {
+    //     $mysqli=$this->connexion();
+    //     $stmt=$mysqli->prepare('select distinct pays from voyages order by pays asc');
+    //     $stmt->execute();
+    //     $pays=$stmt->get_result();
+    //     return $pays;
+    //     $pays->free();
+    //     $mysqli->close();
+    // }
 
-    /* RECHERCHER LES VILLES DE LA TABLE VOYAGES */
-    public function chercherVilles() {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select distinct ville from voyages order by ville asc');
-        $stmt->execute();
-        $villes=$stmt->get_result();
-        return $villes;
-        $ville->free();
-        $mysqli->close();
-    }
+    // /* RECHERCHER LES VILLES DE LA TABLE VOYAGES */
+    // public function chercherVilles() {
+    //     $mysqli=$this->connexion();
+    //     $stmt=$mysqli->prepare('select distinct ville from voyages order by ville asc');
+    //     $stmt->execute();
+    //     $villes=$stmt->get_result();
+    //     return $villes;
+    //     $ville->free();
+    //     $mysqli->close();
+    // }
 
     /* RECHERCHE VOYAGE LE + RÉCENT */
     public function VoyagePlusRecentUtilisateur(string $pseudo){

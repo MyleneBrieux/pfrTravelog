@@ -60,8 +60,8 @@ class VoyageService {
 //Compter le nombre de voyages dans la bdd
 
     public function compterVoyages(){
-        $data = $this->voyageDao->compterVoyages();
-        return $data;
+        $nbVoyages = $this->voyageDao->compterVoyages();
+        return $nbVoyages;
     }
 
 //Compter le nombre de voyages d'un utilisateur

@@ -16,8 +16,6 @@ function displayPageAccueil2(){
 }
 
 function displayPageAccueil3(){
-    displayBottomTable();
-    displayPagination();
     footer();
     displayEnd();
 }
@@ -123,20 +121,28 @@ function displayBottomTable(){
     </div>';
 }
 
-function displayPagination(){
+function displayPagination1($currentPage){
     echo
             '<nav aria-label="Page navigation" class="pages">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Précédent">
+                    <li class="page-item' . ($currentPage == 1) ? "disabled" : "" . '">
+                        <a class="page-link" href="../controleur/accueilCONTROLEUR.php?page=' . $currentPage - 1 . '" aria-label="Précédent">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Suivant">
+                    </li>';
+}
+
+function displayPagination2($currentPage, $page){
+    echo
+        '<li class="page-item' . ($currentPage == $page) ? "active" : "" . '">
+            <a class="page-link" href="../controleur/accueilCONTROLEUR.php?page=' . $page . '">' . $page . '</a>
+        </li>';
+}
+
+function displayPagination3($currentPage, $pages){
+    echo
+                    '<li class="page-item' . ($currentPage == $pages) ? "disabled" : "" . '">
+                        <a class="page-link" href="../controleur/accueilCONTROLEUR.php?page=' . $currentPage + 1 . '" aria-label="Suivant">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
