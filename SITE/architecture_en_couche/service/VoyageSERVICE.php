@@ -73,8 +73,8 @@ class VoyageService {
 
 //Afficher voyages selon pseudo
 
-    public function chercherVoyagesParPseudo($pseudo){
-        $voyagesService = $this->voyageDao->chercherVoyagesParPseudo($pseudo);
+    public function chercherVoyagesParPseudo($pseudo, $start, $nbParPage){
+        $voyagesService = $this->voyageDao->chercherVoyagesParPseudo($pseudo, $start, $nbParPage);
         return $voyagesService;
     }
 

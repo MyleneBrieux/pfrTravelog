@@ -26,16 +26,13 @@
         echo'</header>';
     }
 
-    function menuLat($profil, $setBirthday){
+    function menuLat($profil, $setBirthday, $isNotUser){
         echo'<div class="row">
                 <div class="col-lg-2 col-md-4 col-sm-4 pl-0 col-12 bg-sable">
                     <nav class="menu">
                         <div class="col-lg-12 col-md-6 col-sm-6 pl-1 col-12">
                             <div class="image-profil">
                                 <img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil" width="100%" height="100%" />
-                            </div>
-                            <div class="row">
-                                <p class="date-membre">Membre depuis: (XX/XX/XXXX)</p>
                             </div>
                             <div class="row">';
                             if ($setBirthday) {
@@ -52,13 +49,13 @@
                                         <li>'. $profil['type_langue'] .'</li>
                                     </ul>
                                 </p>
-                            </div>
-                            <div class="row mt-3">
-                                <p><img src="../../img/logos_divers/suivre2.png" alt="logo suivre">Suivre</p>
-                            </div>
-                            <div class="row mt-3">
-                                <p><img src="../../img/logos_divers/ami_turquoise2.png" alt="logo amis">Ajouter en ami</p>
-                            </div>
+                            </div>';
+                            if($isNotUser){
+                                echo'<div class="row mt-3">
+                                    <p><img src="../../img/logos_divers/ami_turquoise2.png" alt="logo amis">Ajouter en ami</p>
+                                </div>';
+                            }
+                            echo'
                             <div class="row mt-3 mb-3">
                                 <a href="../controleur/controleur_profil.php"><button type="button" class="button">Modifier le profil</button></a>
                             </div>
@@ -102,15 +99,22 @@
                         <div>
                             <a href="../controleur/detail_voyageControleur.php"><h3>Son dernier voyage : </h3>
                             <h4>'. $mostRecentVoyage['titre'] .'</h4>
-                            <img class="mt-2" src="../../img/photos/etats-unis.jpg" alt="" width=352 height=224></a>
+                            <img class="mt-2" src="' . $mostRecentVoyage["couverture"] . '" alt="" width=352 height=224></a>
                         </div>';
                     }
+
+    function noTrip(){
+        echo'<div class="row d-flex justify-content-around mt-2">
+                <div>
+                    <p>Cet utilisateur n\'a pas uploadé de voyage.</p>
+                </div>';
+            }
 
     function mostPopular($mostPopularVoyage){
         echo'<div>
                 <a href="../controleur/detail_voyageControleur.php"><h3>Le plus populaire : </h3>
                 <h4>'. $mostPopularVoyage['titre'] .'</h4>
-                <img class="mt-2" src="../../img/photos/dubai.jpg" alt="" width=352 height=224></a>
+                <img class="mt-2" src="' . $mostPopularVoyage["couverture"] . '" alt="" width=352 height=224></a>
                 </div>
             </div>';
     }
@@ -125,7 +129,7 @@
                     echo'
                         <div class="ml-3">
                         <a href="../controleur/detail_voyageControleur.php?=code_voyage='. $data['code_voyage'] .'&code_etape='. $data['code_etape'] .'"><h4>'. $data['titre'] .'</h4>
-                            <img class="mt-2" src="../../img/photos/osaka.jpg" alt="" width=352 height=224></a>
+                            <img class="mt-2" src="' . $data["couverture"] . '" alt="" width=352 height=224></a>
                         </div>';
     }
 

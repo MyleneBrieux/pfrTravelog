@@ -132,11 +132,11 @@ class VoyageMysqliDAO {
     }
 
     /* RECHERCHE VOYAGE PAR PSEUDO */
-    public function chercherVoyagesParPseudo(string $pseudo) {
+    public function chercherVoyagesParPseudo(string $pseudo, $start, $nbParPage) {
         $mysqli=$this->connexion();
         $stmt = $mysqli->prepare("select code_voyage, titre, resume, date_debut, date_fin, continent, pays, ville,
-        couverture, statut, likes, vues, voyages.id, code_etape from voyages inner join utilisateurs on voyages.id=utilisateurs.id where pseudo=?");
-        $stmt->bind_param("s",$pseudo);
+        couverture, statut, likes, vues, voyages.id, code_etape from voyages inner join utilisateurs on voyages.id=utilisateurs.id where pseudo=? limit ?,?");
+        $stmt->bind_param("sii",$pseudo, $start, $nbParPage);
         $stmt->execute();
         $rs = $stmt->get_result();
         return $rs;
