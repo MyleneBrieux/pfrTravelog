@@ -14,12 +14,21 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     // try{
         $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
         $isUser = $_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo'];
+        $nbParPage = 4;
     // }catch(UtilisateurException $e){
         
     // }
 
     $info=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages crées par l'utilisateur dont on visite la page
-    $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo);
+    $total = $info;
+    $nombreDePage=ceil($total/$nbParPage);
+    if (!isset($_GET['page'])){
+        $page=1;
+    }else {
+        $page = $_GET['page'];
+    }
+    $start = ($page - 1) * $nbParPage;
+    $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo, $start, $nbParPage);
     
 
 voyagesDebut();
@@ -34,9 +43,10 @@ if ($isUser) {
 
 tableauEntete(); //en-tête du tableau
 while($data=mysqli_fetch_array($voyages)){
-    afficherVoyages($data); //affichage des voyages
+    afficherVoyagesUtilisateur($data); //affichage des voyages
 }
 finTableau();
+
 
 if ($isUser) {
     encadreUtilisateur(); //affichage d'un lien pour créer un voyage pour l'utilisateur
@@ -44,7 +54,10 @@ if ($isUser) {
     encadreVisiteur($profil); //affichage d'un lien pour le visiteur pour visiter le profil de l'utilisateur
 }
 
-nbPages();
+for ($page=1; $page<=$nombreDePage;$page++){
+    nbPages($page);
+}
+
 
 voyagesFin();
 

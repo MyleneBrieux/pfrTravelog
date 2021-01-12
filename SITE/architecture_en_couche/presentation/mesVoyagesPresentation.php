@@ -109,85 +109,8 @@
         </div>
     </div>';
     }
-    
 
-    // function voyage1($data){ //encadré dynamique
-    //     echo'<div class="row">
-    //     <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil1 ghost" />
-    //     <h1 class="titrevoyage1">'. $data['titre'] .'</h1>
-    //     <img src="'. base64_encode($data['couverture']) .'" class="photovoyage1" />
-    //     <div class="encadrevoyage1">
-    //         <p class="textevoyage1">
-    //             '. $data['resume'] .'
-    //         </p>
-    //         <a href="detail_voyageCONTROLEUR.php?=code_voyage='. $data['code_voyage'] .'" class="lienvoyage1">
-    //             Découvrir ce voyage
-    //         </a>
-    //     </div>
-    // </div>';
-    // }
-        
-    // function voyage2(){ //encadrés brut
-    // echo'<div class="row">
-    //     <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil2 ghost" />
-    //     <h1 class="titrevoyage2">Titre</h1>
-    //     <img src="../../../images/photos/beijing_temple_du_ciel.jpg" class="photovoyage2" />
-    //     <div class="encadrevoyage2">
-    //         <p class="textevoyage2">
-    //             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    //             et dolore magna aliqua.
-    //             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    //             consequat.
-    //             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla."
-    //         </p>
-    //         <a href="" class="lienvoyage2">
-    //             Découvrir ce voyage
-    //         </a>
-    //     </div>
-    // </div>';
-    // }
-
-    // function voyage3(){
-    // echo'<div class="row">
-    //     <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil3 ghost" />
-    //     <h1 class="titrevoyage3">Titre</h1>
-    //     <img src="../../../images/photos/st_petersburg_russia.jpg" class="photovoyage3" />
-    //     <div class="encadrevoyage3">
-    //         <p class="textevoyage3">
-    //             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    //             et dolore magna aliqua.
-    //             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    //             consequat.
-    //             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla."
-    //         </p>
-    //         <a href="" class="lienvoyage3">
-    //             Découvrir ce voyage
-    //         </a>
-    //     </div>
-    // </div>';
-    // }
-
-    // function voyage4(){
-    // echo'<div class="row">
-    //     <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofil4 ghost" />
-    //     <h1 class="titrevoyage4">Titre</h1>
-    //     <img src="../../../images/photos/palais_gyeongbok.jpg" class="photovoyage4" />
-    //     <div class="encadrevoyage4">
-    //         <p class="textevoyage4">
-    //             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    //             et dolore magna aliqua.
-    //             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    //             consequat.
-    //             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla."
-    //         </p>
-    //         <a href="" class="lienvoyage4">
-    //             Découvrir ce voyage
-    //         </a>
-    //     </div>
-    // </div>';
-    // }
-
-    function nbPages(){
+    function nbPages($page){
         echo'<div class="pagination">
         <nav aria-label="Page navigation " class="pages">
   <ul class="pagination">
@@ -197,9 +120,7 @@
         <span class="sr-only">Previous</span>
       </a>
     </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="mesVoyagesControleur.php?page='. $page .'">'. $page .'</a></li>
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
@@ -226,12 +147,8 @@
         voyagesHeader();
     }
 
-    function afficherVoyages($data){
+    function afficherVoyagesUtilisateur($data){
         tableauVoyages($data);
-        //voyage1($data);
-        // voyage2();
-        // voyage3();
-        // voyage4();
     }
 
     function voyagesFin(){
