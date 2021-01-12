@@ -51,7 +51,6 @@
     font-size: 1.7em;
     font-family: 'Rancho', cursive;
     margin-left: -8%;
-    border-right:1px solid white;
     padding-right:0.5em;
 }
 
@@ -89,53 +88,6 @@
             }
     }
 
-
-/* BARRE DE RECHERCHE */
- #barreRecherche{ /* général */
-    margin-left:-2.5em;
-}
-
-    @media screen and (max-width : 1280px) {
-        #barreRecherche{
-                margin-left:-4em;
-            }
-    }
-
-    @media screen and (max-width : 770px) {
-        #barreRecherche{
-            margin-right:20em;
-            margin-top:-7em;
-            }
-    }
-
-    @media screen and (max-width : 690px) {
-        #barreRecherche{
-            margin-right:-26em;
-            }
-    }
-
-    @media screen and (max-width : 580px) {
-        #barreRecherche{
-            margin-right:14em;
-            }
-    }
-
-    @media screen and (max-width : 520px) {
-        #barreRecherche{
-            margin-right:10em;
-            }
-    }
-
-    @media screen and (max-width : 440px) {
-        #barreRecherche{
-            margin-right:8em;
-            }
-    }
-
-#rechercher { /* placeholder */
-    font-family: 'Halant', serif;
-}
-
 /* MENUS DEROULANTS */
 .dropdown-item{ /* dans les menus déroulants */
     color:white !important;
@@ -167,8 +119,7 @@
     height:1.5em;
     padding-left:1em;
     padding-top:0.2em;
-    margin-left: 4em;
-    border-left:1px solid white;
+    margin-left: 16em;
 }
 
     @media screen and (max-width : 1200px) {
@@ -209,8 +160,8 @@
     }
 
 #dropdownMenuNotifs { /* menu déroulant */
-    margin-left:6em;
-        background-color:#52908B !important;
+    margin-left:22em;
+    background-color:#52908B !important;
 }
 
 #lienVoyageNotif {

@@ -84,18 +84,6 @@ function navbarBrand(){
                     </div>';
 }
 
-function navbarSearch(){
-    echo
-        '<div class="input-group md-form form-sm form-1 pl-0 col-4" id="barreRecherche">
-            <div class="input-group-prepend">
-                <span class="input-group-text lighten-3" id="basic-text1">
-                    <i class="fas fa-search text-white" aria-hidden="true"></i>
-                </span>
-            </div>
-            <input class="form-control my-0 py-1" type="search" id="rechercher" placeholder="Rechercher..." aria-label="Search">
-        </div>';
-}
-
 function notifications(){
     echo
         '<div class="navbar-collapse" id="navbarSupportedContent">

@@ -15,9 +15,6 @@ if (isset($_SESSION["pseudo"])) {
 
     displayNavbarConnectedOnly1();
 
-    $filtre=$utilisateurService->filtreBarreRecherche();
-    navbarSearch($filtre);
-
     $pseudo=$_SESSION["pseudo"];
     $info=$utilisateurService->chercherUtilisateurParPseudo($pseudo); // on cherche l'id avec le pseudo de l'utilisateur connecté
     $id=$info["id"];
