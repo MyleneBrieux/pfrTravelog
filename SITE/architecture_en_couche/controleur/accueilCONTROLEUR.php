@@ -33,16 +33,4 @@ $rs=$voyageService->afficherVoyages();
 
 displayPageAccueil3();
 
-// ENCADRES //
-// while ($data=mysqli_fetch_array($rs)) { // commenter lignes 24 et 25 pour voir affichage "en dur" //
-// displayPageAccueil3($data);
-// }
-
-// $data=mysqli_fetch_array($rs); // commenter lignes 28 à 32 pour affichage "en dur" //
-// displayTripOne($data);
-// displayTripTwo($data);
-// displayTripThree($data);
-// displayTripFour($data);
-// var_dump($data);
-
 ?>
