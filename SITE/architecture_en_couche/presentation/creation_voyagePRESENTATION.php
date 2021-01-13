@@ -109,7 +109,7 @@ function creation_addButton(){
 function creation_addFiles(){
     echo '<div class="row form-files d-flex justify-content-center">
             <div class="rectangle-files addfiles">
-                <input type="file" class="form-control-file" id="ajoutFichiers" name="couverture" multiple>
+                <input type="file" class="form-control-file" id="ajoutFichiers" name="couverture">
             </div>
         </div>';
 }
@@ -119,7 +119,7 @@ function creation_addFiles(){
 function creation_checkbox(){
     echo '<div class="row d-flex justify-content-center">
             <label class="rectangle-checkbox checkbox">
-                <input type="checkbox"> Partager ce voyage uniquement avec mes amis
+                <input type="checkbox" value="Y"> Partager ce voyage uniquement avec mes amis
             </label>
         </div>';
 }
