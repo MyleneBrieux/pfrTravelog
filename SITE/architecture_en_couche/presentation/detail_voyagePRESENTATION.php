@@ -48,12 +48,11 @@ function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues){
                 <h6>Du '.$datedebut.' au '.$datefin.'</h6>
                 <h6>'.$likes.' likes - '.$vues.' vues</h6>
                 </div>
-                <a href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'"><button type="button" class="btn btn-primary addItem col-12 mt-4 mb-3">Mes autres</br>voyages</button></a>';
+                <a href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'"><button type="button" class="btn btn-primary addItem ml-3 mt-5 mb-3">Mes autres voyages</button></a>';
 }
 
             //  Bouton supprimer avec modal
         function detail_boutonSupp() {
-                
             echo '<button type="button" class="btn btn-danger addItem mt-5" data-toggle="modal"
                 data-target="#ModalSupp">Supprimer le voyage</button>
 
@@ -136,8 +135,7 @@ function detail_carousel($couverture, $numDiapo){
             //         </div>
             //     </div>
             //     <div class="carousel-item taille_photos_detail_voyage">
-            //         <img class="d-block w-100" src="../../../images/photos/grece.jpg"
-            //             alt="Second slide">
+            //         <img class="d-block w-100" src="../../../images/photos/grece.jpg" alt="Second slide">
             //         <div class="card-img-overlay titre_photo_detail_voyage halant">
             //             <h2 class="taille_titre_photo_detail_voyage">Mon minou</h2>
             //         </div>

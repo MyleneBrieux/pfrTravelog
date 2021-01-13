@@ -10,7 +10,7 @@ $numDiapo=0;
 $pseudo=$_SESSION["pseudo"];
         $data=new UtilisateurService();
         $data=$data->chercherUtilisateurParPseudo($pseudo);
-        $id=$data["id"];
+        $idVisiteur=$data["id"];
 
         $detailVoyage=new VoyageService();
         $codeVoyage = htmlentities(trim($_GET['code_voyage']));
@@ -20,6 +20,7 @@ $pseudo=$_SESSION["pseudo"];
         $datefin=$detailVoyage["date_fin"];
         $likes=$detailVoyage["likes"];
         $vues=$detailVoyage["vues"];
+        $idCreateur=$detailVoyage["id"];
         $couverture=$detailVoyage["couverture"];
         // $couvertureImplode=implode("", $couverture);
 
@@ -29,19 +30,13 @@ $pseudo=$_SESSION["pseudo"];
         $sousTitre=$detailEtape["sous_titre"];
         $description=$detailEtape["description"];
 
-// if($id==$data["id"]){
-    $isMyVoyage=true;
-// }
-
-
-
 detail_headBodyTop();
 
 detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues);
 
 // Bouton suppression du voyage visible que par le créateur
 
-if ($isMyVoyage==true){
+if ($idVisiteur==$idCreateur){
     detail_boutonSupp();
 }
 
@@ -49,7 +44,7 @@ detail_menuFinEtNav();
 
 // foreach 
 detail_carousel($couverture, $numDiapo);
-echo($couverture);
+// echo($couverture);
 detail_restePage($sousTitre,$description);
 
 detail_basPage();
