@@ -20,6 +20,8 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     // }
 
     $info=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages crées par l'utilisateur dont on visite la page
+    $nbContinent = $voyagesService->compterContinentsUtilisateur($pseudo);
+    $nbPays = $voyagesService->compterPaysUtilisateur($pseudo);
     $total = $info; //on récupère le nombre total de voyages de la var info dans la var total
     $nombreDePage=ceil($total/$nbParPage);//on calcul le nombre de page en divisant le nombre de voyages par le nombre que l'on veut voir afficher à l'écran
     if (!isset($_GET['page'])){
@@ -36,9 +38,9 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
 voyagesDebut();
 
 if ($isUser) {
-    débutCorpsUtilisateur($info); //Si le pseudo correspond à celui de l'utilisateur connecté alors un lien vers la création de voyage s'affiche
+    débutCorpsUtilisateur($info, $nbContinent, $nbPays); //Si le pseudo correspond à celui de l'utilisateur connecté alors un lien vers la création de voyage s'affiche
 } else {
-    débutCorpsVisiteur($profil, $info); //Sinon un lien pour accéder à son profil s'affiche à la place
+    débutCorpsVisiteur($profil, $info, $nbContinent, $nbPays); //Sinon un lien pour accéder à son profil s'affiche à la place
 }
 
 tableauEntete(); //en-tête du tableau
@@ -48,13 +50,15 @@ while($data=mysqli_fetch_array($voyages)){
 finTableau();
 
 
+
+
+nbPages($page, $profil, $nombreDePage, $precedent, $suivant); //on fournit les valeurs pour la pagination
+
 if ($isUser) {
     encadreUtilisateur(); //affichage d'un lien pour créer un voyage pour l'utilisateur
 } else{
     encadreVisiteur($profil); //affichage d'un lien pour le visiteur pour visiter le profil de l'utilisateur
 }
-
-nbPages($page, $profil, $nombreDePage, $precedent, $suivant); //on fournit les valeurs pour la pagination
 
 
 voyagesFin();

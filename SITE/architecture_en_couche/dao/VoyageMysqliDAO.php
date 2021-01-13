@@ -229,4 +229,28 @@ class VoyageMysqliDAO {
         return $voyage;
     }
 
+    /* COMPTEUR CONTINENTS VISITES PAR L'UTILISATEUR */
+    public function compterContinentsUtilisateur(string $pseudo){
+        $mysqli=$this->connexion();
+        $stmt = $mysqli->prepare("SELECT COUNT(DISTINCT continent) AS Continents FROM voyages inner join utilisateurs on voyages.id=utilisateurs.id WHERE pseudo=?");
+        $stmt->bind_param("s",$pseudo);
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $nbContinent = mysqli_fetch_assoc($rs);
+        $mysqli->close();
+        return $nbContinent['Continents'];
+    }
+
+    /* COMPTEUR PAYS VISITES PAR L'UTILISATEUR */
+    public function compterPaysUtilisateur(string $pseudo){
+        $mysqli=$this->connexion();
+        $stmt = $mysqli->prepare("SELECT COUNT(DISTINCT pays) AS Pays FROM voyages inner join utilisateurs on voyages.id=utilisateurs.id WHERE pseudo=?");
+        $stmt->bind_param("s",$pseudo);
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $nbPays = mysqli_fetch_assoc($rs);
+        $mysqli->close();
+        return $nbPays['Pays'];
+    }
+
 }

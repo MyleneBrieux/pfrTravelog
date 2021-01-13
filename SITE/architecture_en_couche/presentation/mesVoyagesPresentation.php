@@ -28,25 +28,26 @@
             echo'</div>';
     }
 
-    function débutCorpsVisiteur($profil, $info){
+    function débutCorpsVisiteur($profil, $info, $nbContinent, $nbPays){
         echo'<div class="col-12">
         <h1 class="titre_mesvoyages">Les voyages de <strong>'. $profil['pseudo'] .'</strong></h1>
-        <p class="rsvoyages">'. $info .' voyages - XX continents visités - XX pays visités</p>
+        <p class="rsvoyages">'. $info .' voyages - '. $nbContinent .' continents visités - '. $nbPays .' pays visités</p>
         ';
     }
 
     
 
-    function débutCorpsUtilisateur($info){
+    function débutCorpsUtilisateur($info, $nbContinent, $nbPays){
         echo'<div class="col-12">
         <h1 class="titre_mesvoyages">Mes voyages</h1>
-        <p class="rsvoyages">'. $info .' voyages - XX continents visités - XX pays visités</p>
+        <p class="rsvoyages">'. $info .' voyages - '. $nbContinent .' continents visités - '. $nbPays .' pays visités</p>
         ';
     }
 
     function tableauEntete(){
         echo
-            '<table class="table table-sm" id="tableVoyage">
+            '<div class="row">
+            <table class="table table-sm" id="tableVoyage">
                 <thead class="thead" id="enteteTableVoyage">
                     <tr>
                         <th scope="col">TITRE</th>
@@ -62,23 +63,24 @@
                 '<tbody id="corpsTableVoyage">
                 <tr>
                     <td>' . $data["titre"] . '</td>
-                    <td><img src="' . $data["couverture"] . '"/></td>
+                    <td><img src="../../img/photos/' . $data["couverture"] . '" class="photosVoyage"/></td>
                     <td>' . $data["resume"] . '</td>
                     <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] .'&code_etape='. $data["code_etape"] .'"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
     }
     function finTableau(){
         echo
-            '</tr>
-        </tbody>
-    </table>
-    </div>
+            '   </tr>
+            </tbody>
+        </table>
+        </div>
+        </div>
     </div>';
     }
 
     function encadreVisiteur($profil){
         echo'
         <div class="encadrevoyage">
-            <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
+            <img src="../../img/photos/photo_profil_defaut.png" class="photoprofilrond" />
             <a href="../controleur/monProfilControleur.php?pseudo='.$profil["pseudo"].'" class="">
                 Voir le profil
             </a>
@@ -95,7 +97,7 @@
     function encadreUtilisateur(){
         echo'
         <div class="encadrevoyage">
-            <img src="../../../images/photos/photo_profil_detail_voyage.jpg" class="photoprofilrond" />
+            <img src="../../img/photos/photo_profil_defaut.png" class="photoprofilrond" />
             <a href="../controleur/creation_voyageCONTROLEUR.php" class="">
                 Créer un nouveau voyage
             </a>
@@ -104,15 +106,17 @@
     }
 
     function nbPages($page, $profil, $nombreDePage, $precedent, $suivant){
-        echo'<div class="pagination">
+        echo'<div class="pagination mt-5">
         <nav aria-label="Page navigation " class="pages">
-  <ul class="pagination">
-    <li class="page-item">
+  <ul class="pagination">';
+    if ($page>1) {
+        echo'<li class="page-item">
       <a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $precedent .'" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
         <span class="sr-only">Previous</span>
       </a>
     </li>';
+    }
     for ($page=1; $page<=$nombreDePage;$page++){
     echo'<li class="page-item"><a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $page .'">'. $page .'</a></li>';
     }
