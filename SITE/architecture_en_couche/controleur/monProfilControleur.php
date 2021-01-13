@@ -8,9 +8,15 @@ include_once '../metier/Utilisateur.php';
 include_once '../service/VoyageSERVICE.php';
 include_once '../metier/Voyage.php';
 
+$_SESSION['pseudo'];
+var_dump($_SESSION['pseudo']);
     $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     $utilisateur = new UtilisateurService();
     // try{
+        if ($_SESSION['pseudo']) {
+            $visiteur = $utilisateur->chercherUtilisateurParPseudo($_SESSION['pseudo']);
+            var_dump($visiteur);
+        }
         $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
         $setDescription = isset($profil['description']) && !empty($profil['description']); //Récupère si il y a une description
         $setNation = isset($profil['nation']) && !Empty($profil['nation']); //Récupère si il y a une nation
@@ -18,15 +24,14 @@ include_once '../metier/Voyage.php';
         $isNotUser = $_SESSION["pseudo"] && $_SESSION['pseudo']!==$profil['pseudo'];
         $start = 0;
         $nbParPage = 4;
+        $voyagesService = new VoyageService();
+        $data=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages de l'utilisateur
+        $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo, $start, $nbParPage); //Cherche les voyages de l'utilisateur
+        $mostRecentVoyage = $voyagesService->VoyagePlusRecentUtilisateur($pseudo); //Cherche le voyage le + récent de l'utilisateur
+        $mostPopularVoyage = $voyagesService->VoyagePlusPopulaireUtilisateur($pseudo); //Cherche le voyage le + populaire de l'utilisateur
     // }catch(UtilisateurException $e){
         
     // }
-
-    $voyagesService = new VoyageService();
-    $data=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages de l'utilisateur
-    $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo, $start, $nbParPage); //Cherche les voyages de l'utilisateur
-    $mostRecentVoyage = $voyagesService->VoyagePlusRecentUtilisateur($pseudo); //Cherche le voyage le + récent de l'utilisateur
-    $mostPopularVoyage = $voyagesService->VoyagePlusPopulaireUtilisateur($pseudo); //Cherche le voyage le + populaire de l'utilisateur
 
     if (isset($_GET["action"]) && $_GET["action"] == "addFriend") {
         $idAmi = $profil['id'];

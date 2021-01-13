@@ -22,7 +22,7 @@
         echo '<body>
         <div class="container-fluid">
         <header class="header">';
-            include "navbarCONTROLEUR.php";
+            //include "navbarCONTROLEUR.php";
         echo'</header>';
     }
 
@@ -129,7 +129,7 @@
                     echo'
                         <div class="ml-3">
                         <a href="../controleur/detail_voyageControleur.php?=code_voyage='. $data['code_voyage'] .'&code_etape='. $data['code_etape'] .'"><h4>'. $data['titre'] .'</h4>
-                            <img class="mt-2" src="' . $data["couverture"] . '" alt="" width=352 height=224></a>
+                            <img class="mt-2" src="../../img/photos/' . $data["couverture"] . '" alt="" width=352 height=224></a>
                         </div>';
     }
 
