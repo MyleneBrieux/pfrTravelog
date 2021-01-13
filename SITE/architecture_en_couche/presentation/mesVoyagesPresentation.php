@@ -28,15 +28,8 @@
             echo'</div>';
     }
 
-    function menuLat(){
-        echo'<div class="row">
-        <div class="row col-2">';
-        include ("menulatCONTROLEUR.php");
-        echo'</div>';
-    }
-
     function débutCorpsVisiteur($profil, $info){
-        echo'<div class="col-10">
+        echo'<div class="col-12">
         <h1 class="titre_mesvoyages">Les voyages de <strong>'. $profil['pseudo'] .'</strong></h1>
         <p class="rsvoyages">'. $info .' voyages - XX continents visités - XX pays visités</p>
         ';
@@ -45,7 +38,7 @@
     
 
     function débutCorpsUtilisateur($info){
-        echo'<div class="col-10">
+        echo'<div class="col-12">
         <h1 class="titre_mesvoyages">Mes voyages</h1>
         <p class="rsvoyages">'. $info .' voyages - XX continents visités - XX pays visités</p>
         ';
@@ -110,19 +103,21 @@
     </div>';
     }
 
-    function nbPages($page){
+    function nbPages($page, $profil, $nombreDePage, $precedent, $suivant){
         echo'<div class="pagination">
         <nav aria-label="Page navigation " class="pages">
   <ul class="pagination">
     <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
+      <a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $precedent .'" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
         <span class="sr-only">Previous</span>
       </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="mesVoyagesControleur.php?page='. $page .'">'. $page .'</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
+    </li>';
+    for ($page=1; $page<=$nombreDePage;$page++){
+    echo'<li class="page-item"><a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $page .'">'. $page .'</a></li>';
+    }
+    echo'<li class="page-item">
+      <a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $suivant .'" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
         <span class="sr-only">Next</span>
       </a>
