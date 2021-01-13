@@ -146,7 +146,7 @@ function displayEnd(){
 }
 
 // messages d'erreur //
-function erreur ($errorCode=null, $message){
+function erreurs ($errorCode=null, $message){
     if($errorCode && $errorCode == 1049){ // erreur de synthaxe sur la bdd //
         echo 
             "<div class='alert alert-danger text-center'> Ce site est en maintenance. Merci de revenir ultérieurement. </div>";

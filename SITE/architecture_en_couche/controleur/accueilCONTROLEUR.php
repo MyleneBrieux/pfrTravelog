@@ -24,7 +24,7 @@ try {
     try {
         $nbVoyages=$voyageService->compterVoyages(); // nb total de voyages //
     } catch (ServiceException $b) {
-        erreur($b->getCode(), $b->getMessage());
+        erreurs($b->getCode(), $b->getMessage());
     }
 
     $nbParPage = 4; // nb de voyages par page //
@@ -49,7 +49,7 @@ try {
     try {
         $rs=$voyageService->afficherVoyagesAccueil($start,$nbParPage); // affichage dynamique des voyages dans le corps de page //
     } catch (ServiceException $c) {
-        erreur($c->getCode(), $c->getMessage());
+        erreurs($c->getCode(), $c->getMessage());
     }
         
         while($data=mysqli_fetch_array($rs)){
@@ -59,7 +59,7 @@ try {
             try {
                 $donnee=$utilisateurService->afficherPseudoDepuisId($id);
             } catch (ServiceException $d) {
-                erreur($d->getCode(), $d->getMessage());
+                erreurs($d->getCode(), $d->getMessage());
             }
 
             displayPseudoTable($donnee);
@@ -73,7 +73,7 @@ try {
     displayPageAccueil3();
 
 } catch (ServiceException $a) {
-    erreur($a->getCode(), $a->getMessage());
+    erreurs($a->getCode(), $a->getMessage());
 }
 
 ?>
