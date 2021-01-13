@@ -237,4 +237,22 @@ function displayTagBottomHTML(){
         '</html>';
 }
 
+
+// messages d'erreur //
+function erreur ($errorCode=null, $message){
+    if($errorCode && $errorCode == 1049){ // erreur de synthaxe sur la bdd //
+        echo 
+            "<div class='alert alert-danger text-center'> Ce site est en maintenance. Merci de revenir ultérieurement. </div>";
+    } elseif ($errorCode && $errorCode == 1146){ // problème de synthaxe avec une table de la bdd //
+        echo 
+            "<div class='alert alert-danger text-center'> Erreur de connexion avec la base de données. Merci de réessayer ultérieurement. </div>";
+    } elseif ($errorCode && $errorCode == 1045){ // erreur de connexion à la base de données //
+        echo 
+            "<div class='alert alert-danger text-center'> Erreur avec la base de données. Merci de réessayer ultérieurement. </div>";
+    } elseif ($errorCode && $errorCode == 1064){ // erreur de syntaxe de la requête sql //
+        echo 
+            "<div class='alert alert-danger text-center'> Erreur avec la base de données. Merci de réessayer ultérieurement. </div>";
+    } 
+}
+
 ?>
