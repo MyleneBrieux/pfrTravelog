@@ -10,9 +10,9 @@ class VoyageService {
 
 // ajout Voyage
 
-    public function addVoyageService($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/){
+    public function addVoyageService($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $statut, $id/*, $codeEtape*/){
         $addVoyage= new VoyageMysqliDAO;
-        $addVoyage->addVoyageDAO($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $id/*, $codeEtape*/);
+        $addVoyage->addVoyageDAO($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $statut, $id/*, $codeEtape*/);
         return $addVoyage;
     }
 
@@ -29,7 +29,7 @@ class VoyageService {
         return $detailVoyage;
     }
 
-// afficher les infos du Voyage
+// afficher les infos du Etape
 
     public function afficherLesDetailsEtapeService(int $codeEtape) : ?array {
         $detailEtape = $this->voyageDao ->afficherLesDetailsEtapeDAO($codeEtape);
@@ -45,17 +45,24 @@ class VoyageService {
 
 //Modif Voyage
 
-    public function modifVoyageService($voyage){
+    public function modifVoyageService($titre, $resume, $date_debut, $date_fin, $continent, $pays, $ville, $couverture, $statut, $codeVoyage){
             $modifVoyage= new VoyageMysqliDAO;
-            $modifVoyage->modifVoyageDAO($voyage);
+            $modifVoyage->modifVoyageDAO($titre, $resume, $date_debut, $date_fin, $continent, $pays, $ville, $couverture, $statut, $codeVoyage);
     }
+
+//Modif Etape
+
+    public function modifEtapeService($sousTitre, $description, $codeEtape){
+        $modifEtape= new VoyageMysqliDAO;
+        $modifEtape->modifEtapeDAO($sousTitre, $description, $codeEtape);
+}
 
 //Afficher voyages
 
-    public function afficherVoyagesAccueil($start,$nbParPage){
-        $rs=$this->voyageDao->afficherVoyagesAccueil($start,$nbParPage);
-        return $rs;
-    }
+public function afficherVoyagesAccueil($start,$nbParPage){
+    $rs=$this->voyageDao->afficherVoyagesAccueil($start,$nbParPage);
+    return $rs;
+}
 
 //Compter le nombre de voyages dans la bdd
 
@@ -87,17 +94,17 @@ class VoyageService {
 
 //Rechercher les pays
 
-public function chercherPays(){
-    $pays=$this->voyageDao->chercherPays();
-    return $pays;
-}
+    public function chercherPays(){
+        $pays=$this->voyageDao->chercherPays();
+        return $pays;
+    }
 
 //Rechercher les villes
 
-public function chercherVilles(){
-    $villes=$this->voyageDao->chercherVilles();
-    return $villes;
-}
+    public function chercherVilles(){
+        $villes=$this->voyageDao->chercherVilles();
+        return $villes;
+    }
 
 
 //Afficher le voyage le plus récent d'un utilisateur
