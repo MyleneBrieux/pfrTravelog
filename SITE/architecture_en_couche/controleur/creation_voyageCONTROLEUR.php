@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(!isset($_SESSION["pseudo"])){ 
+    header('Location: connexionCONTROLEUR.php');
+}
+
 // LIAISON AVEC AUTRES COUCHES //
 include_once("../presentation/creation_voyagePRESENTATION.php");
 include("../service/VoyageSERVICE.php");
@@ -18,7 +23,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "creation" && !empty($_POST)){
         && isset($_POST["pays"]) && !Empty($_POST["pays"])
         && isset($_POST["ville"]) && !Empty($_POST["ville"])
         && isset($_POST["couverture"]) && !Empty($_POST["couverture"])){
-
+            echo 'likesEtape'.$likesEtape;
         $voyage = new Etape(
             $codeVoyage=(int)htmlentities($_POST["code_voyage"]=null),
             $titre=htmlentities($_POST["titre"]),
@@ -34,8 +39,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "creation" && !empty($_POST)){
             $vues=(int)htmlentities($_POST["vues"]=null),
             $codeEtape=(int)htmlentities($_POST["code_etape"]=null),
             $sousTitre=htmlentities($_POST["sous_titre"]),
-            $description=htmlentities($_POST["description"]), 
-            $media=htmlentities($_POST["media"]=null),
+            $description=htmlentities($_POST["description"]),
             $likesEtape=(int)htmlentities($_POST["likesEtape"]=null)
         ); 
 
