@@ -246,6 +246,9 @@ include_once("dao_exception.php");
             $stmt = $mysqli->prepare("insert into demande_ami (id_ami, id, accepte) VALUES (?, ?, 'Y')");
             $stmt->bind_param("ii", $idAmi, $id);
             $stmt->execute();
+            $stmt2 = $mysqli->prepare("insert into demande_ami (id, id_ami, accepte) VALUES (?, ?, 'Y')");
+            $stmt2->bind_param("ii", $idAmi, $id);
+            $stmt2->execute();
             $mysqli->close();
         } catch (mysqli_sql_exception $o) {
             throw new DaoException($o->getMessage(), $o->getCode());
@@ -265,6 +268,22 @@ include_once("dao_exception.php");
             $mysqli->close();
         } catch (mysqli_sql_exception $p) {
             throw new DaoException($p->getMessage(), $p->getCode());
+        }
+    }
+
+    /* SUPPRIMER UN AMI */
+    public function supprimerAmi(){
+        try{
+            $mysqli=$this->connexion();
+            $stmt = $mysqli->prepare("delete * from demande_ami where id=? and id_ami=?");
+            $stmt->bind_param("ii", $id, $idAmi);
+            $stmt->execute();
+            $stmt2 = $mysqli->prepare("delete * from demande_ami where id=? and id_ami=?");
+            $stmt2->bind_param("ii", $idAmi, $id);
+            $stmt2->execute();
+            $mysqli->close();
+        }catch(mysqli_sql_exception $q){
+            throw new DaoException($q->getMessage(), $q->getCode());
         }
     }
     

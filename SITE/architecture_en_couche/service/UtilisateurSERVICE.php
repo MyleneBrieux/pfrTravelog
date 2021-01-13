@@ -157,9 +157,9 @@ class UtilisateurService {
         }
     }
 
-    public function ajouterAmi($id){
+    public function ajouterAmi($idAmi, $id){
         try{
-            $this->utilisateurDao->ajoutAmi($id);
+            $this->utilisateurDao->ajouterAmi($idAmi, $id);
         }catch(DaoException $q){
             throw new ServiceException($q->getMessage(),$q->getCode());
         }
