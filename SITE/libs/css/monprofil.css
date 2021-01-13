@@ -26,7 +26,7 @@ html, body {
     text-decoration: underline;
 }
 
-.button {
+.button,input {
     background-color: #52908b;
     border: none;
     color: white;
