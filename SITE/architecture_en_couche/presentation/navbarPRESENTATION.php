@@ -215,15 +215,6 @@ function navbarNotConnected(){
                         </a>
                     </div>
 
-                    <div class="barreRecherche input-group md-form form-sm form-1 pl-0 col-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text lighten-3" id="basic-text1">
-                                <i class="fas fa-search text-white" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                        <input class="form-control my-0 py-1" type="search" placeholder="Rechercher..." aria-label="Search">
-                    </div>
-
                     <div>
                         <h6 class="seConnecter"><a href="../controleur/connexionCONTROLEUR.php" class="lienConnexion">Se connecter</a></h6>
                     </div>

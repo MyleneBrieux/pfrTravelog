@@ -96,17 +96,17 @@ class VoyageMysqliDAO {
 
 
     /* AFFICHER TOUS LES VOYAGES */        
-    public function afficherVoyages() {
+    public function afficherVoyagesAccueil($start, $nbParPage) {
         $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from voyages order by date_debut desc limit 3');
+        $stmt=$mysqli->prepare('select * from voyages order by date_debut desc limit ?,?');
+        $stmt->bind_param("ii",$start, $nbParPage);
         $stmt->execute();
         $rs=$stmt->get_result();
         return $rs;
         $rs->free();
         $mysqli->close();
     }
-
-    /*
+    
 
     /* COMPTER LE NOMBRE DE VOYAGES DANS LA BDD */
     public function compterVoyages() {

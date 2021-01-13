@@ -52,8 +52,8 @@ class VoyageService {
 
 //Afficher voyages
 
-    public function afficherVoyages(){
-        $rs=$this->voyageDao->afficherVoyages();
+    public function afficherVoyagesAccueil($start,$nbParPage){
+        $rs=$this->voyageDao->afficherVoyagesAccueil($start,$nbParPage);
         return $rs;
     }
 

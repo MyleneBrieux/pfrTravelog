@@ -6,7 +6,6 @@ function displayPageAccueil1(){
     displayHead();
     navbar();
     row();
-    // menuLateral();
     displayTopResults();
 }
 
@@ -65,10 +64,6 @@ function row(){
         '<div class="row">';
 }
 
-// function menuLateral(){
-//     include ("menulatCONTROLEUR.php");
-// }
- 
 function displayTopResults(){
     echo 
         '<div class="col-9">
@@ -118,35 +113,23 @@ function displayBottomTable(){
                 '</tr>
             </tbody>
         </table>
+    </div>
     </div>';
 }
 
-function displayPagination1($currentPage){
+function displayPagination($page, $nbPages){
     echo
-            '<nav aria-label="Page navigation" class="pages">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item' . ($currentPage == 1) ? "disabled" : "" . '">
-                        <a class="page-link" href="../controleur/accueilCONTROLEUR.php?page=' . $currentPage - 1 . '" aria-label="Précédent">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
+        '<div class="pagination" id="pagination">
+            <nav aria-label="Page navigation" class="pages">
+                <ul class="pagination pagination-sm" id="pagination">';
+            for ($page=1; $page<=$nbPages;$page++){
+                echo
+                    '<li class="page-item" id="encadreNoPage">
+                        <a class="page-link" id="noPage" href="accueilCONTROLEUR.php?page='. $page .'">'. $page .'</a>
                     </li>';
-}
-
-function displayPagination2($currentPage, $page){
-    echo
-        '<li class="page-item' . ($currentPage == $page) ? "active" : "" . '">
-            <a class="page-link" href="../controleur/accueilCONTROLEUR.php?page=' . $page . '">' . $page . '</a>
-        </li>';
-}
-
-function displayPagination3($currentPage, $pages){
-    echo
-                    '<li class="page-item' . ($currentPage == $pages) ? "disabled" : "" . '">
-                        <a class="page-link" href="../controleur/accueilCONTROLEUR.php?page=' . $currentPage + 1 . '" aria-label="Suivant">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
+            }
+    echo 
+                '</ul>
             </nav>
         </div>';
 }
