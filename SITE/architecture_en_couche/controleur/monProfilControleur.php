@@ -8,14 +8,11 @@ include_once '../metier/Utilisateur.php';
 include_once '../service/VoyageSERVICE.php';
 include_once '../metier/Voyage.php';
 
-$_SESSION['pseudo'];
-var_dump($_SESSION['pseudo']);
     $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     $utilisateur = new UtilisateurService();
     // try{
-        if ($_SESSION['pseudo']) {
+        if (isset($_SESSION['pseudo'])) {
             $visiteur = $utilisateur->chercherUtilisateurParPseudo($_SESSION['pseudo']);
-            var_dump($visiteur);
         }
         $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
         $setDescription = isset($profil['description']) && !empty($profil['description']); //Récupère si il y a une description
@@ -33,13 +30,12 @@ var_dump($_SESSION['pseudo']);
         
     // }
 
-    if (isset($_GET["action"]) && $_GET["action"] == "addFriend") {
+    if (isset($_POST["ajoutAmi"])) {
         $idAmi = $profil['id'];
-        $id = $_SESSION['id'];
-       $ami = $utilisateur->ajouterAmi($idAmi, $id);
+        $id = $visiteur['id'];
+        $ami = $utilisateur->ajouterAmi($idAmi, $id);
         
     }
-    //var_dump($_SESSION["pseudo"]);
 profilDebut();
 
 menuLat($profil, $setBirthday, $isNotUser);

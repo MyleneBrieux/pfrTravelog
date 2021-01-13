@@ -22,7 +22,7 @@
         echo '<body>
         <div class="container-fluid">
         <header class="header">';
-            //include "navbarCONTROLEUR.php";
+            include "navbarCONTROLEUR.php";
         echo'</header>';
     }
 
@@ -52,7 +52,9 @@
                             </div>';
                             if($isNotUser){
                                 echo'<div class="row mt-3">
-                                    <p><img src="../../img/logos_divers/ami_turquoise2.png" alt="logo amis">Ajouter en ami</p>
+                                    <form method="post">
+                                        <img src="../../img/logos_divers/ami_turquoise2.png" alt="logo amis"> <input type="submit" name="ajoutAmi" class="ajoutAmi" value="Ajouter en ami"/>
+                                    </form>
                                 </div>';
                             }
                             echo'
