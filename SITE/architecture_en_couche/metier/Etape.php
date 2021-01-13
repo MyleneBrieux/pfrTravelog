@@ -7,18 +7,16 @@ class Etape extends Voyage {
     private $codeEtape;
     private $sousTitre;
     private $description;
-    private $media;
     private $likesEtape;
 
 
     public function __construct(int $codeVoyage, string $titre, string $resume, string $datedebut, string $datefin, string $continent, 
                                 string $pays, string $ville, string $couverture, string $statut, int $likes, int $vues, int $codeEtape, 
-                                string $sousTitre, string $description, string $media, int $likesEtape){
+                                string $sousTitre, string $description, int $likesEtape){
         parent::__construct($codeVoyage,$titre,$resume,$datedebut,$datefin, $continent, $pays, $ville,$couverture,$statut,$likes,$vues);
         $this->codeEtape=$codeEtape;
         $this->sousTitre=$sousTitre;
         $this->description=$description;
-        $this->media=$media;
         $this->likesEtape=$likesEtape;
     }
 
@@ -50,17 +48,6 @@ class Etape extends Voyage {
         return $this;
     }
 
-    // Media
-
-    public function getMedia():string{
-        return $this->media;
-    }
-
-    public function setMedia(string $media):self{
-        $this->media=$media;
-        return $this;
-    }
-
     // Likes étape
 
     public function getLikesEtape():int{
@@ -80,7 +67,7 @@ class Etape extends Voyage {
         " [Pays]: " . parent::__toString() . " [Ville]: " . parent::__toString() . " [Couverture]: " . parent::__toString() . 
         " [Statut]: " . parent::__toString() . " [Likes]: " . parent::__toString() . " [Vues] : " . parent::__toString() . 
         " [Code étape]: " . $this->codeEtape . " [Sous-titre]: " . $this->sousTitre . " [Description]: " . $this->description . 
-        " [Media]: " . $this->media . " [Likes étape]: " . $this->likesEtape ;
+        " [Likes étape]: " . $this->likesEtape ;
     }
 
 }
