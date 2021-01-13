@@ -15,24 +15,25 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
         $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
         $isUser = $_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo'];
         $nbParPage = 4;
+        $info=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages crées par l'utilisateur dont on visite la page
+        $nbContinent = $voyagesService->compterContinentsUtilisateur($pseudo);
+        $nbPays = $voyagesService->compterPaysUtilisateur($pseudo);
+        $total = $info; //on récupère le nombre total de voyages de la var info dans la var total
+        $nombreDePage=ceil($total/$nbParPage);//on calcul le nombre de page en divisant le nombre de voyages par le nombre que l'on veut voir afficher à l'écran
+        if (!isset($_GET['page'])){
+            $page=1; //si on ne reçoit pas de donnée pour le nombre de page alors on l'initialise à 1
+        }else {
+            $page = $_GET['page']; //sinon on utilise la valeur fournie
+        }
+        $start = ($page - 1) * $nbParPage;
+        $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo, $start, $nbParPage);
+        $precedent = $page-1;
+        $suivant = $page + 1;
     // }catch(UtilisateurException $e){
         
     // }
 
-    $info=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages crées par l'utilisateur dont on visite la page
-    $nbContinent = $voyagesService->compterContinentsUtilisateur($pseudo);
-    $nbPays = $voyagesService->compterPaysUtilisateur($pseudo);
-    $total = $info; //on récupère le nombre total de voyages de la var info dans la var total
-    $nombreDePage=ceil($total/$nbParPage);//on calcul le nombre de page en divisant le nombre de voyages par le nombre que l'on veut voir afficher à l'écran
-    if (!isset($_GET['page'])){
-        $page=1; //si on ne reçoit pas de donnée pour le nombre de page alors on l'initialise à 1
-    }else {
-        $page = $_GET['page']; //sinon on utilise la valeur fournie
-    }
-    $start = ($page - 1) * $nbParPage;
-    $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo, $start, $nbParPage);
-    $precedent = $page-1;
-    $suivant = $page + 1;
+   
     
 
 voyagesDebut();
