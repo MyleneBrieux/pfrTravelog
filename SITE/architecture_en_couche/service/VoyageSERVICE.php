@@ -128,4 +128,18 @@ public function chercherVilles(){
         return $voyage;
     }
 
+//Récupérer le nombre de continents visités
+
+    public function compterContinentsUtilisateur($pseudo){
+        $nbContinent = $this->voyageDao->compterContinentsUtilisateur($pseudo);
+        return $nbContinent;
+    }
+
+//Récupérer le nombre de pays visités
+
+    public function compterPaysUtilisateur($pseudo){
+        $nbPays = $this->voyageDao->compterPaysUtilisateur($pseudo);
+        return $nbPays;
+    }
+
 }
