@@ -85,3 +85,11 @@ body{
 .placenav_titre{
     margin-top:2em;
 }
+
+/* PAGES */
+.pages {
+    font-family: 'Halant', serif;
+    color: #707070;
+    font-size:1.4em;
+    text-align: center;
+}

@@ -66,7 +66,7 @@
         <h1 class="placenav_titre mb-3">Liste des amis ('. $nbAmis .')</h1>';
     }
 
-    function ami1($ami){
+    function ami1($ami, $isUser){
         echo'<div class="row bg-sable mb-3">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="row">
@@ -74,48 +74,71 @@
                     src="../../img/photos/photo_profil_detail_voyage.jpg" />
                 <h4 class="mt-4 mb-3">' . $ami['pseudo'] . '</h4>
             </div>
-        </div>
-        <div class="col-lg-2 col-md-1"></div>
-        <div class="col-lg-4 col-md-5 col-sm-12 col-12">
-            <a href="contacter.php?page=contacter"><button
-                    class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
-            <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
-                data-target="#ModalSupp_Ami">Supprimer</button>
-                <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="Supp">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
-                                le supprimer ?</h6>
-                            <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger">supprimer</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>';
+        if($isUser){
+            echo'<div class="col-lg-2 col-md-1"></div>
+            <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+                <a href="contacter.php?page=contacter"><button
+                        class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+                <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                    data-target="#ModalSupp_Ami">Supprimer</button>
+                    <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="Supp">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
+                                    le supprimer ?</h6>
+                                <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger">supprimer</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>';
+        }
+        echo'
         </div>
     </div>';
     }
 
-    function nbPages(){
-        echo'<p class="text-center">
-            < 1 2 ... 4>
-        </p>
-        </div>
-        </div>';
+    function nbPages($page, $profil, $nombreDePage, $precedent, $suivant){
+        echo'<div class="pagination justify-content-center mt-5">
+        <nav aria-label="Page navigation " class="pages">
+            <ul class="pagination justify-content-center">';
+            if ($page>1) {
+                echo'<li class="page-item">
+                    <a class="page-link" href="mesAmisControleur.php?pseudo='.$profil['pseudo'].'&page='. $precedent .'" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    </li>';
+            }
+            for ($page=1; $page<=$nombreDePage;$page++){
+            echo'<li class="page-item"><a class="page-link" href="mesAmisControleur.php?pseudo='.$profil['pseudo'].'&page='. $page .'">'. $page .'</a></li>';
+            }
+            echo'<li class="page-item">
+            <a class="page-link" href="mesAmisControleur.php?pseudo='.$profil['pseudo'].'&page='. $suivant .'" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+            </li>
+        </ul>
+        </nav>
+    </div>
+    </div>
+    </div>';
     }
 
     function footer(){
@@ -133,12 +156,15 @@
         amisHeader();
     }
 
-    function contenuListeAmis($ami){
-        ami1($ami);
+    function contenuListeAmis($ami, $isUser){
+        ami1($ami, $isUser);
+    }
+
+    function Pagination($page, $profil, $nombreDePage, $precedent, $suivant){
+        nbPages($page, $profil, $nombreDePage, $precedent, $suivant);
     }
 
     function finAmis(){
-        nbPages();
         footer();
         finPage();
     }
