@@ -174,6 +174,13 @@ class UtilisateurService {
         }
     }
 
+    public function supprimerAmi($idAmi, $id){
+        try{
+            $this->utilisateurDao->supprimerAmi($idAmi, $id);
+        }catch(DaoException $s){
+            throw new ServiceException($s->getMessage(),$s->getCode());
+        }
+    }
 
 
 
