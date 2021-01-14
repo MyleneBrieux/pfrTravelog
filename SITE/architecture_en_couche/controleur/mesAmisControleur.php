@@ -44,7 +44,7 @@ $rs=$utilisateur->listeAmis($id);
 while($data=mysqli_fetch_array($rs)){
     $idAmi = $data['id_ami'];
     $ami = $utilisateur->afficherPseudoDepuisIdAmi($idAmi, MYSQLI_ASSOC);
-    contenuListeAmis($ami, $isUser);
+    ami1($ami, $isUser, $idAmi);
 }
 
 if (isset($_POST["supprimerAmi"])) {
