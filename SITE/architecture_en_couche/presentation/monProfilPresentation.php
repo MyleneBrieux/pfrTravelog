@@ -99,7 +99,7 @@
     function lastTrip($mostRecentVoyage){
         echo'<div class="row d-flex justify-content-around mt-2">
                         <div>
-                            <a href="../controleur/detail_voyageControleur.php"><h3>Son dernier voyage : </h3>
+                            <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage='. $mostRecentVoyage['code_voyage'] .'&code_etape='. $mostRecentVoyage['code_etape'] .'"><h3>Son dernier voyage : </h3>
                             <h4>'. $mostRecentVoyage['titre'] .'</h4>
                             <img class="mt-2" src="../../img/photos/' . $mostRecentVoyage["couverture"] . '" alt="" width=352 height=224></a>
                         </div>';
@@ -114,7 +114,7 @@
 
     function mostPopular($mostPopularVoyage){
         echo'<div>
-                <a href="../controleur/detail_voyageControleur.php"><h3>Le plus populaire : </h3>
+                <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage='. $mostPopularVoyage['code_voyage'] .'&code_etape='. $mostPopularVoyage['code_etape'] .'"><h3>Le plus populaire : </h3>
                 <h4>'. $mostPopularVoyage['titre'] .'</h4>
                 <img class="mt-2" src="../../img/photos/' . $mostPopularVoyage["couverture"] . '" alt="" width=352 height=224></a>
                 </div>
@@ -130,7 +130,7 @@
     function autresVoyages($data) {
                     echo'
                         <div class="ml-3">
-                        <a href="../controleur/detail_voyageControleur.php?=code_voyage='. $data['code_voyage'] .'&code_etape='. $data['code_etape'] .'"><h4>'. $data['titre'] .'</h4>
+                        <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage='. $data['code_voyage'] .'&code_etape='. $data['code_etape'] .'"><h4>'. $data['titre'] .'</h4>
                             <img class="mt-2" src="../../img/photos/' . $data["couverture"] . '" alt="" width=352 height=224></a>
                         </div>';
     }
