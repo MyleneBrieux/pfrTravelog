@@ -78,9 +78,7 @@ function navbarBrand(){
                     <img src="../../img/logo_site/logo_blanc.png" class="logoTravelog">
 
                     <div class="col-3">
-                        <a class="navbar-brand d-flex" href="../controleur/accueilCONTROLEUR.php">
-                            <div class="nomTravelog">TRAVELOG</div>
-                        </a>
+                        <div class="nomTravelog"><a href="../controleur/accueilCONTROLEUR.php" id="lienAccueil">TRAVELOG</a></div>  
                     </div>';
 }
 
@@ -151,7 +149,7 @@ function amisBadge2(){
 
 function afficherAmis($donnee){
     echo
-        '<a class="afficheramis dropdown-item" href="../controleur/mesAmisControleur.php">' . $donnee["pseudo"] . ' vous a demandé en ami.</a>';
+        '<a class="afficheramis dropdown-item" href="../controleur/mesAmisControleur.php?pseudo=' . $_SESSION["pseudo"] . '">' . $donnee["pseudo"] . ' vous a demandé en ami.</a>';
 }
 
 function amisBadge3(){

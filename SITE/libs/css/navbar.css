@@ -88,6 +88,23 @@
             }
     }
 
+    #lienAccueil:link {
+        color: white;
+        text-decoration:none;
+    }
+
+    #lienAccueil:visited {
+        color: white;
+    }
+
+    #lienAccueil:focus {
+        background: none
+    }
+
+    #lienAccueil:hover {     
+        background: none;
+    }
+
 /* MENUS DEROULANTS */
 .dropdown-item{ /* dans les menus déroulants */
     color:white !important;
