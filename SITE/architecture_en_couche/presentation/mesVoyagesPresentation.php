@@ -106,28 +106,30 @@
     }
 
     function nbPages($page, $profil, $nombreDePage, $precedent, $suivant){
-        echo'<div class="pagination mt-5">
+        echo'<div class="pagination pagination justify-content-center mt-5">
         <nav aria-label="Page navigation " class="pages">
-  <ul class="pagination">';
-    if ($page>1) {
-        echo'<li class="page-item">
-      <a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $precedent .'" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
-      </a>
-    </li>';
-    }
+  <ul class="pagination class="pagination justify-content-center"">';
+    // if ($page>1) {
+    //     echo'<li class="page-item">
+    //   <a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $precedent .'" aria-label="Previous">
+    //     <span aria-hidden="true">&laquo;</span>
+    //     <span class="sr-only">Previous</span>
+    //   </a>
+    // </li>';
+    // }
     for ($page=1; $page<=$nombreDePage;$page++){
-    echo'<li class="page-item"><a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $page .'">'. $page .'</a></li>';
+    echo'<li class="page-item" id="encadreNoPage"><a class="page-link" id="noPage" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $page .'">'. $page .'</a></li>';
     }
-    echo'<li class="page-item">
-      <a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $suivant .'" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+    // if($page<$nombreDePage){
+    //     echo'<li class="page-item">
+    //   <a class="page-link" href="mesVoyagesControleur.php?pseudo='.$profil['pseudo'].'&page='. $suivant .'" aria-label="Next">
+    //     <span aria-hidden="true">&raquo;</span>
+    //     <span class="sr-only">Next</span>
+    //   </a>
+    // </li>';
+    // }
+    echo'</ul>
+    </nav>
     </div>';
     }
 
