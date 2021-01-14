@@ -71,8 +71,8 @@
         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="row">
                 <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
-                    src="../../img/photos/photo_profil_detail_voyage.jpg" />
-                <h4 class="mt-4 mb-3">' . $ami['pseudo'] . '</h4>
+                    src="../../img/photos/photo_profil_defaut.png" />
+                <h4 class="mt-4 mb-3"><a href="monProfilControleur.php?pseudo='. $ami['pseudo'] .'" />' . $ami['pseudo'] . '</h4>
             </div>
         </div>';
         if($isUser){
@@ -101,7 +101,9 @@
                                 </label>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger">supprimer</button>
+                                <form method="post">
+                                    <button type="button" name="supprimerAmi" class="btn btn-danger">supprimer</button>
+                                </form>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                             </div>
                         </div>

@@ -35,8 +35,6 @@ $utilisateur = new UtilisateurService();
     //
 //}
 
-
-
 amisDebut();
 
 menuLat($profil, $setBirthday);
@@ -47,6 +45,13 @@ while($data=mysqli_fetch_array($rs)){
     $idAmi = $data['id_ami'];
     $ami = $utilisateur->afficherPseudoDepuisIdAmi($idAmi, MYSQLI_ASSOC);
     contenuListeAmis($ami, $isUser);
+}
+
+if (isset($_POST["supprimerAmi"])) {
+    $id = $profil['id'];
+    $idAmi = $data['id_ami'];
+    $ami = $utilisateur->supprimerAmi($idAmi, $id);
+    
 }
 
 Pagination($page, $profil, $nombreDePage, $precedent, $suivant);
