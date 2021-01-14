@@ -36,7 +36,7 @@ function detail_header(){
         include ("navbarCONTROLEUR.php");
 }
 
-function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues){
+function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur){
     echo '<div class="pl-0 menu_lateral_detail_voyage">
     <nav class="bg-sable mr-3 pr-3 menU centrage">
         <div class="row">
@@ -48,7 +48,7 @@ function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues){
                 <h6>Du '.$datedebut.' au '.$datefin.'</h6>
                 <h6>'.$likes.' likes - '.$vues.' vues</h6>
                 </div>
-                <a href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'"><button type="button" class="btn btn-primary addItem ml-3 mt-5 mb-3">Mes autres voyages</button></a>';
+                <a href="../controleur/mesVoyagesControleur.php?pseudo='.$createur["pseudo"].'"><button type="button" class="btn btn-primary addItem ml-3 mt-5 mb-3">Mes autres voyages</button></a>';
 }
 
     function detail_boutonModif($codeVoyage, $codeEtape){
@@ -271,9 +271,9 @@ function detail_headBodyTop(){
     detail_bodyTop();
 }
 
-function detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues){
+function detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur){
     detail_header();
-    detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues);
+    detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur);
 }
     // detail_boutonSupp();
 function detail_menuFinEtNav(){

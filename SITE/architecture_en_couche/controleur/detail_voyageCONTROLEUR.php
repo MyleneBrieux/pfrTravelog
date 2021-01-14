@@ -8,9 +8,9 @@ include("../service/UtilisateurSERVICE.php");
 $numDiapo=0;
 
 $pseudo=$_SESSION["pseudo"];
-        $data=new UtilisateurService();
-        $data=$data->chercherUtilisateurParPseudo($pseudo);
-        $idVisiteur=$data["id"];
+        $visiteur=new UtilisateurService();
+        $visiteur=$visiteur->chercherUtilisateurParPseudo($pseudo);
+        $idVisiteur=$visiteur["id"];
 
         $detailVoyage=new VoyageService();
         $codeVoyage = htmlentities(trim($_GET['code_voyage']));
@@ -29,6 +29,9 @@ $pseudo=$_SESSION["pseudo"];
         $couverture=$detailVoyage["couverture"];
         // $couvertureImplode=implode("", $couverture);
 
+        $createur=new UtilisateurService();
+        $createur=$createur->chercherUtilisateurParId($idCreateur);
+
         $detailEtape=new VoyageService();
         $codeEtape = htmlentities(trim($_GET['code_etape']));
         $detailEtape=$detailEtape->afficherLesDetailsEtapeService($codeEtape);
@@ -37,7 +40,7 @@ $pseudo=$_SESSION["pseudo"];
 
 detail_headBodyTop();
 
-detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues);
+detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur);
 
 // Bouton suppression du voyage visible que par le créateur
 
