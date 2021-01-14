@@ -15,6 +15,11 @@ $pseudo=$_SESSION["pseudo"];
         $detailVoyage=new VoyageService();
         $codeVoyage = htmlentities(trim($_GET['code_voyage']));
         $detailVoyage=$detailVoyage->afficherLesDetailsVoyageService($codeVoyage);
+
+        // if($detailVoyage["statut"]=="Prive"/* && $_SESSION["ami"]*/){ 
+            // header('Location: accueilCONTROLEUR.php');
+        // }
+
         $titre=$detailVoyage["titre"];
         $datedebut=$detailVoyage["date_debut"];
         $datefin=$detailVoyage["date_fin"];
@@ -37,6 +42,7 @@ detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues);
 // Bouton suppression du voyage visible que par le créateur
 
 if ($idVisiteur==$idCreateur){
+    detail_boutonModif($codeVoyage, $codeEtape);
     detail_boutonSupp();
 }
 

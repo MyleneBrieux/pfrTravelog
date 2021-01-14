@@ -51,9 +51,15 @@ function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues){
                 <a href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'"><button type="button" class="btn btn-primary addItem ml-3 mt-5 mb-3">Mes autres voyages</button></a>';
 }
 
+    function detail_boutonModif($codeVoyage, $codeEtape){
+        echo '<a href="../controleur/modification_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape.'">
+            <button type="button" class="btn btn-primary addItem ml-2 mt-5 mb-3">Modifier mon voyage</button>
+        </a>';
+    }
+
             //  Bouton supprimer avec modal
         function detail_boutonSupp() {
-            echo '<button type="button" class="btn btn-danger addItem mt-5" data-toggle="modal"
+            echo '<button type="button" class="btn btn-danger addItem ml-2 mt-5" data-toggle="modal"
                 data-target="#ModalSupp">Supprimer le voyage</button>
 
             <div class="modal fade" id="ModalSupp" tabindex="-1" role="dialog" aria-labelledby="ModalSupp"
