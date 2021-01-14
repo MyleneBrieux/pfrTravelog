@@ -66,7 +66,7 @@
         <h1 class="placenav_titre mb-3">Liste des amis ('. $nbAmis .')</h1>';
     }
 
-    function ami1($ami, $isUser){
+    function ami1($ami, $isUser, $idAmi){
         echo'<div class="row bg-sable mb-3">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="row">
@@ -78,14 +78,16 @@
         if($isUser){
             echo'<div class="col-lg-2 col-md-1"></div>
             <div class="col-lg-4 col-md-5 col-sm-12 col-12">
-                <a href="contacter.php?page=contacter"><button
-                        class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
-                <button type="button" class="btn btn-danger mt-4 mb-3 addItem" data-toggle="modal"
+                <a href="contacter.php?page=contacter">
+                <button class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
+                <button type="button" class="btn btn-danger mt-4 mb-3 addItem supprAmi" data-toggle="modal"
                     data-target="#ModalSupp_Ami">Supprimer</button>
+
                     <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="Supp">
                         <div class="modal-content">
+                        <form meethod="post"> 
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -101,9 +103,7 @@
                                 </label>
                             </div>
                             <div class="modal-footer">
-                                <form method="post">
-                                    <button type="button" name="supprimerAmi" class="btn btn-danger">supprimer</button>
-                                </form>
+                                <button type="button" name="supprimerAmi" class="btn btn-danger">supprimer</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                             </div>
                         </div>
@@ -114,29 +114,35 @@
         </div>
     </div>';
     }
+    //<input type="button" name="supprimerAmi" class="btn btn-danger supprimerAmi" value="supprimer"/>
+    function noAmis(){
+        echo'<div class="row">
+                <p>Vous n\'avez pas encore ajouté d\'ami(s).</p>
+            </div>';
+    }
 
     function nbPages($page, $profil, $nombreDePage, $precedent, $suivant){
         echo'<div class="pagination justify-content-center mt-5">
         <nav aria-label="Page navigation " class="pages">
             <ul class="pagination justify-content-center">';
-            if ($page>1) {
-                echo'<li class="page-item">
-                    <a class="page-link" href="mesAmisControleur.php?pseudo='.$profil['pseudo'].'&page='. $precedent .'" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    </li>';
-            }
+            // if ($page>1) {
+            //     echo'<li class="page-item">
+            //         <a class="page-link" href="mesAmisControleur.php?pseudo='.$profil['pseudo'].'&page='. $precedent .'" aria-label="Previous">
+            //             <span aria-hidden="true">&laquo;</span>
+            //             <span class="sr-only">Previous</span>
+            //         </a>
+            //         </li>';
+            // }
             for ($page=1; $page<=$nombreDePage;$page++){
-            echo'<li class="page-item"><a class="page-link" href="mesAmisControleur.php?pseudo='.$profil['pseudo'].'&page='. $page .'">'. $page .'</a></li>';
+            echo'<li class="page-item" id="encadreNoPage"><a class="page-link" id="noPage" href="mesAmisControleur.php?pseudo='.$profil['pseudo'].'&page='. $page .'">'. $page .'</a></li>';
             }
-            echo'<li class="page-item">
-            <a class="page-link" href="mesAmisControleur.php?pseudo='.$profil['pseudo'].'&page='. $suivant .'" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-            </a>
-            </li>
-        </ul>
+            // echo'<li class="page-item">
+            // <a class="page-link" href="mesAmisControleur.php?pseudo='.$profil['pseudo'].'&page='. $suivant .'" aria-label="Next">
+            //     <span aria-hidden="true">&raquo;</span>
+            //     <span class="sr-only">Next</span>
+            // </a>
+            //</li>
+        echo'</ul>
         </nav>
     </div>
     </div>
@@ -150,16 +156,14 @@
     function finPage(){
         echo'</div>
         </body>
+        <script src="../../libs/jquery/jquery-3.5.1.js" type="text/javascript"></script>
+        <script src="../../libs/script_js/scriptPageAmis.js" type="text/javascript"></script>
         </html>';
     }
 
     function amisDebut(){
         amisHead();
         amisHeader();
-    }
-
-    function contenuListeAmis($ami, $isUser){
-        ami1($ami, $isUser);
     }
 
     function Pagination($page, $profil, $nombreDePage, $precedent, $suivant){

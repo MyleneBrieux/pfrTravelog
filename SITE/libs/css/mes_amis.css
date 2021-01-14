@@ -93,3 +93,19 @@ body{
     font-size:1.4em;
     text-align: center;
 }
+
+#noPage {
+    background-color:#dcdacd;
+    color:#52908b;
+    border:1.5px solid #52908b;
+}
+
+#noPage:focus {
+    background-color:#52908b;
+    color:#dcdacd;
+}
+
+#noPage:hover {
+    background-color:#52908b;
+        color:#dcdacd;
+}
