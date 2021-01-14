@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 14 jan. 2021 à 10:43
+-- Généré le : jeu. 14 jan. 2021 à 11:54
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.10
 
@@ -66,7 +66,6 @@ CREATE TABLE `etape` (
   `code_etape` int(11) NOT NULL,
   `sous_titre` varchar(40) NOT NULL,
   `description` varchar(500) NOT NULL,
-  `likesEtape` int(11) DEFAULT NULL,
   `code_comm` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -74,9 +73,9 @@ CREATE TABLE `etape` (
 -- Déchargement des données de la table `etape`
 --
 
-INSERT INTO `etape` (`code_etape`, `sous_titre`, `description`, `likesEtape`, `code_comm`) VALUES
-(1, '&eacute;tape 1', 'Premi&egrave;re &eacute;tape', 0, NULL),
-(2, '&eacute;tape 1', 'Premi&egrave;re &eacute;tape', 0, NULL);
+INSERT INTO `etape` (`code_etape`, `sous_titre`, `description`, `code_comm`) VALUES
+(1, '&eacute;tape 1', 'Premi&egrave;re &eacute;tape', NULL),
+(2, '&eacute;tape 1', 'Premi&egrave;re &eacute;tape', NULL);
 
 -- --------------------------------------------------------
 
