@@ -101,7 +101,7 @@
                         <div>
                             <a href="../controleur/detail_voyageControleur.php"><h3>Son dernier voyage : </h3>
                             <h4>'. $mostRecentVoyage['titre'] .'</h4>
-                            <img class="mt-2" src="' . $mostRecentVoyage["couverture"] . '" alt="" width=352 height=224></a>
+                            <img class="mt-2" src="../../img/photos/' . $mostRecentVoyage["couverture"] . '" alt="" width=352 height=224></a>
                         </div>';
                     }
 
@@ -116,7 +116,7 @@
         echo'<div>
                 <a href="../controleur/detail_voyageControleur.php"><h3>Le plus populaire : </h3>
                 <h4>'. $mostPopularVoyage['titre'] .'</h4>
-                <img class="mt-2" src="' . $mostPopularVoyage["couverture"] . '" alt="" width=352 height=224></a>
+                <img class="mt-2" src="../../img/photos/' . $mostPopularVoyage["couverture"] . '" alt="" width=352 height=224></a>
                 </div>
             </div>';
     }
