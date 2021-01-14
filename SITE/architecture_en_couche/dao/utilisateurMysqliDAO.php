@@ -272,7 +272,7 @@ include_once("dao_exception.php");
     }
 
     /* SUPPRIMER UN AMI */
-    public function supprimerAmi(){
+    public function supprimerAmi($idAmi, $id){
         try{
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("delete * from demande_ami where id=? and id_ami=?");
