@@ -1,7 +1,7 @@
 <?php
 session_start();
 // LIAISON AVEC AUTRES COUCHES //
-include_once("../presentation/modification_voyagePRESENTATION2.php");
+include_once("../presentation/modification_voyagePRESENTATION.php");
 include("../service/VoyageSERVICE.php");
 include("../service/UtilisateurSERVICE.php");
 
@@ -44,8 +44,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "modification" && !empty($_POST)
             $vues=(int)htmlentities($_POST["vues"]=null),
             $codeEtape=(int)htmlentities($detailVoyage["code_etape"]),
             $sousTitre=htmlentities($_POST["sous_titre"]),
-            $description=htmlentities($_POST["description"]), 
-            $likesEtape=(int)htmlentities($_POST["likesEtape"]=null)
+            $description=htmlentities($_POST["description"])
         ); 
 
         $pseudo=$_SESSION["pseudo"];

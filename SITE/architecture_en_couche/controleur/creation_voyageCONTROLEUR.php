@@ -43,8 +43,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "creation" && !empty($_POST)){
             $vues=(int)htmlentities($_POST["vues"]=null),
             $codeEtape=(int)htmlentities($_POST["code_etape"]=null),
             $sousTitre=htmlentities($_POST["sous_titre"]),
-            $description=htmlentities($_POST["description"]),
-            $likesEtape=(int)htmlentities($_POST["likesEtape"]=null)
+            $description=htmlentities($_POST["description"])
         ); 
 
         $addEtape= new VoyageService;
