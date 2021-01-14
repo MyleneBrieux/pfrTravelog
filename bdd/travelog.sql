@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 13 jan. 2021 à 22:25
--- Version du serveur :  10.4.16-MariaDB
--- Version de PHP : 7.4.12
+-- Généré le : jeu. 14 jan. 2021 à 10:43
+-- Version du serveur :  10.4.14-MariaDB
+-- Version de PHP : 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `pfrtravelog`
+-- Base de données : `travelog`
 --
 
 -- --------------------------------------------------------
@@ -40,10 +40,21 @@ CREATE TABLE `commentaires` (
 --
 
 CREATE TABLE `demande_ami` (
+  `code_ami` int(11) NOT NULL,
   `id_ami` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `accepte` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `demande_ami`
+--
+
+INSERT INTO `demande_ami` (`code_ami`, `id_ami`, `id`, `accepte`) VALUES
+(1, 44, 42, 'Y'),
+(2, 42, 44, 'Y'),
+(3, 43, 42, 'Y'),
+(4, 42, 43, 'Y');
 
 -- --------------------------------------------------------
 
@@ -58,6 +69,14 @@ CREATE TABLE `etape` (
   `likesEtape` int(11) DEFAULT NULL,
   `code_comm` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `etape`
+--
+
+INSERT INTO `etape` (`code_etape`, `sous_titre`, `description`, `likesEtape`, `code_comm`) VALUES
+(1, '&eacute;tape 1', 'Premi&egrave;re &eacute;tape', 0, NULL),
+(2, '&eacute;tape 1', 'Premi&egrave;re &eacute;tape', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -162,7 +181,10 @@ INSERT INTO `utilisateurs` (`id`, `pseudo`, `mail`, `password`, `description`, `
 (38, 'mylene', 'mylene.brieux@gmail.com', '$2y$10$ZtuxhdTaRYssZHfUE/amN.Vg3VS4mBCwt1kV.NWgNSbAFT.oXFpom', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1),
 (39, 'karma', 'romain_wyon@orange.fr', '$2y$10$Au2zN2kQEKylV7TU21xW7.E5gtjdLMYSzMmENCBtelW1s31YY2RTC', '', '', '1999-01-11', 'Fran&ccedil;ais', 'Y', 'Y', 2),
 (40, 'karma_deux', 'romain@orange.fr', '$2y$10$d89zho/bkViGNv3ZZEFCNOvms8EFUoFQlWePml14Sda1b9w/J1LVG', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1),
-(41, 'karma_trois', 'karma_trois@azerty.com', '$2y$10$VsExGZnbGxJ/OxVczCKGiuUduFFsW.QHYmC3HaEb5f5GGvqGTYKIS', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1);
+(41, 'karma_trois', 'karma_trois@azerty.com', '$2y$10$VsExGZnbGxJ/OxVczCKGiuUduFFsW.QHYmC3HaEb5f5GGvqGTYKIS', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1),
+(42, 'Yoan', 'yoann.deco@gmail.com', '$2y$10$hK0cWLLpFiCt/AjaGALl3el2v4m11XTM0Ky/.QeRmI7VTyfPeWmm2', 'J\'aime les voyages.', '', '1999-07-15', '', 'Y', 'Y', 2),
+(43, 'Klara', 'KlaraK@gmail.com', '$2y$10$kZNxxvo0Eb5zfCf/aE./QeFsOPKd8FHUZtTxlLyz0w5Cz2hBZMve6', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1),
+(44, 'Clement', 'ClementR@gmail.com', '$2y$10$TRGjytzjK/AVt/r7/WVef.ds4fZFVDskasEqSvneIQAwv1J0xleLy', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1);
 
 -- --------------------------------------------------------
 
@@ -188,6 +210,14 @@ CREATE TABLE `voyages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Déchargement des données de la table `voyages`
+--
+
+INSERT INTO `voyages` (`code_voyage`, `titre`, `resume`, `date_debut`, `date_fin`, `continent`, `pays`, `ville`, `couverture`, `statut`, `likes`, `vues`, `id`, `code_etape`) VALUES
+(1, 'Venise', 'Voyage Venise.', '2021-01-14', '2021-01-15', 'Europe', 'Italie', 'Venise', 0x76656e6973652e6a7067, '', 0, 0, 42, 1),
+(2, 'Vatican', 'Voyage Vatican.', '2021-01-15', '2021-01-16', 'Europe', 'Italie', 'Rome', 0x7661746963616e2e6a7067, '', 0, 0, 42, 2);
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -202,8 +232,9 @@ ALTER TABLE `commentaires`
 -- Index pour la table `demande_ami`
 --
 ALTER TABLE `demande_ami`
-  ADD PRIMARY KEY (`id_ami`),
-  ADD KEY `id_utilisateur` (`id`);
+  ADD PRIMARY KEY (`code_ami`),
+  ADD KEY `id_utilisateur` (`id`),
+  ADD KEY `id_ami` (`id_ami`);
 
 --
 -- Index pour la table `etape`
@@ -271,13 +302,13 @@ ALTER TABLE `commentaires`
 -- AUTO_INCREMENT pour la table `demande_ami`
 --
 ALTER TABLE `demande_ami`
-  MODIFY `id_ami` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `code_ami` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `etape`
 --
 ALTER TABLE `etape`
-  MODIFY `code_etape` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `code_etape` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `images`
@@ -307,13 +338,13 @@ ALTER TABLE `signalements`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT pour la table `voyages`
 --
 ALTER TABLE `voyages`
-  MODIFY `code_voyage` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `code_voyage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
