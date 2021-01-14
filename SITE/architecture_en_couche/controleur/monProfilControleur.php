@@ -26,6 +26,8 @@ include_once '../metier/Voyage.php';
         $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo, $start, $nbParPage); //Cherche les voyages de l'utilisateur
         $mostRecentVoyage = $voyagesService->VoyagePlusRecentUtilisateur($pseudo); //Cherche le voyage le + récent de l'utilisateur
         $mostPopularVoyage = $voyagesService->VoyagePlusPopulaireUtilisateur($pseudo); //Cherche le voyage le + populaire de l'utilisateur
+        $nbContinent = $voyagesService->compterContinentsUtilisateur($pseudo);
+        $nbPays = $voyagesService->compterPaysUtilisateur($pseudo);
     // }catch(UtilisateurException $e){
         
     // }
@@ -40,7 +42,7 @@ profilDebut();
 
 menuLat($profil, $setBirthday, $isNotUser);
 
-presentationUser($profil, $setNation, $setDescription);
+presentationUser($profil, $setNation, $setDescription, $nbContinent, $nbPays);
 
 if($mostRecentVoyage && $mostPopularVoyage && $data){
     lastTrip($mostRecentVoyage);

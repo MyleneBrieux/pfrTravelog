@@ -72,7 +72,7 @@
                 </div>';
     }
 
-    function presentationUser($profil, $setNation, $setDescription){
+    function presentationUser($profil, $setNation, $setDescription, $nbContinent, $nbPays){
         echo '<div class="col-lg-10 col-md-8 col-sm-8 col-12 mt-2">
                     <div class="d-inline-flex p-2 bd-highlight">';
                     if ($setNation) {
@@ -83,8 +83,8 @@
                         
                     echo'</div>
                     <div class="d-flex justify-content-end">
-                        <p class="pr-4 bd-highlight">X contienents visités</p>
-                        <p class="pr-4 bd-highlight">XX pays visités</p>
+                        <p class="pr-4 bd-highlight">'. $nbContinent .' contienents visités</p>
+                        <p class="pr-4 bd-highlight">'. $nbPays .' pays visités</p>
                     </div>
                     <div class="pl-2 rectangle_desc">
                         <p class="description">Description : </p>';
