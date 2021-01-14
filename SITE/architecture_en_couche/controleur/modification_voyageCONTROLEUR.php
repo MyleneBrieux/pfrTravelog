@@ -25,6 +25,9 @@ if(isset($_GET["action"]) && $_GET["action"] == "modification" && !empty($_POST)
         && isset($_POST["pays"]) && !Empty($_POST["pays"])
         && isset($_POST["ville"]) && !Empty($_POST["ville"])){
 
+            if(!isset($_POST["statut"])){
+                $_POST["statut"]="Public";
+            }
             
         $voyage = new Etape(
             $codeVoyage=(int)htmlentities($detailVoyage["code_voyage"]),
@@ -36,7 +39,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "modification" && !empty($_POST)
             $pays=htmlentities($_POST["pays"]),
             $ville=htmlentities($_POST["ville"]),
             $couverture=htmlentities($detailVoyage["couverture"]),
-            $statut=htmlentities($_POST["statut"]=null),
+            $statut=htmlentities($_POST["statut"]),
             $likes=(int)htmlentities($_POST["likes"]=null),
             $vues=(int)htmlentities($_POST["vues"]=null),
             $codeEtape=(int)htmlentities($detailVoyage["code_etape"]),

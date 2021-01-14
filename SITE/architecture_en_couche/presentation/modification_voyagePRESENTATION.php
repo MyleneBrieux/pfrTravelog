@@ -108,7 +108,7 @@ function modification_addButton($detailEtape){
 function modification_checkbox(){
     echo '<div class="row d-flex justify-content-center">
             <label class="rectangle-checkbox checkbox">
-                <input type="checkbox" value="Y"> Partager ce voyage uniquement avec mes amis
+                <input type="checkbox" name="statut" value="Prive"> Partager ce voyage uniquement avec mes amis
             </label>
         </div>';
 }
