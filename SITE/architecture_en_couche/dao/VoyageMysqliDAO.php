@@ -42,7 +42,7 @@ class VoyageMysqliDAO {
     public function addEtapeDAO($sousTitre, $description){
         $mysqli=$this->connexion();
 
-        $stmt=$mysqli->prepare("insert into etape (code_etape, sous_titre, description, likesEtape, code_comm) values (null,?,?,0,null)");
+        $stmt=$mysqli->prepare("insert into etape (code_etape, sous_titre, description, code_comm) values (null,?,?,null)");
         $stmt->bind_param("ss", $sousTitre, $description);
         $stmt->execute();
         $mysqli->close();
