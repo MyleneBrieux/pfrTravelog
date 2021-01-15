@@ -25,6 +25,18 @@ class VoyageMysqliDAO {
         return $nbEtape;
     }
 
+    public function nbrVuesVoyageDAO($vues,$codeVoyage){
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare("update voyages set vues=? where code_voyage=?");
+        $stmt->bind_param("ii", $vues, $codeVoyage);
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        return $rs;
+        $rs->free();
+        $mysqli->close();
+    }
+
+
     //ajout Voyage
 
     public function addVoyageDAO($titre, $resume, $datedebut, $datefin, $continent, $pays, $ville, $couverture, $statut, $id/*, $codeEtape*/){
@@ -153,40 +165,41 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
-    /* RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
-    public function chercherContinents() {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select distinct continent from voyages order by continent asc');
-        $stmt->execute();
-        $continents=$stmt->get_result();
-        return $continents;
-        $continent->free();
-        $mysqli->close();
-    }
-
-    /* RECHERCHER TOUS LES VOYAGES POUR LES SELECT */
-    public function chercherVoyages() {
-        $mysqli=$this->connexion();
-        $stmt = $mysqli->prepare("select * from voyages");
-        $stmt->execute();
-        $voyages = $stmt->get_result();
-        return $voyages;
-        $voyages->free();
-        $mysqli->close();
-    }
-
-    /* RECHERCHER LES PAYS DE LA TABLE VOYAGES SELON LE CONTINENT */
-    public function chercherPaysSelonContinent(string $continent) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select distinct pays from voyages where continent=?');
-        $stmt->bind_param("s", $continent);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $pays = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $pays;
-    }
+        /* RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
+        public function chercherContinents() {
+                $mysqli=$this->connexion();
+                $stmt=$mysqli->prepare('select distinct continent from voyages order by continent asc');
+                $stmt->execute();
+                $continents=$stmt->get_result();
+                return $continents;
+                $continents->free();
+                $mysqli->close();
+            }
+        
+        
+            /* RECHERCHER TOUS LES VOYAGES POUR LES SELECT */
+            public function chercherVoyages() {
+                $mysqli=$this->connexion();
+                $stmt = $mysqli->prepare("select * from voyages");
+                $stmt->execute();
+                $voyages = $stmt->get_result();
+                return $voyages;
+                $voyages->free();
+                $mysqli->close();
+            }
+        
+            /* RECHERCHER LES PAYS DE LA TABLE VOYAGES SELON LE CONTINENT */
+            public function chercherPaysSelonContinent(string $continent) {
+                $mysqli=$this->connexion();
+                $stmt=$mysqli->prepare('select distinct pays from voyages where continent=?');
+                $stmt->bind_param("s", $continent);
+                $stmt->execute();
+                $rs=$stmt->get_result();
+                $pays = $rs->fetch_array(MYSQLI_ASSOC);
+                $rs->free();
+                $mysqli->close();
+                return $pays;
+            }
 
     // /* RECHERCHER LES VILLES DE LA TABLE VOYAGES */
     // public function chercherVilles() {

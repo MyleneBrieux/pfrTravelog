@@ -22,6 +22,13 @@ class VoyageService {
         return $addEtape;
     }
 
+// Compter les vues
+    public function nbrVuesVoyageService($vues,$codeVoyage){
+        $vuesVoyage= new VoyageMysqliDAO;
+        $vuesVoyage->nbrVuesVoyageDAO($vues,$codeVoyage);
+        return $vuesVoyage;
+    }
+
 // afficher les infos du Voyage
 
     public function afficherLesDetailsVoyageService(int $codeVoyage) : ?array {
@@ -87,24 +94,24 @@ public function afficherVoyagesAccueil($start,$nbParPage){
 
 //Rechercher les continents
 
-public function chercherContinents(){
-    $continents=$this->voyageDao->chercherContinents();
-    return $continents;
-}
+    public function chercherContinents(){
+        $continents=$this->voyageDao->chercherContinents();
+        return $continents;
+    }
 
-//Rechercher les voyages (pour les select)
+ //Rechercher les voyages (pour les select) 
 
-public function chercherVoyages(){
-    $voyages=$this->voyageDao->chercherVoyages();
-    return $voyages;
-}
+    public function chercherVoyages(){
+        $voyages=$this->voyageDao->chercherVoyages();
+        return $voyages;
+    }
 
 //Rechercher les pays selon le continent
 
-public function chercherPaysSelonContinent(string $continent){
-    $pays=$this->voyageDao->chercherPaysSelonContinent($continent);
-    return $pays;
-}
+    public function chercherPaysSelonContinent(string $continent){
+        $pays=$this->voyageDao->chercherPaysSelonContinent($continent);
+        return $pays;
+    } 
 
 //Rechercher les villes
 
