@@ -11,7 +11,7 @@ function displayPageAccueil1(){
 
 function displayPageAccueil2(){
     displayBottomResults();
-    selectContinents1();
+    // selectContinents1();
 }
 
 function displayPageAccueil3(){
@@ -48,9 +48,6 @@ function displayHead(){
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
                     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-            <script src="../../libs/jquery/jquery-3.5.1.min.js"></script>
-            <script src="../../libs/script_js/scriptFiltreVoyages.js"></script>
-
             <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet"> 
         
@@ -59,6 +56,9 @@ function displayHead(){
             </title>
         </head>';
 }
+
+// <script src="../../libs/jquery/jquery-3.5.1.min.js"></script>
+// <script src="../../libs/script_js/scriptFiltreVoyages.js"></script>
 
 function navbar(){
     echo 
