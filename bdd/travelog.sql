@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 14 jan. 2021 à 11:54
+-- Généré le : ven. 15 jan. 2021 à 10:49
 -- Version du serveur :  10.4.14-MariaDB
--- Version de PHP : 7.4.10
+-- Version de PHP : 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,6 +33,13 @@ CREATE TABLE `commentaires` (
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `commentaires`
+--
+
+INSERT INTO `commentaires` (`code_comm`, `commentaire`, `id`) VALUES
+(1, 'Je suis un commentaire test.', 42);
+
 -- --------------------------------------------------------
 
 --
@@ -54,7 +61,8 @@ INSERT INTO `demande_ami` (`code_ami`, `id_ami`, `id`, `accepte`) VALUES
 (1, 44, 42, 'Y'),
 (2, 42, 44, 'Y'),
 (3, 43, 42, 'Y'),
-(4, 42, 43, 'Y');
+(4, 42, 43, 'Y'),
+(5, 39, 38, 'Y');
 
 -- --------------------------------------------------------
 
@@ -75,7 +83,15 @@ CREATE TABLE `etape` (
 
 INSERT INTO `etape` (`code_etape`, `sous_titre`, `description`, `code_comm`) VALUES
 (1, '&eacute;tape 1', 'Premi&egrave;re &eacute;tape', NULL),
-(2, '&eacute;tape 1', 'Premi&egrave;re &eacute;tape', NULL);
+(2, '&eacute;tape 1', 'Premi&egrave;re &eacute;tape', NULL),
+(3, 'Lorem ipsum dolor sit amet, consectetur ', 'Nullam et congue ligula. Vestibulum sapien sem, suscipit non dui eget, vulputate pellentesque nisi. Duis sit amet leo scelerisque nulla finibus hendrerit. Cras eget magna quis leo blandit consequat posuere vitae quam. Nulla sodales consequat massa eget rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL),
+(4, 'Lorem ipsum dolor sit amet, consectetur ', 'Nullam et congue ligula. Vestibulum sapien sem, suscipit non dui eget, vulputate pellentesque nisi. Duis sit amet leo scelerisque nulla finibus hendrerit. Cras eget magna quis leo blandit consequat posuere vitae quam. Nulla sodales consequat massa eget rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ', NULL),
+(5, 'Cras ac ex felis. ', 'Aenean quis elementum enim, sit amet convallis enim. Mauris eget tortor porttitor, tempor orci at, efficitur sem. Cras molestie, nisi ullamcorper hendrerit facilisis, dolor lectus feugiat nunc, eget tempor ipsum nibh eget massa. Vestibulum in gravida ligula. Ut suscipit nisl eget nulla pretium, in bibendum velit posuere. Cras porta diam eget consectetur ultrices. ', NULL),
+(6, 'In hac habitasse platea dictumst. ', 'Nullam est orci, pretium rutrum tempor non, volutpat eu ipsum. Vestibulum id urna eget ante consectetur fringilla vitae sed lorem. Curabitur auctor interdum lobortis. Quisque ullamcorper mi tellus, vehicula molestie ante pellentesque id. Curabitur ac ante non tortor dignissim malesuada eu eu tortor. ', NULL),
+(7, 'Donec ut nulla sed velit imperdiet vehic', 'Etiam ut lectus pellentesque, fringilla erat et, ultricies tellus. Nulla commodo ornare odio, eget sagittis purus feugiat ac. Vivamus et sem vitae purus sagittis consectetur nec ut risus. Morbi consectetur, quam quis sodales viverra, odio neque dignissim arcu, in consequat lorem metus id quam. Pellentesque luctus malesuada fermentum. Duis pulvinar libero at sapien ornare, nec sollicitudin purus luctus. ', NULL),
+(8, ' Donec nisi ante, scelerisque non libero', 'Aenean fringilla lacinia suscipit. Fusce tempor sit amet ipsum vitae iaculis. Donec lacinia posuere vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas euismod leo vitae pharetra egestas. Nam tincidunt orci eu purus commodo feugiat. Etiam sit amet laoreet dui. Pellentesque tincidunt vitae arcu non sodales. ', NULL),
+(9, 'Duis quis auctor ipsum.', 'Vivamus eros quam, gravida id urna sed, accumsan pharetra massa. Sed id lobortis quam. Suspendisse lacinia tempus mattis. In imperdiet neque sed nibh gravida ullamcorper. Vestibulum eu efficitur enim, id consequat dui. Duis vestibulum rhoncus diam at suscipit. Morbi faucibus, diam ac ultricies venenatis, urna odio ornare odio, id hendrerit neque tortor sit amet ligula. Curabitur ut diam et sem molestie tristique vitae ac nisi. ', NULL),
+(10, 'Vivamus nec leo a libero eleifend commod', 'n quis dui sit amet purus tempor pretium. Donec iaculis libero nec lectus varius, vel mattis odio facilisis. Cras in leo quam. Suspendisse malesuada ornare est, quis varius ante dapibus at. Morbi nulla est, finibus vitae condimentum in, sagittis nec felis. Sed et mauris nec urna faucibus interdum. Aenean dictum in mauris sit amet sodales. Maecenas pharetra semper dui, sed facilisis eros scelerisque ac. ', NULL);
 
 -- --------------------------------------------------------
 
@@ -141,6 +157,13 @@ CREATE TABLE `notifications` (
   `code_comm` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `notifications`
+--
+
+INSERT INTO `notifications` (`code_notif`, `date`, `id`, `code_voyage`, `code_comm`) VALUES
+(1, '2021-01-15', 38, 4, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -183,7 +206,9 @@ INSERT INTO `utilisateurs` (`id`, `pseudo`, `mail`, `password`, `description`, `
 (41, 'karma_trois', 'karma_trois@azerty.com', '$2y$10$VsExGZnbGxJ/OxVczCKGiuUduFFsW.QHYmC3HaEb5f5GGvqGTYKIS', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1),
 (42, 'Yoan', 'yoann.deco@gmail.com', '$2y$10$hK0cWLLpFiCt/AjaGALl3el2v4m11XTM0Ky/.QeRmI7VTyfPeWmm2', 'J\'aime les voyages.', '', '1999-07-15', '', 'Y', 'Y', 2),
 (43, 'Klara', 'KlaraK@gmail.com', '$2y$10$kZNxxvo0Eb5zfCf/aE./QeFsOPKd8FHUZtTxlLyz0w5Cz2hBZMve6', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1),
-(44, 'Clement', 'ClementR@gmail.com', '$2y$10$TRGjytzjK/AVt/r7/WVef.ds4fZFVDskasEqSvneIQAwv1J0xleLy', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1);
+(44, 'Clement', 'ClementR@gmail.com', '$2y$10$TRGjytzjK/AVt/r7/WVef.ds4fZFVDskasEqSvneIQAwv1J0xleLy', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1),
+(45, 'mymy', 'm.brieux@gmail.com', '$2y$10$UC3ZcVv9D30htfGvoUcROuS23FTW.FwLyVhKj8z4.FgYEju5GcK4e', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1),
+(46, 'myleneb', 'm.b@hotmail.fr', '$2y$10$67F53shl5CzWaQA5NKRAwOfuAZynRRCOEO6MTdfxk5mO6dxH3iuNa', NULL, 0x70686f746f, NULL, NULL, 'Y', 'Y', 1);
 
 -- --------------------------------------------------------
 
@@ -213,8 +238,13 @@ CREATE TABLE `voyages` (
 --
 
 INSERT INTO `voyages` (`code_voyage`, `titre`, `resume`, `date_debut`, `date_fin`, `continent`, `pays`, `ville`, `couverture`, `statut`, `likes`, `vues`, `id`, `code_etape`) VALUES
-(1, 'Venise', 'Voyage Venise.', '2021-01-14', '2021-01-15', 'Europe', 'Italie', 'Venise', 0x76656e6973652e6a7067, '', 0, 0, 42, 1),
-(2, 'Vatican', 'Voyage Vatican.', '2021-01-15', '2021-01-16', 'Europe', 'Italie', 'Rome', 0x7661746963616e2e6a7067, '', 0, 0, 42, 2);
+(4, 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'Sed lacinia, tortor id scelerisque pharetra, sapien libero vulputate sapien, id mattis augue nisl in mi. Mauris id porta nibh. Pellentesque eleifend ullamcorper tortor. Morbi ligula lacus, egestas a ante eget, facilisis vestibulum massa. Praesent vestibulum tempus egestas.', '2019-06-17', '2019-06-23', 'Afrique', 'Maroc', 'Agadir', 0x6d61726f632e6a7067, 'Public', 0, 0, 38, 4),
+(5, 'Cras mattis diam ut cursus sollicitudin. ', 'Nulla placerat, orci ac pellentesque aliquet, erat nisi rhoncus dolor, non rhoncus nunc ex sit amet felis. Etiam rhoncus, nisi in feugiat aliquet, lacus ipsum dapibus leo, in scelerisque erat lectus eu ex.', '2020-12-18', '2020-12-20', 'Europe', 'Angleterre', 'Londres', 0x6c6f6e647265732e6a7067, 'Public', 0, 0, 38, 5),
+(6, 'Ut vestibulum odio tincidunt, condimentum eros a, ', 'Pellentesque tristique, velit sit amet dignissim aliquet, nisi massa elementum nunc, quis eleifend magna enim feugiat nibh. ', '2020-05-14', '2020-05-17', 'Europe', 'Allemagne', 'Hambourg', 0x68616d626f7572672e6a7067, 'Public', 0, 0, 38, 6),
+(7, 'Morbi metus purus, venenatis nec placerat vel, max', 'Nullam sagittis, nisi non aliquet cursus, lorem libero iaculis nulla, in vestibulum dolor neque sit amet elit. Nam dignissim urna nisl, nec sollicitudin arcu sodales non. Phasellus convallis, felis eu semper cursus, neque massa venenatis nisi, eu porttitor magna sem commodo eros. ', '2020-07-01', '2020-07-31', 'Am&eacute;rique du S', 'P&eacute;rou', 'Lima', 0x7065726f752e6a7067, 'Public', 0, 0, 45, 7),
+(8, 'Sed molestie finibus nisl, ac viverra nulla commod', 'Vivamus ac tincidunt ipsum, vitae semper libero. Cras faucibus eu magna ut accumsan. In felis tellus, mattis eu ex molestie, malesuada tincidunt sem. ', '2019-08-01', '2019-08-31', 'Asie', 'Japon', 'Tokyo', 0x6a61706f6e2e6a7067, 'Public', 0, 0, 45, 8),
+(9, 'Aliquam a pellentesque ante. ', 'Praesent eget sollicitudin diam, eget pulvinar sapien. Mauris dictum maximus sollicitudin. Mauris quis laoreet elit.', '2020-05-04', '2020-05-25', 'Am&eacute;rique du N', 'Etats-Unis', 'Dallas', 0x65746174732d756e69732e6a7067, 'Public', 0, 0, 46, 9),
+(10, 'Phasellus convallis gravida laoreet. ', 'Sed eu mauris vestibulum, cursus mauris sit amet, laoreet ipsum. Morbi rutrum lorem eros, ac vestibulum est tincidunt in. ', '2021-01-02', '2021-01-03', 'Europe', 'Italie', 'Rome', 0x74726576692e6a7067, 'Public', 0, 0, 46, 10);
 
 --
 -- Index pour les tables déchargées
@@ -295,19 +325,19 @@ ALTER TABLE `voyages`
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `code_comm` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `code_comm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `demande_ami`
 --
 ALTER TABLE `demande_ami`
-  MODIFY `code_ami` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `code_ami` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `etape`
 --
 ALTER TABLE `etape`
-  MODIFY `code_etape` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `code_etape` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `images`
@@ -325,7 +355,7 @@ ALTER TABLE `langues`
 -- AUTO_INCREMENT pour la table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `code_notif` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `code_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `signalements`
@@ -337,13 +367,13 @@ ALTER TABLE `signalements`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT pour la table `voyages`
 --
 ALTER TABLE `voyages`
-  MODIFY `code_voyage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `code_voyage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées
