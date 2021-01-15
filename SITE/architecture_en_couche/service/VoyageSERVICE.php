@@ -87,17 +87,24 @@ public function afficherVoyagesAccueil($start,$nbParPage){
 
 //Rechercher les continents
 
-    public function chercherContinents(){
-        $continents=$this->voyageDao->chercherContinents();
-        return $continents;
-    }
+public function chercherContinents(){
+    $continents=$this->voyageDao->chercherContinents();
+    return $continents;
+}
 
-//Rechercher les pays
+//Rechercher les voyages (pour les select)
 
-    public function chercherPays(){
-        $pays=$this->voyageDao->chercherPays();
-        return $pays;
-    }
+public function chercherVoyages(){
+    $voyages=$this->voyageDao->chercherVoyages();
+    return $voyages;
+}
+
+//Rechercher les pays selon le continent
+
+public function chercherPaysSelonContinent(string $continent){
+    $pays=$this->voyageDao->chercherPaysSelonContinent($continent);
+    return $pays;
+}
 
 //Rechercher les villes
 

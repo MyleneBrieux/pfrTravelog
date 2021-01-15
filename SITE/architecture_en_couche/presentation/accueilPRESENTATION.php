@@ -11,10 +11,15 @@ function displayPageAccueil1(){
 
 function displayPageAccueil2(){
     displayBottomResults();
-    displayColTable();
+    selectContinents1();
 }
 
 function displayPageAccueil3(){
+    selectContinents3();
+    selectPays1();
+}
+
+function displayPageAccueil4(){
     footer();
     displayEnd();
 }
@@ -37,11 +42,14 @@ function displayHead(){
                   integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+            <script src="../../libs/jquery/jquery-3.5.1.min.js"></script>
+            <script src="../../libs/script_js/scriptFiltreVoyages.js"></script>
 
             <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet"> 
@@ -73,6 +81,34 @@ function displayTopResults(){
 function displayBottomResults(){
     echo
         '</p>';
+}
+
+function selectContinents1(){
+    echo
+        '<form name="filtresVoyages">
+            <select id="selectContinent" name="selectContinent"">
+                <option value="">-- Sélectionnez un continent --</option>';
+}
+
+function selectContinents2($data){
+    echo
+        '<option value="' . $data["continent"] . '">' . $data["continent"] . '</option>';
+}
+
+function selectContinents3(){
+    echo
+        '</select>';
+}
+
+function selectPays1(){
+    echo
+        '<select id="pays" name="pays">
+            <option value="">-- Sélectionnez un pays --</option>';   
+}
+
+function selectPays2(){
+    echo
+        '</select>';
 }
 
 function displayColTable(){

@@ -43,8 +43,72 @@ try {
     displayPageAccueil1();
     
     echo ($nbVoyages . " voyages trouvés"); // compteur de voyages trouvés dans la bdd //
-    
+
     displayPageAccueil2();
+
+    $continents=$voyageService->chercherContinents();
+    while($data=mysqli_fetch_array($continents)){
+        selectContinents2($data);
+    }
+
+    displayPageAccueil3();
+
+
+
+
+    $tabVoyages=$voyageService->chercherVoyages();
+    while($data=mysqli_fetch_array($tabVoyages)){
+        $codeVoyage=$data["code_voyage"];
+        $titre=$data["titre"];
+        $resume=$data["resume"];
+        $dateDebut=$data["date_debut"];
+        $dateFin=$data["date_fin"];
+        $continent=$data["continent"];
+        $pays=$data["pays"];
+        $ville=$data["ville"];
+        $couverture=$data["couverture"];
+        $statut=$data["statut"];
+        $likes=$data["likes"];
+        $vues=$data["vues"];
+        $id=$data["id"];
+        $codeEtape=$data["code_etape"];
+
+        $voyage=new Voyage($codeVoyage,$titre,$resume,$dateDebut,$dateFin,$continent,$pays,$ville,$couverture,$statut,$likes,$vues,$id,$codeEtape);
+        $voyages[]=$voyage;
+;    }
+
+    if(!empty($_GET) && isset($_GET["continent"]) && !isset($_GET["afficher"])){ 
+        $voyagesRetournes = filterVoyagesSelonContinentEtPays($voyages,$_GET["continent"]);
+        afficherOptions($voyagesRetournes);
+    } 
+
+    function filterVoyagesSelonContinentEtPays(array $voyages, string $continent, string $pays=null) : array {
+        $voyagesRetournes=[];
+        foreach ($voyages as $voyage) { 
+            if($pays && $continent && $continent == $voyage->continent && $pays == $voyage->pays){
+                $voyagesRetournes[] = $voyage;
+            } elseif(!$pays && $continent && $continent == $voyage->continent){ 
+                $voyagesRetournes[]=$voyage; 
+            } 
+        }
+        return $voyagesRetournes;
+    }
+
+    function afficherOptionsPays(array $voyagesRetournes){
+        echo
+            "<option value=''>-- Sélectionnez un pays --</option>"; 
+        foreach ($voyagesRetournes as $voyage) { 
+            echo
+                "<option value='" . $voyage->pays . "'>" . $voyage->pays . "</option>"; 
+        }
+    }
+
+
+
+
+    selectPays2();
+
+    displayColTable();
 
     try {
         $rs=$voyageService->afficherVoyagesAccueil($start,$nbParPage); // affichage dynamique des voyages dans le corps de page //
@@ -70,7 +134,7 @@ try {
     
     displayPagination($page, $nbPages); //on fournit les valeurs pour la pagination
     
-    displayPageAccueil3();
+    displayPageAccueil4();
 
 } catch (ServiceException $a) {
     erreurs($a->getCode(), $a->getMessage());
