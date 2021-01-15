@@ -27,6 +27,10 @@ $pseudo=$_SESSION["pseudo"];
         $vues=$detailVoyage["vues"];
         $idCreateur=$detailVoyage["id"];
         $couverture=$detailVoyage["couverture"];
+        $vues=$detailVoyage["vues"];
+        $vues++;
+        $vuesVoyage=new VoyageService();
+        $vuesVoyage=$vuesVoyage->nbrVuesVoyageService($vues,$codeVoyage);
         // $couvertureImplode=implode("", $couverture);
 
         $createur=new UtilisateurService();

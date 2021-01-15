@@ -2,12 +2,13 @@
 
 function detail_head(){
     echo '<!DOCTYPE html>
-    <html>
+    <html lang="fr">
     
     <head>
         <title>Détail du voyage</title>
         <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
         <link rel="stylesheet" href="../../libs/css/detail_voyage.css" type="text/css" />
+        <link rel="stylesheet" href="../../libs/script_js/scriptLikes.js" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
             integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <!-- Pour caroussel -->
@@ -177,8 +178,9 @@ function detail_ssTitreLogos($sousTitre){
         </div>
         <div class="row logo_position mt-2">
             <div class="element_like_comm col-xl-12 col-sm-12 col-12">
-                <input type="image" name="like" placeholder="Like"
-                    src="../../img/logos_divers/Like_vide.png" class="taille_logo_detail_voyage">
+            <form>
+                <input type="image" name="likes" id="boutonLikes" src="../../img/logos_divers/Like_vide.png" class="taille_logo_detail_voyage">
+            </form>
                 <input type="image" name="Commentaire" placeholder="Commentaire"
                     src="../../img/logos_divers/Commentaires.png" class="taille_logo_detail_voyage"
                     data-toggle="modal" data-target="#ModalCommentaire">
@@ -233,10 +235,7 @@ function detail_zoneComm(){
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
     </div>
     <div>
-        <a href="detail_voyage.php?page=add"><button class="btn mb-1 btn-info">Like</button></a>
-        <a href="detail_voyage.php?page=add"><button class="btn mb-1 btn-info">Commentaire</button></a>
-        <a href="ajoutmodif_services.php?page=add"><button
-                class="btn mb-1 btn-info">Signaler</button></a>
+        <a href="ajoutmodif_services.php?page=add"><button class="btn mb-1 btn-info">Signaler</button></a>
     </div>
 
 </div>
@@ -294,3 +293,22 @@ function detail_basPage(){
     detail_bodyBottom();
     detail_finHtml();
 }
+
+
+
+
+// $nombre = null; 
+//  
+// if (isset($_POST['plus'])){
+//    $nombre++;
+//    On renvoi le nombre dans la base de donnée ou le fichier
+// }else if(isset($_POST['moins'])){
+//    $nombre--;
+//    On renvoi le nombre dans la base de donnée ou le fichier
+// }
+// echo $nombre;
+// ?>
+<!-- <form method="post" action="memepage.php"> -->
+   <!-- <input type="submit" name="plus" value="Plus" /> -->
+   <!-- <input type="submit" name="moins" value="Moins" /> -->
+<!-- </form> -->
