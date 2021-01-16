@@ -18,7 +18,7 @@ include_once '../metier/Voyage.php';
         $setDescription = isset($profil['description']) && !empty($profil['description']); //Récupère si il y a une description
         $setNation = isset($profil['nation']) && !Empty($profil['nation']); //Récupère si il y a une nation
         $setBirthday = isset($profil['birthday']) && !empty($profil['birthday']); //Récupère si il y a une date de naissance
-        $isNotUser = $_SESSION["pseudo"] && $_SESSION['pseudo']!==$profil['pseudo'];
+        $isNotUser = isset($_SESSION["pseudo"]) && ($_SESSION['pseudo']!==$profil['pseudo']);
         $start = 0;
         $nbParPage = 4;
         $voyagesService = new VoyageService();
