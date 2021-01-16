@@ -66,7 +66,7 @@
         <h1 class="placenav_titre mb-3">Liste des amis ('. $nbAmis .')</h1>';
     }
 
-    function ami1($ami, $isUser, $idAmi){
+    function ami1($ami, $isUser, $idAmi, $profil){
         echo'<div class="row bg-sable mb-3">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="row">
@@ -80,39 +80,13 @@
             <div class="col-lg-4 col-md-5 col-sm-12 col-12">
                 <a href="contacter.php?page=contacter">
                 <button class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
-                <button type="button" class="btn btn-danger mt-4 mb-3 addItem supprAmi" data-toggle="modal"
-                    data-target="#ModalSupp_Ami">Supprimer</button>
-
-                    <div class="modal fade" id="ModalSupp_Ami" tabindex="-1" role="dialog" aria-labelledby="ModalSupp_Ami"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="Supp">
-                        <div class="modal-content">
-                        <form meethod="post"> 
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Suppression d\'un ami</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <h6>Vous êtes sur le point de retirer un ami de votre liste d\'amis<br>Voulez-vous vraiment
-                                    le supprimer ?</h6>
-                                <label class="container">Je souhaite retirer cet ami de ma liste d\'ami
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" name="supprimerAmi" class="btn btn-danger">supprimer</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>';
+                <a href="mesAmisControleur.php?pseudo='. $profil["pseudo"] .'&action=supprimerAmi&id_ami='. $ami['id_ami'] .'">
+                <button type="button" class="btn btn-danger mt-4 mb-3 supprAmi">Supprimer</button>
+                ';
         }
         echo'
         </div>
-    </div>';
+        </div>';
     }
     //<input type="button" name="supprimerAmi" class="btn btn-danger supprimerAmi" value="supprimer"/>
     function noAmis(){

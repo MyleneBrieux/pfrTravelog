@@ -18,8 +18,8 @@ $utilisateur = new UtilisateurService();
     $id = $profil['id'];
     $setBirthday = isset ($profil['birthday']) && !empty ($profil['birthday']);
     $nbAmis = $utilisateur->nbAmisUtilisateur($id);
-    $isUser = $_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo'];
-    $nbParPage = 10;
+    $isUser = isset($_SESSION['pseudo']) && ($_SESSION['pseudo']==$profil['pseudo']);
+    $nbParPage = 10; //nombre d'amis que la page doit afficher
     $total = $nbAmis;
     $nombreDePage=ceil($total/$nbParPage);//on calcul le nombre de page en divisant le nombre de voyages par le nombre que l'on veut voir afficher à l'écran
     if (!isset($_GET['page'])){
@@ -28,7 +28,7 @@ $utilisateur = new UtilisateurService();
         $page = $_GET['page']; //sinon on utilise la valeur fournie
     }
     $start = ($page - 1) * $nbParPage;
-    $precedent = $page-1;
+    $precedent = $page - 1;
     $suivant = $page + 1;
     
 //}catch(UtilisateurException $e){
@@ -42,17 +42,23 @@ menuLat($profil, $setBirthday);
 listeAmis($nbAmis);
 $rs=$utilisateur->listeAmis($id);
 while($data=mysqli_fetch_array($rs)){
-    $idAmi = $data['id_ami'];
-    $ami = $utilisateur->afficherPseudoDepuisIdAmi($idAmi, MYSQLI_ASSOC);
-    ami1($ami, $isUser, $idAmi);
+    $idAmi = $data['id_ami']; //on met l'id de l'ami dans une varialble
+    $ami = $utilisateur->afficherDonnesDepuisIdAmi($idAmi, MYSQLI_ASSOC); //on se sert de la variable pour récupérer les infos de l'ami (son pseudo, id, etc..)
+    ami1($ami, $isUser, $idAmi, $profil); //On affiche ce dont on a besoin (pseudo)
+    //var_dump($ami);
+    if (isset($_GET["action"]) && $_GET["action"]=="supprimerAmi") { //test suppression ami sans le modal //Si on reçoit une action et que cette action est "supprimerAmi" lors on entre dans le if
+        $idAmi = htmlentities($_GET['id_ami']); //On récupère l'id fourni par le bouton pour la suppression
+        //var_dump($idAmi);
+        $id = $profil['id'];
+        //var_dump($id);
+        $ami = $utilisateur->supprimerAmi($idAmi, $id);
+        exit;
+    }
+    //var_dump($idAmi);
 }
 
-if (isset($_POST["supprimerAmi"])) {
-    $id = $profil['id'];
-    $idAmi = $data['id_ami'];
-    $ami = $utilisateur->supprimerAmi($idAmi, $id);
-    
-}
+
+
 
 Pagination($page, $profil, $nombreDePage, $precedent, $suivant);
 
