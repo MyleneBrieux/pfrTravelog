@@ -48,17 +48,17 @@ function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues, $create
                 <h6>Du '.$datedebut.' au '.$datefin.'</h6>
                 <h6>'.$likes.' likes - '.$vues.' vues</h6>
                 </div>
-                <a href="../controleur/mesVoyagesControleur.php?pseudo='.$createur["pseudo"].'"><button type="button" class="btn btn-primary addItem ml-3 mt-5 mb-3">Mes autres voyages</button></a>';
+                <a href="../controleur/mesVoyagesControleur.php?pseudo='.$createur["pseudo"].'"><button type="button" class="btn addItem ml-3 mt-5 mb-3 turquoise">Mes autres voyages</button></a>';
 }
 
     function detail_boutonModif($codeVoyage, $codeEtape){
         echo '<a href="../controleur/modification_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape.'">
-            <button type="button" class="btn btn-primary addItem ml-2 mt-5 mb-3">Modifier mon voyage</button>
+            <button type="button" class="btn addItem ml-2 mt-5 mb-3 turquoise">Modifier mon voyage</button>
         </a>';
     }
 
             //  Bouton supprimer avec modal
-        function detail_boutonSupp() {
+        function detail_boutonSupp($codeVoyage,$codeEtape) {
             echo '<button type="button" class="btn btn-danger addItem ml-2 mt-5" data-toggle="modal"
                 data-target="#ModalSupp">Supprimer le voyage</button>
 
@@ -74,17 +74,18 @@ function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues, $create
                             </button>
                         </div>
                         <div class="modal-body">
+                        <form action="detail_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape.'&action=delete" method="post">
                             <h6>Vous êtes sur le point de supprimer votre voyage<br>Voulez-vous vraiment
                                 le supprimer ?</h6>
-                            <label class="container">Je souhaite supprimer définitivement mon voyage
-                                <input type="checkbox">
+                            <label class="container" name="deleted">Je souhaite supprimer définitivement mon voyage
+                                <input type="checkbox" name="deleted" required>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Fermer</button>
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>';

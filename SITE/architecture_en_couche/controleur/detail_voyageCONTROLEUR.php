@@ -16,6 +16,13 @@ $pseudo=$_SESSION["pseudo"];
         $codeVoyage = htmlentities(trim($_GET['code_voyage']));
         $detailVoyage=$detailVoyage->afficherLesDetailsVoyageService($codeVoyage);
 
+
+        if(isset($_GET["action"]) && $_GET["action"] == "delete" && isset($_POST["deleted"])){
+                $suppVoyage= new VoyageService;
+                $suppVoyage->suppVoyageService($codeVoyage);
+                header('Location: accueilCONTROLEUR.php');
+        }
+
         // if($detailVoyage["statut"]=="Prive"/* && $_SESSION["ami"]*/){ 
             // header('Location: accueilCONTROLEUR.php');
         // }
@@ -74,7 +81,7 @@ detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues, $createu
 
 if ($idVisiteur==$idCreateur){
     detail_boutonModif($codeVoyage, $codeEtape);
-    detail_boutonSupp();
+    detail_boutonSupp($codeVoyage,$codeEtape);
 }
 
 detail_menuFinEtNav();
