@@ -48,19 +48,15 @@ $pseudo=$_SESSION["pseudo"];
             $ajoutComm=$ajoutComm->addCommentaireService($commentaire, $id, $codeEtape);
         }
 
-        $detailComm=new VoyageService();
-        $detailComm=$detailComm->afficherLesDetailsCommentaireService($codeEtape);
-        if (isset($detailComm["commentaire"])){
-            $comm=$detailComm["commentaire"];
-            $idCommentateur=$detailComm["id"];
-        
-            $commVoyage=new VoyageService();
-            $commVoyage=$commVoyage->nbrCommentaireDansUnVoyageService($codeEtape);
+        $commVoyage=new VoyageService();
+        $commVoyage=$commVoyage->nbrCommentaireDansUnVoyageService($codeEtape);
 
-            $commentateur=new UtilisateurService();
-            $commentateur=$commentateur->chercherUtilisateurParId($idCommentateur);
-            $pseudoComm=$commentateur["pseudo"];
-        }
+        $detailComm=new VoyageService();
+        $rs=$detailComm->afficherLesDetailsCommentaireService($codeEtape);
+        // print_r($rs);
+        // if (isset($detailComms["commentaire"])){
+            
+        // }
 
 
         // if (isset($codeVoyage, $idVisiteur)){
@@ -88,9 +84,19 @@ detail_carousel($couverture, $numDiapo);
 // echo($couverture);
 // echo "likes ".$likes;
 // echo "CODEVOYAGE ".$codeVoyage;
-detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape);
 
-if (isset($detailComm["commentaire"])){
-    detail_zoneComm($commVoyage,$pseudoComm,$comm,$idVisiteur,$idCommentateur);
+detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage);
+
+    while($data=mysqli_fetch_array($rs)){
+        if (isset($data["commentaire"]) && $codeEtape==$data["code_etape"]){
+        $comm=$data["commentaire"];
+        $idCommentateur=$data["id"];
+
+        $commentateur=new UtilisateurService();
+        $commentateur=$commentateur->chercherUtilisateurParId($idCommentateur);
+        $pseudoComm=$commentateur["pseudo"];
+        
+        detail_zoneComm($pseudoComm,$comm,$idVisiteur,$idCommentateur);
+    }
 }
 detail_basPage();
