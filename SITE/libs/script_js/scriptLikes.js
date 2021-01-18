@@ -23,12 +23,16 @@
 
 
 // $("#boutonLikes").on("click", function (e) {
-    $("#boutonLikes").addEventListener('click', updateBtn);
+//     $("#boutonLikes").addEventListener('click', updateBtn);
 
-function updateBtn() {
-    if ($("#boutonLikes").src === '../../img/logos_divers/Like_vide.png') {
-        $("#boutonLikes").src = '../../img/logos_divers/Like_rempli.png';
-    } else {
-        $("#boutonLikes").src = '../../img/logos_divers/Like_vide.png';
-    }
-  }
+// function updateBtn() {
+//     if ($("#boutonLikes").src === '../../img/logos_divers/Like_vide.png') {
+//         $("#boutonLikes").src = '../../img/logos_divers/Like_rempli.png';
+//     } else {
+//         $("#boutonLikes").src = '../../img/logos_divers/Like_vide.png';
+//     }
+//   }
+
+function ajoutLike($codeVoyage){
+    mysql
+}
