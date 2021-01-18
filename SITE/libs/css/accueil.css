@@ -56,7 +56,7 @@
 /* TABLEAU */
 #tableVoyage {
     text-align:center;
-    margin-left:18%;
+    margin-left:5%;
 }
 
 #enteteTableVoyage {
@@ -75,9 +75,15 @@
 #corpsTableVoyage {
     background-color: #dcdacd;
     font-family: 'Halant', serif;
+    text-align:center;
+    font-size:1.15em;
 }
 
-    @media screen and (max-width : 1330px) {
+#resumeTable {
+    text-align:justify;
+}
+
+    /* @media screen and (max-width : 1330px) {
         #resumeTable {
                 font-size:0.85em;
             }
@@ -117,7 +123,7 @@
         #titreVoyage {
                 font-size:0.65em;
             }
-    }
+    } */
 
     .lienProfil:link {
         color:#707070;
@@ -189,6 +195,8 @@
     font-family: 'Halant', serif;
     color:white;
     border:none;
+    margin-left:40%;
+    margin-top:2%;
 }
 
     @media screen and (max-width : 910px) {
@@ -197,6 +205,12 @@
                 font-size:1em;
             }
     }
+
+.ligneVoyage{
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+}
 
 
 /* PAGES */

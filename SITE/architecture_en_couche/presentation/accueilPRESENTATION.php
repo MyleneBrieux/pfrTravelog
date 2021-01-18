@@ -74,7 +74,7 @@ function row(){
 
 function displayTopResults(){
     echo 
-        '<div class="col-9">
+        '<div class="col-11">
             <p class="rsvoyages">';
 }
 
@@ -117,10 +117,11 @@ function displayColTable(){
             <thead class="thead" id="enteteTableVoyage">
                 <tr>
                     <th scope="col">DÉCOUVREZ</th>
+                    <th scope="col">CONTINENT</th>
+                    <th scope="col">PAYS</th>
                     <th scope="col">PAR</th>
                     <th scope="col">EN IMAGE</th>
                     <th scope="col">EN BREF</th>
-                    <th scope="col"></th>
                 </tr>
             </thead>';
 }
@@ -128,8 +129,10 @@ function displayColTable(){
 function displayDatasTable1($data){
     echo
         '<tbody id="corpsTableVoyage">
-            <tr>
-                <td id="titreVoyage">' . $data["titre"] . '</td>';
+            <tr class="ligneVoyage">
+                <td id="titreVoyage"><strong>' . $data["titre"] . '</strong></td>
+                <td id="continentVoyage">' . $data["continent"] . '</td>
+                <td id="paysVoyage">' . $data["pays"] . '</td>';
 }
 
 function displayPseudoTable($donnee){
@@ -140,8 +143,12 @@ function displayPseudoTable($donnee){
 function displayDatasTable2($data){
     echo
         '<td><img src="../../img/photos/' . $data["couverture"] . '" class="photosVoyage"/></td>
-        <td id="resumeTable">' . $data["resume"] . '</td>
-        <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '" id="lienVoyage"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
+        <td id="resumeTable">' . $data["resume"] . '
+            </br>
+            <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '" 
+                id="lienVoyage"><button class="btn" id="btnDetailsVoyage">Découvrir</button>
+            </a>
+        </td>';
 }
 
 function displayBottomTable(){
@@ -157,7 +164,7 @@ function displayPagination($page, $nbPages){
     echo
         '<div class="pagination" id="pagination">
             <nav aria-label="Page navigation" class="pages">
-                <ul class="pagination pagination-sm" id="pagination">';
+                <ul class="pagination" id="pagination">';
             for ($page=1; $page<=$nbPages;$page++){
                 echo
                     '<li class="page-item" id="encadreNoPage">
