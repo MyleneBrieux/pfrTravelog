@@ -95,6 +95,10 @@
             </div>';
     }
 
+    function refresh($profil){
+        echo'<meta http-equiv="refresh" content="0;url=mesAmisControleur.php?pseudo='. $profil['pseudo'] .'" />';
+    }
+
     function nbPages($page, $profil, $nombreDePage, $precedent, $suivant){
         echo'<div class="pagination justify-content-center mt-5">
         <nav aria-label="Page navigation " class="pages">

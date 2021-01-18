@@ -52,6 +52,7 @@ while($data=mysqli_fetch_array($rs)){
         $id = $profil['id'];
         //var_dump($id);
         $ami = $utilisateur->supprimerAmi($idAmi, $id);
+        refresh($profil);
         exit;
     }
     //var_dump($idAmi);
