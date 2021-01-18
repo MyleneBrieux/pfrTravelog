@@ -22,11 +22,27 @@ class VoyageService {
         return $addEtape;
     }
 
+
+
+    // Ajout comm
+
+    public function addCommentaireService($commentaire, $id, $codeEtape){
+        $addComm= new VoyageMysqliDAO;
+        $addComm->addCommentaireDAO($commentaire, $id, $codeEtape);
+        return $addComm;
+    }
+
 // Compter les vues
     public function nbrVuesVoyageService($vues,$codeVoyage){
         $vuesVoyage= new VoyageMysqliDAO;
         $vuesVoyage->nbrVuesVoyageDAO($vues,$codeVoyage);
         return $vuesVoyage;
+    }
+
+// Compter les commentaires
+    public function nbrCommentaireDansUnVoyageService(int $codeEtape): ?int{
+        $commVoyage = $this->voyageDao ->nbrCommentaireDansUnVoyageDAO($codeEtape);
+        return $commVoyage;
     }
 
 // afficher les infos du Voyage
@@ -41,6 +57,13 @@ class VoyageService {
     public function afficherLesDetailsEtapeService(int $codeEtape) : ?array {
         $detailEtape = $this->voyageDao ->afficherLesDetailsEtapeDAO($codeEtape);
         return $detailEtape;
+    }
+
+    // Ajout comm
+
+    public function afficherLesDetailsCommentaireService(int $codeEtape): ?array{
+        $detailComm= $this->voyageDao ->afficherLesDetailsCommentaireDAO($codeEtape);
+        return $detailComm;
     }
 
 // suppression Voyage
@@ -62,7 +85,15 @@ class VoyageService {
     public function modifEtapeService($sousTitre, $description, $codeEtape){
         $modifEtape= new VoyageMysqliDAO;
         $modifEtape->modifEtapeDAO($sousTitre, $description, $codeEtape);
-}
+    }
+
+// Nombre de Likes
+
+    public function quiAddLikesService(int $likes, int $codeVoyage,int $id){
+        $nbLikes= new VoyageMysqliDAO;
+        $nbLikes->quiAddLikesDAO($likes, $codeVoyage, $id);
+        return $nbLikes;
+    }
 
 //Afficher voyages
 

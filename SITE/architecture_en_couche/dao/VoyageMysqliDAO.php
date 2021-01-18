@@ -54,11 +54,22 @@ class VoyageMysqliDAO {
     public function addEtapeDAO($sousTitre, $description){
         $mysqli=$this->connexion();
 
-        $stmt=$mysqli->prepare("insert into etape (code_etape, sous_titre, description, code_comm) values (null,?,?,null)");
+        $stmt=$mysqli->prepare("insert into etape (code_etape, sous_titre, description) values (null,?,?)");
         $stmt->bind_param("ss", $sousTitre, $description);
         $stmt->execute();
         $mysqli->close();
     }
+
+    // Ajout comm
+    public function addCommentaireDAO($commentaire, $id, $codeEtape){
+        $mysqli=$this->connexion();
+
+        $stmt=$mysqli->prepare("insert into commentaires (code_comm, commentaire, id,code_etape) values (null,?,?,?)");
+        $stmt->bind_param("sii", $commentaire, $id, $codeEtape);
+        $stmt->execute();
+        $mysqli->close();
+    }
+
 
 
     public function afficherLesDetailsVoyageDAO(int $codeVoyage): array{
@@ -83,6 +94,30 @@ class VoyageMysqliDAO {
         $rs->free();
         $mysqli->close();
         return $detailEtape;
+    }
+
+    // AFFICHER COMMENTAIRE
+    public function afficherLesDetailsCommentaireDAO(int $codeEtape) {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select * from commentaires where code_etape=?');
+        $stmt->bind_param("i",$codeEtape);
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $comm = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $comm;
+    }
+
+    public function nbrCommentaireDansUnVoyageDAO(int $codeEtape){
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare("select * from commentaires where code_etape=?");
+        $stmt->bind_param("i",$codeEtape);
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $nbComm=mysqli_num_rows($rs);
+        $mysqli->close();
+        return $nbComm;
     }
 
     // suppression Voyage
@@ -113,6 +148,31 @@ class VoyageMysqliDAO {
         $stmt=$mysqli->prepare("update etape set sous_titre=?, description=? where code_etape= ?"); 
         $stmt->bind_param("ssi", $sousTitre, $description, $codeEtape);
         $stmt->execute();
+        $mysqli->close();
+    }
+
+    // Likes
+
+    public function addLikesDAO(int $likes, int $codeVoyage){
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare("update voyages set likes=".$likes++." where code_voyage= ?"); 
+        $stmt->bind_param("ii", $likes, $codeVoyage);
+        $stmt->execute();
+        $like = $stmt->get_result();
+        return $like;
+        $like->free();
+        $mysqli->close();
+    }
+
+    public function quiAddLikesDAO(int $likes, int $codeVoyage,int $id){
+        $mysqli=$this->connexion();
+        $likes=$this->addLikesDAO($likes, $codeVoyage);
+        $stmt=$mysqli->prepare("insert into likes (id_like, code_voyage, id) values (null, ?,?)"); 
+        $stmt->bind_param("ii", $codeVoyage, $id);
+        $stmt->execute();
+        $quiLike = $stmt->get_result();
+        return $quiLike;
+        $quiLike->free();
         $mysqli->close();
     }
 
