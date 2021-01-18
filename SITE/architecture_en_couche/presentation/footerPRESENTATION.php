@@ -66,7 +66,7 @@ function displayBottomFooter(){
                 </div>
 
                 <div class="contact col-3">
-                    <a href="../controleur/contactCONTROLEUR.php" class="liencontact">
+                    <a href="../controleur/controleur_contact.php" class="liencontact">
                         Contact
                     </a>
                 </div>
