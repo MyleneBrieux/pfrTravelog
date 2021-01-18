@@ -222,29 +222,30 @@ function detail_description($description){
     echo '<p class="mb-3">'.$description.'</p>';
 }
 
-function detail_zoneComm($commVoyage,$pseudoComm,$comm,$idVisiteur,$idCommentateur){
-    echo '<div class="col-lg-11 col-md-7 col-sm-7 ml-2 col-12 bg-sable pb-2 placefooter">
-    <h3>Commentaire ('.$commVoyage.')</h3>';
-    // listeAmis($nbAmis);
-    // $rs=$utilisateur->listeAmis($id);
-    // for ($i=0;$i<$commVoyage;$i++){
-    echo '<div class="row">
-        <h6 class="pl-2 pt-1">'.$pseudoComm.' : </h6>
-        <p class="pl-1">'.$comm.'</p>
-    </div>
-    <div>';
-    if ($idVisiteur==$idCommentateur){
-        echo '<a href="ajoutmodif_services.php?page=add"><button class="btn mb-1 btn-info">Modifier</button></a>';
-    }
-    echo '</div>';
-// }
-echo '</div>
+function detail_titreComm($commVoyage){
+    echo '<h3>Commentaires ('.$commVoyage.')</h3>';
+}
 
-</br>';
+function detail_zoneComm($pseudoComm,$comm,$idVisiteur,$idCommentateur){
+    echo '
+    <div class="col-lg-11 col-md-7 col-sm-7 ml-2 col-12 bg-sable pb-2 placeEntreComm">
+        <div class="row">
+            <h6 class="pl-2 pt-1">'.$pseudoComm.' : </h6>
+            <p class="pl-1">'.$comm.'</p>
+        </div>
+        <div>';
+        if ($idVisiteur==$idCommentateur){
+            echo '<a href="ajoutmodif_services.php?page=add"><button class="btn mb-1 btn-info">Modifier</button></a>';
+        }
+        echo '</div>
+</div>
+
+';
 }
 
 function detail_footer(){
-    echo '</div>
+    echo '</br>
+    </div>
     <div class="col-2"></div>
     <footer class="footer">';
     include ("footerCONTROLEUR.php");
@@ -261,8 +262,8 @@ function detail_bodyBottom(){
 
 function detail_scripts(){
     echo '
-    <script src="jquery-3.5.1.min.js"></script>
-    <script src="scriptLikes.js" type="text/javascript"></script>';
+    <script src="../../libs/jquery/jquery-3.5.1.min.js"></script>
+    <script src="../../libs/script_js/scriptLikes.js"></script>';
 }
 
 function detail_finHtml(){
@@ -286,10 +287,11 @@ function detail_menuFinEtNav(){
     detail_placeNav();
 }
     // detail_carousel();
-function detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape){
+function detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage){
     detail_ssTitreLogos($sousTitre);
     detail_modalComm($codeVoyage,$codeEtape);
     detail_description($description);
+    detail_titreComm($commVoyage);
 }
 
 function detail_basPage(){
