@@ -84,10 +84,7 @@
             <a href="../controleur/monProfilControleur.php?pseudo='.$profil["pseudo"].'" class="">
                 Voir le profil
             </a>
-            <a href="detail_voyage.php" class="">
-                Le suivre
-            </a>
-            <a href="detail_voyage.php" class="">
+            <a href="../controleur/controleur_contact.php" class="">
                 Le contacter
             </a>
         </div>
