@@ -38,7 +38,7 @@ function modification_h1(){
 //  Titre du voyage
 
 function modification_debutForm(){
-    echo '<form action="../controleur/modification_voyageCONTROLEUR2.php?action=modification&code_voyage='.$_GET['code_voyage'].'&code_etape='.$_GET['code_etape'].'" method="post">';
+    echo '<form action="../controleur/modification_voyageCONTROLEUR.php?action=modification&code_voyage='.$_GET['code_voyage'].'&code_etape='.$_GET['code_etape'].'" method="post">';
 }
 
 function modification_champTitre($detailVoyage){
