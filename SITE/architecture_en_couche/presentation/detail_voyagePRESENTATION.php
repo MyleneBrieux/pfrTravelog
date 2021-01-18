@@ -286,11 +286,10 @@ function detail_menuFinEtNav(){
     detail_placeNav();
 }
     // detail_carousel();
-function detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage,$pseudoComm,$comm,$idVisiteur,$idCommentateur){
+function detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape){
     detail_ssTitreLogos($sousTitre);
     detail_modalComm($codeVoyage,$codeEtape);
     detail_description($description);
-    detail_zoneComm($commVoyage,$pseudoComm,$comm,$idVisiteur,$idCommentateur);
 }
 
 function detail_basPage(){

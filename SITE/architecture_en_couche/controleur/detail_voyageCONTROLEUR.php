@@ -50,16 +50,17 @@ $pseudo=$_SESSION["pseudo"];
 
         $detailComm=new VoyageService();
         $detailComm=$detailComm->afficherLesDetailsCommentaireService($codeEtape);
-        // $comm=$detailComm["commentaire"];
-        // $idCommentateur=$detailComm["id"];
+        if (isset($detailComm["commentaire"])){
+            $comm=$detailComm["commentaire"];
+            $idCommentateur=$detailComm["id"];
+        
+            $commVoyage=new VoyageService();
+            $commVoyage=$commVoyage->nbrCommentaireDansUnVoyageService($codeEtape);
 
-        // $commVoyage=new VoyageService();
-        // $commVoyage=$commVoyage->nbrCommentaireDansUnVoyageService($codeEtape);
-
-        // $commentateur=new UtilisateurService();
-        // $commentateur=$commentateur->chercherUtilisateurParId($idCommentateur);
-        // $pseudoComm=$commentateur["pseudo"];
-
+            $commentateur=new UtilisateurService();
+            $commentateur=$commentateur->chercherUtilisateurParId($idCommentateur);
+            $pseudoComm=$commentateur["pseudo"];
+        }
 
 
         // if (isset($codeVoyage, $idVisiteur)){
@@ -87,6 +88,9 @@ detail_carousel($couverture, $numDiapo);
 // echo($couverture);
 // echo "likes ".$likes;
 // echo "CODEVOYAGE ".$codeVoyage;
-detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage, $pseudoComm,$comm,$idVisiteur,$idCommentateur);
+detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape);
 
+if (isset($detailComm["commentaire"])){
+    detail_zoneComm($commVoyage,$pseudoComm,$comm,$idVisiteur,$idCommentateur);
+}
 detail_basPage();
