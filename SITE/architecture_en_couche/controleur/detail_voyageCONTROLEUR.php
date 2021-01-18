@@ -24,7 +24,6 @@ $pseudo=$_SESSION["pseudo"];
         $datedebut=$detailVoyage["date_debut"];
         $datefin=$detailVoyage["date_fin"];
         $likes=$detailVoyage["likes"];
-        $vues=$detailVoyage["vues"];
         $idCreateur=$detailVoyage["id"];
         $couverture=$detailVoyage["couverture"];
         $vues=$detailVoyage["vues"];
@@ -42,10 +41,38 @@ $pseudo=$_SESSION["pseudo"];
         $sousTitre=$detailEtape["sous_titre"];
         $description=$detailEtape["description"];
 
+        if (isset($_GET["action"]) && ($_GET["action"])=="commentaire"){
+            $id=$idVisiteur;
+            $commentaire=$_POST["commentaire"];
+            $ajoutComm=new VoyageService();
+            $ajoutComm=$ajoutComm->addCommentaireService($commentaire, $id, $codeEtape);
+        }
+
+        $detailComm=new VoyageService();
+        $detailComm=$detailComm->afficherLesDetailsCommentaireService($codeEtape);
+        // $comm=$detailComm["commentaire"];
+        // $idCommentateur=$detailComm["id"];
+
+        // $commVoyage=new VoyageService();
+        // $commVoyage=$commVoyage->nbrCommentaireDansUnVoyageService($codeEtape);
+
+        // $commentateur=new UtilisateurService();
+        // $commentateur=$commentateur->chercherUtilisateurParId($idCommentateur);
+        // $pseudoComm=$commentateur["pseudo"];
+
+
+
+        // if (isset($codeVoyage, $idVisiteur)){
+        // $quiAddLike=new VoyageService();
+        // $quiAddLike=$quiAddLike->quiAddLikesService($likes, $codeVoyage, $id);
+        // $quiLikes=$quiAddLike["id_like"];
+        // }
+
 detail_headBodyTop();
 
 detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur);
 
+            
 // Bouton suppression du voyage visible que par le créateur
 
 if ($idVisiteur==$idCreateur){
@@ -58,6 +85,8 @@ detail_menuFinEtNav();
 // foreach 
 detail_carousel($couverture, $numDiapo);
 // echo($couverture);
-detail_restePage($sousTitre,$description);
+// echo "likes ".$likes;
+// echo "CODEVOYAGE ".$codeVoyage;
+detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage, $pseudoComm,$comm,$idVisiteur,$idCommentateur);
 
 detail_basPage();

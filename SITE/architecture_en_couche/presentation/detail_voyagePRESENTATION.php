@@ -8,7 +8,6 @@ function detail_head(){
         <title>Détail du voyage</title>
         <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
         <link rel="stylesheet" href="../../libs/css/detail_voyage.css" type="text/css" />
-        <link rel="stylesheet" href="../../libs/script_js/scriptLikes.js" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
             integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <!-- Pour caroussel -->
@@ -44,7 +43,7 @@ function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues, $create
             <img class="tailleImageProfilDetail col-md-12 col-6 mt-3 float-left"
                 src="../../img/photos/photo_profil_defaut.png" alt="La photo profil">
             <div class="col-lg-12 mt-5 pl-1 col-6">
-                <h4>'.$_SESSION["pseudo"].'</h4> </br>
+                <h4>'.$createur["pseudo"].'</h4> </br>
                 <h5>'.$titre.'</h5>
                 <h6>Du '.$datedebut.' au '.$datefin.'</h6>
                 <h6>'.$likes.' likes - '.$vues.' vues</h6>
@@ -178,9 +177,7 @@ function detail_ssTitreLogos($sousTitre){
         </div>
         <div class="row logo_position mt-2">
             <div class="element_like_comm col-xl-12 col-sm-12 col-12">
-            <form>
                 <input type="image" name="likes" id="boutonLikes" src="../../img/logos_divers/Like_vide.png" class="taille_logo_detail_voyage">
-            </form>
                 <input type="image" name="Commentaire" placeholder="Commentaire"
                     src="../../img/logos_divers/Commentaires.png" class="taille_logo_detail_voyage"
                     data-toggle="modal" data-target="#ModalCommentaire">
@@ -188,7 +185,7 @@ function detail_ssTitreLogos($sousTitre){
         </div>';
 }
 
-function detail_modalComm(){
+function detail_modalComm($codeVoyage,$codeEtape){
     echo '<div class="modal fade" id="ModalCommentaire" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -202,19 +199,18 @@ function detail_modalComm(){
             </div>
             <div class="modal-body">
 
-                <form action="detail_voyage.html?action=commentaire" method="post">
+                <form action="detail_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape.'&action=commentaire" method="post">
 
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    <textarea class="form-control" name="commentaire" id="commentaire" rows="3"
                         placeholder="Ecrivez votre commentaire ici ..."></textarea>
 
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
                 </form>
 
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                    data-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-primary">Envoyer</button>
-            </div>
+            
         </div>
     </div>
 </div>
@@ -226,19 +222,23 @@ function detail_description($description){
     echo '<p class="mb-3">'.$description.'</p>';
 }
 
-function detail_zoneComm(){
+function detail_zoneComm($commVoyage,$pseudoComm,$comm,$idVisiteur,$idCommentateur){
     echo '<div class="col-lg-11 col-md-7 col-sm-7 ml-2 col-12 bg-sable pb-2 placefooter">
-    <h3>Commentaire (xxx)</h3>
-    <div class="row">
-
-        <h6 class="pl-2">Utiliseur3 : </h6>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <h3>Commentaire ('.$commVoyage.')</h3>';
+    // listeAmis($nbAmis);
+    // $rs=$utilisateur->listeAmis($id);
+    // for ($i=0;$i<$commVoyage;$i++){
+    echo '<div class="row">
+        <h6 class="pl-2 pt-1">'.$pseudoComm.' : </h6>
+        <p class="pl-1">'.$comm.'</p>
     </div>
-    <div>
-        <a href="ajoutmodif_services.php?page=add"><button class="btn mb-1 btn-info">Signaler</button></a>
-    </div>
-
-</div>
+    <div>';
+    if ($idVisiteur==$idCommentateur){
+        echo '<a href="ajoutmodif_services.php?page=add"><button class="btn mb-1 btn-info">Modifier</button></a>';
+    }
+    echo '</div>';
+// }
+echo '</div>
 
 </br>';
 }
@@ -257,6 +257,12 @@ function detail_finDivConteneur(){
 
 function detail_bodyBottom(){
     echo '</body>';
+}
+
+function detail_scripts(){
+    echo '
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="scriptLikes.js" type="text/javascript"></script>';
 }
 
 function detail_finHtml(){
@@ -280,17 +286,18 @@ function detail_menuFinEtNav(){
     detail_placeNav();
 }
     // detail_carousel();
-function detail_restePage($sousTitre,$description){
+function detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage,$pseudoComm,$comm,$idVisiteur,$idCommentateur){
     detail_ssTitreLogos($sousTitre);
-    detail_modalComm();
+    detail_modalComm($codeVoyage,$codeEtape);
     detail_description($description);
-    detail_zoneComm();
+    detail_zoneComm($commVoyage,$pseudoComm,$comm,$idVisiteur,$idCommentateur);
 }
 
 function detail_basPage(){
     detail_finDivConteneur();
     detail_footer();
     detail_bodyBottom();
+    detail_scripts();
     detail_finHtml();
 }
 
