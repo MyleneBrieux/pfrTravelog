@@ -10,6 +10,7 @@
         paramOuvertureDivClassRow();
         paramOuvertureDivClassCols();
         paramOuvertureDivMenuLat();
+        paramFormAction();
     }
 
     function affichageParamProfil($utilisateur, $age){
@@ -22,7 +23,7 @@
         paramOuvertureDivFormulaire();
         paramOuvertureDivClassRow();
         paramOuvertureDivClassRow();
-        paramFormAction();
+        // paramFormAction();
         paramDivClassNom();
         paramDivClassTxtProfil();
         paramDivClassTxtSecurite($utilisateur);
@@ -31,12 +32,10 @@
         paramOuvertureDivFormulaireSecurite();
         paramDivMDP();
         paramDivEmail();
-
         paramBtnValidation();
         paramDivDescription();
         paramOuvertureDivFormulaireDescription();
         paramDivDescriptionTxt();
-
         paramFermetureDiv();
         paramBtnValidation();
         paramDivDivers();
@@ -72,22 +71,6 @@
         }
     }
 
-    function mailDifferents(){
-        echo '<div class= "alert alert-danger msg-erreur"> Les deux adresses mail ne sont pas identiques ! </div>';
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*FONCTION ENTETE HTML5*/
     function paramEnteteHtml(){
         echo 
@@ -107,6 +90,8 @@
                     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
                     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+                <script src="../../libs/script_js/scriptParamProfil.js"></script>
 
                 <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet"> 
 
@@ -158,7 +143,10 @@
 /*FONCTION PHOTO MENU LAT DEFAUT*/    
     function paramPhotoMenuLatDefaut(){
         echo   
-            ' <img src="../../img/photos/photo_profil_defaut.png" alt="Photo de Profil" class="photo-profil">';
+            ' <img src="../../img/photos/photo_profil_defaut.png" alt="Photo de Profil" class="photo-profil">
+                <div class="">
+                    <input type="file" class="form-control-file input-file" id="photoprofil" name="photoprofil">
+                </div>';
     }
 
 /*FONCTION INFOS UTILISATEUR DU MENU LAT*/    
@@ -255,7 +243,7 @@
 /*FONCTION BOUTON VAIDER*/  
     function paramBtnValidation(){
         echo 
-            '<a href="../controleur/controleur_param_profil.php"><button type="submit" class="row btn btn-info bouton-modifier1" name="btnValider">VALIDER</button></a>';
+            '<div class="col-12"><a href="../controleur/controleur_param_profil.php"><button type="submit" class="row btn btn-info bouton-modifier1" name="btnValider">VALIDER</button></a></div>';
     } 
 
 
@@ -382,23 +370,28 @@ function paramDivDescriptionTxt(){
                 <div class="row">
 
                     <div class="col-12 mt-3">
-                        <input type="checkbox" class="checkbox" name="contact" checked="'.$utilisateur["contact"].'" value="Y"><label>J\'accepte de recevoir des
-                        demande d\'ami</label>
+                        <input type="checkbox" class="checkbox" name="contact" value="Y" ';
+                        if(isset($utilisateur['contact']) && ($utilisateur['contact'])=="Y" ){
+                           echo'checked="checked" ';
+                        }
+                        echo'><label>J\'accepte de recevoir des
+                            demande d\'ami</label>
                     </div>
 
                     <div class="col-12">
-                        <input type="checkbox" class="checkbox" name="notifmail" checked="'.$utilisateur["notifmail"].'" value="Y"><label>J\'accepte de recevoir des
+                        <input type="checkbox" class="checkbox" name="notifmail" value="Y" ';
+                        if(isset($utilisateur['notifmail']) && ($utilisateur['notifmail'])=="Y" ){
+                           echo'checked="checked" ';
+                        }
+                        echo'><label>J\'accepte de recevoir des
                         notifications par mail</label>
                     </div>
-
                 </div>
 
                 <div class="row">
-
                     <div class="col-12">
-                        <input type="checkbox" class="checkbox" name="supressionCompte"><label>Supprimer mon compte</label>
+                        <input type="checkbox" class="checkbox" name="supressionCompte" value="delete"><label>Supprimer mon compte</label>
                     </div>
-
                 </div>
             </div>';
     } 

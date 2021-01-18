@@ -1,11 +1,14 @@
 <?php
 
 /*FONCTION D'AFFICHAGE DE LA PAGE*/
-    function affichageContact(){
+    function affichageEnteteContact(){
 
         enteteHtml();
         ouvertureDivContainer();
         includeNavbar();
+    }
+
+    function affichageCorpsContact(){
         ouvertureDivClassRow();
         ouvertureDivClassSable();
         paragrapheTitre();
@@ -24,6 +27,30 @@
         includeFooter();
         fermetureBodyHtml();
     }
+
+
+
+
+
+    function envoiOK(){
+        echo '<div class= "alert alert-success msg-erreur"> Votre email à bien été envoyé ! </div>';
+    }
+
+    function envoiPasOK(){
+        echo '<div class= "alert alert-danger msg-erreur"> Erreur lors de l\'envois d\'email, veuillez réessayer  ! </div>';
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*FONCTION ENTETE HTML5*/
     function enteteHtml(){

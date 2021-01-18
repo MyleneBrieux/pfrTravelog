@@ -323,8 +323,6 @@ include_once("dao_exception.php");
 
 
 
-
-
 /* MODIFICATION de PROFIL*/        
         public function modifierUtilisateur(Utilisateurs $utilisateur) :void{ 
             $id=$utilisateur->getId(); 
@@ -346,8 +344,6 @@ include_once("dao_exception.php");
             $mysqli->close();
         }
 
-        
-
 /*SUPPRESSION DES UTILISATEURS*/
             public function deleteUtilisateur(string $pseudo) :void{ 
                 $mysqli=$this->connexion();
@@ -356,8 +352,6 @@ include_once("dao_exception.php");
                 $stmt->execute();
                 $mysqli->close();
             }
-
-
 
 /*AGE DES UTILISATEURS*/
     function calculAge($pseudo) {

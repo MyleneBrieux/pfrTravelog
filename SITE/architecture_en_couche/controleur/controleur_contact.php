@@ -3,8 +3,10 @@ session_start();
 require_once('../presentation/fonctionsContact.php');
 
 
-// AFFICHAGE DE LA PAGE CONTACT
-    affichageContact();
+// AFFICHAGE DE L'ENTETE CONTACT
+affichageEnteteContact();
+
+
 
 // CONFIGURATION DE LA METHODE DE CONNEXION
     if(isset($_GET["action"]) && $_GET["action"] == "envoyer" && !empty($_POST)){
@@ -13,17 +15,20 @@ require_once('../presentation/fonctionsContact.php');
         $sujet = "Message en provenance de Travelog";
         $message = $_POST['message'];
         $envoyeur = $_POST['email'];
-
+// AFFICHAGE DE LA REPONSE D'ENVOI D'EMAIL (OK OU PAS OK)
         if (mail($destinataire, $sujet, $message, $envoyeur)) {
-            echo "Email envoyé avec succès à $destinataire ...";
+            envoiOK();
         } 
         
         else {
-            echo "Erreur lors de l'envoi de l'email";
+            envoiPasOK();
         }
     }
     
 
+    
+// AFFICHAGE DU CORPS DE LA PAGE CONTACT
+    affichageCorpsContact()
 ?>
 
 

@@ -13,7 +13,7 @@
     }
 
     function affichageProfil($utilisateur, $age){
-        // paramInfoUserMenuLat($age);
+        paramInfoUserMenuLat($age);
         paramDivLangues($utilisateur);
         // paramDivSocial();
         paramBtnContact();
@@ -22,12 +22,16 @@
         paramOuvertureDivFormulaire();
         paramOuvertureDivClassRow();
         paramOuvertureDivClassRow();
-        paramDivClassNom();
-        // paramFormAction();
+        paramFormAction();
+        paramDivClassNom($utilisateur);
         paramDivClassTxtProfil();
         paramDivClassTxtSecuriteProfil($utilisateur);
         paramDivSecurite();
         profilDivClassTxtSecurite($utilisateur);
+        paramDivDescription();
+        paramOuvertureDivFormulaireDescription();
+        paramDivDescriptionTxt($utilisateur);
+        paramFermetureDiv();
         paramDivDivers();
         paramDivOptionLangues($utilisateur);
         paramFermetureDiv();
@@ -35,10 +39,8 @@
         paramOuvertureFormCoordonneeSecur();
         paramCheckbox2($utilisateur);
         paramFermetureDiv();
-
-        // paramFermetureForm();
+        paramFermetureForm();
         paramDivBtnModifier();
-        
         paramFermetureDiv();
         paramFermetureDiv();
         paramFermetureDiv();
@@ -64,20 +66,28 @@
         }
     }
 
+/*FONCTION DIV DESCRIPTION*/  
+function paramDivDescription(){
+    echo 
+        '<div class="col-12 txt-securite">
+            <div class="">A propos de vous :</div>
+        </div>';
+}
 
+/*FONCTION DIV FORMULAIRE DESCRITION*/  
+function paramOuvertureDivFormulaireDescription(){
+    echo '<div class="col-12 formulaire-coordonnees securite txt-input">';
+}
 
-    // function mdpDifferents(){
-    //     echo '<div class="alert alert-danger msg-erreur" role="alert">
-    //         <h4 class="alert-heading">ERREUR !</h4>
-    //             <p>Les 2 mots de passe doivent être identiques !</p>
-    //         <hr>
-    //     </div>';
-    // }
-
-
-
-
-
+/*FONCTION DIV POUR LA DESCRITION*/  
+function paramDivDescriptionTxt($utilisateur){
+    echo 
+    '<div class="row">
+        <div class="col-12">
+            <label>Description:</label><textarea class="form-control" rows="4" class="input-beige form-control" name="description" disabled="disabled">'.$utilisateur['description'].'</textarea>
+        </div>
+    </div>';
+} 
 
 
 
@@ -202,17 +212,17 @@
     } 
 
 /*FONCTION DIV DU NOM*/    
-    function paramDivClassNom(){
+    function paramDivClassNom($utilisateur){
         echo   
             '<div class="col-12 txt-nom">
-                <div class="nom">John Doe</div>
+                <div class="nom">'.$utilisateur['pseudo'].'</div>
             </div>';
     }    
 
 /*FONCTION FORM ACTION*/    
     function paramFormAction(){
         echo   
-            '<form action="../controleur/controleur_profil.php?action=modifier" method="post">';
+            '<form>';
     } 
 
 /*FONCTION DIV DU TEXTE PROFIL*/    
@@ -315,14 +325,21 @@
 /*FONCTION OUVERTURE DIV FORMULAIRE COORDONNEES PROFIL*/  
     function paramCheckbox2($utilisateur){
         echo'
-        
                     <div class="col-12 mt-3 ">
-                        <input type="checkbox" class="checkbox" name="contact" disabled="disabled" checked="'.$utilisateur["contact"].'"><label>J\'accepte de reçevoir des
+                        <input type="checkbox" class="checkbox" name="contact" disabled="disabled" ';
+                        if(isset($utilisateur['contact']) && ($utilisateur['contact'])=="Y" ){
+                           echo'checked="checked" ';
+                        }
+                        echo'><label>J\'accepte de reçevoir des
                             demande d\'ami</label>
                     </div>
 
                     <div class="col-12">
-                        <input type="checkbox" class="checkbox" name="notifmail" disabled="disabled" checked="'.$utilisateur["notifmail"].'"><label>J\'accepte de reçevoir des
+                        <input type="checkbox" class="checkbox" name="notifmail" disabled="disabled" ';
+                        if(isset($utilisateur['notifmail']) && ($utilisateur['notifmail'])=="Y" ){
+                           echo'checked="checked" ';
+                        }
+                        echo'><label>J\'accepte de reçevoir des
                             notifications par mail</label>
                     </div>
 
