@@ -51,20 +51,20 @@
                                 </p>
                             </div>';
                             if($isNotUser){
-                                echo'<div class="row mt-3">
+                                echo'<div class="row mt-5">
                                     <form method="post">
                                         <img src="../../img/logos_divers/ami_turquoise2.png" alt="logo amis"> <input type="submit" name="ajoutAmi" class="ajoutAmi" value="Ajouter en ami"/>
                                     </form>
+                                </div>
+                                <div class="row mt-5 mb-3">
+                                    <a href="../controleur/controleur_profil.php"><button type="button" class="button">Modifier le profil</button></a>
                                 </div>';
                             }
                             echo'
-                            <div class="row mt-3 mb-3">
-                                <a href="../controleur/controleur_profil.php"><button type="button" class="button">Modifier le profil</button></a>
-                            </div>
-                            <div class="row mt-3 mb-3">
+                            <div class="row mt-5 mb-3">
                                 <a href="../controleur/mesAmisControleur.php?pseudo='. $profil['pseudo'] .'"><button type="button" class="button">Mes Amis</button></a>
                             </div>
-                            <div class="row mt-3 mb-3">
+                            <div class="row mt-5 mb-3">
                                 <a href="../controleur/controleur_contact.php"><button type="button" class="button">Contactez moi</button></a>
                             </div>
                         </div>

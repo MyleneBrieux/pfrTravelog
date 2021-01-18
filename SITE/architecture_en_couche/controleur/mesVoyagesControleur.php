@@ -13,7 +13,7 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     $voyagesService = new VoyageService();
     // try{
         $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
-        $isUser = $_SESSION['pseudo'] && $_SESSION['pseudo']==$profil['pseudo'];
+        $isUser = isset($_SESSION['pseudo']) && ($_SESSION['pseudo']==$profil['pseudo']);
         $nbParPage = 4;
         $info=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages crées par l'utilisateur dont on visite la page
         $nbContinent = $voyagesService->compterContinentsUtilisateur($pseudo);
