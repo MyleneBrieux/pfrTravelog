@@ -61,9 +61,9 @@ class VoyageService {
 
     // Ajout comm
 
-    public function afficherLesDetailsCommentaireService(int $codeEtape): ?array{
-        $detailComm= $this->voyageDao ->afficherLesDetailsCommentaireDAO($codeEtape);
-        return $detailComm;
+    public function afficherLesDetailsCommentaireService(int $codeEtape)/*: ?array*/{
+        $rs= $this->voyageDao ->afficherLesDetailsCommentaireDAO($codeEtape);
+        return $rs;
     }
 
 // suppression Voyage

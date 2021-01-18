@@ -103,10 +103,9 @@ class VoyageMysqliDAO {
         $stmt->bind_param("i",$codeEtape);
         $stmt->execute();
         $rs=$stmt->get_result();
-        $comm = $rs->fetch_array(MYSQLI_ASSOC);
+        return $rs;
         $rs->free();
         $mysqli->close();
-        return $comm;
     }
 
     public function nbrCommentaireDansUnVoyageDAO(int $codeEtape){
