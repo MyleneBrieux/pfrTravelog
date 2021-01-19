@@ -1,18 +1,27 @@
 <?php 
 
+// LIAISONS AVEC AUTRES COUCHES //
 require_once("../metier/Voyage.php");
 require_once("../metier/Utilisateur.php");
 require_once("../metier/Etape.php");
 require_once("../metier/Commentaire.php");
 
+// GESTION DES ERREURS //
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+include_once("dao_exception.php");
+
 class VoyageMysqliDAO {
 
      /* CONNEXION */       
      public function connexion() {
-        // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
-        $mysqli= new mysqli('localhost','root','','travelog');
-        //$mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
-        return $mysqli;
+        try {
+            // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+            $mysqli= new mysqli('localhost','root','','travelog');
+            //$mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
+            return $mysqli;
+        } catch (mysqli_sql_exception $a) {
+            throw new DaoException($a->getMessage(), $a->getCode());
+        }
     }
 
     public function nbrAjoutDAO(){
@@ -188,25 +197,33 @@ class VoyageMysqliDAO {
 
     /* AFFICHER TOUS LES VOYAGES */        
     public function afficherVoyagesAccueil($start, $nbParPage) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from voyages order by date_debut desc limit ?,?');
-        $stmt->bind_param("ii",$start, $nbParPage);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        return $rs;
-        $rs->free();
-        $mysqli->close();
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from voyages order by date_debut desc limit ?,?');
+            $stmt->bind_param("ii",$start, $nbParPage);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            return $rs;
+            $rs->free();
+            $mysqli->close();
+        } catch (mysqli_sql_exception $q) {
+            throw new DaoException($q->getMessage(), $q->getCode());
+        }
     }
 
     /* COMPTER LE NOMBRE DE VOYAGES DANS LA BDD */
     public function compterVoyages() {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from voyages');
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $data=mysqli_num_rows($rs);
-        $mysqli->close();
-        return $data;
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from voyages');
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $data=mysqli_num_rows($rs);
+            $mysqli->close();
+            return $data;
+        } catch (mysqli_sql_exception $r) {
+            throw new DaoException($r->getMessage(), $r->getCode());
+        }
     }
 
     /* COMPTER LE NOMBRE DE VOYAGES D'UN UTILISATEUR */
@@ -236,26 +253,34 @@ class VoyageMysqliDAO {
 
     /* FILTRE : RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
     public function filtrerContinents() {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from voyages where continent=?');
-        $stmt->bind_param("s",$continent);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $data=$rs->fetch_all(MYSQLI_ASSOC);
-        $mysqli->close();
-        return $data;
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from voyages where continent=?');
+            $stmt->bind_param("s",$continent);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $data=$rs->fetch_all(MYSQLI_ASSOC);
+            $mysqli->close();
+            return $data;
+        } catch (mysqli_sql_exception $u) {
+            throw new DaoException($u->getMessage(), $u->getCode());
+        }
     }
 
     /* FILTRE : RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
     public function filtrerPays() {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from voyages where pays=?');
-        $stmt->bind_param("s",$pays);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $data=$rs->fetch_all(MYSQLI_ASSOC);
-        $mysqli->close();
-        return $data;
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from voyages where pays=?');
+            $stmt->bind_param("s",$pays);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $data=$rs->fetch_all(MYSQLI_ASSOC);
+            $mysqli->close();
+            return $data;
+        } catch (mysqli_sql_exception $v) {
+            throw new DaoException($v->getMessage(), $v->getCode());
+        }
     }
         
     /* RECHERCHE VOYAGE LE + RÉCENT */
@@ -286,37 +311,49 @@ class VoyageMysqliDAO {
 
     /* RECUPERER COMMENTAIRE DEPUIS NOTIFICATION */        
     public function recupererCommentaire(int $codeComm) {
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('select * from commentaires where code_comm=?');
-        $stmt->bind_param("i",$codeComm);
-        $stmt->execute();
-        $rs=$stmt->get_result();
-        $comm = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $comm;
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from commentaires where code_comm=?');
+            $stmt->bind_param("i",$codeComm);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $comm = $rs->fetch_array(MYSQLI_ASSOC);
+            $rs->free();
+            $mysqli->close();
+            return $comm;
+        } catch (mysqli_sql_exception $y) {
+            throw new DaoException($y->getMessage(), $y->getCode());
+        }
     }
 
     /* SUPPRIMER UNE NOTIFICATION */
     public function supprimerNotification(int $codeNotif){
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare('delete from notifications where code_notif= ?');
-        $stmt->bind_param("i",$codeNotif);
-        $stmt->execute();
-        $mysqli->close();
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('delete from notifications where code_notif= ?');
+            $stmt->bind_param("i",$codeNotif);
+            $stmt->execute();
+            $mysqli->close();
+        } catch (mysqli_sql_exception $z) {
+            throw new DaoException($z->getMessage(), $z->getCode());
+        }
     }
 
     /* CHERCHER VOYAGE PAR CODE VOYAGE */
     public function chercherVoyageParCode(int $codeVoyage) : ?array {
-        $mysqli=$this->connexion();
-        $stmt = $mysqli->prepare("select * from voyages where code_voyage=?");
-        $stmt->bind_param("i",$codeVoyage);
-        $stmt->execute();
-        $rs = $stmt->get_result();
-        $voyage = $rs->fetch_array(MYSQLI_ASSOC);
-        $rs->free();
-        $mysqli->close();
-        return $voyage;
+        try {
+            $mysqli=$this->connexion();
+            $stmt = $mysqli->prepare("select * from voyages where code_voyage=?");
+            $stmt->bind_param("i",$codeVoyage);
+            $stmt->execute();
+            $rs = $stmt->get_result();
+            $voyage = $rs->fetch_array(MYSQLI_ASSOC);
+            $rs->free();
+            $mysqli->close();
+            return $voyage;
+        } catch (mysqli_sql_exception $aa) {
+            throw new DaoException($aa->getMessage(), $aa->getCode());
+        }
     }
 
     /* COMPTEUR CONTINENTS VISITES PAR L'UTILISATEUR */

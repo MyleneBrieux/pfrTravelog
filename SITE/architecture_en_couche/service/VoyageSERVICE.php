@@ -1,11 +1,26 @@
 <?php
 
+// LIAISON AVEC AUTRE COUCHE //
 include_once("../dao/VoyageMysqliDAO.php");
+
+// GESTION DES ERREURS //
+include_once("ServiceException.php");
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 
 class VoyageService {
 
     public function __construct(){
         $this->voyageDao = new VoyageMysqliDAO;
+    }
+
+    public function connexion() {
+        try {
+            $mysqli = $this->utilisateurDao->connexion();
+            return $mysqli;
+        } catch (DaoException $a){
+            throw new ServiceException($a->getMessage(),$a->getCode());
+        }
     }
 
 // ajout Voyage
@@ -105,15 +120,24 @@ class VoyageService {
 //Afficher voyages
 
 public function afficherVoyagesAccueil($start,$nbParPage){
-    $rs=$this->voyageDao->afficherVoyagesAccueil($start,$nbParPage);
-    return $rs;
+    try {
+        $rs=$this->voyageDao->afficherVoyagesAccueil($start,$nbParPage);
+        return $rs;
+    } catch (DaoException $q){
+        throw new ServiceException($q->getMessage(),$q->getCode());
+    }
+
 }
 
 //Compter le nombre de voyages dans la bdd
 
     public function compterVoyages(){
-        $nbVoyages = $this->voyageDao->compterVoyages();
-        return $nbVoyages;
+        try {
+            $nbVoyages = $this->voyageDao->compterVoyages();
+            return $nbVoyages;
+        } catch (mysqli_sql_exception $r) {
+            throw new DaoException($r->getMessage(), $r->getCode());
+        }
     }
 
 //Compter le nombre de voyages d'un utilisateur
@@ -133,15 +157,23 @@ public function afficherVoyagesAccueil($start,$nbParPage){
 //Filtrer les continents
 
     public function filtrerContinents(){
-        $data=$this->voyageDao->filtrerContinents();
-        return $data;
+        try {
+            $data=$this->voyageDao->filtrerContinents();
+            return $data;
+        } catch (mysqli_sql_exception $u) {
+            throw new DaoException($u->getMessage(), $u->getCode());
+        }
     }
 
     //Filtrer les pays
 
     public function filtrerPays(){
-        $data=$this->voyageDao->filtrerPays();
-        return $data;
+        try {
+            $data=$this->voyageDao->filtrerPays();
+            return $data;
+        } catch (mysqli_sql_exception $v) {
+            throw new DaoException($v->getMessage(), $v->getCode());
+        }
     }
 
 //Afficher le voyage le plus récent d'un utilisateur
@@ -161,21 +193,33 @@ public function afficherVoyagesAccueil($start,$nbParPage){
 //Récupérer commentaire depuis notification
 
     public function recupererCommentaire(int $codeComm) {
-        $comm = $this->voyageDao->recupererCommentaire($codeComm);
-        return $comm;
+        try {
+            $comm = $this->voyageDao->recupererCommentaire($codeComm);
+            return $comm;
+        } catch (mysqli_sql_exception $y) {
+            throw new DaoException($y->getMessage(), $y->getCode());
+        }
     }
 
 //Supprimer une notification depuis son code
     public function supprimerNotification(int $codeNotif){
-        $suppNotif= new VoyageMysqliDAO;
-        $suppNotif->supprimerNotification($codeNotif);
+        try {
+            $suppNotif= new VoyageMysqliDAO;
+            $suppNotif->supprimerNotification($codeNotif);
+        } catch (mysqli_sql_exception $z) {
+            throw new DaoException($z->getMessage(), $z->getCode());
+        }
     }
 
 //Récupérer les informations d'un voyage depuis son code
 
     public function chercherVoyageParCode($codeVoyage) : ?array {
-        $voyage = $this->voyageDao->chercherVoyageParCode($codeVoyage);
-        return $voyage;
+        try {
+            $voyage = $this->voyageDao->chercherVoyageParCode($codeVoyage);
+            return $voyage;
+        } catch (mysqli_sql_exception $aa) {
+            throw new DaoException($aa->getMessage(), $aa->getCode());
+        }
     }
 
 //Récupérer le nombre de continents visités
