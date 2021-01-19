@@ -259,12 +259,12 @@ include_once("dao_exception.php");
     public function ajouterAmi($idAmi, $id){
         try {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("insert into demande_ami (id_ami, id, accepte) VALUES (?, ?, 'N')");
+            $stmt = $mysqli->prepare("insert into demande_ami (id, id_ami, accepte) VALUES (?, ?, 'N')");
             $stmt->bind_param("ii", $idAmi, $id);
             $stmt->execute();
-            $stmt2 = $mysqli->prepare("insert into demande_ami (id, id_ami, accepte) VALUES (?, ?, 'N')");
-            $stmt2->bind_param("ii", $idAmi, $id);
-            $stmt2->execute();
+            // $stmt2 = $mysqli->prepare("insert into demande_ami (id, id_ami, accepte) VALUES (?, ?, 'N')");
+            // $stmt2->bind_param("ii", $idAmi, $id);
+            // $stmt2->execute();
             $mysqli->close();
         } catch (mysqli_sql_exception $o) {
             throw new DaoException($o->getMessage(), $o->getCode());
@@ -308,11 +308,11 @@ include_once("dao_exception.php");
         try {
             $mysqli=$this->connexion();
             $stmt=$mysqli->prepare('update demande_ami set id=?, id_ami=?, accepte="Y" where id=? and id_ami=?');
-            $stmt->bind_param("iiii",$id,$idAmi,$id,$idAmi);
+            $stmt->bind_param("iiii",$id,$idAmi,$idAmi,$id);
             $stmt->execute();
-            $stmt2=$mysqli->prepare('update demande_ami set id_ami=?, id=?, accepte="Y" where id_ami=? and id=?');
-            $stmt2->bind_param("iiii",$id,$idAmi,$id,$idAmi);
-            $stmt2->execute();
+            $stmt = $mysqli->prepare("insert into demande_ami (id_ami, id, accepte) VALUES (?, ?, 'Y')");
+            $stmt->bind_param("ii", $id, $idAmi);
+            $stmt->execute();
             $mysqli->close();
         } catch (mysqli_sql_exception $p) {
             throw new DaoException($p->getMessage(), $p->getCode());
