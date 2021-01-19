@@ -7,7 +7,6 @@ class Etape extends Voyage {
     private $codeEtape;
     private $sousTitre;
     private $description;
-    private $likesEtape;
 
 
     public function __construct(int $codeVoyage, string $titre, string $resume, string $datedebut, string $datefin, string $continent, 
