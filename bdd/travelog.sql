@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 19 jan. 2021 à 20:53
+-- Généré le : mar. 19 jan. 2021 à 20:59
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.2.34
 
@@ -93,19 +93,6 @@ INSERT INTO `etape` (`code_etape`, `sous_titre`, `description`) VALUES
 (8, ' Donec nisi ante, scelerisque non libero', 'Aenean fringilla lacinia suscipit. Fusce tempor sit amet ipsum vitae iaculis. Donec lacinia posuere vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas euismod leo vitae pharetra egestas. Nam tincidunt orci eu purus commodo feugiat. Etiam sit amet laoreet dui. Pellentesque tincidunt vitae arcu non sodales. '),
 (9, 'Duis quis auctor ipsum.', 'Vivamus eros quam, gravida id urna sed, accumsan pharetra massa. Sed id lobortis quam. Suspendisse lacinia tempus mattis. In imperdiet neque sed nibh gravida ullamcorper. Vestibulum eu efficitur enim, id consequat dui. Duis vestibulum rhoncus diam at suscipit. Morbi faucibus, diam ac ultricies venenatis, urna odio ornare odio, id hendrerit neque tortor sit amet ligula. Curabitur ut diam et sem molestie tristique vitae ac nisi. '),
 (10, 'Vivamus nec leo a libero eleifend commod', 'n quis dui sit amet purus tempor pretium. Donec iaculis libero nec lectus varius, vel mattis odio facilisis. Cras in leo quam. Suspendisse malesuada ornare est, quis varius ante dapibus at. Morbi nulla est, finibus vitae condimentum in, sagittis nec felis. Sed et mauris nec urna faucibus interdum. Aenean dictum in mauris sit amet sodales. Maecenas pharetra semper dui, sed facilisis eros scelerisque ac. ');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `images`
---
-
-CREATE TABLE `images` (
-  `code_img` int(11) NOT NULL,
-  `image` longblob NOT NULL,
-  `code_voyage` int(11) NOT NULL,
-  `code_etape` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -275,14 +262,6 @@ ALTER TABLE `etape`
   ADD PRIMARY KEY (`code_etape`);
 
 --
--- Index pour la table `images`
---
-ALTER TABLE `images`
-  ADD PRIMARY KEY (`code_img`),
-  ADD KEY `codeEtape` (`code_etape`),
-  ADD KEY `codeVoyage` (`code_voyage`);
-
---
 -- Index pour la table `langues`
 --
 ALTER TABLE `langues`
@@ -343,12 +322,6 @@ ALTER TABLE `etape`
   MODIFY `code_etape` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT pour la table `images`
---
-ALTER TABLE `images`
-  MODIFY `code_img` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `langues`
 --
 ALTER TABLE `langues`
@@ -387,13 +360,6 @@ ALTER TABLE `voyages`
 --
 ALTER TABLE `commentaires`
   ADD CONSTRAINT `cle_secondaire` FOREIGN KEY (`id`) REFERENCES `utilisateurs` (`id`);
-
---
--- Contraintes pour la table `images`
---
-ALTER TABLE `images`
-  ADD CONSTRAINT `codeEtape` FOREIGN KEY (`code_etape`) REFERENCES `etape` (`code_etape`),
-  ADD CONSTRAINT `codeVoyage` FOREIGN KEY (`code_voyage`) REFERENCES `voyages` (`code_voyage`);
 
 --
 -- Contraintes pour la table `likes`
