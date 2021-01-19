@@ -218,6 +218,14 @@ class UtilisateurService {
         }
     }
 
+    public function afficherDonnesDepuisIdAmi1(int $idAmi){
+        try {
+            $donnees = $this->utilisateurDao->afficherDonneesDepuisIdAmi1($idAmi);
+            return $donnees;
+        } catch (DaoException $t){
+            throw new ServiceException($t->getMessage(),$t->getCode());
+        }
+    }
 
 
 

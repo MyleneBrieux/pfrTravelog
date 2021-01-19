@@ -339,7 +339,24 @@ include_once("dao_exception.php");
     public function afficherDonneesDepuisIdAmi(int $idAmi) {
         try {
             $mysqli=$this->connexion();
-            $stmt=$mysqli->prepare('select * from utilisateurs inner join demande_ami on utilisateurs.id=demande_ami.id_ami where demande_ami.id_ami=?');
+            $stmt=$mysqli->prepare('select * from utilisateurs inner join demande_ami on utilisateurs.id=demande_ami.id_ami where demande_ami.id_ami=? and demande_ami.accepte="N"');
+            $stmt->bind_param("i",$idAmi);
+            $stmt->execute();
+            $rs = $stmt->get_result();
+            $donnee = $rs->fetch_array(MYSQLI_ASSOC);
+            $rs->free();
+            $mysqli->close();
+            return $donnee;
+        } catch (mysqli_sql_exception $q) {
+            throw new DaoException($q->getMessage(), $q->getCode());
+        }
+    }
+
+    /* AFFICHER LES DONNEES UTILISATEUR (TABLE UTILISATEURS) DEPUIS ID AMI (TABLE DEMANDE_AMI) */
+    public function afficherDonneesDepuisIdAmi1(int $idAmi) {
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from utilisateurs inner join demande_ami on utilisateurs.id=demande_ami.id_ami where demande_ami.id_ami=? and demande_ami.accepte="Y"');
             $stmt->bind_param("i",$idAmi);
             $stmt->execute();
             $rs = $stmt->get_result();

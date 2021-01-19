@@ -30,10 +30,15 @@
         echo'<div class="pl-0 menu_lateral_detail_voyage">
             <nav class="bg-sable mr-3 pr-3 menU centrage">
                 <div class="col-lg-12 col-md-6 col-sm-6 pl-1 col-12">
-                    <div class="image-profil">
-                        <img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil"
-                            width="100%" height="100%" />
-                    </div>
+                    <div class="image-profil">';
+                    if (isset($profil['photoprofil'])) {
+                        echo'<img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil"
+                        width="100%" height="100%" />';
+                    }else {
+                        echo'<img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil"
+                        width="100%" height="100%" />';
+                    }
+                    echo'</div>
                     <div class="row">';
                     if ($setBirthday) {
                         $dateNaissance = new DateTime($profil['birthday']);
