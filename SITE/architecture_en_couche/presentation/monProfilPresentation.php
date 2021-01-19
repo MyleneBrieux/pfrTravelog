@@ -26,7 +26,7 @@
         echo'</header>';
     }
 
-    function menuLat($profil, $setBirthday, $isNotUser){
+    function menuLat($profil, $setBirthday, $isNotUser, $isUser){
         echo'<div class="row">
                 <div class="col-lg-2 col-md-4 col-sm-4 pl-0 col-12 bg-sable">
                     <nav class="menu">
@@ -58,11 +58,13 @@
                                 </div>
                                 ';
                             }
-                            echo'
-                            <div class="row mt-5 mb-3">
-                                    <a href="../controleur/controleur_profil.php"><button type="button" class="button">Modifier le profil</button></a>
-                            </div>
-                            <div class="row mt-5 mb-3">
+                            if($isUser){
+                                echo'
+                                <div class="row mt-5 mb-3">
+                                        <a href="../controleur/controleur_profil.php"><button type="button" class="button">Modifier le profil</button></a>
+                                </div>';
+                            }
+                            echo'<div class="row mt-5 mb-3">
                                 <a href="../controleur/mesAmisControleur.php?pseudo='. $profil['pseudo'] .'"><button type="button" class="button">Mes Amis</button></a>
                             </div>
                             <div class="row mt-5 mb-3">
