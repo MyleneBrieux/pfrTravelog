@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 18 jan. 2021 à 08:52
--- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.0
+-- Généré le : mar. 19 jan. 2021 à 20:53
+-- Version du serveur :  10.4.14-MariaDB
+-- Version de PHP : 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,11 +61,10 @@ CREATE TABLE `demande_ami` (
 --
 
 INSERT INTO `demande_ami` (`code_ami`, `id_ami`, `id`, `accepte`) VALUES
-(1, 44, 42, 'Y'),
-(2, 42, 44, 'Y'),
-(3, 43, 42, 'Y'),
-(4, 42, 43, 'Y'),
-(5, 39, 38, 'Y');
+(2, 42, 44, 'N'),
+(3, 43, 42, 'N'),
+(6, 42, 45, 'Y'),
+(7, 39, 38, 'N');
 
 -- --------------------------------------------------------
 
@@ -176,18 +175,7 @@ CREATE TABLE `notifications` (
 --
 
 INSERT INTO `notifications` (`code_notif`, `date`, `id`, `code_voyage`, `code_comm`) VALUES
-(1, '2021-01-15', 38, 4, 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `signalements`
---
-
-CREATE TABLE `signalements` (
-  `code_signal` int(11) NOT NULL,
-  `code_com` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(5, '0000-00-00', 38, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -252,13 +240,13 @@ CREATE TABLE `voyages` (
 --
 
 INSERT INTO `voyages` (`code_voyage`, `titre`, `resume`, `date_debut`, `date_fin`, `continent`, `pays`, `ville`, `couverture`, `statut`, `likes`, `vues`, `id`, `code_etape`) VALUES
-(4, 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'Sed lacinia, tortor id scelerisque pharetra, sapien libero vulputate sapien, id mattis augue nisl in mi. Mauris id porta nibh. Pellentesque eleifend ullamcorper tortor. Morbi ligula lacus, egestas a ante eget, facilisis vestibulum massa. Praesent vestibulum tempus egestas.', '2019-06-17', '2019-06-23', 'Afrique', 'Maroc', 'Agadir', 0x6d61726f632e6a7067, 'Public', 0, 0, 38, 4),
-(5, 'Cras mattis diam ut cursus sollicitudin. ', 'Nulla placerat, orci ac pellentesque aliquet, erat nisi rhoncus dolor, non rhoncus nunc ex sit amet felis. Etiam rhoncus, nisi in feugiat aliquet, lacus ipsum dapibus leo, in scelerisque erat lectus eu ex.', '2020-12-18', '2020-12-20', 'Europe', 'Angleterre', 'Londres', 0x6c6f6e647265732e6a7067, 'Public', 0, 32, 38, 5),
-(6, 'Ut vestibulum odio tincidunt, condimentum eros a, ', 'Pellentesque tristique, velit sit amet dignissim aliquet, nisi massa elementum nunc, quis eleifend magna enim feugiat nibh. ', '2020-05-14', '2020-05-17', 'Europe', 'Allemagne', 'Hambourg', 0x68616d626f7572672e6a7067, 'Public', 0, 0, 38, 6),
-(7, 'Morbi metus purus, venenatis nec placerat vel, max', 'Nullam sagittis, nisi non aliquet cursus, lorem libero iaculis nulla, in vestibulum dolor neque sit amet elit. Nam dignissim urna nisl, nec sollicitudin arcu sodales non. Phasellus convallis, felis eu semper cursus, neque massa venenatis nisi, eu porttitor magna sem commodo eros. ', '2020-07-01', '2020-07-31', 'Am&eacute;rique du S', 'P&eacute;rou', 'Lima', 0x7065726f752e6a7067, 'Public', 0, 0, 45, 7),
+(4, 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'Sed lacinia, tortor id scelerisque pharetra, sapien libero vulputate sapien, id mattis augue nisl in mi. Mauris id porta nibh. Pellentesque eleifend ullamcorper tortor. Morbi ligula lacus, egestas a ante eget, facilisis vestibulum massa. Praesent vestibulum tempus egestas.', '2019-06-17', '2019-06-23', 'Afrique', 'Maroc', 'Agadir', 0x6d61726f632e6a7067, 'Public', 0, 18, 38, 4),
+(5, 'Cras mattis diam ut cursus sollicitudin. ', 'Nulla placerat, orci ac pellentesque aliquet, erat nisi rhoncus dolor, non rhoncus nunc ex sit amet felis. Etiam rhoncus, nisi in feugiat aliquet, lacus ipsum dapibus leo, in scelerisque erat lectus eu ex.', '2020-12-18', '2020-12-20', 'Europe', 'Angleterre', 'Londres', 0x6c6f6e647265732e6a7067, 'Public', 0, 33, 38, 5),
+(6, 'Ut vestibulum odio tincidunt, condimentum eros a, ', 'Pellentesque tristique, velit sit amet dignissim aliquet, nisi massa elementum nunc, quis eleifend magna enim feugiat nibh. ', '2020-05-14', '2020-05-17', 'Europe', 'Allemagne', 'Hambourg', 0x68616d626f7572672e6a7067, 'Public', 0, 4, 38, 6),
+(7, 'Morbi metus purus, venenatis nec placerat vel, max', 'Nullam sagittis, nisi non aliquet cursus, lorem libero iaculis nulla, in vestibulum dolor neque sit amet elit. Nam dignissim urna nisl, nec sollicitudin arcu sodales non. Phasellus convallis, felis eu semper cursus, neque massa venenatis nisi, eu porttitor magna sem commodo eros. ', '2020-07-01', '2020-07-31', 'Am&eacute;rique du S', 'P&eacute;rou', 'Lima', 0x7065726f752e6a7067, 'Public', 0, 3, 45, 7),
 (8, 'Sed molestie finibus nisl, ac viverra nulla commod', 'Vivamus ac tincidunt ipsum, vitae semper libero. Cras faucibus eu magna ut accumsan. In felis tellus, mattis eu ex molestie, malesuada tincidunt sem. ', '2019-08-01', '2019-08-31', 'Asie', 'Japon', 'Tokyo', 0x6a61706f6e2e6a7067, 'Public', 0, 0, 45, 8),
 (9, 'Aliquam a pellentesque ante. ', 'Praesent eget sollicitudin diam, eget pulvinar sapien. Mauris dictum maximus sollicitudin. Mauris quis laoreet elit.', '2020-05-04', '2020-05-25', 'Am&eacute;rique du N', 'Etats-Unis', 'Dallas', 0x65746174732d756e69732e6a7067, 'Public', 0, 0, 46, 9),
-(10, 'Phasellus convallis gravida laoreet. ', 'Sed eu mauris vestibulum, cursus mauris sit amet, laoreet ipsum. Morbi rutrum lorem eros, ac vestibulum est tincidunt in. ', '2021-01-02', '2021-01-03', 'Europe', 'Italie', 'Rome', 0x74726576692e6a7067, 'Public', 0, 6, 46, 10);
+(10, 'Phasellus convallis gravida laoreet. ', 'Sed eu mauris vestibulum, cursus mauris sit amet, laoreet ipsum. Morbi rutrum lorem eros, ac vestibulum est tincidunt in. ', '2021-01-02', '2021-01-03', 'Europe', 'Italie', 'Rome', 0x74726576692e6a7067, 'Public', 0, 9, 46, 10);
 
 --
 -- Index pour les tables déchargées
@@ -318,13 +306,6 @@ ALTER TABLE `notifications`
   ADD KEY `code_comm` (`code_comm`);
 
 --
--- Index pour la table `signalements`
---
-ALTER TABLE `signalements`
-  ADD PRIMARY KEY (`code_signal`),
-  ADD KEY `foreign key 2 le retour` (`code_com`);
-
---
 -- Index pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
@@ -353,7 +334,7 @@ ALTER TABLE `commentaires`
 -- AUTO_INCREMENT pour la table `demande_ami`
 --
 ALTER TABLE `demande_ami`
-  MODIFY `code_ami` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `code_ami` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `etape`
@@ -383,13 +364,7 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT pour la table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `code_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT pour la table `signalements`
---
-ALTER TABLE `signalements`
-  MODIFY `code_signal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `code_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
@@ -426,12 +401,6 @@ ALTER TABLE `images`
 ALTER TABLE `likes`
   ADD CONSTRAINT `IdUser` FOREIGN KEY (`id`) REFERENCES `utilisateurs` (`id`),
   ADD CONSTRAINT `IdVoyage` FOREIGN KEY (`code_voyage`) REFERENCES `voyages` (`code_voyage`);
-
---
--- Contraintes pour la table `signalements`
---
-ALTER TABLE `signalements`
-  ADD CONSTRAINT `foreign key 2 le retour` FOREIGN KEY (`code_com`) REFERENCES `commentaires` (`code_comm`);
 
 --
 -- Contraintes pour la table `utilisateurs`
