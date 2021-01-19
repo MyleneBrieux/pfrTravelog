@@ -146,7 +146,7 @@ include_once("dao_exception.php");
     public function compterDemandesAmi(int $id) {
         try {
             $mysqli=$this->connexion();
-            $stmt=$mysqli->prepare('select * from demande_ami where id=?');
+            $stmt=$mysqli->prepare('select * from demande_ami where id=? and accepte="N"');
             $stmt->bind_param("i",$id);
             $stmt->execute();
             $rs=$stmt->get_result();
@@ -162,7 +162,7 @@ include_once("dao_exception.php");
     public function afficherDemandesAmi(int $id) {
         try {
             $mysqli=$this->connexion();
-            $stmt=$mysqli->prepare('select * from demande_ami where id=?');
+            $stmt=$mysqli->prepare('select * from demande_ami where id=? and accepte="N"');
             $stmt->bind_param("i",$id);
             $stmt->execute();
             $rs=$stmt->get_result();
