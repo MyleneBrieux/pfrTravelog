@@ -124,6 +124,7 @@
                 </div>';
         }
         echo'
+        </div>
         </div>';
     }
     //<input type="button" name="supprimerAmi" class="btn btn-danger supprimerAmi" value="supprimer"/>
