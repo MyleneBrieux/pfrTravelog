@@ -239,14 +239,30 @@ include_once("dao_exception.php");
         }
     }
 
+    /* COMPTER LE NOMBRE DE DEMANDES D'AMIS */
+    public function nbDemandesAmisUtilisateur(int $id) {
+        try{
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from demande_ami where id=? and accepte="N"');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $nbAmis=mysqli_num_rows($rs);
+            $mysqli->close();
+            return $nbAmis;
+        }catch (mysqli_sql_exception $n) {
+            throw new DaoException($n->getMessage(), $n->getCode());
+        }
+    }
+
     /* AJOUTER UN UTILISATEUR EN AMI */
     public function ajouterAmi($idAmi, $id){
         try {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("insert into demande_ami (id_ami, id, accepte) VALUES (?, ?, 'Y')");
+            $stmt = $mysqli->prepare("insert into demande_ami (id_ami, id, accepte) VALUES (?, ?, 'N')");
             $stmt->bind_param("ii", $idAmi, $id);
             $stmt->execute();
-            $stmt2 = $mysqli->prepare("insert into demande_ami (id, id_ami, accepte) VALUES (?, ?, 'Y')");
+            $stmt2 = $mysqli->prepare("insert into demande_ami (id, id_ami, accepte) VALUES (?, ?, 'N')");
             $stmt2->bind_param("ii", $idAmi, $id);
             $stmt2->execute();
             $mysqli->close();
@@ -271,12 +287,44 @@ include_once("dao_exception.php");
         }
     }
 
+    /* RECHERCHE DES AMIS EN ATTENTE */        
+    public function demandesAmis(int $id) {
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from demande_ami where id=? and accepte="N"');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            return $rs;
+            $rs->free();
+            $mysqli->close();
+        } catch (mysqli_sql_exception $p) {
+            throw new DaoException($p->getMessage(), $p->getCode());
+        }
+    }
+
+    /* CONFIRMER DEMANDE AMI */
+    public function confirmerDemandeAmis(int $id, $idAmi) {
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('update demande_ami set id=?, id_ami=?, accepte="Y" where id=? and id_ami=?');
+            $stmt->bind_param("iiii",$id,$idAmi,$id,$idAmi);
+            $stmt->execute();
+            $stmt2=$mysqli->prepare('update demande_ami set id_ami=?, id=?, accepte="Y" where id_ami=? and id=?');
+            $stmt2->bind_param("iiii",$id,$idAmi,$id,$idAmi);
+            $stmt2->execute();
+            $mysqli->close();
+        } catch (mysqli_sql_exception $p) {
+            throw new DaoException($p->getMessage(), $p->getCode());
+        }
+    }
+
     /* SUPPRIMER UN AMI */
     public function supprimerAmi($idAmi, $id){
         try{
             $mysqli=$this->connexion();
             $stmt = $mysqli->prepare("delete from demande_ami where id=? and id_ami=?");
-            $stmt->bind_param("ii", $idAmi, $id);
+            $stmt->bind_param("ii", $id, $idAmi);
             $stmt->execute();
             $stmt2 = $mysqli->prepare("delete from demande_ami where id=? and id_ami=?");
             $stmt2->bind_param("ii", $id, $idAmi);

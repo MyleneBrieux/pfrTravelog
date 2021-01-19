@@ -157,6 +157,15 @@ class UtilisateurService {
         }
     }
 
+    public function nbDemandesAmisUtilisateur($id){
+        try{
+            $nbAmis = $this->utilisateurDao->nbDemandesAmisUtilisateur($id);
+            return $nbAmis;
+        }catch(DaoException $p){
+            throw new ServiceException($p->getMessage(),$p->getCode());
+        }
+    }
+
     public function ajouterAmi($idAmi, $id){
         try{
             $this->utilisateurDao->ajouterAmi($idAmi, $id);
@@ -168,6 +177,24 @@ class UtilisateurService {
     public function listeAmis(int $id) {
         try {
             $rs = $this->utilisateurDao->listeAmis($id);
+            return $rs;
+        } catch (DaoException $r){
+            throw new ServiceException($r->getMessage(),$r->getCode());
+        }
+    }
+
+    public function demandesAmis(int $id) {
+        try {
+            $rs = $this->utilisateurDao->demandesAmis($id);
+            return $rs;
+        } catch (DaoException $r){
+            throw new ServiceException($r->getMessage(),$r->getCode());
+        }
+    }
+
+    public function confirmerDemandeAmis(int $id, $idAmi) {
+        try {
+            $rs = $this->utilisateurDao->confirmerDemandeAmis($id, $idAmi);
             return $rs;
         } catch (DaoException $r){
             throw new ServiceException($r->getMessage(),$r->getCode());

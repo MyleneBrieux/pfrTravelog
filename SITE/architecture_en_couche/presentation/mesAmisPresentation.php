@@ -61,12 +61,46 @@
         </div>';
     }
 
-    function listeAmis($nbAmis){
+    function demandeAmis($nbDemandesAmis){
         echo'<div class="col-lg-8 col-md-8 col-sm-8 ml-5 col-10">
+        <h1 class="placenav_titre mb-3">Demandes d\'amis ('. $nbDemandesAmis .')</h1>
+        ';
+    }
+
+    function demandeAmi1($isUser, $profil, $ami){
+        echo'<div class="row bg-sable mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="row">
+                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                    src="../../img/photos/photo_profil_defaut.png" />
+                <h4 class="mt-4 mb-3"><a href="monProfilControleur.php?pseudo='. $ami['pseudo'] .'" />' . $ami['pseudo'] . '</h4>
+            </div>
+        </div>';
+        if($isUser){
+            echo'<div class="col-lg-2 col-md-1"></div>
+            <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+                <a href="mesAmisControleur.php?pseudo='. $profil["pseudo"] .'&action=confirmerAmi&id_ami='. $ami['id_ami'] .'">
+                <button class="btn btn-info mt-4 mb-3 mr-2">Accepter</button></a>
+                <a href="mesAmisControleur.php?pseudo='. $profil["pseudo"] .'&action=supprimerAmi&id_ami='. $ami['id_ami'] .'">
+                <button type="button" class="btn btn-danger mt-4 mb-3 supprAmi">Supprimer</button></a>
+                </div>';
+        }
+        echo'
+        </div>';
+    }
+    //<input type="button" name="supprimerAmi" class="btn btn-danger supprimerAmi" value="supprimer"/>
+    function noDemandesAmis(){
+        echo'<div class="row">
+                <p>Vous n\'avez pas encore de demandes d\'ami(s).</p>
+            </div>';
+    }
+
+    function listeAmis($nbAmis){
+        echo'<div class="">
         <h1 class="placenav_titre mb-3">Liste des amis ('. $nbAmis .')</h1>';
     }
 
-    function ami1($ami, $isUser, $idAmi, $profil){
+    function ami1($ami, $isUser, $profil){
         echo'<div class="row bg-sable mb-3">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="row">
@@ -81,7 +115,7 @@
                 <a href="contacter.php?page=contacter">
                 <button class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
                 <a href="mesAmisControleur.php?pseudo='. $profil["pseudo"] .'&action=supprimerAmi&id_ami='. $ami['id_ami'] .'">
-                <button type="button" class="btn btn-danger mt-4 mb-3 supprAmi">Supprimer</button>
+                <button type="button" class="btn btn-danger mt-4 mb-3 supprAmi">Supprimer</button></a>
                 </div>';
         }
         echo'

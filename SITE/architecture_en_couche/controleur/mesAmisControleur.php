@@ -18,6 +18,7 @@ $utilisateur = new UtilisateurService();
     $id = $profil['id'];
     $setBirthday = isset ($profil['birthday']) && !empty ($profil['birthday']);
     $nbAmis = $utilisateur->nbAmisUtilisateur($id);
+    $nbDemandesAmis = $utilisateur->nbDemandesAmisUtilisateur($id);
     $isUser = isset($_SESSION['pseudo']) && ($_SESSION['pseudo']==$profil['pseudo']);
     $nbParPage = 10; //nombre d'amis que la page doit afficher
     $total = $nbAmis;
@@ -39,24 +40,53 @@ amisDebut();
 
 menuLat($profil, $setBirthday);
 
-listeAmis($nbAmis);
-$rs=$utilisateur->listeAmis($id);
+demandeAmis($nbDemandesAmis);
+$rs=$utilisateur->demandesAmis($id);
 while($data=mysqli_fetch_array($rs)){
     $idAmi = $data['id_ami']; //on met l'id de l'ami dans une varialble
-    var_dump($idAmi);
+    //var_dump($idAmi);
     $ami = $utilisateur->afficherDonnesDepuisIdAmi($idAmi, MYSQLI_ASSOC); //on se sert de la variable pour récupérer les infos de l'ami (son pseudo, id, etc..)
-    ami1($ami, $isUser, $idAmi, $profil); //On affiche ce dont on a besoin (pseudo)
-    var_dump($ami);
+    demandeAmi1($isUser, $profil, $ami); //On affiche ce dont on a besoin (pseudo)
+    //var_dump($ami);
+    if (isset($_GET["action"]) && $_GET["action"]=="confirmerAmi") { //test suppression ami sans le modal //Si on reçoit une action et que cette action est "supprimerAmi" lors on entre dans le if
+        $idAmi = htmlentities($_GET['id_ami']); //On récupère l'id fourni par le bouton pour la suppression
+        //var_dump($idAmi);
+        $id = $profil['id'];
+        //var_dump($id);
+        $ami = $utilisateur->confirmerDemandeAmis($idAmi, $id);
+        refresh($profil);
+        exit;
+    }
     if (isset($_GET["action"]) && $_GET["action"]=="supprimerAmi") { //test suppression ami sans le modal //Si on reçoit une action et que cette action est "supprimerAmi" lors on entre dans le if
         $idAmi = htmlentities($_GET['id_ami']); //On récupère l'id fourni par le bouton pour la suppression
-        var_dump($idAmi);
+        //var_dump($idAmi);
         $id = $profil['id'];
-        var_dump($id);
+        //var_dump($id);
         $ami = $utilisateur->supprimerAmi($idAmi, $id);
         refresh($profil);
         exit;
     }
-    var_dump($idAmi);
+    //var_dump($idAmi);
+}
+
+listeAmis($nbAmis);
+$rs=$utilisateur->listeAmis($id);
+while($data=mysqli_fetch_array($rs)){
+    $idAmi = $data['id_ami']; //on met l'id de l'ami dans une varialble
+    //var_dump($idAmi);
+    $ami = $utilisateur->afficherDonnesDepuisIdAmi($idAmi, MYSQLI_ASSOC); //on se sert de la variable pour récupérer les infos de l'ami (son pseudo, id, etc..)
+    ami1($ami, $isUser, $profil); //On affiche ce dont on a besoin (pseudo)
+    //var_dump($ami);
+    if (isset($_GET["action"]) && $_GET["action"]=="supprimerAmi") { //test suppression ami sans le modal //Si on reçoit une action et que cette action est "supprimerAmi" lors on entre dans le if
+        $idAmi = htmlentities($_GET['id_ami']); //On récupère l'id fourni par le bouton pour la suppression
+        //var_dump($idAmi);
+        $id = $profil['id'];
+        //var_dump($id);
+        $ami = $utilisateur->supprimerAmi($idAmi, $id);
+        refresh($profil);
+        exit;
+    }
+    //var_dump($idAmi);
 }
 
 
