@@ -150,6 +150,16 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
+    //Modif Comm
+
+    public function modifCommDAO(string $commentaire, int $codeComm){
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare("update commentaires set commentaire=? where code_comm= ?"); 
+        $stmt->bind_param("si", $commentaire, $codeComm);
+        $stmt->execute();
+        $mysqli->close();
+    }
+
     // Likes
 
     public function addLikesDAO(int $likes, int $codeVoyage){

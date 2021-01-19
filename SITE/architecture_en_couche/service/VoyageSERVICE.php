@@ -87,6 +87,13 @@ class VoyageService {
         $modifEtape->modifEtapeDAO($sousTitre, $description, $codeEtape);
     }
 
+//Modif Comm
+
+    public function modifCommService($commentaire, $codeComm){
+        $modifComm= new VoyageMysqliDAO;
+        $modifComm->modifCommDAO($commentaire, $codeComm);
+    }
+
 // Nombre de Likes
 
     public function quiAddLikesService(int $likes, int $codeVoyage,int $id){
