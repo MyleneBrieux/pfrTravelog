@@ -5,14 +5,28 @@ include_once("../presentation/modification_voyagePRESENTATION.php");
 include("../service/VoyageSERVICE.php");
 include("../service/UtilisateurSERVICE.php");
 
+if(isset($_SESSION["pseudo"])){
+    $pseudo=$_SESSION["pseudo"];
+    $visiteur=new UtilisateurService();
+    $visiteur=$visiteur->chercherUtilisateurParPseudo($pseudo);
+    $idVisiteur=$visiteur["id"];
+}
 
-//ajout OOP
+    $detailVoyage=new VoyageService();
+    $codeVoyage = htmlentities(trim($_GET['code_voyage']));
+    $detailVoyage=$detailVoyage->afficherLesDetailsVoyageService($codeVoyage);
+    $idCreateur=$detailVoyage["id"];
+
+
+
+if(!isset($_SESSION["pseudo"]) || $idVisiteur!=$idCreateur){
+    header('Location: accueilCONTROLEUR.php');
+}
+
+
+
 
 if(isset($_GET["action"]) && $_GET["action"] == "modification" && !empty($_POST)){
-
-    $voyage=new VoyageService();
-    $codeVoyage = htmlentities(trim($_GET['code_voyage']));
-    $detailVoyage=$voyage->afficherLesDetailsVoyageService($codeVoyage);
     
     $codeEtape = htmlentities(trim($_GET['code_etape']));
     $detailEtape=$voyage->afficherLesDetailsEtapeService($codeEtape);
