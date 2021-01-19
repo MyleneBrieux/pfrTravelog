@@ -5,13 +5,12 @@ include_once("../presentation/detail_voyagePRESENTATION.php");
 include("../service/VoyageSERVICE.php");
 include("../service/UtilisateurSERVICE.php");
 
-$numDiapo=0;
-
+if(isset($_SESSION["pseudo"])){
 $pseudo=$_SESSION["pseudo"];
         $visiteur=new UtilisateurService();
         $visiteur=$visiteur->chercherUtilisateurParPseudo($pseudo);
         $idVisiteur=$visiteur["id"];
-
+}
         $detailVoyage=new VoyageService();
         $codeVoyage = htmlentities(trim($_GET['code_voyage']));
         $detailVoyage=$detailVoyage->afficherLesDetailsVoyageService($codeVoyage);
@@ -20,7 +19,7 @@ $pseudo=$_SESSION["pseudo"];
         if(isset($_GET["action"]) && $_GET["action"] == "delete" && isset($_POST["deleted"])){
                 $suppVoyage= new VoyageService;
                 $suppVoyage->suppVoyageService($codeVoyage);
-                header('Location: accueilCONTROLEUR.php');
+                header('Location: mesVoyagesCONTROLEUR.php');
         }
 
         // if($detailVoyage["statut"]=="Prive"/* && $_SESSION["ami"]*/){ 
@@ -79,7 +78,8 @@ detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues, $createu
             
 // Bouton suppression du voyage visible que par le créateur
 
-if ($idVisiteur==$idCreateur){
+if (isset($_SESSION["pseudo"]) && $idVisiteur==$idCreateur){
+
     detail_boutonModif($codeVoyage, $codeEtape);
     detail_boutonSupp($codeVoyage,$codeEtape);
 }
@@ -98,12 +98,23 @@ detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage);
         if (isset($data["commentaire"]) && $codeEtape==$data["code_etape"]){
         $comm=$data["commentaire"];
         $idCommentateur=$data["id"];
-
+        $codeComm=$data["code_comm"];
+// echo $codeComm;
         $commentateur=new UtilisateurService();
         $commentateur=$commentateur->chercherUtilisateurParId($idCommentateur);
         $pseudoComm=$commentateur["pseudo"];
-        
-        detail_zoneComm($pseudoComm,$comm,$idVisiteur,$idCommentateur);
+
+        if (isset($_GET["action"]) && $_GET["action"] == "modifComm"){
+            $modifComm=new VoyageService();
+            $modifComm->modifCommService($comm, $codeComm);
+        }
+
+        detail_zoneComm($pseudoComm,$comm);
+        if (isset($_SESSION["pseudo"]) && $idVisiteur==$idCommentateur){
+            detail_boutonModifComm();
+        }
+        detail_modalModifComm($codeVoyage,$codeEtape,$comm);
+        detail_finZoneComm();
     }
 }
 detail_basPage();

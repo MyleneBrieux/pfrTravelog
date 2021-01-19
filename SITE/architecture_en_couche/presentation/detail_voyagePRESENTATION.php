@@ -39,10 +39,15 @@ function detail_header(){
 function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur){
     echo '<div class="pl-0 menu_lateral_detail_voyage">
     <nav class="bg-sable mr-3 pr-3 menU centrage">
-        <div class="row">
-            <img class="tailleImageProfilDetail col-md-12 col-6 mt-3 float-left"
-                src="../../img/photos/photo_profil_defaut.png" alt="La photo profil">
-            <div class="col-lg-12 mt-5 pl-1 col-6">
+        <div class="row">';
+        if($createur["photoprofil"]){
+            echo'<img class="tailleImageProfilDetail col-md-12 col-6 mt-3 float-left"
+                src="../../img/photos/'.$createur["photoprofil"].'" alt="La photo profil">';
+        }else{
+            echo'<img class="tailleImageProfilDetail col-md-12 col-6 mt-3 float-left"
+                src="../../img/photos/photo_profil_defaut.png" alt="La photo profil">';
+        }
+            echo '<div class="col-lg-12 mt-5 pl-1 col-6">
                 <h4>'.$createur["pseudo"].'</h4> </br>
                 <h5>'.$titre.'</h5>
                 <h6>Du '.$datedebut.' au '.$datefin.'</h6>
@@ -154,17 +159,17 @@ function detail_carousel($couverture, $numDiapo){
             //         </div>
             //     </div>
             // </div>
-            echo '<a class="carousel-control-prev" href="#carouselDetailVoyage" role="button"
-                data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselDetailVoyage" role="button"
-                data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+            // echo '<a class="carousel-control-prev" href="#carouselDetailVoyage" role="button"
+            //     data-slide="prev">
+            //     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            //     <span class="sr-only">Previous</span>
+            // </a>
+            // <a class="carousel-control-next" href="#carouselDetailVoyage" role="button"
+            //     data-slide="next">
+            //     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            //     <span class="sr-only">Next</span>
+            // </a>
+        echo '</div>
 
     </div>
 </div>';
@@ -175,8 +180,9 @@ function detail_ssTitreLogos($sousTitre){
     <div class="row">
         <div class="col-xl-8 col-sm-12 col-12">
             <h1 class="sous_titre_carrousel">'.$sousTitre.'</h1>
-        </div>
-        <div class="row logo_position mt-2">
+        </div>';
+    if(isset($_SESSION["pseudo"])){
+        echo '<div class="row logo_position mt-2">
             <div class="element_like_comm col-xl-12 col-sm-12 col-12">
                 <input type="image" name="likes" id="boutonLikes" src="../../img/logos_divers/Like_vide.png" class="taille_logo_detail_voyage">
                 <input type="image" name="Commentaire" placeholder="Commentaire"
@@ -184,6 +190,7 @@ function detail_ssTitreLogos($sousTitre){
                     data-toggle="modal" data-target="#ModalCommentaire">
             </div>
         </div>';
+    }
 }
 
 function detail_modalComm($codeVoyage,$codeEtape){
@@ -227,7 +234,7 @@ function detail_titreComm($commVoyage){
     echo '<h3>Commentaires ('.$commVoyage.')</h3>';
 }
 
-function detail_zoneComm($pseudoComm,$comm,$idVisiteur,$idCommentateur){
+function detail_zoneComm($pseudoComm,$comm){
     echo '
     <div class="col-lg-11 col-md-7 col-sm-7 ml-2 col-12 bg-sable pb-2 placeEntreComm">
         <div class="row">
@@ -235,10 +242,45 @@ function detail_zoneComm($pseudoComm,$comm,$idVisiteur,$idCommentateur){
             <p class="pl-1">'.$comm.'</p>
         </div>
         <div>';
-        if ($idVisiteur==$idCommentateur){
-            echo '<a href="ajoutmodif_services.php?page=add"><button class="btn mb-1 btn-info">Modifier</button></a>';
-        }
-        echo '</div>
+}
+ 
+function detail_boutonModifComm(){
+            echo '<button class="btn mb-1 btn-info" data-toggle="modal" data-target="#ModalModifCommentaire">Modifier</button>';
+        
+}
+
+function detail_modalModifComm($codeVoyage,$codeEtape,$comm){
+    echo '</div>';
+    echo '  <div class="modal fade" id="ModalModifCommentaire" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modifier votre commentaire</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form action="detail_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape.'&action=modifComm" method="post">
+
+                                <textarea class="form-control" name="commentaire" id="commentaire" rows="3"
+                                    placeholder="Modifier votre commentaire ici ...">'.$comm.'</textarea>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Modifier</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>';
+}
+
+
+function detail_finZoneComm(){
+        echo '
 </div>
 
 ';
