@@ -21,7 +21,7 @@ $utilisateur = new UtilisateurService();
     $nbDemandesAmis = $utilisateur->nbDemandesAmisUtilisateur($id);
     $isUser = isset($_SESSION['pseudo']) && ($_SESSION['pseudo']==$profil['pseudo']);
     $nbParPage = 10; //nombre d'amis que la page doit afficher
-    $total = $nbAmis;
+    $total = $nbAmis + $nbDemandesAmis;
     $nombreDePage=ceil($total/$nbParPage);//on calcul le nombre de page en divisant le nombre de voyages par le nombre que l'on veut voir afficher à l'écran
     if (!isset($_GET['page'])){
         $page=1; //si on ne reçoit pas de donnée pour le nombre de page alors on l'initialise à 1
