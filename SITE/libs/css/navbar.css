@@ -69,15 +69,8 @@
     @media screen and (max-width : 780px) {
         .nomTravelog{
             font-size:1.25em;
-            margin-top:0em;
+            margin-top:-0.5em;
             margin-left:-1em;
-            }
-    }
-
-    @media screen and (max-width : 650px) {
-        .nomTravelog{
-            margin-top:-1.5em;
-            margin-left:0.25em;
             }
     }
 
@@ -88,7 +81,7 @@
             }
     }
 
-    #lienAccueil:link {
+    #lienAccueil:link { /* esthétique du lien */
         color: white;
         text-decoration:none;
     }
@@ -105,6 +98,7 @@
         background: none;
     }
 
+
 /* MENUS DEROULANTS */
 .dropdown-item{ /* dans les menus déroulants */
     color:white !important;
@@ -112,7 +106,7 @@
     font-size:1.25em;
 }
 
-    .dropdown-item:link {
+    .dropdown-item:link { /* esthétique des liens */
         text-decoration:none;
         background: none !important;
     }
@@ -139,40 +133,39 @@
     margin-left: 16em;
 }
 
-    @media screen and (max-width : 1200px) {
+    @media screen and (max-width : 1290px) {
         #menuNotifs{
-            margin-left:3em;
+            margin-left:14em;
             }
     }
 
-    @media screen and (max-width : 1000px) {
+    @media screen and (max-width : 1210px) {
         #menuNotifs{
-            margin-left:1em;
+            margin-left:12em;
             }
     }
 
-    @media screen and (max-width : 770px) {
+    @media screen and (max-width : 1070px) {
         #menuNotifs{
-            margin-left:-10em;
-            margin-top:-0.4em;
+            margin-left:10em;
             }
     }
 
-    @media screen and (max-width : 580px) {
+    @media screen and (max-width : 900px) {
         #menuNotifs{
-            margin-left:-10em;
+            margin-left:8em;
             }
     }
 
-    @media screen and (max-width : 510px) {
+    @media screen and (max-width : 810px) {
         #menuNotifs{
-            margin-left:-10em;
+            margin-left:6em;
             }
     }
 
-    @media screen and (max-width : 460px) {
+    @media screen and (max-width : 780px) {
         #menuNotifs{
-            padding-left:-10em;
+            margin-left:4em;
             }
     }
 
@@ -181,13 +174,49 @@
     background-color:#52908B !important;
 }
 
-#lienVoyageNotif {
+    @media screen and (max-width : 1290px) {
+        #dropdownMenuNotifs{
+            margin-left:18em;
+            }
+    }
+
+    @media screen and (max-width : 1210px) {
+        #dropdownMenuNotifs{
+            margin-left:14em;
+            }
+    }
+
+    @media screen and (max-width : 1070px) {
+        #dropdownMenuNotifs{
+            margin-left:10em;
+            }
+    }
+
+    @media screen and (max-width : 900px) {
+        #dropdownMenuNotifs{
+            margin-left:8em;
+            }
+    }
+
+    @media screen and (max-width : 810px) {
+        #dropdownMenuNotifs{
+            margin-left:4em;
+            }
+    }
+
+    @media screen and (max-width : 780px) {
+        #dropdownMenuNotifs{
+            margin-left:0em;
+            }
+    }
+
+#lienVoyageNotif { /* lien vers le voyage dans le menu notifs */
     font-family: 'Halant', serif;
     font-size:1.2em;
     margin-left:1em;
 }
 
-    #lienVoyageNotif:link {
+    #lienVoyageNotif:link { /* esthétique des liens */
         color: white;
         text-decoration:none;
     }
@@ -213,21 +242,51 @@
     margin-left:1em;
 }
 
-    @media screen and (max-width : 770px) {
-        #menuAmis{
-            margin-left:-7em;
-            margin-top:-6em;
-            }
-    }
-
 #dropdownMenuAmis { /* menu déroulant */
-    margin-left:61em;
+    margin-left:55em;
     margin-top:-0.005em;
     background-color:#52908B !important;
 }
 
+    @media screen and (max-width : 1290px) {
+        #dropdownMenuAmis{
+            margin-left:50em;
+            }
+    }
+
+    @media screen and (max-width : 1210px) {
+        #dropdownMenuAmis{
+            margin-left:44em;
+            }
+    }
+
+    @media screen and (max-width : 1070px) {
+        #dropdownMenuAmis{
+            margin-left:38em;
+            }
+    }
+
+    @media screen and (max-width : 900px) {
+        #dropdownMenuAmis{
+            margin-left:32em;
+            }
+    }
+
+    @media screen and (max-width : 810px) {
+        #dropdownMenuAmis{
+            margin-left:26em;
+            }
+    }
+
+    @media screen and (max-width : 780px) {
+        #dropdownMenuAmis{
+            margin-left:20em;
+            }
+    }
+
+
 /* Badges */
-#badgeNotifs {
+#badgeNotifs { /* rond rouge */
     background-color:red;
     color:white;
     border-radius:10px;
@@ -237,14 +296,14 @@
     width:0.6em;
    }
 
-#compteurNotifs {
+#compteurNotifs { /* compteur/chiffres */
     font-family: 'Halant', serif;
     font-size:0.5em;
     margin-top:-0.35em;
     margin-left:-0.5em;
 }
 
-#badgeAmi {
+#badgeAmi { /* rond rouge */
     background-color:red;
     color:white;
     border-radius:10px;
@@ -254,7 +313,7 @@
     width:0.6em;
    }
 
-#compteurDemandesAmi {
+#compteurDemandesAmi { /* compteur/chiffres */
     font-family: 'Halant', serif;
     font-size:0.5em;
     margin-top:-0.35em;
@@ -276,35 +335,34 @@
             }
     }
 
-    @media screen and (max-width : 770px) {
-        .utilisateur{
-            margin-left:-4em;
-            }
-    }
 
 #dropdownMenuUtilisateur { /* menu déroulant */
-    margin-left:5em;
+    margin-left:4em;
     background-color:#52908B !important;
 }
 
-    .creationvoyage:link, .mesvoyages:link, .monprofil:link, .editerprofil:link, .deconnexion:link {
+    @media screen and (max-width : 1070px) {
+        #dropdownMenuUtilisateur{
+            margin-left:3em;
+            }
+    }
+
+    .creationvoyage:link, .mesvoyages:link, .mesamis:link, .monprofil:link, .editerprofil:link, .deconnexion:link { /* esthétique des liens */
         text-decoration:none;
         background: none !important;
     }
 
-    .creationvoyage:visited, .mesvoyages:visited, .monprofil:visited, .editerprofil:visited, .deconnexion:visited {
+    .creationvoyage:visited, .mesvoyages:visited, .mesamis:visited, .monprofil:visited, .editerprofil:visited, .deconnexion:visited {
         background: none !important;
     }
 
-    .creationvoyage:focus, .mesvoyages:focus, .monprofil:focus, .editerprofil:focus, .deconnexion:focus {
+    .creationvoyage:focus, .mesvoyages:focus, .mesamis:focus, .monprofil:focus, .editerprofil:focus, .deconnexion:focus {
         background: none !important;
     }
 
-    .creationvoyags:hover, .mesvoyages:hover, .monprofil:hover, .editerprofil:hover, .deconnexion:hover {     
+    .creationvoyags:hover, .mesvoyages:hover, .mesamis:hover, .monprofil:hover, .editerprofil:hover, .deconnexion:hover {     
         background: none !important;
     }
-
-
 
 
 /* PHOTO UTILISATEUR */
@@ -324,7 +382,7 @@
     font-family: 'Halant', serif;
     color:white;
     font-size: 1.4em;
-    margin-left:9em;
+    margin-left:26em;
     margin-top:0.5em;
 }
 
@@ -336,26 +394,57 @@
     margin-top:0.5em;
 }
 
-    @media screen and (max-width : 1090px) {
-        .seConnecter, .sinscrire {
-            font-size:1.25em;
+    @media screen and (max-width : 1270px) {
+        .seConnecter {
+            margin-left:24em;
             }
     }
 
-    @media screen and (max-width : 900px) {
-        .seConnecter, .sinscrire {
+    @media screen and (max-width : 1170px) {
+        .seConnecter {
+            margin-left:22em;
+            }
+    }
+
+    @media screen and (max-width : 1080px) {
+        .seConnecter {
+            margin-left:20em;
+            }
+    }
+
+    @media screen and (max-width : 1000px) {
+        .seConnecter {
+            margin-left:18em;
             font-size:1em;
-            margin-left:1em;
+            }
+        .sinscrire {
+            font-size:1em;
+        }
+    }
+
+    @media screen and (max-width : 760px) {
+        .seConnecter {
+            margin-left:16em;
+            margin-top:0.5em;
+        }
+        .sinscrire {
+            margin-top:0.5em;
+        }
+    }
+
+    @media screen and (max-width : 630px) {
+        .seConnecter {
+            margin-left:12em;
             }
     }
 
-    @media screen and (max-width : 600px) {
-        .seConnecter, .sinscrire {
-            font-size:0.75em;
+    @media screen and (max-width : 540px) {
+        .seConnecter {
+            margin-left:6em;
             }
     }
 
-    .lienConnexion:link, .lienInscription:link {
+    .lienConnexion:link, .lienInscription:link { /* esthétique des liens */
         color: white;
         text-decoration:none;
     }

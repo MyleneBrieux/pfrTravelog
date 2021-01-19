@@ -75,7 +75,7 @@ if (isset($_SESSION["pseudo"])) {
 
                     afficherNotifications1($user);
                     afficherNotifications2($voyage);
-                    $suppNotif=$voyageService->supprimerNotification($codeNotif);
+                    // $suppNotif=$voyageService->supprimerNotification($codeNotif);
                 }
 
             notificationsBadge3();

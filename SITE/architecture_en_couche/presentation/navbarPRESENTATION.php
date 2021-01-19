@@ -49,9 +49,6 @@ function displayHeader(){
                 integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
                 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-            <script src="../../libs/script_js/jquery-3.5.1.min.js"></script>
-            <script src="../../libs/script_js/scriptBarreRecherche.js"></script>
         
             <script src="https://kit.fontawesome.com/20f2b0d45a.js" crossorigin="anonymous"></script>
         
@@ -166,8 +163,9 @@ function menuUtilisateur(){
             <div class="dropdown-menu" id="dropdownMenuUtilisateur" aria-labelledby="dropdownMenuUtilisateur">
                 <a class="creationvoyage dropdown-item" href="../controleur/creation_voyageCONTROLEUR.php">Créer un voyage</a>
                 <a class="mesvoyages dropdown-item" href="../controleur/mesVoyagesControleur.php?pseudo='.$_SESSION["pseudo"].'">Mes voyages</a>
+                <a class="mesamis dropdown-item" href="../controleur/mesAmisControleur.php?pseudo='.$_SESSION["pseudo"].'">Mes amis</a>
                 <a class="monprofil dropdown-item" href="../controleur/monProfilControleur.php?pseudo='.$_SESSION["pseudo"].'">Mon profil</a>
-                <a class="editerprofil dropdown-item" href="../controleur/controleur_param_profil.php?pseudo='.$_SESSION["pseudo"].'">Éditer mon profil</a>
+                <a class="editerprofil dropdown-item" href="../controleur/controleur_profil.php?pseudo='.$_SESSION["pseudo"].'">Éditer mon profil</a>
                 <a class="deconnexion dropdown-item" href="../controleur/deconnexionCONTROLEUR.php">Déconnexion</a>
             </div>
         </li>';
