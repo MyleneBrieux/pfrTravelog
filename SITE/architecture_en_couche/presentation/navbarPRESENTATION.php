@@ -14,7 +14,7 @@ function displayNavbarConnectedOnly2(){
 }
 
 function displayNavbarConnectedOnly3(){
-    displayTagBottomBody();
+    displayEndNavbar();
 }
 
 // visiteur //
@@ -23,8 +23,7 @@ function displayNavbarNotConnected(){
     displayHeader();
     displayTagTopBody();
     navbarNotConnected();
-    displayTagBottomBody();
-    displayTagBottomHtml();
+    displayEndNavbar();
 }
 
 
@@ -225,14 +224,10 @@ function navbarNotConnected(){
         </div>';
 }
 
-function displayTagBottomBody(){
+function displayEndNavbar(){
     echo
-        '</body>';
-}
-
-function displayTagBottomHTML(){
-    echo
-        '</html>';
+            '</body>
+        </html>';
 }
 
 

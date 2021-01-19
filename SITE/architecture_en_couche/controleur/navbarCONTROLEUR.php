@@ -48,7 +48,8 @@ if (isset($_SESSION["pseudo"])) {
             }
 
                 while($data=mysqli_fetch_array($rs)){
-                    
+                    $codeNotif=$data["code_notif"];
+        
                     $codeComm=$data["code_comm"]; // on récupère le code commentaire de la notif en question
                     try {
                         $comm=$voyageService->recupererCommentaire($codeComm); // on récupère les infos du commentaire depuis son code commentaire
@@ -74,6 +75,7 @@ if (isset($_SESSION["pseudo"])) {
 
                     afficherNotifications1($user);
                     afficherNotifications2($voyage);
+                    $suppNotif=$voyageService->supprimerNotification($codeNotif);
                 }
 
             notificationsBadge3();

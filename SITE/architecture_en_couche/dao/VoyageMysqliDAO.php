@@ -287,6 +287,15 @@ class VoyageMysqliDAO {
         return $comm;
     }
 
+    /* SUPPRIMER UNE NOTIFICATION */
+    public function supprimerNotification(int $codeNotif){
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('delete from notifications where code_notif= ?');
+        $stmt->bind_param("i",$codeNotif);
+        $stmt->execute();
+        $mysqli->close();
+    }
+
     /* CHERCHER VOYAGE PAR CODE VOYAGE */
     public function chercherVoyageParCode(int $codeVoyage) : ?array {
         $mysqli=$this->connexion();

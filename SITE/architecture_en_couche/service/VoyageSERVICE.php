@@ -158,6 +158,12 @@ public function afficherVoyagesAccueil($start,$nbParPage){
         return $comm;
     }
 
+//Supprimer une notification depuis son code
+    public function supprimerNotification(int $codeNotif){
+        $suppNotif= new VoyageMysqliDAO;
+        $suppNotif->supprimerNotification($codeNotif);
+    }
+
 //Récupérer les informations d'un voyage depuis son code
 
     public function chercherVoyageParCode($codeVoyage) : ?array {
