@@ -71,12 +71,12 @@ function displayBottomResults(){
 function inputContinent(){
     echo 
         '<div class="col-12">
-            <input type="text" name="continent" id="input-continent" placeholder="Filtrer les continents">';
+            <input type="text" name="continent" id="input-continent" placeholder="Chercher par continent">';
 }
 
 function inputPays(){
     echo 
-        '<input type="text" name="pays" id="input-pays" placeholder="Filtrer les pays">';
+        '<input type="text" name="pays" id="input-pays" placeholder="Chercher par pays">';
 }
 
 function displayColTable(){
@@ -99,7 +99,7 @@ function displayDatasTable1($data){
     echo
             '<tbody id="corpsTableVoyage">
                 <tr id="ligneVoyage">
-                    <td id="titreVoyage">' . $data["titre"] . '</td>
+                    <td id="titreVoyage"><strong>' . $data["titre"] . '</strong></td>
                     <td id="filtreContinent">' . $data["continent"] . '</td>
                     <td id="filtrePays">' . $data["pays"] . '</td>';
 }

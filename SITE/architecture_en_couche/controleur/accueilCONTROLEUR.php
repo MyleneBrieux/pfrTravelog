@@ -38,11 +38,10 @@ try {
     
     $start = ($page - 1) * $nbParPage; // page de départ //
     
-    
     // Affichage //
     displayPageAccueil1();
     
-    echo ("Au total, les membres de Travelog ont réalisé " . $nbVoyages . " voyages"); // compteur de voyages trouvés dans la bdd //
+    echo ("Plongez au cœur des " . $nbVoyages . " voyages des membres de Travelog !"); // compteur de voyages trouvés dans la bdd //
 
     $filtreContinent=$voyageService->filtrerContinents(); // filtre continents
     inputContinent($filtreContinent);
