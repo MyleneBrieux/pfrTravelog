@@ -368,6 +368,21 @@ include_once("dao_exception.php");
             throw new DaoException($q->getMessage(), $q->getCode());
         }
     }
+
+    public function dejaAmis($idAmi, $id){
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from demande_ami where id_ami=? and id=? and accepte="Y"');
+            $stmt->bind_param("ii",$idAmi, $id);
+            $stmt->execute();
+            $rs=$stmt->get_result();
+            $nbAmis=mysqli_num_rows($rs);
+            $mysqli->close();
+            return $nbAmis;
+        } catch (mysqli_sql_exception $q) {
+            throw new DaoException($q->getMessage(), $q->getCode());
+        }
+    }
     
 
 

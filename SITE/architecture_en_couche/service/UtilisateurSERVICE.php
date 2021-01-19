@@ -227,6 +227,15 @@ class UtilisateurService {
         }
     }
 
+    public function dejaAmis($idAmi, $id){
+        try{
+            $nbAmis = $this->utilisateurDao->dejaAmis($idAmi, $id);
+            return $nbAmis;
+        }catch(DaoException $q){
+            throw new ServiceException($q->getMessage(),$q->getCode());
+        }
+    }
+
 
 
 

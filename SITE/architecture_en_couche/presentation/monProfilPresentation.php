@@ -26,7 +26,7 @@
         echo'</header>';
     }
 
-    function menuLat($profil, $setBirthday, $isNotUser, $isUser){
+    function menuLat($profil, $setBirthday, $isNotUser, $isUser, $dejaAmis){
         echo'<div class="row">
                 <div class="col-lg-2 col-md-4 col-sm-4 pl-0 col-12 bg-sable">
                     <nav class="menu">
@@ -50,7 +50,7 @@
                                     </ul>
                                 </p>
                             </div>';
-                            if($isNotUser){
+                            if($isNotUser && $dejaAmis<1){
                                 echo'<div class="row mt-5">
                                     <form method="post">
                                         <img src="../../img/logos_divers/ami_turquoise2.png" alt="logo amis"> <input type="submit" name="ajoutAmi" class="ajoutAmi" value="Ajouter en ami"/>

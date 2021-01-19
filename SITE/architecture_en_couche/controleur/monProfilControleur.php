@@ -39,9 +39,14 @@ include_once '../metier/Voyage.php';
         $ami = $utilisateur->ajouterAmi($idAmi, $id);
         
     }
+
+    $idAmi = $profil['id'];
+    $id = $visiteur['id'];
+    $dejaAmis = $utilisateur->dejaAmis($idAmi, $id);
+
 profilDebut();
 
-menuLat($profil, $setBirthday, $isNotUser, $isUser);
+menuLat($profil, $setBirthday, $isNotUser, $isUser, $dejaAmis);
 
 presentationUser($profil, $setNation, $setDescription, $nbContinent, $nbPays);
 
@@ -58,7 +63,6 @@ if($mostRecentVoyage && $mostPopularVoyage && $data){
 } else {
     noTrip();
 }
-
 
 profilFin();
 
