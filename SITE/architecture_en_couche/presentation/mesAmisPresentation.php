@@ -82,10 +82,9 @@
                 <button class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
                 <a href="mesAmisControleur.php?pseudo='. $profil["pseudo"] .'&action=supprimerAmi&id_ami='. $ami['id_ami'] .'">
                 <button type="button" class="btn btn-danger mt-4 mb-3 supprAmi">Supprimer</button>
-                ';
+                </div>';
         }
         echo'
-        </div>
         </div>';
     }
     //<input type="button" name="supprimerAmi" class="btn btn-danger supprimerAmi" value="supprimer"/>
