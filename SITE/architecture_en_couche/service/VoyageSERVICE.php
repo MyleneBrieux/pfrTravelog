@@ -123,10 +123,17 @@ public function afficherVoyagesAccueil($start,$nbParPage){
         return $voyagesService;
     }
 
-//Rechercher les continents
+//Filtrer les continents
 
     public function filtrerContinents(){
         $data=$this->voyageDao->filtrerContinents();
+        return $data;
+    }
+
+    //Filtrer les pays
+
+    public function filtrerPays(){
+        $data=$this->voyageDao->filtrerPays();
         return $data;
     }
 

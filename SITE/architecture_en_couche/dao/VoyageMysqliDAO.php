@@ -224,11 +224,23 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
-    /* RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
+    /* FILTRE : RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
     public function filtrerContinents() {
         $mysqli=$this->connexion();
         $stmt=$mysqli->prepare('select * from voyages where continent=?');
         $stmt->bind_param("s",$continent);
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $data=$rs->fetch_all(MYSQLI_ASSOC);
+        $mysqli->close();
+        return $data;
+    }
+
+    /* FILTRE : RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
+    public function filtrerPays() {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select * from voyages where pays=?');
+        $stmt->bind_param("s",$pays);
         $stmt->execute();
         $rs=$stmt->get_result();
         $data=$rs->fetch_all(MYSQLI_ASSOC);

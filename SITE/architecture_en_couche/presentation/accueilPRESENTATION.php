@@ -71,57 +71,62 @@ function displayBottomResults(){
 function inputContinent(){
     echo 
         '<div class="col-12">
-            <input type="text" name="continent" id="input-continent" placeholder="Recherche par continent" class="mr-5">';
+            <input type="text" name="continent" id="input-continent" placeholder="Filtrer les continents">';
+}
+
+function inputPays(){
+    echo 
+        '<input type="text" name="pays" id="input-pays" placeholder="Filtrer les pays">';
 }
 
 function displayColTable(){
     echo
         '<div class="row">
-        <table class="table table-sm" id="filtre">
-            <thead class="thead" id="enteteTableVoyage">
-                <tr>
-                    <th scope="col">DÉCOUVREZ</th>
-                    <th scope="col">CONTINENT</th>
-                    <th scope="col">PAYS</th>
-                    <th scope="col">PAR</th>
-                    <th scope="col">EN IMAGE</th>
-                    <th scope="col">EN BREF</th>
-                </tr>
-            </thead>';
+            <table class="table table-sm" id="filtre">
+                <thead class="thead" id="enteteTableVoyage">
+                    <tr>
+                        <th scope="col">DÉCOUVREZ</th>
+                        <th scope="col">CONTINENT</th>
+                        <th scope="col">PAYS</th>
+                        <th scope="col">PAR</th>
+                        <th scope="col">EN IMAGE</th>
+                        <th scope="col">EN BREF</th>
+                    </tr>
+                </thead>';
 }
 
 function displayDatasTable1($data){
     echo
-        '<tbody id="corpsTableVoyage">
-            <tr>
-                <td id="titreVoyage">' . $data["titre"] . '</td>
-                <td id="filtreContinent">' . $data["continent"] . '</td>
-                <td id="paysVoyage">' . $data["pays"] . '</td>';
+            '<tbody id="corpsTableVoyage">
+                <tr id="ligneVoyage">
+                    <td id="titreVoyage">' . $data["titre"] . '</td>
+                    <td id="filtreContinent">' . $data["continent"] . '</td>
+                    <td id="filtrePays">' . $data["pays"] . '</td>';
 }
 
 function displayPseudoTable($donnee){
     echo
-        '<td>' . '<a href="../controleur/monProfilControleur.php?pseudo=' . $donnee["pseudo"] . '" class="lienProfil">' . $donnee["pseudo"] . '</a></td>';
+            '<td>' . '<a href="../controleur/monProfilControleur.php?pseudo=' . $donnee["pseudo"] . '" class="lienProfil">' . $donnee["pseudo"] . '</a></td>';
 }
 
 function displayDatasTable2($data){
     echo
-        '<td><img src="../../img/photos/' . $data["couverture"] . '" class="photosVoyage"/></td>
-        <td id="resumeTable">' . $data["resume"] . '
-            </br>
-            <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '" 
-               id="lienVoyage"><button class="btn" id="btnDetailsVoyage">Découvrir</button>
-            </a>
-        </td>';
+            '<td><img src="../../img/photos/' . $data["couverture"] . '" class="photosVoyage"/></td>
+            <td id="resumeTable">' . $data["resume"] . '
+                </br>
+                <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '" 
+                id="lienVoyage"><button class="btn" id="btnDetailsVoyage">Découvrir</button>
+                </a>
+            </td>';
 }
 
 function displayBottomTable(){
     echo
-                '</tr>
-            </tbody>
-        </table>
-    </div>
-    </div>
+                        '</tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>';
 }
 

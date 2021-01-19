@@ -42,10 +42,12 @@ try {
     // Affichage //
     displayPageAccueil1();
     
-    echo ($nbVoyages . " voyages trouvés"); // compteur de voyages trouvés dans la bdd //
+    echo ("Au total, les membres de Travelog ont réalisé " . $nbVoyages . " voyages"); // compteur de voyages trouvés dans la bdd //
 
-    $filtre=$voyageService->filtrerContinents(); // filtre continents
-    inputContinent($filtre);
+    $filtreContinent=$voyageService->filtrerContinents(); // filtre continents
+    inputContinent($filtreContinent);
+    $filtrePays=$voyageService->filtrerPays(); // filtre pays
+    inputPays($filtrePays);
 
     displayColTable();
 
