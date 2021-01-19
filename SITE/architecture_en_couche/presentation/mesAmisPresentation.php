@@ -100,8 +100,13 @@
             </div>';
     }
 
-    function listeAmis($nbAmis){
+    function listeAmisUtilisateur($nbAmis){
         echo'<div class="">
+        <h1 class="placenav_titre mb-3">Liste des amis ('. $nbAmis .')</h1>';
+    }
+
+    function listeAmisVisiteur($nbAmis){
+        echo'<div class="col-lg-8 col-md-8 col-sm-8 ml-5 col-10">
         <h1 class="placenav_titre mb-3">Liste des amis ('. $nbAmis .')</h1>';
     }
 
@@ -125,7 +130,7 @@
         }
         echo'
         </div>
-        </div>';
+        ';
     }
     //<input type="button" name="supprimerAmi" class="btn btn-danger supprimerAmi" value="supprimer"/>
     function noAmis(){
@@ -161,6 +166,7 @@
             //</li>
         echo'</ul>
         </nav>
+    </div>
     </div>
     </div>
     </div>';

@@ -327,7 +327,7 @@ include_once("dao_exception.php");
             $stmt->bind_param("ii", $id, $idAmi);
             $stmt->execute();
             $stmt2 = $mysqli->prepare("delete from demande_ami where id=? and id_ami=?");
-            $stmt2->bind_param("ii", $id, $idAmi);
+            $stmt2->bind_param("ii", $idAmi, $id);
             $stmt2->execute();
             $mysqli->close();
         }catch(mysqli_sql_exception $q){
