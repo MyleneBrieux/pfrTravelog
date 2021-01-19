@@ -5,21 +5,10 @@ function displayPageAccueil1(){
     displayTopTagHtml();
     displayHead();
     navbar();
-    row();
     displayTopResults();
 }
 
 function displayPageAccueil2(){
-    displayBottomResults();
-    // selectContinents1();
-}
-
-function displayPageAccueil3(){
-    selectContinents3();
-    selectPays1();
-}
-
-function displayPageAccueil4(){
     footer();
     displayEnd();
 }
@@ -57,63 +46,38 @@ function displayHead(){
         </head>';
 }
 
-// <script src="../../libs/jquery/jquery-3.5.1.min.js"></script>
-// <script src="../../libs/script_js/scriptFiltreVoyages.js"></script>
-
 function navbar(){
     echo 
         '<body>
-            <div class="container-fluid">';
-                include ("../controleur/navbarCONTROLEUR.php");
-}
-
-function row(){
-    echo 
-        '<div class="row">';
+            <div class="container-fluid">
+                <div class="row">';
+                    include ("../controleur/navbarCONTROLEUR.php");
+            echo 
+                '</div>';
 }
 
 function displayTopResults(){
     echo 
-        '<div class="col-11">
+        '<div class="col-12">
             <p class="rsvoyages">';
 }
 
 function displayBottomResults(){
     echo
-        '</p>';
+            '</p>
+        </div>';
 }
 
-function selectContinents1(){
-    echo
-        '<form name="filtresVoyages">
-            <select id="selectContinent" name="selectContinent"">
-                <option value="">-- Sélectionnez un continent --</option>';
-}
-
-function selectContinents2($data){
-    echo
-        '<option value="' . $data["continent"] . '">' . $data["continent"] . '</option>';
-}
-
-function selectContinents3(){
-    echo
-        '</select>';
-}
-
-function selectPays1(){
-    echo
-        '<select id="pays" name="pays">
-            <option value="">-- Sélectionnez un pays --</option>';   
-}
-
-function selectPays2(){
-    echo
-        '</select>';
+function inputContinent(){
+    echo 
+        '<div class="col-12">
+            <input type="text" name="continent" id="input-continent" placeholder="Recherche par continent" class="mr-5">';
 }
 
 function displayColTable(){
     echo
-        '<table class="table table-sm" id="tableVoyage">
+        '<div class="row">
+        <table class="table table-sm" id="filtre">
             <thead class="thead" id="enteteTableVoyage">
                 <tr>
                     <th scope="col">DÉCOUVREZ</th>
@@ -129,9 +93,9 @@ function displayColTable(){
 function displayDatasTable1($data){
     echo
         '<tbody id="corpsTableVoyage">
-            <tr class="ligneVoyage">
-                <td id="titreVoyage"><strong>' . $data["titre"] . '</strong></td>
-                <td id="continentVoyage">' . $data["continent"] . '</td>
+            <tr>
+                <td id="titreVoyage">' . $data["titre"] . '</td>
+                <td id="filtreContinent">' . $data["continent"] . '</td>
                 <td id="paysVoyage">' . $data["pays"] . '</td>';
 }
 
@@ -146,7 +110,7 @@ function displayDatasTable2($data){
         <td id="resumeTable">' . $data["resume"] . '
             </br>
             <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '" 
-                id="lienVoyage"><button class="btn" id="btnDetailsVoyage">Découvrir</button>
+               id="lienVoyage"><button class="btn" id="btnDetailsVoyage">Découvrir</button>
             </a>
         </td>';
 }
@@ -157,6 +121,7 @@ function displayBottomTable(){
             </tbody>
         </table>
     </div>
+    </div>
     </div>';
 }
 
@@ -164,7 +129,7 @@ function displayPagination($page, $nbPages){
     echo
         '<div class="pagination" id="pagination">
             <nav aria-label="Page navigation" class="pages">
-                <ul class="pagination" id="pagination">';
+                <ul class="pagination pagination-sm" id="pagination">';
             for ($page=1; $page<=$nbPages;$page++){
                 echo
                     '<li class="page-item" id="encadreNoPage">
@@ -183,10 +148,13 @@ function footer(){
 
 function displayEnd(){
     echo 
-                '</div>
-            </body>
+                    '</div>
+                </body>
+            <script src="../../libs/jquery/jquery-3.5.1.min.js"></script>
+            <script src="../../libs/script_js/scriptFiltreVoyages.js"></script>
         </html>';
 }
+
 
 // messages d'erreur //
 function erreurs ($errorCode=null, $message){

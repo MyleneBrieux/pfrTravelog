@@ -1,52 +1,33 @@
-$("#corpsTableVoyage").load("../../architecture_en_couche/controleur/accueilCONTROLEUR.php");
+$('#input-continent').keyup(function () {         //quand on appuie, lache une touche
+    var input = $(this);
+    var val = input.val();                     //éviter de retaper la chaine de caractères quand on en a besoin
+    if (val == '') {
+        $('#filtre tr').show();                 // permet d'afficher tous les mots si on supprime la recherche
+        return true;
+    }
+console.log("cc");
+    var regexp = '\\b(.*)';                 //chercher un mot qui commence
+    for (var j in val) {                      //chercher chaque lettre intermédiaires du mot
+        regexp += '(' + val[j] + ')(.*)';
+    }
+    regexp += '\\b';                        //chercher un mot qui se finit
 
-    $("#selectContinent").on("change", function(e){ 
-        const continentSelectionne = $(":selected").val(); 
-           if (continentSelectionne){ 
-                $("#pays").load("../../architecture_en_couche/controleur/accueilCONTROLEUR.php?continent=" + continentSelectionne); 
-            } else { 
-                $("#pays").load("../../architecture_en_couche/controleur/accueilCONTROLEUR.php?continent=");
+    $('#filtre tr').find('#filtreContinent').each(function () {         //chercher les enfants de tr
+        var td = $(this);
+        var result = td.text().match(new RegExp(regexp, 'i'));     //match verifie si le texte est une expression réguliaire
+                                                                    //i sert à ignorer les majuscules et minuscules
+        if (result) {                         
+            var string = '';
+            for (var j in result) {
+
+                if (j > 0) {
+                        string += result[j];  
+                }
+                
             }
+            td.empty().append(string);      //vide
+        } else {
+            td.parent().hide();      //permet de cacher les elements "null" car ils ne possèdent pas les lettres tapées
+        }
     })
-
-
-
-// $("#corpsTableVoyage").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php");
-
-//     $("#continent").on("change", function(e){ 
-//         const continentSelectionne = $(":selected").val(); 
-
-//             if (continentSelectionne){ 
-//                 $("#pays").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php?continent=" + continentSelectionne); 
-//                 $("#corpsTableVoyage").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php?continent=" + continentSelectionne + "&afficher=tableau"); 
-//             } else { 
-//                 $("#pays").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php?continent=");
-//                 $("#corpsTableVoyage").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php");
-//             }
-
-//     })
-
-
-//     $("#pays").on("change", function(e){ 
-//         const paysSelectionne = $("#pays :selected").val(); 
-//         const continentSelectionne = $("#continent option:selected").val(); 
-//             if (paysSelectionne){
-//                 $("#ville").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php?continent=" + continentSelectionne + "&pays=" + paysSelectionne);
-//                 $("#corpsTableVoyage").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php?continent=" + continentSelectionne + "&pays=" + paysSelectionne + "&afficher=tableau");   
-//             } else {
-//                 $("#ville").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php?continent=" + continentSelectionne + "&pays=");
-//                 $("#corpsTableVoyage").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php?continent=" + continentSelectionne +  "&afficher=tableau");
-//             }
-//     })
-
-
-//     $("#ville").on("change", function(e){ 
-//         const villeSelectionnee = $("#ville :selected").val();
-//         const paysSelectionne = $("#pays option:selected").val(); 
-//         const continentSelectionne = $("#continent option:selected").val(); 
-//             if (villeSelectionnee){
-//                 $("#corpsTableVoyage").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php?continent=" + continentSelectionne + "&pays=" + paysSelectionne + "&ville=" + villeSelectionnee + "&afficher=tableau");   
-//             } else {
-//                 $("#corpsTableVoyage").load("../../architecture_en_couche/controleur/menulatCONTROLEUR.php?continent=" + continentSelectionne +  "&pays=" + paysSelectionne + "&afficher=tableau");
-//             }
-//     })
+});

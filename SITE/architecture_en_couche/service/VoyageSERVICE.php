@@ -125,32 +125,10 @@ public function afficherVoyagesAccueil($start,$nbParPage){
 
 //Rechercher les continents
 
-    public function chercherContinents(){
-        $continents=$this->voyageDao->chercherContinents();
-        return $continents;
+    public function filtrerContinents(){
+        $data=$this->voyageDao->filtrerContinents();
+        return $data;
     }
-
- //Rechercher les voyages (pour les select) 
-
-    public function chercherVoyages(){
-        $voyages=$this->voyageDao->chercherVoyages();
-        return $voyages;
-    }
-
-//Rechercher les pays selon le continent
-
-    public function chercherPaysSelonContinent(string $continent){
-        $pays=$this->voyageDao->chercherPaysSelonContinent($continent);
-        return $pays;
-    } 
-
-//Rechercher les villes
-
-    public function chercherVilles(){
-        $villes=$this->voyageDao->chercherVilles();
-        return $villes;
-    }
-
 
 //Afficher le voyage le plus récent d'un utilisateur
 
