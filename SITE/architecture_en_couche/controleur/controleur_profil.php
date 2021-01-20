@@ -82,13 +82,13 @@ require_once('../metier/Utilisateur.php');
 
 //AFFICHAGE DE LA PHOTO DU MENU SELON UTILISATEUR
     affichageEnteteProfil();
-
-        if (!isset($_SESSION['pseudo']) && !isset($utilisateur['photoprofil']) ){
-            paramPhotoMenuLatDefaut();
-        }else {
+        if (isset($_SESSION['pseudo']) && isset($utilisateur['photoprofil']) ){
             paramPhotoMenuLatProfil($utilisateur);
+        }else {
+            paramPhotoMenuLatDefaut();
         }
     
+        
 /*CALCUL D'AGE UTILISATEUR*/  
     $birthday = new DateTime($utilisateur['birthday']);
     $dateJour = new DateTime();

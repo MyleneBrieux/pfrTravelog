@@ -10,22 +10,18 @@ require_once('../metier/Utilisateurs.php');
 affichageEnteteContact();
 
 
-
-
-
-
-
-
-
 // CONFIGURATION DE LA METHODE DE CONNEXION
     if(isset($_GET["action"]) && $_GET["action"] == "envoyer" && !empty($_POST)){
 
-        $destinataire = "lydlus@hotmail.com";
-        $sujet = "Message en provenance de Travelog";
+        $sujet = $_POST['sujet'];
         $message = $_POST['message'];
-        $envoyeur = $_POST['email'];
+        $expediteur = $_SESSION['pseudo'];
+        $destinataire = "lydlus@hotmail.com";
+        // $sujet = "Message en provenance de Travelog";
+        
+        
 // AFFICHAGE DE LA REPONSE D'ENVOI D'EMAIL (OK OU PAS OK)
-        if (mail($destinataire, $sujet, $message, $envoyeur)) {
+        if (mail($destinataire, $sujet, $message, $expediteur)) {
             envoiOK();
         } 
         else {

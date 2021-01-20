@@ -156,7 +156,7 @@ function paramDivDescriptionTxt($utilisateur){
     function paramPhotoMenuLatProfil($utilisateur){
         echo   
             '<div class="mt-5 photo"> 
-                <img src="data:image/jpeg;base64,'.base64_encode($utilisateur['photoprofil']).'" alt="photo profil" class="photo" id="photo" name="photo"/>
+                <img src="data:image/jpeg;base64,'.base64_encode($utilisateur['photoprofil']).'" alt="photo" class="photo" id="photo" name="photo"/>
             </div>';
     }
 

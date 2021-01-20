@@ -29,9 +29,6 @@
     }
 
 
-
-
-
     function envoiOK(){
         echo '<div class= "alert alert-success msg-erreur"> Votre email à bien été envoyé ! </div>';
     }
@@ -39,15 +36,6 @@
     function envoiPasOK(){
         echo '<div class= "alert alert-danger msg-erreur"> Erreur lors de l\'envois d\'email, veuillez réessayer  ! </div>';
     }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -107,13 +95,13 @@
 /*FONCTION DIV TITRE*/    
     function paragrapheTitre(){
         echo
-            '<p class="texteContact"><strong>Un problème ? Une suggestion ? Contactez-nous !</strong></p>';
+            '<p class="texteContact"><strong>MESSAGERIE :</strong></p>';
     }
 
 /*FONCTION OUVERTURE FORM*/    
     function ouvertureForm(){
         echo
-            '<form action="../controleur/controleur_contact.php?action=envoyer" method="POST"
+            '<form action="../controleur/controleur_contact_user.php?action=envoyer" method="POST"
             class="formContact">';
     }
 
@@ -126,7 +114,7 @@
     function divPseudo(){
         echo
             ' <div class="form-group col-md-5">
-                <input type="text" class="Pseudo form-control" id="pseudo" placeholder="Votre pseudo" name="pseudo">
+                <input type="text" class="Pseudo form-control" id="pseudo" placeholder="Pseudo du destinataire" name="destinataire">
             </div>';
     }
 

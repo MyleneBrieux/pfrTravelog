@@ -15,8 +15,8 @@ class VoyageMysqliDAO {
      /* CONNEXION */       
      public function connexion() {
         try {
-            $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
-            // $mysqli= new mysqli('localhost','root','','travelog');
+            // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+            $mysqli= new mysqli('localhost','root','','travelog');
             //$mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
             return $mysqli;
         } catch (mysqli_sql_exception $a) {

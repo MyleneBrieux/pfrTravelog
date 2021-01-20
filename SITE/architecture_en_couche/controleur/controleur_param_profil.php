@@ -80,6 +80,7 @@ require_once('../metier/Utilisateur.php');
             }
         } 
 
+
 //AFFICHAGE DE LA PHOTO DU MENU SELON UTILISATEUR
     affichageEnteteParamProfil();
         if (isset($_SESSION['pseudo']) && isset($utilisateur['photoprofil']) ){
@@ -87,6 +88,7 @@ require_once('../metier/Utilisateur.php');
         }else {
             paramPhotoMenuLatDefaut($utilisateur);
         }
+
 
 /*CALCUL D'AGE UTILISATEUR*/  
     $birthday = new DateTime($utilisateur['birthday']);
@@ -98,6 +100,7 @@ require_once('../metier/Utilisateur.php');
     }else{
         $age="Age Inconnu";
     }
+
 
 /*DELETE DES UTILISATEURS*/    
     // if(isset($_POST["action"]) && $_POST["action"] == "effacer"){
@@ -115,6 +118,7 @@ require_once('../metier/Utilisateur.php');
     //     }
     // }
 
+    
 //AFFICHAGE DE LA PAGE
     affichageParamProfil($utilisateur, $age);
 
