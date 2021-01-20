@@ -26,13 +26,29 @@
                 include ("navbarCONTROLEUR.php");
     }
 
+    function errreurAmis($errorCode=null, $message){
+        if($errorCode && $errorCode == 1049){ // erreur de synthaxe sur la bdd //
+            echo 
+                "<div class='alert alert-danger text-center'> Ce site est en maintenance. Merci de revenir ultérieurement. </div>";
+        } elseif ($errorCode && $errorCode == 1146){ // problème de synthaxe avec une table de la bdd //
+            echo 
+                "<div class='alert alert-danger text-center'> Erreur de connexion avec la base de données. Merci de réessayer ultérieurement. </div>";
+        } elseif ($errorCode && $errorCode == 1045){ // erreur de connexion à la base de données //
+            echo 
+                "<div class='alert alert-danger text-center'> Erreur avec la base de données. Merci de réessayer ultérieurement. </div>";
+        } elseif ($errorCode && $errorCode == 1064){ // erreur de syntaxe de la requête sql //
+            echo 
+                "<div class='alert alert-danger text-center'> Erreur avec la base de données. Merci de réessayer ultérieurement. </div>";
+        } 
+    }
+
     function menuLat($profil, $setBirthday){
         echo'<div class="pl-0 menu_lateral_detail_voyage">
             <nav class="bg-sable mr-3 pr-3 menU centrage">
                 <div class="col-lg-12 col-md-6 col-sm-6 pl-1 col-12">
                     <div class="image-profil">';
                     if (isset($profil['photoprofil'])) {
-                        echo'<img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil"
+                        echo'<img src="data:image/jpeg;base64,'.base64_encode($profil['photoprofil']).'" alt="photo de profil"
                         width="100%" height="100%" />';
                     }else {
                         echo'<img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil"
@@ -75,12 +91,18 @@
     function demandeAmi1($isUser, $profil, $ami){
         echo'<div class="row bg-sable mb-3">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-            <div class="row">
-                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
-                    src="../../img/photos/photo_profil_defaut.png" />
-                <h4 class="mt-4 mb-3"><a href="monProfilControleur.php?pseudo='. $ami['pseudo'] .'" />' . $ami['pseudo'] . '</h4>
-            </div>
-        </div>';
+            <div class="row">';
+            if (isset($ami['photoprofil'])){
+                echo'<img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                src="data:image/jpeg;base64,'.base64_encode($ami['photoprofil']).'" />
+                <h4 class="mt-4 mb-3"><a href="monProfilControleur.php?pseudo='. $ami['pseudo'] .'" />' . $ami['pseudo'] . '</h4>';
+            }else{
+                echo'<img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                src="../../img/photos/photo_profil_defaut.png" />
+                <h4 class="mt-4 mb-3"><a href="monProfilControleur.php?pseudo='. $ami['pseudo'] .'" />' . $ami['pseudo'] . '</h4>';
+            }    
+            echo'</div>
+            </div>';
         if($isUser){
             echo'<div class="col-lg-2 col-md-1"></div>
             <div class="col-lg-4 col-md-5 col-sm-12 col-12">
@@ -113,11 +135,17 @@
     function ami1($ami, $isUser, $profil){
         echo'<div class="row bg-sable mb-3">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-            <div class="row">
-                <img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
-                    src="../../img/photos/photo_profil_defaut.png" />
-                <h4 class="mt-4 mb-3"><a href="monProfilControleur.php?pseudo='. $ami['pseudo'] .'" />' . $ami['pseudo'] . '</h4>
-            </div>
+            <div class="row">';
+            if (isset($ami['photoprofil'])){
+                echo'<img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                src="data:image/jpeg;base64,'.base64_encode($ami['photoprofil']).'" />
+                <h4 class="mt-4 mb-3"><a href="monProfilControleur.php?pseudo='. $ami['pseudo'] .'" />' . $ami['pseudo'] . '</h4>';
+            }else{
+                echo'<img class="photo_profil_mes_amis rounded-circle mt-3 mb-3 ml-3 mr-3"
+                src="../../img/photos/photo_profil_defaut.png" />
+                <h4 class="mt-4 mb-3"><a href="monProfilControleur.php?pseudo='. $ami['pseudo'] .'" />' . $ami['pseudo'] . '</h4>';
+            }
+            echo'</div>
         </div>';
         if($isUser){
             echo'<div class="col-lg-2 col-md-1"></div>

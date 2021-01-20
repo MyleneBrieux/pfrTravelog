@@ -11,13 +11,16 @@ include_once '../service/UtilisateurSERVICE.php';
 $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
     $utilisateur = new UtilisateurService();
     $voyagesService = new VoyageService();
-    // try{
+    try{
         $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
         $isUser = isset($_SESSION['pseudo']) && ($_SESSION['pseudo']==$profil['pseudo']);
-        $nbParPage = 4;
         $info=$voyagesService->nbVoyagesUtilisateur($pseudo); //Compte le nombre de voyages crées par l'utilisateur dont on visite la page
         $nbContinent = $voyagesService->compterContinentsUtilisateur($pseudo);
         $nbPays = $voyagesService->compterPaysUtilisateur($pseudo);
+    }catch(ServiceException $e){
+        erreurMesVoyages($e->getCode(), $e->getMessage());
+    }
+        $nbParPage = 4;
         $total = $info; //on récupère le nombre total de voyages de la var info dans la var total
         $nombreDePage=ceil($total/$nbParPage);//on calcul le nombre de page en divisant le nombre de voyages par le nombre que l'on veut voir afficher à l'écran
         if (!isset($_GET['page'])){
@@ -26,12 +29,14 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
             $page = $_GET['page']; //sinon on utilise la valeur fournie
         }
         $start = ($page - 1) * $nbParPage;
-        $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo, $start, $nbParPage);
         $precedent = $page-1;
         $suivant = $page + 1;
-    // }catch(UtilisateurException $e){
+        try{
+            $voyages = $voyagesService->chercherVoyagesParPseudo($pseudo, $start, $nbParPage);
+        }catch(ServiceException $e){
+            erreurMesVoyages($e->getCode(), $e->getMessage());
+        }
         
-    // }
 
    
     

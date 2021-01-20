@@ -28,6 +28,22 @@
             echo'</div>';
     }
 
+    function erreurMesVoyages($errorCode=null, $message){
+        if($errorCode && $errorCode == 1049){ // erreur de synthaxe sur la bdd //
+            echo 
+                "<div class='alert alert-danger text-center'> Ce site est en maintenance. Merci de revenir ultérieurement. </div>";
+        } elseif ($errorCode && $errorCode == 1146){ // problème de synthaxe avec une table de la bdd //
+            echo 
+                "<div class='alert alert-danger text-center'> Erreur de connexion avec la base de données. Merci de réessayer ultérieurement. </div>";
+        } elseif ($errorCode && $errorCode == 1045){ // erreur de connexion à la base de données //
+            echo 
+                "<div class='alert alert-danger text-center'> Erreur avec la base de données. Merci de réessayer ultérieurement. </div>";
+        } elseif ($errorCode && $errorCode == 1064){ // erreur de syntaxe de la requête sql //
+            echo 
+                "<div class='alert alert-danger text-center'> Erreur avec la base de données. Merci de réessayer ultérieurement. </div>";
+        } 
+    }
+
     function débutCorpsVisiteur($profil, $info, $nbContinent, $nbPays){
         echo'<div class="col-12">
         <h1 class="titre_mesvoyages">Les voyages de <strong>'. $profil['pseudo'] .'</strong></h1>
@@ -53,7 +69,7 @@
                         <th scope="col">TITRE</th>
                         <th scope="col">EN IMAGE</th>
                         <th scope="col">EN BREF</th>
-                        <th scope="col"></th>
+                        <th></th>
                     </tr>
                 </thead>';
     }
@@ -62,10 +78,12 @@
         echo
                 '<tbody id="corpsTableVoyage">
                 <tr>
-                    <td>' . $data["titre"] . '</td>
+                    <td><strong>' . $data["titre"] . '</strong></td>
                     <td><img src="../../img/photos/' . $data["couverture"] . '" class="photosVoyage"/></td>
                     <td>' . $data["resume"] . '</td>
-                    <td>' . '<a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] .'&code_etape='. $data["code_etape"] .'"><button class="btn" id="btnDetailsVoyage">Découvrir</button></a></td>';
+                    <td><a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '" 
+                    id="lienVoyage"><button class="btn" id="btnDetailsVoyage">Découvrir</button>
+                    </a></td>';
     }
     function finTableau(){
         echo
@@ -79,9 +97,15 @@
 
     function encadreVisiteur($profil){
         echo'
-        <div class="encadrevoyage">
-            <img src="../../img/photos/photo_profil_defaut.png" class="photoprofilrond" />
-            <a href="../controleur/monProfilControleur.php?pseudo='.$profil["pseudo"].'" class="">
+        <div class="encadrevoyage">';
+            if (isset($profil['photoprofil'])) {
+                echo'<img src="data:image/jpeg;base64,'.base64_encode($profil['photoprofil']).'" alt="photo de profil"
+                width="100%" height="100%" />';
+            }else {
+                echo'<img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil"
+                width="100%" height="100%" />';
+            }
+            echo'<a href="../controleur/monProfilControleur.php?pseudo='.$profil["pseudo"].'" class="">
                 Voir le profil
             </a>
             <a href="../controleur/controleur_contact.php" class="">
@@ -93,9 +117,13 @@
 
     function encadreUtilisateur(){
         echo'
-        <div class="encadrevoyage">
-            <img src="../../img/photos/photo_profil_defaut.png" class="photoprofilrond" />
-            <a href="../controleur/creation_voyageCONTROLEUR.php" class="">
+        <div class="encadrevoyage">';
+            if (isset($profil['photoprofil'])) {
+                echo'<img src="data:image/jpeg;base64,'.base64_encode($profil['photoprofil']).'" alt="photo de profil" class="photoprofilrond"/>';
+            }else {
+                echo'<img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil" class="photoprofilrond" />';
+            }
+            echo'<a href="../controleur/creation_voyageCONTROLEUR.php" class="">
                 Créer un nouveau voyage
             </a>
         </div>
