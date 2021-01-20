@@ -154,6 +154,13 @@ public function afficherVoyagesAccueil($start,$nbParPage){
         return $voyagesService;
     }
 
+//Afficher voyages selon code_etape
+
+    public function chercherVoyageParCodeEtape(int $codeEtape){
+        $voyage = $this->voyageDao->chercherVoyageParCodeEtape($codeEtape);
+        return $voyage;
+    }
+
 //Filtrer les continents
 
     public function filtrerContinents(){
@@ -213,10 +220,10 @@ public function afficherVoyagesAccueil($start,$nbParPage){
 
 //Récupérer les informations d'un voyage depuis son code
 
-    public function chercherVoyageParCode($codeVoyage) : ?array {
+    public function chercherEtapeParCode($codeEtape) : ?array {
         try {
-            $voyage = $this->voyageDao->chercherVoyageParCode($codeVoyage);
-            return $voyage;
+            $etape = $this->voyageDao->chercherEtapeParCode($codeEtape);
+            return $etape;
         } catch (mysqli_sql_exception $aa) {
             throw new DaoException($aa->getMessage(), $aa->getCode());
         }

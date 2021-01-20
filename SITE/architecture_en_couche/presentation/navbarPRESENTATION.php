@@ -108,11 +108,11 @@ function afficherNotifications1($user){
         '<a class="affichernotif dropdown-item" href="#">' . $user["pseudo"] . ' vous a laissé un commentaire';
 }
 
-function afficherNotifications2($voyage){
+function afficherNotifications2($trip){
     echo
         ' sur </br>
-        <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $voyage["code_voyage"] . '&code_etape=' . $voyage["code_etape"] . '" id="lienVoyageNotif"> 
-        <em>' . $voyage["titre"] . '</em></a></a>';
+        <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $trip["code_voyage"] . '&code_etape=' . $trip["code_etape"] . '" id="lienVoyageNotif"> 
+        <em>' . $trip["titre"] . '</em></a></a>';
 }
 
 function notificationsBadge3(){

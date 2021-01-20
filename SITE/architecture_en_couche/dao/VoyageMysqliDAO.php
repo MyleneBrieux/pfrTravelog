@@ -15,8 +15,8 @@ class VoyageMysqliDAO {
      /* CONNEXION */       
      public function connexion() {
         try {
-            // $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
-            $mysqli= new mysqli('localhost','root','','travelog');
+            $mysqli= new mysqli('localhost','mylene','afpamy13','travelog');
+            // $mysqli= new mysqli('localhost','root','','travelog');
             //$mysqli= new mysqli('localhost','romain_wyon','luna1004','travelog');
             return $mysqli;
         } catch (mysqli_sql_exception $a) {
@@ -251,6 +251,18 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
+    /* RECHERCHE VOYAGE PAR PSEUDO */
+    public function chercherVoyageParCodeEtape(int $codeEtape) {
+        $mysqli=$this->connexion();
+        $stmt = $mysqli->prepare("select * from voyages where code_etape=?");
+        $stmt->bind_param("i",$codeEtape);
+        $stmt->execute();
+        $voyage = $stmt->get_result();
+        return $voyage;
+        $voyage->free();
+        $mysqli->close();
+    }
+
     /* FILTRE : RECHERCHER LES CONTINENTS DE LA TABLE VOYAGES */
     public function filtrerContinents() {
         try {
@@ -340,11 +352,11 @@ class VoyageMysqliDAO {
     }
 
     /* CHERCHER VOYAGE PAR CODE VOYAGE */
-    public function chercherVoyageParCode(int $codeVoyage) : ?array {
+    public function chercherEtapeParCode(int $codeEtape) : ?array {
         try {
             $mysqli=$this->connexion();
-            $stmt = $mysqli->prepare("select * from voyages where code_voyage=?");
-            $stmt->bind_param("i",$codeVoyage);
+            $stmt = $mysqli->prepare("select * from etape where code_etape=?");
+            $stmt->bind_param("i",$codeEtape);
             $stmt->execute();
             $rs = $stmt->get_result();
             $voyage = $rs->fetch_array(MYSQLI_ASSOC);

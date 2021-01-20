@@ -65,17 +65,19 @@ if (isset($_SESSION["pseudo"])) {
                         erreur($e->getCode(), $e->getMessage());
                     }
 
-                    $codeVoyage=$data["code_voyage"]; // on récupère le code voyage de la notif en question
-
+                    $codeEtape=$comm["code_etape"];
                     try {
-                        $voyage=$voyageService->chercherVoyageParCode($codeVoyage); // on récupère les infos du voyage depuis son code voyage
+                        $voyage=$voyageService->chercherVoyageParCodeEtape($codeEtape); // on récupère les infos de l'étape depuis son code étape
                     } catch (ServiceException $f) {
                         erreur($f->getCode(), $f->getMessage());
                     }
 
-                    afficherNotifications1($user);
-                    afficherNotifications2($voyage);
-                    // $suppNotif=$voyageService->supprimerNotification($codeNotif);
+                        while($trip=mysqli_fetch_array($voyage)){
+                            afficherNotifications1($user);
+                            afficherNotifications2($trip);
+                            // $suppNotif=$voyageService->supprimerNotification($codeNotif);
+                        }
+            
                 }
 
             notificationsBadge3();
