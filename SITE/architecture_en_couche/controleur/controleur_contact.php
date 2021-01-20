@@ -10,10 +10,6 @@ require_once('../metier/Utilisateurs.php');
 affichageEnteteContact();
 
 
-// if(isset($_GET['pseudo']))
-echo($_GET['pseudo']);
-
-
 
 
 

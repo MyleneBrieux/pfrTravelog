@@ -105,7 +105,7 @@ function paramDivDescriptionTxt($utilisateur){
                 <link rel="stylesheet" href="../../libs/css/parametres_profil.css">
 
                 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
-                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
                     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
@@ -155,13 +155,17 @@ function paramDivDescriptionTxt($utilisateur){
 /*FONCTION PHOTO MENU LAT PROFIL*/    
     function paramPhotoMenuLatProfil($utilisateur){
         echo   
-            ' <img src="'.$utilisateur['photoprofil'].'" alt="Photo de Profil" class="photo-profil">';
+            '<div class="mt-5 photo"> 
+                <img src="data:image/jpeg;base64,'.base64_encode($utilisateur['photoprofil']).'" alt="photo profil" class="photo" id="photo" name="photo"/>
+            </div>';
     }
 
 /*FONCTION PHOTO MENU LAT DEFAUT*/    
-    function paramPhotoMenuLatDefaut(){
+    function paramPhotoMenuLatDefaut($utilisateur){
         echo   
-            ' <img src="../../img/photos/photo_profil_defaut.png" alt="Photo de Profil" class="photo-profil">';
+            '<div class="mt-5 photo"> 
+                <img src="../../img/photos/photo_profil_defaut.png" alt="Photo de Profil" class="photo" id="photo" name="photo">
+            </div>';
     }
     
 /*FONCTION INFOS UTILISATEUR DU MENU LAT*/    
@@ -370,6 +374,7 @@ function paramDivDescriptionTxt($utilisateur){
     function paramFermetureBodyHtml(){
         echo '
             </body>
+                <script src="../../libs/script_js/scriptParam_Profil.js"></script>
         </html>';
     }
 

@@ -5,11 +5,20 @@ require_once('../service/UtilisateurSERVICE.php');
 require_once('../metier/Utilisateurs.php'); 
 require_once('../metier/Utilisateur.php'); 
 
+//REDIRECTION SI PAS DE SESSION 
+    if(!isset($_SESSION['pseudo']) ){
+        header("Location: connexionCONTROLEUR.php");
+    }
+
 
 //AFFICHAGE PAGE PARAMETRES PROFIL
-    $pseudo=$_SESSION["pseudo"];
-    $newUtilisateur=new UtilisateurService();
-    $utilisateur=$newUtilisateur->chercherUtilisateurParPseudo($pseudo);
+    try{
+        $pseudo=$_SESSION["pseudo"];
+        $newUtilisateur=new UtilisateurService();
+        $utilisateur=$newUtilisateur->chercherUtilisateurParPseudo($pseudo);
+    }catch(ServiceException $se){
+        erreurModifProfil($se->getCode());
+    }
 
 
 /*MODIFICATION*/
@@ -20,6 +29,14 @@ require_once('../metier/Utilisateur.php');
         
                 if(($_POST['mail']) == ($_POST['confirmMail']) ){
 
+                    if(!isset($_POST['contact']) ){
+                        $_POST['contact']="N";
+                    }
+
+                    if(!isset($_POST['notifmail']) ){
+                        $_POST['notifmail']="N";
+                    }
+
                     $newPassword=$newUtilisateur->passwordHash($_POST["password"], PASSWORD_DEFAULT);
                     $user= new Utilisateurs(
                     htmlentities($utilisateur['id']),
@@ -27,11 +44,11 @@ require_once('../metier/Utilisateur.php');
                     htmlentities($_POST["mail"]?$_POST["mail"]:$utilisateur['mail']),
                     htmlentities($newPassword?$newPassword:$utilisateur['password']),
                     htmlentities($_POST['description']?$_POST["description"]:$utilisateur['description']),
-                    htmlentities($utilisateur['photoprofil']?$_POST["photoprofil"]:$utilisateur['photoprofil']),
+                    htmlentities($_POST['photoprofil']?$_POST["photoprofil"]:$utilisateur['photoprofil']),
                     htmlentities($_POST["birthday"]?$_POST["birthday"]:null),
                     htmlentities($_POST["nation"]?$_POST["nation"]:$utilisateur['nation']),
-                    htmlentities($_POST['contact']?$_POST['contact']:$utilisateur['contact']),
-                    htmlentities($_POST['notifmail']?$_POST['notifmail']:$utilisateur['contact']),
+                    htmlentities($_POST['contact']),
+                    htmlentities($_POST['notifmail']),
                     htmlentities($_POST['langue']?$_POST['langue']:$utilisateur['langue']) 
                     );
                     try{
@@ -49,14 +66,32 @@ require_once('../metier/Utilisateur.php');
     }
 
 
+// MODIFICATiON DE L'IMAGE PROFIL
+    if(isset($_POST["submit"])){ 
+
+        if(!empty($_FILES["image"]["name"])) { 
+            $fileName = basename($_FILES["image"]["name"]); 
+            $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+            $allowTypes = array('jpg','png','jpeg','gif'); 
+
+            if(in_array($fileType, $allowTypes)){ 
+                $image = $_FILES['image']['tmp_name']; 
+                $imgContent = addslashes(file_get_contents($image));
+                $newUtilisateur->modifPhoto($imgContent, $pseudo);
+            }
+        }
+    } 
+
+
 //AFFICHAGE DE LA PHOTO DU MENU SELON UTILISATEUR
     affichageEnteteProfil();
 
     if (isset($utilisateur['photoprofil']) ){
-        paramPhotoMenuLatDefaut();
+        paramPhotoMenuLatDefaut($utilisateur);
     }else {
         paramPhotoMenuLatProfil($utilisateur);
     }
+    
     
 
 /*CALCUL D'AGE UTILISATEUR*/  

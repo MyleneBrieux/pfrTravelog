@@ -16,7 +16,7 @@ a:hover{
     padding-bottom:100%;
     margin-left: -2em;
     width:14.5em;
-    height: 101%;
+    height: 98.4%;
 }
 
     @media screen and (max-width : 575px){
@@ -70,6 +70,7 @@ a:hover{
     font-size: 1.8em;
     margin-left: 30%;
     font-weight: bolder;
+    margin-top: 20% !important;
 }
 
     @media (min-width: 600px) and (max-width : 1189px){
@@ -127,6 +128,14 @@ a:hover{
 
 .photo-profil{
 max-width: 40%;
+}
+
+.photo{
+    width: 150px !important;
+    height: 150px !important; 
+    margin-top: 30%;
+    margin-left: 10%;
+
 }
 
 .bouton-contact{
@@ -377,3 +386,27 @@ border-radius: 5em !important;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    .inputValidPhoto{
+        margin-left: 30% !important;
+        margin-top: 5%;
+        border-radius: 5em !important;
+        background-color:  #52908B;
+        border-color:  rgb(255, 255, 255);
+        color: #ffffff; 
+    }
+
+    /* .inputsPhotoProfil{
+        margin-top: 20px !important;
+    } */

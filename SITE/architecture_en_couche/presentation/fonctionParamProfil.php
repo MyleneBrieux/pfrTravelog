@@ -10,7 +10,7 @@
         paramOuvertureDivClassRow();
         paramOuvertureDivClassCols();
         paramOuvertureDivMenuLat();
-        paramFormAction();
+        // paramFormAction();
     }
 
     function affichageParamProfil($utilisateur, $age){
@@ -23,8 +23,8 @@
         paramOuvertureDivFormulaire();
         paramOuvertureDivClassRow();
         paramOuvertureDivClassRow();
-        // paramFormAction();
-        paramDivClassNom();
+        paramFormAction();
+        paramDivClassNom($utilisateur);
         paramDivClassTxtProfil();
         paramDivClassTxtSecurite($utilisateur);
         paramBtnValidation();
@@ -85,13 +85,11 @@
                 <link rel="stylesheet" href="../../libs/css/parametres_profil.css">
 
                 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
-                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
                     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
                     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-                <script src="../../libs/script_js/scriptParamProfil.js"></script>
 
                 <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet"> 
 
@@ -137,16 +135,31 @@
 /*FONCTION PHOTO MENU LAT PROFIL*/    
     function paramPhotoMenuLatProfil($utilisateur){
         echo   
-            ' <img src="'.$utilisateur['photoprofil'].'" alt="Photo de Profil" class="photo-profil">';
+            '<div class="mt-5 photo"> 
+                <img src="data:image/jpeg;base64,'.base64_encode($utilisateur['photoprofil']).'" alt="photo profil" class="photo" id="photo" name="photo"/>
+            </div>
+
+            <form action="../controleur/controleur_param_profil.php" method="post" enctype="multipart/form-data">
+                <div class="">
+                    <input type="file" class="custom-file-input inputPhotoProfil" name="image" id="inputchangePhoto">
+                    <input type="submit" name="submit" value="Valider" class="inputValidPhoto">
+                </div>
+            </form>';    
     }
 
 /*FONCTION PHOTO MENU LAT DEFAUT*/    
-    function paramPhotoMenuLatDefaut(){
+    function paramPhotoMenuLatDefaut($utilisateur){
         echo   
-            ' <img src="../../img/photos/photo_profil_defaut.png" alt="Photo de Profil" class="photo-profil">
+            '<div class="mt-5 photo"> 
+                <img src="../../img/photos/photo_profil_defaut.png" alt="Photo de Profil" class="photo" id="photo" name="photo">
+            </div>
+
+            <form action="../controleur/controleur_param_profil.php" method="post" enctype="multipart/form-data">
                 <div class="">
-                    <input type="file" class="form-control-file input-file" id="photoprofil" name="photoprofil">
-                </div>';
+                    <input type="file" class="custom-file-input inputPhotoProfil" name="image" id="inputchangePhoto">
+                    <input type="submit" name="submit" value="Valider" class="inputValidPhoto">
+                </div>
+            </form>';
     }
 
 /*FONCTION INFOS UTILISATEUR DU MENU LAT*/    
@@ -171,11 +184,12 @@
         echo   
             '<div class="logos-menu">
                 <div><a href=""><img class="oeil" src="../../img/logos_divers/suivre2.png" alt="logo suivre"
-                            class="photo-profil"><span class="liens-menu">Suivre</span></a></div>
+                        class="photo-profil"><span class="liens-menu">Suivre</span></a></div>
 
                 <div><a href=""><img class="oeil" src="../../img/logos_divers/ami_turquoise2.png" alt="logo ami"
-                            class="photo-profil"><span class="liens-menu">Ajouter en ami</span></a></div>
+                        class="photo-profil"><span class="liens-menu">Ajouter en ami</span></a></div>
             </div>';
+
     }
 
 /*FONCTION BOUTON CONTACT*/    
@@ -199,14 +213,14 @@
 /*FONCTION FORM ACTION*/    
     function paramFormAction(){
         echo   
-            '<form action="../controleur/controleur_param_profil.php?action=modifier" method="post">';
+            '<form action="../controleur/controleur_param_profil.php?action=modifier" method="post" enctype="multipart/form-data">';
     } 
 
 /*FONCTION DIV DU NOM*/    
-    function paramDivClassNom(){
+    function paramDivClassNom($utilisateur){
         echo   
             '<div class="col-12 txt-nom">
-                <div class="nom">John Doe</div>
+                <div class="nom">'.$utilisateur['pseudo'].'</div>
             </div>';
     } 
 
@@ -278,10 +292,10 @@
         echo 
         '<div class="row">
             <div class="col-6">
-                <label>Email:</label><input type="email" class="input-beige form-control" placeholder="john.doe@gmail.com" name="mail" value="">
+                <label>Email:</label><input type="email" class="input-beige form-control" placeholder="ex: john.doe@gmail.com" name="mail" value="">
             </div>
             <div class="col-6">
-                <label>Confirmation:</label><input type="email" class="input-beige form-control" placeholder="john.doe@gmail.com" name="confirmMail" value="">
+                <label>Confirmation:</label><input type="email" class="input-beige form-control" placeholder="ex: john.doe@gmail.com" name="confirmMail" value="">
             </div>
         </div>
         </div>';
@@ -411,23 +425,6 @@ function paramDivDescriptionTxt(){
     function paramFermetureBodyHtml(){
         echo '
             </body>
+                <script src="../../libs/script_js/scriptParam_Profil.js"></script>
         </html>';
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

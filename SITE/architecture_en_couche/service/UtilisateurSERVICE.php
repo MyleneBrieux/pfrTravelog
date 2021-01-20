@@ -243,12 +243,30 @@ class UtilisateurService {
 
 
     public function modifierUtilisateur($utilisateur) {
-        $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($utilisateur);
+        try{
+            $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($utilisateur);
+        }catch(DaoException $s){
+            throw new ServiceException($s->getMessage(),$s->getCode());
+        }
+    }
+
+
+    public function modifPhoto($imgContent, $pseudo) {
+        try{
+            $modifUtilisateur = $this->utilisateurDao->modifPhoto($imgContent, $pseudo);
+        }catch(DaoException $s){
+            throw new ServiceException($s->getMessage(),$s->getCode());
+        }
     }
 
     public function calculAge($pseudo) {
-        $age = $this->utilisateurDao->calculAge($pseudo);
-        return $age;
+        try{
+            $age = $this->utilisateurDao->calculAge($pseudo);
+        }catch(DaoException $s){
+            throw new ServiceException($s->getMessage(),$s->getCode());
+        }finally{
+            return $age;
+        }
     }
     
 

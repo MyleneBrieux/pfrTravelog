@@ -403,7 +403,7 @@ include_once("dao_exception.php");
 
 
 
-/* MODIFICATION de PROFIL*/        
+/* MODIFICATION DU PROFIL*/        
         public function modifierUtilisateur(Utilisateurs $utilisateur) :void{ 
             $id=$utilisateur->getId(); 
             $pseudo=$utilisateur->getPseudo();
@@ -424,26 +424,56 @@ include_once("dao_exception.php");
             $mysqli->close();
         }
 
+
+// MODIFICATION DE L'IMAGE PROFIL
+    // public function modifPhoto($imgContent, $pseudo){
+    //     $mysqli=$this->connexion(); 
+    //     $stmt=$mysqli->prepare("UPDATE utilisateurs SET photoprofil=? where pseudo=?");
+    //     $stmt->bind_Param("bs", $imgContent, $pseudo);
+    //     $stmt->send_long_data(0, $imgContent);
+    //     $stmt->execute();
+    //     $mysqli->close();
+        
+    // }
+
+
+
+    public function modifPhoto($imgContent, $pseudo){
+        $mysqli=$this->connexion(); 
+        $stmt=$mysqli->prepare("UPDATE utilisateurs SET photoprofil='$imgContent' where pseudo='$pseudo'");
+        $stmt->send_long_data(0, $imgContent);
+        $stmt->execute();
+        $mysqli->close();
+
+        // $stmt=$mysqli->prepare("UPDATE utilisateurs SET photoprofil='$imgContent' where pseudo='$pseudo'");
+        // $stmt->bind_param("b", $imgContent);
+        // $stmt->send_long_data(0, $imgContent);
+        // $stmt->execute();
+        
+    }
+
+
+
 /*SUPPRESSION DES UTILISATEURS*/
-            public function deleteUtilisateur(string $pseudo) :void{ 
-                $mysqli=$this->connexion();
-                $stmt=$mysqli->prepare("DELETE from utilisateurs WHERE pseudo=?");
-                $stmt->bind_param("s", $pseudo);
-                $stmt->execute();
-                $mysqli->close();
-            }
+        public function deleteUtilisateur(string $pseudo) :void{ 
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare("DELETE from utilisateurs WHERE pseudo=?");
+            $stmt->bind_param("s", $pseudo);
+            $stmt->execute();
+            $mysqli->close();
+        }
 
 /*AGE DES UTILISATEURS*/
-    function calculAge($pseudo) {
-        $dateJour = date("Y-m-d");
-        $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare("SELECT timestampdiff(year,birthday,$dateJour) from utilisateurs WHERE pseudo=? ");
-        $stmt->bind_param("s", $pseudo);
-        $stmt->execute();
-        $rs = $stmt->get_result();
-        $age = $rs->fetch_array(MYSQLI_ASSOC);
-        return $age;
-    }
+        function calculAge($pseudo) {
+            $dateJour = date("Y-m-d");
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare("SELECT timestampdiff(year,birthday,$dateJour) from utilisateurs WHERE pseudo=? ");
+            $stmt->bind_param("s", $pseudo);
+            $stmt->execute();
+            $rs = $stmt->get_result();
+            $age = $rs->fetch_array(MYSQLI_ASSOC);
+            return $age;
+        }
 
 
 
