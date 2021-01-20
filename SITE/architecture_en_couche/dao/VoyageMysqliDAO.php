@@ -171,26 +171,30 @@ class VoyageMysqliDAO {
 
     // Likes
 
-    public function addLikesDAO(int $likes, int $codeVoyage){
+    public function addLikesDAO(int $codeVoyage,int $id){
         $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare("update voyages set likes=".$likes++." where code_voyage= ?"); 
-        $stmt->bind_param("ii", $likes, $codeVoyage);
-        $stmt->execute();
-        $like = $stmt->get_result();
-        return $like;
-        $like->free();
-        $mysqli->close();
-    }
-
-    public function quiAddLikesDAO(int $likes, int $codeVoyage,int $id){
-        $mysqli=$this->connexion();
-        $likes=$this->addLikesDAO($likes, $codeVoyage);
         $stmt=$mysqli->prepare("insert into likes (id_like, code_voyage, id) values (null, ?,?)"); 
         $stmt->bind_param("ii", $codeVoyage, $id);
         $stmt->execute();
-        $quiLike = $stmt->get_result();
-        return $quiLike;
-        $quiLike->free();
+        $mysqli->close();
+    }
+
+    public function nbrLikesDAO($codeVoyage){
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare("select * from likes where code_voyage=?");
+        $stmt->bind_param("i", $codeVoyage);
+        $stmt->execute();
+        $rs=$stmt->get_result();
+        $nbrLikes=mysqli_num_rows($rs);
+        $mysqli->close();
+        return $nbrLikes;
+    }
+
+    public function quiAddLikesDAO($id){
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare("select * from likes where id=?"); 
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
         $mysqli->close();
     }
 

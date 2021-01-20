@@ -111,11 +111,23 @@ class VoyageService {
 
 // Nombre de Likes
 
-    public function quiAddLikesService(int $likes, int $codeVoyage,int $id){
-        $nbLikes= new VoyageMysqliDAO;
-        $nbLikes->quiAddLikesDAO($likes, $codeVoyage, $id);
-        return $nbLikes;
+    public function addLikesService(int $codeVoyage,int $id){
+        $addLikes= new VoyageMysqliDAO;
+        $addLikes->addLikesDAO($codeVoyage, $id);
+        return $addLikes;
     }
+
+    public function nbrLikesService(int $codeVoyage){
+        $nbrLikes = $this->voyageDao ->nbrLikesDAO($codeVoyage);
+        return $nbrLikes;
+    }
+
+    public function quiAddLikesService(int $id){
+        $whoLikes= new VoyageMysqliDAO;
+        $whoLikes->quiAddLikesDAO($id);
+        return $whoLikes;
+    }
+
 
 //Afficher voyages
 
