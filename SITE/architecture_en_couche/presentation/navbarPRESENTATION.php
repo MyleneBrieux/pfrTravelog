@@ -110,9 +110,13 @@ function afficherNotifications1($user){
 
 function afficherNotifications2($trip){
     echo
-        ' sur </br>
-        <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $trip["code_voyage"] . '&code_etape=' . $trip["code_etape"] . '" id="lienVoyageNotif"> 
-        <em>' . $trip["titre"] . '</em></a></a>';
+            ' sur </br>
+                <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $trip["code_voyage"] . '&code_etape=' . $trip["code_etape"] . '" 
+                id="lienVoyageNotif"> 
+                    <em>' . $trip["titre"] . '</em>
+                </a>
+            </a>
+        <hr>';
 }
 
 function notificationsBadge3(){
@@ -145,7 +149,10 @@ function amisBadge2(){
 
 function afficherAmis($donnee){
     echo
-        '<a class="afficheramis dropdown-item" href="../controleur/mesAmisControleur.php?pseudo=' . $_SESSION["pseudo"] . '">' . $donnee["pseudo"] . ' vous a demandé en ami.</a>';
+            '<a class="afficheramis dropdown-item" href="../controleur/mesAmisControleur.php?pseudo=' . $_SESSION["pseudo"] . '">' 
+                . $donnee["pseudo"] . ' vous a demandé en ami.
+            </a>
+        <hr>';
 }
 
 function amisBadge3(){
