@@ -31,7 +31,7 @@ include_once("dao_exception.php");
             try {
                 $mysqli=$this->connexion();
                 $stmt = $mysqli->prepare("insert into utilisateurs (id, pseudo, mail, password, description, photoprofil, birthday, nation, contact, notifmail, code_langue) 
-                                        VALUES (null, ?, ?, ?, null, 'photo', null, null, 'Y', 'Y', '1')");
+                                        VALUES (null, ?, ?, ?, null, null, null, null, 'Y', 'Y', '1')");
                 $stmt->bind_param("sss", $pseudo, $mail, $password);
                 $stmt->execute();
                 $mysqli->close();

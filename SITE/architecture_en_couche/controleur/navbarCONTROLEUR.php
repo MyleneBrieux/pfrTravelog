@@ -67,17 +67,15 @@ if (isset($_SESSION["pseudo"])) {
 
                     $codeEtape=$comm["code_etape"];
                     try {
-                        $voyage=$voyageService->chercherVoyageParCodeEtape($codeEtape); // on récupère les infos de l'étape depuis son code étape
+                        $etape=$voyageService->chercherEtapeParCode($codeEtape); // on récupère les infos de l'étape depuis son code étape
                     } catch (ServiceException $f) {
                         erreur($f->getCode(), $f->getMessage());
                     }
-
-                        while($trip=mysqli_fetch_array($voyage)){
-                            afficherNotifications1($user);
-                            afficherNotifications2($trip);
-                            // $suppNotif=$voyageService->supprimerNotification($codeNotif);
-                        }
-            
+    
+                    afficherNotifications1($user);
+                    afficherNotifications2($etape);
+                    // $suppNotif=$voyageService->supprimerNotification($codeNotif);
+                
                 }
 
             notificationsBadge3();
