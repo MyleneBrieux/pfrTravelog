@@ -5,15 +5,13 @@ class Notification {
     private $codeNotif;
     private $date;
     private $id;
-    private $codeVoyage;
     private $codeComm;
 
 
-    public function __construct(int $codeNotif, DateTime $date){
+    public function __construct(int $codeNotif, DateTime $date, int $id, int $codeComm){
         $this->codeNotif=$codeNotif;
         $this->date=$date;
         $this->id=$id;
-        $this->codeVoyage=$codeVoyage;
         $this->codeComm=$codeComm;
     }
 
@@ -37,15 +35,6 @@ class Notification {
 
     public function setId(int $id):self{
         $this->id=$id;
-        return $this;
-    }
-
-    public function getCodeVoyage():int{
-        return $this->codeVoyage;
-    }
-
-    public function setCodeVoyage(int $codeVoyage):self{
-        $this->codeVoyage=$codeVoyage;
         return $this;
     }
 
