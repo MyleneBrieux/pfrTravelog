@@ -90,7 +90,7 @@
                                 <a href="../controleur/mesAmisControleur.php?pseudo='. $profil['pseudo'] .'"><button type="button" class="button">Mes Amis</button></a>
                             </div>
                             <div class="row mt-5 mb-3">
-                                <a href="../controleur/controleur_contact.php"><button type="button" class="button">Contactez moi</button></a>
+                                <a href="../controleur/controleur_contact_user.php?pseudo='.$profil["pseudo"].'"><button type="button" class="button">Contactez moi</button></a>
                             </div>
                         </div>
                     </nav>

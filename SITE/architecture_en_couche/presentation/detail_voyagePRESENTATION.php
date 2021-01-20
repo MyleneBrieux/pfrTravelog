@@ -42,7 +42,7 @@ function detail_menuLateral($titre, $datedebut, $datefin, $nbrLikes, $vues, $cre
         <div class="row">';
         if($createur["photoprofil"]){
             echo'<img class="tailleImageProfilDetail col-md-12 col-6 mt-3 float-left"
-                src="../../img/photos/'.$createur["photoprofil"].'" alt="La photo profil">';
+                src="data:image/jpeg;base64,'.base64_encode($createur["photoprofil"]).'" alt="La photo profil">';
         }else{
             echo'<img class="tailleImageProfilDetail col-md-12 col-6 mt-3 float-left"
                 src="../../img/photos/photo_profil_defaut.png" alt="La photo profil">';

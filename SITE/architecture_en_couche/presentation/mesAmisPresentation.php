@@ -150,7 +150,7 @@
         if($isUser){
             echo'<div class="col-lg-2 col-md-1"></div>
             <div class="col-lg-4 col-md-5 col-sm-12 col-12">
-                <a href="controleur_contact.php?pseudo='. $ami['pseudo'] .'">
+                <a href="controleur_contact_user.php?pseudo='. $ami['pseudo'] .'">
                 <button class="btn btn-info mt-4 mb-3 mr-2">Contacter</button></a>
                 <a href="mesAmisControleur.php?pseudo='. $profil["pseudo"] .'&action=supprimerAmi&id_ami='. $ami['id_ami'] .'">
                 <button type="button" class="btn btn-danger mt-4 mb-3 supprAmi">Supprimer</button></a>

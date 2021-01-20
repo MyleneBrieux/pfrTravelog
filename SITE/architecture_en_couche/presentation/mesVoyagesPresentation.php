@@ -106,7 +106,7 @@
             echo'<a href="../controleur/monProfilControleur.php?pseudo='.$profil["pseudo"].'" class="">
                 Voir le profil
             </a>
-            <a href="../controleur/controleur_contact.php" class="">
+            <a href="../controleur/controleur_contact_user.php?pseudo='.$profil["pseudo"].'" class="">
                 Le contacter
             </a>
         </div>
