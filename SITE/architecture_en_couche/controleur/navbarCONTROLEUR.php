@@ -120,8 +120,14 @@ if (isset($_SESSION["pseudo"])) {
 
     displayNavbarConnectedOnly2();
 
-    if (isset($_SESSION["photoprofil"])) {
-        photoUtilisateurBdd($data);
+    // if (isset($_SESSION['pseudo']) && isset($utilisateur['photoprofil']) ){
+    //     paramPhotoMenuLatProfil($utilisateur);
+    // }else {
+    //     paramPhotoMenuLatDefaut($utilisateur);
+    // }
+    
+    if (isset($_SESSION["pseudo"]) && isset($info["photoprofil"])) {
+        photoUtilisateurBdd($info);
     } else {
         photoUtilisateurDefaut();
     }

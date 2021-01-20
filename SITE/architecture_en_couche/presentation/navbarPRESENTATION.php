@@ -190,9 +190,9 @@ function photoUtilisateurDefaut(){
         </div>';
 }
 
-function photoUtilisateurBdd($data){
+function photoUtilisateurBdd($info){
     echo
-                            '<img class="photoProfil rounded-circle" src="'.$data["photoprofil"].'">
+                            '<img class="photoProfil rounded-circle" src="data:image/jpeg;base64,'.base64_encode($info['photoprofil']).'">
                                     
                         </ul>
                     </div>
