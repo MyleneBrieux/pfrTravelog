@@ -236,6 +236,11 @@ class UtilisateurService {
         }
     }
 
+    public function afficherRowAmi(int $id) : ?array {
+        $detailAmi = $this->utilisateurDao ->afficherRowAmi($id);
+        return $detailAmi;
+    }
+
 
     public function modifierUtilisateur($utilisateur) {
         try{
