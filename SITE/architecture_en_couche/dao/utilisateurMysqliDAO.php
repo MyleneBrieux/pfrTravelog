@@ -383,24 +383,6 @@ include_once("dao_exception.php");
             throw new DaoException($q->getMessage(), $q->getCode());
         }
     }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* MODIFICATION DU PROFIL*/        
@@ -410,7 +392,6 @@ include_once("dao_exception.php");
             $mail=$utilisateur->getMail();
             $password=$utilisateur->getPassword();
             $description=$utilisateur->getDescription();
-            $photoprofil=$utilisateur->getPhotoprofil();
             $birthday=$utilisateur->getBirthday();
             $nation=$utilisateur->getNation();
             $contact=$utilisateur->getContact();
@@ -418,38 +399,20 @@ include_once("dao_exception.php");
             $code_langue=$utilisateur->getCode_langue();
 
             $mysqli=$this->connexion();
-            $stmt=$mysqli->prepare("UPDATE utilisateurs SET id=?, pseudo=?, mail=?, password=?, description=?, photoprofil=?, birthday=?, nation=?, contact=?, notifmail=?, code_langue=? WHERE pseudo=?");
-            $stmt->bind_Param("isssssssssis", $id, $pseudo, $mail, $password, $description, $photoprofil, $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
+            $stmt=$mysqli->prepare("UPDATE utilisateurs SET id=?, pseudo=?, mail=?, password=?, description=?, /*photoprofil=?,*/ birthday=?, nation=?, contact=?, notifmail=?, code_langue=? WHERE pseudo=?");
+            $stmt->bind_Param("issssssssis", $id, $pseudo, $mail, $password, $description, /*$photoprofil,*/ $birthday, $nation, $contact, $notifmail, $code_langue, $pseudo);
             $stmt->execute();
             $mysqli->close();
         }
 
 
 // MODIFICATION DE L'IMAGE PROFIL
-    // public function modifPhoto($imgContent, $pseudo){
-    //     $mysqli=$this->connexion(); 
-    //     $stmt=$mysqli->prepare("UPDATE utilisateurs SET photoprofil=? where pseudo=?");
-    //     $stmt->bind_Param("bs", $imgContent, $pseudo);
-    //     $stmt->send_long_data(0, $imgContent);
-    //     $stmt->execute();
-    //     $mysqli->close();
-        
-    // }
-
-
-
     public function modifPhoto($imgContent, $pseudo){
         $mysqli=$this->connexion(); 
         $stmt=$mysqli->prepare("UPDATE utilisateurs SET photoprofil='$imgContent' where pseudo='$pseudo'");
         $stmt->send_long_data(0, $imgContent);
         $stmt->execute();
         $mysqli->close();
-
-        // $stmt=$mysqli->prepare("UPDATE utilisateurs SET photoprofil='$imgContent' where pseudo='$pseudo'");
-        // $stmt->bind_param("b", $imgContent);
-        // $stmt->send_long_data(0, $imgContent);
-        // $stmt->execute();
-        
     }
 
 
@@ -463,6 +426,7 @@ include_once("dao_exception.php");
             $mysqli->close();
         }
 
+
 /*AGE DES UTILISATEURS*/
         function calculAge($pseudo) {
             $dateJour = date("Y-m-d");
@@ -474,26 +438,7 @@ include_once("dao_exception.php");
             $age = $rs->fetch_array(MYSQLI_ASSOC);
             return $age;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
+  
 
     }
 

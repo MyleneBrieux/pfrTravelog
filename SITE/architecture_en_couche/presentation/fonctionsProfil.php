@@ -161,7 +161,7 @@ function paramDivDescriptionTxt($utilisateur){
     }
 
 /*FONCTION PHOTO MENU LAT DEFAUT*/    
-    function paramPhotoMenuLatDefaut($utilisateur){
+    function paramPhotoMenuLatDefaut(){
         echo   
             '<div class="mt-5 photo"> 
                 <img src="../../img/photos/photo_profil_defaut.png" alt="Photo de Profil" class="photo" id="photo" name="photo">
@@ -301,7 +301,7 @@ function paramDivDescriptionTxt($utilisateur){
             '<div class="col-12 formulaire-coordonnees2 securite  txt-input">
                 <div class="row">
                     <div class="col-12">
-                        <label>Langues parlées:</label>
+                        <label>Langue parlée:</label>
                             <select id="langue" class="select" name="langue" disabled="disabled">
                                 <option value="1" selected>'.$utilisateur["type_langue"].'</option>
                                 

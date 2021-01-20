@@ -1,25 +1,17 @@
-    // $(".custom-file-input").on("change", function() {
-    //     var fileName = $(this).val().split("\\").pop();
-    //     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-    // });
 
     $("#photo").on("click", function(e){
         $('#inputchangePhoto').click();
     })
 
 
+    $("#inputValidPhoto").on("click", function(e){
+        $('#photo').reload();
+    })
 
 
-
-
-
-
-
-
-
-
-
-
+    // $("#photo").on("change", function(e){
+    //     $('#photo').reload();
+    // })
 
 
 

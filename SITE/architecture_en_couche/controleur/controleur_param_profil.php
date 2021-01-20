@@ -5,11 +5,12 @@ require_once('../service/UtilisateurSERVICE.php');
 require_once('../metier/Utilisateurs.php'); 
 require_once('../metier/Utilisateur.php'); 
 
+
+
 //REDIRECTION SI PAS DE SESSION 
     if(!isset($_SESSION['pseudo']) ){
         header("Location: connexionCONTROLEUR.php");
     }
-
 
 //AFFICHAGE PAGE PARAMETRES PROFIL
     try{
@@ -19,7 +20,6 @@ require_once('../metier/Utilisateur.php');
     }catch(ServiceException $se){
         erreurModifProfil($se->getCode());
     }
-
 
 /*MODIFICATION DU PROFIL*/
     if(isset($_GET["action"]) && $_GET["action"] == "modifier"){ 
@@ -44,7 +44,6 @@ require_once('../metier/Utilisateur.php');
                         htmlentities($_POST["mail"]?$_POST["mail"]:$utilisateur['mail']),
                         htmlentities($newPassword?$newPassword:$utilisateur['password']),
                         htmlentities($_POST['description']?$_POST["description"]:$utilisateur['description']),
-                        htmlentities($utilisateur['photoprofil']),
                         htmlentities($_POST["birthday"]?$_POST["birthday"]:null),
                         htmlentities($_POST["nation"]?$_POST["nation"]:$utilisateur['nation']),
                         htmlentities($_POST['contact']),
@@ -65,7 +64,6 @@ require_once('../metier/Utilisateur.php');
             }
     }
     
-
 // MODIFICATiON DE L'IMAGE PROFIL
         if(isset($_POST["submit"])){ 
 
@@ -82,16 +80,13 @@ require_once('../metier/Utilisateur.php');
             }
         } 
 
-
 //AFFICHAGE DE LA PHOTO DU MENU SELON UTILISATEUR
     affichageEnteteParamProfil();
-    
-    if (isset($utilisateur['photoprofil']) ){
-        paramPhotoMenuLatDefaut($utilisateur);
-    }else {
-        paramPhotoMenuLatProfil($utilisateur);
-    }
-
+        if (isset($_SESSION['pseudo']) && isset($utilisateur['photoprofil']) ){
+            paramPhotoMenuLatProfil($utilisateur);
+        }else {
+            paramPhotoMenuLatDefaut($utilisateur);
+        }
 
 /*CALCUL D'AGE UTILISATEUR*/  
     $birthday = new DateTime($utilisateur['birthday']);
@@ -103,7 +98,6 @@ require_once('../metier/Utilisateur.php');
     }else{
         $age="Age Inconnu";
     }
-    
 
 /*DELETE DES UTILISATEURS*/    
     // if(isset($_POST["action"]) && $_POST["action"] == "effacer"){
@@ -120,7 +114,6 @@ require_once('../metier/Utilisateur.php');
     //         }
     //     }
     // }
-
 
 //AFFICHAGE DE LA PAGE
     affichageParamProfil($utilisateur, $age);

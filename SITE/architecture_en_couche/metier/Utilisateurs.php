@@ -7,7 +7,6 @@ class Utilisateurs {
     private $mail;
     private $password;
     private $description;
-    private $photoprofil;
     private $birthday;
     private $nation;
     private $contact;
@@ -16,13 +15,12 @@ class Utilisateurs {
 
 
     public function __construct(int $id, string $pseudo, string $mail, string $password, ?string $description, 
-    ?string $photoprofil, ?string $birthday, ?string $nation, string $contact, string $notifmail, int $code_langue){
+    ?string $birthday, ?string $nation, string $contact, string $notifmail, int $code_langue){
         $this->id = $id;
         $this->pseudo = $pseudo;
         $this->mail = $mail;
         $this->password = $password;
         $this->description= $description;
-        $this->photoprofil = $photoprofil;
         $this->birthday = $birthday;
         $this->nation = $nation;
         $this->contact = $contact;
@@ -76,15 +74,6 @@ class Utilisateurs {
         return $this;
     }
 
-/*PHOTO DE PROFIL*/
-    public function getPhotoprofil() :string{
-        return $this->photoprofil;
-    }
-
-    public function setPhotoprofil(string $photoprofil) :self{
-        $this->photoprofil = $photoprofil;
-        return $this;
-    }
 
 /*DATE DE NAISSANCE*/
     public function getBirthday() :string{
@@ -135,17 +124,7 @@ class Utilisateurs {
         return $this;
     }
     
-
-    // public function __toString() : string{
-    //     return "[id]: " . $this->id . "[mail] : " . $this->mail . "[password] : " . $this->password . "[login] : " . $this->login . "[birthday] : " . 
-    //     $this->birthday . "[Photoprofil] : " . $this->photoprofil . "[nationalité] : " . $this->nationalite . "[contact] : " . 
-    //     $this->contact . "[notifmail] : " . $this->notifmail;
-    // }
-
-
-
-
-        
+ 
 }
 
 ?>

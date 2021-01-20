@@ -237,11 +237,6 @@ class UtilisateurService {
     }
 
 
-
-
-
-
-
     public function modifierUtilisateur($utilisateur) {
         try{
             $modifUtilisateur = $this->utilisateurDao->modifierUtilisateur($utilisateur);

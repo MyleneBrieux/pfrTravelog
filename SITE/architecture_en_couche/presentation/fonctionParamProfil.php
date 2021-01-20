@@ -31,11 +31,11 @@
         paramDivSecurite();
         paramOuvertureDivFormulaireSecurite();
         paramDivMDP();
-        paramDivEmail();
+        paramDivEmail($utilisateur);
         paramBtnValidation();
         paramDivDescription();
         paramOuvertureDivFormulaireDescription();
-        paramDivDescriptionTxt();
+        paramDivDescriptionTxt($utilisateur);
         paramFermetureDiv();
         paramBtnValidation();
         paramDivDivers();
@@ -142,7 +142,7 @@
             <form action="../controleur/controleur_param_profil.php" method="post" enctype="multipart/form-data">
                 <div class="">
                     <input type="file" class="custom-file-input inputPhotoProfil" name="image" id="inputchangePhoto">
-                    <input type="submit" name="submit" value="Valider" class="inputValidPhoto">
+                    <input type="submit" name="submit" value="Valider" class="inputValidPhoto" id="inputValidPhoto">
                 </div>
             </form>';    
     }
@@ -288,14 +288,14 @@
     } 
 
 /*FONCTION DIV POUR LES EMAILS*/  
-    function paramDivEmail(){
+    function paramDivEmail($utilisateur){
         echo 
         '<div class="row">
             <div class="col-6">
-                <label>Email:</label><input type="email" class="input-beige form-control" placeholder="ex: john.doe@gmail.com" name="mail" value="">
+                <label>Nouveau email:</label><input type="email" class="input-beige form-control" placeholder="ex: '.$utilisateur['mail'].'" name="mail" value="">
             </div>
             <div class="col-6">
-                <label>Confirmation:</label><input type="email" class="input-beige form-control" placeholder="ex: john.doe@gmail.com" name="confirmMail" value="">
+                <label>Confirmation:</label><input type="email" class="input-beige form-control" placeholder="ex: '.$utilisateur['mail'].'" name="confirmMail" value="">
             </div>
         </div>
         </div>';
@@ -315,11 +315,11 @@ function paramOuvertureDivFormulaireDescription(){
 }
 
 /*FONCTION DIV POUR LA DESCRITION*/  
-function paramDivDescriptionTxt(){
+function paramDivDescriptionTxt($utilisateur){
     echo 
     '<div class="row">
         <div class="col-12">
-            <label>Description:</label><textarea class="form-control" rows="4" class="input-beige form-control " name="description" value=""></textarea>
+            <label>Description:</label><textarea class="form-control" rows="4" class="input-beige form-control " name="description" value="">'.$utilisateur['description'].'</textarea>
         </div>
     </div>';
 } 
@@ -338,7 +338,7 @@ function paramDivDescriptionTxt(){
             '<div class="col-12 formulaire-coordonnees2 securite txt-input">
                 <div class="row">
                     <div class="col-12">
-                        <label>Langues parlées:</label>
+                        <label>Langue parlée:</label>
                             <select id="langue" class="select" name="langue">
                                 <option value="'.$utilisateur["code_langue"].'"selected>'.$utilisateur["type_langue"].'</option>
                                 <option value="1"><-- Langues --></option>
