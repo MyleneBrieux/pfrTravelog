@@ -67,14 +67,16 @@ if (isset($_SESSION["pseudo"])) {
 
                     $codeEtape=$comm["code_etape"];
                     try {
-                        $etape=$voyageService->chercherEtapeParCode($codeEtape); // on récupère les infos de l'étape depuis son code étape
+                        $voyage=$voyageService->chercherVoyageParCodeEtape($codeEtape); // on récupère les infos de l'étape depuis son code étape
                     } catch (ServiceException $f) {
                         erreur($f->getCode(), $f->getMessage());
                     }
-    
-                    afficherNotifications1($user);
-                    afficherNotifications2($etape);
-                    // $suppNotif=$voyageService->supprimerNotification($codeNotif);
+
+                    while($trip=mysqli_fetch_array($voyage)){
+                        afficherNotifications1($user);
+                        afficherNotifications2($trip);
+                        // $suppNotif=$voyageService->supprimerNotification($codeNotif);
+                    }
                 
                 }
 
@@ -120,11 +122,6 @@ if (isset($_SESSION["pseudo"])) {
 
     displayNavbarConnectedOnly2();
 
-    // if (isset($_SESSION['pseudo']) && isset($utilisateur['photoprofil']) ){
-    //     paramPhotoMenuLatProfil($utilisateur);
-    // }else {
-    //     paramPhotoMenuLatDefaut($utilisateur);
-    // }
     
     if (isset($_SESSION["pseudo"]) && isset($info["photoprofil"])) {
         photoUtilisateurBdd($info);
