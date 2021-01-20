@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-unset($_SESSION["mail"]);
+$_SESSION=array();
 session_destroy();
 header('Location: accueilCONTROLEUR.php');
 
