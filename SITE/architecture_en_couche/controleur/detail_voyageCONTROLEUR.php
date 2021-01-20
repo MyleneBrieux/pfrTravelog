@@ -22,14 +22,9 @@ $pseudo=$_SESSION["pseudo"];
                 header('Location: mesVoyagesCONTROLEUR.php');
         }
 
-        // if($detailVoyage["statut"]=="Prive"/* && $_SESSION["ami"]*/){ 
-            // header('Location: accueilCONTROLEUR.php');
-        // }
-
         $titre=$detailVoyage["titre"];
         $datedebut=$detailVoyage["date_debut"];
         $datefin=$detailVoyage["date_fin"];
-        $likes=$detailVoyage["likes"];
         $idCreateur=$detailVoyage["id"];
         $couverture=$detailVoyage["couverture"];
         $vues=$detailVoyage["vues"];
@@ -40,6 +35,15 @@ $pseudo=$_SESSION["pseudo"];
 
         $createur=new UtilisateurService();
         $createur=$createur->chercherUtilisateurParId($idCreateur);
+
+        // if ()
+        // $detailAmi=new UtilisateurService();
+        // $detailAmi=$detailAmi->afficherRowAmi($idCreateur);
+        // $ami=$detailAmi["accepte"];
+
+        // if($detailVoyage["statut"]=="Prive" && $ami!="Y"){ 
+        //     header('Location: accueilCONTROLEUR.php');
+        // }
 
         $detailEtape=new VoyageService();
         $codeEtape = htmlentities(trim($_GET['code_etape']));
@@ -59,21 +63,25 @@ $pseudo=$_SESSION["pseudo"];
 
         $detailComm=new VoyageService();
         $rs=$detailComm->afficherLesDetailsCommentaireService($codeEtape);
-        // print_r($rs);
-        // if (isset($detailComms["commentaire"])){
-            
-        // }
+
+        $nbrLikes=new VoyageService();
+        $nbrLikes=$nbrLikes->nbrLikesService($codeVoyage);
 
 
         // if (isset($codeVoyage, $idVisiteur)){
-        // $quiAddLike=new VoyageService();
-        // $quiAddLike=$quiAddLike->quiAddLikesService($likes, $codeVoyage, $id);
-        // $quiLikes=$quiAddLike["id_like"];
+            if(isset($_SESSION["pseudo"])){
+                $whoLikes=new VoyageService();
+                $whoLikes=$whoLikes->quiAddLikesService($idVisiteur);
+                if (isset($_GET["action"]) && ($_GET["action"])=="like"){
+                    $addLikes= new VoyageService;
+                    $addLikes->addLikesService($codeVoyage, $idVisiteur);
+                }
+            }
         // }
 
 detail_headBodyTop();
 
-detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur);
+detail_headerEtMenuLateral($titre, $datedebut, $datefin, $nbrLikes, $vues, $createur);
 
             
 // Bouton suppression du voyage visible que par le créateur
@@ -85,12 +93,8 @@ if (isset($_SESSION["pseudo"]) && $idVisiteur==$idCreateur){
 }
 
 detail_menuFinEtNav();
-
-// foreach 
+$numDiapo=0;
 detail_carousel($couverture, $numDiapo);
-// echo($couverture);
-// echo "likes ".$likes;
-// echo "CODEVOYAGE ".$codeVoyage;
 
 detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage);
 
@@ -99,7 +103,7 @@ detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage);
         $comm=$data["commentaire"];
         $idCommentateur=$data["id"];
         $codeComm=$data["code_comm"];
-// echo $codeComm;
+
         $commentateur=new UtilisateurService();
         $commentateur=$commentateur->chercherUtilisateurParId($idCommentateur);
         $pseudoComm=$commentateur["pseudo"];

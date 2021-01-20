@@ -36,7 +36,7 @@ function detail_header(){
         include ("navbarCONTROLEUR.php");
 }
 
-function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur){
+function detail_menuLateral($titre, $datedebut, $datefin, $nbrLikes, $vues, $createur){
     echo '<div class="pl-0 menu_lateral_detail_voyage">
     <nav class="bg-sable mr-3 pr-3 menU centrage">
         <div class="row">';
@@ -51,7 +51,7 @@ function detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues, $create
                 <h4>'.$createur["pseudo"].'</h4> </br>
                 <h5>'.$titre.'</h5>
                 <h6>Du '.$datedebut.' au '.$datefin.'</h6>
-                <h6>'.$likes.' likes - '.$vues.' vues</h6>
+                <h6>'.$nbrLikes.' likes - '.$vues.' vues</h6>
                 </div>
                 <a href="../controleur/mesVoyagesControleur.php?pseudo='.$createur["pseudo"].'"><button type="button" class="btn addItem ml-3 mt-5 mb-3 turquoise">Mes autres voyages</button></a>';
 }
@@ -175,7 +175,7 @@ function detail_carousel($couverture, $numDiapo){
 </div>';
 }
 
-function detail_ssTitreLogos($sousTitre){
+function detail_ssTitreLogos($sousTitre,$codeVoyage,$codeEtape){
     echo '<div class="col-lg-12 col-md-8 col-sm-8 col-12">
     <div class="row">
         <div class="col-xl-8 col-sm-12 col-12">
@@ -184,10 +184,13 @@ function detail_ssTitreLogos($sousTitre){
     if(isset($_SESSION["pseudo"])){
         echo '<div class="row logo_position mt-2">
             <div class="element_like_comm col-xl-12 col-sm-12 col-12">
-                <input type="image" name="likes" id="boutonLikes" src="../../img/logos_divers/Like_vide.png" class="taille_logo_detail_voyage">
-                <input type="image" name="Commentaire" placeholder="Commentaire"
-                    src="../../img/logos_divers/Commentaires.png" class="taille_logo_detail_voyage"
-                    data-toggle="modal" data-target="#ModalCommentaire">
+                <form action="detail_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape.'&action=like" method="post">
+
+                    <input type="image" name="likes" id="boutonLikes" src="../../img/logos_divers/Like_vide.png" class="taille_logo_detail_voyage">
+                </form>
+                    <input type="image" name="Commentaire" placeholder="Commentaire"
+                        src="../../img/logos_divers/Commentaires.png" class="taille_logo_detail_voyage"
+                        data-toggle="modal" data-target="#ModalCommentaire">
             </div>
         </div>';
     }
@@ -320,9 +323,9 @@ function detail_headBodyTop(){
     detail_bodyTop();
 }
 
-function detail_headerEtMenuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur){
+function detail_headerEtMenuLateral($titre, $datedebut, $datefin, $nbrLikes, $vues, $createur){
     detail_header();
-    detail_menuLateral($titre, $datedebut, $datefin, $likes, $vues, $createur);
+    detail_menuLateral($titre, $datedebut, $datefin, $nbrLikes, $vues, $createur);
 }
     // detail_boutonSupp();
 function detail_menuFinEtNav(){
@@ -331,7 +334,7 @@ function detail_menuFinEtNav(){
 }
     // detail_carousel();
 function detail_restePage($sousTitre,$description,$codeVoyage,$codeEtape,$commVoyage){
-    detail_ssTitreLogos($sousTitre);
+    detail_ssTitreLogos($sousTitre,$codeVoyage,$codeEtape);
     detail_modalComm($codeVoyage,$codeEtape);
     detail_description($description);
     detail_titreComm($commVoyage);
