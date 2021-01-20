@@ -108,7 +108,7 @@
                         
                     echo'</div>
                     <div class="d-flex justify-content-end">
-                        <p class="pr-4 bd-highlight">'. $nbContinent .' contienents visités</p>
+                        <p class="pr-4 bd-highlight">'. $nbContinent .' continents visités</p>
                         <p class="pr-4 bd-highlight">'. $nbPays .' pays visités</p>
                     </div>
                     <div class="pl-2 rectangle_desc">

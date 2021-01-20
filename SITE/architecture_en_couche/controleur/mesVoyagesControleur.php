@@ -49,6 +49,12 @@ if ($isUser) {
     débutCorpsVisiteur($profil, $info, $nbContinent, $nbPays); //Sinon un lien pour accéder à son profil s'affiche à la place
 }
 
+if ($isUser) {
+    encadreUtilisateur(); //affichage d'un lien pour créer un voyage pour l'utilisateur
+} else{
+    encadreVisiteur($profil); //affichage d'un lien pour le visiteur pour visiter le profil de l'utilisateur
+}
+
 tableauEntete(); //en-tête du tableau
 while($data=mysqli_fetch_array($voyages)){
     afficherVoyagesUtilisateur($data); //affichage des voyages
@@ -59,12 +65,6 @@ finTableau();
 
 
 nbPages($page, $profil, $nombreDePage, $precedent, $suivant); //on fournit les valeurs pour la pagination
-
-if ($isUser) {
-    encadreUtilisateur(); //affichage d'un lien pour créer un voyage pour l'utilisateur
-} else{
-    encadreVisiteur($profil); //affichage d'un lien pour le visiteur pour visiter le profil de l'utilisateur
-}
 
 
 voyagesFin();

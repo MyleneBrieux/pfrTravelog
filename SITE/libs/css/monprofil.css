@@ -9,7 +9,7 @@ html, body {
 /*Menu de gauche*/
 .bg-sable{
     background-color:#dcdacd;
-    padding-bottom: 5%;
+    padding-bottom: 20%;
 }
 
 .menu{
@@ -63,6 +63,26 @@ h4{
     margin-left: 2em;
     margin-right: 2em;
 }
+
+/* unvisited link */
+a:link {
+    color: #366d68;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #52908b;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #366d68;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #366d68;
+  }
 
 .description{
     font-family: 'Rancho', cursive;

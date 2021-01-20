@@ -40,13 +40,13 @@ include_once '../metier/Voyage.php';
 
     if (isset($_POST["ajoutAmi"])) {
         $idAmi = $profil['id'];
-        $id = $visiteur['id'];
+        $id = isset($visiteur['id']);
         $ami = $utilisateur->ajouterAmi($idAmi, $id);
         
     }
 
     $idAmi = $profil['id'];
-    $id = $visiteur['id'];
+    $id = isset($visiteur['id']);
     $dejaAmis = $utilisateur->dejaAmis($idAmi, $id);
 
 profilDebut();

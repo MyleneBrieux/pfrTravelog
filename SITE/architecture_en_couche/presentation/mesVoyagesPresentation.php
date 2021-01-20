@@ -69,7 +69,6 @@
                         <th scope="col">TITRE</th>
                         <th scope="col">EN IMAGE</th>
                         <th scope="col">EN BREF</th>
-                        <th></th>
                     </tr>
                 </thead>';
     }
@@ -80,8 +79,7 @@
                 <tr>
                     <td><strong>' . $data["titre"] . '</strong></td>
                     <td><img src="../../img/photos/' . $data["couverture"] . '" class="photosVoyage"/></td>
-                    <td>' . $data["resume"] . '</td>
-                    <td><a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '" 
+                    <td>' . $data["resume"] . '</br><a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $data["code_voyage"] . '&code_etape=' . $data["code_etape"] . '" 
                     id="lienVoyage"><button class="btn" id="btnDetailsVoyage">Découvrir</button>
                     </a></td>';
     }
@@ -97,7 +95,7 @@
 
     function encadreVisiteur($profil){
         echo'
-        <div class="encadrevoyage">';
+        <div class="encadrevoyage mb-3">';
             if (isset($profil['photoprofil'])) {
                 echo'<img src="data:image/jpeg;base64,'.base64_encode($profil['photoprofil']).'" alt="photo de profil"
                 width="100%" height="100%" />';
@@ -117,7 +115,7 @@
 
     function encadreUtilisateur(){
         echo'
-        <div class="encadrevoyage">';
+        <div class="encadrevoyage mb-3">';
             if (isset($profil['photoprofil'])) {
                 echo'<img src="data:image/jpeg;base64,'.base64_encode($profil['photoprofil']).'" alt="photo de profil" class="photoprofilrond"/>';
             }else {
