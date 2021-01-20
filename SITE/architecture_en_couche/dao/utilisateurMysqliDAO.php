@@ -384,6 +384,22 @@ include_once("dao_exception.php");
         }
     }
 
+    public function afficherRowAmi(int $id) {
+        try {
+            $mysqli=$this->connexion();
+            $stmt=$mysqli->prepare('select * from demande_ami where id=? and accepte="Y"');
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $rs = $stmt->get_result();
+            $detailAmi = $rs->fetch_array(MYSQLI_ASSOC);
+            $rs->free();
+            $mysqli->close();
+            return $detailAmi;
+        } catch (mysqli_sql_exception $p) {
+            throw new DaoException($p->getMessage(), $p->getCode());
+        }
+    }
+
 
 /* MODIFICATION DU PROFIL*/        
         public function modifierUtilisateur(Utilisateurs $utilisateur) :void{ 
