@@ -28,8 +28,9 @@ if(!isset($_SESSION["pseudo"]) || $idVisiteur!=$idCreateur){
 
 if(isset($_GET["action"]) && $_GET["action"] == "modification" && !empty($_POST)){
     
+    $detailVoyage=new VoyageService();
     $codeEtape = htmlentities(trim($_GET['code_etape']));
-    $detailEtape=$voyage->afficherLesDetailsEtapeService($codeEtape);
+    $detailEtape=$detailVoyage->afficherLesDetailsEtapeService($codeEtape);
 
     if (isset($_POST["titre"]) && !Empty($_POST["titre"])
         && isset($_POST["resume"]) && !Empty($_POST["resume"])
