@@ -113,7 +113,7 @@
     </div>';
     }
 
-    function encadreUtilisateur(){
+    function encadreUtilisateur($profil){
         echo'
         <div class="encadrevoyage mb-3">';
             if (isset($profil['photoprofil'])) {

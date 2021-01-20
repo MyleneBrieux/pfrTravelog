@@ -50,7 +50,7 @@ if ($isUser) {
 }
 
 if ($isUser) {
-    encadreUtilisateur(); //affichage d'un lien pour créer un voyage pour l'utilisateur
+    encadreUtilisateur($profil); //affichage d'un lien pour créer un voyage pour l'utilisateur
 } else{
     encadreVisiteur($profil); //affichage d'un lien pour le visiteur pour visiter le profil de l'utilisateur
 }
