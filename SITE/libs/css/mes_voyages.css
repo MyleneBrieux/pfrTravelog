@@ -160,6 +160,26 @@
     opacity: 0;
 }
 
+/* unvisited link */
+a:link {
+    color: #366d68;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #52908b;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #366d68;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #366d68;
+  }
+
 /* PAGES */
 .pages {
     font-family: 'Halant', serif;
