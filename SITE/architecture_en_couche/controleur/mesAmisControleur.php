@@ -59,14 +59,14 @@ if ($isUser) {
             $idAmi = htmlentities($_GET['id_ami']); //On récupère l'id fourni par le bouton pour la suppression
             $id = $profil['id'];
             $ami = $utilisateur->confirmerDemandeAmis($idAmi, $id); //on confirme l'ajout l'utilisateur dans notre liste d'amis
-            refresh($profil); //On refresh la page pour actualiser la liste des demandes la liste d'amis
+            refreshPageAmis($profil); //On refresh la page pour actualiser la liste des demandes la liste d'amis
             exit;
         }
         if (isset($_GET["action"]) && $_GET["action"]=="supprimerAmi") { //test suppression ami sans le modal //Si on reçoit une action et que cette action est "supprimerAmi" lors on entre dans le if
             $idAmi = htmlentities($_GET['id_ami']); //On récupère l'id fourni par le bouton pour la suppression
             $id = $profil['id'];
             $ami = $utilisateur->supprimerAmi($idAmi, $id); //On supprime la demande d'amis
-            refresh($profil);
+            refreshPageAmis($profil);
             exit;
         }
     }
@@ -90,7 +90,7 @@ while($data=mysqli_fetch_array($rs)){
         $idAmi = htmlentities($_GET['id_ami']); //On récupère l'id fourni par le bouton pour la suppression
         $id = $profil['id'];
         $ami = $utilisateur->supprimerAmi($idAmi, $id); //On supprime l'ami de notre liste
-        refresh($profil); //On actualise la liste d'amis
+        refreshPageAmis($profil); //On actualise la liste d'amis
         exit;
     }
 }

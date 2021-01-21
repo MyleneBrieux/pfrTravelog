@@ -167,7 +167,7 @@
             </div>';
     }
 
-    function refresh($profil){
+    function refreshPageAmis($profil){
         echo'<meta http-equiv="refresh" content="0;url=mesAmisControleur.php?pseudo='. $profil['pseudo'] .'" />';
     }
 
