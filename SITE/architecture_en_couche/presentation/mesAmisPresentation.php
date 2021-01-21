@@ -75,7 +75,7 @@
                     //     <p><img src="../../img/logos_divers/ami_turquoise2.png" alt="logo amis">Ajouter en ami</p>
                     // </div>
                     echo'<div class="row mt-3 mb-3">
-                    <a href="controleur_contact.php?pseudo='. $profil['pseudo'] .'"><button type="button" class="button">Contactez moi</button></a>
+                    <a href="controleur_contact_user.php?pseudo='. $profil['pseudo'] .'"><button type="button" class="button">Contactez moi</button></a>
                     </div>
                 </div>
             </nav>
