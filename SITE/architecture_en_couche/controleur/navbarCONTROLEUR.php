@@ -74,8 +74,18 @@ if (isset($_SESSION["pseudo"])) {
 
                     while($trip=mysqli_fetch_array($voyage)){
                         afficherNotifications1($user);
-                        afficherNotifications2($trip);
-                        // $suppNotif=$voyageService->supprimerNotification($codeNotif);
+                        afficherNotifications2($trip,$codeNotif);
+                        if (isset($_GET["action"]) && $_GET["action"]=="supprimerNotification") { // on récupère l'action suppression dans l'url
+                            $codeNotif = htmlentities($_GET["code_notif"]);
+                            try {
+                                $voyageService->supprimerNotification($codeNotif);
+                            } catch (ServiceException $j) {
+                                erreur($j->getCode(), $j->getMessage());
+                            }
+                            refresh(); // on rafraîchit la page
+                            exit;
+                        }
+
                     }
                 
                 }

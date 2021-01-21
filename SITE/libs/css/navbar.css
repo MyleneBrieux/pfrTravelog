@@ -233,6 +233,17 @@
         background: none;
     }
 
+#btnSupprimerNotif {
+    width:0.5em;
+    height:1.5em;
+    margin-left:1em;
+}
+
+#croixSupprimerNotif {
+    margin-top:-0.5em;
+    margin-left:-0.35em;
+}
+
 
 /* AMIS */
 #menuAmis{ /* logo */

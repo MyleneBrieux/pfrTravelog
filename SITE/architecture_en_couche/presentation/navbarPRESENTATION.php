@@ -108,15 +108,25 @@ function afficherNotifications1($user){
         '<a class="affichernotif dropdown-item" href="#">' . $user["pseudo"] . ' vous a laissé un commentaire';
 }
 
-function afficherNotifications2($trip){
+function afficherNotifications2($trip,$codeNotif){
     echo
             ' sur </br>
                 <a href="../controleur/detail_voyageCONTROLEUR.php?code_voyage=' . $trip["code_voyage"] . '&code_etape=' . $trip["code_etape"] . '" 
                 id="lienVoyageNotif"> 
                     <em>' . $trip["titre"] . '</em>
                 </a>
+                <a href="../controleur/accueilCONTROLEUR.php?action=supprimerNotification&code_notif=' . $codeNotif . '">
+                    <button class="btn btn-danger" id="btnSupprimerNotif">
+                        <p id="croixSupprimerNotif"><strong>X</strong></p>
+                    </button>
+                </a>
             </a>
         <hr>';
+}
+
+function refresh(){
+    echo
+        '<meta http-equiv="refresh" content="0;url=accueilCONTROLEUR.php" />';
 }
 
 function notificationsBadge3(){
