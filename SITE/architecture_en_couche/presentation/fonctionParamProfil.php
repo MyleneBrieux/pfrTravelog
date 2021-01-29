@@ -142,7 +142,7 @@
             <form action="../controleur/controleur_param_profil.php" method="post" enctype="multipart/form-data">
                 <div class="">
                     <input type="file" class="custom-file-input inputPhotoProfil" name="image" id="inputchangePhoto">
-                    <input type="submit" name="submit" value="Valider" class="inputValidPhoto" id="inputValidPhoto">
+                    <input type="submit" name="submit" value="Valider" class="inputValidPhoto" id="inputValidPhoto2">
                 </div>
             </form>';    
     }
@@ -248,7 +248,7 @@
         
                 <div class="row">
                     <div class="col-6">
-                        <label>Nationnalité:</label><input type="text" class="input-beige form-control" placeholder="Français" name="nation" value="'.$utilisateur["nation"].'">
+                        <label>Pays:</label><input type="text" class="input-beige form-control" placeholder="Français" name="nation" value="'.$utilisateur["nation"].'">
                     </div>
                 </div>
             </div>';     

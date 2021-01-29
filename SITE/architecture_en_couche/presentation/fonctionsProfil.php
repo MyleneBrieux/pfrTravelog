@@ -253,7 +253,7 @@ function paramDivDescriptionTxt($utilisateur){
 
             <div class="row">
                 <div class="col-6">
-                    <label>Nationnalité:</label><input type="text" class="form-control" name="nation" value="'.$utilisateur["nation"].'" disabled="disabled">
+                    <label>Pays:</label><input type="text" class="form-control" name="nation" value="'.$utilisateur["nation"].'" disabled="disabled">
                 </div>
             </div>
         </div>';

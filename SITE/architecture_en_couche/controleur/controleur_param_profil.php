@@ -75,10 +75,20 @@ require_once('../metier/Utilisateur.php');
                 if(in_array($fileType, $allowTypes)){ 
                     $image = $_FILES['image']['tmp_name']; 
                     $imgContent = addslashes(file_get_contents($image));
-                    $newUtilisateur->modifPhoto($imgContent, $pseudo);
+                    try{
+                        $newUtilisateur->modifPhoto($imgContent, $pseudo);
+                    }catch(ServiceException $se){
+                        erreurModifProfil($se->getCode());
+                    }
                 }
             }
         } 
+
+        
+        if(isset($_GET["action"]) && $_GET["action"] == "modifPhoto"){
+            header("Location: controleur_param_profil.php");
+        }
+
 
 
 //AFFICHAGE DE LA PHOTO DU MENU SELON UTILISATEUR

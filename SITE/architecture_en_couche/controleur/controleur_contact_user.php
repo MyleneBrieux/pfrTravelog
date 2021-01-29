@@ -5,6 +5,14 @@ require_once('../service/UtilisateurSERVICE.php');
 require_once('../metier/Utilisateurs.php'); 
 
 
+$destinataire=$_GET['pseudo'];
+
+
+//REDIRECTION SI PAS DE SESSION 
+    if(!isset($_SESSION['pseudo']) ){
+        header("Location: connexionCONTROLEUR.php");
+    }
+
 
 // AFFICHAGE DE L'ENTETE CONTACT
     affichageEnteteContact();

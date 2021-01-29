@@ -4,8 +4,9 @@
     })
 
 
-    $("#inputValidPhoto").on("click", function(e){
-        $('#photo').reload();
+    $("#inputValidPhoto2").on("click", function(e){
+        // $('#photo').refresh();
+        // window.location.reload();
     })
 
 

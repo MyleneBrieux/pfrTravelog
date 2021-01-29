@@ -9,14 +9,14 @@ require_once('../metier/Utilisateurs.php');
 // AFFICHAGE DE L'ENTETE CONTACT
 affichageEnteteContact();
 
+    $expediteur = $_SESSION['pseudo'];
+    $destinataire = "lydlus@hotmail.com";
 
 // CONFIGURATION DE LA METHODE DE CONNEXION
     if(isset($_GET["action"]) && $_GET["action"] == "envoyer" && !empty($_POST)){
-
         $sujet = $_POST['sujet'];
         $message = $_POST['message'];
-        $expediteur = $_SESSION['pseudo'];
-        $destinataire = "lydlus@hotmail.com";
+        
         // $sujet = "Message en provenance de Travelog";
         
         
@@ -31,7 +31,7 @@ affichageEnteteContact();
     
 
 // AFFICHAGE DU CORPS DE LA PAGE CONTACT
-    affichageCorpsContact()
+    affichageCorpsContact($expediteur);
 ?>
 
 
