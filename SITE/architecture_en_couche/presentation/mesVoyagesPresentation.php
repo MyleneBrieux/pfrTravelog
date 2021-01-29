@@ -98,10 +98,10 @@
         <div class="encadrevoyage mb-3">';
             if (isset($profil['photoprofil'])) {
                 echo'<img src="data:image/jpeg;base64,'.base64_encode($profil['photoprofil']).'" alt="photo de profil"
-                width="100%" height="100%" />';
+                class="photoprofilrond" />';
             }else {
                 echo'<img src="../../img/photos/photo_profil_defaut.png" alt="photo de profil"
-                width="100%" height="100%" />';
+                class="photoprofilrond" />';
             }
             echo'<a href="../controleur/monProfilControleur.php?pseudo='.$profil["pseudo"].'" class="">
                 Voir le profil
