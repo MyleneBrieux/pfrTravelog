@@ -5,6 +5,10 @@ include_once("../presentation/modification_voyagePRESENTATION.php");
 include("../service/VoyageSERVICE.php");
 include("../service/UtilisateurSERVICE.php");
 
+if(!isset($_GET["code_voyage"]) && (!isset($_GET["code_etape"]))){
+    header('Location: accueilCONTROLEUR.php');
+}
+
 if(isset($_SESSION["pseudo"])){
     $pseudo=$_SESSION["pseudo"];
     $visiteur=new UtilisateurService();
@@ -62,13 +66,15 @@ if(isset($_GET["action"]) && $_GET["action"] == "modification" && !empty($_POST)
             $description=htmlentities($_POST["description"])
         ); 
 
+        $modifVoyage= new VoyageService;
+        $modifVoyage->modifEtapeService($sousTitre, $description, $codeEtape);
+
         $pseudo=$_SESSION["pseudo"];
         $data=new UtilisateurService();
         $data=$data->chercherUtilisateurParPseudo($pseudo);
         $id=$data["id"];
 
-        $modifVoyage= new VoyageService;
-        $modifVoyage->modifEtapeService($sousTitre, $description, $codeEtape);
+        
         
         $modifVoyage->modifVoyageService($titre, $resume, $date_debut, $date_fin, $continent, $pays, $ville, $couverture, $statut, $codeVoyage);
         header('Location: mesVoyagesControleur.php?pseudo='.$pseudo.'');

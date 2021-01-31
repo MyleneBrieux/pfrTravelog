@@ -5,6 +5,10 @@ include_once("../presentation/detail_voyagePRESENTATION.php");
 include("../service/VoyageSERVICE.php");
 include("../service/UtilisateurSERVICE.php");
 
+if(!isset($_GET["code_voyage"]) || (!isset($_GET["code_etape"]))){
+    header('Location: accueilCONTROLEUR.php');
+}
+
 if(isset($_SESSION["pseudo"])){
 $pseudo=$_SESSION["pseudo"];
         $visiteur=new UtilisateurService();
@@ -14,7 +18,11 @@ $pseudo=$_SESSION["pseudo"];
         $detailVoyage=new VoyageService();
         $codeVoyage = htmlentities(trim($_GET['code_voyage']));
         $detailVoyage=$detailVoyage->afficherLesDetailsVoyageService($codeVoyage);
+        $correctCodeEtape=$detailVoyage["code_etape"];
 
+        if($correctCodeEtape!=$_GET["code_etape"]){
+            header('Location: accueilCONTROLEUR.php');
+        }
 
         if(isset($_GET["action"]) && $_GET["action"] == "delete" && isset($_POST["deleted"])){
                 $suppVoyage= new VoyageService;
