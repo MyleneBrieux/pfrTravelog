@@ -12,6 +12,9 @@ $utilisateur = new UtilisateurService();
 try{
     $profil = $utilisateur->chercherUtilisateurParPseudo($pseudo); //Recherche les données de l'utilisateur
     $id = $profil['id'];
+    if(!isset($profil['pseudo'])){
+        header('Location: accueilCONTROLEUR.php');
+    }
     $setBirthday = isset ($profil['birthday']) && !empty ($profil['birthday']);
     $nbAmis = $utilisateur->nbAmisUtilisateur($id);
     $nbDemandesAmis = $utilisateur->nbDemandesAmisUtilisateur($id);

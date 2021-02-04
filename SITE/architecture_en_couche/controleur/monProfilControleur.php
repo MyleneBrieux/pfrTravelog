@@ -18,6 +18,9 @@ include_once '../metier/Voyage.php';
     }catch(ServiceException $e){
         erreurMesVoyages($e->getCode(), $e->getMessage());
     }
+    if(!isset($profil['pseudo'])){
+        header('Location: accueilCONTROLEUR.php');
+    }
         $setDescription = isset($profil['description']) && !empty($profil['description']); //Récupère si il y a une description
         $setNation = isset($profil['nation']) && !Empty($profil['nation']); //Récupère si il y a une nation
         $setBirthday = isset($profil['birthday']) && !empty($profil['birthday']); //Récupère si il y a une date de naissance
