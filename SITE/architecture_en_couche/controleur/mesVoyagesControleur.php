@@ -36,6 +36,10 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
         }catch(ServiceException $e){
             erreurMesVoyages($e->getCode(), $e->getMessage());
         }
+
+        if(!isset($profil['pseudo'])){
+            header('Location: accueilCONTROLEUR.php');
+        }
         
 
    
