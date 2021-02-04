@@ -40,7 +40,6 @@ $pseudo = htmlentities(trim($_GET['pseudo'])); //Récupère le pseudo fourni
         if(!isset($profil['pseudo'])){
             header('Location: accueilCONTROLEUR.php');
         }
-        
 
    
     

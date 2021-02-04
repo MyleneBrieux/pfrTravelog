@@ -23,6 +23,7 @@ try{
     errreurAmis($e->getCode(), $e->getMessage());
 }
 
+
     $nbParPage = 10; //nombre d'amis que la page doit afficher
     $total = $nbAmis + $nbDemandesAmis;
     $nombreDePage=ceil($total/$nbParPage);//on calcul le nombre de page en divisant le nombre de voyages par le nombre que l'on veut voir afficher à l'écran
