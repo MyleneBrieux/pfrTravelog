@@ -79,7 +79,15 @@ class VoyageMysqliDAO {
         $mysqli->close();
     }
 
+    public function addNotifDAO($date_ajout,$id, $codeComm){
+        $mysqli=$this->connexion();
 
+        // $date_ajout=date('Y-m-d');
+        $stmt=$mysqli->prepare("insert into notifications (code_notif, date, id,code_comm) values (null,?,?,?)");
+        $stmt->bind_param("sii",$date_ajout, $id, $codeComm);
+        $stmt->execute();
+        $mysqli->close();
+    }
 
     public function afficherLesDetailsVoyageDAO(int $codeVoyage): array{
         $mysqli=$this->connexion();
@@ -105,7 +113,7 @@ class VoyageMysqliDAO {
         return $detailEtape;
     }
 
-    // AFFICHER COMMENTAIRE
+    // AFFICHER COMMENTAIRES
     public function afficherLesDetailsCommentaireDAO(int $codeEtape) {
         $mysqli=$this->connexion();
         $stmt=$mysqli->prepare('select * from commentaires where code_etape=?');
@@ -115,6 +123,18 @@ class VoyageMysqliDAO {
         return $rs;
         $rs->free();
         $mysqli->close();
+    }
+
+    // AFFICHER COMMENTAIRE
+    public function trouverDernierCommentaireDAO() {
+        $mysqli=$this->connexion();
+        $stmt=$mysqli->prepare('select code_comm from commentaires order by code_comm DESC');
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        $dernierComm = $rs->fetch_array(MYSQLI_ASSOC);
+        $rs->free();
+        $mysqli->close();
+        return $dernierComm;
     }
 
     public function nbrCommentaireDansUnVoyageDAO(int $codeEtape){

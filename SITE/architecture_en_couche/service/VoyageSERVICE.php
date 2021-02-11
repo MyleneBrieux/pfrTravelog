@@ -47,6 +47,14 @@ class VoyageService {
         return $addComm;
     }
 
+    // Ajout notif
+
+    public function addNotifService($date_ajout,$id, $codeComm){
+        $addNotif= new VoyageMysqliDAO;
+        $addNotif->addNotifDAO($date_ajout,$id, $codeComm);
+        return $addNotif;
+    }
+
 // Compter les vues
     public function nbrVuesVoyageService($vues,$codeVoyage){
         $vuesVoyage= new VoyageMysqliDAO;
@@ -74,12 +82,21 @@ class VoyageService {
         return $detailEtape;
     }
 
-    // Ajout comm
+    // Afficher tous les comm
 
     public function afficherLesDetailsCommentaireService(int $codeEtape)/*: ?array*/{
         $rs= $this->voyageDao ->afficherLesDetailsCommentaireDAO($codeEtape);
         return $rs;
     }
+
+    // afficher détail d'un comm
+
+    public function trouverDernierCommentaireService() : ?array {
+        $dernierComm = $this->voyageDao ->trouverDernierCommentaireDAO();
+        return $dernierComm;
+    }
+    
+    
 
 // suppression Voyage
 
