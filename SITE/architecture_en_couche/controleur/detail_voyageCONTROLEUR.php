@@ -39,7 +39,6 @@ $pseudo=$_SESSION["pseudo"];
         $vues++;
         $vuesVoyage=new VoyageService();
         $vuesVoyage=$vuesVoyage->nbrVuesVoyageService($vues,$codeVoyage);
-        // $couvertureImplode=implode("", $couverture);
 
         $createur=new UtilisateurService();
         $createur=$createur->chercherUtilisateurParId($idCreateur);
@@ -72,6 +71,19 @@ $pseudo=$_SESSION["pseudo"];
         $detailComm=new VoyageService();
         $rs=$detailComm->afficherLesDetailsCommentaireService($codeEtape);
 
+        
+
+        if (isset($_GET["action"]) && ($_GET["action"])=="commentaire"){
+            $dernierComm=new VoyageService();
+            $dernierComm=$dernierComm->trouverDernierCommentaireService();  
+
+            $date_ajout=date('Y-m-d');
+
+            $idDernierComm=$dernierComm["code_comm"];
+            $addNotif=new VoyageService();
+            $addNotif=$addNotif->addNotifService($date_ajout,$idCreateur, $idDernierComm);
+        }
+
         $nbrLikes=new VoyageService();
         $nbrLikes=$nbrLikes->nbrLikesService($codeVoyage);
 
@@ -92,7 +104,7 @@ detail_headBodyTop();
 detail_headerEtMenuLateral($titre, $datedebut, $datefin, $nbrLikes, $vues, $createur);
 
             
-// Bouton suppression du voyage visible que par le créateur
+// Bouton suppression et modification du voyage visible que par le créateur
 
 if (isset($_SESSION["pseudo"]) && $idVisiteur==$idCreateur){
 

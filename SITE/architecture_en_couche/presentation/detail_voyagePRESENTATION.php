@@ -248,7 +248,8 @@ function detail_zoneComm($pseudoComm,$comm){
 }
  
 function detail_boutonModifComm(){
-            echo '<button class="btn mb-1 btn-info" data-toggle="modal" data-target="#ModalModifCommentaire">Modifier</button>';
+            echo '<button class="btn mb-1 btn-info" data-toggle="modal" 
+                    data-target="#ModalModifCommentaire">Modifier</button>';
         
 }
 
