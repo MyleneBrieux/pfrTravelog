@@ -139,9 +139,9 @@ class VoyageService {
         return $nbrLikes;
     }
 
-    public function quiAddLikesService(int $id){
+    public function quiAddLikesService(int $codeVoyage) : ?array{
         $whoLikes= new VoyageMysqliDAO;
-        $whoLikes->quiAddLikesDAO($id);
+        $whoLikes= $this->voyageDao ->quiAddLikesDAO($codeVoyage);
         return $whoLikes;
     }
 

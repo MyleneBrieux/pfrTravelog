@@ -210,12 +210,16 @@ class VoyageMysqliDAO {
         return $nbrLikes;
     }
 
-    public function quiAddLikesDAO($id){
+    public function quiAddLikesDAO($codeVoyage){
         $mysqli=$this->connexion();
-        $stmt=$mysqli->prepare("select * from likes where id=?"); 
-        $stmt->bind_param("i", $id);
+        $stmt=$mysqli->prepare("select distinct id from likes where code_voyage=?"); 
+        $stmt->bind_param("i", $codeVoyage);
         $stmt->execute();
+        $rs = $stmt->get_result();
+        $whoLikes = $rs->fetch_all(MYSQLI_ASSOC);
+        $rs->free();
         $mysqli->close();
+        return $whoLikes;
     }
 
 
