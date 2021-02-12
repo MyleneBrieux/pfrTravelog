@@ -8,13 +8,13 @@
         includeNavbar();
     }
 
-    function affichageCorpsContact(){
+    function affichageCorpsContact($destinataire){
         ouvertureDivClassRow();
         ouvertureDivClassSable();
         paragrapheTitre();
         ouvertureForm();
         divClassForm();
-        divPseudo();
+        divPseudo($destinataire);
         divEmail();
         ouvertureDiv();
         fermetureDiv();
@@ -111,10 +111,10 @@
     }
 
 /*FONCTION DIV PSEUDO*/    
-    function divPseudo(){
+    function divPseudo($destinataire){
         echo
             ' <div class="form-group col-md-5">
-                <input type="text" class="Pseudo form-control" id="pseudo" placeholder="Pseudo du destinataire" name="destinataire">
+                <input type="text" class="Pseudo form-control" id="pseudo" placeholder="Pseudo du destinataire" name="destinataire" value="'.$destinataire.'" disabled>
             </div>';
     }
 
