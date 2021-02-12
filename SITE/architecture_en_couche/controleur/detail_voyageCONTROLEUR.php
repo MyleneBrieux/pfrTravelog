@@ -81,23 +81,26 @@ $pseudo=$_SESSION["pseudo"];
 
             $idDernierComm=$dernierComm["code_comm"];
             $addNotif=new VoyageService();
-            $addNotif=$addNotif->addNotifService($date_ajout,$idCreateur, $idDernierComm);
+            $addNotif=$addNotif->addNotifService($date_ajout, $idCreateur, $idDernierComm);
         }
 
         $nbrLikes=new VoyageService();
         $nbrLikes=$nbrLikes->nbrLikesService($codeVoyage);
 
+// ajout likes
 
-        // if (isset($codeVoyage, $idVisiteur)){
             if(isset($_SESSION["pseudo"])){
                 $whoLikes=new VoyageService();
-                $whoLikes=$whoLikes->quiAddLikesService($idVisiteur);
+                $whoLikes=$whoLikes->quiAddLikesService($codeVoyage);
+                // print_r($whoLikes);
                 if (isset($_GET["action"]) && ($_GET["action"])=="like"){
-                    $addLikes= new VoyageService;
-                    $addLikes->addLikesService($codeVoyage, $idVisiteur);
+                    if ($whoLikes["id"]!=$idVisiteur){
+                        $addLikes= new VoyageService;
+                        $addLikes->addLikesService($codeVoyage, $idVisiteur);
+                    }
+                    header('Location: detail_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape);
                 }
             }
-        // }
 
 detail_headBodyTop();
 
