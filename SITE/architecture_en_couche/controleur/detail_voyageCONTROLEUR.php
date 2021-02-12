@@ -63,6 +63,7 @@ $pseudo=$_SESSION["pseudo"];
             $commentaire=$_POST["commentaire"];
             $ajoutComm=new VoyageService();
             $ajoutComm=$ajoutComm->addCommentaireService($commentaire, $id, $codeEtape);
+            header('Location: detail_voyageCONTROLEUR.php?code_voyage='.$codeVoyage.'&code_etape='.$codeEtape);
         }
 
         $commVoyage=new VoyageService();
